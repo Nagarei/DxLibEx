@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx完全詳解: DxLibEx/DxLibEx_Helper.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx完全詳解
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_dx_lib_ex___helper_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">DxLibEx_Helper.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_dx_lib_ex___helper_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DX_LIB_EX_HELPER_H_2015_0930_0626_256841632_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DX_LIB_EX_HELPER_H_2015_0930_0626_256841632_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//実装用ファイルです。</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//開発者以外がここの機能を使うのはお勧めできません</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dx_lib_ex___defines_8h.html">DxLibEx_Defines.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_dx_lib_ex.html">DxLibEx</a>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespace_dx_lib_ex_1_1impl.html">   11</a></span>&#160;<span class="keyword">namespace </span>impl{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">Counter_template</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">Counter_template&lt;T&gt;</a> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">This_T</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//ここのpublic関数はUIに直結するので破壊的変更は可能な限り避けるように</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a7cfeeb4a5315aeb408f3598ccc185a40">   24</a></span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a7cfeeb4a5315aeb408f3598ccc185a40">Counter_template</a>()<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a> : value(-1){}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#abd11213ab5f2c4ca77f446e876d71ad3">   27</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> T&amp; <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#abd11213ab5f2c4ca77f446e876d71ad3">GetInt</a>()const <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ <span class="keywordflow">return</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a755c3bb0022d9f33461049422fc89bc6">count</a>(); }</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a755c3bb0022d9f33461049422fc89bc6">   29</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> T&amp; <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a755c3bb0022d9f33461049422fc89bc6">count</a>()const <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ <span class="keywordflow">return</span> value; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#aca4387b35b561cfffd78df8c629e105f">   31</a></span>&#160;        <span class="keyword">explicit</span> <span class="keyword">inline</span> <span class="keyword">operator</span> T()const <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ <span class="keywordflow">return</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a755c3bb0022d9f33461049422fc89bc6">count</a>(); }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ad70985d76a136da133fe029a1f744a2d">   33</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> This_T&amp; <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ad70985d76a136da133fe029a1f744a2d">operator+</a>()const <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a5ed1c4551c3b98d1b305c394e960a028">   34</a></span>&#160;        <span class="keyword">inline</span> This_T        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a5ed1c4551c3b98d1b305c394e960a028">operator-</a>()const <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ <span class="keywordflow">return</span> This_T(-value); }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ab4bc94d11c895e9428021f4a7cac9ca0">   36</a></span>&#160;        <span class="keyword">inline</span> This_T <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ab4bc94d11c895e9428021f4a7cac9ca0">operator+</a>(<span class="keyword">const</span> T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> This_T(value + other); }</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a4d1251ae490bb5a53c4f4c3f9e6c7513">   37</a></span>&#160;        <span class="keyword">inline</span> This_T <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a4d1251ae490bb5a53c4f4c3f9e6c7513">operator-</a>(<span class="keyword">const</span> T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> This_T(value - other); }</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a0e5a80be29d2f5a610e223efd3ea76c5">   38</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">friend</span> This_T <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a0e5a80be29d2f5a610e223efd3ea76c5">operator+</a>(<span class="keyword">const</span> T&amp; other, <span class="keyword">const</span> This_T&amp; bace) <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(bace.value != -1); <span class="keywordflow">return</span> This_T(other + bace.value); }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ab7b59940cef43a8350ea124c416a81d4">   39</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">friend</span> This_T <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ab7b59940cef43a8350ea124c416a81d4">operator-</a>(<span class="keyword">const</span> T&amp; other, <span class="keyword">const</span> This_T&amp; bace) <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(bace.value != -1); <span class="keywordflow">return</span> This_T(other - bace.value); }</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a986ca36e341a924a627ad622e85094e8">   40</a></span>&#160;        <span class="keyword">inline</span> This_T&amp; <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a986ca36e341a924a627ad622e85094e8">operator+=</a>(<span class="keyword">const</span> T&amp; other) <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); value += other; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a041c4082f202462c96128f59b377d69a">   41</a></span>&#160;        <span class="keyword">inline</span> This_T&amp; <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a041c4082f202462c96128f59b377d69a">operator-=</a>(<span class="keyword">const</span> T&amp; other) <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); value -= other; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a01fdc1ba77dcc2c8dd703fe46b9fc79d">   43</a></span>&#160;        <span class="keyword">inline</span> T <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a01fdc1ba77dcc2c8dd703fe46b9fc79d">operator-</a>(<span class="keyword">const</span> This_T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> value - other.value; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a5996ebd767b1d7bfb7bfa300ba2e4020">   45</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a5996ebd767b1d7bfb7bfa300ba2e4020">operator&lt; </a>(<span class="keyword">const</span> This_T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> value &lt;  other.value; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#abce354788604b383cd8ac1b2498762f1">   46</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#abce354788604b383cd8ac1b2498762f1">operator&gt; </a>(<span class="keyword">const</span> This_T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> value &gt;  other.value; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a43fd22aa061f6238f8c5c20a80d7aaa9">   47</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a43fd22aa061f6238f8c5c20a80d7aaa9">operator&lt;=</a>(<span class="keyword">const</span> This_T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> value &lt;= other.value; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a67cfabda6868c2af40d549e7253b5240">   48</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a67cfabda6868c2af40d549e7253b5240">operator&gt;=</a>(<span class="keyword">const</span> This_T&amp; other)<span class="keyword">const</span> <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ assert(value != -1); <span class="keywordflow">return</span> value &gt;= other.value; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#addecb8603d37aea08e030f4847aad942">   51</a></span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#addecb8603d37aea08e030f4847aad942">Counter_template</a>(T param)<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a> : value(param){}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html">   54</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html">Cast</a> : <span class="keyword">public</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">Counter_template</a>&lt;U&gt;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html#a6f7261881e360d7e863209cd095b33f7">   55</a></span>&#160;            <span class="keyword">explicit</span> <a class="code" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html#a6f7261881e360d7e863209cd095b33f7">Cast</a>(<span class="keyword">const</span> U&amp; param) :<a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">Counter_template</a>&lt;U&gt;(param){}</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html#a83f036154cdfa12703d67ec8505f0b2b">   57</a></span>&#160;            <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">Counter_template&lt;U&gt;</a> <a class="code" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html#a83f036154cdfa12703d67ec8505f0b2b">Do</a>(<span class="keyword">const</span> U&amp; value)<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">Counter_template&lt;U&gt;</a>(<a class="code" href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html">Cast&lt;U&gt;</a>(value));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        T value;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Child&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">   69</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">Unique_Handle_Bace</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a7b114a3920a35c141c6b85642b524829">   72</a></span>&#160;        <span class="keyword">typedef</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">Unique_Handle_Bace&lt;Child&gt;</a> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a7b114a3920a35c141c6b85642b524829">Bace_T</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//コピー禁止</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a0dd4c737d6ef8f729ea60d8064e704b1">Unique_Handle_Bace</a>(<span class="keyword">const</span> Bace_T&amp;);<span class="comment">// = delete;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">Unique_Handle_Bace</a>&amp; operator=(<span class="keyword">const</span> Bace_T&amp;);<span class="comment">// = delete;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a0dd4c737d6ef8f729ea60d8064e704b1">   78</a></span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a0dd4c737d6ef8f729ea60d8064e704b1">Unique_Handle_Bace</a>()<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            :handle(-1)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//所有権の譲渡</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a22909f0cca0ab65a9736ede25987b771">   83</a></span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a22909f0cca0ab65a9736ede25987b771">Unique_Handle_Bace</a>(Bace_T&amp;&amp; other)<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            : handle(other.handle)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            other.handle = -1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">SetDeleteHandleFlag</a>(handle, &amp;handle);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//所有権の譲渡</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#adebd40c0215eb21896523e73bd9e51bd">   90</a></span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">Unique_Handle_Bace</a>&amp; <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#adebd40c0215eb21896523e73bd9e51bd">operator=</a>(Bace_T&amp;&amp; other)<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) { <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            handle = other.handle;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            other.handle = -1;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">SetDeleteHandleFlag</a>(handle, &amp;handle);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a14d432ecf8a021fe4b9479e48aa6d46a">   99</a></span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a14d432ecf8a021fe4b9479e48aa6d46a">~Unique_Handle_Bace</a>() <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">//リソース解放</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keyword">static_cast&lt;</span>Child*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;Delete();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//間違えて他の種類のハンドルを持たないようにprotectedにしておく</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#abe65e3c86dc2f6bc7294287eeecae4ba">  105</a></span>&#160;        <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#abe65e3c86dc2f6bc7294287eeecae4ba">Unique_Handle_Bace</a>(<span class="keywordtype">int</span> param_handle)<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            : handle(param_handle)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">SetDeleteHandleFlag</a>(handle, &amp;handle);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a439eba342d39fa38e1a713fb6b452cce">  113</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a439eba342d39fa38e1a713fb6b452cce">ReleaseRun</a>()<a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordtype">int</span> temp = <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a392be5a2454fa6a3eccea6de97bd138a">GetHandle</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">SetDeleteHandleFlag</a>(handle, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            handle = -1;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a392be5a2454fa6a3eccea6de97bd138a">  119</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a392be5a2454fa6a3eccea6de97bd138a">GetHandle</a>()const <a class="code" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a>{ <span class="keywordflow">return</span> handle; }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">int</span> handle;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    };</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}<span class="comment">//namespace impl</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}<span class="comment">//namespace DxLibEx</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_ad70985d76a136da133fe029a1f744a2d"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ad70985d76a136da133fe029a1f744a2d">DxLibEx::impl::Counter_template::operator+</a></div><div class="ttdeci">const This_T &amp; operator+() const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00033">DxLibEx_Helper.h:33</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a986ca36e341a924a627ad622e85094e8"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a986ca36e341a924a627ad622e85094e8">DxLibEx::impl::Counter_template::operator+=</a></div><div class="ttdeci">This_T &amp; operator+=(const T &amp;other) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00040">DxLibEx_Helper.h:40</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a43fd22aa061f6238f8c5c20a80d7aaa9"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a43fd22aa061f6238f8c5c20a80d7aaa9">DxLibEx::impl::Counter_template::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const This_T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00047">DxLibEx_Helper.h:47</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a7cfeeb4a5315aeb408f3598ccc185a40"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a7cfeeb4a5315aeb408f3598ccc185a40">DxLibEx::impl::Counter_template::Counter_template</a></div><div class="ttdeci">Counter_template() DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00024">DxLibEx_Helper.h:24</a></div></div>
+<div class="ttc" id="_dx_lib_ex___defines_8h_html"><div class="ttname"><a href="_dx_lib_ex___defines_8h.html">DxLibEx_Defines.h</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_a0dd4c737d6ef8f729ea60d8064e704b1"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a0dd4c737d6ef8f729ea60d8064e704b1">DxLibEx::impl::Unique_Handle_Bace::Unique_Handle_Bace</a></div><div class="ttdeci">Unique_Handle_Bace() DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00078">DxLibEx_Helper.h:78</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_a439eba342d39fa38e1a713fb6b452cce"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a439eba342d39fa38e1a713fb6b452cce">DxLibEx::impl::Unique_Handle_Bace::ReleaseRun</a></div><div class="ttdeci">int ReleaseRun() DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00113">DxLibEx_Helper.h:113</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_a14d432ecf8a021fe4b9479e48aa6d46a"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a14d432ecf8a021fe4b9479e48aa6d46a">DxLibEx::impl::Unique_Handle_Bace::~Unique_Handle_Bace</a></div><div class="ttdeci">~Unique_Handle_Bace() DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00099">DxLibEx_Helper.h:99</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a67cfabda6868c2af40d549e7253b5240"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a67cfabda6868c2af40d549e7253b5240">DxLibEx::impl::Counter_template::operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(const This_T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00048">DxLibEx_Helper.h:48</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_abce354788604b383cd8ac1b2498762f1"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#abce354788604b383cd8ac1b2498762f1">DxLibEx::impl::Counter_template::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(const This_T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00046">DxLibEx_Helper.h:46</a></div></div>
+<div class="ttc" id="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast_html"><div class="ttname"><a href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html">DxLibEx::impl::Counter_template::Cast</a></div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00054">DxLibEx_Helper.h:54</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a755c3bb0022d9f33461049422fc89bc6"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a755c3bb0022d9f33461049422fc89bc6">DxLibEx::impl::Counter_template::count</a></div><div class="ttdeci">const T &amp; count() const DXLIBEX_NOEXCEPT</div><div class="ttdoc">整数型の値を取得する </div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00029">DxLibEx_Helper.h:29</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html">DxLibEx::impl::Counter_template</a></div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00017">DxLibEx_Helper.h:17</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_a392be5a2454fa6a3eccea6de97bd138a"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a392be5a2454fa6a3eccea6de97bd138a">DxLibEx::impl::Unique_Handle_Bace::GetHandle</a></div><div class="ttdeci">int GetHandle() const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00119">DxLibEx_Helper.h:119</a></div></div>
+<div class="ttc" id="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast_html_a83f036154cdfa12703d67ec8505f0b2b"><div class="ttname"><a href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html#a83f036154cdfa12703d67ec8505f0b2b">DxLibEx::impl::Counter_template::Cast::Do</a></div><div class="ttdeci">static Counter_template&lt; U &gt; Do(const U &amp;value) DXLIBEX_NOEXCEPT</div><div class="ttdoc">Counter_template<T>からCounter_template<U>にキャストする </div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00057">DxLibEx_Helper.h:57</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_ab4bc94d11c895e9428021f4a7cac9ca0"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ab4bc94d11c895e9428021f4a7cac9ca0">DxLibEx::impl::Counter_template::operator+</a></div><div class="ttdeci">This_T operator+(const T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00036">DxLibEx_Helper.h:36</a></div></div>
+<div class="ttc" id="_dx_lib_ex___defines_8h_html_a4c85a282ab640a2e24bfa353c3328a1e"><div class="ttname"><a href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></div><div class="ttdeci">#define DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___defines_8h_source.html#l00025">DxLibEx_Defines.h:25</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_a7b114a3920a35c141c6b85642b524829"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a7b114a3920a35c141c6b85642b524829">DxLibEx::impl::Unique_Handle_Bace::Bace_T</a></div><div class="ttdeci">Unique_Handle_Bace&lt; Child &gt; Bace_T</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00072">DxLibEx_Helper.h:72</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a4d1251ae490bb5a53c4f4c3f9e6c7513"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a4d1251ae490bb5a53c4f4c3f9e6c7513">DxLibEx::impl::Counter_template::operator-</a></div><div class="ttdeci">This_T operator-(const T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00037">DxLibEx_Helper.h:37</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">DxLibEx::impl::Unique_Handle_Bace</a></div><div class="ttdoc">実装用 </div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00069">DxLibEx_Helper.h:69</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_ab7b59940cef43a8350ea124c416a81d4"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#ab7b59940cef43a8350ea124c416a81d4">DxLibEx::impl::Counter_template::operator-</a></div><div class="ttdeci">friend This_T operator-(const T &amp;other, const This_T &amp;bace) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00039">DxLibEx_Helper.h:39</a></div></div>
+<div class="ttc" id="namespace_dx_lib_ex_html"><div class="ttname"><a href="namespace_dx_lib_ex.html">DxLibEx</a></div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex_8h_source.html#l00012">DxLibEx.h:12</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a041c4082f202462c96128f59b377d69a"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a041c4082f202462c96128f59b377d69a">DxLibEx::impl::Counter_template::operator-=</a></div><div class="ttdeci">This_T &amp; operator-=(const T &amp;other) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00041">DxLibEx_Helper.h:41</a></div></div>
+<div class="ttc" id="namespace_dx_lib_ex_1_1_dx_handle_html_a04f656fc17439f9b8fbf09e2aaf399d5"><div class="ttname"><a href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">DxLibEx::DxHandle::SetDeleteHandleFlag</a></div><div class="ttdeci">int SetDeleteHandleFlag(int Handle, int *DeleteFlag) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex_8h_source.html#l00218">DxLibEx.h:218</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_abe65e3c86dc2f6bc7294287eeecae4ba"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#abe65e3c86dc2f6bc7294287eeecae4ba">DxLibEx::impl::Unique_Handle_Bace::Unique_Handle_Bace</a></div><div class="ttdeci">Unique_Handle_Bace(int param_handle) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00105">DxLibEx_Helper.h:105</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_adebd40c0215eb21896523e73bd9e51bd"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#adebd40c0215eb21896523e73bd9e51bd">DxLibEx::impl::Unique_Handle_Bace::operator=</a></div><div class="ttdeci">Unique_Handle_Bace &amp; operator=(Bace_T &amp;&amp;other) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00090">DxLibEx_Helper.h:90</a></div></div>
+<div class="ttc" id="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast_html_a6f7261881e360d7e863209cd095b33f7"><div class="ttname"><a href="struct_dx_lib_ex_1_1impl_1_1_counter__template_1_1_cast.html#a6f7261881e360d7e863209cd095b33f7">DxLibEx::impl::Counter_template::Cast::Cast</a></div><div class="ttdeci">Cast(const U &amp;param)</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00055">DxLibEx_Helper.h:55</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace_html_a22909f0cca0ab65a9736ede25987b771"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a22909f0cca0ab65a9736ede25987b771">DxLibEx::impl::Unique_Handle_Bace::Unique_Handle_Bace</a></div><div class="ttdeci">Unique_Handle_Bace(Bace_T &amp;&amp;other) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00083">DxLibEx_Helper.h:83</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a5ed1c4551c3b98d1b305c394e960a028"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a5ed1c4551c3b98d1b305c394e960a028">DxLibEx::impl::Counter_template::operator-</a></div><div class="ttdeci">This_T operator-() const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00034">DxLibEx_Helper.h:34</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_addecb8603d37aea08e030f4847aad942"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#addecb8603d37aea08e030f4847aad942">DxLibEx::impl::Counter_template::Counter_template</a></div><div class="ttdeci">Counter_template(T param) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00051">DxLibEx_Helper.h:51</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a0e5a80be29d2f5a610e223efd3ea76c5"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a0e5a80be29d2f5a610e223efd3ea76c5">DxLibEx::impl::Counter_template::operator+</a></div><div class="ttdeci">friend This_T operator+(const T &amp;other, const This_T &amp;bace) DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00038">DxLibEx_Helper.h:38</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a5996ebd767b1d7bfb7bfa300ba2e4020"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a5996ebd767b1d7bfb7bfa300ba2e4020">DxLibEx::impl::Counter_template::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const This_T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00045">DxLibEx_Helper.h:45</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_a01fdc1ba77dcc2c8dd703fe46b9fc79d"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#a01fdc1ba77dcc2c8dd703fe46b9fc79d">DxLibEx::impl::Counter_template::operator-</a></div><div class="ttdeci">T operator-(const This_T &amp;other) const DXLIBEX_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00043">DxLibEx_Helper.h:43</a></div></div>
+<div class="ttc" id="class_dx_lib_ex_1_1impl_1_1_counter__template_html_abd11213ab5f2c4ca77f446e876d71ad3"><div class="ttname"><a href="class_dx_lib_ex_1_1impl_1_1_counter__template.html#abd11213ab5f2c4ca77f446e876d71ad3">DxLibEx::impl::Counter_template::GetInt</a></div><div class="ttdeci">const T &amp; GetInt() const DXLIBEX_NOEXCEPT</div><div class="ttdoc">整数型の値を取得する </div><div class="ttdef"><b>Definition:</b> <a href="_dx_lib_ex___helper_8h_source.html#l00027">DxLibEx_Helper.h:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_dbb1e9783f12bec01e2d51e89f1c11bd.html">DxLibEx</a></li><li class="navelem"><a class="el" href="_dx_lib_ex___helper_8h.html">DxLibEx_Helper.h</a></li>
+    <li class="footer">2015年10月17日(土) 14時07分50秒作成 - DxLibEx完全詳解 / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx完全詳解: DxLibEx/DxLibEx.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx完全詳解
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_dx_lib_ex_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">DxLibEx.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;DxLib.h&quot;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
+<code>#include &quot;<a class="el" href="_dx_lib_ex___helper_8h_source.html">DxLibEx_Helper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_dx_lib_ex___defines_8h_source.html">DxLibEx_Defines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_dx_lib_ex__impl_8h_source.html">DxLibEx_impl.h</a>&quot;</code><br />
+</div>
+<p><a href="_dx_lib_ex_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1n_dx_lib_sys_1_1_dx_lib_sys.html">DxLibEx::nDxLibSys::DxLibSys</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1n_counter_1_1_counter.html">DxLibEx::nCounter::Counter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1n_counter_1_1_hi_performance_counter.html">DxLibEx::nCounter::HiPerformanceCounter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html">DxLibEx::nMouse::MouseState</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dx_lib_ex_1_1n_mouse_1_1_mouse_input_info.html">DxLibEx::nMouse::MouseInputInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">押されたボタンの情報  <a href="struct_dx_lib_ex_1_1n_mouse_1_1_mouse_input_info.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1n_mouse_1_1_mouse.html">DxLibEx::nMouse::Mouse</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">DxLibEx::Sound::SoundEffect_Unique</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect.html">DxLibEx::Sound::SoundEffect</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespace_dx_lib_ex"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex.html">DxLibEx</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_lib_ex___classes"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_lib_ex___classes.html">DxLibEx::DxLibEx_Classes</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_lib_ex___classes"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxLibExの公開クラスが全て入ったnamespaceです <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1n_dx_lib_sys"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_dx_lib_sys.html">DxLibEx::nDxLibSys</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1n_dx_lib_sys"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxLib_Endのし忘れを防ぎます <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_wait"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_wait.html">DxLibEx::Wait</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_wait"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウエイト系 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1n_counter"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_counter.html">DxLibEx::nCounter</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1n_counter"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetNowCount等の誤用を防ぎます <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_rand"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_rand.html">DxLibEx::DxRand</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_rand"><td class="mdescLeft">&#160;</td><td class="mdescRight">乱数系 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_log"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html">DxLibEx::DxLog</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_log"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログ系 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_async_load"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html">DxLibEx::DxAsyncLoad</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_async_load"><td class="mdescLeft">&#160;</td><td class="mdescRight">非同期読み込み関係 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_handle"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_handle.html">DxLibEx::DxHandle</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドル関係 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1n_mouse"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html">DxLibEx::nMouse</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1n_mouse"><td class="mdescLeft">&#160;</td><td class="mdescRight">XNA互換のマウス入力など <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_touch"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_touch.html">DxLibEx::Touch</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_touch"><td class="mdescLeft">&#160;</td><td class="mdescRight">タッチパネル入力関係 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_memory"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html">DxLibEx::DxMemory</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_memory"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxLibの動的確保系関数をスマートポインタで使う(現在使用不可) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_dx_char"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html">DxLibEx::DxChar</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_dx_char"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字コード関係ユーティリティ <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_network"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_network.html">DxLibEx::Network</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_network"><td class="mdescLeft">&#160;</td><td class="mdescRight">ネットワーク <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_dx_lib_ex_1_1_sound"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_sound.html">DxLibEx::Sound</a></td></tr>
+<tr class="memdesc:namespace_dx_lib_ex_1_1_sound"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンド関係 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ad9b77adb7fe5dbe0da608d7c3e72c2dc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#ad9b77adb7fe5dbe0da608d7c3e72c2dc">DxLibEx::nMouse::ButtonState</a> : bool { <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#ad9b77adb7fe5dbe0da608d7c3e72c2dcaea1e34304a5d8ffa7c9b0ed8ede4ef1a">DxLibEx::nMouse::ButtonState::Released</a> = true, 
+<a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#ad9b77adb7fe5dbe0da608d7c3e72c2dcad78a68f6a85421ae121c2cb5b73a1040">DxLibEx::nMouse::ButtonState::Pressed</a> = false
+ }</td></tr>
+<tr class="memdesc:ad9b77adb7fe5dbe0da608d7c3e72c2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">XNA互換  <a href="namespace_dx_lib_ex_1_1n_mouse.html#ad9b77adb7fe5dbe0da608d7c3e72c2dc">[詳解]</a><br /></td></tr>
+<tr class="separator:ad9b77adb7fe5dbe0da608d7c3e72c2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a9eebb9d62be1b07c7015435ff45c4a96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_wait.html#a9eebb9d62be1b07c7015435ff45c4a96">DxLibEx::Wait::WaitTimer</a> (int WaitTime) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9eebb9d62be1b07c7015435ff45c4a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定の時間だけ処理をとめる  <a href="#a9eebb9d62be1b07c7015435ff45c4a96">[詳解]</a><br /></td></tr>
+<tr class="separator:a9eebb9d62be1b07c7015435ff45c4a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853701998cbf3a5da538fdcb144e335e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_wait.html#a853701998cbf3a5da538fdcb144e335e">DxLibEx::Wait::WaitKey</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a853701998cbf3a5da538fdcb144e335e"><td class="mdescLeft">&#160;</td><td class="mdescRight">キーの入力待ちを行う  <a href="#a853701998cbf3a5da538fdcb144e335e">[詳解]</a><br /></td></tr>
+<tr class="separator:a853701998cbf3a5da538fdcb144e335e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f65cf5f47b00865b5eb092bb8f5ae3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_rand.html#ad7f65cf5f47b00865b5eb092bb8f5ae3">DxLibEx::DxRand::GetRand</a> (int RandMax) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:ad7f65cf5f47b00865b5eb092bb8f5ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a065da1dfc24b6d6425b4ddee2731fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_rand.html#a1a065da1dfc24b6d6425b4ddee2731fa">DxLibEx::DxRand::SRand</a> (int Seed) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1a065da1dfc24b6d6425b4ddee2731fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">乱数の初期値を設定する  <a href="#a1a065da1dfc24b6d6425b4ddee2731fa">[詳解]</a><br /></td></tr>
+<tr class="separator:a1a065da1dfc24b6d6425b4ddee2731fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8df00c788d552ad01b1d88e84102d1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ae8df00c788d552ad01b1d88e84102d1c">DxLibEx::DxLog::ErrorLogAdd</a> (const TCHAR *ErrorStr) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae8df00c788d552ad01b1d88e84102d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に文字列を出力する  <a href="#ae8df00c788d552ad01b1d88e84102d1c">[詳解]</a><br /></td></tr>
+<tr class="separator:ae8df00c788d552ad01b1d88e84102d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2db18b019bfee57411646c0b906f41"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a5e2db18b019bfee57411646c0b906f41"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a5e2db18b019bfee57411646c0b906f41">DxLibEx::DxLog::ErrorLogFmtAdd</a> (const TCHAR *FormatString, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a5e2db18b019bfee57411646c0b906f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">書式付きで ログファイル( Log.txt ) に文字列を出力する( 書式は printf と同じ )  <a href="#a5e2db18b019bfee57411646c0b906f41">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e2db18b019bfee57411646c0b906f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8e1b02ebf9e0de14d0d8dbe0da8a3ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ae8e1b02ebf9e0de14d0d8dbe0da8a3ea">DxLibEx::DxLog::ErrorLogTabAdd</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae8e1b02ebf9e0de14d0d8dbe0da8a3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に出力する文字列の前に付けるタブの数を一つ増やす  <a href="#ae8e1b02ebf9e0de14d0d8dbe0da8a3ea">[詳解]</a><br /></td></tr>
+<tr class="separator:ae8e1b02ebf9e0de14d0d8dbe0da8a3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f04e26e742d08fb1707cc28fa6cc16b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a0f04e26e742d08fb1707cc28fa6cc16b">DxLibEx::DxLog::ErrorLogTabSub</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0f04e26e742d08fb1707cc28fa6cc16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に出力する文字列の前に付けるタブの数を一つ減らす  <a href="#a0f04e26e742d08fb1707cc28fa6cc16b">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f04e26e742d08fb1707cc28fa6cc16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978351de3c7ebc7129624553198e7301"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a978351de3c7ebc7129624553198e7301">DxLibEx::DxLog::SetUseTimeStampFlag</a> (bool UseFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a978351de3c7ebc7129624553198e7301"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に出力する文字列の前に起動してからの時間を付けるかどうかを設定する( TRUE:付ける( デフォルト) FALSE:付けない )  <a href="#a978351de3c7ebc7129624553198e7301">[詳解]</a><br /></td></tr>
+<tr class="separator:a978351de3c7ebc7129624553198e7301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300e50631ad820bf9bd624edd1977af0"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a300e50631ad820bf9bd624edd1977af0"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a300e50631ad820bf9bd624edd1977af0">DxLibEx::DxLog::AppLogAdd</a> (const TCHAR *String, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a300e50631ad820bf9bd624edd1977af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ErrorLogFmtAdd と同じ機能の関数  <a href="#a300e50631ad820bf9bd624edd1977af0">[詳解]</a><br /></td></tr>
+<tr class="separator:a300e50631ad820bf9bd624edd1977af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53048b65cbd6cffe598d83e131f58ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ab53048b65cbd6cffe598d83e131f58ed">DxLibEx::DxLog::SetOutApplicationLogValidFlag</a> (bool Flag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ab53048b65cbd6cffe598d83e131f58ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) を作成するかどうかを設定する( TRUE:作成する( デフォルト ) FALSE:作成しない )、DxLib_Init の前でのみ使用可能　  <a href="#ab53048b65cbd6cffe598d83e131f58ed">[詳解]</a><br /></td></tr>
+<tr class="separator:ab53048b65cbd6cffe598d83e131f58ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5efe0a89980811b31d3e4e60db1cefd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ae5efe0a89980811b31d3e4e60db1cefd">DxLibEx::DxLog::SetApplicationLogSaveDirectory</a> (const TCHAR *DirectoryPath) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae5efe0a89980811b31d3e4e60db1cefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) を保存するディレクトリパスを設定する  <a href="#ae5efe0a89980811b31d3e4e60db1cefd">[詳解]</a><br /></td></tr>
+<tr class="separator:ae5efe0a89980811b31d3e4e60db1cefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8032b4a497453f6cf85168dbc2ac0a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ad8032b4a497453f6cf85168dbc2ac0a8">DxLibEx::DxLog::SetUseDateNameLogFile</a> (bool Flag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad8032b4a497453f6cf85168dbc2ac0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル名に日付をつけるかどうかをセットする( TRUE:付ける FALSE:付けない( デフォルト ) )  <a href="#ad8032b4a497453f6cf85168dbc2ac0a8">[詳解]</a><br /></td></tr>
+<tr class="separator:ad8032b4a497453f6cf85168dbc2ac0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b29de35be437c42dc9ffa2aa48efda1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a6b29de35be437c42dc9ffa2aa48efda1">DxLibEx::DxLog::SetLogDrawOutFlag</a> (bool DrawFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a6b29de35be437c42dc9ffa2aa48efda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果を画面に出力するかどうかを設定する、TRUE:出力を行う FALSE:出力を行わない( printfDx を実行すると内部で SetLogDrawOutFlag( TRUE ) ; が呼ばれます )  <a href="#a6b29de35be437c42dc9ffa2aa48efda1">[詳解]</a><br /></td></tr>
+<tr class="separator:a6b29de35be437c42dc9ffa2aa48efda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9248bd9274326a1ede282a0d9e436f1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a9248bd9274326a1ede282a0d9e436f1c">DxLibEx::DxLog::GetLogDrawFlag</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9248bd9274326a1ede282a0d9e436f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果を画面に出力するかどうかの設定を取得する( 戻り値 TRUE:出力を行う FALSE:出力を行わない )  <a href="#a9248bd9274326a1ede282a0d9e436f1c">[詳解]</a><br /></td></tr>
+<tr class="separator:a9248bd9274326a1ede282a0d9e436f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f61f214c94ee92e6099718d5bbac89"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ad2f61f214c94ee92e6099718d5bbac89">DxLibEx::DxLog::SetLogFontSize</a> (int Size) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad2f61f214c94ee92e6099718d5bbac89"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果を画面に出力する際に使用するフォントのサイズを設定する  <a href="#ad2f61f214c94ee92e6099718d5bbac89">[詳解]</a><br /></td></tr>
+<tr class="separator:ad2f61f214c94ee92e6099718d5bbac89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58e4af474d5abc4ad4f3ffc586e9890"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ad58e4af474d5abc4ad4f3ffc586e9890"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ad58e4af474d5abc4ad4f3ffc586e9890">DxLibEx::DxLog::printfDx</a> (const TCHAR *FormatString, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ad58e4af474d5abc4ad4f3ffc586e9890"><td class="mdescLeft">&#160;</td><td class="mdescRight">printf と同じ引数で画面に文字列を表示するための関数  <a href="#ad58e4af474d5abc4ad4f3ffc586e9890">[詳解]</a><br /></td></tr>
+<tr class="separator:ad58e4af474d5abc4ad4f3ffc586e9890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d8ac679902192a6ac02350d528cfd4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#aa2d8ac679902192a6ac02350d528cfd4">DxLibEx::DxLog::clsDx</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa2d8ac679902192a6ac02350d528cfd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果をリセットするための関数  <a href="#aa2d8ac679902192a6ac02350d528cfd4">[詳解]</a><br /></td></tr>
+<tr class="separator:aa2d8ac679902192a6ac02350d528cfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ad32f78d6a629e897efaa26bcd5622"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#a67ad32f78d6a629e897efaa26bcd5622">DxLibEx::DxAsyncLoad::SetUseASyncLoadFlag</a> (bool Flag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a67ad32f78d6a629e897efaa26bcd5622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701be2c2fcda83bc2990e0fee63f078a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#a701be2c2fcda83bc2990e0fee63f078a">DxLibEx::DxAsyncLoad::CheckHandleASyncLoad</a> (int Handle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a701be2c2fcda83bc2990e0fee63f078a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f636b5fdd3cf21bb2ebf8d3ca02b1b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#a0f636b5fdd3cf21bb2ebf8d3ca02b1b5">DxLibEx::DxAsyncLoad::GetHandleASyncLoadResult</a> (int Handle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0f636b5fdd3cf21bb2ebf8d3ca02b1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドルの非同期読み込み処理の戻り値を取得する( 非同期読み込み中の場合は一つ前の非同期読み込み処理の戻り値が返ってきます )  <a href="#a0f636b5fdd3cf21bb2ebf8d3ca02b1b5">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f636b5fdd3cf21bb2ebf8d3ca02b1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ca69f7425fb3fd164de7604be5b69b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#ad6ca69f7425fb3fd164de7604be5b69b">DxLibEx::DxAsyncLoad::GetASyncLoadNum</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad6ca69f7425fb3fd164de7604be5b69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">非同期読み込み中の処理の数を取得する  <a href="#ad6ca69f7425fb3fd164de7604be5b69b">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6ca69f7425fb3fd164de7604be5b69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f656fc17439f9b8fbf09e2aaf399d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">DxLibEx::DxHandle::SetDeleteHandleFlag</a> (int Handle, int *DeleteFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a04f656fc17439f9b8fbf09e2aaf399d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7b9064cfc0713880237381b5c5e266"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#aab7b9064cfc0713880237381b5c5e266">DxLibEx::nMouse::SetMouseDispFlag</a> (bool DispFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:aab7b9064cfc0713880237381b5c5e266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b947cba25b2b0cf523a1ad3ac3daee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#aa0b947cba25b2b0cf523a1ad3ac3daee">DxLibEx::nMouse::GetMousePoint</a> (int *XBuf, int *YBuf) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa0b947cba25b2b0cf523a1ad3ac3daee"><td class="mdescLeft">&#160;</td><td class="mdescRight">マウスポインタの位置を取得する  <a href="#aa0b947cba25b2b0cf523a1ad3ac3daee">[詳解]</a><br /></td></tr>
+<tr class="separator:aa0b947cba25b2b0cf523a1ad3ac3daee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d13a730512d301af468f01333dce35c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a5d13a730512d301af468f01333dce35c">DxLibEx::nMouse::SetMousePoint</a> (int PointX, int PointY) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a5d13a730512d301af468f01333dce35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">マウスポインタの位置を設定する  <a href="#a5d13a730512d301af468f01333dce35c">[詳解]</a><br /></td></tr>
+<tr class="separator:a5d13a730512d301af468f01333dce35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38af22872b52288ae4964154040a3faa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a38af22872b52288ae4964154040a3faa">DxLibEx::nMouse::GetMouseInput</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a38af22872b52288ae4964154040a3faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">マウスのボタンの押下状態を取得する  <a href="#a38af22872b52288ae4964154040a3faa">[詳解]</a><br /></td></tr>
+<tr class="separator:a38af22872b52288ae4964154040a3faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab818e5d6abb28e81f80fd8f34ca87919"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#ab818e5d6abb28e81f80fd8f34ca87919">DxLibEx::nMouse::GetMouseWheelRotVol</a> (bool CounterReset=true) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ab818e5d6abb28e81f80fd8f34ca87919"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直マウスホイールの回転量を取得する  <a href="#ab818e5d6abb28e81f80fd8f34ca87919">[詳解]</a><br /></td></tr>
+<tr class="separator:ab818e5d6abb28e81f80fd8f34ca87919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66054bd883f9253cb9c7edb4478693fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a66054bd883f9253cb9c7edb4478693fa">DxLibEx::nMouse::GetMouseHWheelRotVol</a> (bool CounterReset=true) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a66054bd883f9253cb9c7edb4478693fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">水平マウスホイールの回転量を取得する  <a href="#a66054bd883f9253cb9c7edb4478693fa">[詳解]</a><br /></td></tr>
+<tr class="separator:a66054bd883f9253cb9c7edb4478693fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433c0f55d2bb348badc7f0a4a69d577d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a433c0f55d2bb348badc7f0a4a69d577d">DxLibEx::nMouse::GetMouseWheelRotVolF</a> (bool CounterReset=true) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a433c0f55d2bb348badc7f0a4a69d577d"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直マウスホイールの回転量を取得する( 戻り値が float 型 )  <a href="#a433c0f55d2bb348badc7f0a4a69d577d">[詳解]</a><br /></td></tr>
+<tr class="separator:a433c0f55d2bb348badc7f0a4a69d577d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0dfffcaae3004526fc35d99ff712b91"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#af0dfffcaae3004526fc35d99ff712b91">DxLibEx::nMouse::GetMouseHWheelRotVolF</a> (int CounterReset=true) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:af0dfffcaae3004526fc35d99ff712b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">水平マウスホイールの回転量を取得する( 戻り値が float 型 )  <a href="#af0dfffcaae3004526fc35d99ff712b91">[詳解]</a><br /></td></tr>
+<tr class="separator:af0dfffcaae3004526fc35d99ff712b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646573455a99227d06dc4936e29a2a19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a646573455a99227d06dc4936e29a2a19">DxLibEx::nMouse::GetMouseInputLog</a> (int *Button, int *ClickX, int *ClickY, bool LogDelete=true) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a646573455a99227d06dc4936e29a2a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6055eac037f506d6a3460dc8eef54cfa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_touch.html#a6055eac037f506d6a3460dc8eef54cfa">DxLibEx::Touch::GetTouchInputNum</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a6055eac037f506d6a3460dc8eef54cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">タッチされている数を取得する  <a href="#a6055eac037f506d6a3460dc8eef54cfa">[詳解]</a><br /></td></tr>
+<tr class="separator:a6055eac037f506d6a3460dc8eef54cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d8dec3f3604398730837130a53600a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_touch.html#af7d8dec3f3604398730837130a53600a">DxLibEx::Touch::GetTouchInput</a> (int InputNo, int *PositionX, int *PositionY, int *ID=NULL, int *Device=NULL) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:af7d8dec3f3604398730837130a53600a"><td class="mdescLeft">&#160;</td><td class="mdescRight">タッチの情報を取得する  <a href="#af7d8dec3f3604398730837130a53600a">[詳解]</a><br /></td></tr>
+<tr class="separator:af7d8dec3f3604398730837130a53600a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5c6980fbe5e17a4bc17f7287817231"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_touch.html#acf5c6980fbe5e17a4bc17f7287817231">DxLibEx::Touch::GetTouchInputLogNum</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:acf5c6980fbe5e17a4bc17f7287817231"><td class="mdescLeft">&#160;</td><td class="mdescRight">ストックされているタッチ情報の数を取得する  <a href="#acf5c6980fbe5e17a4bc17f7287817231">[詳解]</a><br /></td></tr>
+<tr class="separator:acf5c6980fbe5e17a4bc17f7287817231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01a86e578571cb2b5cb41d0116a242a9"><td class="memItemLeft" align="right" valign="top">TOUCHINPUTDATA&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_touch.html#a01a86e578571cb2b5cb41d0116a242a9">DxLibEx::Touch::GetTouchInputLogOne</a> (int PeekFlag=FALSE) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a01a86e578571cb2b5cb41d0116a242a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">ストックされているタッチ情報から一番古い情報をひとつ取得する  <a href="#a01a86e578571cb2b5cb41d0116a242a9">[詳解]</a><br /></td></tr>
+<tr class="separator:a01a86e578571cb2b5cb41d0116a242a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9e1ae7ba54909c63a791a4d93b2d9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_touch.html#abf9e1ae7ba54909c63a791a4d93b2d9a">DxLibEx::Touch::GetTouchInputLog</a> (TOUCHINPUTDATA *TouchData, int GetNum, int PeekFlag=FALSE) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:abf9e1ae7ba54909c63a791a4d93b2d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ストックされているタッチ情報から古い順に指定数バッファに取得する( 戻り値 -1:エラー 0以上:取得した情報の数 )  <a href="#abf9e1ae7ba54909c63a791a4d93b2d9a">[詳解]</a><br /></td></tr>
+<tr class="separator:abf9e1ae7ba54909c63a791a4d93b2d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaafaa2cff331eb96b96d4d36e06909d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#acaafaa2cff331eb96b96d4d36e06909d">DxLibEx::DxMemory::DxAlloc</a> (size_t AllocSize, const char *File=NULL, int Line=-1) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:acaafaa2cff331eb96b96d4d36e06909d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f13b821b4b3169a63ef88baa63e77a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#aa1f13b821b4b3169a63ef88baa63e77a">DxLibEx::DxMemory::DxCalloc</a> (size_t AllocSize, const char *File=NULL, int Line=-1) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa1f13b821b4b3169a63ef88baa63e77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のサイズのメモリを確保して、０で埋める、初期化後に０で埋める以外は DxAlloc と動作は同じ  <a href="#aa1f13b821b4b3169a63ef88baa63e77a">[詳解]</a><br /></td></tr>
+<tr class="separator:aa1f13b821b4b3169a63ef88baa63e77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3517835899f16ff9a3753fc5ddb455"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a3e3517835899f16ff9a3753fc5ddb455">DxLibEx::DxMemory::DxRealloc</a> (void *Memory, size_t AllocSize, const char *File=NULL, int Line=-1) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a3e3517835899f16ff9a3753fc5ddb455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a727e33e3b0e5037eb1859749ea43dc6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a727e33e3b0e5037eb1859749ea43dc6a">DxLibEx::DxMemory::DxFree</a> (void *Memory) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a727e33e3b0e5037eb1859749ea43dc6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb564e2d7334a6438fba5d5a6a9aa31f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#acb564e2d7334a6438fba5d5a6a9aa31f">DxLibEx::DxMemory::DxSetAllocSizeTrap</a> (size_t Size) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:acb564e2d7334a6438fba5d5a6a9aa31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">列挙対象にするメモリの確保容量をセットする  <a href="#acb564e2d7334a6438fba5d5a6a9aa31f">[詳解]</a><br /></td></tr>
+<tr class="separator:acb564e2d7334a6438fba5d5a6a9aa31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63fa1410aa1160c182c4f2df44ea6956"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a63fa1410aa1160c182c4f2df44ea6956">DxLibEx::DxMemory::DxSetAllocPrintFlag</a> (int Flag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a63fa1410aa1160c182c4f2df44ea6956"><td class="mdescLeft">&#160;</td><td class="mdescRight">ＤＸライブラリ内でメモリ確保が行われる時に情報を出力するかどうかをセットする  <a href="#a63fa1410aa1160c182c4f2df44ea6956">[詳解]</a><br /></td></tr>
+<tr class="separator:a63fa1410aa1160c182c4f2df44ea6956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5dd20d87233b757c6294a240441ba5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#afd5dd20d87233b757c6294a240441ba5">DxLibEx::DxMemory::DxGetAllocSize</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:afd5dd20d87233b757c6294a240441ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxAlloc や DxCalloc で確保しているメモリサイズを取得する  <a href="#afd5dd20d87233b757c6294a240441ba5">[詳解]</a><br /></td></tr>
+<tr class="separator:afd5dd20d87233b757c6294a240441ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68311430ebd334368a5e480e8177e6f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a68311430ebd334368a5e480e8177e6f1">DxLibEx::DxMemory::DxGetAllocNum</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a68311430ebd334368a5e480e8177e6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxAlloc や DxCalloc で確保しているメモリの数を取得する  <a href="#a68311430ebd334368a5e480e8177e6f1">[詳解]</a><br /></td></tr>
+<tr class="separator:a68311430ebd334368a5e480e8177e6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530784a183c10e3f42be67ddd10a5dfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a530784a183c10e3f42be67ddd10a5dfc">DxLibEx::DxMemory::DxDumpAlloc</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a530784a183c10e3f42be67ddd10a5dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxAlloc や DxCalloc で確保しているメモリを列挙する  <a href="#a530784a183c10e3f42be67ddd10a5dfc">[詳解]</a><br /></td></tr>
+<tr class="separator:a530784a183c10e3f42be67ddd10a5dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa685cec711273f2a9f0519a155496e72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#aa685cec711273f2a9f0519a155496e72">DxLibEx::DxMemory::DxDrawAlloc</a> (int x, int y, int Width, int Height) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa685cec711273f2a9f0519a155496e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">DxAlloc や DxCalloc で確保しているメモリの状況を描画する  <a href="#aa685cec711273f2a9f0519a155496e72">[詳解]</a><br /></td></tr>
+<tr class="separator:aa685cec711273f2a9f0519a155496e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d6f21ee814befb85003960a8dbeab6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a75d6f21ee814befb85003960a8dbeab6">DxLibEx::DxMemory::DxErrorCheckAlloc</a> (void) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a75d6f21ee814befb85003960a8dbeab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">確保したメモリ情報が破壊されていないか調べる( -1:破壊あり 0:なし )  <a href="#a75d6f21ee814befb85003960a8dbeab6">[詳解]</a><br /></td></tr>
+<tr class="separator:a75d6f21ee814befb85003960a8dbeab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3256d578f2c3fd00d770383d7e7f7ccf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a3256d578f2c3fd00d770383d7e7f7ccf">DxLibEx::DxMemory::DxSetAllocSizeOutFlag</a> (int Flag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a3256d578f2c3fd00d770383d7e7f7ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリが確保、解放が行われる度に確保しているメモリの容量を出力するかどうかのフラグをセットする  <a href="#a3256d578f2c3fd00d770383d7e7f7ccf">[詳解]</a><br /></td></tr>
+<tr class="separator:a3256d578f2c3fd00d770383d7e7f7ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0abdfb35dee31096bfc904eb6310b5af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_memory.html#a0abdfb35dee31096bfc904eb6310b5af">DxLibEx::DxMemory::DxSetAllocMemoryErrorCheckFlag</a> (int Flag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0abdfb35dee31096bfc904eb6310b5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリの確保、解放が行われる度に確保しているメモリ確保情報が破損していないか調べるかどうかのフラグをセットする  <a href="#a0abdfb35dee31096bfc904eb6310b5af">[詳解]</a><br /></td></tr>
+<tr class="separator:a0abdfb35dee31096bfc904eb6310b5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf3985e10c7358975103021a174026eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aaf3985e10c7358975103021a174026eb">DxLibEx::DxChar::ConvertStringCharCodeFormat</a> (int SrcCharCodeFormat, const void *SrcString, int DestCharCodeFormat, void *DestStringBuffer) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:aaf3985e10c7358975103021a174026eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a388caca7c1283dab4d3fd5ed88366735"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a388caca7c1283dab4d3fd5ed88366735">DxLibEx::DxChar::SetUseCharCodeFormat</a> (int CharCodeFormat) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a388caca7c1283dab4d3fd5ed88366735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0714c0d5cc80872f87e9dd7eb119b216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a0714c0d5cc80872f87e9dd7eb119b216">DxLibEx::DxChar::strcpyDx</a> (TCHAR *Dest, const TCHAR *Src) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0714c0d5cc80872f87e9dd7eb119b216"><td class="mdescLeft">&#160;</td><td class="mdescRight">strcpy と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a0714c0d5cc80872f87e9dd7eb119b216">[詳解]</a><br /></td></tr>
+<tr class="separator:a0714c0d5cc80872f87e9dd7eb119b216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5164852a43b43a48accea07fb2f0d60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ad5164852a43b43a48accea07fb2f0d60">DxLibEx::DxChar::strpcpyDx</a> (TCHAR *Dest, const TCHAR *Src, int Pos) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad5164852a43b43a48accea07fb2f0d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置指定付き strcpy、Pos はコピー開始位置　( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ad5164852a43b43a48accea07fb2f0d60">[詳解]</a><br /></td></tr>
+<tr class="separator:ad5164852a43b43a48accea07fb2f0d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ea50f60a2f0fb8dfa52b39a405f545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a52ea50f60a2f0fb8dfa52b39a405f545">DxLibEx::DxChar::strpcpy2Dx</a> (TCHAR *Dest, const TCHAR *Src, int Pos) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a52ea50f60a2f0fb8dfa52b39a405f545"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置指定付き strcpy、Pos はコピー開始位置( 全角文字も 1 扱い )　( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a52ea50f60a2f0fb8dfa52b39a405f545">[詳解]</a><br /></td></tr>
+<tr class="separator:a52ea50f60a2f0fb8dfa52b39a405f545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d56e2c13b967cd76795aeea67881cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a49d56e2c13b967cd76795aeea67881cc">DxLibEx::DxChar::strncpyDx</a> (TCHAR *Dest, const TCHAR *Src, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a49d56e2c13b967cd76795aeea67881cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncpy と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a49d56e2c13b967cd76795aeea67881cc">[詳解]</a><br /></td></tr>
+<tr class="separator:a49d56e2c13b967cd76795aeea67881cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08013f5b50d5d59f83fc2d67d6f52c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa08013f5b50d5d59f83fc2d67d6f52c8">DxLibEx::DxChar::strncpy2Dx</a> (TCHAR *Dest, const TCHAR *Src, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa08013f5b50d5d59f83fc2d67d6f52c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncpy の Num が文字数( 全角文字も 1 扱い )になったもの、終端に必ずヌル文字が代入される( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#aa08013f5b50d5d59f83fc2d67d6f52c8">[詳解]</a><br /></td></tr>
+<tr class="separator:aa08013f5b50d5d59f83fc2d67d6f52c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92ce706567ca45da322d88190484bf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa92ce706567ca45da322d88190484bf7">DxLibEx::DxChar::strrncpyDx</a> (TCHAR *Dest, const TCHAR *Src, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa92ce706567ca45da322d88190484bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncpy の文字列の終端からの文字数指定版( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#aa92ce706567ca45da322d88190484bf7">[詳解]</a><br /></td></tr>
+<tr class="separator:aa92ce706567ca45da322d88190484bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b6df0270f29b6acd5a4e6eecf7c93f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a36b6df0270f29b6acd5a4e6eecf7c93f">DxLibEx::DxChar::strrncpy2Dx</a> (TCHAR *Dest, const TCHAR *Src, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a36b6df0270f29b6acd5a4e6eecf7c93f"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncpy の文字列の終端からの文字数( 全角文字も 1 扱い )指定版、終端に必ずヌル文字が代入される( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a36b6df0270f29b6acd5a4e6eecf7c93f">[詳解]</a><br /></td></tr>
+<tr class="separator:a36b6df0270f29b6acd5a4e6eecf7c93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e23da884e5641c8fe86dfae54382b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa3e23da884e5641c8fe86dfae54382b1">DxLibEx::DxChar::strpncpyDx</a> (TCHAR *Dest, const TCHAR *Src, int Pos, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa3e23da884e5641c8fe86dfae54382b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncpy のコピー開始位置指定版、Pos はコピー開始位置、Num は文字数( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#aa3e23da884e5641c8fe86dfae54382b1">[詳解]</a><br /></td></tr>
+<tr class="separator:aa3e23da884e5641c8fe86dfae54382b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4263c95a64c38bffdf56723b0dd778ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a4263c95a64c38bffdf56723b0dd778ad">DxLibEx::DxChar::strpncpy2Dx</a> (TCHAR *Dest, const TCHAR *Src, int Pos, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a4263c95a64c38bffdf56723b0dd778ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncpy のコピー開始位置指定版、Pos はコピー開始位置( 全角文字も 1 扱い )、Num は文字数( 全角文字も 1 扱い )、終端に必ずヌル文字が代入される( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a4263c95a64c38bffdf56723b0dd778ad">[詳解]</a><br /></td></tr>
+<tr class="separator:a4263c95a64c38bffdf56723b0dd778ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab020098ec4acecfafa021e7981c5d6dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ab020098ec4acecfafa021e7981c5d6dd">DxLibEx::DxChar::strcatDx</a> (TCHAR *Dest, const TCHAR *Src) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ab020098ec4acecfafa021e7981c5d6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">strcat と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ab020098ec4acecfafa021e7981c5d6dd">[詳解]</a><br /></td></tr>
+<tr class="separator:ab020098ec4acecfafa021e7981c5d6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a352e8519b38b18895ae9a1c30d50a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae0a352e8519b38b18895ae9a1c30d50a">DxLibEx::DxChar::strlenDx</a> (const TCHAR *Str) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae0a352e8519b38b18895ae9a1c30d50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">strlen と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ae0a352e8519b38b18895ae9a1c30d50a">[詳解]</a><br /></td></tr>
+<tr class="separator:ae0a352e8519b38b18895ae9a1c30d50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ab25ef4b1be64169e321b4c029b23d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a30ab25ef4b1be64169e321b4c029b23d">DxLibEx::DxChar::strlen2Dx</a> (const TCHAR *Str) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a30ab25ef4b1be64169e321b4c029b23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">strlen の戻り値が文字数( 全角文字も 1 扱い )になったもの( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a30ab25ef4b1be64169e321b4c029b23d">[詳解]</a><br /></td></tr>
+<tr class="separator:a30ab25ef4b1be64169e321b4c029b23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b4cbcf18e2e4bba4b59632be521ef6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a71b4cbcf18e2e4bba4b59632be521ef6">DxLibEx::DxChar::strcmpDx</a> (const TCHAR *Str1, const TCHAR *Str2) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a71b4cbcf18e2e4bba4b59632be521ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">strcmp と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a71b4cbcf18e2e4bba4b59632be521ef6">[詳解]</a><br /></td></tr>
+<tr class="separator:a71b4cbcf18e2e4bba4b59632be521ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d383b37b4a4d83ddb63afb34e4a4b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a32d383b37b4a4d83ddb63afb34e4a4b7">DxLibEx::DxChar::stricmpDx</a> (const TCHAR *Str1, const TCHAR *Str2) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a32d383b37b4a4d83ddb63afb34e4a4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">stricmp と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a32d383b37b4a4d83ddb63afb34e4a4b7">[詳解]</a><br /></td></tr>
+<tr class="separator:a32d383b37b4a4d83ddb63afb34e4a4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35eda547e3362ecd2722be6df680330"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa35eda547e3362ecd2722be6df680330">DxLibEx::DxChar::strncmpDx</a> (const TCHAR *Str1, const TCHAR *Str2, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa35eda547e3362ecd2722be6df680330"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncmp と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#aa35eda547e3362ecd2722be6df680330">[詳解]</a><br /></td></tr>
+<tr class="separator:aa35eda547e3362ecd2722be6df680330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aac338f0246e9b231fc78225370c338"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a5aac338f0246e9b231fc78225370c338">DxLibEx::DxChar::strncmp2Dx</a> (const TCHAR *Str1, const TCHAR *Str2, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a5aac338f0246e9b231fc78225370c338"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncmp の Num が文字数( 全角文字も 1 扱い )になったもの( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a5aac338f0246e9b231fc78225370c338">[詳解]</a><br /></td></tr>
+<tr class="separator:a5aac338f0246e9b231fc78225370c338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fd0276c53b84dccabd34b1cb4b4f32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae5fd0276c53b84dccabd34b1cb4b4f32">DxLibEx::DxChar::strpncmpDx</a> (const TCHAR *Str1, const TCHAR *Str2, int Pos, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae5fd0276c53b84dccabd34b1cb4b4f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncmp の比較開始位置指定版、Pos が Str1 の比較開始位置、Num が文字数( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ae5fd0276c53b84dccabd34b1cb4b4f32">[詳解]</a><br /></td></tr>
+<tr class="separator:ae5fd0276c53b84dccabd34b1cb4b4f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544952b49600bfaa8acf9dab81cdd1f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a544952b49600bfaa8acf9dab81cdd1f1">DxLibEx::DxChar::strpncmp2Dx</a> (const TCHAR *Str1, const TCHAR *Str2, int Pos, int Num) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a544952b49600bfaa8acf9dab81cdd1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">strncmp の比較開始位置指定版、Pos が Str1 の比較開始位置( 全角文字も 1 扱い )、Num が文字数( 全角文字も 1 扱い )( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a544952b49600bfaa8acf9dab81cdd1f1">[詳解]</a><br /></td></tr>
+<tr class="separator:a544952b49600bfaa8acf9dab81cdd1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30179a1021002ae25db113413325989"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae30179a1021002ae25db113413325989">DxLibEx::DxChar::strgetchrDx</a> (const TCHAR *Str, int Pos, int *CharNums=NULL) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae30179a1021002ae25db113413325989"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の指定の位置の文字コードを取得する、Pos は取得する位置、CharNums は文字数を代入する変数のアドレス、戻り値は文字コード( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ae30179a1021002ae25db113413325989">[詳解]</a><br /></td></tr>
+<tr class="separator:ae30179a1021002ae25db113413325989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01350ef69a2acb4a6384ea9347be6175"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a01350ef69a2acb4a6384ea9347be6175">DxLibEx::DxChar::strgetchr2Dx</a> (const TCHAR *Str, int Pos, int *CharNums=NULL) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a01350ef69a2acb4a6384ea9347be6175"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の指定の位置の文字コードを取得する、Pos は取得する位置( 全角文字も 1 扱い )、CharNums は文字数を代入する変数のアドレス、戻り値は文字コード( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a01350ef69a2acb4a6384ea9347be6175">[詳解]</a><br /></td></tr>
+<tr class="separator:a01350ef69a2acb4a6384ea9347be6175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c5d1649f39b47277f396a960de3d84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a61c5d1649f39b47277f396a960de3d84">DxLibEx::DxChar::strputchrDx</a> (TCHAR *Str, int Pos, DWORD CharCode) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a61c5d1649f39b47277f396a960de3d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の指定の位置に文字コードを書き込む、Pos は書き込む位置、CharCode は文字コード、戻り値は書き込んだ文字数( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a61c5d1649f39b47277f396a960de3d84">[詳解]</a><br /></td></tr>
+<tr class="separator:a61c5d1649f39b47277f396a960de3d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97cf575acdff82108a48b08187bcb963"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a97cf575acdff82108a48b08187bcb963">DxLibEx::DxChar::strputchr2Dx</a> (TCHAR *Str, int Pos, DWORD CharCode) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a97cf575acdff82108a48b08187bcb963"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の指定の位置に文字コードを書き込む、Pos は書き込む位置( 全角文字も 1 扱い )、CharCode は文字コード、戻り値は書き込んだ文字数( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a97cf575acdff82108a48b08187bcb963">[詳解]</a><br /></td></tr>
+<tr class="separator:a97cf575acdff82108a48b08187bcb963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae96699765f4809600a8cdb6dda5d37"><td class="memItemLeft" align="right" valign="top">const TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#abae96699765f4809600a8cdb6dda5d37">DxLibEx::DxChar::strposDx</a> (const TCHAR *Str, int Pos) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:abae96699765f4809600a8cdb6dda5d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の指定の位置のアドレスを取得する、Pos は取得する位置　( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#abae96699765f4809600a8cdb6dda5d37">[詳解]</a><br /></td></tr>
+<tr class="separator:abae96699765f4809600a8cdb6dda5d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26734490339f634ec237e17e768ed26"><td class="memItemLeft" align="right" valign="top">const TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae26734490339f634ec237e17e768ed26">DxLibEx::DxChar::strpos2Dx</a> (const TCHAR *Str, int Pos) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae26734490339f634ec237e17e768ed26"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の指定の位置のアドレスを取得する、Pos は取得する位置( 全角文字も 1 扱い )　( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ae26734490339f634ec237e17e768ed26">[詳解]</a><br /></td></tr>
+<tr class="separator:ae26734490339f634ec237e17e768ed26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad671839f986f0188aea87cc9faeedf4"><td class="memItemLeft" align="right" valign="top">const TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aad671839f986f0188aea87cc9faeedf4">DxLibEx::DxChar::strstrDx</a> (const TCHAR *Str1, const TCHAR *Str2) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aad671839f986f0188aea87cc9faeedf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">strstr と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#aad671839f986f0188aea87cc9faeedf4">[詳解]</a><br /></td></tr>
+<tr class="separator:aad671839f986f0188aea87cc9faeedf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0254f94cf63595480ecebb03f02974"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#afd0254f94cf63595480ecebb03f02974">DxLibEx::DxChar::strstr2Dx</a> (const TCHAR *Str1, const TCHAR *Str2) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:afd0254f94cf63595480ecebb03f02974"><td class="mdescLeft">&#160;</td><td class="mdescRight">strstr の戻り値が文字列先頭からの文字数( 全角文字も 1 扱い ) になったもの( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#afd0254f94cf63595480ecebb03f02974">[詳解]</a><br /></td></tr>
+<tr class="separator:afd0254f94cf63595480ecebb03f02974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289a4d74e6e9265b73c12c6a876f12b4"><td class="memItemLeft" align="right" valign="top">const TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a289a4d74e6e9265b73c12c6a876f12b4">DxLibEx::DxChar::strrstrDx</a> (const TCHAR *Str1, const TCHAR *Str2) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a289a4d74e6e9265b73c12c6a876f12b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">strrstr と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a289a4d74e6e9265b73c12c6a876f12b4">[詳解]</a><br /></td></tr>
+<tr class="separator:a289a4d74e6e9265b73c12c6a876f12b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab530b7105a850d0418c2a82a042f9eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aab530b7105a850d0418c2a82a042f9eb">DxLibEx::DxChar::strrstr2Dx</a> (const TCHAR *Str1, const TCHAR *Str2) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aab530b7105a850d0418c2a82a042f9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">strrstr の戻り値が文字列先頭からの文字数( 全角文字も 1 扱い ) になったもの( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#aab530b7105a850d0418c2a82a042f9eb">[詳解]</a><br /></td></tr>
+<tr class="separator:aab530b7105a850d0418c2a82a042f9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1a0c4d512d865bc0c151c8d5c7bc56"><td class="memItemLeft" align="right" valign="top">const TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a3f1a0c4d512d865bc0c151c8d5c7bc56">DxLibEx::DxChar::strchrDx</a> (const TCHAR *Str, DWORD CharCode) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a3f1a0c4d512d865bc0c151c8d5c7bc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">strchr と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a3f1a0c4d512d865bc0c151c8d5c7bc56">[詳解]</a><br /></td></tr>
+<tr class="separator:a3f1a0c4d512d865bc0c151c8d5c7bc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74092c9070cb2092b50d6bdc049ea1da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a74092c9070cb2092b50d6bdc049ea1da">DxLibEx::DxChar::strchr2Dx</a> (const TCHAR *Str, DWORD CharCode) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a74092c9070cb2092b50d6bdc049ea1da"><td class="mdescLeft">&#160;</td><td class="mdescRight">strchr の戻り値が文字列先頭からの文字数( 全角文字も 1 扱い ) になったもの( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a74092c9070cb2092b50d6bdc049ea1da">[詳解]</a><br /></td></tr>
+<tr class="separator:a74092c9070cb2092b50d6bdc049ea1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6e78cb019d63efe7de110946a683fb"><td class="memItemLeft" align="right" valign="top">const TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#adf6e78cb019d63efe7de110946a683fb">DxLibEx::DxChar::strrchrDx</a> (const TCHAR *Str, DWORD CharCode) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:adf6e78cb019d63efe7de110946a683fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">strrchr と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#adf6e78cb019d63efe7de110946a683fb">[詳解]</a><br /></td></tr>
+<tr class="separator:adf6e78cb019d63efe7de110946a683fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bf0988486ddd7618937f24422967f20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a3bf0988486ddd7618937f24422967f20">DxLibEx::DxChar::strrchr2Dx</a> (const TCHAR *Str, DWORD CharCode) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a3bf0988486ddd7618937f24422967f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">strrchr の戻り値が文字列先頭からの文字数( 全角文字も 1 扱い ) になったもの( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a3bf0988486ddd7618937f24422967f20">[詳解]</a><br /></td></tr>
+<tr class="separator:a3bf0988486ddd7618937f24422967f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c6df8ae39a5b9a9d391c315cc6fbe5"><td class="memItemLeft" align="right" valign="top">TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a85c6df8ae39a5b9a9d391c315cc6fbe5">DxLibEx::DxChar::struprDx</a> (TCHAR *Str) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a85c6df8ae39a5b9a9d391c315cc6fbe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">strupr と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a85c6df8ae39a5b9a9d391c315cc6fbe5">[詳解]</a><br /></td></tr>
+<tr class="separator:a85c6df8ae39a5b9a9d391c315cc6fbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2f95a4e47f46393ff5e25908d1e02f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#acc2f95a4e47f46393ff5e25908d1e02f">DxLibEx::DxChar::vsprintfDx</a> (TCHAR *Buffer, const TCHAR *FormatString, va_list Arg) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:acc2f95a4e47f46393ff5e25908d1e02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">vsprintf と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#acc2f95a4e47f46393ff5e25908d1e02f">[詳解]</a><br /></td></tr>
+<tr class="separator:acc2f95a4e47f46393ff5e25908d1e02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad38b4a38f05e78c07d3dbb1c25d855a7"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ad38b4a38f05e78c07d3dbb1c25d855a7"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ad38b4a38f05e78c07d3dbb1c25d855a7">DxLibEx::DxChar::sprintfDx</a> (TCHAR *Buffer, const TCHAR *FormatString, Args &amp;&amp;...args) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad38b4a38f05e78c07d3dbb1c25d855a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">sprintf と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ad38b4a38f05e78c07d3dbb1c25d855a7">[詳解]</a><br /></td></tr>
+<tr class="separator:ad38b4a38f05e78c07d3dbb1c25d855a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70f46e6bd70c670de63b956ae41a8e2"><td class="memItemLeft" align="right" valign="top">TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ab70f46e6bd70c670de63b956ae41a8e2">DxLibEx::DxChar::itoaDx</a> (int Value, TCHAR *Buffer, int Radix) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ab70f46e6bd70c670de63b956ae41a8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">itoa と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#ab70f46e6bd70c670de63b956ae41a8e2">[詳解]</a><br /></td></tr>
+<tr class="separator:ab70f46e6bd70c670de63b956ae41a8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4905cca9ca5da0da0dd5a27ed7266c83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a4905cca9ca5da0da0dd5a27ed7266c83">DxLibEx::DxChar::atoiDx</a> (const TCHAR *Str) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a4905cca9ca5da0da0dd5a27ed7266c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">atoi と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a4905cca9ca5da0da0dd5a27ed7266c83">[詳解]</a><br /></td></tr>
+<tr class="separator:a4905cca9ca5da0da0dd5a27ed7266c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f84d1f53d5e0e17e759853b8d9d317"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a42f84d1f53d5e0e17e759853b8d9d317">DxLibEx::DxChar::atofDx</a> (const TCHAR *Str) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a42f84d1f53d5e0e17e759853b8d9d317"><td class="mdescLeft">&#160;</td><td class="mdescRight">atof と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a42f84d1f53d5e0e17e759853b8d9d317">[詳解]</a><br /></td></tr>
+<tr class="separator:a42f84d1f53d5e0e17e759853b8d9d317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74dcc5868881458a02b23e7fef0b0251"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a74dcc5868881458a02b23e7fef0b0251">DxLibEx::DxChar::vsscanfDx</a> (const TCHAR *String, const TCHAR *FormatString, va_list Arg) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a74dcc5868881458a02b23e7fef0b0251"><td class="mdescLeft">&#160;</td><td class="mdescRight">vsscanf と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a74dcc5868881458a02b23e7fef0b0251">[詳解]</a><br /></td></tr>
+<tr class="separator:a74dcc5868881458a02b23e7fef0b0251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a150d5a98c38e5435ed3476661a98077c"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a150d5a98c38e5435ed3476661a98077c"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a150d5a98c38e5435ed3476661a98077c">DxLibEx::DxChar::sscanfDx</a> (const TCHAR *String, const TCHAR *FormatString, Args &amp;&amp;...args) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a150d5a98c38e5435ed3476661a98077c"><td class="mdescLeft">&#160;</td><td class="mdescRight">sscanf と同等の機能( マルチバイト文字列版では文字コード形式として SetUseCharCodeFormat で設定した形式が使用されます )  <a href="#a150d5a98c38e5435ed3476661a98077c">[詳解]</a><br /></td></tr>
+<tr class="separator:a150d5a98c38e5435ed3476661a98077c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_dbb1e9783f12bec01e2d51e89f1c11bd.html">DxLibEx</a></li><li class="navelem"><a class="el" href="_dx_lib_ex_8h.html">DxLibEx.h</a></li>
+    <li class="footer">2015年10月17日(土) 14時07分50秒作成 - DxLibEx完全詳解 / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

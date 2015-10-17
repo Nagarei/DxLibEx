@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx完全詳解: DxLibEx::Sound::SoundEffect_Unique クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx完全詳解
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">DxLibEx::Sound::SoundEffect_Unique クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a>&gt;</code></p>
+<div class="dynheader">
+DxLibEx::Sound::SoundEffect_Unique の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.png" usemap="#DxLibEx::Sound::SoundEffect_Unique_map" alt=""/>
+  <map id="DxLibEx::Sound::SoundEffect_Unique_map" name="DxLibEx::Sound::SoundEffect_Unique_map">
+<area href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html" alt="DxLibEx::impl::Unique_Handle_Bace&lt; SoundEffect_Unique &gt;" shape="rect" coords="0,0,351,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac4a67849333b4a3e8234e12b7ead77f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#ac4a67849333b4a3e8234e12b7ead77f3">Delete</a> (bool LogOutFlag=false)</td></tr>
+<tr class="memdesc:ac4a67849333b4a3e8234e12b7ead77f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドハンドルを削除する  <a href="#ac4a67849333b4a3e8234e12b7ead77f3">[詳解]</a><br /></td></tr>
+<tr class="separator:ac4a67849333b4a3e8234e12b7ead77f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575a06b80c762c38065c694128eb69f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#a575a06b80c762c38065c694128eb69f6">release</a> ()</td></tr>
+<tr class="separator:a575a06b80c762c38065c694128eb69f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92e027e85c036db58de074ca0b16de4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#af92e027e85c036db58de074ca0b16de4">SoundEffect_Unique</a> ()</td></tr>
+<tr class="separator:af92e027e85c036db58de074ca0b16de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6010bc1b1e9178c3829ee6c377e1ac0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#a6010bc1b1e9178c3829ee6c377e1ac0b">SoundEffect_Unique</a> (<a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;&amp;other)</td></tr>
+<tr class="separator:a6010bc1b1e9178c3829ee6c377e1ac0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53166dbc5cd56d6344fe5693748f8dce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#a53166dbc5cd56d6344fe5693748f8dce">operator=</a> (<a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;&amp;other)</td></tr>
+<tr class="separator:a53166dbc5cd56d6344fe5693748f8dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">DxLibEx::impl::Unique_Handle_Bace&lt; SoundEffect_Unique &gt;</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a0dd4c737d6ef8f729ea60d8064e704b1 inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a0dd4c737d6ef8f729ea60d8064e704b1">Unique_Handle_Bace</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a0dd4c737d6ef8f729ea60d8064e704b1 inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22909f0cca0ab65a9736ede25987b771 inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a22909f0cca0ab65a9736ede25987b771">Unique_Handle_Bace</a> (<a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a7b114a3920a35c141c6b85642b524829">Bace_T</a> &amp;&amp;other) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a22909f0cca0ab65a9736ede25987b771 inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebd40c0215eb21896523e73bd9e51bd inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">Unique_Handle_Bace</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#adebd40c0215eb21896523e73bd9e51bd">operator=</a> (<a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a7b114a3920a35c141c6b85642b524829">Bace_T</a> &amp;&amp;other) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:adebd40c0215eb21896523e73bd9e51bd inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14d432ecf8a021fe4b9479e48aa6d46a inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a14d432ecf8a021fe4b9479e48aa6d46a">~Unique_Handle_Bace</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a14d432ecf8a021fe4b9479e48aa6d46a inherit pub_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a48315f3ab1a86d7cb2abf7626b747ac5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#a48315f3ab1a86d7cb2abf7626b747ac5">LoadSoundMem</a> (const TCHAR *FileName, int BufferNum=3, int UnionHandle=-1)</td></tr>
+<tr class="separator:a48315f3ab1a86d7cb2abf7626b747ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69bdde551484e869b02c553673efc778"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#a69bdde551484e869b02c553673efc778">PlaySoundMem</a> (const <a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;SoundHandle, int PlayType, int TopPositionFlag=TRUE)</td></tr>
+<tr class="separator:a69bdde551484e869b02c553673efc778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pro_types_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td colspan="2" onclick="javascript:toggleInherit('pro_types_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">DxLibEx::impl::Unique_Handle_Bace&lt; SoundEffect_Unique &gt;</a> に属する継承限定公開型</td></tr>
+<tr class="memitem:a7b114a3920a35c141c6b85642b524829 inherit pro_types_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">Unique_Handle_Bace</a>&lt; SoundEffect_Unique &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a7b114a3920a35c141c6b85642b524829">Bace_T</a></td></tr>
+<tr class="separator:a7b114a3920a35c141c6b85642b524829 inherit pro_types_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html">DxLibEx::impl::Unique_Handle_Bace&lt; SoundEffect_Unique &gt;</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:abe65e3c86dc2f6bc7294287eeecae4ba inherit pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#abe65e3c86dc2f6bc7294287eeecae4ba">Unique_Handle_Bace</a> (int param_handle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:abe65e3c86dc2f6bc7294287eeecae4ba inherit pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439eba342d39fa38e1a713fb6b452cce inherit pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a439eba342d39fa38e1a713fb6b452cce">ReleaseRun</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a439eba342d39fa38e1a713fb6b452cce inherit pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392be5a2454fa6a3eccea6de97bd138a inherit pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a392be5a2454fa6a3eccea6de97bd138a">GetHandle</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a392be5a2454fa6a3eccea6de97bd138a inherit pro_methods_class_dx_lib_ex_1_1impl_1_1_unique___handle___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01177">1177</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="af92e027e85c036db58de074ca0b16de4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DxLibEx::Sound::SoundEffect_Unique::SoundEffect_Unique </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01202">1202</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6010bc1b1e9178c3829ee6c377e1ac0b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DxLibEx::Sound::SoundEffect_Unique::SoundEffect_Unique </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01207">1207</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ac4a67849333b4a3e8234e12b7ead77f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DxLibEx::Sound::SoundEffect_Unique::Delete </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>LogOutFlag</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>サウンドハンドルを削除する </p>
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01181">1181</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a48315f3ab1a86d7cb2abf7626b747ac5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> DxLibEx::Sound::SoundEffect_Unique::LoadSoundMem </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>BufferNum</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>UnionHandle</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01191">1191</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a53166dbc5cd56d6344fe5693748f8dce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a>&amp; DxLibEx::Sound::SoundEffect_Unique::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01212">1212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a69bdde551484e869b02c553673efc778"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Sound::SoundEffect_Unique::PlaySoundMem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>SoundHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>PlayType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>TopPositionFlag</em> = <code>TRUE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01195">1195</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a575a06b80c762c38065c694128eb69f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Sound::SoundEffect_Unique::release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>このオブジェクトを無効化し、今まで使っていたハンドルを返す 自動削除も無効化される </p>
+
+<p> <a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a> の <a class="el" href="_dx_lib_ex_8h_source.html#l01187">1187</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>DxLibEx/<a class="el" href="_dx_lib_ex_8h_source.html">DxLibEx.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_dx_lib_ex.html">DxLibEx</a></li><li class="navelem"><a class="el" href="namespace_dx_lib_ex_1_1_sound.html">Sound</a></li><li class="navelem"><a class="el" href="class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html">SoundEffect_Unique</a></li>
+    <li class="footer">2015年10月17日(土) 14時07分50秒作成 - DxLibEx完全詳解 / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
