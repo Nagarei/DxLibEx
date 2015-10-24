@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx完全詳解: 名前空間メンバ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx完全詳解
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>名前空間一覧</span></a></li>
+      <li class="current"><a href="namespacemembers.html"><span>名前空間メンバ</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li class="current"><a href="namespacemembers.html"><span>全て</span></a></li>
+      <li><a href="namespacemembers_func.html"><span>関数</span></a></li>
+      <li><a href="namespacemembers_enum.html"><span>列挙型</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="namespacemembers.html#index_a"><span>a</span></a></li>
+      <li><a href="namespacemembers_b.html#index_b"><span>b</span></a></li>
+      <li><a href="namespacemembers_c.html#index_c"><span>c</span></a></li>
+      <li><a href="namespacemembers_d.html#index_d"><span>d</span></a></li>
+      <li><a href="namespacemembers_e.html#index_e"><span>e</span></a></li>
+      <li><a href="namespacemembers_f.html#index_f"><span>f</span></a></li>
+      <li><a href="namespacemembers_g.html#index_g"><span>g</span></a></li>
+      <li><a href="namespacemembers_i.html#index_i"><span>i</span></a></li>
+      <li><a href="namespacemembers_k.html#index_k"><span>k</span></a></li>
+      <li><a href="namespacemembers_l.html#index_l"><span>l</span></a></li>
+      <li><a href="namespacemembers_m.html#index_m"><span>m</span></a></li>
+      <li><a href="namespacemembers_n.html#index_n"><span>n</span></a></li>
+      <li><a href="namespacemembers_p.html#index_p"><span>p</span></a></li>
+      <li><a href="namespacemembers_r.html#index_r"><span>r</span></a></li>
+      <li class="current"><a href="namespacemembers_s.html#index_s"><span>s</span></a></li>
+      <li><a href="namespacemembers_v.html#index_v"><span>v</span></a></li>
+      <li><a href="namespacemembers_w.html#index_w"><span>w</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('namespacemembers_s.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+<div class="textblock">これは名前空間の一覧です。それぞれの名前空間へリンクしています。</div>
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>SetActiveKeyInput()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#adf8f6153c77e9f6f7fab6b416645c1fe">DxLibEx::InputString</a>
+</li>
+<li>SetApplicationLogSaveDirectory()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ae5efe0a89980811b31d3e4e60db1cefd">DxLibEx::DxLog</a>
+</li>
+<li>SetConnectTimeOutWait()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a26d13cf42d02c3c1fa10e485c76a4504">DxLibEx::Network</a>
+</li>
+<li>SetDeleteHandleFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_handle.html#a04f656fc17439f9b8fbf09e2aaf399d5">DxLibEx::DxHandle</a>
+</li>
+<li>SetDeviceLostDeleteGraphFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#a17749645a0200c1501a4b3d944ed7d86">DxLibEx::Graph2D</a>
+</li>
+<li>SetIMEInputStringMaxLength()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a32bf8f55757b5c5d99adeff03e9c7ea8">DxLibEx::InputString</a>
+</li>
+<li>SetInputStringMaxLengthIMESync()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a9006862dba8b2203ee3e2dafbc6eeadc">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputCursorBrinkFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#aa042a2f7ede9d57e42924861188ca36c">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputCursorBrinkTime()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#adca5c306f0b823174a4e6c168c7b5446">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputCursorPosition()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#af6e24ec0dfd72819f3550a9a90c1d276">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputDrawStartPos()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#afb9421b1522b012f3ed71424e46348b2">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputNumber()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a047f9595c98832a46bb1dd794f53a8c9">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputNumberToFloat()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#ac0e014c6ea55c6ee1141f33ed8378a01">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputSelectArea()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a90c17d68413c829ba35027d0dca6fe25">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputString()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#aaaac94580177cff8d7e065fa6ee9a820">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputStringColor()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#aae3b98ddf61601dfdb139adf993819fd">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputStringColor2()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a73b7bb844a16ddc04e5ec78d069708b3">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputStringEndCharaMode()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a9ee540af4afc29a1576ea836d60a929f">DxLibEx::InputString</a>
+</li>
+<li>SetKeyInputStringFont()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a8b77ef88ce24548c93763900b965c2ff">DxLibEx::InputString</a>
+</li>
+<li>SetLogDrawOutFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a6b29de35be437c42dc9ffa2aa48efda1">DxLibEx::DxLog</a>
+</li>
+<li>SetLogFontSize()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ad2f61f214c94ee92e6099718d5bbac89">DxLibEx::DxLog</a>
+</li>
+<li>SetMouseDispFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#aab7b9064cfc0713880237381b5c5e266">DxLibEx::nMouse</a>
+</li>
+<li>SetMousePoint()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a5d13a730512d301af468f01333dce35c">DxLibEx::nMouse</a>
+</li>
+<li>SetNetWorkCloseAfterLostFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a3108cf13db57db662f885f19bc8d7bb9">DxLibEx::Network</a>
+</li>
+<li>SetOutApplicationLogValidFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ab53048b65cbd6cffe598d83e131f58ed">DxLibEx::DxLog</a>
+</li>
+<li>SetUseASyncLoadFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#a67ad32f78d6a629e897efaa26bcd5622">DxLibEx::DxAsyncLoad</a>
+</li>
+<li>SetUseCharCodeFormat()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a388caca7c1283dab4d3fd5ed88366735">DxLibEx::DxChar</a>
+</li>
+<li>SetUseDateNameLogFile()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#ad8032b4a497453f6cf85168dbc2ac0a8">DxLibEx::DxLog</a>
+</li>
+<li>SetUseDXNetWorkProtocol()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a58cf32172571f81d12fefe8fbfbd907c">DxLibEx::Network</a>
+</li>
+<li>SetUseDXProtocol()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a1fb10024f7c399fddec608882117de28">DxLibEx::Network</a>
+</li>
+<li>SetUseGraphZBuffer()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#a7d7375229b1f22fc1dee99fd69a404fe">DxLibEx::Graph2D</a>
+</li>
+<li>SetUseIMEFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a80fa0f85510b4fd9a5088898b9c05799">DxLibEx::InputString</a>
+</li>
+<li>SetUseTimeStampFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a978351de3c7ebc7129624553198e7301">DxLibEx::DxLog</a>
+</li>
+<li>sprintfDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ad38b4a38f05e78c07d3dbb1c25d855a7">DxLibEx::DxChar</a>
+</li>
+<li>SRand()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_rand.html#a1a065da1dfc24b6d6425b4ddee2731fa">DxLibEx::DxRand</a>
+</li>
+<li>sscanfDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a150d5a98c38e5435ed3476661a98077c">DxLibEx::DxChar</a>
+</li>
+<li>StockInputChar()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a52c5e113ef4a3ddbe5caaff38fceb35a">DxLibEx::InputString</a>
+</li>
+<li>StopListenNetWork()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#aa8bf802a53b7edfb77e5830a3161e1fc">DxLibEx::Network</a>
+</li>
+<li>strcatDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ab020098ec4acecfafa021e7981c5d6dd">DxLibEx::DxChar</a>
+</li>
+<li>strchr2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a74092c9070cb2092b50d6bdc049ea1da">DxLibEx::DxChar</a>
+</li>
+<li>strchrDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a3f1a0c4d512d865bc0c151c8d5c7bc56">DxLibEx::DxChar</a>
+</li>
+<li>strcmpDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a71b4cbcf18e2e4bba4b59632be521ef6">DxLibEx::DxChar</a>
+</li>
+<li>strcpyDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a0714c0d5cc80872f87e9dd7eb119b216">DxLibEx::DxChar</a>
+</li>
+<li>strgetchr2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a01350ef69a2acb4a6384ea9347be6175">DxLibEx::DxChar</a>
+</li>
+<li>strgetchrDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae30179a1021002ae25db113413325989">DxLibEx::DxChar</a>
+</li>
+<li>stricmpDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a32d383b37b4a4d83ddb63afb34e4a4b7">DxLibEx::DxChar</a>
+</li>
+<li>strlen2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a30ab25ef4b1be64169e321b4c029b23d">DxLibEx::DxChar</a>
+</li>
+<li>strlenDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae0a352e8519b38b18895ae9a1c30d50a">DxLibEx::DxChar</a>
+</li>
+<li>strncmp2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a5aac338f0246e9b231fc78225370c338">DxLibEx::DxChar</a>
+</li>
+<li>strncmpDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa35eda547e3362ecd2722be6df680330">DxLibEx::DxChar</a>
+</li>
+<li>strncpy2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa08013f5b50d5d59f83fc2d67d6f52c8">DxLibEx::DxChar</a>
+</li>
+<li>strncpyDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a49d56e2c13b967cd76795aeea67881cc">DxLibEx::DxChar</a>
+</li>
+<li>strpcpy2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a52ea50f60a2f0fb8dfa52b39a405f545">DxLibEx::DxChar</a>
+</li>
+<li>strpcpyDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ad5164852a43b43a48accea07fb2f0d60">DxLibEx::DxChar</a>
+</li>
+<li>strpncmp2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a544952b49600bfaa8acf9dab81cdd1f1">DxLibEx::DxChar</a>
+</li>
+<li>strpncmpDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae5fd0276c53b84dccabd34b1cb4b4f32">DxLibEx::DxChar</a>
+</li>
+<li>strpncpy2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a4263c95a64c38bffdf56723b0dd778ad">DxLibEx::DxChar</a>
+</li>
+<li>strpncpyDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa3e23da884e5641c8fe86dfae54382b1">DxLibEx::DxChar</a>
+</li>
+<li>strpos2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#ae26734490339f634ec237e17e768ed26">DxLibEx::DxChar</a>
+</li>
+<li>strposDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#abae96699765f4809600a8cdb6dda5d37">DxLibEx::DxChar</a>
+</li>
+<li>strputchr2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a97cf575acdff82108a48b08187bcb963">DxLibEx::DxChar</a>
+</li>
+<li>strputchrDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a61c5d1649f39b47277f396a960de3d84">DxLibEx::DxChar</a>
+</li>
+<li>strrchr2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a3bf0988486ddd7618937f24422967f20">DxLibEx::DxChar</a>
+</li>
+<li>strrchrDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#adf6e78cb019d63efe7de110946a683fb">DxLibEx::DxChar</a>
+</li>
+<li>strrncpy2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a36b6df0270f29b6acd5a4e6eecf7c93f">DxLibEx::DxChar</a>
+</li>
+<li>strrncpyDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aa92ce706567ca45da322d88190484bf7">DxLibEx::DxChar</a>
+</li>
+<li>strrstr2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aab530b7105a850d0418c2a82a042f9eb">DxLibEx::DxChar</a>
+</li>
+<li>strrstrDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a289a4d74e6e9265b73c12c6a876f12b4">DxLibEx::DxChar</a>
+</li>
+<li>strstr2Dx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#afd0254f94cf63595480ecebb03f02974">DxLibEx::DxChar</a>
+</li>
+<li>strstrDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#aad671839f986f0188aea87cc9faeedf4">DxLibEx::DxChar</a>
+</li>
+<li>struprDx()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_char.html#a85c6df8ae39a5b9a9d391c315cc6fbe5">DxLibEx::DxChar</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2015年10月24日(土) 23時11分05秒作成 - DxLibEx完全詳解 / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 var namespace_dx_lib_ex =
 [
+    [ "Graph2D", "namespace_dx_lib_ex_1_1_graph2_d.html", "namespace_dx_lib_ex_1_1_graph2_d" ],
     [ "impl", "namespace_dx_lib_ex_1_1impl.html", "namespace_dx_lib_ex_1_1impl" ],
     [ "nCounter", "namespace_dx_lib_ex_1_1n_counter.html", "namespace_dx_lib_ex_1_1n_counter" ],
     [ "nDxLibSys", "namespace_dx_lib_ex_1_1n_dx_lib_sys.html", "namespace_dx_lib_ex_1_1n_dx_lib_sys" ],

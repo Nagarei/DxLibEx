@@ -1178,7 +1178,7 @@ namespace DxLibEx
 		//! 全角文字、半角文字入り乱れる中から指定の文字数での半角文字数を得る
 		inline int GetStringPoint(const TCHAR *String, int Point )DXLIBEX_NOEXCEPT{ return DxLib::GetStringPoint( String, Point ); }
 		//! 全角文字、半角文字入り乱れる中から指定の半角文字数での文字数を得る
-		inline int GetStringPoint2(const TCHAR *String, int Point )DXLIBEX_NOEXCEPT{ return DxLib::GetStringPoint2( String, int Point ); }
+		inline int GetStringPoint2(const TCHAR *String, int Point )DXLIBEX_NOEXCEPT{ return DxLib::GetStringPoint2( String, Point ); }
 		//! 全角文字、半角文字入り乱れる中から文字数を取得する
 		inline int GetStringLength(const TCHAR *String )DXLIBEX_NOEXCEPT{ return DxLib::GetStringLength( String ); }
 
@@ -1186,7 +1186,7 @@ namespace DxLibEx
 		//! 描画可能領域に収まるように改行しながら文字列を描画
 		inline int DrawObtainsString(int x, int y, int AddY, const TCHAR *String, unsigned int StrColor, unsigned int StrEdgeColor = 0 , int FontHandle = -1 , unsigned int SelectBackColor = 0xffffffff , unsigned int SelectStrColor = 0 , unsigned int SelectStrEdgeColor = 0xffffffff , int SelectStart = -1 , int SelectEnd = -1 )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsString(x, y, AddY, String, StrColor, StrEdgeColor, FontHandle , SelectBackColor, SelectStrColor, SelectStrEdgeColor, SelectStart, SelectEnd); }
 		//! 描画可能領域に収まるように改行しながら文字列を描画( クリップが文字単位 )
-		inline int DrawObtainsString_CharClip(int x, int y, int AddY, const TCHAR *String, unsigned int StrColor, unsigned int StrEdgeColor = 0 , int FontHandle = -1 , unsigned int SelectBackColor = 0xffffffff , unsigned int SelectStrColor = 0 , unsigned int SelectStrEdgeColor = 0xffffffff , int SelectStart = -1 , int SelectEnd = -1 )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsString_CharClip(x, y, AddY, String, StrColor, StrEdgeColor, FontHandl, SelectBackColor, SelectStrColor, SelectStrEdgeColor, SelectStart, SelectEnd); }
+		inline int DrawObtainsString_CharClip(int x, int y, int AddY, const TCHAR *String, unsigned int StrColor, unsigned int StrEdgeColor = 0 , int FontHandle = -1 , unsigned int SelectBackColor = 0xffffffff , unsigned int SelectStrColor = 0 , unsigned int SelectStrEdgeColor = 0xffffffff , int SelectStart = -1 , int SelectEnd = -1 )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsString_CharClip(x, y, AddY, String, StrColor, StrEdgeColor, FontHandle, SelectBackColor, SelectStrColor, SelectStrEdgeColor, SelectStart, SelectEnd); }
 #endif // DX_NON_FONT
 		//! 描画可能領域に収まるように補正を加えながら矩形を描画
 		inline int DrawObtainsBox(int x1, int y1, int x2, int y2, int AddY, unsigned int Color, int FillFlag )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsBox(x1, y1, x2, y2, AddY, Color, FillFlag); }
@@ -1353,71 +1353,7 @@ namespace DxLibEx
 #endif
 	}
 
-	//----------2Dグラフィック----------//
-#if 0
-	//オーバーヘッドが少ないVer
-	//ただしコピーができない
-	class Texture2D_Unique : public Unique_Handle_Bace<Texture2D_Unique>
-	{
-	public:
-		void release() {
-			DeleteSoundMem(GetHandle());
-			//handle = -1;
-		}
 
-		static Texture2D_Unique LoadGraph(const TCHAR *FileName, int NotUse3DFlag = FALSE) {
-			return DxLib::LoadGraph(FileName, NotUse3DFlag);
-		}
-
-	private:
-		typedef Unique_Handle_Bace<Texture2D_Unique> Parent_T;
-	public:
-		Texture2D_Unique()
-			: Unique_Handle_Bace()
-		{}
-
-		//所有権の譲渡
-		Texture2D_Unique(Texture2D_Unique&& other)
-			: Unique_Handle_Bace(std::move(other))
-		{}
-
-		//所有権の譲渡
-		Texture2D_Unique& operator=(Texture2D_Unique&& other)
-		{
-			Parent_T::operator=(std::move(other));
-			return *this;
-		}
-
-	private:
-		//間違えて他の種類のハンドルを持たないようにprivateにしておく
-		Texture2D_Unique(int param_handle)
-			: Unique_Handle_Bace(param_handle)
-		{}
-	};
-	class Texture2D
-	{
-	public:
-		void release() {
-			p_handle.reset();
-		}
-
-		static Texture2D LoadSoundMem(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1) {
-			return Texture2D_Unique::LoadSoundMem(FileName, BufferNum, UnionHandle);
-		}
-
-		static int PlaySoundMem(const Texture2D& SoundHandle, int PlayType, int TopPositionFlag = TRUE) {
-			if (SoundHandle.p_handle == nullptr){ return -1; }
-			return Texture2D_Unique::PlaySoundMem(*SoundHandle.p_handle, PlayType, TopPositionFlag);
-		}
-
-		Texture2D(Texture2D_Unique&& handle)
-			: p_handle(std::make_shared<Texture2D_Unique>(std::move(handle)))
-		{}
-		Texture2D(){}
-	private:
-		std::shared_ptr<Texture2D_Unique> p_handle;
-	};
-#endif
 	//----------サウンド関係----------//
 
 	//!サウンド関係
@@ -1516,6 +1452,8 @@ namespace DxLibEx
 
 }
 
+//----------2Dグラフィック----------//
+#include "DxLibEx_Graph2D.h"
 
 //関数の定義
 #include "DxLibEx_impl.h"

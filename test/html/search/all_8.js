@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['leftbutton',['LeftButton',['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html#ab2abbc2ce07c06c19b95b1d1751be464',1,'DxLibEx::nMouse::MouseState']]],
-  ['loadsoundmem',['LoadSoundMem',['../class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html#a48315f3ab1a86d7cb2abf7626b747ac5',1,'DxLibEx::Sound::SoundEffect_Unique::LoadSoundMem()'],['../class_dx_lib_ex_1_1_sound_1_1_sound_effect.html#aae75c84270dfcccd0e22df7f30647df8',1,'DxLibEx::Sound::SoundEffect::LoadSoundMem()']]]
+  ['init',['Init',['../class_dx_lib_ex_1_1n_dx_lib_sys_1_1_dx_lib_sys.html#aed90f6bf16cbd2e0f24841c19a6ef00d',1,'DxLibEx::nDxLibSys::DxLibSys']]],
+  ['initkeyinput',['InitKeyInput',['../namespace_dx_lib_ex_1_1_input_string.html#a648aac59d4531d140c07c2288177f187',1,'DxLibEx::InputString']]],
+  ['inputstringtocustom',['InputStringToCustom',['../namespace_dx_lib_ex_1_1_input_string.html#a1fdfa6501e7e70ac540f7c9da42eeb20',1,'DxLibEx::InputString']]],
+  ['isinit',['IsInit',['../class_dx_lib_ex_1_1n_dx_lib_sys_1_1_dx_lib_sys.html#a38191967ae61cc50d36527cf599fbdbb',1,'DxLibEx::nDxLibSys::DxLibSys']]],
+  ['itoadx',['itoaDx',['../namespace_dx_lib_ex_1_1_dx_char.html#ab70f46e6bd70c670de63b956ae41a8e2',1,'DxLibEx::DxChar']]]
 ];

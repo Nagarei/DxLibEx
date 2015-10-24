@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]],
-  ['unique_5fhandle_5fbace_3c_20soundeffect_5funique_20_3e',['Unique_Handle_Bace&lt; SoundEffect_Unique &gt;',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]]
+  ['texture2d',['Texture2D',['../class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html',1,'DxLibEx::Graph2D']]],
+  ['texture2d_5funique',['Texture2D_Unique',['../class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html',1,'DxLibEx::Graph2D']]]
 ];

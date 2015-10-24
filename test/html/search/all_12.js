@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['waitkey',['WaitKey',['../namespace_dx_lib_ex_1_1_wait.html#a853701998cbf3a5da538fdcb144e335e',1,'DxLibEx::Wait']]],
-  ['waittimer',['WaitTimer',['../namespace_dx_lib_ex_1_1_wait.html#a9eebb9d62be1b07c7015435ff45c4a96',1,'DxLibEx::Wait']]]
+  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]],
+  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a0dd4c737d6ef8f729ea60d8064e704b1',1,'DxLibEx::impl::Unique_Handle_Bace::Unique_Handle_Bace() DXLIBEX_NOEXCEPT'],['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a22909f0cca0ab65a9736ede25987b771',1,'DxLibEx::impl::Unique_Handle_Bace::Unique_Handle_Bace(Bace_T &amp;&amp;other) DXLIBEX_NOEXCEPT'],['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#abe65e3c86dc2f6bc7294287eeecae4ba',1,'DxLibEx::impl::Unique_Handle_Bace::Unique_Handle_Bace(int param_handle) DXLIBEX_NOEXCEPT']]],
+  ['unique_5fhandle_5fbace_3c_20soundeffect_5funique_20_3e',['Unique_Handle_Bace&lt; SoundEffect_Unique &gt;',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]],
+  ['unique_5fhandle_5fbace_3c_20texture2d_5funique_20_3e',['Unique_Handle_Bace&lt; Texture2D_Unique &gt;',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]]
 ];

@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx完全詳解: 名前空間メンバ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx完全詳解
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>名前空間一覧</span></a></li>
+      <li class="current"><a href="namespacemembers.html"><span>名前空間メンバ</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespacemembers.html"><span>全て</span></a></li>
+      <li class="current"><a href="namespacemembers_func.html"><span>関数</span></a></li>
+      <li><a href="namespacemembers_enum.html"><span>列挙型</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="namespacemembers_func.html#index_a"><span>a</span></a></li>
+      <li><a href="namespacemembers_func_c.html#index_c"><span>c</span></a></li>
+      <li><a href="namespacemembers_func_d.html#index_d"><span>d</span></a></li>
+      <li><a href="namespacemembers_func_e.html#index_e"><span>e</span></a></li>
+      <li><a href="namespacemembers_func_f.html#index_f"><span>f</span></a></li>
+      <li class="current"><a href="namespacemembers_func_g.html#index_g"><span>g</span></a></li>
+      <li><a href="namespacemembers_func_i.html#index_i"><span>i</span></a></li>
+      <li><a href="namespacemembers_func_k.html#index_k"><span>k</span></a></li>
+      <li><a href="namespacemembers_func_l.html#index_l"><span>l</span></a></li>
+      <li><a href="namespacemembers_func_m.html#index_m"><span>m</span></a></li>
+      <li><a href="namespacemembers_func_n.html#index_n"><span>n</span></a></li>
+      <li><a href="namespacemembers_func_p.html#index_p"><span>p</span></a></li>
+      <li><a href="namespacemembers_func_r.html#index_r"><span>r</span></a></li>
+      <li><a href="namespacemembers_func_s.html#index_s"><span>s</span></a></li>
+      <li><a href="namespacemembers_func_v.html#index_v"><span>v</span></a></li>
+      <li><a href="namespacemembers_func_w.html#index_w"><span>w</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('namespacemembers_func_g.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GetActiveKeyInput()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#aeefaac7b06fa107705a0b2cb3c4b68b1">DxLibEx::InputString</a>
+</li>
+<li>GetASyncLoadNum()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#ad6ca69f7425fb3fd164de7604be5b69b">DxLibEx::DxAsyncLoad</a>
+</li>
+<li>GetCtrlCodeCmp()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a6e07ad75bdd970421c92733cd93a6acd">DxLibEx::InputString</a>
+</li>
+<li>GetFullColorImage()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#a5d89f44bff4234ea7bb8d0bd761ef801">DxLibEx::Graph2D</a>
+</li>
+<li>GetGraphFilePath()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#a735bf4ac6df5f2facebbafcfd2c1ecb7">DxLibEx::Graph2D</a>
+</li>
+<li>GetGraphMipmapCount()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#a4dcff8dcb487981288da95f5cefda2c3">DxLibEx::Graph2D</a>
+</li>
+<li>GetGraphSize()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#abcf1b4b39bef96c67865bbbc4163f74e">DxLibEx::Graph2D</a>
+</li>
+<li>GetGraphTextureSize()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#ab0a79cb7d0fb829e9cce98815a8f896a">DxLibEx::Graph2D</a>
+</li>
+<li>GetHandleASyncLoadResult()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_async_load.html#a0f636b5fdd3cf21bb2ebf8d3ca02b1b5">DxLibEx::DxAsyncLoad</a>
+</li>
+<li>GetHostIPbyName()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a904053b299f7b12e0653635caee9caef">DxLibEx::Network</a>
+</li>
+<li>GetHostIPbyName_IPv6()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a8157f8a894279dc7f3df4ddadad00e1d">DxLibEx::Network</a>
+</li>
+<li>GetIMEInputData()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a88fafbff8c8d1f076deee9557528100e">DxLibEx::InputString</a>
+</li>
+<li>GetIMEInputModeStr()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a4e90633b9d32795f00396b02ad436b56">DxLibEx::InputString</a>
+</li>
+<li>GetInputChar()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a2f4deff16cb6ce880f9efb5514bca8d3">DxLibEx::InputString</a>
+</li>
+<li>GetInputCharWait()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#aaf98124fe1ffb983d76893a2bf6dbff9">DxLibEx::InputString</a>
+</li>
+<li>GetKeyInputCursorPosition()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a0fbd76eca4dc779f2d13b88912da7408">DxLibEx::InputString</a>
+</li>
+<li>GetKeyInputDrawStartPos()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a22c51f49086d3d1a9dadeecba96b2f69">DxLibEx::InputString</a>
+</li>
+<li>GetKeyInputNumber()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a9289e306e086120647034ea66e918667">DxLibEx::InputString</a>
+</li>
+<li>GetKeyInputNumberToFloat()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a9249237449bd64432871a1f2b615881b">DxLibEx::InputString</a>
+</li>
+<li>GetKeyInputSelectArea()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a912247c86f4b3465f81f50d1f00ba4ba">DxLibEx::InputString</a>
+</li>
+<li>GetKeyInputString()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a8b0b51b34758ca6c426013a437bd0b8b">DxLibEx::InputString</a>
+</li>
+<li>GetLogDrawFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_log.html#a9248bd9274326a1ede282a0d9e436f1c">DxLibEx::DxLog</a>
+</li>
+<li>GetLostNetWork()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a96616bbde7b9b1a0e193a81014109a5b">DxLibEx::Network</a>
+</li>
+<li>GetMouseHWheelRotVol()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a66054bd883f9253cb9c7edb4478693fa">DxLibEx::nMouse</a>
+</li>
+<li>GetMouseHWheelRotVolF()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#af0dfffcaae3004526fc35d99ff712b91">DxLibEx::nMouse</a>
+</li>
+<li>GetMouseInput()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a38af22872b52288ae4964154040a3faa">DxLibEx::nMouse</a>
+</li>
+<li>GetMouseInputLog()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a646573455a99227d06dc4936e29a2a19">DxLibEx::nMouse</a>
+</li>
+<li>GetMousePoint()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#aa0b947cba25b2b0cf523a1ad3ac3daee">DxLibEx::nMouse</a>
+</li>
+<li>GetMouseWheelRotVol()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#ab818e5d6abb28e81f80fd8f34ca87919">DxLibEx::nMouse</a>
+</li>
+<li>GetMouseWheelRotVolF()
+: <a class="el" href="namespace_dx_lib_ex_1_1n_mouse.html#a433c0f55d2bb348badc7f0a4a69d577d">DxLibEx::nMouse</a>
+</li>
+<li>GetMyIPAddress()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#ad3d0a96f1c1a543d2baf2eff7433facd">DxLibEx::Network</a>
+</li>
+<li>GetNetWorkAcceptState()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#ac5980b7f4bdf41e18d199ab1e0a49193">DxLibEx::Network</a>
+</li>
+<li>GetNetWorkCloseAfterLostFlag()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a87451884c88ff8def1cccba2496dc311">DxLibEx::Network</a>
+</li>
+<li>GetNetWorkDataLength()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#ab5719fffd738cdce9494f36dc383dcce">DxLibEx::Network</a>
+</li>
+<li>GetNetWorkIP()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#aad5a179decfa4df582c8a09d74d63329">DxLibEx::Network</a>
+</li>
+<li>GetNetWorkIP_IPv6()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#ac8c22b368087f75eff8e7ab3194be13d">DxLibEx::Network</a>
+</li>
+<li>GetNetWorkSendDataLength()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a2f1661ecf4b58316fa9516c033a0556b">DxLibEx::Network</a>
+</li>
+<li>GetNewAcceptNetWork()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#a3fc923f254b046a070817d38d964ae3d">DxLibEx::Network</a>
+</li>
+<li>GetOneChar()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a7033f68409b3d525fe6dfdc0b61d6f4b">DxLibEx::InputString</a>
+</li>
+<li>GetOneCharWait()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a1b24d34d99716e479088179f1d844c72">DxLibEx::InputString</a>
+</li>
+<li>GetRand()
+: <a class="el" href="namespace_dx_lib_ex_1_1_dx_rand.html#ad7f65cf5f47b00865b5eb092bb8f5ae3">DxLibEx::DxRand</a>
+</li>
+<li>GetStringLength()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#af643440a90e180bab8a2186685639f16">DxLibEx::InputString</a>
+</li>
+<li>GetStringPoint()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#ab639ec3d52b27a348b983bb43640f115">DxLibEx::InputString</a>
+</li>
+<li>GetStringPoint2()
+: <a class="el" href="namespace_dx_lib_ex_1_1_input_string.html#a7186375306a5cf2ebbb28d492e872e71">DxLibEx::InputString</a>
+</li>
+<li>GetTouchInput()
+: <a class="el" href="namespace_dx_lib_ex_1_1_touch.html#af7d8dec3f3604398730837130a53600a">DxLibEx::Touch</a>
+</li>
+<li>GetTouchInputLog()
+: <a class="el" href="namespace_dx_lib_ex_1_1_touch.html#abf9e1ae7ba54909c63a791a4d93b2d9a">DxLibEx::Touch</a>
+</li>
+<li>GetTouchInputLogNum()
+: <a class="el" href="namespace_dx_lib_ex_1_1_touch.html#acf5c6980fbe5e17a4bc17f7287817231">DxLibEx::Touch</a>
+</li>
+<li>GetTouchInputLogOne()
+: <a class="el" href="namespace_dx_lib_ex_1_1_touch.html#a01a86e578571cb2b5cb41d0116a242a9">DxLibEx::Touch</a>
+</li>
+<li>GetTouchInputNum()
+: <a class="el" href="namespace_dx_lib_ex_1_1_touch.html#a6055eac037f506d6a3460dc8eef54cfa">DxLibEx::Touch</a>
+</li>
+<li>GetUseDXNetWorkProtocol()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#aa9fb9cda454d7ac389de4a7eca541dea">DxLibEx::Network</a>
+</li>
+<li>GetUseDXProtocol()
+: <a class="el" href="namespace_dx_lib_ex_1_1_network.html#af470c9cd07ae1cee1f330fb8b89bbde2">DxLibEx::Network</a>
+</li>
+<li>GraphLock()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#af31d672d9da832aa2ea12b53a8d34ecb">DxLibEx::Graph2D</a>
+</li>
+<li>GraphUnLock()
+: <a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html#a56292da81cbd3193d0e021ef19202a6e">DxLibEx::Graph2D</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2015年10月24日(土) 23時11分05秒作成 - DxLibEx完全詳解 / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

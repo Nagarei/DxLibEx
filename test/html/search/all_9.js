@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['middlebutton',['MiddleButton',['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html#a8037d97ecc3401eb4ca50f99a58f6a0b',1,'DxLibEx::nMouse::MouseState']]],
-  ['mouse',['Mouse',['../class_dx_lib_ex_1_1n_mouse_1_1_mouse.html',1,'DxLibEx::nMouse']]],
-  ['mouseinputinfo',['MouseInputInfo',['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_input_info.html#aecd9f0e32df8478a753bac27571f2de8',1,'DxLibEx::nMouse::MouseInputInfo::MouseInputInfo() DXLIBEX_NOEXCEPT'],['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_input_info.html#a980dc03530da779ceafa8ae5553aee69',1,'DxLibEx::nMouse::MouseInputInfo::MouseInputInfo(int x, int y, int type) DXLIBEX_NOEXCEPT']]],
-  ['mouseinputinfo',['MouseInputInfo',['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_input_info.html',1,'DxLibEx::nMouse']]],
-  ['mousestate',['MouseState',['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html',1,'DxLibEx::nMouse']]],
-  ['mousestate',['MouseState',['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html#a800845fe45ba4c6906e1860ada130134',1,'DxLibEx::nMouse::MouseState::MouseState() DXLIBEX_NOEXCEPT'],['../struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html#a018c1464bb62e52c5af9dc31deb26e4d',1,'DxLibEx::nMouse::MouseState::MouseState(int x, int y, int scrollWheel, ButtonState leftButton, ButtonState middleButton, ButtonState rightButton, ButtonState xButton1, ButtonState xButton2) DXLIBEX_NOEXCEPT']]]
+  ['keyinputnumber',['KeyInputNumber',['../namespace_dx_lib_ex_1_1_input_string.html#afcb96634690353ce66cae71049ed4247',1,'DxLibEx::InputString']]],
+  ['keyinputsinglecharstring',['KeyInputSingleCharString',['../namespace_dx_lib_ex_1_1_input_string.html#a5c89c494ad2ddfda5fb135fb06903fb8',1,'DxLibEx::InputString']]],
+  ['keyinputstring',['KeyInputString',['../namespace_dx_lib_ex_1_1_input_string.html#abdcc8a4ae42d264a41666e95526989e3',1,'DxLibEx::InputString']]]
 ];

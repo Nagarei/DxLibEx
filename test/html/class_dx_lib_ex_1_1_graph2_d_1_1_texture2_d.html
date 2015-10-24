@@ -1,0 +1,2901 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx完全詳解: DxLibEx::Graph2D::Texture2D クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx完全詳解
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">DxLibEx::Graph2D::Texture2D クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:acb6f24c75e89dc7409870ebb45adec74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#acb6f24c75e89dc7409870ebb45adec74">Delete</a> (bool LogOutFlag=false)</td></tr>
+<tr class="memdesc:acb6f24c75e89dc7409870ebb45adec74"><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドハンドルを削除する  <a href="#acb6f24c75e89dc7409870ebb45adec74">[詳解]</a><br /></td></tr>
+<tr class="separator:acb6f24c75e89dc7409870ebb45adec74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af362c5aa8eb4d4b92717e0db4653b045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#af362c5aa8eb4d4b92717e0db4653b045">release_this</a> ()</td></tr>
+<tr class="separator:af362c5aa8eb4d4b92717e0db4653b045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae7ed15a66904e79625ed85b7cdb4ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a4ae7ed15a66904e79625ed85b7cdb4ee">release_all</a> ()</td></tr>
+<tr class="separator:a4ae7ed15a66904e79625ed85b7cdb4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcdc0379a7a8245984b98a4cfb88e349"><td class="memItemLeft" align="right" valign="top">const unsigned int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#adcdc0379a7a8245984b98a4cfb88e349">GetFullColorImage</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:adcdc0379a7a8245984b98a4cfb88e349"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のグラフィックハンドルのＡＲＧＢ８イメージを取得する( 現在動画ファイルをグラフィックハンドルで読み込んだ場合のみ使用可能 )  <a href="#adcdc0379a7a8245984b98a4cfb88e349">[詳解]</a><br /></td></tr>
+<tr class="separator:adcdc0379a7a8245984b98a4cfb88e349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7f1d3c4a8f87b1ef45553ae4a5714b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a2d7f1d3c4a8f87b1ef45553ae4a5714b">GraphLock</a> (int *PitchBuf, void **DataPointBuf, COLORDATA **ColorDataPP=nullptr, bool WriteOnly=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a2d7f1d3c4a8f87b1ef45553ae4a5714b"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックメモリ領域のロック  <a href="#a2d7f1d3c4a8f87b1ef45553ae4a5714b">[詳解]</a><br /></td></tr>
+<tr class="separator:a2d7f1d3c4a8f87b1ef45553ae4a5714b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a422adc39a05cc065af534e26dae79c49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a422adc39a05cc065af534e26dae79c49">GraphUnLock</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a422adc39a05cc065af534e26dae79c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックメモリ領域のロック解除  <a href="#a422adc39a05cc065af534e26dae79c49">[詳解]</a><br /></td></tr>
+<tr class="separator:a422adc39a05cc065af534e26dae79c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc2c14592507a91a820ddf1139da30f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#adfc2c14592507a91a820ddf1139da30f">SetUseGraphZBuffer</a> (int UseFlag, int BitDepth=-1) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:adfc2c14592507a91a820ddf1139da30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドル専用のＺバッファを持つかどうかを設定する( GrHandle:対象となるグラフィックハンドル( 描画対象として使用可能なグラフィックハンドルのみ有効 ) UseFlag:専用のＺバッファを持つかどうか( TRUE:持つ( デフォルト ) FALSE:持たない ) BitDepth:ビット深度( 16 or 24 or 32 ) )  <a href="#adfc2c14592507a91a820ddf1139da30f">[詳解]</a><br /></td></tr>
+<tr class="separator:adfc2c14592507a91a820ddf1139da30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdecbd803ea861fe230e11d09486b9ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#acdecbd803ea861fe230e11d09486b9ff">CopyGraphZBufferImage</a> (<a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;ToGrHandle) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:acdecbd803ea861fe230e11d09486b9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルのＺバッファの状態を別のグラフィックハンドルのＺバッファにコピーする( DestGrHandle も SrcGrHandle もＺバッファを持っている描画対象にできるグラフィックハンドルで、サイズが同じであり、且つマルチサンプリング( アンチエイリアス )設定が無いことが条件 )  <a href="#acdecbd803ea861fe230e11d09486b9ff">[詳解]</a><br /></td></tr>
+<tr class="separator:acdecbd803ea861fe230e11d09486b9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb62e5bc87fb253cc6e53cc1d8101ff3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#aeb62e5bc87fb253cc6e53cc1d8101ff3">SetDeviceLostDeleteGraphFlag</a> (bool DeleteFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aeb62e5bc87fb253cc6e53cc1d8101ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックスデバイスのデバイスロスト発生時に指定のグラフィックハンドルを削除するかどうかを設定する( TRUE:デバイスロスト時に削除する FALSE:デバイスロストが発生しても削除しない )  <a href="#aeb62e5bc87fb253cc6e53cc1d8101ff3">[詳解]</a><br /></td></tr>
+<tr class="separator:aeb62e5bc87fb253cc6e53cc1d8101ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b62426c7679361de91ecb62b86dac5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a4b62426c7679361de91ecb62b86dac5c">GetGraphSize</a> (int *SizeXBuf, int *SizeYBuf) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a4b62426c7679361de91ecb62b86dac5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルが持つ画像のサイズを得る  <a href="#a4b62426c7679361de91ecb62b86dac5c">[詳解]</a><br /></td></tr>
+<tr class="separator:a4b62426c7679361de91ecb62b86dac5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06492d83a602e53d654961df2d2abfe8"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a06492d83a602e53d654961df2d2abfe8">GetGraphSize</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a06492d83a602e53d654961df2d2abfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4bba05b707a9b3ab9fb0853a5fffb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a7b4bba05b707a9b3ab9fb0853a5fffb9">GetGraphTextureSize</a> (int *SizeXBuf, int *SizeYBuf) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a7b4bba05b707a9b3ab9fb0853a5fffb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルが持つ一つ目のテクスチャのサイズを得る  <a href="#a7b4bba05b707a9b3ab9fb0853a5fffb9">[詳解]</a><br /></td></tr>
+<tr class="separator:a7b4bba05b707a9b3ab9fb0853a5fffb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df266356a9232c86d444e8e03ab5495"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a2df266356a9232c86d444e8e03ab5495">GetGraphTextureSize</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a2df266356a9232c86d444e8e03ab5495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685367d59723283ec84f811a3479a537"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a685367d59723283ec84f811a3479a537">GetGraphMipmapCount</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a685367d59723283ec84f811a3479a537"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルが持つテクスチャのミップマップレベル数を取得する  <a href="#a685367d59723283ec84f811a3479a537">[詳解]</a><br /></td></tr>
+<tr class="separator:a685367d59723283ec84f811a3479a537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524e3d04ab38ea94a2f09d19647eb4d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a524e3d04ab38ea94a2f09d19647eb4d3">GetGraphFilePath</a> (TCHAR FilePathBuffer[]) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a524e3d04ab38ea94a2f09d19647eb4d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する  <a href="#a524e3d04ab38ea94a2f09d19647eb4d3">[詳解]</a><br /></td></tr>
+<tr class="separator:a524e3d04ab38ea94a2f09d19647eb4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67c1837f24a22c1fc2137ea0b15251e"><td class="memItemLeft" align="right" valign="top">std::basic_string&lt; TCHAR &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ad67c1837f24a22c1fc2137ea0b15251e">GetGraphFilePath</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad67c1837f24a22c1fc2137ea0b15251e"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する  <a href="#ad67c1837f24a22c1fc2137ea0b15251e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad67c1837f24a22c1fc2137ea0b15251e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1bb39a8c6b3ea70e996f39de359346"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a2e1bb39a8c6b3ea70e996f39de359346">DrawGraph</a> (int x, int y, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a2e1bb39a8c6b3ea70e996f39de359346"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の等倍描画  <a href="#a2e1bb39a8c6b3ea70e996f39de359346">[詳解]</a><br /></td></tr>
+<tr class="separator:a2e1bb39a8c6b3ea70e996f39de359346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28749dd7042b15387b9837fe4d305f73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a28749dd7042b15387b9837fe4d305f73">DrawExtendGraph</a> (int x1, int y1, int x2, int y2, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a28749dd7042b15387b9837fe4d305f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大描画  <a href="#a28749dd7042b15387b9837fe4d305f73">[詳解]</a><br /></td></tr>
+<tr class="separator:a28749dd7042b15387b9837fe4d305f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea70835f2e6ca598e0ca6b9d0b7f22f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#afea70835f2e6ca598e0ca6b9d0b7f22f">DrawRotaGraph</a> (int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag=false) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:afea70835f2e6ca598e0ca6b9d0b7f22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画  <a href="#afea70835f2e6ca598e0ca6b9d0b7f22f">[詳解]</a><br /></td></tr>
+<tr class="separator:afea70835f2e6ca598e0ca6b9d0b7f22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662600d29a5e49fc432ac6fa2d53a635"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a662600d29a5e49fc432ac6fa2d53a635">DrawRotaGraph2</a> (int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag=false) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a662600d29a5e49fc432ac6fa2d53a635"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画２( 回転中心指定付き )  <a href="#a662600d29a5e49fc432ac6fa2d53a635">[詳解]</a><br /></td></tr>
+<tr class="separator:a662600d29a5e49fc432ac6fa2d53a635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad6f072e0c0a23d2012b95e31044425"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a0ad6f072e0c0a23d2012b95e31044425">DrawRotaGraph3</a> (int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0ad6f072e0c0a23d2012b95e31044425"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )  <a href="#a0ad6f072e0c0a23d2012b95e31044425">[詳解]</a><br /></td></tr>
+<tr class="separator:a0ad6f072e0c0a23d2012b95e31044425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e942ddffedc60b1c04167a540fbf675"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a1e942ddffedc60b1c04167a540fbf675">DrawModiGraph</a> (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1e942ddffedc60b1c04167a540fbf675"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の自由変形描画  <a href="#a1e942ddffedc60b1c04167a540fbf675">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e942ddffedc60b1c04167a540fbf675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d77a3412ff7d8a73e7dc85910ac512"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#af0d77a3412ff7d8a73e7dc85910ac512">DrawTurnGraph</a> (int x, int y, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:af0d77a3412ff7d8a73e7dc85910ac512"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の左右反転描画  <a href="#af0d77a3412ff7d8a73e7dc85910ac512">[詳解]</a><br /></td></tr>
+<tr class="separator:af0d77a3412ff7d8a73e7dc85910ac512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c0e5692e5f376f0bf36d0272985e20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ab1c0e5692e5f376f0bf36d0272985e20">DrawExtendTurnGraph</a> (int x1, int y1, int x2, int y2, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ab1c0e5692e5f376f0bf36d0272985e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大左右反転描画  <a href="#ab1c0e5692e5f376f0bf36d0272985e20">[詳解]</a><br /></td></tr>
+<tr class="separator:ab1c0e5692e5f376f0bf36d0272985e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b8d938845c2a91bc5790edffa04cad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a89b8d938845c2a91bc5790edffa04cad">DrawGraphF</a> (float xf, float yf, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a89b8d938845c2a91bc5790edffa04cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の描画( 座標指定が float 版 )  <a href="#a89b8d938845c2a91bc5790edffa04cad">[詳解]</a><br /></td></tr>
+<tr class="separator:a89b8d938845c2a91bc5790edffa04cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580f6b99373e56596664e344622d2155"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a580f6b99373e56596664e344622d2155">DrawExtendGraphF</a> (float x1f, float y1f, float x2f, float y2, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a580f6b99373e56596664e344622d2155"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大描画( 座標指定が float 版 )  <a href="#a580f6b99373e56596664e344622d2155">[詳解]</a><br /></td></tr>
+<tr class="separator:a580f6b99373e56596664e344622d2155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab728bb6218e16f0bee2b0a3ee3c492a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ab728bb6218e16f0bee2b0a3ee3c492a7">DrawRotaGraphF</a> (float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ab728bb6218e16f0bee2b0a3ee3c492a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画( 座標指定が float 版 )  <a href="#ab728bb6218e16f0bee2b0a3ee3c492a7">[詳解]</a><br /></td></tr>
+<tr class="separator:ab728bb6218e16f0bee2b0a3ee3c492a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae575ed91614d8c3746683523dbcaae3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ae575ed91614d8c3746683523dbcaae3e">DrawRotaGraph2F</a> (float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae575ed91614d8c3746683523dbcaae3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )  <a href="#ae575ed91614d8c3746683523dbcaae3e">[詳解]</a><br /></td></tr>
+<tr class="separator:ae575ed91614d8c3746683523dbcaae3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedad1762fb805ee320614491d80b854a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#aedad1762fb805ee320614491d80b854a">DrawRotaGraph3F</a> (float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aedad1762fb805ee320614491d80b854a"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )  <a href="#aedad1762fb805ee320614491d80b854a">[詳解]</a><br /></td></tr>
+<tr class="separator:aedad1762fb805ee320614491d80b854a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0e3e44df75f612c7b3196cbcad6f6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a9b0e3e44df75f612c7b3196cbcad6f6f">DrawModiGraphF</a> (float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9b0e3e44df75f612c7b3196cbcad6f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の自由変形描画( 座標指定が float 版 )  <a href="#a9b0e3e44df75f612c7b3196cbcad6f6f">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b0e3e44df75f612c7b3196cbcad6f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49837d5b5cb013ad43a172e0ba009714"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a49837d5b5cb013ad43a172e0ba009714">DrawTurnGraphF</a> (float xf, float yf, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a49837d5b5cb013ad43a172e0ba009714"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の左右反転描画( 座標指定が float 版 )  <a href="#a49837d5b5cb013ad43a172e0ba009714">[詳解]</a><br /></td></tr>
+<tr class="separator:a49837d5b5cb013ad43a172e0ba009714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c10ce6271c4418d28b57b2bac2579f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#af9c10ce6271c4418d28b57b2bac2579f">DrawExtendTurnGraphF</a> (float x1f, float y1f, float x2f, float y2f, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:af9c10ce6271c4418d28b57b2bac2579f"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大左右反転描画( 座標指定が float 版 )  <a href="#af9c10ce6271c4418d28b57b2bac2579f">[詳解]</a><br /></td></tr>
+<tr class="separator:af9c10ce6271c4418d28b57b2bac2579f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b64ab2942899e1d2f412f64a91f8e99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a5b64ab2942899e1d2f412f64a91f8e99">Texture2D</a> (<a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&amp;handle)</td></tr>
+<tr class="separator:a5b64ab2942899e1d2f412f64a91f8e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab924e40beca9b6d708ac0e29c364f84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#aab924e40beca9b6d708ac0e29c364f84">Texture2D</a> ()</td></tr>
+<tr class="separator:aab924e40beca9b6d708ac0e29c364f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a329e4af7d8d37b0feb61330e6c2eb619"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a329e4af7d8d37b0feb61330e6c2eb619">MakeGraph</a> (int SizeX, int SizeY, bool NotUse3DFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a329e4af7d8d37b0feb61330e6c2eb619"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定サイズのグラフィックハンドルを作成する  <a href="#a329e4af7d8d37b0feb61330e6c2eb619">[詳解]</a><br /></td></tr>
+<tr class="separator:a329e4af7d8d37b0feb61330e6c2eb619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f8ea353841cc17342f7989de961708"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ac8f8ea353841cc17342f7989de961708">MakeScreen</a> (int SizeX, int SizeY, bool UseAlphaChannel=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ac8f8ea353841cc17342f7989de961708"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen で描画対象にできるグラフィックハンドルを作成する  <a href="#ac8f8ea353841cc17342f7989de961708">[詳解]</a><br /></td></tr>
+<tr class="separator:ac8f8ea353841cc17342f7989de961708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae91e7f45853961aeeb6de2f8150fa073"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ae91e7f45853961aeeb6de2f8150fa073">DerivationGraph</a> (int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae91e7f45853961aeeb6de2f8150fa073"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のグラフィックハンドルの指定部分だけを抜き出して新たなグラフィックハンドルを作成する  <a href="#ae91e7f45853961aeeb6de2f8150fa073">[詳解]</a><br /></td></tr>
+<tr class="separator:ae91e7f45853961aeeb6de2f8150fa073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f476a71300ab2d283f1920bbc6b5e6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a0f476a71300ab2d283f1920bbc6b5e6c">LoadBmpToGraph</a> (const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode=DX_MOVIESURFACE_NORMAL) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0f476a71300ab2d283f1920bbc6b5e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックハンドルを作成する  <a href="#a0f476a71300ab2d283f1920bbc6b5e6c">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f476a71300ab2d283f1920bbc6b5e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb3902508946aa2f5b479359e1d07fc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a2eb3902508946aa2f5b479359e1d07fc">LoadGraph</a> (const TCHAR *FileName, bool NotUse3DFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a2eb3902508946aa2f5b479359e1d07fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックハンドルを作成する  <a href="#a2eb3902508946aa2f5b479359e1d07fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a2eb3902508946aa2f5b479359e1d07fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e8afd7b0b7b1c70328a696fd0dfac3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a49e8afd7b0b7b1c70328a696fd0dfac3">LoadReverseGraph</a> (const TCHAR *FileName, bool NotUse3DFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a49e8afd7b0b7b1c70328a696fd0dfac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを反転したものでグラフィックハンドルを作成する  <a href="#a49e8afd7b0b7b1c70328a696fd0dfac3">[詳解]</a><br /></td></tr>
+<tr class="separator:a49e8afd7b0b7b1c70328a696fd0dfac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e88c9d15c1d5c2a1617bb0d9c6fa61b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a1e88c9d15c1d5c2a1617bb0d9c6fa61b">LoadBlendGraph</a> (const TCHAR *FileName) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1e88c9d15c1d5c2a1617bb0d9c6fa61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからブレンド用グラフィックハンドルを作成する  <a href="#a1e88c9d15c1d5c2a1617bb0d9c6fa61b">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e88c9d15c1d5c2a1617bb0d9c6fa61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff77ff09138325d738947c17f75fc0bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#aff77ff09138325d738947c17f75fc0bb">CreateGraphFromMem</a> (const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage=nullptr, int AlphaFileImageSize=0, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aff77ff09138325d738947c17f75fc0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上の画像イメージからグラフィックハンドルを作成する  <a href="#aff77ff09138325d738947c17f75fc0bb">[詳解]</a><br /></td></tr>
+<tr class="separator:aff77ff09138325d738947c17f75fc0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a352ef312bbaece27cb10b84f1adeed40"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a352ef312bbaece27cb10b84f1adeed40">ReCreateGraphFromMem</a> (const void *RGBFileImage, int RGBFileImageSize, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle, const void *AlphaFileImage=nullptr, int AlphaFileImageSize=0, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a352ef312bbaece27cb10b84f1adeed40"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上の画像イメージから既存のグラフィックハンドルにデータを転送する  <a href="#a352ef312bbaece27cb10b84f1adeed40">[詳解]</a><br /></td></tr>
+<tr class="separator:a352ef312bbaece27cb10b84f1adeed40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a48211a5eb4bdf86abdf905169db84"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#aa6a48211a5eb4bdf86abdf905169db84">CreateDXGraph</a> (const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa6a48211a5eb4bdf86abdf905169db84"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからサイズを割り出し、それに合ったグラフィックハンドルを作成する  <a href="#aa6a48211a5eb4bdf86abdf905169db84">[詳解]</a><br /></td></tr>
+<tr class="separator:aa6a48211a5eb4bdf86abdf905169db84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c763bc8e867495041e2dfc245f90bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ad3c763bc8e867495041e2dfc245f90bc">CreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad3c763bc8e867495041e2dfc245f90bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックハンドルを作成する  <a href="#ad3c763bc8e867495041e2dfc245f90bc">[詳解]</a><br /></td></tr>
+<tr class="separator:ad3c763bc8e867495041e2dfc245f90bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39cb3eb055d58fc3c157e8b8b193294"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#af39cb3eb055d58fc3c157e8b8b193294">CreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:af39cb3eb055d58fc3c157e8b8b193294"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックハンドルを作成する  <a href="#af39cb3eb055d58fc3c157e8b8b193294">[詳解]</a><br /></td></tr>
+<tr class="separator:af39cb3eb055d58fc3c157e8b8b193294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc8295c1a1a31c177ee88e35b83cf9f9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#adc8295c1a1a31c177ee88e35b83cf9f9">ReCreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:adc8295c1a1a31c177ee88e35b83cf9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックハンドルにデータを転送する  <a href="#adc8295c1a1a31c177ee88e35b83cf9f9">[詳解]</a><br /></td></tr>
+<tr class="separator:adc8295c1a1a31c177ee88e35b83cf9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae0a7f400aecf6465feb2de0b948d54"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#acae0a7f400aecf6465feb2de0b948d54">ReCreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:acae0a7f400aecf6465feb2de0b948d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックハンドルにデータを転送する  <a href="#acae0a7f400aecf6465feb2de0b948d54">[詳解]</a><br /></td></tr>
+<tr class="separator:acae0a7f400aecf6465feb2de0b948d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed73cf1b1172b81054168e61fb865b4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a3ed73cf1b1172b81054168e61fb865b4">CreateGraph</a> (int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage=nullptr, const <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle=<a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a>()) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a3ed73cf1b1172b81054168e61fb865b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックハンドルを作成する  <a href="#a3ed73cf1b1172b81054168e61fb865b4">[詳解]</a><br /></td></tr>
+<tr class="separator:a3ed73cf1b1172b81054168e61fb865b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b08e6b96fbf80c881dfa969827c518e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a9b08e6b96fbf80c881dfa969827c518e">ReCreateGraph</a> (int Width, int Height, int Pitch, const void *RGBImage, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle, const void *AlphaImage=nullptr) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9b08e6b96fbf80c881dfa969827c518e"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックハンドルを再作成する  <a href="#a9b08e6b96fbf80c881dfa969827c518e">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b08e6b96fbf80c881dfa969827c518e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d6ea04bb93820eea94f4a77e1b2cf8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#ad4d6ea04bb93820eea94f4a77e1b2cf8">CreateGraphFromBaseImage</a> (const BASEIMAGE *BaseImage) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ad4d6ea04bb93820eea94f4a77e1b2cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックハンドルを作成する  <a href="#ad4d6ea04bb93820eea94f4a77e1b2cf8">[詳解]</a><br /></td></tr>
+<tr class="separator:ad4d6ea04bb93820eea94f4a77e1b2cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2703e0699188f2ed2861f439a1529c86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a2703e0699188f2ed2861f439a1529c86">CreateGraphFromRectBaseImage</a> (const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a2703e0699188f2ed2861f439a1529c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使ってグラフィックハンドルを作成する  <a href="#a2703e0699188f2ed2861f439a1529c86">[詳解]</a><br /></td></tr>
+<tr class="separator:a2703e0699188f2ed2861f439a1529c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc54410a3803054d14ed260c7fcd10d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a2dc54410a3803054d14ed260c7fcd10d">ReCreateGraphFromBaseImage</a> (const BASEIMAGE *BaseImage, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a2dc54410a3803054d14ed260c7fcd10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックハンドルに画像データを転送する  <a href="#a2dc54410a3803054d14ed260c7fcd10d">[詳解]</a><br /></td></tr>
+<tr class="separator:a2dc54410a3803054d14ed260c7fcd10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d0a63d42a26183d43235ef710abce7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a40d0a63d42a26183d43235ef710abce7">ReCreateGraphFromRectBaseImage</a> (const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a40d0a63d42a26183d43235ef710abce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使って既存のグラフィックハンドルに画像データを転送する  <a href="#a40d0a63d42a26183d43235ef710abce7">[詳解]</a><br /></td></tr>
+<tr class="separator:a40d0a63d42a26183d43235ef710abce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e19e6fb79fe75729993581561cdae88"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a0e19e6fb79fe75729993581561cdae88">ReloadGraph</a> (const TCHAR *FileName, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0e19e6fb79fe75729993581561cdae88"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックハンドルへ画像データを転送する  <a href="#a0e19e6fb79fe75729993581561cdae88">[詳解]</a><br /></td></tr>
+<tr class="separator:a0e19e6fb79fe75729993581561cdae88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c66388df5a4856580763bf50a98bccb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html#a1c66388df5a4856580763bf50a98bccb">ReloadReverseGraph</a> (const TCHAR *FileName, <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;GrHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1c66388df5a4856580763bf50a98bccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReloadGraph の画像反転処理追加版  <a href="#a1c66388df5a4856580763bf50a98bccb">[詳解]</a><br /></td></tr>
+<tr class="separator:a1c66388df5a4856580763bf50a98bccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>画像ハンドルクラス 誰も参照しなくなったらハンドルを自動削除する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00176">176</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a5b64ab2942899e1d2f412f64a91f8e99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DxLibEx::Graph2D::Texture2D::Texture2D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00320">320</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aab924e40beca9b6d708ac0e29c364f84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DxLibEx::Graph2D::Texture2D::Texture2D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00321">321</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="acdecbd803ea861fe230e11d09486b9ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::CopyGraphZBufferImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>ToGrHandle</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドルのＺバッファの状態を別のグラフィックハンドルのＺバッファにコピーする( DestGrHandle も SrcGrHandle もＺバッファを持っている描画対象にできるグラフィックハンドルで、サイズが同じであり、且つマルチサンプリング( アンチエイリアス )設定が無いことが条件 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00264">264</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6a48211a5eb4bdf86abdf905169db84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateDXGraph </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>RgbBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>AlphaBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータからサイズを割り出し、それに合ったグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00217">217</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ed73cf1b1172b81054168e61fb865b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>RGBImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>AlphaImage</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em> = <code><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メモリ上のビットマップイメージからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00228">228</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4d6ea04bb93820eea94f4a77e1b2cf8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateGraphFromBaseImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>BaseImage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00240">240</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3c763bc8e867495041e2dfc245f90bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateGraphFromGraphImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>RgbBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00219">219</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af39cb3eb055d58fc3c157e8b8b193294"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateGraphFromGraphImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>RgbBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>AlphaBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00221">221</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aff77ff09138325d738947c17f75fc0bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateGraphFromMem </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>RGBFileImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>RGBFileImageSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>AlphaFileImage</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>AlphaFileImageSize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メモリ上の画像イメージからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00212">212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2703e0699188f2ed2861f439a1529c86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::CreateGraphFromRectBaseImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>BaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータの指定の領域を使ってグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00242">242</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acb6f24c75e89dc7409870ebb45adec74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DxLibEx::Graph2D::Texture2D::Delete </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>LogOutFlag</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>サウンドハンドルを削除する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00180">180</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae91e7f45853961aeeb6de2f8150fa073"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::DerivationGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SrcX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SrcY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SrcGraphHandle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指定のグラフィックハンドルの指定部分だけを抜き出して新たなグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00198">198</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a28749dd7042b15387b9837fe4d305f73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawExtendGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の拡大描画 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00287">287</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a580f6b99373e56596664e344622d2155"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawExtendGraphF </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の拡大描画( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00304">304</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1c0e5692e5f376f0bf36d0272985e20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawExtendTurnGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の拡大左右反転描画 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00299">299</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af9c10ce6271c4418d28b57b2bac2579f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawExtendTurnGraphF </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の拡大左右反転描画( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00316">316</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e1bb39a8c6b3ea70e996f39de359346"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の等倍描画 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00285">285</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a89b8d938845c2a91bc5790edffa04cad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawGraphF </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の描画( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00302">302</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e942ddffedc60b1c04167a540fbf675"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawModiGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の自由変形描画 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00295">295</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b0e3e44df75f612c7b3196cbcad6f6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawModiGraphF </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の自由変形描画( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00312">312</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afea70835f2e6ca598e0ca6b9d0b7f22f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawRotaGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TurnFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の回転描画 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00289">289</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a662600d29a5e49fc432ac6fa2d53a635"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawRotaGraph2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExtRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TurnFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の回転描画２( 回転中心指定付き ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00291">291</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae575ed91614d8c3746683523dbcaae3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawRotaGraph2F </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cxf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cyf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExtRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TurnFlag</em> = <code>FALSE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00308">308</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ad6f072e0c0a23d2012b95e31044425"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawRotaGraph3 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExtRateX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExtRateY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TurnFlag</em> = <code>FALSE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00293">293</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aedad1762fb805ee320614491d80b854a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawRotaGraph3F </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cxf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cyf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExtRateX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExtRateY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TurnFlag</em> = <code>FALSE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00310">310</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab728bb6218e16f0bee2b0a3ee3c492a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawRotaGraphF </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ExRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TurnFlag</em> = <code>FALSE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の回転描画( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00306">306</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af0d77a3412ff7d8a73e7dc85910ac512"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawTurnGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の左右反転描画 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00297">297</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a49837d5b5cb013ad43a172e0ba009714"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::DrawTurnGraphF </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TransFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像の左右反転描画( 座標指定が float 版 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00314">314</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adcdc0379a7a8245984b98a4cfb88e349"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int* DxLibEx::Graph2D::Texture2D::GetFullColorImage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指定のグラフィックハンドルのＡＲＧＢ８イメージを取得する( 現在動画ファイルをグラフィックハンドルで読み込んだ場合のみ使用可能 ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00256">256</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a524e3d04ab38ea94a2f09d19647eb4d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::GetGraphFilePath </td>
+          <td>(</td>
+          <td class="paramtype">TCHAR&#160;</td>
+          <td class="paramname"><em>FilePathBuffer</em>[]</td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドルが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00280">280</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad67c1837f24a22c1fc2137ea0b15251e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt;TCHAR&gt; DxLibEx::Graph2D::Texture2D::GetGraphFilePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドルが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00282">282</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a685367d59723283ec84f811a3479a537"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::GetGraphMipmapCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドルが持つテクスチャのミップマップレベル数を取得する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00278">278</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b62426c7679361de91ecb62b86dac5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::GetGraphSize </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>SizeXBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>SizeYBuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドルが持つ画像のサイズを得る </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00268">268</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a06492d83a602e53d654961df2d2abfe8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;int, int&gt; DxLibEx::Graph2D::Texture2D::GetGraphSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>グラフィックハンドルが持つ画像のサイズを得る </p><dl class="section return"><dt>戻り値</dt><dd>.first:SizeX .second:SizeY </dd></dl>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00271">271</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b4bba05b707a9b3ab9fb0853a5fffb9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::GetGraphTextureSize </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>SizeXBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>SizeYBuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドルが持つ一つ目のテクスチャのサイズを得る </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00273">273</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2df266356a9232c86d444e8e03ab5495"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;int, int&gt; DxLibEx::Graph2D::Texture2D::GetGraphTextureSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>グラフィックハンドルが持つ一つ目のテクスチャのサイズを得る </p><dl class="section return"><dt>戻り値</dt><dd>.first:SizeX .second:SizeY </dd></dl>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00276">276</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d7f1d3c4a8f87b1ef45553ae4a5714b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::GraphLock </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>PitchBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>DataPointBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">COLORDATA **&#160;</td>
+          <td class="paramname"><em>ColorDataPP</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>WriteOnly</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックメモリ領域のロック </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00258">258</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a422adc39a05cc065af534e26dae79c49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::GraphUnLock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックメモリ領域のロック解除 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00260">260</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e88c9d15c1d5c2a1617bb0d9c6fa61b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::LoadBlendGraph </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像ファイルからブレンド用グラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00209">209</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f476a71300ab2d283f1920bbc6b5e6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::LoadBmpToGraph </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>TextureFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SurfaceMode</em> = <code>DX_MOVIESURFACE_NORMAL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像ファイルからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00203">203</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb3902508946aa2f5b479359e1d07fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::LoadGraph </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>NotUse3DFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像ファイルからグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00205">205</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a49e8afd7b0b7b1c70328a696fd0dfac3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::LoadReverseGraph </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>NotUse3DFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像ファイルを反転したものでグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00207">207</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a329e4af7d8d37b0feb61330e6c2eb619"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::MakeGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>NotUse3DFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指定サイズのグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00194">194</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8f8ea353841cc17342f7989de961708"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> DxLibEx::Graph2D::Texture2D::MakeScreen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>UseAlphaChannel</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetDrawScreen で描画対象にできるグラフィックハンドルを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00196">196</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b08e6b96fbf80c881dfa969827c518e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReCreateGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>RGBImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>AlphaImage</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メモリ上のビットマップイメージからグラフィックハンドルを再作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00230">230</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2dc54410a3803054d14ed260c7fcd10d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReCreateGraphFromBaseImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>BaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータから既存のグラフィックハンドルに画像データを転送する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00244">244</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adc8295c1a1a31c177ee88e35b83cf9f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReCreateGraphFromGraphImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>RgbBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータから既存のグラフィックハンドルにデータを転送する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00223">223</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="acae0a7f400aecf6465feb2de0b948d54"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReCreateGraphFromGraphImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>RgbBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>AlphaBaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータから既存のグラフィックハンドルにデータを転送する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00225">225</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a352ef312bbaece27cb10b84f1adeed40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReCreateGraphFromMem </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>RGBFileImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>RGBFileImageSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>AlphaFileImage</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>AlphaFileImageSize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>TextureFlag</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メモリ上の画像イメージから既存のグラフィックハンドルにデータを転送する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00214">214</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a40d0a63d42a26183d43235ef710abce7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReCreateGraphFromRectBaseImage </td>
+          <td>(</td>
+          <td class="paramtype">const BASEIMAGE *&#160;</td>
+          <td class="paramname"><em>BaseImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基本イメージデータの指定の領域を使って既存のグラフィックハンドルに画像データを転送する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00246">246</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ae7ed15a66904e79625ed85b7cdb4ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::release_all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>このオブジェクトおよび同じ派生元のオブジェクトを無効化し、今まで使っていたハンドルを返す 自動削除も無効化される </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00186">186</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af362c5aa8eb4d4b92717e0db4653b045"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DxLibEx::Graph2D::Texture2D::release_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>このオブジェクトを無効化する 最後の一個だった場合ハンドルは自動的に削除される </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00183">183</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e19e6fb79fe75729993581561cdae88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReloadGraph </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ReverseFlag</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像ファイルからグラフィックハンドルへ画像データを転送する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00248">248</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c66388df5a4856580763bf50a98bccb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int DxLibEx::Graph2D::Texture2D::ReloadReverseGraph </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html">Texture2D_Unique</a> &amp;&#160;</td>
+          <td class="paramname"><em>GrHandle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ReloadGraph の画像反転処理追加版 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00250">250</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb62e5bc87fb253cc6e53cc1d8101ff3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::SetDeviceLostDeleteGraphFlag </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>DeleteFlag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックスデバイスのデバイスロスト発生時に指定のグラフィックハンドルを削除するかどうかを設定する( TRUE:デバイスロスト時に削除する FALSE:デバイスロストが発生しても削除しない ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00266">266</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="adfc2c14592507a91a820ddf1139da30f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DxLibEx::Graph2D::Texture2D::SetUseGraphZBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>UseFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>BitDepth</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>グラフィックハンドル専用のＺバッファを持つかどうかを設定する( GrHandle:対象となるグラフィックハンドル( 描画対象として使用可能なグラフィックハンドルのみ有効 ) UseFlag:専用のＺバッファを持つかどうか( TRUE:持つ( デフォルト ) FALSE:持たない ) BitDepth:ビット深度( 16 or 24 or 32 ) ) </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00262">262</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>DxLibEx/<a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_dx_lib_ex.html">DxLibEx</a></li><li class="navelem"><a class="el" href="namespace_dx_lib_ex_1_1_graph2_d.html">Graph2D</a></li><li class="navelem"><a class="el" href="class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a></li>
+    <li class="footer">2015年10月24日(土) 23時11分05秒作成 - DxLibEx完全詳解 / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

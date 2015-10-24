@@ -15,8 +15,12 @@ var hierarchy =
     [ "DxLibEx::nMouse::MouseInputInfo", "struct_dx_lib_ex_1_1n_mouse_1_1_mouse_input_info.html", null ],
     [ "DxLibEx::nMouse::MouseState", "struct_dx_lib_ex_1_1n_mouse_1_1_mouse_state.html", null ],
     [ "DxLibEx::Sound::SoundEffect", "class_dx_lib_ex_1_1_sound_1_1_sound_effect.html", null ],
+    [ "DxLibEx::Graph2D::Texture2D", "class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d.html", null ],
     [ "DxLibEx::impl::Unique_Handle_Bace< Child >", "class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html", null ],
     [ "DxLibEx::impl::Unique_Handle_Bace< SoundEffect_Unique >", "class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html", [
       [ "DxLibEx::Sound::SoundEffect_Unique", "class_dx_lib_ex_1_1_sound_1_1_sound_effect___unique.html", null ]
+    ] ],
+    [ "DxLibEx::impl::Unique_Handle_Bace< Texture2D_Unique >", "class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html", [
+      [ "DxLibEx::Graph2D::Texture2D_Unique", "class_dx_lib_ex_1_1_graph2_d_1_1_texture2_d___unique.html", null ]
     ] ]
 ];
