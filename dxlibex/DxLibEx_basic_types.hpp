@@ -11,24 +11,42 @@ namespace DxLibEx{
 	public:
 		typedef T value_type;
 		value_type x, y;
-		point_c() DXLIBEX_NOEXCEPT;
-		explicit point_c(std::nullptr_t) DXLIBEX_NOEXCEPT;//for compare with 0. rf.)http://faithandbrave.hateblo.jp/entry/20081222/1229936810
-		point_c(value_type x, value_type y) DXLIBEX_NOEXCEPT;
+		point_c() DXLIBEX_NOEXCEPT : x(), y() {}
+		point_c(std::nullptr_t) DXLIBEX_NOEXCEPT : x(), y() {}//for compare with 0. rf.)http://faithandbrave.hateblo.jp/entry/20081222/1229936810
+		point_c(value_type x_, value_type y_) DXLIBEX_NOEXCEPT : x(x_), y(y_) {}
 
 		//copy constructor
-		explicit point_c(const point_c<value_type>& o) DXLIBEX_NOEXCEPT;
+		point_c(const point_c<value_type>& o) DXLIBEX_NOEXCEPT : x(o.x), y(o.y) {}
 		//move constructor
-		explicit point_c(point_c<value_type>&& o) DXLIBEX_NOEXCEPT;
+		point_c(point_c<value_type>&& o) DXLIBEX_NOEXCEPT : x(std::forward(o.x)), y(std::forward(o.y)) {}
 		//copy assignment operator
-		point_c& operator=(const point_c<value_type>& r) DXLIBEX_NOEXCEPT;
+		point_c& operator=(const point_c<value_type>& r) DXLIBEX_NOEXCEPT {
+			this->x = r.x;
+			this->y = r.y;
+			return *this;
+		}
 		//move assignment operator
-		point_c& operator=(point_c<value_type>&& r) DXLIBEX_NOEXCEPT;
+		point_c& operator=(point_c<value_type>&& r) DXLIBEX_NOEXCEPT {
+			this->x = std::forward(r.x);
+			this->y = std::forward(r.y);
+			return *this;
+		}
 
 		//convert constructor
-		point_c(const std::pair<value_type, value_type>& p) DXLIBEX_NOEXCEPT;
-		point_c(std::pair<value_type, value_type>&& p) DXLIBEX_NOEXCEPT;
-		explicit operator bool() const DXLIBEX_NOEXCEPT;
+		point_c(const std::pair<value_type, value_type>& p) DXLIBEX_NOEXCEPT : x(p.first), y(p.second) {}
+		point_c(std::pair<value_type, value_type>&& p) DXLIBEX_NOEXCEPT : x(std::forward(p.first)), y(std::forward(p.second)) {}
+		explicit operator bool() const DXLIBEX_NOEXCEPT {
+			return (0 != this->x) || (0 != this->y);
+		}
 	};
+	template <typename T>
+	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLIBEX_NOEXCEPT {
+		return p;
+	}
+	template <typename T>
+	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLIBEX_NOEXCEPT {
+		return p;
+	}
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of unary operator -
@@ -39,7 +57,9 @@ namespace DxLibEx{
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator -(const point_c<T>& right);
+	point_c<T> operator -(const point_c<T>& r) DXLIBEX_NOEXCEPT {
+		return point_c<T>(-r.x, -r.y);
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
