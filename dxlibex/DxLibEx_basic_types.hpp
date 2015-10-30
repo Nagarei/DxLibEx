@@ -5,7 +5,7 @@
 #include <type_traits>
 #include "DxLibEx_Defines.h"
 
-namespace DxLibEx{
+namespace DxLibEx {
 	template<typename T, typename std::enable_if<std::is_arithmetic<T>::value, std::nullptr_t>::type = nullptr> class point_c
 	{
 	public:
@@ -18,7 +18,7 @@ namespace DxLibEx{
 		//copy constructor
 		point_c(const point_c<value_type>& o) DXLIBEX_NOEXCEPT : x(o.x), y(o.y) {}
 		//move constructor
-		point_c(point_c<value_type>&& o) DXLIBEX_NOEXCEPT : x(std::forward(o.x)), y(std::forward(o.y)) {}
+		point_c(point_c<value_type>&& o) DXLIBEX_NOEXCEPT : x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
 		point_c& operator=(const point_c<value_type>& r) DXLIBEX_NOEXCEPT {
 			this->x = r.x;
@@ -27,25 +27,25 @@ namespace DxLibEx{
 		}
 		//move assignment operator
 		point_c& operator=(point_c<value_type>&& r) DXLIBEX_NOEXCEPT {
-			this->x = std::forward(r.x);
-			this->y = std::forward(r.y);
+			this->x = std::move(r.x);
+			this->y = std::move(r.y);
 			return *this;
 		}
 
 		//convert constructor
 		point_c(const std::pair<value_type, value_type>& p) DXLIBEX_NOEXCEPT : x(p.first), y(p.second) {}
-		point_c(std::pair<value_type, value_type>&& p) DXLIBEX_NOEXCEPT : x(std::forward(p.first)), y(std::forward(p.second)) {}
+		point_c(std::pair<value_type, value_type>&& p) DXLIBEX_NOEXCEPT : x(std::move(p.first)), y(std::move(p.second)) {}
 		explicit operator bool() const DXLIBEX_NOEXCEPT {
 			return (0 != this->x) || (0 != this->y);
 		}
 	};
 	template <typename T>
 	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLIBEX_NOEXCEPT {
-		return p;
+		return static_cast<bool>(p);
 	}
 	template <typename T>
 	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLIBEX_NOEXCEPT {
-		return p;
+		return static_cast<bool>(p);
 	}
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
@@ -60,6 +60,11 @@ namespace DxLibEx{
 	point_c<T> operator -(const point_c<T>& r) DXLIBEX_NOEXCEPT {
 		return point_c<T>(-r.x, -r.y);
 	}
+
+	template <typename T>
+	inline const point_c<T>& operator +(const point_c<T>& r) DXLIBEX_NOEXCEPT { return r; }
+	template <typename T>
+	inline point_c<T>&& operator +(point_c<T>&& r) DXLIBEX_NOEXCEPT { return r; }
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
