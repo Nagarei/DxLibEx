@@ -1,12 +1,15 @@
 #ifndef INC_DXLIBEX_BASIC_TYPES_HPP
 #define INC_DXLIBEX_BASIC_TYPES_HPP
 //#pragma once
+#include <iostream>//ostream
 #include <utility>//std::pair
 #include <type_traits>
+#include <cstdint>
 #include "DxLibEx_Defines.h"
 
 namespace DxLibEx {
-	template<typename T, typename std::enable_if<std::is_arithmetic<T>::value, std::nullptr_t>::type = nullptr> class point_c
+	template<typename T, typename std::enable_if<std::is_arithmetic<T>::value, std::nullptr_t>::type = nullptr>
+	class point_c
 	{
 	public:
 		typedef T value_type;
@@ -38,7 +41,39 @@ namespace DxLibEx {
 		explicit operator bool() const DXLIBEX_NOEXCEPT {
 			return (0 != this->x) || (0 != this->y);
 		}
+		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLIBEX_NOEXCEPT {
+			return point_c<_Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
+		}
 	};
+	//ostream operator
+	namespace detail {
+		template<typename CharType, typename PointType, bool is_one_byte, bool is_signed>
+		struct ostream_operator_helper {
+			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
+				os << p.x << str << p.y;
+			}
+		};
+		template<typename CharType, typename PointType>
+		struct ostream_operator_helper<CharType, PointType, true, true> {
+			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
+				os << static_cast<int>(p.x) << str << static_cast<int>(p.y);
+			}
+		};
+		template<typename CharType, typename PointType>
+		struct ostream_operator_helper<CharType, PointType, true, false> {
+			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
+				os << static_cast<unsigned int>(p.x) << str << static_cast<unsigned int>(p.y);
+			}
+		};
+	}
+	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p) {
+		detail::ostream_operator_helper<char, T, 1U == sizeof(T), std::is_signed<T>::value>()(os, ", ", p);
+		return os;
+	}
+	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p) {
+		detail::ostream_operator_helper<wchar_t, T, 1U == sizeof(T), std::is_signed<T>::value>()(os, L", ", p);
+		return os;
+	}
 	template <typename T>
 	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLIBEX_NOEXCEPT {
 		return static_cast<bool>(p);
@@ -225,5 +260,11 @@ namespace DxLibEx {
 	template <typename T>
 	bool operator !=(const point_c<T>& left, const point_c<T>& right);
 
+
+	typedef point_c<int> pointi;
+	typedef point_c<uint8_t> pointu8i;
+	typedef point_c<int8_t> point8i;
+	typedef point_c<double> pointd;
+	typedef point_c<float> pointf;
 };
 #endif
