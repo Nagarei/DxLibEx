@@ -47,33 +47,75 @@ namespace DxLibEx {
 	};
 	//ostream operator
 	namespace detail {
-		template<typename CharType, typename PointType, bool is_one_byte, bool is_signed>
+		template<typename CharType, bool = std::is_signed<CharType>::value>
+		struct CharTo_CommonSignInt {//CharType‚Æsigned,unsigned‚ª“¯‚¶int
+			typedef int type;
+		};
+		template<typename CharType>
+		struct CharTo_CommonSignInt<CharType, false> {//CharType‚Æsigned,unsigned‚ª“¯‚¶int
+			typedef unsigned type;
+		};
+		template<typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value>::type>
+		struct ToArithmetic {
+			typedef T type;
+		};
+		template<>
+		struct ToArithmetic<unsigned char, void> {
+			typedef unsigned type;
+		};
+		template<>
+		struct ToArithmetic<signed char, void> {
+			typedef signed type;
+		};
+		template<>
+		struct ToArithmetic<wchar_t, void> {
+			typedef CharTo_CommonSignInt<wchar_t>::type type;
+		};
+		template<>
+		struct ToArithmetic<char16_t, void> {
+			typedef CharTo_CommonSignInt<char16_t>::type type;
+		};
+		template<>
+		struct ToArithmetic<char32_t, void> {
+			typedef CharTo_CommonSignInt<char32_t>::type type;
+		};
+
+		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
 			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
-				os << p.x << str << p.y;
+				typedef detail::ToArithmetic<PointType>::type Arithmetic;
+				os << static_cast<Arithmetic>(p.x) << str << static_cast<Arithmetic>(p.y);
 			}
 		};
 		template<typename CharType, typename PointType>
-		struct ostream_operator_helper<CharType, PointType, true, true> {
-			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
-				os << static_cast<int>(p.x) << str << static_cast<int>(p.y);
-			}
-		};
-		template<typename CharType, typename PointType>
-		struct ostream_operator_helper<CharType, PointType, true, false> {
-			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
-				os << static_cast<unsigned int>(p.x) << str << static_cast<unsigned int>(p.y);
+		struct istream_operator_helper {
+			void operator()(std::basic_istream<CharType>& os, point_c<PointType>& p) {
+				typedef detail::ToArithmetic<PointType>::type Arithmetic;
+				Arithmetic x, y;
+				CharType buf[3];
+				is >> x >> buf >> y;
+				p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
+				return is;
 			}
 		};
 	}
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p) {
-		detail::ostream_operator_helper<char, T, 1U == sizeof(T), std::is_signed<T>::value>()(os, ", ", p);
+		detail::ostream_operator_helper<char, T>()(os, ", ", p);
 		return os;
 	}
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p) {
-		detail::ostream_operator_helper<wchar_t, T, 1U == sizeof(T), std::is_signed<T>::value>()(os, L", ", p);
+		detail::ostream_operator_helper<wchar_t, T>()(os, L", ", p);
 		return os;
 	}
+	template<typename T> std::istream& operator>>(std::istream& is, const point_c<T>& p) {
+		detail::istream_operator_helper<char, T>()(is, p);
+		return is;
+	}
+	template<typename T> std::wistream& operator>>(std::wistream& os, const point_c<T>& p) {
+		detail::istream_operator_helper<wchar_t, T>()(is, p);
+		return is;
+	}
+
 	template <typename T>
 	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLIBEX_NOEXCEPT {
 		return static_cast<bool>(p);
