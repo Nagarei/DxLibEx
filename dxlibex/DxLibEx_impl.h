@@ -9,7 +9,7 @@
 #include <new>
 //各関数の定義
 
-namespace DxLibEx
+namespace dxle
 {
 	//----------DxLibSys----------//
 	namespace nDxLibSys
@@ -315,6 +315,6 @@ namespace DxLibEx
 
 
 
-}//namespace DxLibEx
+}//namespace dxle
 //インクルードガード
 #endif

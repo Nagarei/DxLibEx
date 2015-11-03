@@ -6,6 +6,7 @@ var NAVTREE =
       [ "名前空間メンバ", "namespacemembers.html", [
         [ "全て", "namespacemembers.html", "namespacemembers_dup" ],
         [ "関数", "namespacemembers_func.html", "namespacemembers_func" ],
+        [ "型定義", "namespacemembers_type.html", null ],
         [ "列挙型", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
@@ -34,7 +35,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_dx_lib_ex_8h.html",
-"_dx_lib_ex___graph2_d_8h.html#aef6f26e4e64da19dd2d96a2aab4233e9"
+"classdxle_1_1_graph2_d_1_1_screen.html#a1b1dd056c87921d51cf1b1fab5a1e08a"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

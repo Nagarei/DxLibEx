@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]],
-  ['unique_5fhandle_5fbace_3c_20soundeffect_5funique_20_3e',['Unique_Handle_Bace&lt; SoundEffect_Unique &gt;',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]],
-  ['unique_5fhandle_5fbace_3c_20texture2d_5funique_20_3e',['Unique_Handle_Bace&lt; Texture2D_Unique &gt;',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html',1,'DxLibEx::impl']]]
+  ['screen',['Screen',['../classdxle_1_1_graph2_d_1_1_screen.html',1,'dxle::Graph2D']]],
+  ['soundeffect',['SoundEffect',['../classdxle_1_1_sound_1_1_sound_effect.html',1,'dxle::Sound']]],
+  ['soundeffect_5funique',['SoundEffect_Unique',['../classdxle_1_1_sound_1_1_sound_effect___unique.html',1,'dxle::Sound']]]
 ];

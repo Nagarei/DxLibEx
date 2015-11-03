@@ -6,10 +6,11 @@
 #include <utility>
 #include <memory>
 #include <queue>
+#include "DxLibEx_basic_types.hpp"
 #include "DxLibEx_Helper.h"
 #include "DxLibEx_Defines.h"
 
-namespace DxLibEx
+namespace dxle
 {
 	//!DxLibExの公開クラスが全て入ったnamespaceです
 	namespace DxLibEx_Classes{}

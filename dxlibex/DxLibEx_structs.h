@@ -2,7 +2,7 @@
 #define DX_LIB_EX_STRUCTS_H_
 #include "DxLib.h"
 
-namespace DxLibEx{
+namespace dxle{
 namespace DxStructs//!DxLib‚Ìstruct‚ÌusingéŒ¾‚ğW‚ß‚½namespace‚Å‚·
 {
 	

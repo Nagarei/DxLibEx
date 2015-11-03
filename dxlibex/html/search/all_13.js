@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['vsprintfdx',['vsprintfDx',['../namespace_dx_lib_ex_1_1_dx_char.html#acc2f95a4e47f46393ff5e25908d1e02f',1,'DxLibEx::DxChar']]],
-  ['vsscanfdx',['vsscanfDx',['../namespace_dx_lib_ex_1_1_dx_char.html#a74dcc5868881458a02b23e7fef0b0251',1,'DxLibEx::DxChar']]]
+  ['value_5ftype',['value_type',['../classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4',1,'dxle::point_c']]],
+  ['vsprintfdx',['vsprintfDx',['../namespacedxle_1_1_dx_char.html#aa148018ea70258f1dc3ec824a64dcde1',1,'dxle::DxChar']]],
+  ['vsscanfdx',['vsscanfDx',['../namespacedxle_1_1_dx_char.html#a252509aa69e2e8a7545a2dc43324847f',1,'dxle::DxChar']]]
 ];

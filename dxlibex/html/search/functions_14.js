@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7eunique_5fhandle_5fbace',['~Unique_Handle_Bace',['../class_dx_lib_ex_1_1impl_1_1_unique___handle___bace.html#a14d432ecf8a021fe4b9479e48aa6d46a',1,'DxLibEx::impl::Unique_Handle_Bace']]]
+  ['waitkey',['WaitKey',['../namespacedxle_1_1_wait.html#a40c76018c2418de9cb80b65f27488815',1,'dxle::Wait']]],
+  ['waittimer',['WaitTimer',['../namespacedxle_1_1_wait.html#a3ccc8d28a5c09a585fec10a494d2b151',1,'dxle::Wait']]]
 ];

@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['networkrecv',['NetWorkRecv',['../namespace_dx_lib_ex_1_1_network.html#aec1e17091e6170d346f3135aa084e2cf',1,'DxLibEx::Network']]],
-  ['networkrecvbufferclear',['NetWorkRecvBufferClear',['../namespace_dx_lib_ex_1_1_network.html#a162aef77a30224345471e8c47bf7d7b7',1,'DxLibEx::Network']]],
-  ['networkrecvtopeek',['NetWorkRecvToPeek',['../namespace_dx_lib_ex_1_1_network.html#a7484929d4ec9fe49fc5a00b5149cede4',1,'DxLibEx::Network']]],
-  ['networkrecvudp',['NetWorkRecvUDP',['../namespace_dx_lib_ex_1_1_network.html#afa13f5e6b6a6904dbf4cb6540009d295',1,'DxLibEx::Network']]],
-  ['networkrecvudp_5fipv6',['NetWorkRecvUDP_IPv6',['../namespace_dx_lib_ex_1_1_network.html#a2e4e87914e65f1f7eae996cfe533d846',1,'DxLibEx::Network']]],
-  ['networksend',['NetWorkSend',['../namespace_dx_lib_ex_1_1_network.html#a55d13c6987110e8ea4fd826b9793f058',1,'DxLibEx::Network']]],
-  ['networksendudp',['NetWorkSendUDP',['../namespace_dx_lib_ex_1_1_network.html#ac5b24243f72724943970d6646a739543',1,'DxLibEx::Network']]],
-  ['networksendudp_5fipv6',['NetWorkSendUDP_IPv6',['../namespace_dx_lib_ex_1_1_network.html#ae85b09ac91548fee00a9538b0275c58b',1,'DxLibEx::Network']]],
-  ['now',['now',['../class_dx_lib_ex_1_1n_counter_1_1_counter.html#aeb59aa5344882ef9f8ad033edf4c072e',1,'DxLibEx::nCounter::Counter::now()'],['../class_dx_lib_ex_1_1n_counter_1_1_hi_performance_counter.html#aec18d6dc55b562b4557828108a10e8fe',1,'DxLibEx::nCounter::HiPerformanceCounter::now()']]]
+  ['makegraph',['MakeGraph',['../classdxle_1_1_graph2_d_1_1_texture2_d.html#a97039e3075eacf7be8f0cbb499d3fd3c',1,'dxle::Graph2D::Texture2D::MakeGraph()'],['../namespacedxle_1_1_graph2_d.html#acce705780bdaa5956c45cb290c4e104d',1,'dxle::Graph2D::MakeGraph()']]],
+  ['makekeyinput',['MakeKeyInput',['../namespacedxle_1_1_input_string.html#a820823ee4895b243365b711098bd7623',1,'dxle::InputString']]],
+  ['makescreen',['MakeScreen',['../classdxle_1_1_graph2_d_1_1_screen.html#a136712fcd1ca8acbbe4024fe646a9a03',1,'dxle::Graph2D::Screen::MakeScreen()'],['../namespacedxle_1_1_graph2_d.html#a3cb112fd5f0c127d7472fd809707dac4',1,'dxle::Graph2D::MakeScreen()']]],
+  ['makeudpsocket',['MakeUDPSocket',['../namespacedxle_1_1_network.html#a6cb892e30a82c9978235d14fb37cea0c',1,'dxle::Network']]],
+  ['makeudpsocket_5fipv6',['MakeUDPSocket_IPv6',['../namespacedxle_1_1_network.html#ad6213aabd841f6ad2582878e3b588a11',1,'dxle::Network']]],
+  ['mouseinputinfo',['MouseInputInfo',['../structdxle_1_1n_mouse_1_1_mouse_input_info.html#a2cfbabe601de08223653d37e794da8a9',1,'dxle::nMouse::MouseInputInfo::MouseInputInfo() DXLIBEX_NOEXCEPT'],['../structdxle_1_1n_mouse_1_1_mouse_input_info.html#a3bac0eda6b8d933eac63734547e869e3',1,'dxle::nMouse::MouseInputInfo::MouseInputInfo(int x, int y, int type) DXLIBEX_NOEXCEPT']]],
+  ['mousestate',['MouseState',['../structdxle_1_1n_mouse_1_1_mouse_state.html#a18779e84c219e503b6f8db098b2b1d6a',1,'dxle::nMouse::MouseState::MouseState() DXLIBEX_NOEXCEPT'],['../structdxle_1_1n_mouse_1_1_mouse_state.html#acedb8070b470af61e679322638c39094',1,'dxle::nMouse::MouseState::MouseState(int x, int y, int scrollWheel, ButtonState leftButton, ButtonState middleButton, ButtonState rightButton, ButtonState xButton1, ButtonState xButton2) DXLIBEX_NOEXCEPT']]]
 ];
