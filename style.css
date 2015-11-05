@@ -1,0 +1,130 @@
+@charset "UTF-8";
+html{
+	font-family: "IPAex明朝","IPA明朝", "Times New Roman", "游明朝" , YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W6","HiraMinProN-W6", "HG明朝E", "メイリオ", Meiryo, serif;
+}
+body{
+	background-color: #9790a4;
+	padding: 0.5em;
+}
+section, article{
+	background-color: #e7e7eb;
+	margin: 2px 7px;
+	padding: 1px 7px;
+	border: solid 1px #d3cfd9;
+}
+h1{
+	text-align: center;
+	background-color: #f3f3f2;
+	padding: 7px 0;
+}
+h1, h2, h3, h4, h5{
+	font-weight: bold;
+	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+	color: #0d0015;
+}
+code{
+	font-family: Inconsolata, Ricty, Consolas, "Source Code Pro", "Anonymous Pro", "Ubuntu Mono", "Dejavu Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+}
+div.syntaxhighlighter table caption{
+	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif !important;
+}
+div.syntaxhighlighter code.comments{
+	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif !important;
+	font-size: 0.9em !important;
+}
+p, li, q, b, a, dd blockquote{
+	font-size: 14px;
+}
+.monospace{
+	font-family: Inconsolata, Ricty, Consolas, "Source Code Pro", "Anonymous Pro", "Ubuntu Mono", "Dejavu Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+}
+blockquote, dl{
+	background-color: #f7fcfe;
+	margin: 1em 2em;
+	padding: 0.5em;
+	border: 1px #9790a4 solid;
+}
+q{
+	background-color: #e5e4e6;
+}
+dt{
+	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+	font-weight: bold;
+}
+table{
+	margin: 20px;
+}
+td{
+	border: solid 1px #000000;
+	vertical-align: middle;
+	text-align: left;
+	padding: 2px;
+}
+th{
+	border: solid 1px #000000;
+	vertical-align: middle;
+	text-align: center;
+}
+ul, ol{
+	padding-left: 1.6em;
+}
+.strong{
+	font-size:larger;
+	font-weight:bold;
+	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+}
+tr.strong td{
+	font-size: medium;
+}
+
+/* nav */
+nav.top{
+	border-bottom: solid 2px #000000;
+}
+nav.bottom{
+	border-top: solid 2px #000000;
+}
+
+nav ul{
+	margin: 10px auto;
+	text-align: center;
+	padding: 0;
+}
+nav ul li{
+	margin: 0 5px;
+	-moz-border-radius: 5px;    /* Firefox */
+	-webkit-border-radius: 5px; /* Safari,Chrome */
+	border: 2px #4f455c solid;
+	border-radius: 5px;
+	display: inline-block;
+	list-style-type: none;
+	background-color: #eaf4fc;
+	font-family: Inconsolata, Ricty, Consolas, "Source Code Pro", "Anonymous Pro", "Ubuntu Mono", "Dejavu Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+}
+nav ul li a{
+	color: #000000;
+	font-size: 0.8em;
+	text-decoration: none;
+	display: block;
+	padding: 3px 15px;
+	text-align: center;
+}
+nav ul li.disable{
+	text-decoration: line-through;
+	background-color: #9790a4;
+	border: 2px #9790a4 solid;
+}
+
+.slideshare {
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid #CCC;
+	border-width: 1px;
+	margin-bottom: 5px;
+	max-width: 100%;
+}
+.scroll_box{
+    height: 200px;
+    overflow-y: scroll;
+}
