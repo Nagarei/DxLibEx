@@ -14,24 +14,27 @@
 
 namespace dxle
 {
-	//!DxLibExの公開クラスが全て入ったnamespaceです
+	//!\~japanese DxLibExの公開クラスが全て入ったnamespaceです
 	namespace DxLibEx_Classes {}
 	//! 2Dグラフィック
 	namespace Graph2D
 	{
 
-		//! 画像クラス(画像ハンドルクラスではない)
+		//!\~japanese 画像クラス(画像ハンドルクラスではない)
+		//!\~english  A image class (NOT a image handle class)
 		class Texture2D : public impl::Unique_HandledObject_Bace<Texture2D>
 		{
 		public:
-			//!画像を削除する
+			//!\~japanese 画像を削除する
+			//!\~english  Delete this image
 			inline void Delete(bool LogOutFlag = false) { DeleteGraph(GetHandle(), LogOutFlag); }
 
 			//生成用static関数
 	
 			// グラフィック作成関係関数
 	
-			//! 指定サイズのグラフィックを作成する
+			//!\~japanese 指定サイズのグラフィックを作成する
+			//!\~english  Create image with sizes
 			static inline Texture2D MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
 			//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
 			static inline Texture2D DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle), false); }
@@ -115,7 +118,7 @@ namespace dxle
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する
 			inline int GetGraphFilePath(TCHAR FilePathBuffer[])const DXLIBEX_NOEXCEPT { return DxLib::GetGraphFilePath(GetHandle(), FilePathBuffer); }
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する
-			inline std::basic_string<TCHAR> GetGraphFilePath()const DXLIBEX_NOEXCEPT { TCHAR FilePathBuffer[1024]; if (GetGraphFilePath(FilePathBuffer) == -1) { return std::basic_string<TCHAR>(); } return FilePathBuffer; }
+			inline std::basic_string<TCHAR> GetGraphFilePath()const DXLIBEX_NOEXCEPT { TCHAR FilePathBuffer[2048]; if (GetGraphFilePath(FilePathBuffer) == -1) { return std::basic_string<TCHAR>(); } return FilePathBuffer; }
 	
 			//! 画像の等倍描画
 			inline int DrawGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
@@ -188,6 +191,14 @@ namespace dxle
 
 			//メンバ関数
 
+			template<typename Func_T>
+			void DrawnOn(Func_T&& draw_func) {
+				auto old_draw_screen = DxLib::GetDrawScreen();
+				this->SetDrawScreen();
+				draw_func();
+				DxLib::SetDrawScreen(old_draw_screen);
+			}
+
 			//! グラフィック専用のＺバッファを持つかどうかを設定する
 			//!@param UseFlag 専用のＺバッファを持つかどうか( true:持つ( デフォルト )  false:持たない )
 			//!@param BitDepth ビット深度( 16 or 24 or 32 ) )
@@ -204,6 +215,9 @@ namespace dxle
 			//!@param DestX, DestY 転送先の矩形の左上座標
 			//!@param DestGrHandle 転送先の画像
 			inline int BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, Texture2D& DestGrHandle)const DXLIBEX_NOEXCEPT{ return DxLib::BltDrawValidGraph(GetHandle(), x1, y1, x2, y2, DestX, DestY, Texture2D::GetTexture2DHandle(DestGrHandle)); }
+
+			//! 描画先画面を設定する
+			inline int SetDrawScreen()const DXLIBEX_NOEXCEPT { return DxLib::SetDrawScreen(GetHandle()); }
 
 		public:
 			Screen() : Texture2D() {}
