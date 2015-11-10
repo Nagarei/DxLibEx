@@ -47,39 +47,16 @@ namespace dxle {
 	};
 	//ostream operator
 	namespace detail {
-		template<typename CharType, bool = std::is_signed<CharType>::value>
-		struct CharTo_CommonSignInt {//CharType‚Æsigned,unsigned‚ª“¯‚¶int
-			typedef int type;
-		};
-		template<typename CharType>
-		struct CharTo_CommonSignInt<CharType, false> {//CharType‚Æsigned,unsigned‚ª“¯‚¶int
-			typedef unsigned type;
-		};
-		template<typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value>::type>
-		struct ToArithmetic {
+		template<typename T, bool is_arithmetical = std::is_arithmetic<T>::value, size_t s = sizeof(T), bool is_s = std::is_signed<T>::value> struct ToArithmetic;
+		template<typename T, size_t s, bool is_s> struct ToArithmetic<T, true, s, is_s> {
 			typedef T type;
 		};
-		template<>
-		struct ToArithmetic<unsigned char, void> {
-			typedef unsigned type;
+		template<typename T> struct ToArithmetic<T, true, 1, false> {
+			typedef unsigned int type;
 		};
-		template<>
-		struct ToArithmetic<signed char, void> {
-			typedef signed type;
+		template<typename T> struct ToArithmetic<T, true, 1, true> {
+			typedef int type;
 		};
-		template<>
-		struct ToArithmetic<wchar_t, void> {
-			typedef CharTo_CommonSignInt<wchar_t>::type type;
-		};
-		template<>
-		struct ToArithmetic<char16_t, void> {
-			typedef CharTo_CommonSignInt<char16_t>::type type;
-		};
-		template<>
-		struct ToArithmetic<char32_t, void> {
-			typedef CharTo_CommonSignInt<char32_t>::type type;
-		};
-
 		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
 			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
@@ -89,13 +66,12 @@ namespace dxle {
 		};
 		template<typename CharType, typename PointType>
 		struct istream_operator_helper {
-			void operator()(std::basic_istream<CharType>& os, point_c<PointType>& p) {
-				typedef detail::ToArithmetic<PointType>::type Arithmetic;
+			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p) {
+				typedef typename ToArithmetic<PointType>::type Arithmetic;
 				Arithmetic x, y;
 				CharType buf[3];
 				is >> x >> buf >> y;
 				p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
-				return is;
 			}
 		};
 	}
@@ -107,11 +83,11 @@ namespace dxle {
 		detail::ostream_operator_helper<wchar_t, T>()(os, L", ", p);
 		return os;
 	}
-	template<typename T> std::istream& operator>>(std::istream& is, const point_c<T>& p) {
+	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p) {
 		detail::istream_operator_helper<char, T>()(is, p);
 		return is;
 	}
-	template<typename T> std::wistream& operator>>(std::wistream& os, const point_c<T>& p) {
+	template<typename T> std::wistream& operator>>(std::wistream& os, point_c<T>& p) {
 		detail::istream_operator_helper<wchar_t, T>()(is, p);
 		return is;
 	}
