@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../classdxle_1_1impl_1_1_unique___handle___bace.html',1,'dxle::impl']]],
+  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../classdxle_1_1impl_1_1_unique___handle___bace.html#a03cdfc430423f02c754ae644ea3e2a8a',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace() DXLIBEX_NOEXCEPT'],['../classdxle_1_1impl_1_1_unique___handle___bace.html#a5889ea02dd65bf49ceddd2ef168b2ab8',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace(Bace_T &amp;&amp;other) DXLIBEX_NOEXCEPT'],['../classdxle_1_1impl_1_1_unique___handle___bace.html#a017c175a645e2b4f7ec0152348125f48',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace(int param_handle) DXLIBEX_NOEXCEPT']]],
+  ['unique_5fhandle_5fbace_3c_20soundeffect_5funique_20_3e',['Unique_Handle_Bace&lt; SoundEffect_Unique &gt;',['../classdxle_1_1impl_1_1_unique___handle___bace.html',1,'dxle::impl']]],
+  ['unique_5fhandledobject_5fbace',['Unique_HandledObject_Bace',['../classdxle_1_1impl_1_1_unique___handled_object___bace.html#ab4141df1fb877190ce243dc4b66ca3a6',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace() DXLIBEX_NOEXCEPT'],['../classdxle_1_1impl_1_1_unique___handled_object___bace.html#a0dbd7e1f865b730c24ce6499db817849',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace(Bace_T &amp;&amp;other) DXLIBEX_NOEXCEPT'],['../classdxle_1_1impl_1_1_unique___handled_object___bace.html#ad411cff8b83e53f2fefe25c793cf40d7',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace(int param_handle) DXLIBEX_NOEXCEPT']]],
+  ['unique_5fhandledobject_5fbace',['Unique_HandledObject_Bace',['../classdxle_1_1impl_1_1_unique___handled_object___bace.html',1,'dxle::impl']]],
+  ['unique_5fhandledobject_5fbace_3c_20texture2d_20_3e',['Unique_HandledObject_Bace&lt; Texture2D &gt;',['../classdxle_1_1impl_1_1_unique___handled_object___bace.html',1,'dxle::impl']]],
+  ['usealphachannel',['UseAlphaChannel',['../classdxle_1_1_graph2_d_1_1_screen.html#a3b32ee02025bbbce6adc44d6681bd56c',1,'dxle::Graph2D::Screen']]]
+];
