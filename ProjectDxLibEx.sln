@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProjectDxLibEx", "ProjectDxLibEx.vcxproj", "{A7FFFCCD-08A6-4826-84D4-B46438389B66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7FFFCCD-08A6-4826-84D4-B46438389B66}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7FFFCCD-08A6-4826-84D4-B46438389B66}.Debug|Win32.Build.0 = Debug|Win32
+		{A7FFFCCD-08A6-4826-84D4-B46438389B66}.Release|Win32.ActiveCfg = Release|Win32
+		{A7FFFCCD-08A6-4826-84D4-B46438389B66}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
