@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dxlibex">
+      <UniqueIdentifier>{0b19b9cc-e6a2-4766-9390-6fa0c48bf16e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dxlibex\DxLibEx.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_basic_types.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_Defines.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_Graph2D.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_Helper.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_impl.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_LINK.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_structs.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

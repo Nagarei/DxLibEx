@@ -195,8 +195,11 @@ namespace dxle
 			void DrawnOn(Func_T&& draw_func) {
 				auto old_draw_screen = DxLib::GetDrawScreen();
 				this->SetDrawScreen();
+				struct Finary_ { ~Finary_() {
+					DxLib::SetDrawScreen(old_draw_screen);
+				} }finally_;
+
 				draw_func();
-				DxLib::SetDrawScreen(old_draw_screen);
 			}
 
 			//! グラフィック専用のＺバッファを持つかどうかを設定する
