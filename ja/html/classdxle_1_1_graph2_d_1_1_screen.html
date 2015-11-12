@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx: dxle::Graph2D::Screen クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classdxle_1_1_graph2_d_1_1_screen.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="classdxle_1_1_graph2_d_1_1_screen-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">dxle::Graph2D::Screen クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>描画可能画像クラス  
+ <a href="classdxle_1_1_graph2_d_1_1_screen.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a>&gt;</code></p>
+<div class="dynheader">
+dxle::Graph2D::Screen の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classdxle_1_1_graph2_d_1_1_screen.png" usemap="#dxle::Graph2D::Screen_map" alt=""/>
+  <map id="dxle::Graph2D::Screen_map" name="dxle::Graph2D::Screen_map">
+<area href="classdxle_1_1_graph2_d_1_1_texture2_d.html" alt="dxle::Graph2D::Texture2D" shape="rect" coords="0,56,316,80"/>
+<area href="classdxle_1_1impl_1_1_unique___handled_object___bace.html" alt="dxle::impl::Unique_HandledObject_Bace&lt; Texture2D &gt;" shape="rect" coords="0,0,316,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af80b525a6f963ea8f195cad8122b8c8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#af80b525a6f963ea8f195cad8122b8c8c">clone</a> () const </td></tr>
+<tr class="memdesc:af80b525a6f963ea8f195cad8122b8c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像を複製する  <a href="#af80b525a6f963ea8f195cad8122b8c8c">[詳解]</a><br /></td></tr>
+<tr class="separator:af80b525a6f963ea8f195cad8122b8c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1522653520f80b0c04a1e6476da40f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a9b1522653520f80b0c04a1e6476da40f">cloneGr</a> () const </td></tr>
+<tr class="memdesc:a9b1522653520f80b0c04a1e6476da40f"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像を複製する  <a href="#a9b1522653520f80b0c04a1e6476da40f">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b1522653520f80b0c04a1e6476da40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25388465f7ca18879ed56bcaa88595f3"><td class="memTemplParams" colspan="2">template&lt;typename Func_T &gt; </td></tr>
+<tr class="memitem:a25388465f7ca18879ed56bcaa88595f3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a25388465f7ca18879ed56bcaa88595f3">DrawnOn</a> (Func_T &amp;&amp;draw_func)</td></tr>
+<tr class="separator:a25388465f7ca18879ed56bcaa88595f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bad1aabf0cf20fd089ad846aab7674f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a3bad1aabf0cf20fd089ad846aab7674f">SetUseGraphZBuffer</a> (bool UseFlag, int BitDepth=-1) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a3bad1aabf0cf20fd089ad846aab7674f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b2f6cc6739518cec31226caba9f505"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a67b2f6cc6739518cec31226caba9f505">CopyGraphZBufferImage</a> (<a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;ToGraph) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a67b2f6cc6739518cec31226caba9f505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9833b93f546be4be7bb2d967ec10e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#ace9833b93f546be4be7bb2d967ec10e4">BltDrawValidGraph</a> (int x1, int y1, int x2, int y2, int DestX, int DestY, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;DestGrHandle) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:ace9833b93f546be4be7bb2d967ec10e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd5373c8895675b3308b99c5ef8abf1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a6bd5373c8895675b3308b99c5ef8abf1">SetDrawScreen</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a6bd5373c8895675b3308b99c5ef8abf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画先画面を設定する  <a href="#a6bd5373c8895675b3308b99c5ef8abf1">[詳解]</a><br /></td></tr>
+<tr class="separator:a6bd5373c8895675b3308b99c5ef8abf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a050686c9f6afa6f1b16a00b56608f56e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a050686c9f6afa6f1b16a00b56608f56e">Screen</a> ()</td></tr>
+<tr class="separator:a050686c9f6afa6f1b16a00b56608f56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260fb70dda4d9354ae9fdb6ebb869701"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a260fb70dda4d9354ae9fdb6ebb869701">Screen</a> (const <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:a260fb70dda4d9354ae9fdb6ebb869701"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー禁止  <a href="#a260fb70dda4d9354ae9fdb6ebb869701">[詳解]</a><br /></td></tr>
+<tr class="separator:a260fb70dda4d9354ae9fdb6ebb869701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33147adc9d731de9b6adbbe039396b8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a33147adc9d731de9b6adbbe039396b8e">Screen</a> (<a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a33147adc9d731de9b6adbbe039396b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">所有権の譲渡  <a href="#a33147adc9d731de9b6adbbe039396b8e">[詳解]</a><br /></td></tr>
+<tr class="separator:a33147adc9d731de9b6adbbe039396b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b1dd056c87921d51cf1b1fab5a1e08a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a1b1dd056c87921d51cf1b1fab5a1e08a">operator=</a> (const <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:a1b1dd056c87921d51cf1b1fab5a1e08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー禁止  <a href="#a1b1dd056c87921d51cf1b1fab5a1e08a">[詳解]</a><br /></td></tr>
+<tr class="separator:a1b1dd056c87921d51cf1b1fab5a1e08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9a12d216c44ba7ef87cec03613c850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a9a9a12d216c44ba7ef87cec03613c850">operator=</a> (<a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a9a9a12d216c44ba7ef87cec03613c850"><td class="mdescLeft">&#160;</td><td class="mdescRight">所有権の譲渡  <a href="#a9a9a12d216c44ba7ef87cec03613c850">[詳解]</a><br /></td></tr>
+<tr class="separator:a9a9a12d216c44ba7ef87cec03613c850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f4e7268d3b00fb3f1e089e7c5a8f6c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#ae4f4e7268d3b00fb3f1e089e7c5a8f6c">~Screen</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:ae4f4e7268d3b00fb3f1e089e7c5a8f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">dxle::Graph2D::Texture2D</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a1334986da8aff31eb3e6a9f0a7ab07c7 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a1334986da8aff31eb3e6a9f0a7ab07c7">Delete</a> (bool LogOutFlag=false)</td></tr>
+<tr class="separator:a1334986da8aff31eb3e6a9f0a7ab07c7 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2149a946af4287d6c18ccc854eae78ba inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a2149a946af4287d6c18ccc854eae78ba">GraphLock</a> (int *PitchBuf, void **DataPointBuf, COLORDATA **ColorDataPP=nullptr, bool WriteOnly=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a2149a946af4287d6c18ccc854eae78ba inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックメモリ領域のロック  <a href="#a2149a946af4287d6c18ccc854eae78ba">[詳解]</a><br /></td></tr>
+<tr class="separator:a2149a946af4287d6c18ccc854eae78ba inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06f3c57e492b83d2d302e078e31ffa5 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#af06f3c57e492b83d2d302e078e31ffa5">GraphUnLock</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:af06f3c57e492b83d2d302e078e31ffa5 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックメモリ領域のロック解除  <a href="#af06f3c57e492b83d2d302e078e31ffa5">[詳解]</a><br /></td></tr>
+<tr class="separator:af06f3c57e492b83d2d302e078e31ffa5 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b076fccf7252627cfa2eabdcf078091 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a1b076fccf7252627cfa2eabdcf078091">SetDeviceLostDeleteGraphFlag</a> (bool DeleteFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1b076fccf7252627cfa2eabdcf078091 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックスデバイスのデバイスロスト発生時に指定のグラフィックを削除するかどうかを設定する( TRUE:デバイスロスト時に削除する FALSE:デバイスロストが発生しても削除しない )  <a href="#a1b076fccf7252627cfa2eabdcf078091">[詳解]</a><br /></td></tr>
+<tr class="separator:a1b076fccf7252627cfa2eabdcf078091 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf461f9a0740b796eb97ff896548dd55 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#abf461f9a0740b796eb97ff896548dd55">GetGraphSize</a> (int *SizeXBuf, int *SizeYBuf) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:abf461f9a0740b796eb97ff896548dd55 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックのサイズを得る  <a href="#abf461f9a0740b796eb97ff896548dd55">[詳解]</a><br /></td></tr>
+<tr class="separator:abf461f9a0740b796eb97ff896548dd55 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297d9ba937815df16d5d729028ea5c10 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedxle.html#ad6705043c3b3698b12f909a27820c9ef">pointi</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a297d9ba937815df16d5d729028ea5c10">GetGraphSize</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a297d9ba937815df16d5d729028ea5c10 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31501bfdab14dc6764546832d134c50 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#aa31501bfdab14dc6764546832d134c50">GetGraphTextureSize</a> (int *SizeXBuf, int *SizeYBuf) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa31501bfdab14dc6764546832d134c50 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックが持つ一つ目のテクスチャのサイズを得る  <a href="#aa31501bfdab14dc6764546832d134c50">[詳解]</a><br /></td></tr>
+<tr class="separator:aa31501bfdab14dc6764546832d134c50 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a238d36280fbba1404d2cf6c8695a5486 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedxle.html#ad6705043c3b3698b12f909a27820c9ef">pointi</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a238d36280fbba1404d2cf6c8695a5486">GetGraphTextureSize</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a238d36280fbba1404d2cf6c8695a5486 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350936a1eb52ed442bb1e8ca6d5bf41f inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a350936a1eb52ed442bb1e8ca6d5bf41f">GetGraphMipmapCount</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a350936a1eb52ed442bb1e8ca6d5bf41f inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックが持つテクスチャのミップマップレベル数を取得する  <a href="#a350936a1eb52ed442bb1e8ca6d5bf41f">[詳解]</a><br /></td></tr>
+<tr class="separator:a350936a1eb52ed442bb1e8ca6d5bf41f inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44db4a665c0e7033146963d4544d5ce3 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a44db4a665c0e7033146963d4544d5ce3">GetGraphFilePath</a> (TCHAR FilePathBuffer[]) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a44db4a665c0e7033146963d4544d5ce3 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する  <a href="#a44db4a665c0e7033146963d4544d5ce3">[詳解]</a><br /></td></tr>
+<tr class="separator:a44db4a665c0e7033146963d4544d5ce3 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4ae7b8be5e66c6437be59d945dc4a20 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">std::basic_string&lt; TCHAR &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#ac4ae7b8be5e66c6437be59d945dc4a20">GetGraphFilePath</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ac4ae7b8be5e66c6437be59d945dc4a20 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する  <a href="#ac4ae7b8be5e66c6437be59d945dc4a20">[詳解]</a><br /></td></tr>
+<tr class="separator:ac4ae7b8be5e66c6437be59d945dc4a20 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776fa5e0f874c37563ebf06429597798 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a776fa5e0f874c37563ebf06429597798">DrawGraph</a> (int x, int y, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a776fa5e0f874c37563ebf06429597798 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の等倍描画  <a href="#a776fa5e0f874c37563ebf06429597798">[詳解]</a><br /></td></tr>
+<tr class="separator:a776fa5e0f874c37563ebf06429597798 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059da63c389d36203cb690d75b74d578 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a059da63c389d36203cb690d75b74d578">DrawExtendGraph</a> (int x1, int y1, int x2, int y2, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a059da63c389d36203cb690d75b74d578 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大描画  <a href="#a059da63c389d36203cb690d75b74d578">[詳解]</a><br /></td></tr>
+<tr class="separator:a059da63c389d36203cb690d75b74d578 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae96ef7ae3eeb1c5df76a52e270a88e6 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#aae96ef7ae3eeb1c5df76a52e270a88e6">DrawRotaGraph</a> (int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag=false) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aae96ef7ae3eeb1c5df76a52e270a88e6 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画  <a href="#aae96ef7ae3eeb1c5df76a52e270a88e6">[詳解]</a><br /></td></tr>
+<tr class="separator:aae96ef7ae3eeb1c5df76a52e270a88e6 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e05fc8c65cac4e9f650c67990bb8b51 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a9e05fc8c65cac4e9f650c67990bb8b51">DrawRotaGraph2</a> (int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag=false) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9e05fc8c65cac4e9f650c67990bb8b51 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画２( 回転中心指定付き )  <a href="#a9e05fc8c65cac4e9f650c67990bb8b51">[詳解]</a><br /></td></tr>
+<tr class="separator:a9e05fc8c65cac4e9f650c67990bb8b51 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbcbd79cba71497892f775fad82212fa inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#adbcbd79cba71497892f775fad82212fa">DrawRotaGraph3</a> (int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:adbcbd79cba71497892f775fad82212fa inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )  <a href="#adbcbd79cba71497892f775fad82212fa">[詳解]</a><br /></td></tr>
+<tr class="separator:adbcbd79cba71497892f775fad82212fa inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d3657f4fa33773ceee107e3ccf9ca4 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a87d3657f4fa33773ceee107e3ccf9ca4">DrawModiGraph</a> (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a87d3657f4fa33773ceee107e3ccf9ca4 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の自由変形描画  <a href="#a87d3657f4fa33773ceee107e3ccf9ca4">[詳解]</a><br /></td></tr>
+<tr class="separator:a87d3657f4fa33773ceee107e3ccf9ca4 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b1c483ed8ed4a003e80c0336662a36 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a81b1c483ed8ed4a003e80c0336662a36">DrawTurnGraph</a> (int x, int y, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a81b1c483ed8ed4a003e80c0336662a36 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の左右反転描画  <a href="#a81b1c483ed8ed4a003e80c0336662a36">[詳解]</a><br /></td></tr>
+<tr class="separator:a81b1c483ed8ed4a003e80c0336662a36 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288d4307061e1ec8445ce29f9b517763 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a288d4307061e1ec8445ce29f9b517763">DrawExtendTurnGraph</a> (int x1, int y1, int x2, int y2, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a288d4307061e1ec8445ce29f9b517763 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大左右反転描画  <a href="#a288d4307061e1ec8445ce29f9b517763">[詳解]</a><br /></td></tr>
+<tr class="separator:a288d4307061e1ec8445ce29f9b517763 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8731f4ca9341558438a450d9db27facd inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a8731f4ca9341558438a450d9db27facd">DrawGraphF</a> (float xf, float yf, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a8731f4ca9341558438a450d9db27facd inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の描画( 座標指定が float 版 )  <a href="#a8731f4ca9341558438a450d9db27facd">[詳解]</a><br /></td></tr>
+<tr class="separator:a8731f4ca9341558438a450d9db27facd inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65ca58da8acb173ef281b509d6897e2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#ac65ca58da8acb173ef281b509d6897e2">DrawExtendGraphF</a> (float x1f, float y1f, float x2f, float y2, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ac65ca58da8acb173ef281b509d6897e2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大描画( 座標指定が float 版 )  <a href="#ac65ca58da8acb173ef281b509d6897e2">[詳解]</a><br /></td></tr>
+<tr class="separator:ac65ca58da8acb173ef281b509d6897e2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfb1d10a57a4c1df47441514a2c1558 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a0bfb1d10a57a4c1df47441514a2c1558">DrawRotaGraphF</a> (float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0bfb1d10a57a4c1df47441514a2c1558 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画( 座標指定が float 版 )  <a href="#a0bfb1d10a57a4c1df47441514a2c1558">[詳解]</a><br /></td></tr>
+<tr class="separator:a0bfb1d10a57a4c1df47441514a2c1558 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4f9d92fca920877c09e164abc0ed85 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#aed4f9d92fca920877c09e164abc0ed85">DrawRotaGraph2F</a> (float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aed4f9d92fca920877c09e164abc0ed85 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )  <a href="#aed4f9d92fca920877c09e164abc0ed85">[詳解]</a><br /></td></tr>
+<tr class="separator:aed4f9d92fca920877c09e164abc0ed85 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6b0071d292c5aedcb79b4d6b125339 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a9b6b0071d292c5aedcb79b4d6b125339">DrawRotaGraph3F</a> (float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag=FALSE) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9b6b0071d292c5aedcb79b4d6b125339 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )  <a href="#a9b6b0071d292c5aedcb79b4d6b125339">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b6b0071d292c5aedcb79b4d6b125339 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17cef9457489d8c339258fcc9b186621 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a17cef9457489d8c339258fcc9b186621">DrawModiGraphF</a> (float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a17cef9457489d8c339258fcc9b186621 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の自由変形描画( 座標指定が float 版 )  <a href="#a17cef9457489d8c339258fcc9b186621">[詳解]</a><br /></td></tr>
+<tr class="separator:a17cef9457489d8c339258fcc9b186621 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7e841fd92d2b9b01f635a9266402df inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a1f7e841fd92d2b9b01f635a9266402df">DrawTurnGraphF</a> (float xf, float yf, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1f7e841fd92d2b9b01f635a9266402df inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の左右反転描画( 座標指定が float 版 )  <a href="#a1f7e841fd92d2b9b01f635a9266402df">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f7e841fd92d2b9b01f635a9266402df inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ab24c86de3f4da8fff1ecc4731e0a0 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a86ab24c86de3f4da8fff1ecc4731e0a0">DrawExtendTurnGraphF</a> (float x1f, float y1f, float x2f, float y2f, bool TransFlag) const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a86ab24c86de3f4da8fff1ecc4731e0a0 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大左右反転描画( 座標指定が float 版 )  <a href="#a86ab24c86de3f4da8fff1ecc4731e0a0">[詳解]</a><br /></td></tr>
+<tr class="separator:a86ab24c86de3f4da8fff1ecc4731e0a0 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e353b36e8788df45da4913cd8c73876 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a2e353b36e8788df45da4913cd8c73876">Texture2D</a> ()</td></tr>
+<tr class="separator:a2e353b36e8788df45da4913cd8c73876 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c604544a20fc3e3c930999233adb91 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a74c604544a20fc3e3c930999233adb91">Texture2D</a> (const <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:a74c604544a20fc3e3c930999233adb91 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー禁止  <a href="#a74c604544a20fc3e3c930999233adb91">[詳解]</a><br /></td></tr>
+<tr class="separator:a74c604544a20fc3e3c930999233adb91 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a37eae008f892861931865d47656706 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a3a37eae008f892861931865d47656706">Texture2D</a> (<a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a3a37eae008f892861931865d47656706 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">所有権の譲渡  <a href="#a3a37eae008f892861931865d47656706">[詳解]</a><br /></td></tr>
+<tr class="separator:a3a37eae008f892861931865d47656706 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a446491278eefa0ce3178d33c39ff2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#af4a446491278eefa0ce3178d33c39ff2">operator=</a> (const <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:af4a446491278eefa0ce3178d33c39ff2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピー禁止  <a href="#af4a446491278eefa0ce3178d33c39ff2">[詳解]</a><br /></td></tr>
+<tr class="separator:af4a446491278eefa0ce3178d33c39ff2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcde77e2ec34a1fadd2847943376ff2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a4dcde77e2ec34a1fadd2847943376ff2">operator=</a> (<a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a4dcde77e2ec34a1fadd2847943376ff2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">所有権の譲渡  <a href="#a4dcde77e2ec34a1fadd2847943376ff2">[詳解]</a><br /></td></tr>
+<tr class="separator:a4dcde77e2ec34a1fadd2847943376ff2 inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2a67576a51226ffbc3865e3d70c46a inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#aae2a67576a51226ffbc3865e3d70c46a">~Texture2D</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:aae2a67576a51226ffbc3865e3d70c46a inherit pub_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html">dxle::impl::Unique_HandledObject_Bace&lt; Texture2D &gt;</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:ab4141df1fb877190ce243dc4b66ca3a6 inherit pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#ab4141df1fb877190ce243dc4b66ca3a6">Unique_HandledObject_Bace</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:ab4141df1fb877190ce243dc4b66ca3a6 inherit pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbd7e1f865b730c24ce6499db817849 inherit pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a0dbd7e1f865b730c24ce6499db817849">Unique_HandledObject_Bace</a> (<a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a> &amp;&amp;other) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a0dbd7e1f865b730c24ce6499db817849 inherit pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4863b7bc17fc27a4b719006825e6df inherit pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html">Unique_HandledObject_Bace</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a3c4863b7bc17fc27a4b719006825e6df">operator=</a> (<a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a> &amp;&amp;other) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a3c4863b7bc17fc27a4b719006825e6df inherit pub_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a136712fcd1ca8acbbe4024fe646a9a03"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a136712fcd1ca8acbbe4024fe646a9a03">MakeScreen</a> (int SizeX, int SizeY, bool <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a3b32ee02025bbbce6adc44d6681bd56c">UseAlphaChannel</a>=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a136712fcd1ca8acbbe4024fe646a9a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen で描画対象にできるグラフィックを作成する  <a href="#a136712fcd1ca8acbbe4024fe646a9a03">[詳解]</a><br /></td></tr>
+<tr class="separator:a136712fcd1ca8acbbe4024fe646a9a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">dxle::Graph2D::Texture2D</a> に属する継承静的公開メンバ関数</td></tr>
+<tr class="memitem:a97039e3075eacf7be8f0cbb499d3fd3c inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a97039e3075eacf7be8f0cbb499d3fd3c">MakeGraph</a> (int SizeX, int SizeY, bool <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#af6cef9a9c10c8da37f31e7b23f785e5d">NotUse3DFlag</a>=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a97039e3075eacf7be8f0cbb499d3fd3c inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3742a6e4442ae73019cee9027f196db1 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a3742a6e4442ae73019cee9027f196db1">DerivationGraph</a> (int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a3742a6e4442ae73019cee9027f196db1 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する  <a href="#a3742a6e4442ae73019cee9027f196db1">[詳解]</a><br /></td></tr>
+<tr class="separator:a3742a6e4442ae73019cee9027f196db1 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c8800d4e2c760c6e3a378ccec4dfddc inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a6c8800d4e2c760c6e3a378ccec4dfddc">LoadBmpToGraph</a> (const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode=DX_MOVIESURFACE_NORMAL) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a6c8800d4e2c760c6e3a378ccec4dfddc inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックを作成する  <a href="#a6c8800d4e2c760c6e3a378ccec4dfddc">[詳解]</a><br /></td></tr>
+<tr class="separator:a6c8800d4e2c760c6e3a378ccec4dfddc inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5bcf86e127e89267b9fdf06100f1ea inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a1f5bcf86e127e89267b9fdf06100f1ea">LoadGraph</a> (const TCHAR *FileName, bool <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#af6cef9a9c10c8da37f31e7b23f785e5d">NotUse3DFlag</a>=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1f5bcf86e127e89267b9fdf06100f1ea inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックを作成する  <a href="#a1f5bcf86e127e89267b9fdf06100f1ea">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f5bcf86e127e89267b9fdf06100f1ea inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a7ee4d65f26219414d26d78767efe1 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#ae6a7ee4d65f26219414d26d78767efe1">LoadReverseGraph</a> (const TCHAR *FileName, bool <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#af6cef9a9c10c8da37f31e7b23f785e5d">NotUse3DFlag</a>=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ae6a7ee4d65f26219414d26d78767efe1 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを反転したものでグラフィックを作成する  <a href="#ae6a7ee4d65f26219414d26d78767efe1">[詳解]</a><br /></td></tr>
+<tr class="separator:ae6a7ee4d65f26219414d26d78767efe1 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8993e8701e8c4adcc4f81498e9c5e982 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a8993e8701e8c4adcc4f81498e9c5e982">LoadBlendGraph</a> (const TCHAR *FileName) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a8993e8701e8c4adcc4f81498e9c5e982 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからブレンド用グラフィックを作成する  <a href="#a8993e8701e8c4adcc4f81498e9c5e982">[詳解]</a><br /></td></tr>
+<tr class="separator:a8993e8701e8c4adcc4f81498e9c5e982 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9068321181b35e5c95b9d58414d06cb8 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a9068321181b35e5c95b9d58414d06cb8">CreateGraphFromMem</a> (const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage=nullptr, int AlphaFileImageSize=0, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9068321181b35e5c95b9d58414d06cb8 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上の画像イメージからグラフィックを作成する  <a href="#a9068321181b35e5c95b9d58414d06cb8">[詳解]</a><br /></td></tr>
+<tr class="separator:a9068321181b35e5c95b9d58414d06cb8 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1726602d1c217b325be941ab2d9de2a3 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a1726602d1c217b325be941ab2d9de2a3">ReCreateGraphFromMem</a> (const void *RGBFileImage, int RGBFileImageSize, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle, const void *AlphaFileImage=nullptr, int AlphaFileImageSize=0, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1726602d1c217b325be941ab2d9de2a3 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上の画像イメージから既存のグラフィックにデータを転送する  <a href="#a1726602d1c217b325be941ab2d9de2a3">[詳解]</a><br /></td></tr>
+<tr class="separator:a1726602d1c217b325be941ab2d9de2a3 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6c74a70268bd85b8e9f038659b20fea inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#aa6c74a70268bd85b8e9f038659b20fea">CreateDXGraph</a> (const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:aa6c74a70268bd85b8e9f038659b20fea inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからサイズを割り出し、それに合ったグラフィックを作成する  <a href="#aa6c74a70268bd85b8e9f038659b20fea">[詳解]</a><br /></td></tr>
+<tr class="separator:aa6c74a70268bd85b8e9f038659b20fea inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a115d1777d4c8e5d6f02b9258054ec2d5 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a115d1777d4c8e5d6f02b9258054ec2d5">CreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a115d1777d4c8e5d6f02b9258054ec2d5 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックを作成する  <a href="#a115d1777d4c8e5d6f02b9258054ec2d5">[詳解]</a><br /></td></tr>
+<tr class="separator:a115d1777d4c8e5d6f02b9258054ec2d5 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1174d1a529b945436f4050a6d30b671 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#ac1174d1a529b945436f4050a6d30b671">CreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:ac1174d1a529b945436f4050a6d30b671 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックを作成する  <a href="#ac1174d1a529b945436f4050a6d30b671">[詳解]</a><br /></td></tr>
+<tr class="separator:ac1174d1a529b945436f4050a6d30b671 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f0c02a7403689378a637f4da539f56 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a66f0c02a7403689378a637f4da539f56">ReCreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a66f0c02a7403689378a637f4da539f56 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックにデータを転送する  <a href="#a66f0c02a7403689378a637f4da539f56">[詳解]</a><br /></td></tr>
+<tr class="separator:a66f0c02a7403689378a637f4da539f56 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b954ed28380ba9d4b2bfd3478093147 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a7b954ed28380ba9d4b2bfd3478093147">ReCreateGraphFromGraphImage</a> (const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a7b954ed28380ba9d4b2bfd3478093147 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックにデータを転送する  <a href="#a7b954ed28380ba9d4b2bfd3478093147">[詳解]</a><br /></td></tr>
+<tr class="separator:a7b954ed28380ba9d4b2bfd3478093147 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f330f14c75a08c0af9b7a22b6a8d18 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a67f330f14c75a08c0af9b7a22b6a8d18">CreateGraph</a> (int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage=nullptr, const <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle=<a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>()) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a67f330f14c75a08c0af9b7a22b6a8d18 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックを作成する  <a href="#a67f330f14c75a08c0af9b7a22b6a8d18">[詳解]</a><br /></td></tr>
+<tr class="separator:a67f330f14c75a08c0af9b7a22b6a8d18 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ee97b00ffc6777cc460cd7fc5d4227 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a32ee97b00ffc6777cc460cd7fc5d4227">ReCreateGraph</a> (int Width, int Height, int Pitch, const void *RGBImage, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle, const void *AlphaImage=nullptr) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a32ee97b00ffc6777cc460cd7fc5d4227 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックを再作成する  <a href="#a32ee97b00ffc6777cc460cd7fc5d4227">[詳解]</a><br /></td></tr>
+<tr class="separator:a32ee97b00ffc6777cc460cd7fc5d4227 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9556cadd9a443a42c6c489e41bc8a66f inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a9556cadd9a443a42c6c489e41bc8a66f">CreateGraphFromBaseImage</a> (const BASEIMAGE *BaseImage) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a9556cadd9a443a42c6c489e41bc8a66f inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックを作成する  <a href="#a9556cadd9a443a42c6c489e41bc8a66f">[詳解]</a><br /></td></tr>
+<tr class="separator:a9556cadd9a443a42c6c489e41bc8a66f inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3e8868a72ba356c54234d03d84ac93 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a1e3e8868a72ba356c54234d03d84ac93">CreateGraphFromRectBaseImage</a> (const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a1e3e8868a72ba356c54234d03d84ac93 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使ってグラフィックを作成する  <a href="#a1e3e8868a72ba356c54234d03d84ac93">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e3e8868a72ba356c54234d03d84ac93 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea811968930f81deb0160c29e43d499 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a0ea811968930f81deb0160c29e43d499">ReCreateGraphFromBaseImage</a> (const BASEIMAGE *BaseImage, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a0ea811968930f81deb0160c29e43d499 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックに画像データを転送する  <a href="#a0ea811968930f81deb0160c29e43d499">[詳解]</a><br /></td></tr>
+<tr class="separator:a0ea811968930f81deb0160c29e43d499 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df52960a9bbf145bd52596098c6b866 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a4df52960a9bbf145bd52596098c6b866">ReCreateGraphFromRectBaseImage</a> (const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a4df52960a9bbf145bd52596098c6b866 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する  <a href="#a4df52960a9bbf145bd52596098c6b866">[詳解]</a><br /></td></tr>
+<tr class="separator:a4df52960a9bbf145bd52596098c6b866 inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ca0143f2da15253a57cab1a33b2baa inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a28ca0143f2da15253a57cab1a33b2baa">ReloadGraph</a> (const TCHAR *FileName, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle, bool ReverseFlag=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:a28ca0143f2da15253a57cab1a33b2baa inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックへ画像データを転送する  <a href="#a28ca0143f2da15253a57cab1a33b2baa">[詳解]</a><br /></td></tr>
+<tr class="separator:a28ca0143f2da15253a57cab1a33b2baa inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3ec23089b0067e01f0aae76050279f inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#adb3ec23089b0067e01f0aae76050279f">ReloadReverseGraph</a> (const TCHAR *FileName, <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;GrHandle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memdesc:adb3ec23089b0067e01f0aae76050279f inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReloadGraph の画像反転処理追加版  <a href="#adb3ec23089b0067e01f0aae76050279f">[詳解]</a><br /></td></tr>
+<tr class="separator:adb3ec23089b0067e01f0aae76050279f inherit pub_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0efb84e720aff88207c3b6a9e80fd1d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a0efb84e720aff88207c3b6a9e80fd1d4">Screen</a> (int param_handle, bool param_UseAlphaChannel) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a0efb84e720aff88207c3b6a9e80fd1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classdxle_1_1_graph2_d_1_1_texture2_d')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">dxle::Graph2D::Texture2D</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:a59a59797eeca253ce64f0c38e3116a7c inherit pro_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a59a59797eeca253ce64f0c38e3116a7c">Texture2D</a> (int param_handle, bool param_NotUse3DFlag) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a59a59797eeca253ce64f0c38e3116a7c inherit pro_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html">dxle::impl::Unique_HandledObject_Bace&lt; Texture2D &gt;</a> に属する継承限定公開メンバ関数</td></tr>
+<tr class="memitem:ad411cff8b83e53f2fefe25c793cf40d7 inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#ad411cff8b83e53f2fefe25c793cf40d7">Unique_HandledObject_Bace</a> (int param_handle) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:ad411cff8b83e53f2fefe25c793cf40d7 inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e7a077e19d66a1d5fc7f7b61199750 inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#ad8e7a077e19d66a1d5fc7f7b61199750">~Unique_HandledObject_Bace</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:ad8e7a077e19d66a1d5fc7f7b61199750 inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a97ce3901c00190f25eb3f0774eb7cb inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a1a97ce3901c00190f25eb3f0774eb7cb">GetHandle</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="separator:a1a97ce3901c00190f25eb3f0774eb7cb inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be129708cc06fe672d6963e923abf2e inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a8be129708cc06fe672d6963e923abf2e">SetHandle_IMPL</a> (int new_handle)</td></tr>
+<tr class="separator:a8be129708cc06fe672d6963e923abf2e inherit pro_methods_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a3b32ee02025bbbce6adc44d6681bd56c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html#a3b32ee02025bbbce6adc44d6681bd56c">UseAlphaChannel</a></td></tr>
+<tr class="separator:a3b32ee02025bbbce6adc44d6681bd56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classdxle_1_1_graph2_d_1_1_texture2_d"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classdxle_1_1_graph2_d_1_1_texture2_d')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">dxle::Graph2D::Texture2D</a> に属する継承限定公開変数類</td></tr>
+<tr class="memitem:af6cef9a9c10c8da37f31e7b23f785e5d inherit pro_attribs_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#af6cef9a9c10c8da37f31e7b23f785e5d">NotUse3DFlag</a></td></tr>
+<tr class="separator:af6cef9a9c10c8da37f31e7b23f785e5d inherit pro_attribs_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pro_types_classdxle_1_1impl_1_1_unique___handled_object___bace"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classdxle_1_1impl_1_1_unique___handled_object___bace')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html">dxle::impl::Unique_HandledObject_Bace&lt; Texture2D &gt;</a> に属する継承限定公開型</td></tr>
+<tr class="memitem:a441bd574f1d98a8eaa4fccbfdd003667 inherit pro_types_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html">Unique_HandledObject_Bace</a>&lt; Texture2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1impl_1_1_unique___handled_object___bace.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a></td></tr>
+<tr class="separator:a441bd574f1d98a8eaa4fccbfdd003667 inherit pro_types_classdxle_1_1impl_1_1_unique___handled_object___bace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">dxle::Graph2D::Texture2D</a> に属する継承静的限定公開メンバ関数</td></tr>
+<tr class="memitem:a146691e6aae098fc6fa09ed70fc434da inherit pro_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html#a146691e6aae098fc6fa09ed70fc434da">GetTexture2DHandle</a> (const <a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;texture2d_obj)</td></tr>
+<tr class="separator:a146691e6aae098fc6fa09ed70fc434da inherit pro_static_methods_classdxle_1_1_graph2_d_1_1_texture2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>描画可能画像クラス </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00179">179</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a050686c9f6afa6f1b16a00b56608f56e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::Graph2D::Screen::Screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00226">226</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a260fb70dda4d9354ae9fdb6ebb869701"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::Graph2D::Screen::Screen </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コピー禁止 </p>
+
+</div>
+</div>
+<a class="anchor" id="a33147adc9d731de9b6adbbe039396b8e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::Graph2D::Screen::Screen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>所有権の譲渡 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00230">230</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4f4e7268d3b00fb3f1e089e7c5a8f6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual dxle::Graph2D::Screen::~Screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00236">236</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0efb84e720aff88207c3b6a9e80fd1d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::Graph2D::Screen::Screen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>param_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>param_UseAlphaChannel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00238">238</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ace9833b93f546be4be7bb2d967ec10e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::Graph2D::Screen::BltDrawValidGraph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DestX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DestY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>DestGrHandle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>SetDrawScreen で描画対象にできるグラフィックハンドルから指定領域の画像情報を別のグラフィックハンドルに転送する </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>転送元の矩形の左座標 </td></tr>
+    <tr><td class="paramname">y1</td><td>転送元の矩形の上座標 </td></tr>
+    <tr><td class="paramname">x2</td><td>転送元の矩形の右座標 </td></tr>
+    <tr><td class="paramname">y2</td><td>転送元の矩形の下座標 </td></tr>
+    <tr><td class="paramname">DestX,DestY</td><td>転送先の矩形の左上座標 </td></tr>
+    <tr><td class="paramname">DestGrHandle</td><td>転送先の画像 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00220">220</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af80b525a6f963ea8f195cad8122b8c8c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> dxle::Graph2D::Screen::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像を複製する </p>
+<p>複製 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00242">242</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b1522653520f80b0c04a1e6476da40f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdxle_1_1_graph2_d_1_1_texture2_d.html">Texture2D</a> dxle::Graph2D::Screen::cloneGr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>画像を複製する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00251">251</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a67b2f6cc6739518cec31226caba9f505"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::Graph2D::Screen::CopyGraphZBufferImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>ToGraph</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>グラフィックのＺバッファの状態を別のグラフィックのＺバッファにコピーする *thisはＺバッファを持っている描画対象にできるグラフィック </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ToGraph</td><td>*thisとサイズが同じであり、且つマルチサンプリング( アンチエイリアス )設定が無い、Ｚバッファを持っている描画対象にできるグラフィック </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00212">212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a25388465f7ca18879ed56bcaa88595f3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dxle::Graph2D::Screen::DrawnOn </td>
+          <td>(</td>
+          <td class="paramtype">Func_T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>draw_func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00195">195</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a136712fcd1ca8acbbe4024fe646a9a03"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> dxle::Graph2D::Screen::MakeScreen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>SizeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>UseAlphaChannel</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetDrawScreen で描画対象にできるグラフィックを作成する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00190">190</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b1dd056c87921d51cf1b1fab5a1e08a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a>&amp; dxle::Graph2D::Screen::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コピー禁止 </p>
+
+</div>
+</div>
+<a class="anchor" id="a9a9a12d216c44ba7ef87cec03613c850"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a>&amp; dxle::Graph2D::Screen::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>所有権の譲渡 </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00234">234</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bd5373c8895675b3308b99c5ef8abf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::Graph2D::Screen::SetDrawScreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画先画面を設定する </p>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00223">223</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bad1aabf0cf20fd089ad846aab7674f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::Graph2D::Screen::SetUseGraphZBuffer </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>UseFlag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>BitDepth</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>グラフィック専用のＺバッファを持つかどうかを設定する </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UseFlag</td><td>専用のＺバッファを持つかどうか( true:持つ( デフォルト ) false:持たない ) </td></tr>
+    <tr><td class="paramname">BitDepth</td><td>ビット深度( 16 or 24 or 32 ) ) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00208">208</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a class="anchor" id="a3b32ee02025bbbce6adc44d6681bd56c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dxle::Graph2D::Screen::UseAlphaChannel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a> の <a class="el" href="_dx_lib_ex___graph2_d_8h_source.html#l00239">239</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>dxlibex/<a class="el" href="_dx_lib_ex___graph2_d_8h_source.html">DxLibEx_Graph2D.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedxle.html">dxle</a></li><li class="navelem"><a class="el" href="namespacedxle_1_1_graph2_d.html">Graph2D</a></li><li class="navelem"><a class="el" href="classdxle_1_1_graph2_d_1_1_screen.html">Screen</a></li>
+    <li class="footer">2015年11月11日(水) 23時15分35秒作成 - DxLibEx / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
