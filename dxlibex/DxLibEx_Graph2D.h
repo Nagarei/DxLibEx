@@ -10,161 +10,161 @@
 #include "DxLibEx_Defines.h"
 #include "DxLibEx_basic_types.hpp"
 
-//----------2DƒOƒ‰ƒtƒBƒbƒN----------//
+//----------2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯----------//
 
 namespace dxle
 {
-	//!\~japanese DxLibEx‚ÌŒöŠJƒNƒ‰ƒX‚ª‘S‚Ä“ü‚Á‚½namespace‚Å‚·
+	//!\~japanese DxLibExã®å…¬é–‹ã‚¯ãƒ©ã‚¹ãŒå…¨ã¦å…¥ã£ãŸnamespaceã§ã™
 	namespace DxLibEx_Classes {}
-	//! 2DƒOƒ‰ƒtƒBƒbƒN
+	//! 2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 	namespace Graph2D
 	{
 
-		//!\~japanese ‰æ‘œƒNƒ‰ƒX(‰æ‘œƒnƒ“ƒhƒ‹ƒNƒ‰ƒX‚Å‚Í‚È‚¢)
+		//!\~japanese ç”»åƒã‚¯ãƒ©ã‚¹(ç”»åƒãƒãƒ³ãƒ‰ãƒ«ã‚¯ãƒ©ã‚¹ã§ã¯ãªã„)
 		//!\~english  A image class (NOT a image handle class)
 		class Texture2D : public impl::Unique_HandledObject_Bace<Texture2D>
 		{
 		public:
-			//!\~japanese ‰æ‘œ‚ğíœ‚·‚é
+			//!\~japanese ç”»åƒã‚’å‰Šé™¤ã™ã‚‹
 			//!\~english  Delete this image
 			inline void Delete(bool LogOutFlag = false) { DeleteGraph(GetHandle(), LogOutFlag); }
 
-			//¶¬—pstaticŠÖ”
+			//ç”Ÿæˆç”¨staticé–¢æ•°
 	
-			// ƒOƒ‰ƒtƒBƒbƒNì¬ŠÖŒWŠÖ”
+			// ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ä½œæˆé–¢ä¿‚é–¢æ•°
 	
-			//!\~japanese w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create image with sizes
 			static inline Texture2D MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
-			//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle), false); }
 	
-			// ‰æ‘œ‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚éŠÖ”
+			// ç”»åƒã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹é–¢æ•°
 	
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false); }
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ”½“]‚µ‚½‚à‚Ì‚ÅƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åè»¢ã—ãŸã‚‚ã®ã§ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadReverseGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒuƒŒƒ“ƒh—pƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ–ãƒ¬ãƒ³ãƒ‰ç”¨ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D LoadBlendGraph(const TCHAR *FileName)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadBlendGraph(FileName), false); }
 	
-			//! ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag), false); }
-			//! ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, Texture2D& GrHandle, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromMem(RGBFileImage, RGBFileImageSize, GrHandle.GetHandle(), AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
 	
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒTƒCƒY‚ğŠ„‚èo‚µA‚»‚ê‚É‡‚Á‚½ƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚µã‚¤ã‚ºã‚’å‰²ã‚Šå‡ºã—ã€ãã‚Œã«åˆã£ãŸã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateDXGraph(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, Texture2D& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, Texture2D& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
 	
-			//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const Texture2D& GrHandle = Texture2D())DXLIBEX_NOEXCEPT { return Texture2D(DxLib::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
-			//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğÄì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å†ä½œæˆã™ã‚‹
 			static inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, Texture2D& GrHandle, const void *AlphaImage = nullptr)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
 	#ifndef DX_NON_SOFTIMAGE
-			//extern	int			CreateBlendGraphFromSoftImage(int SIHandle);																													// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çƒuƒŒƒ“ƒh—p‰æ‘œƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( -1:ƒGƒ‰[  -1ˆÈŠO:ƒuƒŒƒ“ƒh—pƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹ )
-			//extern	int			CreateGraphFromSoftImage(int SIHandle);																													// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( -1:ƒGƒ‰[  -1ˆÈŠO:ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹ )
-			//extern	int			CreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY);																				// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( -1:ƒGƒ‰[  -1ˆÈŠO:ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹ )
-			//extern	int			ReCreateGraphFromSoftImage(int SIHandle, int GrHandle);																										// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
-			//extern	int			ReCreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY, int GrHandle);																	// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
-			//extern	int			CreateDivGraphFromSoftImage(int SIHandle, int AllNum, int XNum, int YNum, int SizeX, int SizeY, int *HandleBuf);												// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚ç•ªŠ„ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é
+			//extern	int			CreateBlendGraphFromSoftImage(int SIHandle);																													// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ãƒ–ãƒ¬ãƒ³ãƒ‰ç”¨ç”»åƒã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ãƒ–ãƒ¬ãƒ³ãƒ‰ç”¨ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ« )
+			//extern	int			CreateGraphFromSoftImage(int SIHandle);																													// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ« )
+			//extern	int			CreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY);																				// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ« )
+			//extern	int			ReCreateGraphFromSoftImage(int SIHandle, int GrHandle);																										// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
+			//extern	int			ReCreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY, int GrHandle);																	// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
+			//extern	int			CreateDivGraphFromSoftImage(int SIHandle, int AllNum, int XNum, int YNum, int SizeX, int SizeY, int *HandleBuf);												// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰åˆ†å‰²ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹
 	#endif // DX_NON_SOFTIMAGE
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateGraphFromBaseImage(const BASEIMAGE *BaseImage)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromBaseImage(BaseImage), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Texture2D CreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromBaseImage(const BASEIMAGE *BaseImage, Texture2D& GrHandle)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromBaseImage(BaseImage, GrHandle.GetHandle()); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, Texture2D& GrHandle)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY, GrHandle.GetHandle()); }
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚Ö‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã¸ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReloadGraph(const TCHAR *FileName, Texture2D& GrHandle, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReloadGraph(FileName, GrHandle.GetHandle(), ReverseFlag); }
-			//! ReloadGraph ‚Ì‰æ‘œ”½“]ˆ—’Ç‰Á”Å
+			//! ReloadGraph ã®ç”»åƒåè»¢å‡¦ç†è¿½åŠ ç‰ˆ
 			static inline int ReloadReverseGraph(const TCHAR *FileName, Texture2D& GrHandle)DXLIBEX_NOEXCEPT { return DxLib::ReloadReverseGraph(FileName, GrHandle.GetHandle()); }
 	
 	
-			//ƒƒ“ƒoŠÖ”
+			//ãƒ¡ãƒ³ãƒé–¢æ•°
 	
-			////! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ì‚`‚q‚f‚a‚WƒCƒ[ƒW‚ğæ“¾‚·‚é( Œ»İ“®‰æƒtƒ@ƒCƒ‹‚ğƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚Å“Ç‚İ‚ñ‚¾ê‡‚Ì‚İg—p‰Â”\ )
+			////! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ï¼¡ï¼²ï¼§ï¼¢ï¼˜ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’å–å¾—ã™ã‚‹( ç¾åœ¨å‹•ç”»ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã§èª­ã¿è¾¼ã‚“ã å ´åˆã®ã¿ä½¿ç”¨å¯èƒ½ )
 			//inline const unsigned int* GetFullColorImage()const DXLIBEX_NOEXCEPT { return DxLib::GetFullColorImage(GetHandle()); }
 
-			//! ƒOƒ‰ƒtƒBƒbƒNƒƒ‚ƒŠ—Ìˆæ‚ÌƒƒbƒN
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ãƒ­ãƒƒã‚¯
 			inline int GraphLock(int *PitchBuf, void **DataPointBuf, COLORDATA **ColorDataPP = nullptr, bool WriteOnly = false)DXLIBEX_NOEXCEPT { return DxLib::GraphLock(GetHandle(), PitchBuf, DataPointBuf, ColorDataPP, WriteOnly); }
-			//! ƒOƒ‰ƒtƒBƒbƒNƒƒ‚ƒŠ—Ìˆæ‚ÌƒƒbƒN‰ğœ
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ãƒ­ãƒƒã‚¯è§£é™¤
 			inline int GraphUnLock()DXLIBEX_NOEXCEPT { return DxLib::GraphUnLock(GetHandle()); }
-			//! ƒOƒ‰ƒtƒBƒbƒNƒXƒfƒoƒCƒX‚ÌƒfƒoƒCƒXƒƒXƒg”­¶‚Éw’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğíœ‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é( TRUE:ƒfƒoƒCƒXƒƒXƒg‚Éíœ‚·‚é  FALSE:ƒfƒoƒCƒXƒƒXƒg‚ª”­¶‚µ‚Ä‚àíœ‚µ‚È‚¢ )
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãƒ‡ãƒã‚¤ã‚¹ã®ãƒ‡ãƒã‚¤ã‚¹ãƒ­ã‚¹ãƒˆç™ºç”Ÿæ™‚ã«æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å‰Šé™¤ã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹( TRUE:ãƒ‡ãƒã‚¤ã‚¹ãƒ­ã‚¹ãƒˆæ™‚ã«å‰Šé™¤ã™ã‚‹  FALSE:ãƒ‡ãƒã‚¤ã‚¹ãƒ­ã‚¹ãƒˆãŒç™ºç”Ÿã—ã¦ã‚‚å‰Šé™¤ã—ãªã„ )
 			inline int SetDeviceLostDeleteGraphFlag(bool DeleteFlag)DXLIBEX_NOEXCEPT { return DxLib::SetDeviceLostDeleteGraphFlag(GetHandle(), DeleteFlag); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline int GetGraphSize(int *SizeXBuf, int *SizeYBuf)const DXLIBEX_NOEXCEPT { return DxLib::GetGraphSize(GetHandle(), SizeXBuf, SizeYBuf); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			//!@return .first:SizeX .second:SizeY
 			inline pointi GetGraphSize()const DXLIBEX_NOEXCEPT { int x, y; GetGraphSize(&x, &y); return std::make_pair(x, y); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‚Âˆê‚Â–Ú‚ÌƒeƒNƒXƒ`ƒƒ‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒæŒã¤ä¸€ã¤ç›®ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline int GetGraphTextureSize(int *SizeXBuf, int *SizeYBuf)const DXLIBEX_NOEXCEPT { return DxLib::GetGraphTextureSize(GetHandle(), SizeXBuf, SizeYBuf); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‚Âˆê‚Â–Ú‚ÌƒeƒNƒXƒ`ƒƒ‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒæŒã¤ä¸€ã¤ç›®ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			//!@return .first:SizeX .second:SizeY
 			inline pointi GetGraphTextureSize()const DXLIBEX_NOEXCEPT { int x, y; GetGraphTextureSize(&x, &y); return std::make_pair(x, y); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‚ÂƒeƒNƒXƒ`ƒƒ‚Ìƒ~ƒbƒvƒ}ƒbƒvƒŒƒxƒ‹”‚ğæ“¾‚·‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒæŒã¤ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ãƒ¬ãƒ™ãƒ«æ•°ã‚’å–å¾—ã™ã‚‹
 			inline int GetGraphMipmapCount()const DXLIBEX_NOEXCEPT { return DxLib::GetGraphMipmapCount(GetHandle()); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‰æ‘œƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ü‚ê‚Ä‚¢‚½ê‡A‚»‚Ì‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾‚·‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãã®ç”»åƒã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—ã™ã‚‹
 			inline int GetGraphFilePath(TCHAR FilePathBuffer[])const DXLIBEX_NOEXCEPT { return DxLib::GetGraphFilePath(GetHandle(), FilePathBuffer); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‰æ‘œƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ü‚ê‚Ä‚¢‚½ê‡A‚»‚Ì‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾‚·‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãã®ç”»åƒã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—ã™ã‚‹
 			inline std::basic_string<TCHAR> GetGraphFilePath()const DXLIBEX_NOEXCEPT { TCHAR FilePathBuffer[2048]; if (GetGraphFilePath(FilePathBuffer) == -1) { return std::basic_string<TCHAR>(); } return FilePathBuffer; }
 	
-			//! ‰æ‘œ‚Ì“™”{•`‰æ
+			//! ç”»åƒã®ç­‰å€æç”»
 			inline int DrawGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å•`‰æ
+			//! ç”»åƒã®æ‹¡å¤§æç”»
 			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ
+			//! ç”»åƒã®å›è»¢æç”»
 			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚Q( ‰ñ“]’†Sw’è•t‚« )
+			//! ç”»åƒã®å›è»¢æç”»ï¼’( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ã )
 			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚R( ‰ñ“]’†Sw’è•t‚«{c‰¡Šg‘å—¦•Êw’è”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼“( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ãï¼‹ç¸¦æ¨ªæ‹¡å¤§ç‡åˆ¥æŒ‡å®šç‰ˆ )
 			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ
+			//! ç”»åƒã®è‡ªç”±å¤‰å½¢æç”»
 			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawModiGraph(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì¶‰E”½“]•`‰æ
+			//! ç”»åƒã®å·¦å³åè»¢æç”»
 			inline int DrawTurnGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawTurnGraph(x, y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å¶‰E”½“]•`‰æ
+			//! ç”»åƒã®æ‹¡å¤§å·¦å³åè»¢æç”»
 			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }
 	
-			//! ‰æ‘œ‚Ì•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawGraphF(float xf, float yf, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æ‹¡å¤§æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraphF(x1f, y1f, x2f, y2, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚Q( ‰ñ“]’†Sw’è•t‚« )( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼’( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ã )( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚R( ‰ñ“]’†Sw’è•t‚«{c‰¡Šg‘å—¦•Êw’è”Å )( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼“( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ãï¼‹ç¸¦æ¨ªæ‹¡å¤§ç‡åˆ¥æŒ‡å®šç‰ˆ )( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®è‡ªç”±å¤‰å½¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawModiGraphF(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì¶‰E”½“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å·¦å³åè»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å¶‰E”½“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æ‹¡å¤§å·¦å³åè»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }
 	
 		private:
 			typedef Unique_HandledObject_Bace<Texture2D> Parent_T;
 		public:
 			Texture2D() : Unique_HandledObject_Bace() {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			Texture2D(const Texture2D& other) = delete;
-			//!Š—LŒ ‚Ì÷“n
+			//!æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			Texture2D(Texture2D&& other) : Unique_HandledObject_Bace(std::move(other)), NotUse3DFlag(std::move(other.NotUse3DFlag)) {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			Texture2D& operator=(const Texture2D& other) = delete;
-			//! Š—LŒ ‚Ì÷“n
+			//! æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			Texture2D& operator=(Texture2D&& other) { Parent_T::operator=(std::move(other)); NotUse3DFlag = (std::move(other.NotUse3DFlag)); return *this; }
 
 			virtual ~Texture2D()DXLIBEX_NOEXCEPT {}
@@ -172,24 +172,24 @@ namespace dxle
 			Texture2D(int param_handle, bool param_NotUse3DFlag)DXLIBEX_NOEXCEPT : Unique_HandledObject_Bace(param_handle), NotUse3DFlag(param_NotUse3DFlag){}
 			bool NotUse3DFlag;
 
-			//Screen“™‚ÌqƒNƒ‰ƒX‚©‚çGetHandle‚ÉƒAƒNƒZƒX‚Å‚«‚é‚æ‚¤‚É‚·‚éˆ×
+			//Screenç­‰ã®å­ã‚¯ãƒ©ã‚¹ã‹ã‚‰GetHandleã«ã‚¢ã‚¯ã‚»ã‚¹ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ç‚º
 			static int GetTexture2DHandle(const Texture2D& texture2d_obj) { return texture2d_obj.GetHandle(); }
 		};
-		//! •`‰æ‰Â”\‰æ‘œƒNƒ‰ƒX
+		//! æç”»å¯èƒ½ç”»åƒã‚¯ãƒ©ã‚¹
 		class Screen : public Texture2D
 		{
 		public:
-			//!‰æ‘œ‚ğ•¡»‚·‚é
+			//!ç”»åƒã‚’è¤‡è£½ã™ã‚‹
 			Screen clone()const;
-			//!‰æ‘œ‚ğ•¡»‚·‚é
+			//!ç”»åƒã‚’è¤‡è£½ã™ã‚‹
 			Texture2D cloneGr()const;
 
-			//¶¬—pstaticŠÖ”
+			//ç”Ÿæˆç”¨staticé–¢æ•°
 
-			//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline Screen MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel = false)DXLIBEX_NOEXCEPT { return Screen(DxLib::MakeScreen(SizeX, SizeY, UseAlphaChannel), UseAlphaChannel); }
 
-			//ƒƒ“ƒoŠÖ”
+			//ãƒ¡ãƒ³ãƒé–¢æ•°
 
 			template<typename Func_T>
 			void DrawnOn(Func_T&& draw_func) {
@@ -199,35 +199,35 @@ namespace dxle
 				DxLib::SetDrawScreen(old_draw_screen);
 			}
 
-			//! ƒOƒ‰ƒtƒBƒbƒNê—p‚Ì‚yƒoƒbƒtƒ@‚ğ‚Â‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
-			//!@param UseFlag ê—p‚Ì‚yƒoƒbƒtƒ@‚ğ‚Â‚©‚Ç‚¤‚©( true:‚Â( ƒfƒtƒHƒ‹ƒg )  false:‚½‚È‚¢ )
-			//!@param BitDepth ƒrƒbƒg[“x( 16 or 24 or 32 ) )
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯å°‚ç”¨ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã¤ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
+			//!@param UseFlag å°‚ç”¨ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã¤ã‹ã©ã†ã‹( true:æŒã¤( ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ )  false:æŒãŸãªã„ )
+			//!@param BitDepth ãƒ“ãƒƒãƒˆæ·±åº¦( 16 or 24 or 32 ) )
 			inline int SetUseGraphZBuffer(bool UseFlag, int BitDepth = -1)DXLIBEX_NOEXCEPT { return DxLib::SetUseGraphZBuffer(GetHandle(), UseFlag, BitDepth); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚Ì‚yƒoƒbƒtƒ@‚Ìó‘Ô‚ğ•Ê‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ì‚yƒoƒbƒtƒ@‚ÉƒRƒs[‚·‚é
-			//! *this‚Í‚yƒoƒbƒtƒ@‚ğ‚Á‚Ä‚¢‚é•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN
-			//!@param ToGraph *this‚ÆƒTƒCƒY‚ª“¯‚¶‚Å‚ ‚èAŠ‚Âƒ}ƒ‹ƒ`ƒTƒ“ƒvƒŠƒ“ƒO( ƒAƒ“ƒ`ƒGƒCƒŠƒAƒX )İ’è‚ª–³‚¢A‚yƒoƒbƒtƒ@‚ğ‚Á‚Ä‚¢‚é•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã®çŠ¶æ…‹ã‚’åˆ¥ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
+			//! *thisã¯ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã£ã¦ã„ã‚‹æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
+			//!@param ToGraph *thisã¨ã‚µã‚¤ã‚ºãŒåŒã˜ã§ã‚ã‚Šã€ä¸”ã¤ãƒãƒ«ãƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°( ã‚¢ãƒ³ãƒã‚¨ã‚¤ãƒªã‚¢ã‚¹ )è¨­å®šãŒç„¡ã„ã€ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã£ã¦ã„ã‚‹æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 			inline int CopyGraphZBufferImage(Screen& ToGraph)const DXLIBEX_NOEXCEPT { return DxLib::CopyGraphZBufferImage(GetHandle(), ToGraph.GetHandle()); }
-			//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚©‚çw’è—Ìˆæ‚Ì‰æ‘œî•ñ‚ğ•Ê‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É“]‘—‚·‚é
-			//!@param x1 “]‘—Œ³‚Ì‹éŒ`‚Ì¶À•W
-			//!@param y1 “]‘—Œ³‚Ì‹éŒ`‚ÌãÀ•W
-			//!@param x2 “]‘—Œ³‚Ì‹éŒ`‚Ì‰EÀ•W
-			//!@param y2 “]‘—Œ³‚Ì‹éŒ`‚Ì‰ºÀ•W
-			//!@param DestX, DestY “]‘—æ‚Ì‹éŒ`‚Ì¶ãÀ•W
-			//!@param DestGrHandle “]‘—æ‚Ì‰æ‘œ
+			//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‹ã‚‰æŒ‡å®šé ˜åŸŸã®ç”»åƒæƒ…å ±ã‚’åˆ¥ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«è»¢é€ã™ã‚‹
+			//!@param x1 è»¢é€å…ƒã®çŸ©å½¢ã®å·¦åº§æ¨™
+			//!@param y1 è»¢é€å…ƒã®çŸ©å½¢ã®ä¸Šåº§æ¨™
+			//!@param x2 è»¢é€å…ƒã®çŸ©å½¢ã®å³åº§æ¨™
+			//!@param y2 è»¢é€å…ƒã®çŸ©å½¢ã®ä¸‹åº§æ¨™
+			//!@param DestX, DestY è»¢é€å…ˆã®çŸ©å½¢ã®å·¦ä¸Šåº§æ¨™
+			//!@param DestGrHandle è»¢é€å…ˆã®ç”»åƒ
 			inline int BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, Texture2D& DestGrHandle)const DXLIBEX_NOEXCEPT{ return DxLib::BltDrawValidGraph(GetHandle(), x1, y1, x2, y2, DestX, DestY, Texture2D::GetTexture2DHandle(DestGrHandle)); }
 
-			//! •`‰ææ‰æ–Ê‚ğİ’è‚·‚é
+			//! æç”»å…ˆç”»é¢ã‚’è¨­å®šã™ã‚‹
 			inline int SetDrawScreen()const DXLIBEX_NOEXCEPT { return DxLib::SetDrawScreen(GetHandle()); }
 
 		public:
 			Screen() : Texture2D() {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			Screen(const Screen& other) = delete;
-			//!Š—LŒ ‚Ì÷“n
+			//!æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			Screen(Screen&& other) : Texture2D(std::move(other)), UseAlphaChannel(std::move(other.UseAlphaChannel)) {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			Screen& operator=(const Screen& other) = delete;
-			//! Š—LŒ ‚Ì÷“n
+			//! æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			Screen& operator=(Screen&& other) { Texture2D::operator=(std::move(other)); UseAlphaChannel = (std::move(other.UseAlphaChannel)); return *this; }
 
 			virtual ~Screen()DXLIBEX_NOEXCEPT {}
@@ -235,7 +235,7 @@ namespace dxle
 			Screen(int param_handle, bool param_UseAlphaChannel)DXLIBEX_NOEXCEPT : Texture2D(param_handle, false), UseAlphaChannel(param_UseAlphaChannel) {}
 			bool UseAlphaChannel;
 		};
-		//! •¡»
+		//! è¤‡è£½
 		inline Screen Screen::clone()const
 		{
 			int graph_size_x, graph_size_y;
@@ -255,61 +255,61 @@ namespace dxle
 			return std::move(new_graph);
 		}
 	
-		//¶¬—pŠÖ”
+		//ç”Ÿæˆç”¨é–¢æ•°
 	
-		// ƒOƒ‰ƒtƒBƒbƒNì¬ŠÖŒWŠÖ”
+		// ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ä½œæˆé–¢ä¿‚é–¢æ•°
 	
-		//! w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::MakeGraph(SizeX, SizeY, NotUse3DFlag); }
-		//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Screen MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel = false)DXLIBEX_NOEXCEPT { return Screen::MakeScreen(SizeX, SizeY, UseAlphaChannel); }
-		//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLIBEX_NOEXCEPT { return Texture2D::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle); }
 	
-		// ‰æ‘œ‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚éŠÖ”
+		// ç”»åƒã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹é–¢æ•°
 	
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLIBEX_NOEXCEPT { return Texture2D::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::LoadGraph(FileName, NotUse3DFlag); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ”½“]‚µ‚½‚à‚Ì‚ÅƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åè»¢ã—ãŸã‚‚ã®ã§ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::LoadReverseGraph(FileName, NotUse3DFlag); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒuƒŒƒ“ƒh—pƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ–ãƒ¬ãƒ³ãƒ‰ç”¨ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D LoadBlendGraph(const TCHAR *FileName)DXLIBEX_NOEXCEPT { return Texture2D::LoadBlendGraph(FileName); }
 	
-		//! ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
-		//! ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, Texture2D& GrHandle, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::ReCreateGraphFromMem(RGBFileImage, RGBFileImageSize, GrHandle, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
 	
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒTƒCƒY‚ğŠ„‚èo‚µA‚»‚ê‚É‡‚Á‚½ƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚µã‚¤ã‚ºã‚’å‰²ã‚Šå‡ºã—ã€ãã‚Œã«åˆã£ãŸã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateDXGraph(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag)DXLIBEX_NOEXCEPT { return Texture2D::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, Texture2D& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::ReCreateGraphFromGraphImage(RgbBaseImage, GrHandle, TextureFlag, ReverseFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, Texture2D& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::ReCreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, GrHandle, TextureFlag, ReverseFlag); }
 	
-		//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const Texture2D& GrHandle = Texture2D())DXLIBEX_NOEXCEPT { return Texture2D::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle); }
-		//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğÄì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å†ä½œæˆã™ã‚‹
 		inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, Texture2D& GrHandle, const void *AlphaImage = nullptr)DXLIBEX_NOEXCEPT { return Texture2D::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle, AlphaImage); }
 	#ifndef DX_NON_SOFTIMAGE
 	#endif // DX_NON_SOFTIMAGE
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateGraphFromBaseImage(const BASEIMAGE *BaseImage)DXLIBEX_NOEXCEPT { return Texture2D::CreateGraphFromBaseImage(BaseImage); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline Texture2D CreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY)DXLIBEX_NOEXCEPT { return Texture2D::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromBaseImage(const BASEIMAGE *BaseImage, Texture2D& GrHandle)DXLIBEX_NOEXCEPT { return Texture2D::ReCreateGraphFromBaseImage(BaseImage, GrHandle); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, Texture2D& GrHandle)DXLIBEX_NOEXCEPT { return Texture2D::ReCreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY, GrHandle); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚Ö‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã¸ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReloadGraph(const TCHAR *FileName, Texture2D& GrHandle, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D::ReloadGraph(FileName, GrHandle, ReverseFlag); }
-		//! ReloadGraph ‚Ì‰æ‘œ”½“]ˆ—’Ç‰Á”Å
+		//! ReloadGraph ã®ç”»åƒåè»¢å‡¦ç†è¿½åŠ ç‰ˆ
 		inline int ReloadReverseGraph(const TCHAR *FileName, Texture2D& GrHandle)DXLIBEX_NOEXCEPT { return Texture2D::ReloadReverseGraph(FileName, GrHandle); }
 	
 	}
