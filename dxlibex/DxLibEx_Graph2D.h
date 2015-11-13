@@ -242,7 +242,7 @@ namespace dxle
 			inline int BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, Texture2D& DestGrHandle)const DXLIBEX_NOEXCEPT{ return DxLib::BltDrawValidGraph(GetHandle(), x1, y1, x2, y2, DestX, DestY, Texture2D::GetTexture2DHandle(DestGrHandle)); }
 
 			//! 描画先画面を設定する
-			inline int SetDrawScreen()const DXLIBEX_NOEXCEPT { DXLIBEX_GET_LOCK(); return DxLib::SetDrawScreen(GetHandle()); }
+			inline int SetDrawScreen()const DXLIBEX_NOEXCEPT_SINGLE { DXLIBEX_GET_LOCK(); return DxLib::SetDrawScreen(GetHandle()); }
 
 		public:
 			Screen() : Texture2D() {}
