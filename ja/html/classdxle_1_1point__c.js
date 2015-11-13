@@ -10,6 +10,7 @@ var classdxle_1_1point__c =
     [ "point_c", "classdxle_1_1point__c.html#a6f255cc50ca4927c64838415e224ac71", null ],
     [ "operator bool", "classdxle_1_1point__c.html#a49e7db4370ed774dcdedc5e35a67ef05", null ],
     [ "operator point_c< _Tp2 >", "classdxle_1_1point__c.html#aae446cb6060666022dba854dae85c847", null ],
+    [ "operator std::pair< _Tp2, _Tp2 >", "classdxle_1_1point__c.html#afd85adc6def0ac31a609f894147e713a", null ],
     [ "operator=", "classdxle_1_1point__c.html#abab62d081f0d9fd34e86766e09186483", null ],
     [ "operator=", "classdxle_1_1point__c.html#a8b6ba346025a6bc9a34204fed7630ffd", null ],
     [ "operator!=", "classdxle_1_1point__c.html#a973654facd3eb745f64b34e9e3a69f94", null ],

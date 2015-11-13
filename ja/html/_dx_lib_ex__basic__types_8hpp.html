@@ -123,6 +123,7 @@ $(document).ready(function(){initNavTree('_dx_lib_ex__basic__types_8hpp.html',''
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 クラス</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html">dxle::point_c&lt; T, std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;::type &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">2次元座標(x, y)　テンプレートクラス。 このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換は&lt;tt&gt;static_castを使用することで可能です(内部でも<code>static_cast</code>を使用します) 上記のメンバーのほかに、以下の演算をサポートします  <a href="classdxle_1_1point__c.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdxle_1_1detail_1_1_to_arithmetic.html">dxle::detail::ToArithmetic&lt; T, is_arithmetical, s, is_s &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,16 +173,16 @@ $(document).ready(function(){initNavTree('_dx_lib_ex__basic__types_8hpp.html',''
 <tr class="memitem:af135692fd8bcf81213eb25425cb914e1"><td class="memTemplItemLeft" align="right" valign="top">std::wistream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#af135692fd8bcf81213eb25425cb914e1">dxle::operator&gt;&gt;</a> (std::wistream &amp;os, point_c&lt; T &gt; &amp;p)</td></tr>
 <tr class="separator:af135692fd8bcf81213eb25425cb914e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa61c209996f062d3c41c4ec5eebf2283"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa61c209996f062d3c41c4ec5eebf2283"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#aa61c209996f062d3c41c4ec5eebf2283">dxle::operator==</a> (const point_c&lt; T &gt; &amp;p, std::nullptr_t) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:aa61c209996f062d3c41c4ec5eebf2283"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#aa61c209996f062d3c41c4ec5eebf2283">dxle::operator==</a> (const point_c&lt; T &gt; &amp;p, std::nullptr_t) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:aa61c209996f062d3c41c4ec5eebf2283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5827b3922d47d0386761f5237ab8ff77"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5827b3922d47d0386761f5237ab8ff77"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#a5827b3922d47d0386761f5237ab8ff77">dxle::operator==</a> (std::nullptr_t, const point_c&lt; T &gt; &amp;p) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a5827b3922d47d0386761f5237ab8ff77"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#a5827b3922d47d0386761f5237ab8ff77">dxle::operator==</a> (std::nullptr_t, const point_c&lt; T &gt; &amp;p) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a5827b3922d47d0386761f5237ab8ff77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a804a66796917b5b4b3eb4aad193f927b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a804a66796917b5b4b3eb4aad193f927b"><td class="memTemplItemLeft" align="right" valign="top">const point_c&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#a804a66796917b5b4b3eb4aad193f927b">dxle::operator+</a> (const point_c&lt; T &gt; &amp;r) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a804a66796917b5b4b3eb4aad193f927b"><td class="memTemplItemLeft" align="right" valign="top">const point_c&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#a804a66796917b5b4b3eb4aad193f927b">dxle::operator+</a> (const point_c&lt; T &gt; &amp;r) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a804a66796917b5b4b3eb4aad193f927b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72905a5f907ba0b92421ee42a500bf18"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a72905a5f907ba0b92421ee42a500bf18"><td class="memTemplItemLeft" align="right" valign="top">point_c&lt; T &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#a72905a5f907ba0b92421ee42a500bf18">dxle::operator+</a> (point_c&lt; T &gt; &amp;&amp;r) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a72905a5f907ba0b92421ee42a500bf18"><td class="memTemplItemLeft" align="right" valign="top">point_c&lt; T &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedxle.html#a72905a5f907ba0b92421ee42a500bf18">dxle::operator+</a> (point_c&lt; T &gt; &amp;&amp;r) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a72905a5f907ba0b92421ee42a500bf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -190,7 +191,7 @@ $(document).ready(function(){initNavTree('_dx_lib_ex__basic__types_8hpp.html',''
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="_dx_lib_ex__basic__types_8hpp.html">DxLibEx_basic_types.hpp</a></li>
-    <li class="footer">2015年11月11日(水) 23時15分35秒作成 - DxLibEx / 構成: 
+    <li class="footer">2015年11月13日(金) 22時34分09秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

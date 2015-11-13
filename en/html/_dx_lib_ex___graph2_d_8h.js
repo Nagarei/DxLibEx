@@ -1,5 +1,6 @@
 var _dx_lib_ex___graph2_d_8h =
 [
+    [ "screen_mutex_c", "classdxle_1_1_graph2_d_1_1screen__mutex__c.html", null ],
     [ "Texture2D", "classdxle_1_1_graph2_d_1_1_texture2_d.html", "classdxle_1_1_graph2_d_1_1_texture2_d" ],
     [ "Screen", "classdxle_1_1_graph2_d_1_1_screen.html", "classdxle_1_1_graph2_d_1_1_screen" ],
     [ "CreateDXGraph", "_dx_lib_ex___graph2_d_8h.html#a706982b7aa31e2dc7c690545205e2872", null ],

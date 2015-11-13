@@ -6,7 +6,7 @@ var searchData=
   ['setconnecttimeoutwait',['SetConnectTimeOutWait',['../namespacedxle_1_1_network.html#a604c07dc40d77e476f82953ec7662889',1,'dxle::Network']]],
   ['setdeletehandleflag',['SetDeleteHandleFlag',['../namespacedxle_1_1_dx_handle.html#ad5f5bb040387ee3ca052f641c757ba22',1,'dxle::DxHandle']]],
   ['setdevicelostdeletegraphflag',['SetDeviceLostDeleteGraphFlag',['../classdxle_1_1_graph2_d_1_1_texture2_d.html#a1b076fccf7252627cfa2eabdcf078091',1,'dxle::Graph2D::Texture2D']]],
-  ['setdrawscreen',['SetDrawScreen',['../classdxle_1_1_graph2_d_1_1_screen.html#a6bd5373c8895675b3308b99c5ef8abf1',1,'dxle::Graph2D::Screen']]],
+  ['setdrawscreen',['SetDrawScreen',['../classdxle_1_1_graph2_d_1_1_screen.html#abb58a3576980983f7daaea71d80897fe',1,'dxle::Graph2D::Screen']]],
   ['sethandle_5fimpl',['SetHandle_IMPL',['../classdxle_1_1impl_1_1_unique___handled_object___bace.html#a8be129708cc06fe672d6963e923abf2e',1,'dxle::impl::Unique_HandledObject_Bace']]],
   ['setimeinputstringmaxlength',['SetIMEInputStringMaxLength',['../namespacedxle_1_1_input_string.html#aba4bb06329edfe1812611411594453ec',1,'dxle::InputString']]],
   ['setinputstringmaxlengthimesync',['SetInputStringMaxLengthIMESync',['../namespacedxle_1_1_input_string.html#aa2c4739fe567dce81c7f6085f45f3410',1,'dxle::InputString']]],

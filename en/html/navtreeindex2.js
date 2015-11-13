@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"structdxle_1_1n_mouse_1_1_mouse_state.html#a062ee48819ebe0329acc6bcd0f2b286e":[1,0,0,5,2,11],
+"structdxle_1_1n_mouse_1_1_mouse_state.html#a1841369232227ff169c5f40903e27cee":[1,0,0,5,2,7],
+"structdxle_1_1n_mouse_1_1_mouse_state.html#a18779e84c219e503b6f8db098b2b1d6a":[1,0,0,5,2,0],
 "structdxle_1_1n_mouse_1_1_mouse_state.html#a1e4e2a874af55f5d82f1d78dc1a86572":[1,0,0,5,2,5],
 "structdxle_1_1n_mouse_1_1_mouse_state.html#a33c3fc06ea0a34a2a1a2791f3d3b3535":[1,0,0,5,2,8],
 "structdxle_1_1n_mouse_1_1_mouse_state.html#a4fc22690aa282ae6f1884e84e4d047f2":[1,0,0,5,2,10],

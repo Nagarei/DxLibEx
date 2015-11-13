@@ -12,7 +12,7 @@ var classdxle_1_1_graph2_d_1_1_screen =
     [ "DrawnOn", "classdxle_1_1_graph2_d_1_1_screen.html#a25388465f7ca18879ed56bcaa88595f3", null ],
     [ "operator=", "classdxle_1_1_graph2_d_1_1_screen.html#a1b1dd056c87921d51cf1b1fab5a1e08a", null ],
     [ "operator=", "classdxle_1_1_graph2_d_1_1_screen.html#a9a9a12d216c44ba7ef87cec03613c850", null ],
-    [ "SetDrawScreen", "classdxle_1_1_graph2_d_1_1_screen.html#a6bd5373c8895675b3308b99c5ef8abf1", null ],
+    [ "SetDrawScreen", "classdxle_1_1_graph2_d_1_1_screen.html#abb58a3576980983f7daaea71d80897fe", null ],
     [ "SetUseGraphZBuffer", "classdxle_1_1_graph2_d_1_1_screen.html#a3bad1aabf0cf20fd089ad846aab7674f", null ],
     [ "UseAlphaChannel", "classdxle_1_1_graph2_d_1_1_screen.html#a3b32ee02025bbbce6adc44d6681bd56c", null ]
 ];

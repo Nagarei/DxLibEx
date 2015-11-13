@@ -116,6 +116,9 @@ $(document).ready(function(){initNavTree('classdxle_1_1point__c.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>2次元座標(x, y)　テンプレートクラス。 このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換は&lt;tt&gt;static_castを使用することで可能です(内部でも<code>static_cast</code>を使用します) 上記のメンバーのほかに、以下の演算をサポートします  
+ <a href="classdxle_1_1point__c.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -125,29 +128,32 @@ $(document).ready(function(){initNavTree('classdxle_1_1point__c.html','');});
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a21006b7c1f221f703762137907f50c1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a21006b7c1f221f703762137907f50c1c">point_c</a> () <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a21006b7c1f221f703762137907f50c1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a21006b7c1f221f703762137907f50c1c">point_c</a> () DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a21006b7c1f221f703762137907f50c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad56e6cd7470c4fc16142e97a922a133d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#ad56e6cd7470c4fc16142e97a922a133d">point_c</a> (std::nullptr_t) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:ad56e6cd7470c4fc16142e97a922a133d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#ad56e6cd7470c4fc16142e97a922a133d">point_c</a> (std::nullptr_t) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:ad56e6cd7470c4fc16142e97a922a133d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a034e91546c2dc24531b2dd65cb979721"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a034e91546c2dc24531b2dd65cb979721">point_c</a> (<a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> x_, <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> y_) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a034e91546c2dc24531b2dd65cb979721"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a034e91546c2dc24531b2dd65cb979721">point_c</a> (<a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> x_, <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> y_) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a034e91546c2dc24531b2dd65cb979721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97b557e6dd7ab17a48ad9d12c10aa4f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a97b557e6dd7ab17a48ad9d12c10aa4f6">point_c</a> (const <a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;o) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a97b557e6dd7ab17a48ad9d12c10aa4f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a97b557e6dd7ab17a48ad9d12c10aa4f6">point_c</a> (const <a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;o) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a97b557e6dd7ab17a48ad9d12c10aa4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8838d2c3580f11fa17bf3a4b42813f67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a8838d2c3580f11fa17bf3a4b42813f67">point_c</a> (<a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;&amp;o) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a8838d2c3580f11fa17bf3a4b42813f67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a8838d2c3580f11fa17bf3a4b42813f67">point_c</a> (<a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;&amp;o) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a8838d2c3580f11fa17bf3a4b42813f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abab62d081f0d9fd34e86766e09186483"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1point__c.html">point_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#abab62d081f0d9fd34e86766e09186483">operator=</a> (const <a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;r) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:abab62d081f0d9fd34e86766e09186483"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1point__c.html">point_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#abab62d081f0d9fd34e86766e09186483">operator=</a> (const <a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;r) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:abab62d081f0d9fd34e86766e09186483"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6ba346025a6bc9a34204fed7630ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1point__c.html">point_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a8b6ba346025a6bc9a34204fed7630ffd">operator=</a> (<a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;&amp;r) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a8b6ba346025a6bc9a34204fed7630ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1point__c.html">point_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a8b6ba346025a6bc9a34204fed7630ffd">operator=</a> (<a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;&amp;r) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a8b6ba346025a6bc9a34204fed7630ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6c00abf296b6d46bac1c7f2697715e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#ab6c00abf296b6d46bac1c7f2697715e4">point_c</a> (const std::pair&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a>, <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;p) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:ab6c00abf296b6d46bac1c7f2697715e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#ab6c00abf296b6d46bac1c7f2697715e4">point_c</a> (const std::pair&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a>, <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;p) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:ab6c00abf296b6d46bac1c7f2697715e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f255cc50ca4927c64838415e224ac71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a6f255cc50ca4927c64838415e224ac71">point_c</a> (std::pair&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a>, <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;&amp;p) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a6f255cc50ca4927c64838415e224ac71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a6f255cc50ca4927c64838415e224ac71">point_c</a> (std::pair&lt; <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a>, <a class="el" href="classdxle_1_1point__c.html#a95f458b4ba28bdf3468f34a740fb1de4">value_type</a> &gt; &amp;&amp;p) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a6f255cc50ca4927c64838415e224ac71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49e7db4370ed774dcdedc5e35a67ef05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a49e7db4370ed774dcdedc5e35a67ef05">operator bool</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a49e7db4370ed774dcdedc5e35a67ef05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a49e7db4370ed774dcdedc5e35a67ef05">operator bool</a> () const DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a49e7db4370ed774dcdedc5e35a67ef05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae446cb6060666022dba854dae85c847"><td class="memTemplParams" colspan="2">template&lt;typename _Tp2 &gt; </td></tr>
-<tr class="memitem:aae446cb6060666022dba854dae85c847"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#aae446cb6060666022dba854dae85c847">operator point_c&lt; _Tp2 &gt;</a> () const <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:aae446cb6060666022dba854dae85c847"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#aae446cb6060666022dba854dae85c847">operator point_c&lt; _Tp2 &gt;</a> () const DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:aae446cb6060666022dba854dae85c847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd85adc6def0ac31a609f894147e713a"><td class="memTemplParams" colspan="2">template&lt;typename _Tp2 &gt; </td></tr>
+<tr class="memitem:afd85adc6def0ac31a609f894147e713a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#afd85adc6def0ac31a609f894147e713a">operator std::pair&lt; _Tp2, _Tp2 &gt;</a> () const DXLIBEX_NOEXCEPT</td></tr>
+<tr class="separator:afd85adc6def0ac31a609f894147e713a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 公開変数類</h2></td></tr>
@@ -161,7 +167,7 @@ $(document).ready(function(){initNavTree('classdxle_1_1point__c.html','');});
 <tr><td class="ititle" colspan="2"><p>（これらはメソッドではありません） </p>
 </td></tr>
 <tr class="memitem:a67cfe35a141b2d979ba305cd54fee87e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a67cfe35a141b2d979ba305cd54fee87e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a67cfe35a141b2d979ba305cd54fee87e">operator-</a> (const <a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; T &gt; &amp;r) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a67cfe35a141b2d979ba305cd54fee87e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdxle_1_1point__c.html#a67cfe35a141b2d979ba305cd54fee87e">operator-</a> (const <a class="el" href="classdxle_1_1point__c.html">point_c</a>&lt; T &gt; &amp;r) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="memdesc:a67cfe35a141b2d979ba305cd54fee87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of unary operator -.  <a href="#a67cfe35a141b2d979ba305cd54fee87e">[詳解]</a><br /></td></tr>
 <tr class="separator:a67cfe35a141b2d979ba305cd54fee87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48570099b239a39c78df0b329aa7bc81"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -213,8 +219,29 @@ $(document).ready(function(){initNavTree('classdxle_1_1point__c.html','');});
 <div class="textblock"><h3>template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;::type = nullptr&gt;<br />
 class dxle::point_c&lt; T, std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;::type &gt;</h3>
 
-
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p>2次元座標(x, y)　テンプレートクラス。 このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換は&lt;tt&gt;static_castを使用することで可能です(内部でも<code>static_cast</code>を使用します) 上記のメンバーのほかに、以下の演算をサポートします </p>
+<div class="fragment"><div class="line">pt1 = pt2 + pt3;</div>
+<div class="line">pt1 = pt2 - pt3;</div>
+<div class="line">pt1 = pt2 * a;</div>
+<div class="line">pt1 = a * pt2;</div>
+<div class="line">pt1 = pt2 / a;</div>
+<div class="line">pt1 += pt2;</div>
+<div class="line">pt1 -= pt2;</div>
+<div class="line">pt1 *= a;</div>
+<div class="line">pt1 /= a;</div>
+<div class="line">pt1 == pt2;</div>
+<div class="line">pt1 != pt2;</div>
+</div><!-- fragment --><p> 利便性のために、以下の型が定義されています。</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> point_c&lt;int&gt; <a class="code" href="namespacedxle.html#ad6705043c3b3698b12f909a27820c9ef">pointi</a>;</div>
+<div class="line"><span class="keyword">typedef</span> point_c&lt;uint8_t&gt; <a class="code" href="namespacedxle.html#ac501cd493a08a0901eb4e988a096a1a0">pointu8i</a>;</div>
+<div class="line"><span class="keyword">typedef</span> point_c&lt;int8_t&gt; <a class="code" href="namespacedxle.html#a22e90e41e1bf700b2264883a2ef4e135">point8i</a>;</div>
+<div class="line"><span class="keyword">typedef</span> point_c&lt;double&gt; <a class="code" href="namespacedxle.html#a0a673b5565da9d03b487301ae2c089eb">pointd</a>;</div>
+<div class="line"><span class="keyword">typedef</span> point_c&lt;float&gt; <a class="code" href="namespacedxle.html#a96474248bdd32fe46ace1e2c134cac3d">pointf</a>;</div>
+</div><!-- fragment --><p> Example: </p><div class="fragment"><div class="line"><a class="code" href="classdxle_1_1point__c.html">dxle::pointf</a> a(0.3f, 0.f), b(0.f, 0.4f);</div>
+<div class="line"><a class="code" href="classdxle_1_1point__c.html">dxle::pointi</a> pt = (a + b)*10.f;</div>
+<div class="line">std::cout &lt;&lt; pt &lt;&lt; std::endl;</div>
+</div><!-- fragment --> 
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a class="anchor" id="a95f458b4ba28bdf3468f34a740fb1de4"></a>
 <div class="memitem">
@@ -228,7 +255,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
       </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -256,7 +283,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -284,7 +311,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -322,7 +349,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -350,7 +377,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -378,7 +405,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -405,8 +432,9 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
   </tr>
 </table>
 </div><div class="memdoc">
+<p>std::pairからの変換 </p>
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -434,7 +462,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -462,7 +490,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00085">85</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -490,8 +518,39 @@ template&lt;typename _Tp2 &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>内部型の異なるpoint_cクラス同士の変換 </p>
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00090">90</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afd85adc6def0ac31a609f894147e713a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;::type = nullptr&gt; </div>
+<div class="memtemplate">
+template&lt;typename _Tp2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdxle_1_1point__c.html">dxle::point_c</a>&lt; T, type &gt;::operator std::pair&lt; _Tp2, _Tp2 &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>std::pairへの変換 </p>
+
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -519,7 +578,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -547,7 +606,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -864,7 +923,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>Memberwise opposite of the vector </dd></dl>
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00113">113</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00164">164</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1114,7 +1173,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
       </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1130,7 +1189,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
       </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p> <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html">DxLibEx_basic_types.hpp</a> の <a class="el" href="_dx_lib_ex__basic__types_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1143,7 +1202,7 @@ template&lt;typename T, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacedxle.html">dxle</a></li><li class="navelem"><a class="el" href="classdxle_1_1point__c.html">point_c</a></li>
-    <li class="footer">2015年11月11日(水) 23時15分35秒作成 - DxLibEx / 構成: 
+    <li class="footer">2015年11月13日(金) 22時34分09秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

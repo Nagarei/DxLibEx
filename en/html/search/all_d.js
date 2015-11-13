@@ -21,5 +21,6 @@ var searchData=
   ['operator_3e',['operator&gt;',['../classdxle_1_1impl_1_1_counter__template.html#a35b9bb57dd77828c82767a5f573c94de',1,'dxle::impl::Counter_template']]],
   ['operator_3e_3d',['operator&gt;=',['../classdxle_1_1impl_1_1_counter__template.html#a3750d1b9c1df38a887e2e265efea10be',1,'dxle::impl::Counter_template']]],
   ['operator_3e_3e',['operator&gt;&gt;',['../namespacedxle.html#a4f05b85e561ef64ff3150b4885307dbe',1,'dxle::operator&gt;&gt;(std::istream &amp;is, point_c&lt; T &gt; &amp;p)'],['../namespacedxle.html#af135692fd8bcf81213eb25425cb914e1',1,'dxle::operator&gt;&gt;(std::wistream &amp;os, point_c&lt; T &gt; &amp;p)']]],
-  ['ostream_5foperator_5fhelper',['ostream_operator_helper',['../structdxle_1_1detail_1_1ostream__operator__helper.html',1,'dxle::detail']]]
+  ['ostream_5foperator_5fhelper',['ostream_operator_helper',['../structdxle_1_1detail_1_1ostream__operator__helper.html',1,'dxle::detail']]],
+  ['pair_3c_20_5ftp2_2c_20_5ftp2_20_3e',['pair&lt; _Tp2, _Tp2 &gt;',['../classdxle_1_1point__c.html#afd85adc6def0ac31a609f894147e713a',1,'dxle::point_c']]]
 ];

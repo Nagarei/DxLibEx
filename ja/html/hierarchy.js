@@ -17,6 +17,11 @@ var hierarchy =
     [ "dxle::nMouse::MouseState", "structdxle_1_1n_mouse_1_1_mouse_state.html", null ],
     [ "dxle::detail::ostream_operator_helper< CharType, PointType >", "structdxle_1_1detail_1_1ostream__operator__helper.html", null ],
     [ "dxle::point_c< T, std::enable_if< std::is_arithmetic< T >::value, std::nullptr_t >::type >", "classdxle_1_1point__c.html", null ],
+    [ "dxle::Graph2D::screen_mutex_c", "classdxle_1_1_graph2_d_1_1screen__mutex__c.html", [
+      [ "dxle::Graph2D::Texture2D", "classdxle_1_1_graph2_d_1_1_texture2_d.html", [
+        [ "dxle::Graph2D::Screen", "classdxle_1_1_graph2_d_1_1_screen.html", null ]
+      ] ]
+    ] ],
     [ "dxle::Sound::SoundEffect", "classdxle_1_1_sound_1_1_sound_effect.html", null ],
     [ "dxle::detail::ToArithmetic< T, is_arithmetical, s, is_s >", "structdxle_1_1detail_1_1_to_arithmetic.html", null ],
     [ "dxle::detail::ToArithmetic< T, true, 1, false >", "structdxle_1_1detail_1_1_to_arithmetic_3_01_t_00_01true_00_011_00_01false_01_4.html", null ],
@@ -28,8 +33,6 @@ var hierarchy =
     ] ],
     [ "dxle::impl::Unique_HandledObject_Bace< Child >", "classdxle_1_1impl_1_1_unique___handled_object___bace.html", null ],
     [ "dxle::impl::Unique_HandledObject_Bace< Texture2D >", "classdxle_1_1impl_1_1_unique___handled_object___bace.html", [
-      [ "dxle::Graph2D::Texture2D", "classdxle_1_1_graph2_d_1_1_texture2_d.html", [
-        [ "dxle::Graph2D::Screen", "classdxle_1_1_graph2_d_1_1_screen.html", null ]
-      ] ]
+      [ "dxle::Graph2D::Texture2D", "classdxle_1_1_graph2_d_1_1_texture2_d.html", null ]
     ] ]
 ];

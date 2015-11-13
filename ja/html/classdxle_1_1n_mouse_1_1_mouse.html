@@ -117,9 +117,9 @@ $(document).ready(function(){initNavTree('classdxle_1_1n_mouse_1_1_mouse.html','
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
-<tr class="memitem:a489c64389c80651f26da086f8b46c31f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structdxle_1_1n_mouse_1_1_mouse_state.html">MouseState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1n_mouse_1_1_mouse.html#a489c64389c80651f26da086f8b46c31f">GetState</a> (bool ScrollWheelValueReset=false) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a489c64389c80651f26da086f8b46c31f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structdxle_1_1n_mouse_1_1_mouse_state.html">MouseState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1n_mouse_1_1_mouse.html#a489c64389c80651f26da086f8b46c31f">GetState</a> (bool ScrollWheelValueReset=false) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="separator:a489c64389c80651f26da086f8b46c31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23e05cb7ff1ed6a14fe83d35416a88cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1n_mouse_1_1_mouse.html#a23e05cb7ff1ed6a14fe83d35416a88cb">SetPosition</a> (int x, int y) <a class="el" href="_dx_lib_ex___defines_8h.html#a4c85a282ab640a2e24bfa353c3328a1e">DXLIBEX_NOEXCEPT</a></td></tr>
+<tr class="memitem:a23e05cb7ff1ed6a14fe83d35416a88cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1n_mouse_1_1_mouse.html#a23e05cb7ff1ed6a14fe83d35416a88cb">SetPosition</a> (int x, int y) DXLIBEX_NOEXCEPT</td></tr>
 <tr class="memdesc:a23e05cb7ff1ed6a14fe83d35416a88cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの左上隅を基準とした、マウス カーソルの位置を設定します。  <a href="#a23e05cb7ff1ed6a14fe83d35416a88cb">[詳解]</a><br /></td></tr>
 <tr class="separator:a23e05cb7ff1ed6a14fe83d35416a88cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a145921e0bb426656704aa2f57a388b"><td class="memItemLeft" align="right" valign="top">static std::queue&lt; <a class="el" href="structdxle_1_1n_mouse_1_1_mouse_input_info.html">MouseInputInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdxle_1_1n_mouse_1_1_mouse.html#a3a145921e0bb426656704aa2f57a388b">GetMouseInputLog</a> ()</td></tr>
@@ -150,7 +150,8 @@ $(document).ready(function(){initNavTree('classdxle_1_1n_mouse_1_1_mouse.html','
   </tr>
 </table>
 </div><div class="memdoc">
-<p>マウスのクリック履歴をまとめて取得する 参照：DxLib::GetMouseInputLog <a href="http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36">http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36</a> </p><dl class="section attention"><dt>注意</dt><dd>内部でGetMouseInputLogのLogDeleteにTRUEを渡して呼び出します </dd></dl>
+<p>マウスのクリック履歴をまとめて取得する 参照：DxLib::GetMouseInputLog <a href="http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36">http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36</a> </p><dl class="section attention"><dt>注意</dt><dd>内部でGetMouseInputLogのLogDeleteにTRUEを渡して呼び出します</dd></dl>
+<p>�}�E�X�̃N���b�N�������܂Ƃ߂Ď擾���� �Q�ƁFDxLib::GetMouseInputLog <a href="http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36">http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36</a> </p><dl class="section attention"><dt>注意</dt><dd>������GetMouseInputLog��LogDelete��TRUE��n���ČĂяo���܂� </dd></dl>
 
 <p> <a class="el" href="_dx_lib_ex__impl_8h_source.html">DxLibEx_impl.h</a> の <a class="el" href="_dx_lib_ex__impl_8h_source.html#l00178">178</a> 行目に定義があります。</p>
 
@@ -179,7 +180,13 @@ $(document).ready(function(){initNavTree('classdxle_1_1n_mouse_1_1_mouse.html','
 </div><div class="memdoc">
 <p>マウスの現在の状態 (マウスの位置や押されているボタンなど) を取得します。 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ScrollWheelValueReset</td><td>GetMouseWheelRotVolの引数CounterResetと同じ </td></tr>
+    <tr><td class="paramname">ScrollWheelValueReset</td><td>GetMouseWheelRotVolの引数CounterResetと同じ</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>�}�E�X�̌��݂̏�� (�}�E�X�̈ʒu�≟����Ă���{�^���Ȃ�) ���擾���܂��B </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ScrollWheelValueReset</td><td>GetMouseWheelRotVol�̈���CounterReset�Ɠ��� </td></tr>
   </table>
   </dd>
 </dl>
@@ -236,7 +243,7 @@ $(document).ready(function(){initNavTree('classdxle_1_1n_mouse_1_1_mouse.html','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacedxle.html">dxle</a></li><li class="navelem"><a class="el" href="namespacedxle_1_1n_mouse.html">nMouse</a></li><li class="navelem"><a class="el" href="classdxle_1_1n_mouse_1_1_mouse.html">Mouse</a></li>
-    <li class="footer">2015年11月11日(水) 23時15分35秒作成 - DxLibEx / 構成: 
+    <li class="footer">2015年11月13日(金) 22時34分09秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
