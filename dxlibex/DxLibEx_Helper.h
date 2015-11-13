@@ -1,33 +1,33 @@
 #ifndef DX_LIB_EX_HELPER_H_2015_0930_0626_256841632_
 #define DX_LIB_EX_HELPER_H_2015_0930_0626_256841632_
 
-//À‘•—pƒtƒ@ƒCƒ‹‚Å‚·B
-//ŠJ”­ÒˆÈŠO‚ª‚±‚±‚Ì‹@”\‚ğg‚¤‚Ì‚Í‚¨Š©‚ß‚Å‚«‚Ü‚¹‚ñ
+//å®Ÿè£…ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™ã€‚
+//é–‹ç™ºè€…ä»¥å¤–ãŒã“ã“ã®æ©Ÿèƒ½ã‚’ä½¿ã†ã®ã¯ãŠå‹§ã‚ã§ãã¾ã›ã‚“
 #include <cassert>
 #include "DxLibEx_Defines.h"
 
 namespace dxle{
-//!À‘•—p‚Ì‚à‚Ì‚ªW‚Ü‚é–¼‘O‹óŠÔ‚Å‚·BŠJ”­ÒˆÈŠO‚ª‚±‚±‚Ì‹@”\‚ğg‚¤‚Ì‚Í‚¨Š©‚ß‚Å‚«‚Ü‚¹‚ñB
+//!å®Ÿè£…ç”¨ã®ã‚‚ã®ãŒé›†ã¾ã‚‹åå‰ç©ºé–“ã§ã™ã€‚é–‹ç™ºè€…ä»¥å¤–ãŒã“ã“ã®æ©Ÿèƒ½ã‚’ä½¿ã†ã®ã¯ãŠå‹§ã‚ã§ãã¾ã›ã‚“ã€‚
 namespace impl{
 
 	template<typename T>
-	//!À‘•—p
-	//!ƒJƒEƒ“ƒ^Œn
-	//!GetNowCount‚Ì–ß‚è’l‚ğŒë‚Á‚Ä¶‚Ì‚Ü‚Üg‚¤‚±‚Æ‚ğ–h‚®
+	//!å®Ÿè£…ç”¨
+	//!ã‚«ã‚¦ãƒ³ã‚¿ç³»
+	//!GetNowCountã®æˆ»ã‚Šå€¤ã‚’èª¤ã£ã¦ç”Ÿã®ã¾ã¾ä½¿ã†ã“ã¨ã‚’é˜²ã
 	class Counter_template
 	{
 	private:
 		typedef Counter_template<T> This_T;
 	public:
-		//‚±‚±‚ÌpublicŠÖ”‚ÍUI‚É’¼Œ‹‚·‚é‚Ì‚Å”j‰ó“I•ÏX‚Í‰Â”\‚ÈŒÀ‚è”ğ‚¯‚é‚æ‚¤‚É
+		//ã“ã“ã®publicé–¢æ•°ã¯UIã«ç›´çµã™ã‚‹ã®ã§ç ´å£Šçš„å¤‰æ›´ã¯å¯èƒ½ãªé™ã‚Šé¿ã‘ã‚‹ã‚ˆã†ã«
 
 		Counter_template()DXLIBEX_NOEXCEPT : value(-1){}
 
-		//! ®”Œ^‚Ì’l‚ğæ“¾‚·‚é
+		//! æ•´æ•°å‹ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		inline const T& GetInt()const DXLIBEX_NOEXCEPT{ return count(); }
-		//! ®”Œ^‚Ì’l‚ğæ“¾‚·‚é
+		//! æ•´æ•°å‹ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		inline const T& count()const DXLIBEX_NOEXCEPT{ return value; }
-		//! ®”Œ^‚Ì’l‚ğæ“¾‚·‚é
+		//! æ•´æ•°å‹ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		explicit inline operator T()const DXLIBEX_NOEXCEPT{ return count(); }
 
 		inline const This_T& operator+()const DXLIBEX_NOEXCEPT{ return *this; }
@@ -53,7 +53,7 @@ namespace impl{
 		template<typename U>
 		struct Cast : public Counter_template<U>{
 			explicit Cast(const U& param) :Counter_template<U>(param){}
-			//!Counter_template<T>‚©‚çCounter_template<U>‚ÉƒLƒƒƒXƒg‚·‚é
+			//!Counter_template<T>ã‹ã‚‰Counter_template<U>ã«ã‚­ãƒ£ã‚¹ãƒˆã™ã‚‹
 			inline static Counter_template<U> Do(const U& value)DXLIBEX_NOEXCEPT
 			{
 				return Counter_template<U>(Cast<U>(value));
@@ -65,13 +65,13 @@ namespace impl{
 
 
 	template<typename Child>
-	//!ƒnƒ“ƒhƒ‹©“®íœÀ‘•—p
+	//!ãƒãƒ³ãƒ‰ãƒ«è‡ªå‹•å‰Šé™¤å®Ÿè£…ç”¨
 	class Unique_Handle_Bace
 	{
 	protected:
 		typedef Unique_Handle_Bace<Child> Bace_T;
 	private:
-		//ƒRƒs[‹Ö~
+		//ã‚³ãƒ”ãƒ¼ç¦æ­¢
 		Unique_Handle_Bace(const Bace_T&) = delete;
 		Unique_Handle_Bace& operator=(const Bace_T&) = delete;
 	public:
@@ -79,14 +79,14 @@ namespace impl{
 			:handle(-1)
 		{}
 
-		//Š—LŒ ‚Ì÷“n
+		//æ‰€æœ‰æ¨©ã®è­²æ¸¡
 		Unique_Handle_Bace(Bace_T&& other)DXLIBEX_NOEXCEPT
 			: handle(other.handle)
 		{
 			other.handle = -1;
 			SetDeleteHandleFlag(handle, &handle);
 		}
-		//Š—LŒ ‚Ì÷“n
+		//æ‰€æœ‰æ¨©ã®è­²æ¸¡
 		Unique_Handle_Bace& operator=(Bace_T&& other)DXLIBEX_NOEXCEPT
 		{
 			if (this == &other) { return *this; }
@@ -97,19 +97,19 @@ namespace impl{
 		}
 
 		~Unique_Handle_Bace() DXLIBEX_NOEXCEPT{
-			//ƒŠƒ\[ƒX‰ğ•ú
+			//ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾
 			static_cast<Child*>(this)->Delete();
 		}
 	protected:
-		//ŠÔˆá‚¦‚Ä‘¼‚Ìí—Ş‚Ìƒnƒ“ƒhƒ‹‚ğ‚½‚È‚¢‚æ‚¤‚Éprotected‚É‚µ‚Ä‚¨‚­
+		//é–“é•ãˆã¦ä»–ã®ç¨®é¡ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’æŒãŸãªã„ã‚ˆã†ã«protectedã«ã—ã¦ãŠã
 		Unique_Handle_Bace(int param_handle)DXLIBEX_NOEXCEPT
 			: handle(param_handle)
 		{
 			SetDeleteHandleFlag(handle, &handle);
 		}
 
-		//!‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ–³Œø‰»‚µA¡‚Ü‚Åg‚Á‚Ä‚¢‚½ƒnƒ“ƒhƒ‹‚ğ•Ô‚·
-		//!©“®íœ‚à–³Œø‰»‚³‚ê‚é
+		//!ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç„¡åŠ¹åŒ–ã—ã€ä»Šã¾ã§ä½¿ã£ã¦ã„ãŸãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
+		//!è‡ªå‹•å‰Šé™¤ã‚‚ç„¡åŠ¹åŒ–ã•ã‚Œã‚‹
 		inline int ReleaseRun()DXLIBEX_NOEXCEPT{
 			int temp = GetHandle();
 			SetDeleteHandleFlag(handle, nullptr);
@@ -121,13 +121,13 @@ namespace impl{
 		int handle;
 	};
 	template<typename Child>
-	//!ƒnƒ“ƒhƒ‹‚Ìw‚·ƒIƒuƒWƒFƒNƒgÀ‘•—p
+	//!ãƒãƒ³ãƒ‰ãƒ«ã®æŒ‡ã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå®Ÿè£…ç”¨
 	class Unique_HandledObject_Bace
 	{
 	protected:
 		typedef Unique_HandledObject_Bace<Child> Bace_T;
 	private:
-		//ƒRƒs[‹Ö~
+		//ã‚³ãƒ”ãƒ¼ç¦æ­¢
 		Unique_HandledObject_Bace(const Bace_T&) = delete;
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
 	public:
@@ -135,13 +135,13 @@ namespace impl{
 			: handle(-1)
 		{}
 
-		//Š—LŒ ‚Ì÷“n
+		//æ‰€æœ‰æ¨©ã®è­²æ¸¡
 		Unique_HandledObject_Bace(Bace_T&& other)DXLIBEX_NOEXCEPT
 			: handle(other.handle)
 		{
 			other.handle = -1;
 		}
-		//Š—LŒ ‚Ì÷“n
+		//æ‰€æœ‰æ¨©ã®è­²æ¸¡
 		Unique_HandledObject_Bace& operator=(Bace_T&& other)DXLIBEX_NOEXCEPT
 		{
 			if (this == &other) { return *this; }
@@ -152,14 +152,14 @@ namespace impl{
 		}
 
 	protected:
-		//ŠÔˆá‚¦‚Ä‘¼‚Ìí—Ş‚Ìƒnƒ“ƒhƒ‹‚ğ‚½‚È‚¢‚æ‚¤‚Éprotected‚É‚µ‚Ä‚¨‚­
+		//é–“é•ãˆã¦ä»–ã®ç¨®é¡ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’æŒãŸãªã„ã‚ˆã†ã«protectedã«ã—ã¦ãŠã
 		Unique_HandledObject_Bace(int param_handle)DXLIBEX_NOEXCEPT
 			: handle(param_handle)
 		{
 			DxLib::SetDeleteHandleFlag(handle, &handle);
 		}
 		virtual ~Unique_HandledObject_Bace() DXLIBEX_NOEXCEPT {
-			//ƒŠƒ\[ƒX‰ğ•ú
+			//ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾
 			static_cast<Child*>(this)->Delete();
 		}
 		int GetHandle()const DXLIBEX_NOEXCEPT { return handle; }

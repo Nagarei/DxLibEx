@@ -12,39 +12,39 @@
 
 namespace dxle
 {
-	//!DxLibEx‚ÌŒöŠJƒNƒ‰ƒX‚ª‘S‚Ä“ü‚Á‚½namespace‚Å‚·
+	//!DxLibExã®å…¬é–‹ã‚¯ãƒ©ã‚¹ãŒå…¨ã¦å…¥ã£ãŸnamespaceã§ã™
 	namespace DxLibEx_Classes{}
 
-	//!DxLib_End‚Ì‚µ–Y‚ê‚ğ–h‚¬‚Ü‚·
+	//!DxLib_Endã®ã—å¿˜ã‚Œã‚’é˜²ãã¾ã™
 	namespace nDxLibSys
 	{
-		//!‰Šú‰»I—¹ŒnŠÖ”AƒƒbƒZ[ƒWˆ—ŠÖ”
-		//!DxLib_End‚Ì‚µ–Y‚ê‚ğ–h‚¬‚Ü‚·
-		//!i’Fexit‚âabort‚É‚Í‘Î‰‚Å‚«‚Ü‚¹‚ñj
+		//!åˆæœŸåŒ–çµ‚äº†ç³»é–¢æ•°ã€ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡¦ç†é–¢æ•°
+		//!DxLib_Endã®ã—å¿˜ã‚Œã‚’é˜²ãã¾ã™
+		//!ï¼ˆæ³¨ï¼šexitã‚„abortã«ã¯å¯¾å¿œã§ãã¾ã›ã‚“ï¼‰
 		class DxLibSys
 		{
 		public:
-			//----------‰Šú‰»I—¹ŒnŠÖ”----------//
+			//----------åˆæœŸåŒ–çµ‚äº†ç³»é–¢æ•°----------//
 
-			//!DxLib_Init‚ğs‚¤B<br>
-			//!¸”s‚·‚é‚ÆintŒ^‚Ì—áŠO‚ğ“Š‚°‚éB<br>
-			//!‰‰ñ‚Ì‚İ—LŒøB<br>
-			//!WinMain‚©‚ç‚Ìreturn‚ÅDxLibEnd‚ğŒÄ‚Ño‚µ‚Ü‚·B
+			//!DxLib_Initã‚’è¡Œã†ã€‚<br>
+			//!å¤±æ•—ã™ã‚‹ã¨intå‹ã®ä¾‹å¤–ã‚’æŠ•ã’ã‚‹ã€‚<br>
+			//!åˆå›ã®ã¿æœ‰åŠ¹ã€‚<br>
+			//!WinMainã‹ã‚‰ã®returnã§DxLibEndã‚’å‘¼ã³å‡ºã—ã¾ã™ã€‚
 			static void Init();
-			//!DxLib_End‚ğs‚¤
+			//!DxLib_Endã‚’è¡Œã†
 			static void End()DXLIBEX_NOEXCEPT;
 
-			//!DXƒ‰ƒCƒuƒ‰ƒŠ‚Ì“à•”‚Åg—p‚µ‚Ä‚¢‚é\‘¢‘Ì‚ğƒ[ƒ‰Šú‰»‚µ‚ÄA
-			//!DxLib_Init ‚Ì‘O‚És‚Á‚½İ’è‚ğ–³Œø‰»‚·‚é( DxLib_Init ‚Ì‘O‚Å‚Ì‚İ—LŒø )
+			//!DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®å†…éƒ¨ã§ä½¿ç”¨ã—ã¦ã„ã‚‹æ§‹é€ ä½“ã‚’ã‚¼ãƒ­åˆæœŸåŒ–ã—ã¦ã€
+			//!DxLib_Init ã®å‰ã«è¡Œã£ãŸè¨­å®šã‚’ç„¡åŠ¹åŒ–ã™ã‚‹( DxLib_Init ã®å‰ã§ã®ã¿æœ‰åŠ¹ )
 			static int GlobalStructInitialize()DXLIBEX_NOEXCEPT;
-			//!DXƒ‰ƒCƒuƒ‰ƒŠ‚ª‰Šú‰»‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-			//!@return true:‰Šú‰»‚³‚ê‚Ä‚¢‚é  false:‚³‚ê‚Ä‚¢‚È‚¢
+			//!DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªãŒåˆæœŸåŒ–ã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+			//!@return true:åˆæœŸåŒ–ã•ã‚Œã¦ã„ã‚‹  false:ã•ã‚Œã¦ã„ãªã„
 			static bool IsInit()DXLIBEX_NOEXCEPT;
 
 
-			//----------ƒƒbƒZ[ƒWˆ—ŠÖ”----------//
+			//----------ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡¦ç†é–¢æ•°----------//
 
-			//!ƒEƒCƒ“ƒhƒEƒY‚ÌƒƒbƒZ[ƒWƒ‹[ƒv‚É‘ã‚í‚éˆ—‚ğs‚¤
+			//!ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚ºã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ«ãƒ¼ãƒ—ã«ä»£ã‚ã‚‹å‡¦ç†ã‚’è¡Œã†
 			static int ProcessMessage();
 
 		private:
@@ -55,40 +55,40 @@ namespace dxle
 	namespace DxLibEx_Classes { using nDxLibSys::DxLibSys; }
 
 
-	//----------ƒEƒGƒCƒgŒn----------//
+	//----------ã‚¦ã‚¨ã‚¤ãƒˆç³»----------//
 
-	//!ƒEƒGƒCƒgŒn
+	//!ã‚¦ã‚¨ã‚¤ãƒˆç³»
 	namespace Wait
 	{
-		//! w’è‚ÌŠÔ‚¾‚¯ˆ—‚ğ‚Æ‚ß‚é
+		//! æŒ‡å®šã®æ™‚é–“ã ã‘å‡¦ç†ã‚’ã¨ã‚ã‚‹
 		int WaitTimer(int WaitTime)DXLIBEX_NOEXCEPT{ return DxLib::WaitTimer(WaitTime); }
 #ifndef DX_NON_INPUT
-		//! ƒL[‚Ì“ü—Í‘Ò‚¿‚ğs‚¤
+		//! ã‚­ãƒ¼ã®å…¥åŠ›å¾…ã¡ã‚’è¡Œã†
 		int WaitKey(void)DXLIBEX_NOEXCEPT{ return DxLib::WaitKey(); }
 #endif // DX_NON_INPUT
 	}
 
 
-	//----------ƒJƒEƒ“ƒ^Œn----------//
+	//----------ã‚«ã‚¦ãƒ³ã‚¿ç³»----------//
 
-	//!GetNowCount“™‚ÌŒë—p‚ğ–h‚¬‚Ü‚·
+	//!GetNowCountç­‰ã®èª¤ç”¨ã‚’é˜²ãã¾ã™
 	namespace nCounter
 	{
-		//!ƒJƒEƒ“ƒ^Œn
-		//!GetNowCount‚Ì–ß‚è’l‚ğŒë‚Á‚Ä¶‚Ì‚Ü‚Üg‚¤‚±‚Æ‚ğ–h‚®
-		//!‚¸“xƒo[ƒWƒ‡ƒ“
+		//!ã‚«ã‚¦ãƒ³ã‚¿ç³»
+		//!GetNowCountã®æˆ»ã‚Šå€¤ã‚’èª¤ã£ã¦ç”Ÿã®ã¾ã¾ä½¿ã†ã“ã¨ã‚’é˜²ã
+		//!é«˜ç²¾åº¦ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 		class HiPerformanceCounter;
-		//!ƒJƒEƒ“ƒ^Œn
-		//!GetNowCount‚Ì–ß‚è’l‚ğŒë‚Á‚Ä¶‚Ì‚Ü‚Üg‚¤‚±‚Æ‚ğ–h‚®
+		//!ã‚«ã‚¦ãƒ³ã‚¿ç³»
+		//!GetNowCountã®æˆ»ã‚Šå€¤ã‚’èª¤ã£ã¦ç”Ÿã®ã¾ã¾ä½¿ã†ã“ã¨ã‚’é˜²ã
 		class Counter : public impl::Counter_template<int>
 		{
 		public:
-			//! ƒ~ƒŠ•b’PˆÊ‚Ì¸“x‚ğ‚ÂƒJƒEƒ“ƒ^‚ÌŒ»İ’l‚ğ“¾‚é
+			//! ãƒŸãƒªç§’å˜ä½ã®ç²¾åº¦ã‚’æŒã¤ã‚«ã‚¦ãƒ³ã‚¿ã®ç¾åœ¨å€¤ã‚’å¾—ã‚‹
 			static Counter GetNowCount(bool UseRDTSCFlag = false)DXLIBEX_NOEXCEPT;
-			//! ƒ~ƒŠ•b’PˆÊ‚Ì¸“x‚ğ‚ÂƒJƒEƒ“ƒ^‚ÌŒ»İ’l‚ğ“¾‚é
+			//! ãƒŸãƒªç§’å˜ä½ã®ç²¾åº¦ã‚’æŒã¤ã‚«ã‚¦ãƒ³ã‚¿ã®ç¾åœ¨å€¤ã‚’å¾—ã‚‹
 			static inline Counter now(bool UseRDTSCFlag = false)DXLIBEX_NOEXCEPT { return GetNowCount(UseRDTSCFlag); }
 
-			//! 1000‚ğ‚©‚¯‚ÄHiPerformanceCounter‚Æ‚İ‚È‚·‚æ‚¤‚É‚·‚é
+			//! 1000ã‚’ã‹ã‘ã¦HiPerformanceCounterã¨ã¿ãªã™ã‚ˆã†ã«ã™ã‚‹
 			HiPerformanceCounter CastToHiPerformance()const DXLIBEX_NOEXCEPT;
 
 			Counter()DXLIBEX_NOEXCEPT {}
@@ -96,18 +96,18 @@ namespace dxle
 		protected:
 			explicit Counter(int param)DXLIBEX_NOEXCEPT : Counter_template(param) {}
 		};
-		//!ƒJƒEƒ“ƒ^Œn
-		//!GetNowCount‚Ì–ß‚è’l‚ğŒë‚Á‚Ä¶‚Ì‚Ü‚Üg‚¤‚±‚Æ‚ğ–h‚®
-		//!‚¸“xƒo[ƒWƒ‡ƒ“
+		//!ã‚«ã‚¦ãƒ³ã‚¿ç³»
+		//!GetNowCountã®æˆ»ã‚Šå€¤ã‚’èª¤ã£ã¦ç”Ÿã®ã¾ã¾ä½¿ã†ã“ã¨ã‚’é˜²ã
+		//!é«˜ç²¾åº¦ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 		class HiPerformanceCounter : public impl::Counter_template<LONGLONG>
 		{
 		public:
-			//! ƒ}ƒCƒNƒ•b’PˆÊ‚Ì¸“x‚ğ‚ÂƒJƒEƒ“ƒ^‚ÌŒ»İ’l‚ğ“¾‚é
+			//! ãƒã‚¤ã‚¯ãƒ­ç§’å˜ä½ã®ç²¾åº¦ã‚’æŒã¤ã‚«ã‚¦ãƒ³ã‚¿ã®ç¾åœ¨å€¤ã‚’å¾—ã‚‹
 			static HiPerformanceCounter GetNowCount(bool UseRDTSCFlag = false)DXLIBEX_NOEXCEPT;
-			//! ƒ}ƒCƒNƒ•b’PˆÊ‚Ì¸“x‚ğ‚ÂƒJƒEƒ“ƒ^‚ÌŒ»İ’l‚ğ“¾‚é
+			//! ãƒã‚¤ã‚¯ãƒ­ç§’å˜ä½ã®ç²¾åº¦ã‚’æŒã¤ã‚«ã‚¦ãƒ³ã‚¿ã®ç¾åœ¨å€¤ã‚’å¾—ã‚‹
 			static inline HiPerformanceCounter now(bool UseRDTSCFlag = false)DXLIBEX_NOEXCEPT { return GetNowCount(UseRDTSCFlag); }
 
-			//! 1000‚ÅŠ„‚Á‚ÄCounter‚Æ‚İ‚È‚·‚æ‚¤‚É‚·‚é
+			//! 1000ã§å‰²ã£ã¦Counterã¨ã¿ãªã™ã‚ˆã†ã«ã™ã‚‹
 			Counter CastToLowPerformance()const DXLIBEX_NOEXCEPT;
 
 			HiPerformanceCounter()DXLIBEX_NOEXCEPT {}
@@ -122,66 +122,66 @@ namespace dxle
 	}
 
 
-	//----------—”Œn----------//
+	//----------ä¹±æ•°ç³»----------//
 
-	//!—”Œn
+	//!ä¹±æ•°ç³»
 	namespace DxRand
 	{
-		//! —”‚ğæ“¾‚·‚é
-		//!@param[in] RandMax •Ô‚Á‚Ä—ˆ‚é’l‚ÌÅ‘å’l
+		//! ä¹±æ•°ã‚’å–å¾—ã™ã‚‹
+		//!@param[in] RandMax è¿”ã£ã¦æ¥ã‚‹å€¤ã®æœ€å¤§å€¤
 		inline int GetRand(int RandMax)DXLIBEX_NOEXCEPT{ return DxLib::GetRand(RandMax); }
-		//! —”‚Ì‰Šú’l‚ğİ’è‚·‚é
+		//! ä¹±æ•°ã®åˆæœŸå€¤ã‚’è¨­å®šã™ã‚‹
 		inline int SRand(int Seed)DXLIBEX_NOEXCEPT{ return DxLib::SRand(Seed); }
 	};
 
 
-	//----------ƒƒOŒn----------//
+	//----------ãƒ­ã‚°ç³»----------//
 
-	//!ƒƒOŒn
+	//!ãƒ­ã‚°ç³»
 	namespace DxLog
 	{
 #ifndef DX_NON_LOG
-		// ƒGƒ‰[ˆ—ŠÖ”
+		// ã‚¨ãƒ©ãƒ¼å‡¦ç†é–¢æ•°
 
-		//! ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚É•¶š—ñ‚ğo—Í‚·‚é
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã«æ–‡å­—åˆ—ã‚’å‡ºåŠ›ã™ã‚‹
 		inline int ErrorLogAdd(const TCHAR *ErrorStr)DXLIBEX_NOEXCEPT{ return DxLib::ErrorLogAdd(ErrorStr); }
 		template<typename... Args>
-		//! ‘®•t‚«‚Å ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚É•¶š—ñ‚ğo—Í‚·‚é( ‘®‚Í printf ‚Æ“¯‚¶ )
+		//! æ›¸å¼ä»˜ãã§ ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã«æ–‡å­—åˆ—ã‚’å‡ºåŠ›ã™ã‚‹( æ›¸å¼ã¯ printf ã¨åŒã˜ )
 		inline int ErrorLogFmtAdd(const TCHAR *FormatString, Args&&... args){ return DxLib::ErrorLogFmtAdd(FormatString, std::forward<Args>(args)...); }
-		//! ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚Éo—Í‚·‚é•¶š—ñ‚Ì‘O‚É•t‚¯‚éƒ^ƒu‚Ì”‚ğˆê‚Â‘‚â‚·
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã«å‡ºåŠ›ã™ã‚‹æ–‡å­—åˆ—ã®å‰ã«ä»˜ã‘ã‚‹ã‚¿ãƒ–ã®æ•°ã‚’ä¸€ã¤å¢—ã‚„ã™
 		inline int ErrorLogTabAdd(void)DXLIBEX_NOEXCEPT{ return DxLib::ErrorLogTabAdd(); }
-		//! ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚Éo—Í‚·‚é•¶š—ñ‚Ì‘O‚É•t‚¯‚éƒ^ƒu‚Ì”‚ğˆê‚ÂŒ¸‚ç‚·
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã«å‡ºåŠ›ã™ã‚‹æ–‡å­—åˆ—ã®å‰ã«ä»˜ã‘ã‚‹ã‚¿ãƒ–ã®æ•°ã‚’ä¸€ã¤æ¸›ã‚‰ã™
 		inline int ErrorLogTabSub(void)DXLIBEX_NOEXCEPT{ return DxLib::ErrorLogTabSub(); }
-		//! ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚Éo—Í‚·‚é•¶š—ñ‚Ì‘O‚É‹N“®‚µ‚Ä‚©‚ç‚ÌŠÔ‚ğ•t‚¯‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é( TRUE:•t‚¯‚é( ƒfƒtƒHƒ‹ƒg)  FALSE:•t‚¯‚È‚¢ )
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã«å‡ºåŠ›ã™ã‚‹æ–‡å­—åˆ—ã®å‰ã«èµ·å‹•ã—ã¦ã‹ã‚‰ã®æ™‚é–“ã‚’ä»˜ã‘ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹( TRUE:ä»˜ã‘ã‚‹( ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ)  FALSE:ä»˜ã‘ãªã„ )
 		inline int SetUseTimeStampFlag(bool UseFlag)DXLIBEX_NOEXCEPT{ return DxLib::SetUseTimeStampFlag(UseFlag); }
 		template<typename... Args>
-		//! ErrorLogFmtAdd ‚Æ“¯‚¶‹@”\‚ÌŠÖ”
+		//! ErrorLogFmtAdd ã¨åŒã˜æ©Ÿèƒ½ã®é–¢æ•°
 		inline int AppLogAdd(const TCHAR *String, Args&&... args){ return DxLib::AppLogAdd(String, std::forward<Args>(args)...); }
 
-		//! ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚ğì¬‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é( TRUE:ì¬‚·‚é( ƒfƒtƒHƒ‹ƒg )  FALSE:ì¬‚µ‚È‚¢ )ADxLib_Init ‚Ì‘O‚Å‚Ì‚İg—p‰Â”\@
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã‚’ä½œæˆã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹( TRUE:ä½œæˆã™ã‚‹( ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ )  FALSE:ä½œæˆã—ãªã„ )ã€DxLib_Init ã®å‰ã§ã®ã¿ä½¿ç”¨å¯èƒ½ã€€
 		inline int SetOutApplicationLogValidFlag(bool Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetOutApplicationLogValidFlag(Flag); }
-		//! ƒƒOƒtƒ@ƒCƒ‹( Log.txt ) ‚ğ•Û‘¶‚·‚éƒfƒBƒŒƒNƒgƒŠƒpƒX‚ğİ’è‚·‚é
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«( Log.txt ) ã‚’ä¿å­˜ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹ã‚’è¨­å®šã™ã‚‹
 		inline int SetApplicationLogSaveDirectory(const TCHAR *DirectoryPath)DXLIBEX_NOEXCEPT{ return DxLib::SetApplicationLogSaveDirectory(DirectoryPath); }
-		//! ƒƒOƒtƒ@ƒCƒ‹–¼‚É“ú•t‚ğ‚Â‚¯‚é‚©‚Ç‚¤‚©‚ğƒZƒbƒg‚·‚é( TRUE:•t‚¯‚é  FALSE:•t‚¯‚È‚¢( ƒfƒtƒHƒ‹ƒg ) )
+		//! ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«åã«æ—¥ä»˜ã‚’ã¤ã‘ã‚‹ã‹ã©ã†ã‹ã‚’ã‚»ãƒƒãƒˆã™ã‚‹( TRUE:ä»˜ã‘ã‚‹  FALSE:ä»˜ã‘ãªã„( ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ ) )
 		inline int SetUseDateNameLogFile(bool Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetUseDateNameLogFile(Flag); }
 
 #ifndef DX_NON_PRINTF_DX
 
-		// ƒƒOo—Í‹@”\ŠÖ”
+		// ãƒ­ã‚°å‡ºåŠ›æ©Ÿèƒ½é–¢æ•°
 
-		//! printfDx ‚ÌŒ‹‰Ê‚ğ‰æ–Ê‚Éo—Í‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚éATRUE:o—Í‚ğs‚¤  FALSE:o—Í‚ğs‚í‚È‚¢( printfDx ‚ğÀs‚·‚é‚Æ“à•”‚Å SetLogDrawOutFlag( TRUE ) ; ‚ªŒÄ‚Î‚ê‚Ü‚· )
+		//! printfDx ã®çµæœã‚’ç”»é¢ã«å‡ºåŠ›ã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹ã€TRUE:å‡ºåŠ›ã‚’è¡Œã†  FALSE:å‡ºåŠ›ã‚’è¡Œã‚ãªã„( printfDx ã‚’å®Ÿè¡Œã™ã‚‹ã¨å†…éƒ¨ã§ SetLogDrawOutFlag( TRUE ) ; ãŒå‘¼ã°ã‚Œã¾ã™ )
 		inline int SetLogDrawOutFlag(bool DrawFlag)DXLIBEX_NOEXCEPT{ return DxLib::SetLogDrawOutFlag(DrawFlag); }
-		//! printfDx ‚ÌŒ‹‰Ê‚ğ‰æ–Ê‚Éo—Í‚·‚é‚©‚Ç‚¤‚©‚Ìİ’è‚ğæ“¾‚·‚é( –ß‚è’l  TRUE:o—Í‚ğs‚¤  FALSE:o—Í‚ğs‚í‚È‚¢ )
+		//! printfDx ã®çµæœã‚’ç”»é¢ã«å‡ºåŠ›ã™ã‚‹ã‹ã©ã†ã‹ã®è¨­å®šã‚’å–å¾—ã™ã‚‹( æˆ»ã‚Šå€¤  TRUE:å‡ºåŠ›ã‚’è¡Œã†  FALSE:å‡ºåŠ›ã‚’è¡Œã‚ãªã„ )
 		inline int GetLogDrawFlag(void)DXLIBEX_NOEXCEPT{ return DxLib::GetLogDrawFlag(); }
-		//! printfDx ‚ÌŒ‹‰Ê‚ğ‰æ–Ê‚Éo—Í‚·‚éÛ‚Ég—p‚·‚éƒtƒHƒ“ƒg‚ÌƒTƒCƒY‚ğİ’è‚·‚é
+		//! printfDx ã®çµæœã‚’ç”»é¢ã«å‡ºåŠ›ã™ã‚‹éš›ã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®ã‚µã‚¤ã‚ºã‚’è¨­å®šã™ã‚‹
 		inline int SetLogFontSize(int Size)DXLIBEX_NOEXCEPT{ return DxLib::SetLogFontSize(Size); }
 
-		// ŠÈˆÕ‰æ–Êo—ÍŠÖ”
+		// ç°¡æ˜“ç”»é¢å‡ºåŠ›é–¢æ•°
 
 		template<typename... Args>
-		//! printf ‚Æ“¯‚¶ˆø”‚Å‰æ–Ê‚É•¶š—ñ‚ğ•\¦‚·‚é‚½‚ß‚ÌŠÖ”
+		//! printf ã¨åŒã˜å¼•æ•°ã§ç”»é¢ã«æ–‡å­—åˆ—ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®é–¢æ•°
 		inline int printfDx(const TCHAR *FormatString, Args&&... args){ return DxLib::printfDx(FormatString, std::forward<Args>(args)...); }
-		//! printfDx ‚ÌŒ‹‰Ê‚ğƒŠƒZƒbƒg‚·‚é‚½‚ß‚ÌŠÖ”
+		//! printfDx ã®çµæœã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹ãŸã‚ã®é–¢æ•°
 		inline int clsDx(void)DXLIBEX_NOEXCEPT{ return DxLib::clsDx(); }
 #endif // DX_NON_PRINTF_DX
 
@@ -189,145 +189,145 @@ namespace dxle
 	}
 
 
-	//----------”ñ“¯Šú“Ç‚İ‚İŠÖŒW----------//
+	//----------éåŒæœŸèª­ã¿è¾¼ã¿é–¢ä¿‚----------//
 
-	//!”ñ“¯Šú“Ç‚İ‚İŠÖŒW
+	//!éåŒæœŸèª­ã¿è¾¼ã¿é–¢ä¿‚
 	namespace DxAsyncLoad
 	{
 #ifndef DX_NON_ASYNCLOAD
-		//! “Ç‚İ‚İˆ—Œn‚ÌŠÖ”‚Å”ñ“¯Šú“Ç‚İ‚İ‚ğs‚¤‚©‚Ç‚¤‚©‚ğİ’è‚·‚é( ”ñ“¯Šú“Ç‚İ‚İ‚É‘Î‰‚µ‚Ä‚¢‚éŠÖ”‚Ì‚İ—LŒø )
-		//!@param[in] Flag: TRUE:”ñ“¯Šú“Ç‚İ‚İ‚ğs‚¤  FALSE:”ñ“¯Šú“Ç‚İ‚İ‚ğs‚í‚È‚¢( ƒfƒtƒHƒ‹ƒg )
+		//! èª­ã¿è¾¼ã¿å‡¦ç†ç³»ã®é–¢æ•°ã§éåŒæœŸèª­ã¿è¾¼ã¿ã‚’è¡Œã†ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹( éåŒæœŸèª­ã¿è¾¼ã¿ã«å¯¾å¿œã—ã¦ã„ã‚‹é–¢æ•°ã®ã¿æœ‰åŠ¹ )
+		//!@param[in] Flag: TRUE:éåŒæœŸèª­ã¿è¾¼ã¿ã‚’è¡Œã†  FALSE:éåŒæœŸèª­ã¿è¾¼ã¿ã‚’è¡Œã‚ãªã„( ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ )
 		inline int SetUseASyncLoadFlag(bool Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetUseASyncLoadFlag(Flag); }
-		//! ƒnƒ“ƒhƒ‹‚Ì”ñ“¯Šú“Ç‚İ‚İ‚ªŠ®—¹‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-		//!@return TRUE:‚Ü‚¾Š®—¹‚µ‚Ä‚¢‚È‚¢  FALSE:Š®—¹‚µ‚Ä‚¢‚é  -1:ƒGƒ‰[
+		//! ãƒãƒ³ãƒ‰ãƒ«ã®éåŒæœŸèª­ã¿è¾¼ã¿ãŒå®Œäº†ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+		//!@return TRUE:ã¾ã å®Œäº†ã—ã¦ã„ãªã„  FALSE:å®Œäº†ã—ã¦ã„ã‚‹  -1:ã‚¨ãƒ©ãƒ¼
 		inline int CheckHandleASyncLoad(int Handle)DXLIBEX_NOEXCEPT{ return DxLib::CheckHandleASyncLoad(Handle); }
-		//! ƒnƒ“ƒhƒ‹‚Ì”ñ“¯Šú“Ç‚İ‚İˆ—‚Ì–ß‚è’l‚ğæ“¾‚·‚é( ”ñ“¯Šú“Ç‚İ‚İ’†‚Ìê‡‚Íˆê‚Â‘O‚Ì”ñ“¯Šú“Ç‚İ‚İˆ—‚Ì–ß‚è’l‚ª•Ô‚Á‚Ä‚«‚Ü‚· )
+		//! ãƒãƒ³ãƒ‰ãƒ«ã®éåŒæœŸèª­ã¿è¾¼ã¿å‡¦ç†ã®æˆ»ã‚Šå€¤ã‚’å–å¾—ã™ã‚‹( éåŒæœŸèª­ã¿è¾¼ã¿ä¸­ã®å ´åˆã¯ä¸€ã¤å‰ã®éåŒæœŸèª­ã¿è¾¼ã¿å‡¦ç†ã®æˆ»ã‚Šå€¤ãŒè¿”ã£ã¦ãã¾ã™ )
 		inline int GetHandleASyncLoadResult(int Handle)DXLIBEX_NOEXCEPT{ return DxLib::GetHandleASyncLoadResult(Handle); }
-		//! ”ñ“¯Šú“Ç‚İ‚İ’†‚Ìˆ—‚Ì”‚ğæ“¾‚·‚é
+		//! éåŒæœŸèª­ã¿è¾¼ã¿ä¸­ã®å‡¦ç†ã®æ•°ã‚’å–å¾—ã™ã‚‹
 		inline int GetASyncLoadNum(void)DXLIBEX_NOEXCEPT{ return DxLib::GetASyncLoadNum(); }
 #endif // DX_NON_ASYNCLOAD
 	}
 
 
-	//----------ƒnƒ“ƒhƒ‹ŠÖŒW----------//
+	//----------ãƒãƒ³ãƒ‰ãƒ«é–¢ä¿‚----------//
 
-	//!ƒnƒ“ƒhƒ‹ŠÖŒW
+	//!ãƒãƒ³ãƒ‰ãƒ«é–¢ä¿‚
 	namespace DxHandle
 	{
-		//!ƒnƒ“ƒhƒ‹‚ªíœ‚³‚ê‚½‚Æ‚«‚É|‚P‚ªİ’è‚³‚ê‚é•Ï”‚ğ“o˜^‚·‚é
-		//!@attention DxLibEx‚É‚æ‚Á‚ÄŠÇ—‚³‚ê‚Ä‚¢‚éƒnƒ“ƒhƒ‹‚Ég—p‚µ‚Ä‚Í‚¢‚¯‚È‚¢
+		//!ãƒãƒ³ãƒ‰ãƒ«ãŒå‰Šé™¤ã•ã‚ŒãŸã¨ãã«ï¼ï¼‘ãŒè¨­å®šã•ã‚Œã‚‹å¤‰æ•°ã‚’ç™»éŒ²ã™ã‚‹
+		//!@attention DxLibExã«ã‚ˆã£ã¦ç®¡ç†ã•ã‚Œã¦ã„ã‚‹ãƒãƒ³ãƒ‰ãƒ«ã«ä½¿ç”¨ã—ã¦ã¯ã„ã‘ãªã„
 		inline int SetDeleteHandleFlag(int Handle, int *DeleteFlag)DXLIBEX_NOEXCEPT{ return DxLib::SetDeleteHandleFlag(Handle, DeleteFlag); }
 	}
 
 
-	//----------ƒ}ƒEƒXŠÖŒW----------//
+	//----------ãƒã‚¦ã‚¹é–¢ä¿‚----------//
 
-	//!XNAŒİŠ·‚Ìƒ}ƒEƒX“ü—Í‚È‚Ç
+	//!XNAäº’æ›ã®ãƒã‚¦ã‚¹å…¥åŠ›ãªã©
 	namespace nMouse
 	{
-		//!XNAŒİŠ·
+		//!XNAäº’æ›
 		enum class ButtonState : bool
 		{
-			//!The button is released.iƒ{ƒ^ƒ“‚Í•ú‚³‚ê‚Ä‚¢‚éj
+			//!The button is released.ï¼ˆãƒœã‚¿ãƒ³ã¯æ”¾ã•ã‚Œã¦ã„ã‚‹ï¼‰
 			Released = true,
-			//!The button is pressed.iƒ{ƒ^ƒ“‚Í‰Ÿ‚³‚ê‚Ä‚¢‚éj
+			//!The button is pressed.ï¼ˆãƒœã‚¿ãƒ³ã¯æŠ¼ã•ã‚Œã¦ã„ã‚‹ï¼‰
 			Pressed = false,
 		};
-		//!XNAŒİŠ·
-		//!ƒ}ƒEƒX‚ÌŒ»İ‚Ìó‘Ô (ƒ}ƒEƒX‚ÌˆÊ’u‚â‰Ÿ‚³‚ê‚Ä‚¢‚éƒ{ƒ^ƒ“‚È‚Ç)
+		//!XNAäº’æ›
+		//!ãƒã‚¦ã‚¹ã®ç¾åœ¨ã®çŠ¶æ…‹ (ãƒã‚¦ã‚¹ã®ä½ç½®ã‚„æŠ¼ã•ã‚Œã¦ã„ã‚‹ãƒœã‚¿ãƒ³ãªã©)
 		struct MouseState
 		{
 			MouseState()DXLIBEX_NOEXCEPT;
 
-			//!ƒQ[ƒ€‚Å‚Í’ÊíAGetState ‚ğg—p‚µ‚ÄÀÛ‚Ìƒ}ƒEƒX‚Ìó‘Ô‚ğæ“¾‚µ‚Ü‚·B
-			//!‚±‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^[‚ÍA‘ã‚í‚è‚ÉƒQ[ƒ€©‘Ì‚Ì“ü—ÍƒTƒuƒVƒXƒeƒ€“à‚Å“n‚·‚½‚ß‚Ì
-			//!ƒ}ƒEƒX“ü—Í‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é‚½‚ß‚Ég—p‚³‚ê‚Ü‚·B
-			//!@param[in] x              ƒ}ƒEƒX‚Ì…•½ˆÊ’uB
-			//!@param[in] y              ƒ}ƒEƒX‚Ì‚’¼ˆÊ’uB
-			//!@param[in] scrollWheel    ƒ}ƒEƒX ƒXƒNƒ[ƒ‹ ƒzƒC[ƒ‹‚Ì’lB
-			//!@param[in] leftButton     ¶ƒ}ƒEƒX ƒ{ƒ^ƒ“‚Ìó‘ÔB
-			//!@param[in] middleButton   ’†ƒ}ƒEƒX ƒ{ƒ^ƒ“‚Ìó‘ÔB
-			//!@param[in] rightButton    ‰Eƒ}ƒEƒX ƒ{ƒ^ƒ“‚Ìó‘ÔB
-			//!@param[in] xButton1       XBUTTON1 ‚Ìó‘ÔB
-			//!@param[in] xButton2       XBUTTON2 ‚Ìó‘ÔB
+			//!ã‚²ãƒ¼ãƒ ã§ã¯é€šå¸¸ã€GetState ã‚’ä½¿ç”¨ã—ã¦å®Ÿéš›ã®ãƒã‚¦ã‚¹ã®çŠ¶æ…‹ã‚’å–å¾—ã—ã¾ã™ã€‚
+			//!ã“ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼ã¯ã€ä»£ã‚ã‚Šã«ã‚²ãƒ¼ãƒ è‡ªä½“ã®å…¥åŠ›ã‚µãƒ–ã‚·ã‚¹ãƒ†ãƒ å†…ã§æ¸¡ã™ãŸã‚ã®
+			//!ãƒã‚¦ã‚¹å…¥åŠ›ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹ãŸã‚ã«ä½¿ç”¨ã•ã‚Œã¾ã™ã€‚
+			//!@param[in] x              ãƒã‚¦ã‚¹ã®æ°´å¹³ä½ç½®ã€‚
+			//!@param[in] y              ãƒã‚¦ã‚¹ã®å‚ç›´ä½ç½®ã€‚
+			//!@param[in] scrollWheel    ãƒã‚¦ã‚¹ ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ãƒ›ã‚¤ãƒ¼ãƒ«ã®å€¤ã€‚
+			//!@param[in] leftButton     å·¦ãƒã‚¦ã‚¹ ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
+			//!@param[in] middleButton   ä¸­ãƒã‚¦ã‚¹ ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
+			//!@param[in] rightButton    å³ãƒã‚¦ã‚¹ ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
+			//!@param[in] xButton1       XBUTTON1 ã®çŠ¶æ…‹ã€‚
+			//!@param[in] xButton2       XBUTTON2 ã®çŠ¶æ…‹ã€‚
 			MouseState(int x, int y, int scrollWheel, ButtonState leftButton, ButtonState middleButton, ButtonState rightButton, ButtonState xButton1, ButtonState xButton2)DXLIBEX_NOEXCEPT;
 
 			bool operator !=(const MouseState& right)DXLIBEX_NOEXCEPT { return !(*this == right); }
 			bool operator ==(const MouseState& right)DXLIBEX_NOEXCEPT;
-			//! ƒ}ƒEƒX‚Ì¶ƒ{ƒ^ƒ“‚Ìó‘Ô
+			//! ãƒã‚¦ã‚¹ã®å·¦ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹
 			ButtonState LeftButton;
-			//! ƒ}ƒEƒX‚Ì’†‰›ƒ{ƒ^ƒ“‚Ìó‘ÔB
+			//! ãƒã‚¦ã‚¹ã®ä¸­å¤®ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
 			ButtonState MiddleButton;
-			//! ƒ}ƒEƒX‚Ì‰Eƒ{ƒ^ƒ“‚Ìó‘Ô
+			//! ãƒã‚¦ã‚¹ã®å³ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹
 			ButtonState RightButton;
-			//! ƒ}ƒEƒX‚ÌƒXƒNƒ[ƒ‹ ƒzƒC[ƒ‹‚Ì—İÏ’l (ƒQ[ƒ€ŠJn“_orÅŒã‚ÉGetState(true)‚ªŒÄ‚Ño‚³‚ê‚Ä‚©‚ç)
+			//! ãƒã‚¦ã‚¹ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ãƒ›ã‚¤ãƒ¼ãƒ«ã®ç´¯ç©å€¤ (ã‚²ãƒ¼ãƒ é–‹å§‹æ™‚ç‚¹oræœ€å¾Œã«GetState(true)ãŒå‘¼ã³å‡ºã•ã‚Œã¦ã‹ã‚‰)
 			int ScrollWheelValue;
-			//! ƒ}ƒEƒX ƒJ[ƒ\ƒ‹‚Ì…•½ˆÊ’u 
+			//! ãƒã‚¦ã‚¹ ã‚«ãƒ¼ã‚½ãƒ«ã®æ°´å¹³ä½ç½® 
 			int X;
-			//! XBUTTON1 ‚Ìó‘Ô
+			//! XBUTTON1 ã®çŠ¶æ…‹
 			ButtonState XButton1;
-			//! XBUTTON2 ‚Ìó‘Ô
+			//! XBUTTON2 ã®çŠ¶æ…‹
 			ButtonState XButton2;
-			//! ƒ}ƒEƒX ƒJ[ƒ\ƒ‹‚Ì‚’¼ˆÊ’u
+			//! ãƒã‚¦ã‚¹ ã‚«ãƒ¼ã‚½ãƒ«ã®å‚ç›´ä½ç½®
 			int Y;
 		};
-		//! ‰Ÿ‚³‚ê‚½ƒ{ƒ^ƒ“‚Ìî•ñ
+		//! æŠ¼ã•ã‚ŒãŸãƒœã‚¿ãƒ³ã®æƒ…å ±
 		struct MouseInputInfo
 		{
-			//! ƒ}ƒEƒX ƒJ[ƒ\ƒ‹‚Ì…•½ˆÊ’u
+			//! ãƒã‚¦ã‚¹ ã‚«ãƒ¼ã‚½ãƒ«ã®æ°´å¹³ä½ç½®
 			int X;
-			//! ƒ}ƒEƒX ƒJ[ƒ\ƒ‹‚Ì‚’¼ˆÊ’u
+			//! ãƒã‚¦ã‚¹ ã‚«ãƒ¼ã‚½ãƒ«ã®å‚ç›´ä½ç½®
 			int Y;
-			//!‰Ÿ‚³‚ê‚½ƒ{ƒ^ƒ“( MOUSE_INPUT_LEFT “™ )
+			//!æŠ¼ã•ã‚ŒãŸãƒœã‚¿ãƒ³( MOUSE_INPUT_LEFT ç­‰ )
 			int Type;
 
 			MouseInputInfo()DXLIBEX_NOEXCEPT;
 			MouseInputInfo(int x, int y, int type)DXLIBEX_NOEXCEPT;
 		};
-		//! ƒ}ƒEƒXŠÖŒW
-		//! XNAŒİŠ·+ƒ¿
+		//! ãƒã‚¦ã‚¹é–¢ä¿‚
+		//! XNAäº’æ›+Î±
 		class Mouse
 		{
 		public:
-			//!ƒ}ƒEƒX‚ÌŒ»İ‚Ìó‘Ô (ƒ}ƒEƒX‚ÌˆÊ’u‚â‰Ÿ‚³‚ê‚Ä‚¢‚éƒ{ƒ^ƒ“‚È‚Ç) ‚ğæ“¾‚µ‚Ü‚·B
-			//!@param ScrollWheelValueReset GetMouseWheelRotVol‚Ìˆø”CounterReset‚Æ“¯‚¶
+			//!ãƒã‚¦ã‚¹ã®ç¾åœ¨ã®çŠ¶æ…‹ (ãƒã‚¦ã‚¹ã®ä½ç½®ã‚„æŠ¼ã•ã‚Œã¦ã„ã‚‹ãƒœã‚¿ãƒ³ãªã©) ã‚’å–å¾—ã—ã¾ã™ã€‚
+			//!@param ScrollWheelValueReset GetMouseWheelRotVolã®å¼•æ•°CounterResetã¨åŒã˜
 			static MouseState GetState(bool ScrollWheelValueReset = false)DXLIBEX_NOEXCEPT;
-			//!ƒEƒBƒ“ƒhƒE‚Ì¶ã‹÷‚ğŠî€‚Æ‚µ‚½Aƒ}ƒEƒX ƒJ[ƒ\ƒ‹‚ÌˆÊ’u‚ğİ’è‚µ‚Ü‚·B
+			//!ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å·¦ä¸Šéš…ã‚’åŸºæº–ã¨ã—ãŸã€ãƒã‚¦ã‚¹ ã‚«ãƒ¼ã‚½ãƒ«ã®ä½ç½®ã‚’è¨­å®šã—ã¾ã™ã€‚
 			static inline void SetPosition(int x, int y)DXLIBEX_NOEXCEPT { SetMousePoint(x, y); }
 
-			//!ƒ}ƒEƒX‚ÌƒNƒŠƒbƒN—š—ğ‚ğ‚Ü‚Æ‚ß‚Äæ“¾‚·‚é
-			//!QÆFDxLib::GetMouseInputLog http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36
-			//!@attention “à•”‚ÅGetMouseInputLog‚ÌLogDelete‚ÉTRUE‚ğ“n‚µ‚ÄŒÄ‚Ño‚µ‚Ü‚·
+			//!ãƒã‚¦ã‚¹ã®ã‚¯ãƒªãƒƒã‚¯å±¥æ­´ã‚’ã¾ã¨ã‚ã¦å–å¾—ã™ã‚‹
+			//!å‚ç…§ï¼šDxLib::GetMouseInputLog http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36
+			//!@attention å†…éƒ¨ã§GetMouseInputLogã®LogDeleteã«TRUEã‚’æ¸¡ã—ã¦å‘¼ã³å‡ºã—ã¾ã™
 			static std::queue<MouseInputInfo> GetMouseInputLog();
 		};
 
 
-		//--------ˆÈ‰ºDxLib‚Ì‹@ŠB•ÏŠ·
+		//--------ä»¥ä¸‹DxLibã®æ©Ÿæ¢°å¤‰æ›
 
-		//! ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚Ì•\¦ó‘Ô‚ğİ’è‚·‚é
-		//!@param[in] DispFlag:ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚ğ•\¦‚·‚é‚©‚Ç‚¤‚©( TRUE:•\¦‚·‚é  FALSE:•\¦‚µ‚È‚¢ )
+		//! ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ã®è¡¨ç¤ºçŠ¶æ…‹ã‚’è¨­å®šã™ã‚‹
+		//!@param[in] DispFlag:ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ã‚’è¡¨ç¤ºã™ã‚‹ã‹ã©ã†ã‹( TRUE:è¡¨ç¤ºã™ã‚‹  FALSE:è¡¨ç¤ºã—ãªã„ )
 		inline int SetMouseDispFlag(bool DispFlag) DXLIBEX_NOEXCEPT { return DxLib::SetMouseDispFlag(DispFlag); }
-		//! ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚ÌˆÊ’u‚ğæ“¾‚·‚é
+		//! ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ã®ä½ç½®ã‚’å–å¾—ã™ã‚‹
 		inline int GetMousePoint(int *XBuf, int *YBuf) DXLIBEX_NOEXCEPT{ return DxLib::GetMousePoint(XBuf, YBuf); }
-		//! ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚ÌˆÊ’u‚ğİ’è‚·‚é
+		//! ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ã®ä½ç½®ã‚’è¨­å®šã™ã‚‹
 		inline int SetMousePoint(int PointX, int PointY) DXLIBEX_NOEXCEPT{ return DxLib::SetMousePoint(PointX, PointY); }
 #ifndef DX_NON_INPUT
-		//! ƒ}ƒEƒX‚Ìƒ{ƒ^ƒ“‚Ì‰Ÿ‰ºó‘Ô‚ğæ“¾‚·‚é
+		//! ãƒã‚¦ã‚¹ã®ãƒœã‚¿ãƒ³ã®æŠ¼ä¸‹çŠ¶æ…‹ã‚’å–å¾—ã™ã‚‹
 		inline int GetMouseInput(void) DXLIBEX_NOEXCEPT{ return DxLib::GetMouseInput(); }
-		//! ‚’¼ƒ}ƒEƒXƒzƒC[ƒ‹‚Ì‰ñ“]—Ê‚ğæ“¾‚·‚é
+		//! å‚ç›´ãƒã‚¦ã‚¹ãƒ›ã‚¤ãƒ¼ãƒ«ã®å›è»¢é‡ã‚’å–å¾—ã™ã‚‹
 		inline int GetMouseWheelRotVol(bool CounterReset = true) DXLIBEX_NOEXCEPT{ return DxLib::GetMouseWheelRotVol(CounterReset); }
-		//! …•½ƒ}ƒEƒXƒzƒC[ƒ‹‚Ì‰ñ“]—Ê‚ğæ“¾‚·‚é
+		//! æ°´å¹³ãƒã‚¦ã‚¹ãƒ›ã‚¤ãƒ¼ãƒ«ã®å›è»¢é‡ã‚’å–å¾—ã™ã‚‹
 		inline int GetMouseHWheelRotVol(bool CounterReset = true) DXLIBEX_NOEXCEPT{ return DxLib::GetMouseHWheelRotVol(CounterReset); }
-		//! ‚’¼ƒ}ƒEƒXƒzƒC[ƒ‹‚Ì‰ñ“]—Ê‚ğæ“¾‚·‚é( –ß‚è’l‚ª float Œ^ )
+		//! å‚ç›´ãƒã‚¦ã‚¹ãƒ›ã‚¤ãƒ¼ãƒ«ã®å›è»¢é‡ã‚’å–å¾—ã™ã‚‹( æˆ»ã‚Šå€¤ãŒ float å‹ )
 		inline float GetMouseWheelRotVolF(bool CounterReset = true) DXLIBEX_NOEXCEPT{ return DxLib::GetMouseWheelRotVolF(CounterReset); }
-		//! …•½ƒ}ƒEƒXƒzƒC[ƒ‹‚Ì‰ñ“]—Ê‚ğæ“¾‚·‚é( –ß‚è’l‚ª float Œ^ )
+		//! æ°´å¹³ãƒã‚¦ã‚¹ãƒ›ã‚¤ãƒ¼ãƒ«ã®å›è»¢é‡ã‚’å–å¾—ã™ã‚‹( æˆ»ã‚Šå€¤ãŒ float å‹ )
 		inline float GetMouseHWheelRotVolF(int CounterReset = true) DXLIBEX_NOEXCEPT{ return DxLib::GetMouseHWheelRotVolF(CounterReset); }
-		//! ƒ}ƒEƒX‚ÌƒNƒŠƒbƒNî•ñ‚ğˆê‚Âæ“¾‚·‚é
-		//!@param[out] Button:ƒNƒŠƒbƒN‚³‚ê‚½ƒ{ƒ^ƒ“( MOUSE_INPUT_LEFT “™ )‚ğŠi”[‚·‚é•Ï”‚ÌƒAƒhƒŒƒX
-		//!@param[out] ClickX:ƒNƒŠƒbƒN‚³‚ê‚½‚Ì‚wÀ•W‚ğŠi”[‚·‚é•Ï”‚ÌƒAƒhƒŒƒX
-		//!@param[out] ClickY:ƒNƒŠƒbƒN‚³‚ê‚½‚Ì‚xÀ•W‚ğŠi”[‚·‚é•Ï”‚ÌƒAƒhƒŒƒX
-		//!@param[out] LogDelete:æ“¾‚µ‚½ƒNƒŠƒbƒNî•ñˆê‚Â•ª‚ğƒƒO‚©‚çíœ‚·‚é‚©‚Ç‚¤‚©( TRUE:íœ‚·‚é  FALSE:íœ‚µ‚È‚¢A‚Â‚Ü‚èŸ‚É‚±‚ÌŠÖ”‚ªŒÄ‚Î‚ê‚½‚Æ‚«‚É“¯‚¶’l‚ğæ“¾‚·‚é‚±‚Æ‚É‚È‚é )
-		//!@return  0:ƒNƒŠƒbƒNî•ñæ“¾‚Å‚«‚½@-1:ƒNƒŠƒbƒNî•ñ‚ª–³‚©‚Á‚½A‚Â‚Ü‚è‘O‰ñ‚ÌŒÄ‚Ño‚µ( ‚Ü‚½‚Í‹N“®‚©‚çÅ‰‚ÌŒÄ‚Ño‚µ )‚ÌŠÔ‚Éˆê“x‚àƒ}ƒEƒX‚Ìƒ{ƒ^ƒ“‚ªƒNƒŠƒbƒN‚³‚ê‚È‚©‚Á‚½ )
+		//! ãƒã‚¦ã‚¹ã®ã‚¯ãƒªãƒƒã‚¯æƒ…å ±ã‚’ä¸€ã¤å–å¾—ã™ã‚‹
+		//!@param[out] Button:ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸãƒœã‚¿ãƒ³( MOUSE_INPUT_LEFT ç­‰ )ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+		//!@param[out] ClickX:ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸæ™‚ã®ï¼¸åº§æ¨™ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+		//!@param[out] ClickY:ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸæ™‚ã®ï¼¹åº§æ¨™ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+		//!@param[out] LogDelete:å–å¾—ã—ãŸã‚¯ãƒªãƒƒã‚¯æƒ…å ±ä¸€ã¤åˆ†ã‚’ãƒ­ã‚°ã‹ã‚‰å‰Šé™¤ã™ã‚‹ã‹ã©ã†ã‹( TRUE:å‰Šé™¤ã™ã‚‹  FALSE:å‰Šé™¤ã—ãªã„ã€ã¤ã¾ã‚Šæ¬¡ã«ã“ã®é–¢æ•°ãŒå‘¼ã°ã‚ŒãŸã¨ãã«åŒã˜å€¤ã‚’å–å¾—ã™ã‚‹ã“ã¨ã«ãªã‚‹ )
+		//!@return  0:ã‚¯ãƒªãƒƒã‚¯æƒ…å ±å–å¾—ã§ããŸã€€-1:ã‚¯ãƒªãƒƒã‚¯æƒ…å ±ãŒç„¡ã‹ã£ãŸã€ã¤ã¾ã‚Šå‰å›ã®å‘¼ã³å‡ºã—( ã¾ãŸã¯èµ·å‹•æ™‚ã‹ã‚‰æœ€åˆã®å‘¼ã³å‡ºã— )ã®é–“ã«ä¸€åº¦ã‚‚ãƒã‚¦ã‚¹ã®ãƒœã‚¿ãƒ³ãŒã‚¯ãƒªãƒƒã‚¯ã•ã‚Œãªã‹ã£ãŸ )
 		inline int GetMouseInputLog(int *Button, int *ClickX, int *ClickY, bool LogDelete = true) DXLIBEX_NOEXCEPT{ return DxLib::GetMouseInputLog(Button, ClickX, ClickY, LogDelete); }
 #endif // DX_NON_INPUT
 
@@ -340,34 +340,34 @@ namespace dxle
 	}
 
 
-	//----------ƒ^ƒbƒ`ƒpƒlƒ‹“ü—ÍŠÖŒWŠÖ”----------//
+	//----------ã‚¿ãƒƒãƒãƒ‘ãƒãƒ«å…¥åŠ›é–¢ä¿‚é–¢æ•°----------//
 
-	//!ƒ^ƒbƒ`ƒpƒlƒ‹“ü—ÍŠÖŒW
+	//!ã‚¿ãƒƒãƒãƒ‘ãƒãƒ«å…¥åŠ›é–¢ä¿‚
 	namespace Touch
 	{
-		//! ƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚é”‚ğæ“¾‚·‚é
+		//! ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã‚‹æ•°ã‚’å–å¾—ã™ã‚‹
 		inline int GetTouchInputNum(void)DXLIBEX_NOEXCEPT{ return DxLib::GetTouchInputNum(); }
 
-		//! ƒ^ƒbƒ`‚Ìî•ñ‚ğæ“¾‚·‚é
+		//! ã‚¿ãƒƒãƒã®æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 		inline int GetTouchInput(int InputNo, int *PositionX, int *PositionY, int *ID = NULL, int *Device = NULL)DXLIBEX_NOEXCEPT{ return DxLib::GetTouchInput(InputNo, PositionX, PositionY, ID, Device); }
 
-		//! ƒXƒgƒbƒN‚³‚ê‚Ä‚¢‚éƒ^ƒbƒ`î•ñ‚Ì”‚ğæ“¾‚·‚é
+		//! ã‚¹ãƒˆãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã‚¿ãƒƒãƒæƒ…å ±ã®æ•°ã‚’å–å¾—ã™ã‚‹
 		inline int GetTouchInputLogNum(void)DXLIBEX_NOEXCEPT{ return DxLib::GetTouchInputLogNum(); }
 
-		//! ƒXƒgƒbƒN‚³‚ê‚Ä‚¢‚éƒ^ƒbƒ`î•ñ‚©‚çˆê”ÔŒÃ‚¢î•ñ‚ğ‚Ğ‚Æ‚Âæ“¾‚·‚é
+		//! ã‚¹ãƒˆãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã‚¿ãƒƒãƒæƒ…å ±ã‹ã‚‰ä¸€ç•ªå¤ã„æƒ…å ±ã‚’ã²ã¨ã¤å–å¾—ã™ã‚‹
 		inline TOUCHINPUTDATA GetTouchInputLogOne(int PeekFlag = FALSE)DXLIBEX_NOEXCEPT{ return DxLib::GetTouchInputLogOne(PeekFlag); }
 
-		//! ƒXƒgƒbƒN‚³‚ê‚Ä‚¢‚éƒ^ƒbƒ`î•ñ‚©‚çŒÃ‚¢‡‚Éw’è”ƒoƒbƒtƒ@‚Éæ“¾‚·‚é( –ß‚è’l  -1:ƒGƒ‰[  0ˆÈã:æ“¾‚µ‚½î•ñ‚Ì” )
+		//! ã‚¹ãƒˆãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã‚¿ãƒƒãƒæƒ…å ±ã‹ã‚‰å¤ã„é †ã«æŒ‡å®šæ•°ãƒãƒƒãƒ•ã‚¡ã«å–å¾—ã™ã‚‹( æˆ»ã‚Šå€¤  -1:ã‚¨ãƒ©ãƒ¼  0ä»¥ä¸Š:å–å¾—ã—ãŸæƒ…å ±ã®æ•° )
 		inline int GetTouchInputLog(TOUCHINPUTDATA *TouchData, int GetNum, int PeekFlag = FALSE)DXLIBEX_NOEXCEPT{ return DxLib::GetTouchInputLog(TouchData, GetNum, PeekFlag); }
 	}
 
-	//----------ƒƒ‚ƒŠŠm•ÛŒnŠÖ”----------//
+	//----------ãƒ¡ãƒ¢ãƒªç¢ºä¿ç³»é–¢æ•°----------//
 
-	//!DxLib‚Ì“®“IŠm•ÛŒnŠÖ”‚ğƒXƒ}[ƒgƒ|ƒCƒ“ƒ^‚Åg‚¤(Œ»İg—p•s‰Â)
+	//!DxLibã®å‹•çš„ç¢ºä¿ç³»é–¢æ•°ã‚’ã‚¹ãƒãƒ¼ãƒˆãƒã‚¤ãƒ³ã‚¿ã§ä½¿ã†(ç¾åœ¨ä½¿ç”¨ä¸å¯)
 	namespace DxMemory
 	{
 #if 0
-		//ƒfƒXƒgƒ‰ƒNƒ^ŒÄ‚Ño‚µƒR[ƒh‚ğ‘g‚ñ‚Å‚È‚¢‚Ì‚Åg‚¦‚Ü‚¹‚ñ
+		//ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿å‘¼ã³å‡ºã—ã‚³ãƒ¼ãƒ‰ã‚’çµ„ã‚“ã§ãªã„ã®ã§ä½¿ãˆã¾ã›ã‚“
 
 		//----------Dx_Unique_Ptr----------//
 
@@ -376,81 +376,81 @@ namespace dxle
 		{
 			typedef Dx_Unique_Ptr<T> This_T;
 		public:
-			typedef T* pointer;//!Š—L‚·‚éƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^Œ^T*
-			typedef T element_type;//!—v‘fŒ^T
+			typedef T* pointer;//!æ‰€æœ‰ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿å‹T*
+			typedef T element_type;//!è¦ç´ å‹T
 
-			//----------ƒƒ‚ƒŠŠm•ÛŒnŠÖ”(New)
-			//’PˆêƒIƒuƒWƒFƒNƒg”Å
+			//----------ãƒ¡ãƒ¢ãƒªç¢ºä¿ç³»é–¢æ•°(New)
+			//å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆ
 
 			template<typename... Args>
-			//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-			//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+			//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+			//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 			static This_T NewWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, Args&&... args);
 			template<typename... Args>
 			static This_T New(Args&&... args){ return NewWithLog(__FILE__, __LINE__, std::forward<Args>(args)...); }
 
-			//----------ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+			//----------ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Unique_Ptr() DXLIBEX_NOEXCEPT{}
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Unique_Ptr(std::nullptr_t) DXLIBEX_NOEXCEPT{}
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			Dx_Unique_Ptr(This_T&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)){}
 		private:
-			//!ƒ|ƒCƒ“ƒ^‚©‚ç‚Ì\’z‹Ö~(À‘•—pƒRƒ“ƒXƒgƒ‰ƒNƒ^)
+			//!ãƒã‚¤ãƒ³ã‚¿ã‹ã‚‰ã®æ§‹ç¯‰ç¦æ­¢(å®Ÿè£…ç”¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿)
 			explicit Dx_Unique_Ptr(pointer param, void* resource) DXLIBEX_NOEXCEPT : ptr(param, Deleter(resource)){}
 		public:
 			template <typename U, typename = typename std::enable_if<!std::is_array<U>::value && std::is_convertible<typename Dx_Unique_Ptr<U>::pointer, pointer>::value>::type>
-			//!•ÏŠ·‰Â”\‚Èƒ|ƒCƒ“ƒ^Œ^‚ğ‚ÂDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚©‚ç‚Ì•ÏŠ·B
-			//!ˆÈ‰º‚ÌğŒ‚ğ–‚½‚³‚È‚¢ê‡A‚±‚ÌŠÖ”‚ÍƒI[ƒo[ƒ[ƒh‰ğŒˆ‚ÌŒó•â‚©‚çŠO‚ê‚éF
-			//!@EDx_Unique_Ptr<U>::pointer‚ªApointer‚ÉˆÃ–Ù•ÏŠ·‰Â”\‚ÈŒ^‚Å‚ ‚é‚±‚ÆB
-			//!@EU‚ª”z—ñŒ^‚Å‚Í‚È‚¢‚±‚ÆB
+			//!å¤‰æ›å¯èƒ½ãªãƒã‚¤ãƒ³ã‚¿å‹ã‚’æŒã¤Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®å¤‰æ›ã€‚
+			//!ä»¥ä¸‹ã®æ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã€ã“ã®é–¢æ•°ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰è§£æ±ºã®å€™è£œã‹ã‚‰å¤–ã‚Œã‚‹ï¼š
+			//!ã€€ãƒ»Dx_Unique_Ptr<U>::pointerãŒã€pointerã«æš—é»™å¤‰æ›å¯èƒ½ãªå‹ã§ã‚ã‚‹ã“ã¨ã€‚
+			//!ã€€ãƒ»UãŒé…åˆ—å‹ã§ã¯ãªã„ã“ã¨ã€‚
 			Dx_Unique_Ptr(Dx_Unique_Ptr<U>&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)) {}
 
 			//----------operator=
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			This_T& operator=(std::nullptr_t) DXLIBEX_NOEXCEPT{ ptr = nullptr; return *this; }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			This_T& operator=(This_T&& other) DXLIBEX_NOEXCEPT{ ptr = std::move(other.ptr); return *this; }
 		public:
 			template <typename U, typename = typename std::enable_if<!std::is_array<U>::value && std::is_convertible<typename Dx_Unique_Ptr<U>::pointer, pointer>::value>::type>
-			//!•ÏŠ·‰Â”\‚Èƒ|ƒCƒ“ƒ^Œ^‚ğ‚ÂDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚©‚ç‚Ì•ÏŠ·B
-			//!ˆÈ‰º‚ÌğŒ‚ğ–‚½‚³‚È‚¢ê‡A‚±‚ÌŠÖ”‚ÍƒI[ƒo[ƒ[ƒh‰ğŒˆ‚ÌŒó•â‚©‚çŠO‚ê‚éF
-			//!@EDx_Unique_Ptr<U>::pointer‚ªApointer‚ÉˆÃ–Ù•ÏŠ·‰Â”\‚ÈŒ^‚Å‚ ‚é‚±‚ÆB
-			//!@EU‚ª”z—ñŒ^‚Å‚Í‚È‚¢‚±‚ÆB
+			//!å¤‰æ›å¯èƒ½ãªãƒã‚¤ãƒ³ã‚¿å‹ã‚’æŒã¤Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®å¤‰æ›ã€‚
+			//!ä»¥ä¸‹ã®æ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã€ã“ã®é–¢æ•°ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰è§£æ±ºã®å€™è£œã‹ã‚‰å¤–ã‚Œã‚‹ï¼š
+			//!ã€€ãƒ»Dx_Unique_Ptr<U>::pointerãŒã€pointerã«æš—é»™å¤‰æ›å¯èƒ½ãªå‹ã§ã‚ã‚‹ã“ã¨ã€‚
+			//!ã€€ãƒ»UãŒé…åˆ—å‹ã§ã¯ãªã„ã“ã¨ã€‚
 			This_T& operator=(Dx_Unique_Ptr<U>&& other) DXLIBEX_NOEXCEPT{ ptr = std::move(other.ptr); return *this; }
 
-			//----------‚»‚Ì‘¼‚Ìƒƒ“ƒoŠÖ”
+			//----------ãã®ä»–ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//! ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éB
-			//! *this‚ª•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éBƒŠƒ\[ƒX‚ğ‰ğ•ú‚·‚é‚Ì‚Å‚Í‚È‚­A‰ğ•ú‚·‚éÓ”C‚ğ•úŠü‚·‚éB
-			//! ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆA‚±‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^‚Å‚ÍAŒ»İ•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚È‚­‚È‚éB
-			//!@post ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆAget()ƒƒ“ƒoŠÖ”‚Ínullptr‚ğ•Ô‚·B
-			//!@return •úŠü‚µ‚½ƒŠƒ\[ƒX‚ğ•Ô‚·B
+			//! ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! *thisãŒä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã™ã‚‹ã®ã§ã¯ãªãã€è§£æ”¾ã™ã‚‹è²¬ä»»ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€ã“ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§ã¯ã€ç¾åœ¨ä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ãªããªã‚‹ã€‚
+			//!@post ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€get()ãƒ¡ãƒ³ãƒé–¢æ•°ã¯nullptrã‚’è¿”ã™ã€‚
+			//!@return æ”¾æ£„ã—ãŸãƒªã‚½ãƒ¼ã‚¹ã‚’è¿”ã™ã€‚
 			pointer release() DXLIBEX_NOEXCEPT{ return ptr.release(); }
 
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			void reset() DXLIBEX_NOEXCEPT{ ptr.reset(); }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			void reset(This_T&& other) DXLIBEX_NOEXCEPT{ ptr = std::move(other.ptr); }
 
-			//!ƒŠƒ\[ƒX‚ğæ“¾‚·‚éB•Û‚µ‚Ä‚¢‚éƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B
-			//!@attention ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚Í*this‚ª‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚ÌŠÖ”‚É‚æ‚Á‚Ä•Ô‚³‚ê‚½ƒ|ƒCƒ“ƒ^‚É‘Î‚µ‚ÄAƒŠƒ\[ƒX‰ğ•ú‚ğ‚µ‚Ä‚Í‚È‚ç‚È‚¢B
+			//!ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹ã€‚ä¿æŒã—ã¦ã„ã‚‹ãƒã‚¤ãƒ³ã‚¿ã‚’è¿”ã™ã€‚
+			//!@attention ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã¯*thisãŒæŒã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®é–¢æ•°ã«ã‚ˆã£ã¦è¿”ã•ã‚ŒãŸãƒã‚¤ãƒ³ã‚¿ã«å¯¾ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾ã‚’ã—ã¦ã¯ãªã‚‰ãªã„ã€‚
 			pointer get() const DXLIBEX_NOEXCEPT{ return ptr.get(); }
 
-			//!—LŒø‚ÈƒŠƒ\[ƒX‚ğŠ—L‚µ‚Ä‚¢‚é‚©‚ğ”»’è‚·‚éB
+			//!æœ‰åŠ¹ãªãƒªã‚½ãƒ¼ã‚¹ã‚’æ‰€æœ‰ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
 			explicit operator bool() const DXLIBEX_NOEXCEPT{ return ptr.operator bool(); }
 
-			//----------’PˆêƒIƒuƒWƒFƒNƒg”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//----------å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//!ƒ|ƒCƒ“ƒ^‚ğŠÔÚQÆ‚·‚éB
-			//!’PˆêƒIƒuƒWƒFƒNƒg”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//!ãƒã‚¤ãƒ³ã‚¿ã‚’é–“æ¥å‚ç…§ã™ã‚‹ã€‚
+			//!å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 			typename std::add_lvalue_reference<T>::type operator*() const DXLIBEX_NOEXCEPT { return *ptr; }
 
-			//!ƒ|ƒCƒ“ƒ^‚ğ’Ê‚µ‚ÄƒIƒuƒWƒFƒNƒg‚ÉƒAƒNƒZƒX‚·‚éB
-			//!’PˆêƒIƒuƒWƒFƒNƒg”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//!ãƒã‚¤ãƒ³ã‚¿ã‚’é€šã—ã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã€‚
+			//!å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 			pointer operator->() const DXLIBEX_NOEXCEPT{ return ptr.get(); }
 
 		private:
@@ -481,83 +481,83 @@ namespace dxle
 		{
 			typedef Dx_Unique_Ptr<T[]> This_T;
 		public:
-			typedef T* pointer;//!Š—L‚·‚éƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^Œ^T*
-			typedef T element_type;//!—v‘fŒ^T
+			typedef T* pointer;//!æ‰€æœ‰ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿å‹T*
+			typedef T element_type;//!è¦ç´ å‹T
 
-			//----------ƒƒ‚ƒŠŠm•ÛŒnŠÖ”(New)
-			//”z—ñ”Å
+			//----------ãƒ¡ãƒ¢ãƒªç¢ºä¿ç³»é–¢æ•°(New)
+			//é…åˆ—ç‰ˆ
 
-			//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-			//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
-			//!@param[in] n    ”z—ñ‚Ì—v‘f”
+			//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+			//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
+			//!@param[in] n    é…åˆ—ã®è¦ç´ æ•°
 			static This_T NewWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n);
-			//!@param[in] n    ”z—ñ‚Ì—v‘f”
+			//!@param[in] n    é…åˆ—ã®è¦ç´ æ•°
 			static This_T New(size_t n) { return NewWithLog(__FILE__, __LINE__, n); }
 	#if 0
-			//!ƒƒ‚ƒŠ‚ÌÄŠm•Û‚ğs‚¤i”z—ñ”Å‚Ì‚İj
-			//!@attention “r’†‚Å—áŠO‚ª“Š‚°‚ç‚ê‚½ê‡bace‚Í•K‚¸–³Œø‚É‚È‚è‚Ü‚·
-			//!@param[in,out] bace Šî‚É‚È‚éDx_Unique_Ptr
-			//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-			//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
-			//!@param[in] n    V‚µ‚¢”z—ñ‚Ì—v‘f”
+			//!ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿ã‚’è¡Œã†ï¼ˆé…åˆ—ç‰ˆã®ã¿ï¼‰
+			//!@attention é€”ä¸­ã§ä¾‹å¤–ãŒæŠ•ã’ã‚‰ã‚ŒãŸå ´åˆbaceã¯å¿…ãšç„¡åŠ¹ã«ãªã‚Šã¾ã™
+			//!@param[in,out] bace åŸºã«ãªã‚‹Dx_Unique_Ptr
+			//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+			//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
+			//!@param[in] n    æ–°ã—ã„é…åˆ—ã®è¦ç´ æ•°
 			static This_T ReallocWithLog(This_T& bace, const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n);
-			//!ƒƒ‚ƒŠ‚ÌÄŠm•Û‚ğs‚¤i”z—ñ”Å‚Ì‚İj
-			//!@attention “r’†‚Å—áŠO‚ª“Š‚°‚ç‚ê‚½ê‡bace‚Í•K‚¸–³Œø‚É‚È‚è‚Ü‚·
-			//!@param[in,out] bace Šî‚É‚È‚éDx_Unique_Ptr
-			//!@param[in] n    V‚µ‚¢”z—ñ‚Ì—v‘f”
+			//!ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿ã‚’è¡Œã†ï¼ˆé…åˆ—ç‰ˆã®ã¿ï¼‰
+			//!@attention é€”ä¸­ã§ä¾‹å¤–ãŒæŠ•ã’ã‚‰ã‚ŒãŸå ´åˆbaceã¯å¿…ãšç„¡åŠ¹ã«ãªã‚Šã¾ã™
+			//!@param[in,out] bace åŸºã«ãªã‚‹Dx_Unique_Ptr
+			//!@param[in] n    æ–°ã—ã„é…åˆ—ã®è¦ç´ æ•°
 			static This_T Realloc(This_T& bace, size_t n) { return ReallocWithLog(bace, __FILE__, __LINE__, n); }
 	#endif
 
 
-			//----------ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+			//----------ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Unique_Ptr() DXLIBEX_NOEXCEPT {}
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Unique_Ptr(std::nullptr_t) DXLIBEX_NOEXCEPT {}
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			Dx_Unique_Ptr(This_T&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)) {}
 		private:
-			//!ƒRƒs[\’z‹Ö~B(delete)
+			//!ã‚³ãƒ”ãƒ¼æ§‹ç¯‰ç¦æ­¢ã€‚(delete)
 			Dx_Unique_Ptr(const This_T& other) DXLIBEX_NOEXCEPT;// = delete
-			//!ƒ|ƒCƒ“ƒ^‚©‚ç‚Ì\’z‹Ö~(À‘•—pƒRƒ“ƒXƒgƒ‰ƒNƒ^)
+			//!ãƒã‚¤ãƒ³ã‚¿ã‹ã‚‰ã®æ§‹ç¯‰ç¦æ­¢(å®Ÿè£…ç”¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿)
 			explicit Dx_Unique_Ptr(pointer param) DXLIBEX_NOEXCEPT : ptr(param) {}
 
 			//----------operator=
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			This_T& operator=(std::nullptr_t) DXLIBEX_NOEXCEPT { ptr = nullptr; return *this; }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			This_T& operator=(This_T&& other) DXLIBEX_NOEXCEPT { ptr = std::move(other.ptr); return *this; }
 		private:
-			//!ƒRƒs[‹Ö~B(delete)
+			//!ã‚³ãƒ”ãƒ¼ç¦æ­¢ã€‚(delete)
 			This_T& operator=(const This_T& other) DXLIBEX_NOEXCEPT;// = delete
 
-			//----------‚»‚Ì‘¼‚Ìƒƒ“ƒoŠÖ”
+			//----------ãã®ä»–ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//! ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éB
-			//! *this‚ª•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éBƒŠƒ\[ƒX‚ğ‰ğ•ú‚·‚é‚Ì‚Å‚Í‚È‚­A‰ğ•ú‚·‚éÓ”C‚ğ•úŠü‚·‚éB
-			//! ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆA‚±‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^‚Å‚ÍAŒ»İ•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚È‚­‚È‚éB
-			//!@post ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆAget()ƒƒ“ƒoŠÖ”‚Ínullptr‚ğ•Ô‚·B
-			//!@return •úŠü‚µ‚½ƒŠƒ\[ƒX‚ğ•Ô‚·B
+			//! ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! *thisãŒä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã™ã‚‹ã®ã§ã¯ãªãã€è§£æ”¾ã™ã‚‹è²¬ä»»ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€ã“ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§ã¯ã€ç¾åœ¨ä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ãªããªã‚‹ã€‚
+			//!@post ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€get()ãƒ¡ãƒ³ãƒé–¢æ•°ã¯nullptrã‚’è¿”ã™ã€‚
+			//!@return æ”¾æ£„ã—ãŸãƒªã‚½ãƒ¼ã‚¹ã‚’è¿”ã™ã€‚
 			pointer release() DXLIBEX_NOEXCEPT { return ptr.release(); }
 
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			void reset() DXLIBEX_NOEXCEPT { ptr.reset(); }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			void reset(This_T&& other) DXLIBEX_NOEXCEPT { ptr = std::move(other.ptr); }
 
-			//!ƒŠƒ\[ƒX‚ğæ“¾‚·‚éB•Û‚µ‚Ä‚¢‚éƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B
-			//!@attention ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚Í*this‚ª‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚ÌŠÖ”‚É‚æ‚Á‚Ä•Ô‚³‚ê‚½ƒ|ƒCƒ“ƒ^‚É‘Î‚µ‚ÄAƒŠƒ\[ƒX‰ğ•ú‚ğ‚µ‚Ä‚Í‚È‚ç‚È‚¢B
+			//!ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹ã€‚ä¿æŒã—ã¦ã„ã‚‹ãƒã‚¤ãƒ³ã‚¿ã‚’è¿”ã™ã€‚
+			//!@attention ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã¯*thisãŒæŒã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®é–¢æ•°ã«ã‚ˆã£ã¦è¿”ã•ã‚ŒãŸãƒã‚¤ãƒ³ã‚¿ã«å¯¾ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾ã‚’ã—ã¦ã¯ãªã‚‰ãªã„ã€‚
 			pointer get() const DXLIBEX_NOEXCEPT { return ptr.get(); }
 
-			//!—LŒø‚ÈƒŠƒ\[ƒX‚ğŠ—L‚µ‚Ä‚¢‚é‚©‚ğ”»’è‚·‚éB
+			//!æœ‰åŠ¹ãªãƒªã‚½ãƒ¼ã‚¹ã‚’æ‰€æœ‰ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
 			explicit operator bool() const DXLIBEX_NOEXCEPT { return ptr.operator bool(); }
 
-			//----------”z—ñ”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//----------é…åˆ—ç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//!”CˆÓ‚ÌˆÊ’u‚Ì—v‘f‚ÉƒAƒNƒZƒX‚·‚éB
-			//!”z—ñ”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//!ä»»æ„ã®ä½ç½®ã®è¦ç´ ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã€‚
+			//!é…åˆ—ç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 			T& operator[](size_t i) const { return ptr[i]; }
 
 		private:
@@ -574,7 +574,7 @@ namespace dxle
 		class Dx_Unique_Ptr<T[N]>{
 			static_assert(N && !N, "can't use fixed size arrays in Dx_Unique_Ptr. you can use std::array<T, N> instead.");
 		};
-		//----------”ñƒƒ“ƒoŠÖ”
+		//----------éãƒ¡ãƒ³ãƒé–¢æ•°
 		
 		template <typename T1, typename T2>
 		bool operator==(const Dx_Unique_Ptr<T1>& a, const Dx_Unique_Ptr<T2>& b){ return a.get() == b.get(); }
@@ -590,21 +590,21 @@ namespace dxle
 		bool operator!=(nullptr_t, const Dx_Unique_Ptr<T>& x) DXLIBEX_NOEXCEPT{ return static_cast<bool>(x); }
 
 		template<typename T, typename... Args, typename = typename std::enable_if<!std::is_array<T>::value>::type>
-		//!Dx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i’PˆêƒIƒuƒWƒFƒNƒg”Åj
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆå˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆï¼‰
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		Dx_Unique_Ptr<T> MakeUniqueDxWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, Args&&... args);
 		template<typename T, typename = typename std::enable_if<std::is_array<T>::value && std::extent<T>::value == 0>::type>
-		//!Dx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i”z—ñ”Åj
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆé…åˆ—ç‰ˆï¼‰
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		Dx_Unique_Ptr<T> MakeUniqueDxWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n);
 
 		template<typename T, typename... Args, typename = typename std::enable_if<!std::is_array<T>::value>::type>
-		//!Dx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i’PˆêƒIƒuƒWƒFƒNƒg”Åj
+		//!Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆå˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆï¼‰
 		Dx_Unique_Ptr<T> MakeUniqueDx(Args&&... args) { return MakeUniqueDxWithLog<T>(__FILE__, __LINE__ ,std::forward<Args>(args)...); }
 		template<typename T, typename = typename std::enable_if<std::is_array<T>::value && std::extent<T>::value == 0>::type>
-		//!Dx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i”z—ñ”Åj
+		//!Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆé…åˆ—ç‰ˆï¼‰
 		Dx_Unique_Ptr<T> MakeUniqueDx(size_t n) { return MakeUniqueDxWithLog<T>(__FILE__, __LINE__, n); }
 
 		//----------Dx_Shared_Ptr----------//
@@ -614,74 +614,74 @@ namespace dxle
 		{
 			typedef Dx_Shared_Ptr<T> This_T;
 		public:
-			typedef T* pointer;//!Š—L‚·‚éƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^Œ^T*
-			typedef T element_type;//!—v‘fŒ^T
+			typedef T* pointer;//!æ‰€æœ‰ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿å‹T*
+			typedef T element_type;//!è¦ç´ å‹T
 
-			//----------ƒƒ‚ƒŠŠm•ÛŒnŠÖ”(New)
-			//’PˆêƒIƒuƒWƒFƒNƒg”Å
+			//----------ãƒ¡ãƒ¢ãƒªç¢ºä¿ç³»é–¢æ•°(New)
+			//å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆ
 
 			template<typename... Args>
-			//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-			//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+			//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+			//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 			static This_T NewWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, Args&&... args);
 			template<typename... Args>
 			static This_T New(Args&&... args){ return NewWithLog(__FILE__, __LINE__, std::forward<Args>(args)...); }
 
-			//----------ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+			//----------ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Shared_Ptr() DXLIBEX_NOEXCEPT{}
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Shared_Ptr(std::nullptr_t) DXLIBEX_NOEXCEPT{}
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			Dx_Shared_Ptr(This_T&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)){}
 		private:
-			//!ƒ|ƒCƒ“ƒ^‚©‚ç‚Ì\’z‹Ö~(À‘•—pƒRƒ“ƒXƒgƒ‰ƒNƒ^)
+			//!ãƒã‚¤ãƒ³ã‚¿ã‹ã‚‰ã®æ§‹ç¯‰ç¦æ­¢(å®Ÿè£…ç”¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿)
 			explicit Dx_Shared_Ptr(pointer param) DXLIBEX_NOEXCEPT : ptr(param){}
 		public:
 			template <typename U, typename = typename std::enable_if<!std::is_array<U>::value && std::is_convertible<typename Dx_Shared_Ptr<U>::pointer, pointer>::value>::type>
-			//!•ÏŠ·‰Â”\‚Èƒ|ƒCƒ“ƒ^Œ^‚ğ‚ÂDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚©‚ç‚Ì•ÏŠ·B
-			//!ˆÈ‰º‚ÌğŒ‚ğ–‚½‚³‚È‚¢ê‡A‚±‚ÌŠÖ”‚ÍƒI[ƒo[ƒ[ƒh‰ğŒˆ‚ÌŒó•â‚©‚çŠO‚ê‚éF
-			//!@EDx_Shared_Ptr<U>::pointer‚ªApointer‚ÉˆÃ–Ù•ÏŠ·‰Â”\‚ÈŒ^‚Å‚ ‚é‚±‚ÆB
-			//!@EU‚ª”z—ñŒ^‚Å‚Í‚È‚¢‚±‚ÆB
+			//!å¤‰æ›å¯èƒ½ãªãƒã‚¤ãƒ³ã‚¿å‹ã‚’æŒã¤Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®å¤‰æ›ã€‚
+			//!ä»¥ä¸‹ã®æ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã€ã“ã®é–¢æ•°ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰è§£æ±ºã®å€™è£œã‹ã‚‰å¤–ã‚Œã‚‹ï¼š
+			//!ã€€ãƒ»Dx_Shared_Ptr<U>::pointerãŒã€pointerã«æš—é»™å¤‰æ›å¯èƒ½ãªå‹ã§ã‚ã‚‹ã“ã¨ã€‚
+			//!ã€€ãƒ»UãŒé…åˆ—å‹ã§ã¯ãªã„ã“ã¨ã€‚
 			Dx_Shared_Ptr(Dx_Shared_Ptr<U>&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)){}
 
 			//----------operator=
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			This_T& operator=(std::nullptr_t) DXLIBEX_NOEXCEPT{ reset(); return *this; }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			This_T& operator=(This_T&& other) DXLIBEX_NOEXCEPT{ ptr = std::move(other.ptr); return *this; }
 		public:
 			template <typename U, typename = typename std::enable_if<!std::is_array<U>::value && std::is_convertible<typename Dx_Shared_Ptr<U>::pointer, pointer>::value>::type>
-			//!•ÏŠ·‰Â”\‚Èƒ|ƒCƒ“ƒ^Œ^‚ğ‚ÂDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚©‚ç‚Ì•ÏŠ·B
-			//!ˆÈ‰º‚ÌğŒ‚ğ–‚½‚³‚È‚¢ê‡A‚±‚ÌŠÖ”‚ÍƒI[ƒo[ƒ[ƒh‰ğŒˆ‚ÌŒó•â‚©‚çŠO‚ê‚éF
-			//!@EDx_Shared_Ptr<U>::pointer‚ªApointer‚ÉˆÃ–Ù•ÏŠ·‰Â”\‚ÈŒ^‚Å‚ ‚é‚±‚ÆB
-			//!@EU‚ª”z—ñŒ^‚Å‚Í‚È‚¢‚±‚ÆB
+			//!å¤‰æ›å¯èƒ½ãªãƒã‚¤ãƒ³ã‚¿å‹ã‚’æŒã¤Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®å¤‰æ›ã€‚
+			//!ä»¥ä¸‹ã®æ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã€ã“ã®é–¢æ•°ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰è§£æ±ºã®å€™è£œã‹ã‚‰å¤–ã‚Œã‚‹ï¼š
+			//!ã€€ãƒ»Dx_Shared_Ptr<U>::pointerãŒã€pointerã«æš—é»™å¤‰æ›å¯èƒ½ãªå‹ã§ã‚ã‚‹ã“ã¨ã€‚
+			//!ã€€ãƒ»UãŒé…åˆ—å‹ã§ã¯ãªã„ã“ã¨ã€‚
 			This_T& operator=(Dx_Shared_Ptr<U>&& other) DXLIBEX_NOEXCEPT{ ptr = std::move(other.ptr); return *this; }
 
-			//----------‚»‚Ì‘¼‚Ìƒƒ“ƒoŠÖ”
+			//----------ãã®ä»–ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			void reset() DXLIBEX_NOEXCEPT{ ptr.reset(); }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			void reset(This_T&& other) DXLIBEX_NOEXCEPT{ ptr = std::move(other.ptr); }
 
-			//!ƒŠƒ\[ƒX‚ğæ“¾‚·‚éB•Û‚µ‚Ä‚¢‚éƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B
-			//!@attention ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚Í*this‚ª‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚ÌŠÖ”‚É‚æ‚Á‚Ä•Ô‚³‚ê‚½ƒ|ƒCƒ“ƒ^‚É‘Î‚µ‚ÄAƒŠƒ\[ƒX‰ğ•ú‚ğ‚µ‚Ä‚Í‚È‚ç‚È‚¢B
+			//!ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹ã€‚ä¿æŒã—ã¦ã„ã‚‹ãƒã‚¤ãƒ³ã‚¿ã‚’è¿”ã™ã€‚
+			//!@attention ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã¯*thisãŒæŒã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®é–¢æ•°ã«ã‚ˆã£ã¦è¿”ã•ã‚ŒãŸãƒã‚¤ãƒ³ã‚¿ã«å¯¾ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾ã‚’ã—ã¦ã¯ãªã‚‰ãªã„ã€‚
 			pointer get() const DXLIBEX_NOEXCEPT{ return ptr.get(); }
 
-			//!—LŒø‚ÈƒŠƒ\[ƒX‚ğŠ—L‚µ‚Ä‚¢‚é‚©‚ğ”»’è‚·‚éB
+			//!æœ‰åŠ¹ãªãƒªã‚½ãƒ¼ã‚¹ã‚’æ‰€æœ‰ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
 			explicit operator bool() const DXLIBEX_NOEXCEPT{ return ptr.operator bool(); }
 
-			//----------’PˆêƒIƒuƒWƒFƒNƒg”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//----------å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//!ƒ|ƒCƒ“ƒ^‚ğŠÔÚQÆ‚·‚éB
-			//!’PˆêƒIƒuƒWƒFƒNƒg”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//!ãƒã‚¤ãƒ³ã‚¿ã‚’é–“æ¥å‚ç…§ã™ã‚‹ã€‚
+			//!å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 			typename std::add_lvalue_reference<T>::type operator*() const DXLIBEX_NOEXCEPT { return *ptr; }
 
-			//!ƒ|ƒCƒ“ƒ^‚ğ’Ê‚µ‚ÄƒIƒuƒWƒFƒNƒg‚ÉƒAƒNƒZƒX‚·‚éB
-			//!’PˆêƒIƒuƒWƒFƒNƒg”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//!ãƒã‚¤ãƒ³ã‚¿ã‚’é€šã—ã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã€‚
+			//!å˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 			pointer operator->() const DXLIBEX_NOEXCEPT{ return ptr.get(); }
 
 		private:
@@ -696,69 +696,69 @@ namespace dxle
 		{
 			typedef Dx_Shared_Ptr<void> This_T;
 		public:
-			typedef void* pointer;//!Š—L‚·‚éƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^Œ^T*
-			typedef void element_type;//!—v‘fŒ^T
+			typedef void* pointer;//!æ‰€æœ‰ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿å‹T*
+			typedef void element_type;//!è¦ç´ å‹T
 
-			//----------ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+			//----------ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Shared_Ptr() DXLIBEX_NOEXCEPT : ptr(nullptr){}
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Shared_Ptr(std::nullptr_t) DXLIBEX_NOEXCEPT : ptr(nullptr) {}
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			Dx_Shared_Ptr(This_T&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)) {}
 		private:
-			//!ƒRƒs[\’z‹Ö~B(delete)
+			//!ã‚³ãƒ”ãƒ¼æ§‹ç¯‰ç¦æ­¢ã€‚(delete)
 			Dx_Shared_Ptr(const This_T& other) DXLIBEX_NOEXCEPT;// = delete
-			//!ƒ|ƒCƒ“ƒ^‚©‚ç‚Ì\’z‹Ö~(À‘•—pƒRƒ“ƒXƒgƒ‰ƒNƒ^)
+			//!ãƒã‚¤ãƒ³ã‚¿ã‹ã‚‰ã®æ§‹ç¯‰ç¦æ­¢(å®Ÿè£…ç”¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿)
 			explicit Dx_Shared_Ptr(pointer param) DXLIBEX_NOEXCEPT : ptr(param) {}
 		public:
 			template <typename U, typename = typename std::enable_if<!std::is_array<U>::value && std::is_convertible<typename Dx_Shared_Ptr<U>::pointer, pointer>::value>::type>
-			//!•ÏŠ·‰Â”\‚Èƒ|ƒCƒ“ƒ^Œ^‚ğ‚ÂDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚©‚ç‚Ì•ÏŠ·B
-			//!ˆÈ‰º‚ÌğŒ‚ğ–‚½‚³‚È‚¢ê‡A‚±‚ÌŠÖ”‚ÍƒI[ƒo[ƒ[ƒh‰ğŒˆ‚ÌŒó•â‚©‚çŠO‚ê‚éF
-			//!@EDx_Shared_Ptr<U>::pointer‚ªApointer‚ÉˆÃ–Ù•ÏŠ·‰Â”\‚ÈŒ^‚Å‚ ‚é‚±‚ÆB
-			//!@EU‚ª”z—ñŒ^‚Å‚Í‚È‚¢‚±‚ÆB
+			//!å¤‰æ›å¯èƒ½ãªãƒã‚¤ãƒ³ã‚¿å‹ã‚’æŒã¤Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®å¤‰æ›ã€‚
+			//!ä»¥ä¸‹ã®æ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã€ã“ã®é–¢æ•°ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰è§£æ±ºã®å€™è£œã‹ã‚‰å¤–ã‚Œã‚‹ï¼š
+			//!ã€€ãƒ»Dx_Shared_Ptr<U>::pointerãŒã€pointerã«æš—é»™å¤‰æ›å¯èƒ½ãªå‹ã§ã‚ã‚‹ã“ã¨ã€‚
+			//!ã€€ãƒ»UãŒé…åˆ—å‹ã§ã¯ãªã„ã“ã¨ã€‚
 			Dx_Shared_Ptr(Dx_Shared_Ptr<U>&& other) DXLIBEX_NOEXCEPT : ptr(other.release()) {}
 
 			//----------operator=
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			This_T& operator=(std::nullptr_t) DXLIBEX_NOEXCEPT { reset(); return *this; }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			This_T& operator=(This_T&& other) DXLIBEX_NOEXCEPT { reset(std::move(other)); return *this; }
 		private:
-			//!ƒRƒs[‹Ö~B(delete)
+			//!ã‚³ãƒ”ãƒ¼ç¦æ­¢ã€‚(delete)
 			This_T& operator=(const This_T& other) DXLIBEX_NOEXCEPT;// = delete
 		public:
 			template <typename U, typename = typename std::enable_if<!std::is_array<U>::value && std::is_convertible<typename Dx_Shared_Ptr<U>::pointer, pointer>::value>::type>
-			//!•ÏŠ·‰Â”\‚Èƒ|ƒCƒ“ƒ^Œ^‚ğ‚ÂDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚©‚ç‚Ì•ÏŠ·B
-			//!ˆÈ‰º‚ÌğŒ‚ğ–‚½‚³‚È‚¢ê‡A‚±‚ÌŠÖ”‚ÍƒI[ƒo[ƒ[ƒh‰ğŒˆ‚ÌŒó•â‚©‚çŠO‚ê‚éF
-			//!@EDx_Shared_Ptr<U>::pointer‚ªApointer‚ÉˆÃ–Ù•ÏŠ·‰Â”\‚ÈŒ^‚Å‚ ‚é‚±‚ÆB
-			//!@EU‚ª”z—ñŒ^‚Å‚Í‚È‚¢‚±‚ÆB
+			//!å¤‰æ›å¯èƒ½ãªãƒã‚¤ãƒ³ã‚¿å‹ã‚’æŒã¤Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®å¤‰æ›ã€‚
+			//!ä»¥ä¸‹ã®æ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã€ã“ã®é–¢æ•°ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰è§£æ±ºã®å€™è£œã‹ã‚‰å¤–ã‚Œã‚‹ï¼š
+			//!ã€€ãƒ»Dx_Shared_Ptr<U>::pointerãŒã€pointerã«æš—é»™å¤‰æ›å¯èƒ½ãªå‹ã§ã‚ã‚‹ã“ã¨ã€‚
+			//!ã€€ãƒ»UãŒé…åˆ—å‹ã§ã¯ãªã„ã“ã¨ã€‚
 			This_T& operator=(Dx_Shared_Ptr<U>&& other) DXLIBEX_NOEXCEPT { reset(); ptr = other.release(); return *this; }
 
-			//----------‚»‚Ì‘¼‚Ìƒƒ“ƒoŠÖ”
+			//----------ãã®ä»–ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//! ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éB
-			//! *this‚ª•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éBƒŠƒ\[ƒX‚ğ‰ğ•ú‚·‚é‚Ì‚Å‚Í‚È‚­A‰ğ•ú‚·‚éÓ”C‚ğ•úŠü‚·‚éB
-			//! ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆA‚±‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^‚Å‚ÍAŒ»İ•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚È‚­‚È‚éB
-			//!@post ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆAget()ƒƒ“ƒoŠÖ”‚Ínullptr‚ğ•Ô‚·B
-			//!@return •úŠü‚µ‚½ƒŠƒ\[ƒX‚ğ•Ô‚·B
+			//! ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! *thisãŒä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã™ã‚‹ã®ã§ã¯ãªãã€è§£æ”¾ã™ã‚‹è²¬ä»»ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€ã“ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§ã¯ã€ç¾åœ¨ä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ãªããªã‚‹ã€‚
+			//!@post ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€get()ãƒ¡ãƒ³ãƒé–¢æ•°ã¯nullptrã‚’è¿”ã™ã€‚
+			//!@return æ”¾æ£„ã—ãŸãƒªã‚½ãƒ¼ã‚¹ã‚’è¿”ã™ã€‚
 			pointer release() DXLIBEX_NOEXCEPT { auto temp = ptr; ptr = nullptr; return temp; }
 
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			void reset() DXLIBEX_NOEXCEPT { DxLib::DxFree(ptr); ptr = nullptr; }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			void reset(This_T&& other) DXLIBEX_NOEXCEPT { if (this != &other) { reset(); ptr = other.release(); } }
 
-			//!ƒŠƒ\[ƒX‚ğæ“¾‚·‚éB•Û‚µ‚Ä‚¢‚éƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B
-			//!@attention ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚Í*this‚ª‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚ÌŠÖ”‚É‚æ‚Á‚Ä•Ô‚³‚ê‚½ƒ|ƒCƒ“ƒ^‚É‘Î‚µ‚ÄAƒŠƒ\[ƒX‰ğ•ú‚ğ‚µ‚Ä‚Í‚È‚ç‚È‚¢B
+			//!ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹ã€‚ä¿æŒã—ã¦ã„ã‚‹ãƒã‚¤ãƒ³ã‚¿ã‚’è¿”ã™ã€‚
+			//!@attention ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã¯*thisãŒæŒã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®é–¢æ•°ã«ã‚ˆã£ã¦è¿”ã•ã‚ŒãŸãƒã‚¤ãƒ³ã‚¿ã«å¯¾ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾ã‚’ã—ã¦ã¯ãªã‚‰ãªã„ã€‚
 			pointer get() const DXLIBEX_NOEXCEPT { return ptr; }
 
-			//!—LŒø‚ÈƒŠƒ\[ƒX‚ğŠ—L‚µ‚Ä‚¢‚é‚©‚ğ”»’è‚·‚éB
+			//!æœ‰åŠ¹ãªãƒªã‚½ãƒ¼ã‚¹ã‚’æ‰€æœ‰ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
 			explicit operator bool() const DXLIBEX_NOEXCEPT { return ptr != nullptr; }
 
-			//----------ƒfƒXƒgƒ‰ƒNƒ^
+			//----------ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
 			~Dx_Shared_Ptr() DXLIBEX_NOEXCEPT { reset(); }
 		private:
@@ -769,83 +769,83 @@ namespace dxle
 		{
 			typedef Dx_Shared_Ptr<T[]> This_T;
 		public:
-			typedef T* pointer;//!Š—L‚·‚éƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^Œ^T*
-			typedef T element_type;//!—v‘fŒ^T
+			typedef T* pointer;//!æ‰€æœ‰ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿å‹T*
+			typedef T element_type;//!è¦ç´ å‹T
 
-			//----------ƒƒ‚ƒŠŠm•ÛŒnŠÖ”(New)
-			//”z—ñ”Å
+			//----------ãƒ¡ãƒ¢ãƒªç¢ºä¿ç³»é–¢æ•°(New)
+			//é…åˆ—ç‰ˆ
 
-			//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-			//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
-			//!@param[in] n    ”z—ñ‚Ì—v‘f”
+			//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+			//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
+			//!@param[in] n    é…åˆ—ã®è¦ç´ æ•°
 			static This_T NewWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n);
-			//!@param[in] n    ”z—ñ‚Ì—v‘f”
+			//!@param[in] n    é…åˆ—ã®è¦ç´ æ•°
 			static This_T New(size_t n) { return NewWithLog(__FILE__, __LINE__, n); }
 	#if 0
-			//!ƒƒ‚ƒŠ‚ÌÄŠm•Û‚ğs‚¤i”z—ñ”Å‚Ì‚İj
-			//!@attention “r’†‚Å—áŠO‚ª“Š‚°‚ç‚ê‚½ê‡bace‚Í•K‚¸–³Œø‚É‚È‚è‚Ü‚·
-			//!@param[in,out] bace Šî‚É‚È‚éDx_Shared_Ptr
-			//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-			//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
-			//!@param[in] n    V‚µ‚¢”z—ñ‚Ì—v‘f”
+			//!ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿ã‚’è¡Œã†ï¼ˆé…åˆ—ç‰ˆã®ã¿ï¼‰
+			//!@attention é€”ä¸­ã§ä¾‹å¤–ãŒæŠ•ã’ã‚‰ã‚ŒãŸå ´åˆbaceã¯å¿…ãšç„¡åŠ¹ã«ãªã‚Šã¾ã™
+			//!@param[in,out] bace åŸºã«ãªã‚‹Dx_Shared_Ptr
+			//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+			//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
+			//!@param[in] n    æ–°ã—ã„é…åˆ—ã®è¦ç´ æ•°
 			static This_T ReallocWithLog(This_T& bace, const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n);
-			//!ƒƒ‚ƒŠ‚ÌÄŠm•Û‚ğs‚¤i”z—ñ”Å‚Ì‚İj
-			//!@attention “r’†‚Å—áŠO‚ª“Š‚°‚ç‚ê‚½ê‡bace‚Í•K‚¸–³Œø‚É‚È‚è‚Ü‚·
-			//!@param[in,out] bace Šî‚É‚È‚éDx_Shared_Ptr
-			//!@param[in] n    V‚µ‚¢”z—ñ‚Ì—v‘f”
+			//!ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿ã‚’è¡Œã†ï¼ˆé…åˆ—ç‰ˆã®ã¿ï¼‰
+			//!@attention é€”ä¸­ã§ä¾‹å¤–ãŒæŠ•ã’ã‚‰ã‚ŒãŸå ´åˆbaceã¯å¿…ãšç„¡åŠ¹ã«ãªã‚Šã¾ã™
+			//!@param[in,out] bace åŸºã«ãªã‚‹Dx_Shared_Ptr
+			//!@param[in] n    æ–°ã—ã„é…åˆ—ã®è¦ç´ æ•°
 			static This_T Realloc(This_T& bace, size_t n) { return ReallocWithLog(bace, __FILE__, __LINE__, n); }
 	#endif
 
 
-			//----------ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+			//----------ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Shared_Ptr() DXLIBEX_NOEXCEPT {}
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			DXLIBEX_CONSTEXPR Dx_Shared_Ptr(std::nullptr_t) DXLIBEX_NOEXCEPT {}
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			Dx_Shared_Ptr(This_T&& other) DXLIBEX_NOEXCEPT : ptr(std::move(other.ptr)) {}
 		private:
-			//!ƒRƒs[\’z‹Ö~B(delete)
+			//!ã‚³ãƒ”ãƒ¼æ§‹ç¯‰ç¦æ­¢ã€‚(delete)
 			Dx_Shared_Ptr(const This_T& other) DXLIBEX_NOEXCEPT;// = delete
-			//!ƒ|ƒCƒ“ƒ^‚©‚ç‚Ì\’z‹Ö~(À‘•—pƒRƒ“ƒXƒgƒ‰ƒNƒ^)
+			//!ãƒã‚¤ãƒ³ã‚¿ã‹ã‚‰ã®æ§‹ç¯‰ç¦æ­¢(å®Ÿè£…ç”¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿)
 			explicit Dx_Shared_Ptr(pointer param) DXLIBEX_NOEXCEPT : ptr(param) {}
 
 			//----------operator=
 		public:
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			This_T& operator=(std::nullptr_t) DXLIBEX_NOEXCEPT { ptr = nullptr; return *this; }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			This_T& operator=(This_T&& other) DXLIBEX_NOEXCEPT { ptr = std::move(other.ptr); return *this; }
 		private:
-			//!ƒRƒs[‹Ö~B(delete)
+			//!ã‚³ãƒ”ãƒ¼ç¦æ­¢ã€‚(delete)
 			This_T& operator=(const This_T& other) DXLIBEX_NOEXCEPT;// = delete
 
-			//----------‚»‚Ì‘¼‚Ìƒƒ“ƒoŠÖ”
+			//----------ãã®ä»–ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//! ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éB
-			//! *this‚ª•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ÌŠ—LŒ ‚ğ•úŠü‚·‚éBƒŠƒ\[ƒX‚ğ‰ğ•ú‚·‚é‚Ì‚Å‚Í‚È‚­A‰ğ•ú‚·‚éÓ”C‚ğ•úŠü‚·‚éB
-			//! ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆA‚±‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^‚Å‚ÍAŒ»İ•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‚ğ‰ğ•ú‚µ‚È‚­‚È‚éB
-			//!@post ‚±‚ÌŠÖ”‚ğŒÄ‚Ño‚µ‚½‚ ‚ÆAget()ƒƒ“ƒoŠÖ”‚Ínullptr‚ğ•Ô‚·B
-			//!@return •úŠü‚µ‚½ƒŠƒ\[ƒX‚ğ•Ô‚·B
+			//! ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! *thisãŒä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã‚’æ”¾æ£„ã™ã‚‹ã€‚ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã™ã‚‹ã®ã§ã¯ãªãã€è§£æ”¾ã™ã‚‹è²¬ä»»ã‚’æ”¾æ£„ã™ã‚‹ã€‚
+			//! ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€ã“ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§ã¯ã€ç¾åœ¨ä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã—ãªããªã‚‹ã€‚
+			//!@post ã“ã®é–¢æ•°ã‚’å‘¼ã³å‡ºã—ãŸã‚ã¨ã€get()ãƒ¡ãƒ³ãƒé–¢æ•°ã¯nullptrã‚’è¿”ã™ã€‚
+			//!@return æ”¾æ£„ã—ãŸãƒªã‚½ãƒ¼ã‚¹ã‚’è¿”ã™ã€‚
 			pointer release() DXLIBEX_NOEXCEPT { return ptr.release(); }
 
-			//!Š—LŒ ‚ğ‚½‚È‚¢A‹ó‚ÌDx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éB
+			//!æ‰€æœ‰æ¨©ã‚’æŒãŸãªã„ã€ç©ºã®Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
 			void reset() DXLIBEX_NOEXCEPT { ptr.reset(); }
-			//!other‚©‚ç*this‚ÉAŠ—LŒ ‚ğ÷“n‚·‚éB
+			//!otherã‹ã‚‰*thisã«ã€æ‰€æœ‰æ¨©ã‚’è­²æ¸¡ã™ã‚‹ã€‚
 			void reset(This_T&& other) DXLIBEX_NOEXCEPT { ptr = std::move(other.ptr); }
 
-			//!ƒŠƒ\[ƒX‚ğæ“¾‚·‚éB•Û‚µ‚Ä‚¢‚éƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B
-			//!@attention ƒŠƒ\[ƒX‚ÌŠ—LŒ ‚Í*this‚ª‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚ÌŠÖ”‚É‚æ‚Á‚Ä•Ô‚³‚ê‚½ƒ|ƒCƒ“ƒ^‚É‘Î‚µ‚ÄAƒŠƒ\[ƒX‰ğ•ú‚ğ‚µ‚Ä‚Í‚È‚ç‚È‚¢B
+			//!ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹ã€‚ä¿æŒã—ã¦ã„ã‚‹ãƒã‚¤ãƒ³ã‚¿ã‚’è¿”ã™ã€‚
+			//!@attention ãƒªã‚½ãƒ¼ã‚¹ã®æ‰€æœ‰æ¨©ã¯*thisãŒæŒã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®é–¢æ•°ã«ã‚ˆã£ã¦è¿”ã•ã‚ŒãŸãƒã‚¤ãƒ³ã‚¿ã«å¯¾ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾ã‚’ã—ã¦ã¯ãªã‚‰ãªã„ã€‚
 			pointer get() const DXLIBEX_NOEXCEPT { return ptr.get(); }
 
-			//!—LŒø‚ÈƒŠƒ\[ƒX‚ğŠ—L‚µ‚Ä‚¢‚é‚©‚ğ”»’è‚·‚éB
+			//!æœ‰åŠ¹ãªãƒªã‚½ãƒ¼ã‚¹ã‚’æ‰€æœ‰ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
 			explicit operator bool() const DXLIBEX_NOEXCEPT { return ptr.operator bool(); }
 
-			//----------”z—ñ”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//----------é…åˆ—ç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 
-			//!”CˆÓ‚ÌˆÊ’u‚Ì—v‘f‚ÉƒAƒNƒZƒX‚·‚éB
-			//!”z—ñ”ÅŒÅ—L‚Ìƒƒ“ƒoŠÖ”
+			//!ä»»æ„ã®ä½ç½®ã®è¦ç´ ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã€‚
+			//!é…åˆ—ç‰ˆå›ºæœ‰ã®ãƒ¡ãƒ³ãƒé–¢æ•°
 			T& operator[](size_t i) const { return ptr[i]; }
 
 		private:
@@ -862,7 +862,7 @@ namespace dxle
 		class Dx_Shared_Ptr<T[N]>{
 			static_assert(N && !N, "can't use fixed size arrays in Dx_Shared_Ptr. you can use std::array<T, N> instead.");
 		};
-		//----------”ñƒƒ“ƒoŠÖ”
+		//----------éãƒ¡ãƒ³ãƒé–¢æ•°
 		
 		template <typename T1, typename T2>
 		bool operator==(const Dx_Shared_Ptr<T1>& a, const Dx_Shared_Ptr<T2>& b){ return a.get() == b.get(); }
@@ -878,59 +878,59 @@ namespace dxle
 		bool operator!=(nullptr_t, const Dx_Shared_Ptr<T>& x) DXLIBEX_NOEXCEPT{ return static_cast<bool>(x); }
 
 		template<typename T, typename... Args, typename = typename std::enable_if<!std::is_array<T>::value>::type>
-		//!Dx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i’PˆêƒIƒuƒWƒFƒNƒg”Åj
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆå˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆï¼‰
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		Dx_Shared_Ptr<T> MakeSharedDxWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, Args&&... args);
 		template<typename T, typename = typename std::enable_if<std::is_array<T>::value && std::extent<T>::value == 0>::type>
-		//!Dx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i”z—ñ”Åj
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆé…åˆ—ç‰ˆï¼‰
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		Dx_Shared_Ptr<T> MakeSharedDxWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n);
 
 		template<typename T, typename... Args, typename = typename std::enable_if<!std::is_array<T>::value>::type>
-		//!Dx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i’PˆêƒIƒuƒWƒFƒNƒg”Åj
+		//!Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆå˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆï¼‰
 		Dx_Shared_Ptr<T> MakeSharedDx(Args&&... args) { return MakeSharedDxWithLog<T>(__FILE__, __LINE__ ,std::forward<Args>(args)...); }
 		template<typename T, typename = typename std::enable_if<std::is_array<T>::value && std::extent<T>::value == 0>::type>
-		//!Dx_Shared_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i”z—ñ”Åj
+		//!Dx_Shared_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆé…åˆ—ç‰ˆï¼‰
 		Dx_Shared_Ptr<T> MakeSharedDx(size_t n) { return MakeSharedDxWithLog<T>(__FILE__, __LINE__, n); }
 
 #endif
-		//----------DxLib‚Ì‹@ŠB•ÏŠ·
+		//----------DxLibã®æ©Ÿæ¢°å¤‰æ›
 
-		//! w’è‚ÌƒTƒCƒY‚Ìƒƒ‚ƒŠ‚ğŠm•Û‚·‚é
-		//!@param[in] AllocSize Šm•Û‚·‚éƒƒ‚ƒŠ‚ÌƒTƒCƒY( ’PˆÊ:byte )
-		//!@param[in] File DxAlloc‚ğŒÄ‚ñ‚¾ƒ\[ƒXƒtƒ@ƒCƒ‹–¼( ƒfƒoƒbƒO—p )
-		//!@param[in] Line DxAlloc‚ğŒÄ‚ñ‚¾ƒ\[ƒXƒtƒ@ƒCƒ‹’†‚Ìs”Ô†( ƒfƒoƒbƒO—p )
-		//!@return NULL:ƒƒ‚ƒŠ‚ÌŠm•Û¸”s   NULLˆÈŠO:Šm•Û‚µ‚½ƒƒ‚ƒŠ—Ìˆæ‚Ìæ“ªƒAƒhƒŒƒX )
+		//! æŒ‡å®šã®ã‚µã‚¤ã‚ºã®ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿ã™ã‚‹
+		//!@param[in] AllocSize ç¢ºä¿ã™ã‚‹ãƒ¡ãƒ¢ãƒªã®ã‚µã‚¤ã‚º( å˜ä½:byte )
+		//!@param[in] File DxAllocã‚’å‘¼ã‚“ã ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å( ãƒ‡ãƒãƒƒã‚°ç”¨ )
+		//!@param[in] Line DxAllocã‚’å‘¼ã‚“ã ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ä¸­ã®è¡Œç•ªå·( ãƒ‡ãƒãƒƒã‚°ç”¨ )
+		//!@return NULL:ãƒ¡ãƒ¢ãƒªã®ç¢ºä¿å¤±æ•—   NULLä»¥å¤–:ç¢ºä¿ã—ãŸãƒ¡ãƒ¢ãƒªé ˜åŸŸã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹ )
 		inline void* DxAlloc(size_t AllocSize, const char *File = NULL, int Line = -1)DXLIBEX_NOEXCEPT{ return DxLib::DxAlloc(AllocSize, File, Line); }
-		//! w’è‚ÌƒTƒCƒY‚Ìƒƒ‚ƒŠ‚ğŠm•Û‚µ‚ÄA‚O‚Å–„‚ß‚éA‰Šú‰»Œã‚É‚O‚Å–„‚ß‚éˆÈŠO‚Í DxAlloc ‚Æ“®ì‚Í“¯‚¶
+		//! æŒ‡å®šã®ã‚µã‚¤ã‚ºã®ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿ã—ã¦ã€ï¼ã§åŸ‹ã‚ã‚‹ã€åˆæœŸåŒ–å¾Œã«ï¼ã§åŸ‹ã‚ã‚‹ä»¥å¤–ã¯ DxAlloc ã¨å‹•ä½œã¯åŒã˜
 		inline void* DxCalloc(size_t AllocSize, const char *File = NULL, int Line = -1)DXLIBEX_NOEXCEPT{ return DxLib::DxCalloc(AllocSize, File, Line); }
-		//! ƒƒ‚ƒŠ‚ÌÄŠm•Û‚ğs‚¤
-		//!@param[in] Memory ÄŠm•Û‚ğs‚¤ƒƒ‚ƒŠ—Ìˆæ‚Ìæ“ªƒAƒhƒŒƒX( DxAlloc ‚Ì–ß‚è’l )
-		//!@param[in] File DxAlloc‚ğŒÄ‚ñ‚¾ƒ\[ƒXƒtƒ@ƒCƒ‹–¼( ƒfƒoƒbƒO—p )
-		//!@param[in] Line DxAlloc‚ğŒÄ‚ñ‚¾ƒ\[ƒXƒtƒ@ƒCƒ‹’†‚Ìs”Ô†( ƒfƒoƒbƒO—p )
-		//!@return NULL:ƒƒ‚ƒŠ‚ÌÄŠm•Û¸”s@NULLˆÈŠO:ÄŠm•Û‚µ‚½V‚µ‚¢ƒƒ‚ƒŠ—Ìˆæ‚Ìæ“ªƒAƒhƒŒƒX
+		//! ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿ã‚’è¡Œã†
+		//!@param[in] Memory å†ç¢ºä¿ã‚’è¡Œã†ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹( DxAlloc ã®æˆ»ã‚Šå€¤ )
+		//!@param[in] File DxAllocã‚’å‘¼ã‚“ã ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å( ãƒ‡ãƒãƒƒã‚°ç”¨ )
+		//!@param[in] Line DxAllocã‚’å‘¼ã‚“ã ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ä¸­ã®è¡Œç•ªå·( ãƒ‡ãƒãƒƒã‚°ç”¨ )
+		//!@return NULL:ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿å¤±æ•—ã€€NULLä»¥å¤–:å†ç¢ºä¿ã—ãŸæ–°ã—ã„ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
 		inline void* DxRealloc(void *Memory, size_t AllocSize, const char *File = NULL, int Line = -1)DXLIBEX_NOEXCEPT{ return DxLib::DxRealloc(Memory, AllocSize, File, Line); }
-		//!@param[in] Memory ‰ğ•ú‚·‚éƒƒ‚ƒŠ—Ìˆæ‚Ìæ“ªƒAƒhƒŒƒX( DxAlloc ‚Ì–ß‚è’l )
+		//!@param[in] Memory è§£æ”¾ã™ã‚‹ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹( DxAlloc ã®æˆ»ã‚Šå€¤ )
 		inline void DxFree(void *Memory)DXLIBEX_NOEXCEPT{ return DxLib::DxFree(Memory); }
-		//! —ñ‹“‘ÎÛ‚É‚·‚éƒƒ‚ƒŠ‚ÌŠm•Û—e—Ê‚ğƒZƒbƒg‚·‚é
+		//! åˆ—æŒ™å¯¾è±¡ã«ã™ã‚‹ãƒ¡ãƒ¢ãƒªã®ç¢ºä¿å®¹é‡ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline size_t DxSetAllocSizeTrap(size_t Size)DXLIBEX_NOEXCEPT{ return DxLib::DxSetAllocSizeTrap(Size); }
-		//! ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ“à‚Åƒƒ‚ƒŠŠm•Û‚ªs‚í‚ê‚é‚Éî•ñ‚ğo—Í‚·‚é‚©‚Ç‚¤‚©‚ğƒZƒbƒg‚·‚é
+		//! ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå†…ã§ãƒ¡ãƒ¢ãƒªç¢ºä¿ãŒè¡Œã‚ã‚Œã‚‹æ™‚ã«æƒ…å ±ã‚’å‡ºåŠ›ã™ã‚‹ã‹ã©ã†ã‹ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int DxSetAllocPrintFlag(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::DxSetAllocPrintFlag(Flag); }
-		//! DxAlloc ‚â DxCalloc ‚ÅŠm•Û‚µ‚Ä‚¢‚éƒƒ‚ƒŠƒTƒCƒY‚ğæ“¾‚·‚é
+		//! DxAlloc ã‚„ DxCalloc ã§ç¢ºä¿ã—ã¦ã„ã‚‹ãƒ¡ãƒ¢ãƒªã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹
 		inline size_t DxGetAllocSize(void)DXLIBEX_NOEXCEPT{ return DxLib::DxGetAllocSize(); }
-		//! DxAlloc ‚â DxCalloc ‚ÅŠm•Û‚µ‚Ä‚¢‚éƒƒ‚ƒŠ‚Ì”‚ğæ“¾‚·‚é
+		//! DxAlloc ã‚„ DxCalloc ã§ç¢ºä¿ã—ã¦ã„ã‚‹ãƒ¡ãƒ¢ãƒªã®æ•°ã‚’å–å¾—ã™ã‚‹
 		inline int DxGetAllocNum(void)DXLIBEX_NOEXCEPT{ return DxLib::DxGetAllocNum(); }
-		//! DxAlloc ‚â DxCalloc ‚ÅŠm•Û‚µ‚Ä‚¢‚éƒƒ‚ƒŠ‚ğ—ñ‹“‚·‚é
+		//! DxAlloc ã‚„ DxCalloc ã§ç¢ºä¿ã—ã¦ã„ã‚‹ãƒ¡ãƒ¢ãƒªã‚’åˆ—æŒ™ã™ã‚‹
 		inline void DxDumpAlloc(void)DXLIBEX_NOEXCEPT{ return DxLib::DxDumpAlloc(); }
-		//! DxAlloc ‚â DxCalloc ‚ÅŠm•Û‚µ‚Ä‚¢‚éƒƒ‚ƒŠ‚Ìó‹µ‚ğ•`‰æ‚·‚é
+		//! DxAlloc ã‚„ DxCalloc ã§ç¢ºä¿ã—ã¦ã„ã‚‹ãƒ¡ãƒ¢ãƒªã®çŠ¶æ³ã‚’æç”»ã™ã‚‹
 		inline void DxDrawAlloc(int x, int y, int Width, int Height)DXLIBEX_NOEXCEPT{ return DxLib::DxDrawAlloc(x, y, Width, Height); }
-		//! Šm•Û‚µ‚½ƒƒ‚ƒŠî•ñ‚ª”j‰ó‚³‚ê‚Ä‚¢‚È‚¢‚©’²‚×‚é( -1:”j‰ó‚ ‚è  0:‚È‚µ )
+		//! ç¢ºä¿ã—ãŸãƒ¡ãƒ¢ãƒªæƒ…å ±ãŒç ´å£Šã•ã‚Œã¦ã„ãªã„ã‹èª¿ã¹ã‚‹( -1:ç ´å£Šã‚ã‚Š  0:ãªã— )
 		inline int DxErrorCheckAlloc(void)DXLIBEX_NOEXCEPT{ return DxLib::DxErrorCheckAlloc(); }
-		//! ƒƒ‚ƒŠ‚ªŠm•ÛA‰ğ•ú‚ªs‚í‚ê‚é“x‚ÉŠm•Û‚µ‚Ä‚¢‚éƒƒ‚ƒŠ‚Ì—e—Ê‚ğo—Í‚·‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO‚ğƒZƒbƒg‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªãŒç¢ºä¿ã€è§£æ”¾ãŒè¡Œã‚ã‚Œã‚‹åº¦ã«ç¢ºä¿ã—ã¦ã„ã‚‹ãƒ¡ãƒ¢ãƒªã®å®¹é‡ã‚’å‡ºåŠ›ã™ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int DxSetAllocSizeOutFlag(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::DxSetAllocSizeOutFlag(Flag); }
-		//! ƒƒ‚ƒŠ‚ÌŠm•ÛA‰ğ•ú‚ªs‚í‚ê‚é“x‚ÉŠm•Û‚µ‚Ä‚¢‚éƒƒ‚ƒŠŠm•Ûî•ñ‚ª”j‘¹‚µ‚Ä‚¢‚È‚¢‚©’²‚×‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO‚ğƒZƒbƒg‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªã®ç¢ºä¿ã€è§£æ”¾ãŒè¡Œã‚ã‚Œã‚‹åº¦ã«ç¢ºä¿ã—ã¦ã„ã‚‹ãƒ¡ãƒ¢ãƒªç¢ºä¿æƒ…å ±ãŒç ´æã—ã¦ã„ãªã„ã‹èª¿ã¹ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int DxSetAllocMemoryErrorCheckFlag(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::DxSetAllocMemoryErrorCheckFlag(Flag); }
 
 	}
@@ -946,435 +946,435 @@ namespace dxle
 #endif
 
 
-	//----------DxBaseFunc.cpp ŠÖ”ƒvƒƒgƒ^ƒCƒvéŒ¾----------//
+	//----------DxBaseFunc.cpp é–¢æ•°ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€----------//
 
-	//!•¶šƒR[ƒhŠÖŒWƒ†[ƒeƒBƒŠƒeƒB
+	//!æ–‡å­—ã‚³ãƒ¼ãƒ‰é–¢ä¿‚ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£
 	namespace DxChar
 	{
-		// •¶šƒR[ƒhŠÖŒW
+		// æ–‡å­—ã‚³ãƒ¼ãƒ‰é–¢ä¿‚
 
-		//! •¶š—ñ‚Ì•¶šƒR[ƒhŒ`®‚ğ•Ê‚Ì•¶šƒR[ƒhŒ`®‚É•ÏŠ·‚·‚é
-		//!@param[in] SrcCharCodeFormat DX_CHARCODEFORMAT_SHIFTJIS “™
-		//!@param[in] DestCharCodeFormat DX_CHARCODEFORMAT_SHIFTJIS “™
+		//! æ–‡å­—åˆ—ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã‚’åˆ¥ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã«å¤‰æ›ã™ã‚‹
+		//!@param[in] SrcCharCodeFormat DX_CHARCODEFORMAT_SHIFTJIS ç­‰
+		//!@param[in] DestCharCodeFormat DX_CHARCODEFORMAT_SHIFTJIS ç­‰
 		inline int ConvertStringCharCodeFormat(int SrcCharCodeFormat, const void *SrcString, int DestCharCodeFormat, void *DestStringBuffer)DXLIBEX_NOEXCEPT{ return DxLib::ConvertStringCharCodeFormat(SrcCharCodeFormat, SrcString, DestCharCodeFormat, DestStringBuffer); }
-		//! •¶š—ñ‚Ìˆø”‚Ì•¶šƒR[ƒhŒ`®‚ğİ’è‚·‚é( •¶š—ñ•`‰æŒnŠÖ”‚Æ‚»‚Ì‘¼ˆê•”ŠÖ”‚ğœ‚­ )( UNICODE”Å‚Å‚Í–³Œø )
-		//!@param[in] CharCodeFormat DX_CHARCODEFORMAT_SHIFTJIS “™
+		//! æ–‡å­—åˆ—ã®å¼•æ•°ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã‚’è¨­å®šã™ã‚‹( æ–‡å­—åˆ—æç”»ç³»é–¢æ•°ã¨ãã®ä»–ä¸€éƒ¨é–¢æ•°ã‚’é™¤ã )( UNICODEç‰ˆã§ã¯ç„¡åŠ¹ )
+		//!@param[in] CharCodeFormat DX_CHARCODEFORMAT_SHIFTJIS ç­‰
 		inline int SetUseCharCodeFormat(int CharCodeFormat)DXLIBEX_NOEXCEPT{ return DxLib::SetUseCharCodeFormat(CharCodeFormat); }
 
-		// •¶š—ñŠÖŒW
+		// æ–‡å­—åˆ—é–¢ä¿‚
 
-		//! strcpy ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strcpy ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strcpyDx(TCHAR *Dest, const TCHAR *Src)DXLIBEX_NOEXCEPT{ return DxLib::strcpyDx(Dest, Src); }
-		//! ˆÊ’uw’è•t‚« strcpyAPos ‚ÍƒRƒs[ŠJnˆÊ’u@( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! ä½ç½®æŒ‡å®šä»˜ã strcpyã€Pos ã¯ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®ã€€( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strpcpyDx(TCHAR *Dest, const TCHAR *Src, int Pos)DXLIBEX_NOEXCEPT{ return DxLib::strpcpyDx(Dest, Src, Pos); }
-		//! ˆÊ’uw’è•t‚« strcpyAPos ‚ÍƒRƒs[ŠJnˆÊ’u( ‘SŠp•¶š‚à 1 ˆµ‚¢ )@( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! ä½ç½®æŒ‡å®šä»˜ã strcpyã€Pos ã¯ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€€( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strpcpy2Dx(TCHAR *Dest, const TCHAR *Src, int Pos)DXLIBEX_NOEXCEPT{ return DxLib::strpcpy2Dx(Dest, Src, Pos); }
-		//! strncpy ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncpy ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strncpyDx(TCHAR *Dest, const TCHAR *Src, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strncpyDx(Dest, Src, Num); }
-		//! strncpy ‚Ì Num ‚ª•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ )‚É‚È‚Á‚½‚à‚ÌAI’[‚É•K‚¸ƒkƒ‹•¶š‚ª‘ã“ü‚³‚ê‚é( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncpy ã® Num ãŒæ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã«ãªã£ãŸã‚‚ã®ã€çµ‚ç«¯ã«å¿…ãšãƒŒãƒ«æ–‡å­—ãŒä»£å…¥ã•ã‚Œã‚‹( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strncpy2Dx(TCHAR *Dest, const TCHAR *Src, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strncpy2Dx(Dest, Src, Num); }
-		//! strncpy ‚Ì•¶š—ñ‚ÌI’[‚©‚ç‚Ì•¶š”w’è”Å( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncpy ã®æ–‡å­—åˆ—ã®çµ‚ç«¯ã‹ã‚‰ã®æ–‡å­—æ•°æŒ‡å®šç‰ˆ( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strrncpyDx(TCHAR *Dest, const TCHAR *Src, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strrncpyDx(Dest, Src, Num); }
-		//! strncpy ‚Ì•¶š—ñ‚ÌI’[‚©‚ç‚Ì•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ )w’è”ÅAI’[‚É•K‚¸ƒkƒ‹•¶š‚ª‘ã“ü‚³‚ê‚é( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncpy ã®æ–‡å­—åˆ—ã®çµ‚ç«¯ã‹ã‚‰ã®æ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )æŒ‡å®šç‰ˆã€çµ‚ç«¯ã«å¿…ãšãƒŒãƒ«æ–‡å­—ãŒä»£å…¥ã•ã‚Œã‚‹( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strrncpy2Dx(TCHAR *Dest, const TCHAR *Src, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strrncpy2Dx(Dest, Src, Num); }
-		//! strncpy ‚ÌƒRƒs[ŠJnˆÊ’uw’è”ÅAPos ‚ÍƒRƒs[ŠJnˆÊ’uANum ‚Í•¶š”( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncpy ã®ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®æŒ‡å®šç‰ˆã€Pos ã¯ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®ã€Num ã¯æ–‡å­—æ•°( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strpncpyDx(TCHAR *Dest, const TCHAR *Src, int Pos, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strpncpyDx(Dest, Src, Pos, Num); }
-		//! strncpy ‚ÌƒRƒs[ŠJnˆÊ’uw’è”ÅAPos ‚ÍƒRƒs[ŠJnˆÊ’u( ‘SŠp•¶š‚à 1 ˆµ‚¢ )ANum ‚Í•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ )AI’[‚É•K‚¸ƒkƒ‹•¶š‚ª‘ã“ü‚³‚ê‚é( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncpy ã®ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®æŒ‡å®šç‰ˆã€Pos ã¯ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€Num ã¯æ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€çµ‚ç«¯ã«å¿…ãšãƒŒãƒ«æ–‡å­—ãŒä»£å…¥ã•ã‚Œã‚‹( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strpncpy2Dx(TCHAR *Dest, const TCHAR *Src, int Pos, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strpncpy2Dx(Dest, Src, Pos, Num); }
-		//! strcat ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strcat ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline void strcatDx(TCHAR *Dest, const TCHAR *Src)DXLIBEX_NOEXCEPT{ return DxLib::strcatDx(Dest, Src); }
-		//! strlen ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strlen ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strlenDx(const TCHAR *Str)DXLIBEX_NOEXCEPT{ return DxLib::strlenDx(Str); }
-		//! strlen ‚Ì–ß‚è’l‚ª•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ )‚É‚È‚Á‚½‚à‚Ì( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strlen ã®æˆ»ã‚Šå€¤ãŒæ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã«ãªã£ãŸã‚‚ã®( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strlen2Dx(const TCHAR *Str)DXLIBEX_NOEXCEPT{ return DxLib::strlen2Dx(Str); }
-		//! strcmp ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strcmp ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strcmpDx(const TCHAR *Str1, const TCHAR *Str2)DXLIBEX_NOEXCEPT{ return DxLib::strcmpDx(Str1, Str2); }
-		//! stricmp ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! stricmp ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int stricmpDx(const TCHAR *Str1, const TCHAR *Str2)DXLIBEX_NOEXCEPT{ return DxLib::stricmpDx(Str1, Str2); }
-		//! strncmp ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncmp ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strncmpDx(const TCHAR *Str1, const TCHAR *Str2, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strncmpDx(Str1, Str2, Num); }
-		//! strncmp ‚Ì Num ‚ª•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ )‚É‚È‚Á‚½‚à‚Ì( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncmp ã® Num ãŒæ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã«ãªã£ãŸã‚‚ã®( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strncmp2Dx(const TCHAR *Str1, const TCHAR *Str2, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strncmp2Dx(Str1, Str2, Num); }
-		//! strncmp ‚Ì”äŠrŠJnˆÊ’uw’è”ÅAPos ‚ª Str1 ‚Ì”äŠrŠJnˆÊ’uANum ‚ª•¶š”( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncmp ã®æ¯”è¼ƒé–‹å§‹ä½ç½®æŒ‡å®šç‰ˆã€Pos ãŒ Str1 ã®æ¯”è¼ƒé–‹å§‹ä½ç½®ã€Num ãŒæ–‡å­—æ•°( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strpncmpDx(const TCHAR *Str1, const TCHAR *Str2, int Pos, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strpncmpDx(Str1, Str2, Pos, Num); }
-		//! strncmp ‚Ì”äŠrŠJnˆÊ’uw’è”ÅAPos ‚ª Str1 ‚Ì”äŠrŠJnˆÊ’u( ‘SŠp•¶š‚à 1 ˆµ‚¢ )ANum ‚ª•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ )( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strncmp ã®æ¯”è¼ƒé–‹å§‹ä½ç½®æŒ‡å®šç‰ˆã€Pos ãŒ Str1 ã®æ¯”è¼ƒé–‹å§‹ä½ç½®( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€Num ãŒæ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strpncmp2Dx(const TCHAR *Str1, const TCHAR *Str2, int Pos, int Num)DXLIBEX_NOEXCEPT{ return DxLib::strpncmp2Dx(Str1, Str2, Pos, Num); }
-		//! •¶š—ñ‚Ìw’è‚ÌˆÊ’u‚Ì•¶šƒR[ƒh‚ğæ“¾‚·‚éAPos ‚Íæ“¾‚·‚éˆÊ’uACharNums ‚Í•¶š”‚ğ‘ã“ü‚·‚é•Ï”‚ÌƒAƒhƒŒƒXA–ß‚è’l‚Í•¶šƒR[ƒh( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! æ–‡å­—åˆ—ã®æŒ‡å®šã®ä½ç½®ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹ã€Pos ã¯å–å¾—ã™ã‚‹ä½ç½®ã€CharNums ã¯æ–‡å­—æ•°ã‚’ä»£å…¥ã™ã‚‹å¤‰æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã€æˆ»ã‚Šå€¤ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline DWORD strgetchrDx(const TCHAR *Str, int Pos, int *CharNums = NULL)DXLIBEX_NOEXCEPT{ return DxLib::strgetchrDx(Str, Pos, CharNums); }
-		//! •¶š—ñ‚Ìw’è‚ÌˆÊ’u‚Ì•¶šƒR[ƒh‚ğæ“¾‚·‚éAPos ‚Íæ“¾‚·‚éˆÊ’u( ‘SŠp•¶š‚à 1 ˆµ‚¢ )ACharNums ‚Í•¶š”‚ğ‘ã“ü‚·‚é•Ï”‚ÌƒAƒhƒŒƒXA–ß‚è’l‚Í•¶šƒR[ƒh( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! æ–‡å­—åˆ—ã®æŒ‡å®šã®ä½ç½®ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹ã€Pos ã¯å–å¾—ã™ã‚‹ä½ç½®( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€CharNums ã¯æ–‡å­—æ•°ã‚’ä»£å…¥ã™ã‚‹å¤‰æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã€æˆ»ã‚Šå€¤ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline DWORD strgetchr2Dx(const TCHAR *Str, int Pos, int *CharNums = NULL)DXLIBEX_NOEXCEPT{ return DxLib::strgetchr2Dx(Str, Pos, CharNums); }
-		//! •¶š—ñ‚Ìw’è‚ÌˆÊ’u‚É•¶šƒR[ƒh‚ğ‘‚«‚ŞAPos ‚Í‘‚«‚ŞˆÊ’uACharCode ‚Í•¶šƒR[ƒhA–ß‚è’l‚Í‘‚«‚ñ‚¾•¶š”( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! æ–‡å­—åˆ—ã®æŒ‡å®šã®ä½ç½®ã«æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’æ›¸ãè¾¼ã‚€ã€Pos ã¯æ›¸ãè¾¼ã‚€ä½ç½®ã€CharCode ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰ã€æˆ»ã‚Šå€¤ã¯æ›¸ãè¾¼ã‚“ã æ–‡å­—æ•°( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strputchrDx(TCHAR *Str, int Pos, DWORD CharCode)DXLIBEX_NOEXCEPT{ return DxLib::strputchrDx(Str, Pos, CharCode); }
-		//! •¶š—ñ‚Ìw’è‚ÌˆÊ’u‚É•¶šƒR[ƒh‚ğ‘‚«‚ŞAPos ‚Í‘‚«‚ŞˆÊ’u( ‘SŠp•¶š‚à 1 ˆµ‚¢ )ACharCode ‚Í•¶šƒR[ƒhA–ß‚è’l‚Í‘‚«‚ñ‚¾•¶š”( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! æ–‡å­—åˆ—ã®æŒ‡å®šã®ä½ç½®ã«æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’æ›¸ãè¾¼ã‚€ã€Pos ã¯æ›¸ãè¾¼ã‚€ä½ç½®( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€CharCode ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰ã€æˆ»ã‚Šå€¤ã¯æ›¸ãè¾¼ã‚“ã æ–‡å­—æ•°( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strputchr2Dx(TCHAR *Str, int Pos, DWORD CharCode)DXLIBEX_NOEXCEPT{ return DxLib::strputchr2Dx(Str, Pos, CharCode); }
-		//! •¶š—ñ‚Ìw’è‚ÌˆÊ’u‚ÌƒAƒhƒŒƒX‚ğæ“¾‚·‚éAPos ‚Íæ“¾‚·‚éˆÊ’u@( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! æ–‡å­—åˆ—ã®æŒ‡å®šã®ä½ç½®ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—ã™ã‚‹ã€Pos ã¯å–å¾—ã™ã‚‹ä½ç½®ã€€( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline const TCHAR * strposDx(const TCHAR *Str, int Pos)DXLIBEX_NOEXCEPT{ return DxLib::strposDx(Str, Pos); }
-		//! •¶š—ñ‚Ìw’è‚ÌˆÊ’u‚ÌƒAƒhƒŒƒX‚ğæ“¾‚·‚éAPos ‚Íæ“¾‚·‚éˆÊ’u( ‘SŠp•¶š‚à 1 ˆµ‚¢ )@( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! æ–‡å­—åˆ—ã®æŒ‡å®šã®ä½ç½®ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—ã™ã‚‹ã€Pos ã¯å–å¾—ã™ã‚‹ä½ç½®( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ )ã€€( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline const TCHAR * strpos2Dx(const TCHAR *Str, int Pos)DXLIBEX_NOEXCEPT{ return DxLib::strpos2Dx(Str, Pos); }
-		//! strstr ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strstr ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline const TCHAR * strstrDx(const TCHAR *Str1, const TCHAR *Str2)DXLIBEX_NOEXCEPT{ return DxLib::strstrDx(Str1, Str2); }
-		//! strstr ‚Ì–ß‚è’l‚ª•¶š—ñæ“ª‚©‚ç‚Ì•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ ) ‚É‚È‚Á‚½‚à‚Ì( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strstr ã®æˆ»ã‚Šå€¤ãŒæ–‡å­—åˆ—å…ˆé ­ã‹ã‚‰ã®æ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ ) ã«ãªã£ãŸã‚‚ã®( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strstr2Dx(const TCHAR *Str1, const TCHAR *Str2)DXLIBEX_NOEXCEPT{ return DxLib::strstr2Dx(Str1, Str2); }
-		//! strrstr ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strrstr ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline const TCHAR * strrstrDx(const TCHAR *Str1, const TCHAR *Str2)DXLIBEX_NOEXCEPT{ return DxLib::strrstrDx(Str1, Str2); }
-		//! strrstr ‚Ì–ß‚è’l‚ª•¶š—ñæ“ª‚©‚ç‚Ì•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ ) ‚É‚È‚Á‚½‚à‚Ì( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strrstr ã®æˆ»ã‚Šå€¤ãŒæ–‡å­—åˆ—å…ˆé ­ã‹ã‚‰ã®æ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ ) ã«ãªã£ãŸã‚‚ã®( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strrstr2Dx(const TCHAR *Str1, const TCHAR *Str2)DXLIBEX_NOEXCEPT{ return DxLib::strrstr2Dx(Str1, Str2); }
-		//! strchr ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strchr ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline const TCHAR * strchrDx(const TCHAR *Str, DWORD CharCode)DXLIBEX_NOEXCEPT{ return DxLib::strchrDx(Str, CharCode); }
-		//! strchr ‚Ì–ß‚è’l‚ª•¶š—ñæ“ª‚©‚ç‚Ì•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ ) ‚É‚È‚Á‚½‚à‚Ì( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strchr ã®æˆ»ã‚Šå€¤ãŒæ–‡å­—åˆ—å…ˆé ­ã‹ã‚‰ã®æ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ ) ã«ãªã£ãŸã‚‚ã®( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strchr2Dx(const TCHAR *Str, DWORD CharCode)DXLIBEX_NOEXCEPT{ return DxLib::strchr2Dx(Str, CharCode); }
-		//! strrchr ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strrchr ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline const TCHAR * strrchrDx(const TCHAR *Str, DWORD CharCode)DXLIBEX_NOEXCEPT{ return DxLib::strrchrDx(Str, CharCode); }
-		//! strrchr ‚Ì–ß‚è’l‚ª•¶š—ñæ“ª‚©‚ç‚Ì•¶š”( ‘SŠp•¶š‚à 1 ˆµ‚¢ ) ‚É‚È‚Á‚½‚à‚Ì( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strrchr ã®æˆ»ã‚Šå€¤ãŒæ–‡å­—åˆ—å…ˆé ­ã‹ã‚‰ã®æ–‡å­—æ•°( å…¨è§’æ–‡å­—ã‚‚ 1 æ‰±ã„ ) ã«ãªã£ãŸã‚‚ã®( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int strrchr2Dx(const TCHAR *Str, DWORD CharCode)DXLIBEX_NOEXCEPT{ return DxLib::strrchr2Dx(Str, CharCode); }
-		//! strupr ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! strupr ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline TCHAR * struprDx(TCHAR *Str)DXLIBEX_NOEXCEPT{ return DxLib::struprDx(Str); }
-		//! vsprintf ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! vsprintf ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int vsprintfDx(TCHAR *Buffer, const TCHAR *FormatString, va_list Arg)DXLIBEX_NOEXCEPT{ return DxLib::vsprintfDx(Buffer, FormatString, Arg); }
-		//! sprintf ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! sprintf ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		template<typename... Args> inline int sprintfDx(TCHAR *Buffer, const TCHAR *FormatString, Args&&... args)DXLIBEX_NOEXCEPT{ return DxLib::sprfDx(Buffer, FormatString, std::forward<Args>(args)...); }
-		//! itoa ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! itoa ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline TCHAR * itoaDx(int Value, TCHAR *Buffer, int Radix)DXLIBEX_NOEXCEPT{ return DxLib::itoaDx(Value, Buffer, Radix); }
-		//! atoi ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! atoi ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int atoiDx(const TCHAR *Str)DXLIBEX_NOEXCEPT{ return DxLib::atoiDx(Str); }
-		//! atof ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! atof ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline double atofDx(const TCHAR *Str)DXLIBEX_NOEXCEPT{ return DxLib::atofDx(Str); }
-		//! vsscanf ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! vsscanf ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		inline int vsscanfDx(const TCHAR *String, const TCHAR *FormatString, va_list Arg)DXLIBEX_NOEXCEPT{ return DxLib::vsscanfDx(String, FormatString, Arg); }
-		//! sscanf ‚Æ“¯“™‚Ì‹@”\( ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ”Å‚Å‚Í•¶šƒR[ƒhŒ`®‚Æ‚µ‚Ä SetUseCharCodeFormat ‚Åİ’è‚µ‚½Œ`®‚ªg—p‚³‚ê‚Ü‚· )
+		//! sscanf ã¨åŒç­‰ã®æ©Ÿèƒ½( ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç‰ˆã§ã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰å½¢å¼ã¨ã—ã¦ SetUseCharCodeFormat ã§è¨­å®šã—ãŸå½¢å¼ãŒä½¿ç”¨ã•ã‚Œã¾ã™ )
 		template<typename... Args> inline int sscanfDx(const TCHAR *String, const TCHAR *FormatString, Args&&... args)DXLIBEX_NOEXCEPT{ return DxLib::sscanfDx(String, FormatString, std::forward<Args>(args)...); }
 
 	}
 
 
-	//----------ƒlƒbƒgƒ[ƒN----------//
+	//----------ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯----------//
 
-	//!ƒlƒbƒgƒ[ƒN
+	//!ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯
 	namespace Network
 	{
 #ifndef DX_NON_NETWORK
-		// ’ÊMŠÖŒW
+		// é€šä¿¡é–¢ä¿‚
 
-		//! ’ÊMƒƒbƒZ[ƒW‚Ìˆ—‚ğ‚·‚éŠÖ”
+		//! é€šä¿¡ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®å‡¦ç†ã‚’ã™ã‚‹é–¢æ•°
 		inline int ProcessNetMessage(int RunReleaseProcess = FALSE)DXLIBEX_NOEXCEPT{ return DxLib::ProcessNetMessage(RunReleaseProcess); }
 
-		//! ‚c‚m‚rƒT[ƒo[‚ğg‚Á‚ÄƒzƒXƒg–¼‚©‚ç‚h‚oƒAƒhƒŒƒX‚ğæ“¾‚·‚é( IPv4”Å )
+		//! ï¼¤ï¼®ï¼³ã‚µãƒ¼ãƒãƒ¼ã‚’ä½¿ã£ã¦ãƒ›ã‚¹ãƒˆåã‹ã‚‰ï¼©ï¼°ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—ã™ã‚‹( IPv4ç‰ˆ )
 		inline int GetHostIPbyName(const TCHAR *HostName, IPDATA* IPDataBuf)DXLIBEX_NOEXCEPT{ return DxLib::GetHostIPbyName(HostName, IPDataBuf); }
-		//! ‚c‚m‚rƒT[ƒo[‚ğg‚Á‚ÄƒzƒXƒg–¼‚©‚ç‚h‚oƒAƒhƒŒƒX‚ğæ“¾‚·‚é( IPv6”Å )
+		//! ï¼¤ï¼®ï¼³ã‚µãƒ¼ãƒãƒ¼ã‚’ä½¿ã£ã¦ãƒ›ã‚¹ãƒˆåã‹ã‚‰ï¼©ï¼°ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—ã™ã‚‹( IPv6ç‰ˆ )
 		inline int GetHostIPbyName_IPv6(const TCHAR *HostName, IPDATA_IPv6 *IPDataBuf)DXLIBEX_NOEXCEPT{ return DxLib::GetHostIPbyName_IPv6(HostName, IPDataBuf); }
-		//! ‘¼ƒ}ƒVƒ“‚ÉÚ‘±‚·‚é( IPv4”Å )
+		//! ä»–ãƒã‚·ãƒ³ã«æ¥ç¶šã™ã‚‹( IPv4ç‰ˆ )
 		inline int ConnectNetWork(IPDATA      IPData, int Port = -1)DXLIBEX_NOEXCEPT{ return DxLib::ConnectNetWork(IPData, Port); }
-		//! ‘¼ƒ}ƒVƒ“‚ÉÚ‘±‚·‚é( IPv6”Å )
+		//! ä»–ãƒã‚·ãƒ³ã«æ¥ç¶šã™ã‚‹( IPv6ç‰ˆ )
 		inline int ConnectNetWork_IPv6(IPDATA_IPv6 IPData, int Port = -1)DXLIBEX_NOEXCEPT{ return DxLib::ConnectNetWork_IPv6(IPData, Port); }
-		//! ‘¼ƒ}ƒVƒ“‚ÉÚ‘±‚·‚é( IPv4”Å )A”ñ“¯Šú”Å
+		//! ä»–ãƒã‚·ãƒ³ã«æ¥ç¶šã™ã‚‹( IPv4ç‰ˆ )ã€éåŒæœŸç‰ˆ
 		inline int ConnectNetWork_ASync(IPDATA      IPData, int Port = -1)DXLIBEX_NOEXCEPT{ return DxLib::ConnectNetWork_ASync(IPData, Port); }
-		//! ‘¼ƒ}ƒVƒ“‚ÉÚ‘±‚·‚é( IPv6”Å )A”ñ“¯Šú”Å
+		//! ä»–ãƒã‚·ãƒ³ã«æ¥ç¶šã™ã‚‹( IPv6ç‰ˆ )ã€éåŒæœŸç‰ˆ
 		inline int ConnectNetWork_IPv6_ASync(IPDATA_IPv6 IPData, int Port = -1)DXLIBEX_NOEXCEPT{ return DxLib::ConnectNetWork_IPv6_ASync(IPData, Port); }
-		//! Ú‘±‚ğó‚¯‚ç‚ê‚éó‘Ô‚É‚·‚é( IPv4”Å )
+		//! æ¥ç¶šã‚’å—ã‘ã‚‰ã‚Œã‚‹çŠ¶æ…‹ã«ã™ã‚‹( IPv4ç‰ˆ )
 		inline int PreparationListenNetWork(int Port = -1)DXLIBEX_NOEXCEPT{ return DxLib::PreparationListenNetWork(Port); }
-		//! Ú‘±‚ğó‚¯‚ç‚ê‚éó‘Ô‚É‚·‚é( IPv6”Å )
+		//! æ¥ç¶šã‚’å—ã‘ã‚‰ã‚Œã‚‹çŠ¶æ…‹ã«ã™ã‚‹( IPv6ç‰ˆ )
 		inline int PreparationListenNetWork_IPv6(int Port = -1)DXLIBEX_NOEXCEPT{ return DxLib::PreparationListenNetWork_IPv6(Port); }
-		//! Ú‘±‚ğó‚¯‚Â‚¯ó‘Ô‚Ì‰ğœ
+		//! æ¥ç¶šã‚’å—ã‘ã¤ã‘çŠ¶æ…‹ã®è§£é™¤
 		inline int StopListenNetWork(void)DXLIBEX_NOEXCEPT{ return DxLib::StopListenNetWork(); }
-		//! Ú‘±‚ğI—¹‚·‚é
+		//! æ¥ç¶šã‚’çµ‚äº†ã™ã‚‹
 		inline int CloseNetWork(int NetHandle)DXLIBEX_NOEXCEPT{ return DxLib::CloseNetWork(NetHandle); }
 
-		//! Ú‘±ó‘Ô‚ğæ“¾‚·‚é
+		//! æ¥ç¶šçŠ¶æ…‹ã‚’å–å¾—ã™ã‚‹
 		inline int GetNetWorkAcceptState(int NetHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetNetWorkAcceptState(NetHandle); }
-		//! óMƒf[ƒ^‚Ì—Ê‚ğ“¾‚é
+		//! å—ä¿¡ãƒ‡ãƒ¼ã‚¿ã®é‡ã‚’å¾—ã‚‹
 		inline int GetNetWorkDataLength(int NetHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetNetWorkDataLength(NetHandle); }
-		//! –¢‘—M‚Ìƒf[ƒ^‚Ì—Ê‚ğ“¾‚é 
+		//! æœªé€ä¿¡ã®ãƒ‡ãƒ¼ã‚¿ã®é‡ã‚’å¾—ã‚‹ 
 		inline int GetNetWorkSendDataLength(int NetHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetNetWorkSendDataLength(NetHandle); }
-		//! V‚½‚ÉÚ‘±‚µ‚½’ÊM‰ñü‚ğ“¾‚é
+		//! æ–°ãŸã«æ¥ç¶šã—ãŸé€šä¿¡å›ç·šã‚’å¾—ã‚‹
 		inline int GetNewAcceptNetWork(void)DXLIBEX_NOEXCEPT{ return DxLib::GetNewAcceptNetWork(); }
-		//! Ú‘±‚ğØ’f‚³‚ê‚½’ÊM‰ñü‚ğ“¾‚é
+		//! æ¥ç¶šã‚’åˆ‡æ–­ã•ã‚ŒãŸé€šä¿¡å›ç·šã‚’å¾—ã‚‹
 		inline int GetLostNetWork(void)DXLIBEX_NOEXCEPT{ return DxLib::GetLostNetWork(); }
-		//! Ú‘±æ‚Ì‚h‚o‚ğ“¾‚é( IPv4”Å )
+		//! æ¥ç¶šå…ˆã®ï¼©ï¼°ã‚’å¾—ã‚‹( IPv4ç‰ˆ )
 		inline int GetNetWorkIP(int NetHandle, IPDATA      *IpBuf)DXLIBEX_NOEXCEPT{ return DxLib::GetNetWorkIP(NetHandle, IpBuf); }
-		//! Ú‘±æ‚Ì‚h‚o‚ğ“¾‚é( IPv6”Å )
+		//! æ¥ç¶šå…ˆã®ï¼©ï¼°ã‚’å¾—ã‚‹( IPv6ç‰ˆ )
 		inline int GetNetWorkIP_IPv6(int NetHandle, IPDATA_IPv6 *IpBuf)DXLIBEX_NOEXCEPT{ return DxLib::GetNetWorkIP_IPv6(NetHandle, IpBuf); }
-		//! ©•ª‚Ì‚h‚o‚ğ“¾‚é
+		//! è‡ªåˆ†ã®ï¼©ï¼°ã‚’å¾—ã‚‹
 		inline int GetMyIPAddress(IPDATA *IpBuf, int IpBufLength = 1, int *IpNum = NULL)DXLIBEX_NOEXCEPT{ return DxLib::GetMyIPAddress(IpBuf, IpBufLength, IpNum); }
-		//! Ú‘±‚Ìƒ^ƒCƒ€ƒAƒEƒg‚Ü‚Å‚ÌŠÔ‚ğİ’è‚·‚é
+		//! æ¥ç¶šã®ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã¾ã§ã®æ™‚é–“ã‚’è¨­å®šã™ã‚‹
 		inline int SetConnectTimeOutWait(int Time)DXLIBEX_NOEXCEPT{ return DxLib::SetConnectTimeOutWait(Time); }
-		//! ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚Ì’ÊMŒ`‘Ô‚ğg‚¤‚©‚Ç‚¤‚©‚ğƒZƒbƒg‚·‚é
+		//! ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®é€šä¿¡å½¢æ…‹ã‚’ä½¿ã†ã‹ã©ã†ã‹ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetUseDXNetWorkProtocol(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetUseDXNetWorkProtocol(Flag); }
-		//! ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚Ì’ÊMŒ`‘Ô‚ğg‚¤‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
+		//! ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®é€šä¿¡å½¢æ…‹ã‚’ä½¿ã†ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 		inline int GetUseDXNetWorkProtocol(void)DXLIBEX_NOEXCEPT{ return DxLib::GetUseDXNetWorkProtocol(); }
-		//! SetUseDXNetWorkProtocol ‚Ì•Ê–¼
+		//! SetUseDXNetWorkProtocol ã®åˆ¥å
 		inline int SetUseDXProtocol(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetUseDXProtocol(Flag); }
-		//! GetUseDXNetWorkProtocol ‚Ì•Ê–¼
+		//! GetUseDXNetWorkProtocol ã®åˆ¥å
 		inline int GetUseDXProtocol(void)DXLIBEX_NOEXCEPT{ return DxLib::GetUseDXProtocol(); }
-		//! Ú‘±‚ªØ’f‚³‚ê‚½’¼Œã‚ÉÚ‘±ƒnƒ“ƒhƒ‹‚ğ‰ğ•ú‚·‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO‚ğƒZƒbƒg‚·‚é
+		//! æ¥ç¶šãŒåˆ‡æ–­ã•ã‚ŒãŸç›´å¾Œã«æ¥ç¶šãƒãƒ³ãƒ‰ãƒ«ã‚’è§£æ”¾ã™ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetNetWorkCloseAfterLostFlag(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetNetWorkCloseAfterLostFlag(Flag); }
-		//! Ú‘±‚ªØ’f‚³‚ê‚½’¼Œã‚ÉÚ‘±ƒnƒ“ƒhƒ‹‚ğ‰ğ•ú‚·‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO‚ğæ“¾‚·‚é
+		//! æ¥ç¶šãŒåˆ‡æ–­ã•ã‚ŒãŸç›´å¾Œã«æ¥ç¶šãƒãƒ³ãƒ‰ãƒ«ã‚’è§£æ”¾ã™ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°ã‚’å–å¾—ã™ã‚‹
 		inline int GetNetWorkCloseAfterLostFlag(void)DXLIBEX_NOEXCEPT{ return DxLib::GetNetWorkCloseAfterLostFlag(); }
 
-		//! óM‚µ‚½ƒf[ƒ^‚ğ“Ç‚İ‚Ş
+		//! å—ä¿¡ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 		inline int NetWorkRecv(int NetHandle, void *Buffer, int Length)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkRecv(NetHandle, Buffer, Length); }
-		//! óM‚µ‚½ƒf[ƒ^‚ğ“Ç‚İ‚ŞA“Ç‚İ‚ñ‚¾ƒf[ƒ^‚Íƒoƒbƒtƒ@‚©‚çíœ‚³‚ê‚È‚¢
+		//! å—ä¿¡ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ã€èª­ã¿è¾¼ã‚“ã ãƒ‡ãƒ¼ã‚¿ã¯ãƒãƒƒãƒ•ã‚¡ã‹ã‚‰å‰Šé™¤ã•ã‚Œãªã„
 		inline int NetWorkRecvToPeek(int NetHandle, void *Buffer, int Length)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkRecvToPeek(NetHandle, Buffer, Length); }
-		//! óM‚µ‚½ƒf[ƒ^‚ğƒNƒŠƒA‚·‚é
+		//! å—ä¿¡ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		inline int NetWorkRecvBufferClear(int NetHandle)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkRecvBufferClear(NetHandle); }
-		//! ƒf[ƒ^‚ğ‘—M‚·‚é
+		//! ãƒ‡ãƒ¼ã‚¿ã‚’é€ä¿¡ã™ã‚‹
 		inline int NetWorkSend(int NetHandle, const void *Buffer, int Length)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkSend(NetHandle, Buffer, Length); }
 
-		//! UDP‚ğg—p‚µ‚½’ÊM‚ğs‚¤ƒ\ƒPƒbƒgƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( RecvPort ‚ğ -1 ‚É‚·‚é‚Æ‘—Mê—p‚Ìƒ\ƒPƒbƒgƒnƒ“ƒhƒ‹‚É‚È‚è‚Ü‚· )
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã‚’è¡Œã†ã‚½ã‚±ãƒƒãƒˆãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( RecvPort ã‚’ -1 ã«ã™ã‚‹ã¨é€ä¿¡å°‚ç”¨ã®ã‚½ã‚±ãƒƒãƒˆãƒãƒ³ãƒ‰ãƒ«ã«ãªã‚Šã¾ã™ )
 		inline int MakeUDPSocket(int RecvPort = -1)DXLIBEX_NOEXCEPT{ return DxLib::MakeUDPSocket(RecvPort); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚ğs‚¤ƒ\ƒPƒbƒgƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( RecvPort ‚ğ -1 ‚É‚·‚é‚Æ‘—Mê—p‚Ìƒ\ƒPƒbƒgƒnƒ“ƒhƒ‹‚É‚È‚è‚Ü‚· )( IPv6”Å )
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã‚’è¡Œã†ã‚½ã‚±ãƒƒãƒˆãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( RecvPort ã‚’ -1 ã«ã™ã‚‹ã¨é€ä¿¡å°‚ç”¨ã®ã‚½ã‚±ãƒƒãƒˆãƒãƒ³ãƒ‰ãƒ«ã«ãªã‚Šã¾ã™ )( IPv6ç‰ˆ )
 		inline int MakeUDPSocket_IPv6(int RecvPort = -1)DXLIBEX_NOEXCEPT{ return DxLib::MakeUDPSocket_IPv6(RecvPort); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚ğs‚¤ƒ\ƒPƒbƒgƒnƒ“ƒhƒ‹‚ğíœ‚·‚é
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã‚’è¡Œã†ã‚½ã‚±ãƒƒãƒˆãƒãƒ³ãƒ‰ãƒ«ã‚’å‰Šé™¤ã™ã‚‹
 		inline int DeleteUDPSocket(int NetUDPHandle)DXLIBEX_NOEXCEPT{ return DxLib::DeleteUDPSocket(NetUDPHandle); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚Åw’è‚Ì‚h‚o‚Éƒf[ƒ^‚ğ‘—M‚·‚éALength ‚ÍÅ‘å65507ASendPort ‚ğ -1 ‚É‚·‚é‚Æ MakeUDPSocket ‚É RecvPort ‚Å“n‚µ‚½ƒ|[ƒg‚ªg—p‚³‚ê‚Ü‚·
-		//!@preturn 0ˆÈã;‘—M‚Å‚«‚½ƒf[ƒ^ƒTƒCƒY  -1:ƒGƒ‰[  -2:‘—Mƒf[ƒ^‚ª‘å‚«‚·‚¬‚é  -3:‘—M€”õ‚ª‚Å‚«‚Ä‚¢‚È‚¢
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã§æŒ‡å®šã®ï¼©ï¼°ã«ãƒ‡ãƒ¼ã‚¿ã‚’é€ä¿¡ã™ã‚‹ã€Length ã¯æœ€å¤§65507ã€SendPort ã‚’ -1 ã«ã™ã‚‹ã¨ MakeUDPSocket ã« RecvPort ã§æ¸¡ã—ãŸãƒãƒ¼ãƒˆãŒä½¿ç”¨ã•ã‚Œã¾ã™
+		//!@preturn 0ä»¥ä¸Š;é€ä¿¡ã§ããŸãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º  -1:ã‚¨ãƒ©ãƒ¼  -2:é€ä¿¡ãƒ‡ãƒ¼ã‚¿ãŒå¤§ãã™ãã‚‹  -3:é€ä¿¡æº–å‚™ãŒã§ãã¦ã„ãªã„
 		inline int NetWorkSendUDP(int NetUDPHandle, IPDATA SendIP, int SendPort, const void *Buffer, int Length)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkSendUDP(NetUDPHandle, SendIP, SendPort, Buffer, Length); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚Åw’è‚Ì‚h‚o‚Éƒf[ƒ^‚ğ‘—M‚·‚éALength ‚ÍÅ‘å65507ASendPort ‚ğ -1 ‚É‚·‚é‚Æ MakeUDPSocket ‚É RecvPort ‚Å“n‚µ‚½ƒ|[ƒg‚ªg—p‚³‚ê‚Ü‚·( –ß‚è’l  0ˆÈã;‘—M‚Å‚«‚½ƒf[ƒ^ƒTƒCƒY  -1:ƒGƒ‰[  -2:‘—Mƒf[ƒ^‚ª‘å‚«‚·‚¬‚é  -3:‘—M€”õ‚ª‚Å‚«‚Ä‚¢‚È‚¢  )( IPv6”Å )
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã§æŒ‡å®šã®ï¼©ï¼°ã«ãƒ‡ãƒ¼ã‚¿ã‚’é€ä¿¡ã™ã‚‹ã€Length ã¯æœ€å¤§65507ã€SendPort ã‚’ -1 ã«ã™ã‚‹ã¨ MakeUDPSocket ã« RecvPort ã§æ¸¡ã—ãŸãƒãƒ¼ãƒˆãŒä½¿ç”¨ã•ã‚Œã¾ã™( æˆ»ã‚Šå€¤  0ä»¥ä¸Š;é€ä¿¡ã§ããŸãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º  -1:ã‚¨ãƒ©ãƒ¼  -2:é€ä¿¡ãƒ‡ãƒ¼ã‚¿ãŒå¤§ãã™ãã‚‹  -3:é€ä¿¡æº–å‚™ãŒã§ãã¦ã„ãªã„  )( IPv6ç‰ˆ )
 		inline int NetWorkSendUDP_IPv6(int NetUDPHandle, IPDATA_IPv6  SendIP, int SendPort, const void *Buffer, int Length)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkSendUDP_IPv6(NetUDPHandle, SendIP, SendPort, Buffer, Length); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚Åƒf[ƒ^‚ğóM‚·‚éAPeek ‚É TRUE ‚ğ“n‚·‚ÆóM‚É¬Œ÷‚µ‚Ä‚àƒf[ƒ^‚ğóMƒLƒ…[‚©‚çíœ‚µ‚Ü‚¹‚ñ( –ß‚è’l  0ˆÈã:óM‚µ‚½ƒf[ƒ^‚ÌƒTƒCƒY  -1:ƒGƒ‰[  -2:ƒoƒbƒtƒ@‚ÌƒTƒCƒY‚ª‘«‚è‚È‚¢  -3:óMƒf[ƒ^‚ª‚È‚¢ )
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã§ãƒ‡ãƒ¼ã‚¿ã‚’å—ä¿¡ã™ã‚‹ã€Peek ã« TRUE ã‚’æ¸¡ã™ã¨å—ä¿¡ã«æˆåŠŸã—ã¦ã‚‚ãƒ‡ãƒ¼ã‚¿ã‚’å—ä¿¡ã‚­ãƒ¥ãƒ¼ã‹ã‚‰å‰Šé™¤ã—ã¾ã›ã‚“( æˆ»ã‚Šå€¤  0ä»¥ä¸Š:å—ä¿¡ã—ãŸãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º  -1:ã‚¨ãƒ©ãƒ¼  -2:ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚ºãŒè¶³ã‚Šãªã„  -3:å—ä¿¡ãƒ‡ãƒ¼ã‚¿ãŒãªã„ )
 		inline int NetWorkRecvUDP(int NetUDPHandle, IPDATA* RecvIP, int *RecvPort, void *Buffer, int Length, int Peek)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkRecvUDP(NetUDPHandle, RecvIP, RecvPort, Buffer, Length, Peek); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚Åƒf[ƒ^‚ğóM‚·‚éAPeek ‚É TRUE ‚ğ“n‚·‚ÆóM‚É¬Œ÷‚µ‚Ä‚àƒf[ƒ^‚ğóMƒLƒ…[‚©‚çíœ‚µ‚Ü‚¹‚ñ( –ß‚è’l  0ˆÈã:óM‚µ‚½ƒf[ƒ^‚ÌƒTƒCƒY  -1:ƒGƒ‰[  -2:ƒoƒbƒtƒ@‚ÌƒTƒCƒY‚ª‘«‚è‚È‚¢  -3:óMƒf[ƒ^‚ª‚È‚¢ )( IPv6”Å )
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã§ãƒ‡ãƒ¼ã‚¿ã‚’å—ä¿¡ã™ã‚‹ã€Peek ã« TRUE ã‚’æ¸¡ã™ã¨å—ä¿¡ã«æˆåŠŸã—ã¦ã‚‚ãƒ‡ãƒ¼ã‚¿ã‚’å—ä¿¡ã‚­ãƒ¥ãƒ¼ã‹ã‚‰å‰Šé™¤ã—ã¾ã›ã‚“( æˆ»ã‚Šå€¤  0ä»¥ä¸Š:å—ä¿¡ã—ãŸãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º  -1:ã‚¨ãƒ©ãƒ¼  -2:ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚ºãŒè¶³ã‚Šãªã„  -3:å—ä¿¡ãƒ‡ãƒ¼ã‚¿ãŒãªã„ )( IPv6ç‰ˆ )
 		inline int NetWorkRecvUDP_IPv6(int NetUDPHandle, IPDATA_IPv6 *RecvIP, int *RecvPort, void *Buffer, int Length, int Peek)DXLIBEX_NOEXCEPT{ return DxLib::NetWorkRecvUDP_IPv6(NetUDPHandle, RecvIP, RecvPort, Buffer, Length, Peek); }
-		//! UDP‚ğg—p‚µ‚½’ÊM‚ÅV‚½‚ÈóMƒf[ƒ^‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©‚ğ’²‚×‚é( –ß‚è’l  -1:ƒGƒ‰[  TRUE:óMƒf[ƒ^‚ ‚è  FALSE:óMƒf[ƒ^‚È‚µ )
+		//! UDPã‚’ä½¿ç”¨ã—ãŸé€šä¿¡ã§æ–°ãŸãªå—ä¿¡ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’èª¿ã¹ã‚‹( æˆ»ã‚Šå€¤  -1:ã‚¨ãƒ©ãƒ¼  TRUE:å—ä¿¡ãƒ‡ãƒ¼ã‚¿ã‚ã‚Š  FALSE:å—ä¿¡ãƒ‡ãƒ¼ã‚¿ãªã— )
 		inline int CheckNetWorkRecvUDP(int NetUDPHandle)DXLIBEX_NOEXCEPT{ return DxLib::CheckNetWorkRecvUDP(NetUDPHandle); }
 #endif
 	}
 
 
-	//----------•¶š“ü—ÍŠÖ˜A----------//
+	//----------æ–‡å­—å…¥åŠ›é–¢é€£----------//
 
-	//!•¶š“ü—ÍŠÖ˜A
+	//!æ–‡å­—å…¥åŠ›é–¢é€£
 	namespace InputString
 	{
 #ifndef DX_NON_INPUTSTRING
-		// •¶šƒR[ƒhƒoƒbƒtƒ@‘€ìŠÖŒW
+		// æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡æ“ä½œé–¢ä¿‚
 
-		//! •¶šƒR[ƒhƒoƒbƒtƒ@‚É•¶šƒR[ƒh‚ğƒXƒgƒbƒN‚·‚é
+		//! æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã«æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’ã‚¹ãƒˆãƒƒã‚¯ã™ã‚‹
 		inline int StockInputChar(TCHAR CharCode )DXLIBEX_NOEXCEPT{ return DxLib::StockInputChar(CharCode); }
-		//! •¶šƒR[ƒhƒoƒbƒtƒ@‚ğƒNƒŠƒA‚·‚é
+		//! æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		inline int ClearInputCharBuf(void)DXLIBEX_NOEXCEPT{ return DxLib::ClearInputCharBuf(); }
-		//! •¶šƒR[ƒhƒoƒbƒtƒ@‚É—­‚Ü‚Á‚½ƒf[ƒ^‚©‚ç•¶šƒR[ƒh‚ğˆê‚Âæ“¾‚·‚é
+		//! æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ãŸãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’ä¸€ã¤å–å¾—ã™ã‚‹
 		inline TCHAR GetInputChar(int DeleteFlag )DXLIBEX_NOEXCEPT{ return DxLib::GetInputChar( DeleteFlag ); }
-		//! •¶šƒR[ƒhƒoƒbƒtƒ@‚É—­‚Ü‚Á‚½ƒf[ƒ^‚©‚ç•¶šƒR[ƒh‚ğˆê‚Âæ“¾‚·‚éAƒoƒbƒtƒ@‚É‚È‚É‚à•¶šƒR[ƒh‚ª‚È‚¢ê‡‚Í•¶šƒR[ƒh‚ªƒoƒbƒtƒ@‚Éˆê•¶š•ª—­‚Ü‚é‚Ü‚Å‘Ò‚Â
+		//! æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ãŸãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’ä¸€ã¤å–å¾—ã™ã‚‹ã€ãƒãƒƒãƒ•ã‚¡ã«ãªã«ã‚‚æ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒãªã„å ´åˆã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒãƒãƒƒãƒ•ã‚¡ã«ä¸€æ–‡å­—åˆ†æºœã¾ã‚‹ã¾ã§å¾…ã¤
 		inline TCHAR GetInputCharWait(int DeleteFlag )DXLIBEX_NOEXCEPT{ return DxLib::GetInputCharWait( DeleteFlag ); }
 
-		//! •¶šƒR[ƒhƒoƒbƒtƒ@‚É—­‚Ü‚Á‚½ƒf[ƒ^‚©‚ç‚P•¶š•ªæ“¾‚·‚é
+		//! æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ãŸãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ï¼‘æ–‡å­—åˆ†å–å¾—ã™ã‚‹
 		inline int GetOneChar(TCHAR *CharBuffer, int DeleteFlag )DXLIBEX_NOEXCEPT{ return DxLib::GetOneChar(CharBuffer, DeleteFlag ); }
-		//! •¶šƒR[ƒhƒoƒbƒtƒ@‚É—­‚Ü‚Á‚½ƒf[ƒ^‚©‚ç‚P•¶š•ªæ“¾‚·‚éAƒoƒbƒtƒ@‚É‰½‚à•¶šƒR[ƒh‚ª‚È‚¢ê‡‚Í•¶šƒR[ƒh‚ªƒoƒbƒtƒ@‚Éˆê•¶š•ª—­‚Ü‚é‚Ü‚Å‘Ò‚Â
+		//! æ–‡å­—ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ãŸãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ï¼‘æ–‡å­—åˆ†å–å¾—ã™ã‚‹ã€ãƒãƒƒãƒ•ã‚¡ã«ä½•ã‚‚æ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒãªã„å ´åˆã¯æ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒãƒãƒƒãƒ•ã‚¡ã«ä¸€æ–‡å­—åˆ†æºœã¾ã‚‹ã¾ã§å¾…ã¤
 		inline int GetOneCharWait(TCHAR *CharBuffer, int DeleteFlag )DXLIBEX_NOEXCEPT{ return DxLib::GetOneCharWait(CharBuffer, DeleteFlag ); }
-		//! w’è‚Ì•¶šƒR[ƒh‚ªƒAƒXƒL[ƒRƒ“ƒgƒ[ƒ‹ƒR[ƒh‚©’²‚×‚é
+		//! æŒ‡å®šã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒã‚¢ã‚¹ã‚­ãƒ¼ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚³ãƒ¼ãƒ‰ã‹èª¿ã¹ã‚‹
 		inline int GetCtrlCodeCmp(TCHAR Char )DXLIBEX_NOEXCEPT{ return DxLib::GetCtrlCodeCmp( Char ); }
 #endif // DX_NON_INPUTSTRING
 
 #ifndef DX_NON_KEYEX
-		//! ‰æ–Êã‚É“ü—Í’†‚Ì•¶š—ñ‚ğ•`‰æ‚·‚é
+		//! ç”»é¢ä¸Šã«å…¥åŠ›ä¸­ã®æ–‡å­—åˆ—ã‚’æç”»ã™ã‚‹
 		inline int DrawIMEInputString(int x, int y, int SelectStringNum )DXLIBEX_NOEXCEPT{ return DxLib::DrawIMEInputString(x, y, SelectStringNum ); }
-		//! ‚h‚l‚d‚ğg—p‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		//! ï¼©ï¼­ï¼¥ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
 		inline int SetUseIMEFlag(int UseFlag )DXLIBEX_NOEXCEPT{ return DxLib::SetUseIMEFlag( UseFlag ); }
-		//! ‚h‚l‚d‚Å“ü—Í‚Å‚«‚éÅ‘å•¶š”‚ğ MakeKeyInput ‚Ìİ’è‚É‡‚í‚¹‚é‚©‚Ç‚¤‚©‚ğƒZƒbƒg‚·‚é( TRUE:‚ ‚í‚¹‚é  FALSE:‚ ‚í‚¹‚È‚¢(ƒfƒtƒHƒ‹ƒg) )
+		//! ï¼©ï¼­ï¼¥ã§å…¥åŠ›ã§ãã‚‹æœ€å¤§æ–‡å­—æ•°ã‚’ MakeKeyInput ã®è¨­å®šã«åˆã‚ã›ã‚‹ã‹ã©ã†ã‹ã‚’ã‚»ãƒƒãƒˆã™ã‚‹( TRUE:ã‚ã‚ã›ã‚‹  FALSE:ã‚ã‚ã›ãªã„(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ) )
 		inline int SetInputStringMaxLengthIMESync(int Flag )DXLIBEX_NOEXCEPT{ return DxLib::SetInputStringMaxLengthIMESync( Flag ); }
-		//! ‚h‚l‚d‚Åˆê“x‚É“ü—Í‚Å‚«‚éÅ‘å•¶š”‚ğİ’è‚·‚é( 0:§ŒÀ‚È‚µ  1ˆÈã:w’è‚Ì•¶š”‚Å§ŒÀ )
+		//! ï¼©ï¼­ï¼¥ã§ä¸€åº¦ã«å…¥åŠ›ã§ãã‚‹æœ€å¤§æ–‡å­—æ•°ã‚’è¨­å®šã™ã‚‹( 0:åˆ¶é™ãªã—  1ä»¥ä¸Š:æŒ‡å®šã®æ–‡å­—æ•°ã§åˆ¶é™ )
 		inline int SetIMEInputStringMaxLength(int Length )DXLIBEX_NOEXCEPT{ return DxLib::SetIMEInputStringMaxLength( Length ); }
 #endif // DX_NON_KEYEX
 
-		//! ‘SŠp•¶šA”¼Šp•¶š“ü‚è—‚ê‚é’†‚©‚çw’è‚Ì•¶š”‚Å‚Ì”¼Šp•¶š”‚ğ“¾‚é
+		//! å…¨è§’æ–‡å­—ã€åŠè§’æ–‡å­—å…¥ã‚Šä¹±ã‚Œã‚‹ä¸­ã‹ã‚‰æŒ‡å®šã®æ–‡å­—æ•°ã§ã®åŠè§’æ–‡å­—æ•°ã‚’å¾—ã‚‹
 		inline int GetStringPoint(const TCHAR *String, int Point )DXLIBEX_NOEXCEPT{ return DxLib::GetStringPoint( String, Point ); }
-		//! ‘SŠp•¶šA”¼Šp•¶š“ü‚è—‚ê‚é’†‚©‚çw’è‚Ì”¼Šp•¶š”‚Å‚Ì•¶š”‚ğ“¾‚é
+		//! å…¨è§’æ–‡å­—ã€åŠè§’æ–‡å­—å…¥ã‚Šä¹±ã‚Œã‚‹ä¸­ã‹ã‚‰æŒ‡å®šã®åŠè§’æ–‡å­—æ•°ã§ã®æ–‡å­—æ•°ã‚’å¾—ã‚‹
 		inline int GetStringPoint2(const TCHAR *String, int Point )DXLIBEX_NOEXCEPT{ return DxLib::GetStringPoint2( String, Point ); }
-		//! ‘SŠp•¶šA”¼Šp•¶š“ü‚è—‚ê‚é’†‚©‚ç•¶š”‚ğæ“¾‚·‚é
+		//! å…¨è§’æ–‡å­—ã€åŠè§’æ–‡å­—å…¥ã‚Šä¹±ã‚Œã‚‹ä¸­ã‹ã‚‰æ–‡å­—æ•°ã‚’å–å¾—ã™ã‚‹
 		inline int GetStringLength(const TCHAR *String )DXLIBEX_NOEXCEPT{ return DxLib::GetStringLength( String ); }
 
 #ifndef DX_NON_FONT
-		//! •`‰æ‰Â”\—Ìˆæ‚Éû‚Ü‚é‚æ‚¤‚É‰üs‚µ‚È‚ª‚ç•¶š—ñ‚ğ•`‰æ
+		//! æç”»å¯èƒ½é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†ã«æ”¹è¡Œã—ãªãŒã‚‰æ–‡å­—åˆ—ã‚’æç”»
 		inline int DrawObtainsString(int x, int y, int AddY, const TCHAR *String, unsigned int StrColor, unsigned int StrEdgeColor = 0 , int FontHandle = -1 , unsigned int SelectBackColor = 0xffffffff , unsigned int SelectStrColor = 0 , unsigned int SelectStrEdgeColor = 0xffffffff , int SelectStart = -1 , int SelectEnd = -1 )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsString(x, y, AddY, String, StrColor, StrEdgeColor, FontHandle , SelectBackColor, SelectStrColor, SelectStrEdgeColor, SelectStart, SelectEnd); }
-		//! •`‰æ‰Â”\—Ìˆæ‚Éû‚Ü‚é‚æ‚¤‚É‰üs‚µ‚È‚ª‚ç•¶š—ñ‚ğ•`‰æ( ƒNƒŠƒbƒv‚ª•¶š’PˆÊ )
+		//! æç”»å¯èƒ½é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†ã«æ”¹è¡Œã—ãªãŒã‚‰æ–‡å­—åˆ—ã‚’æç”»( ã‚¯ãƒªãƒƒãƒ—ãŒæ–‡å­—å˜ä½ )
 		inline int DrawObtainsString_CharClip(int x, int y, int AddY, const TCHAR *String, unsigned int StrColor, unsigned int StrEdgeColor = 0 , int FontHandle = -1 , unsigned int SelectBackColor = 0xffffffff , unsigned int SelectStrColor = 0 , unsigned int SelectStrEdgeColor = 0xffffffff , int SelectStart = -1 , int SelectEnd = -1 )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsString_CharClip(x, y, AddY, String, StrColor, StrEdgeColor, FontHandle, SelectBackColor, SelectStrColor, SelectStrEdgeColor, SelectStart, SelectEnd); }
 #endif // DX_NON_FONT
-		//! •`‰æ‰Â”\—Ìˆæ‚Éû‚Ü‚é‚æ‚¤‚É•â³‚ğ‰Á‚¦‚È‚ª‚ç‹éŒ`‚ğ•`‰æ
+		//! æç”»å¯èƒ½é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†ã«è£œæ­£ã‚’åŠ ãˆãªãŒã‚‰çŸ©å½¢ã‚’æç”»
 		inline int DrawObtainsBox(int x1, int y1, int x2, int y2, int AddY, unsigned int Color, int FillFlag )DXLIBEX_NOEXCEPT{ return DxLib::DrawObtainsBox(x1, y1, x2, y2, AddY, Color, FillFlag); }
 
 #ifndef DX_NON_KEYEX
 
-		//! •¶š—ñ‚Ì“ü—Íæ“¾
+		//! æ–‡å­—åˆ—ã®å…¥åŠ›å–å¾—
 		inline int InputStringToCustom(int x, int y, int BufLength, TCHAR *StrBuffer, int CancelValidFlag, int SingleCharOnlyFlag, int NumCharOnlyFlag, int DoubleCharOnlyFlag = FALSE )DXLIBEX_NOEXCEPT{ return DxLib::InputStringToCustom(x, y, BufLength, StrBuffer, CancelValidFlag, SingleCharOnlyFlag, NumCharOnlyFlag, DoubleCharOnlyFlag); }
 
-		//! •¶š—ñ‚Ì“ü—Íæ“¾
+		//! æ–‡å­—åˆ—ã®å…¥åŠ›å–å¾—
 		inline int KeyInputString(int x, int y, int CharMaxLength, TCHAR *StrBuffer, int CancelValidFlag )DXLIBEX_NOEXCEPT{ return DxLib::KeyInputString(x, y, CharMaxLength, StrBuffer, CancelValidFlag ); }
-		//! ”¼Šp•¶š—ñ‚Ì‚İ‚Ì“ü—Íæ“¾
+		//! åŠè§’æ–‡å­—åˆ—ã®ã¿ã®å…¥åŠ›å–å¾—
 		inline int KeyInputSingleCharString(int x, int y, int CharMaxLength, TCHAR *StrBuffer, int CancelValidFlag )DXLIBEX_NOEXCEPT{ return DxLib::KeyInputSingleCharString(x, y, CharMaxLength, StrBuffer, CancelValidFlag ); }
-		//! ”’l‚Ì“ü—Íæ“¾
+		//! æ•°å€¤ã®å…¥åŠ›å–å¾—
 		inline int KeyInputNumber(int x, int y, int MaxNum, int MinNum, int CancelValidFlag )DXLIBEX_NOEXCEPT{ return DxLib::KeyInputNumber(x, y, MaxNum, MinNum, CancelValidFlag); }
 
-		//! IME‚Ì“ü—Íƒ‚[ƒh•¶š—ñ‚ğæ“¾‚·‚é
+		//! IMEã®å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰æ–‡å­—åˆ—ã‚’å–å¾—ã™ã‚‹
 		inline int GetIMEInputModeStr(TCHAR *GetBuffer )DXLIBEX_NOEXCEPT{ return DxLib::GetIMEInputModeStr(GetBuffer); }
-		//! IME‚Å“ü—Í’†‚Ì•¶š—ñ‚Ìî•ñ‚ğæ“¾‚·‚é
+		//! IMEã§å…¥åŠ›ä¸­ã®æ–‡å­—åˆ—ã®æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 		inline const IMEINPUTDATA* GetIMEInputData(	void )DXLIBEX_NOEXCEPT{ return DxLib::GetIMEInputData(); }
 #if defined( DX_GCC_COMPILE ) || defined( __ANDROID )
-		//! ( SetKeyInputStringColor2 ‚Ì‹ŒŠÖ” )InputStringŠÖ”g—p‚Ì•¶š‚ÌŠeF‚ğ•ÏX‚·‚é
+		//! ( SetKeyInputStringColor2 ã®æ—§é–¢æ•° )InputStringé–¢æ•°ä½¿ç”¨æ™‚ã®æ–‡å­—ã®å„è‰²ã‚’å¤‰æ›´ã™ã‚‹
 		inline int SetKeyInputStringColor(ULONGLONG NmlStr, ULONGLONG NmlCur, ULONGLONG IMEStrBack, ULONGLONG IMECur, ULONGLONG IMELine, ULONGLONG IMESelectStr, ULONGLONG IMEModeStr , ULONGLONG NmlStrE = 0 , ULONGLONG IMESelectStrE = 0 , ULONGLONG IMEModeStrE = 0 , ULONGLONG IMESelectWinE = 0xffffffffffffffffULL ,	ULONGLONG IMESelectWinF = 0xffffffffffffffffULL , ULONGLONG SelectStrBackColor = 0xffffffffffffffffULL , ULONGLONG SelectStrColor = 0xffffffffffffffffULL , ULONGLONG SelectStrEdgeColor = 0xffffffffffffffffULL, ULONGLONG IMEStr = 0xffffffffffffffffULL, ULONGLONG IMEStrE = 0xffffffffffffffffULL  )DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputStringColor(NmlStr, NmlCur, IMEStrBack, IMECur, IMELine, IMESelectStr, IMEModeStr, NmlStrE, IMESelectStrE, IMEModeStrE, IMESelectWinE, IMESelectWinF, SelectStrBackColor, SelectStrColor, SelectStrEdgeColor, IMEStr, IMEStrE); }
 #else // defined( DX_GCC_COMPILE ) || defined( __ANDROID )
-		//! ( SetKeyInputStringColor2 ‚Ì‹ŒŠÖ” )InputStringŠÖ”g—p‚Ì•¶š‚ÌŠeF‚ğ•ÏX‚·‚é 
+		//! ( SetKeyInputStringColor2 ã®æ—§é–¢æ•° )InputStringé–¢æ•°ä½¿ç”¨æ™‚ã®æ–‡å­—ã®å„è‰²ã‚’å¤‰æ›´ã™ã‚‹ 
 		inline int SetKeyInputStringColor(ULONGLONG NmlStr, ULONGLONG NmlCur, ULONGLONG IMEStrBack, ULONGLONG IMECur, ULONGLONG IMELine, ULONGLONG IMESelectStr, ULONGLONG IMEModeStr , ULONGLONG NmlStrE = 0 , ULONGLONG IMESelectStrE = 0 , ULONGLONG IMEModeStrE = 0 , ULONGLONG IMESelectWinE = 0xffffffffffffffff ,	ULONGLONG IMESelectWinF = 0xffffffffffffffff , ULONGLONG SelectStrBackColor = 0xffffffffffffffff , ULONGLONG SelectStrColor = 0xffffffffffffffff , ULONGLONG SelectStrEdgeColor = 0xffffffffffffffff, ULONGLONG IMEStr = 0xffffffffffffffff, ULONGLONG IMEStrE = 0xffffffffffffffff )DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputStringColor(NmlStr, NmlCur, IMEStrBack, IMECur, IMELine, IMESelectStr, IMEModeStr, NmlStrE, IMESelectStrE, IMEModeStrE, IMESelectWinE, IMESelectWinF, SelectStrBackColor, SelectStrColor, SelectStrEdgeColor, IMEStr, IMEStrE); }
 #endif // defined( DX_GCC_COMPILE ) || defined( __ANDROID )
-		//! InputStringŠÖ”g—p‚Ì•¶š‚ÌŠeF‚ğ•ÏX‚·‚é
-		//!@param[in] TargetColor DX_KEYINPSTRCOLOR_NORMAL_STR “™
+		//! InputStringé–¢æ•°ä½¿ç”¨æ™‚ã®æ–‡å­—ã®å„è‰²ã‚’å¤‰æ›´ã™ã‚‹
+		//!@param[in] TargetColor DX_KEYINPSTRCOLOR_NORMAL_STR ç­‰
 		inline int SetKeyInputStringColor2(int TargetColor, unsigned int Color )DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputStringColor2(TargetColor, Color ); }
-		//! SetKeyInputStringColor2 ‚Åİ’è‚µ‚½F‚ğƒfƒtƒHƒ‹ƒg‚É–ß‚·
-		//!@param[in] TargetColor DX_KEYINPSTRCOLOR_NORMAL_STR “™
+		//! SetKeyInputStringColor2 ã§è¨­å®šã—ãŸè‰²ã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã«æˆ»ã™
+		//!@param[in] TargetColor DX_KEYINPSTRCOLOR_NORMAL_STR ç­‰
 		inline int ResetKeyInputStringColor2(int TargetColor )DXLIBEX_NOEXCEPT{ return DxLib::ResetKeyInputStringColor2( TargetColor ); }
-		//! ƒL[“ü—Í•¶š—ñ•`‰æŠÖ˜A‚Åg—p‚·‚éƒtƒHƒ“ƒg‚Ìƒnƒ“ƒhƒ‹‚ğ•ÏX‚·‚é(-1‚ÅƒfƒtƒHƒ‹ƒg‚ÌƒtƒHƒ“ƒgƒnƒ“ƒhƒ‹)
+		//! ã‚­ãƒ¼å…¥åŠ›æ–‡å­—åˆ—æç”»é–¢é€£ã§ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®ãƒãƒ³ãƒ‰ãƒ«ã‚’å¤‰æ›´ã™ã‚‹(-1ã§ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆãƒãƒ³ãƒ‰ãƒ«)
 		inline int SetKeyInputStringFont(int FontHandle )DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputStringFont( FontHandle ); }
-		//! ƒL[“ü—Í•¶š—ñˆ—‚Ì“ü—Í•¶š”‚ªŒÀŠE‚É’B‚µ‚Ä‚¢‚éó‘Ô‚ÅA•¶š—ñ‚Ì––’[•”•ª‚Å“ü—Í‚ªs‚í‚ê‚½ê‡‚Ìˆ—ƒ‚[ƒh‚ğ•ÏX‚·‚é
-		//!@param[in] EndCharaMode DX_KEYINPSTR_ENDCHARAMODE_OVERWRITE “™
+		//! ã‚­ãƒ¼å…¥åŠ›æ–‡å­—åˆ—å‡¦ç†ã®å…¥åŠ›æ–‡å­—æ•°ãŒé™ç•Œã«é”ã—ã¦ã„ã‚‹çŠ¶æ…‹ã§ã€æ–‡å­—åˆ—ã®æœ«ç«¯éƒ¨åˆ†ã§å…¥åŠ›ãŒè¡Œã‚ã‚ŒãŸå ´åˆã®å‡¦ç†ãƒ¢ãƒ¼ãƒ‰ã‚’å¤‰æ›´ã™ã‚‹
+		//!@param[in] EndCharaMode DX_KEYINPSTR_ENDCHARAMODE_OVERWRITE ç­‰
 		inline int SetKeyInputStringEndCharaMode(int EndCharaMode )DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputStringEndCharaMode( EndCharaMode ); }
-		//! “ü—Íƒ‚[ƒh•¶š—ñ‚ğ•`‰æ‚·‚é
+		//! å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰æ–‡å­—åˆ—ã‚’æç”»ã™ã‚‹
 		inline int DrawKeyInputModeString(int x, int y )DXLIBEX_NOEXCEPT{ return DxLib::DrawKeyInputModeString(x, y); }
 
-		//! ƒL[“ü—Íƒf[ƒ^‰Šú‰»
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒ‡ãƒ¼ã‚¿åˆæœŸåŒ–
 		inline int InitKeyInput(void)DXLIBEX_NOEXCEPT{ return DxLib::InitKeyInput(); }
-		//! V‚µ‚¢ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ìì¬
+		//! æ–°ã—ã„ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®ä½œæˆ
 		inline int MakeKeyInput(int MaxStrLength, int CancelValidFlag, int SingleCharOnlyFlag, int NumCharOnlyFlag, int DoubleCharOnlyFlag = FALSE )DXLIBEX_NOEXCEPT{ return DxLib::MakeKeyInput(MaxStrLength, CancelValidFlag, SingleCharOnlyFlag, NumCharOnlyFlag, DoubleCharOnlyFlag); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ìíœ
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®å‰Šé™¤
 		inline int DeleteKeyInput(int InputHandle )DXLIBEX_NOEXCEPT{ return DxLib::DeleteKeyInput(InputHandle ); }
-		//! w’è‚ÌƒL[“ü—Íƒnƒ“ƒhƒ‹‚ğƒAƒNƒeƒBƒu‚É‚·‚é( -1 ‚ğw’è‚·‚é‚ÆƒAƒNƒeƒBƒu‚ÈƒL[“ü—Íƒnƒ“ƒhƒ‹‚ª–³‚¢ó‘Ô‚É‚È‚è‚Ü‚· )
+		//! æŒ‡å®šã®ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹( -1 ã‚’æŒ‡å®šã™ã‚‹ã¨ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ãŒç„¡ã„çŠ¶æ…‹ã«ãªã‚Šã¾ã™ )
 		inline int SetActiveKeyInput(int InputHandle )DXLIBEX_NOEXCEPT{ return DxLib::SetActiveKeyInput(InputHandle ); }
-		//! Œ»İƒAƒNƒeƒBƒu‚É‚È‚Á‚Ä‚¢‚éƒL[“ü—Íƒnƒ“ƒhƒ‹‚ğæ“¾‚·‚é
+		//! ç¾åœ¨ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã£ã¦ã„ã‚‹ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—ã™ã‚‹
 		inline int GetActiveKeyInput(void )DXLIBEX_NOEXCEPT{ return DxLib::GetActiveKeyInput(); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì“ü—Í‚ªI—¹‚µ‚Ä‚¢‚é‚©æ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®å…¥åŠ›ãŒçµ‚äº†ã—ã¦ã„ã‚‹ã‹å–å¾—ã™ã‚‹
 		inline int CheckKeyInput(int InputHandle )DXLIBEX_NOEXCEPT{ return DxLib::CheckKeyInput(InputHandle ); }
-		//! “ü—Í‚ªŠ®—¹‚µ‚½ƒL[“ü—Íƒnƒ“ƒhƒ‹‚ğÄ“x•ÒWó‘Ô‚É–ß‚·
+		//! å…¥åŠ›ãŒå®Œäº†ã—ãŸã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã‚’å†åº¦ç·¨é›†çŠ¶æ…‹ã«æˆ»ã™
 		inline int ReStartKeyInput(int InputHandle )DXLIBEX_NOEXCEPT{ return DxLib::ReStartKeyInput(InputHandle ); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹ˆ—ŠÖ”
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«å‡¦ç†é–¢æ•°
 		inline int ProcessActKeyInput(void )DXLIBEX_NOEXCEPT{ return DxLib::ProcessActKeyInput(); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì“ü—Í’†î•ñ‚Ì•`‰æ
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®å…¥åŠ›ä¸­æƒ…å ±ã®æç”»
 		inline int DrawKeyInputString(int x, int y, int InputHandle )DXLIBEX_NOEXCEPT{ return DxLib::DrawKeyInputString(x, y, InputHandle); }
 
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ìw’è‚Ì—Ìˆæ‚ğ‘I‘ğó‘Ô‚É‚·‚é( SelectStart ‚Æ SelectEnd ‚É -1 ‚ğw’è‚·‚é‚Æ‘I‘ğó‘Ô‚ª‰ğœ‚³‚ê‚Ü‚· )
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®æŒ‡å®šã®é ˜åŸŸã‚’é¸æŠçŠ¶æ…‹ã«ã™ã‚‹( SelectStart ã¨ SelectEnd ã« -1 ã‚’æŒ‡å®šã™ã‚‹ã¨é¸æŠçŠ¶æ…‹ãŒè§£é™¤ã•ã‚Œã¾ã™ )
 		inline int SetKeyInputSelectArea(int  SelectStart, int  SelectEnd, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputSelectArea(SelectStart, SelectEnd, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì‘I‘ğ—Ìˆæ‚ğæ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®é¸æŠé ˜åŸŸã‚’å–å¾—ã™ã‚‹
 		inline int GetKeyInputSelectArea(int *SelectStart, int *SelectEnd, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetKeyInputSelectArea(SelectStart, SelectEnd, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì•`‰æŠJn•¶šˆÊ’u‚ğİ’è‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®æç”»é–‹å§‹æ–‡å­—ä½ç½®ã‚’è¨­å®šã™ã‚‹
 		inline int SetKeyInputDrawStartPos(int DrawStartPos, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputDrawStartPos(DrawStartPos, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì•`‰æŠJn•¶šˆÊ’u‚ğæ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®æç”»é–‹å§‹æ–‡å­—ä½ç½®ã‚’å–å¾—ã™ã‚‹
 		inline int GetKeyInputDrawStartPos(int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetKeyInputDrawStartPos(InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚ÌƒL[“ü—Í‚ÌƒJ[ƒ\ƒ‹‚Ì“_–Å‚·‚é‘‚³‚ğƒZƒbƒg‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®ã‚­ãƒ¼å…¥åŠ›æ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«ã®ç‚¹æ»…ã™ã‚‹æ—©ã•ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetKeyInputCursorBrinkTime(int Time)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputCursorBrinkTime(Time); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚ÌƒL[“ü—Í‚ÌƒJ[ƒ\ƒ‹‚ğ“_–Å‚³‚¹‚é‚©‚Ç‚¤‚©‚ğƒZƒbƒg‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®ã‚­ãƒ¼å…¥åŠ›æ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«ã‚’ç‚¹æ»…ã•ã›ã‚‹ã‹ã©ã†ã‹ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetKeyInputCursorBrinkFlag(int Flag)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputCursorBrinkFlag(Flag); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Éw’è‚Ì•¶š—ñ‚ğƒZƒbƒg‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã«æŒ‡å®šã®æ–‡å­—åˆ—ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetKeyInputString(const TCHAR *String, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputString(String, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Éw’è‚Ì”’l‚ğ•¶š‚É’u‚«Š·‚¦‚ÄƒZƒbƒg‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã«æŒ‡å®šã®æ•°å€¤ã‚’æ–‡å­—ã«ç½®ãæ›ãˆã¦ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetKeyInputNumber(int Number, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputNumber(Number, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Éw’è‚Ì•‚“®¬”“_’l‚ğ•¶š‚É’u‚«Š·‚¦‚ÄƒZƒbƒg‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã«æŒ‡å®šã®æµ®å‹•å°æ•°ç‚¹å€¤ã‚’æ–‡å­—ã«ç½®ãæ›ãˆã¦ã‚»ãƒƒãƒˆã™ã‚‹
 		inline int SetKeyInputNumberToFloat(float Number, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputNumberToFloat(Number, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì“ü—Í’†‚Ì•¶š—ñ‚ğæ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®å…¥åŠ›ä¸­ã®æ–‡å­—åˆ—ã‚’å–å¾—ã™ã‚‹
 		inline int GetKeyInputString(TCHAR *StrBuffer, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetKeyInputString(StrBuffer, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì“ü—Í’†‚Ì•¶š—ñ‚ğ®”’l‚Æ‚µ‚Äæ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®å…¥åŠ›ä¸­ã®æ–‡å­—åˆ—ã‚’æ•´æ•°å€¤ã¨ã—ã¦å–å¾—ã™ã‚‹
 		inline int GetKeyInputNumber(int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetKeyInputNumber(InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚Ì“ü—Í’†‚Ì•¶š—ñ‚ğ•‚“®¬”“_’l‚Æ‚µ‚Äæ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®å…¥åŠ›ä¸­ã®æ–‡å­—åˆ—ã‚’æµ®å‹•å°æ•°ç‚¹å€¤ã¨ã—ã¦å–å¾—ã™ã‚‹
 		inline float GetKeyInputNumberToFloat(int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetKeyInputNumberToFloat(InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚ÌŒ»İ‚ÌƒJ[ƒ\ƒ‹ˆÊ’u‚ğİ’è‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®ç¾åœ¨ã®ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’è¨­å®šã™ã‚‹
 		inline int SetKeyInputCursorPosition(int Position, int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::SetKeyInputCursorPosition(Position, InputHandle); }
-		//! ƒL[“ü—Íƒnƒ“ƒhƒ‹‚ÌŒ»İ‚ÌƒJ[ƒ\ƒ‹ˆÊ’u‚ğæ“¾‚·‚é
+		//! ã‚­ãƒ¼å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ«ã®ç¾åœ¨ã®ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’å–å¾—ã™ã‚‹
 		inline int GetKeyInputCursorPosition(int InputHandle)DXLIBEX_NOEXCEPT{ return DxLib::GetKeyInputCursorPosition(InputHandle); }
 
 #endif // DX_NON_KEYEX
 	}
 
 
-	//----------ƒtƒ@ƒCƒ‹‘€ì----------//
+	//----------ãƒ•ã‚¡ã‚¤ãƒ«æ“ä½œ----------//
 
-	//!ƒtƒ@ƒCƒ‹‘€ì
+	//!ãƒ•ã‚¡ã‚¤ãƒ«æ“ä½œ
 	namespace DxFile
 	{
-		// ƒtƒ@ƒCƒ‹ƒAƒNƒZƒXŠÖ”
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚¢ã‚¯ã‚»ã‚¹é–¢æ•°
 
-		//! ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		inline int FileRead_open(const TCHAR *FilePath, int ASync = FALSE)DXLIBEX_NOEXCEPT{ return DxLib::FileRead_open(FilePath, ASync); }
-		//! ƒtƒ@ƒCƒ‹‚ÌƒTƒCƒY‚ğæ“¾‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹
 		inline LONGLONG FileRead_size(const TCHAR *FilePath)DXLIBEX_NOEXCEPT{ return DxLib::FileRead_size(FilePath); }
-		//! ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 		inline int FileRead_close(int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_close(FileHandle); }
-		//! ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚Ì“Ç‚İ‚İˆÊ’u‚ğæ“¾‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã®èª­ã¿è¾¼ã¿ä½ç½®ã‚’å–å¾—ã™ã‚‹
 		inline LONGLONG FileRead_tell(int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_tell(FileHandle); }
-		//! ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚Ì“Ç‚İ‚İˆÊ’u‚ğ•ÏX‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã®èª­ã¿è¾¼ã¿ä½ç½®ã‚’å¤‰æ›´ã™ã‚‹
 		inline int FileRead_seek(int FileHandle, LONGLONG Offset, int Origin )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_seek(FileHandle , Offset , Origin); }
-		//! ƒtƒ@ƒCƒ‹‚©‚çƒf[ƒ^‚ğ“Ç‚İ‚Ş
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 		inline int FileRead_read(void *Buffer, int ReadSize, int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_read(Buffer, ReadSize, FileHandle ); }
-		//! ƒtƒ@ƒCƒ‹“Ç‚İ‚İ‚ªŠ®—¹‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿ãŒå®Œäº†ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 		inline int FileRead_idle_chk(int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_idle_chk(FileHandle); }
-		//! ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İˆÊ’u‚ªI’[‚É’B‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ä½ç½®ãŒçµ‚ç«¯ã«é”ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 		inline int FileRead_eof(int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_eof(FileHandle); }
-		//! ƒtƒ@ƒCƒ‹‚©‚ç•¶š—ñ‚ğ“Ç‚İo‚·
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰æ–‡å­—åˆ—ã‚’èª­ã¿å‡ºã™
 		inline int FileRead_gets(TCHAR *Buffer , int BufferSize , int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_gets(Buffer, BufferSize, FileHandle ); }
-		//! ƒtƒ@ƒCƒ‹‚©‚çˆê•¶š“Ç‚İo‚·
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ä¸€æ–‡å­—èª­ã¿å‡ºã™
 		inline TCHAR FileRead_getc(int FileHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_getc( FileHandle ); }
-		//! ƒtƒ@ƒCƒ‹‚©‚ç‘®‰»‚³‚ê‚½ƒf[ƒ^‚ğ“Ç‚İo‚·
+		//! ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰æ›¸å¼åŒ–ã•ã‚ŒãŸãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å‡ºã™
 		template<typename... Args> inline int FileRead_scanf(int FileHandle, const TCHAR *Format, Args&&... args)DXLIBEX_NOEXCEPT{ return DxLib::FileRead_scanf(FileHandle, Format, std::forward<Args>(args)...); }
 
 #if 0
-		static_assert(false, "‚±‚±‚Ü‚Å");
-		//! ƒtƒ@ƒCƒ‹î•ñƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( –ß‚è’l  -1:ƒGƒ‰[  -1ˆÈŠO:ƒtƒ@ƒCƒ‹î•ñƒnƒ“ƒhƒ‹ )
+		static_assert(false, "ã“ã“ã¾ã§");
+		//! ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( æˆ»ã‚Šå€¤  -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ãƒãƒ³ãƒ‰ãƒ« )
 		inline DWORD_PTR FileRead_createInfo(		const TCHAR *ObjectPath )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_createInfo(		const TCHAR *ObjectPath ); }
-		//! ƒtƒ@ƒCƒ‹î•ñƒnƒ“ƒhƒ‹’†‚Ìƒtƒ@ƒCƒ‹‚Ì”‚ğæ“¾‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ãƒãƒ³ãƒ‰ãƒ«ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®æ•°ã‚’å–å¾—ã™ã‚‹
 		inline int FileRead_getInfoNum(		DWORD_PTR FileInfoHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_getInfoNum(		DWORD_PTR FileInfoHandle ); }
-		//! ƒtƒ@ƒCƒ‹î•ñƒnƒ“ƒhƒ‹’†‚Ìƒtƒ@ƒCƒ‹‚Ìî•ñ‚ğæ“¾‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ãƒãƒ³ãƒ‰ãƒ«ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 		inline int FileRead_getInfo(			int Index , FILEINFO *Buffer , DWORD_PTR FileInfoHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_getInfo(			int Index , FILEINFO *Buffer , DWORD_PTR FileInfoHandle ); }
-		//! ƒtƒ@ƒCƒ‹î•ñƒnƒ“ƒhƒ‹‚ğíœ‚·‚é
+		//! ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ãƒãƒ³ãƒ‰ãƒ«ã‚’å‰Šé™¤ã™ã‚‹
 		inline int FileRead_deleteInfo(		DWORD_PTR FileInfoHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_deleteInfo(		DWORD_PTR FileInfoHandle ); }
 
-		//! w’è‚Ìƒtƒ@ƒCƒ‹–”‚ÍƒtƒHƒ‹ƒ_‚Ìî•ñ‚ğæ“¾‚µAƒtƒ@ƒCƒ‹ŒŸõƒnƒ“ƒhƒ‹‚àì¬‚·‚é( –ß‚è’l: -1=ƒGƒ‰[  -1ˆÈŠO=ƒtƒ@ƒCƒ‹ŒŸõƒnƒ“ƒhƒ‹ )
+		//! æŒ‡å®šã®ãƒ•ã‚¡ã‚¤ãƒ«åˆã¯ãƒ•ã‚©ãƒ«ãƒ€ã®æƒ…å ±ã‚’å–å¾—ã—ã€ãƒ•ã‚¡ã‚¤ãƒ«æ¤œç´¢ãƒãƒ³ãƒ‰ãƒ«ã‚‚ä½œæˆã™ã‚‹( æˆ»ã‚Šå€¤: -1=ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–=ãƒ•ã‚¡ã‚¤ãƒ«æ¤œç´¢ãƒãƒ³ãƒ‰ãƒ« )
 		inline DWORD_PTR FileRead_findFirst(			const TCHAR *FilePath, FILEINFO *Buffer )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_findFirst(			const TCHAR *FilePath, FILEINFO *Buffer ); }
-		//! ğŒ‚Ì‡’v‚·‚éŸ‚Ìƒtƒ@ƒCƒ‹‚Ìî•ñ‚ğæ“¾‚·‚é( –ß‚è’l: -1=ƒGƒ‰[  0=¬Œ÷ )
+		//! æ¡ä»¶ã®åˆè‡´ã™ã‚‹æ¬¡ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®æƒ…å ±ã‚’å–å¾—ã™ã‚‹( æˆ»ã‚Šå€¤: -1=ã‚¨ãƒ©ãƒ¼  0=æˆåŠŸ )
 		inline int FileRead_findNext(			DWORD_PTR FindHandle, FILEINFO *Buffer )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_findNext(			DWORD_PTR FindHandle, FILEINFO *Buffer ); }
-		//! ƒtƒ@ƒCƒ‹ŒŸõƒnƒ“ƒhƒ‹‚ğ•Â‚¶‚é( –ß‚è’l: -1=ƒGƒ‰[  0=¬Œ÷ )
+		//! ãƒ•ã‚¡ã‚¤ãƒ«æ¤œç´¢ãƒãƒ³ãƒ‰ãƒ«ã‚’é–‰ã˜ã‚‹( æˆ»ã‚Šå€¤: -1=ã‚¨ãƒ©ãƒ¼  0=æˆåŠŸ )
 		inline int FileRead_findClose(			DWORD_PTR FindHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_findClose(			DWORD_PTR FindHandle ); }
 
-		//! w’è‚Ìƒtƒ@ƒCƒ‹‚Ì“à—e‚ğ‘S‚Äƒƒ‚ƒŠ‚É“Ç‚İ‚İA‚»‚Ìî•ñ‚ÌƒAƒNƒZƒX‚É•K—v‚Èƒnƒ“ƒhƒ‹‚ğ•Ô‚·( –ß‚è’l  -1:ƒGƒ‰[  -1ˆÈŠO:ƒnƒ“ƒhƒ‹ )Ag‚¢I‚í‚Á‚½‚çƒnƒ“ƒhƒ‹‚Í FileRead_fullyLoad_delete ‚Åíœ‚·‚é•K—v‚ª‚ ‚è‚Ü‚·
+		//! æŒ‡å®šã®ãƒ•ã‚¡ã‚¤ãƒ«ã®å†…å®¹ã‚’å…¨ã¦ãƒ¡ãƒ¢ãƒªã«èª­ã¿è¾¼ã¿ã€ãã®æƒ…å ±ã®ã‚¢ã‚¯ã‚»ã‚¹ã«å¿…è¦ãªãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™( æˆ»ã‚Šå€¤  -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ãƒãƒ³ãƒ‰ãƒ« )ã€ä½¿ã„çµ‚ã‚ã£ãŸã‚‰ãƒãƒ³ãƒ‰ãƒ«ã¯ FileRead_fullyLoad_delete ã§å‰Šé™¤ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™
 		inline int FileRead_fullyLoad(			const TCHAR *FilePath )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_fullyLoad(			const TCHAR *FilePath ); }
-		//! FileRead_fullyLoad ‚Å“Ç‚İ‚ñ‚¾ƒtƒ@ƒCƒ‹‚Ìƒnƒ“ƒhƒ‹‚ğíœ‚·‚é
+		//! FileRead_fullyLoad ã§èª­ã¿è¾¼ã‚“ã ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’å‰Šé™¤ã™ã‚‹
 		inline int FileRead_fullyLoad_delete(	int FLoadHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_fullyLoad_delete(	int FLoadHandle ); }
-		//! FileRead_fullyLoad ‚Å“Ç‚İ‚ñ‚¾ƒtƒ@ƒCƒ‹‚Ì“à—e‚ğŠi”[‚µ‚½ƒƒ‚ƒŠƒAƒhƒŒƒX‚ğæ“¾‚·‚é
+		//! FileRead_fullyLoad ã§èª­ã¿è¾¼ã‚“ã ãƒ•ã‚¡ã‚¤ãƒ«ã®å†…å®¹ã‚’æ ¼ç´ã—ãŸãƒ¡ãƒ¢ãƒªã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—ã™ã‚‹
 		inline const void* FileRead_fullyLoad_getImage( int FLoadHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_fullyLoad_getImage( int FLoadHandle ); }
-		//! FileRead_fullyLoad ‚Å“Ç‚İ‚ñ‚¾ƒtƒ@ƒCƒ‹‚ÌƒTƒCƒY‚ğæ“¾‚·‚é
+		//! FileRead_fullyLoad ã§èª­ã¿è¾¼ã‚“ã ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹
 		inline LONGLONG FileRead_fullyLoad_getSize(	int FLoadHandle )DXLIBEX_NOEXCEPT{ return DxLib::FileRead_fullyLoad_getSize(	int FLoadHandle ); }
 
-		// İ’èŠÖŒWŠÖ”
+		// è¨­å®šé–¢ä¿‚é–¢æ•°
 
-		//! ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚ÅƒXƒgƒŠ[ƒ€ƒf[ƒ^ƒAƒNƒZƒX‚Ég—p‚·‚éŠÖ”‚ªƒfƒtƒHƒ‹ƒg‚Ì‚à‚Ì‚©’²‚×‚é( TRUE:ƒfƒtƒHƒ‹ƒg‚Ì‚à‚Ì  FALSE:ƒfƒtƒHƒ‹ƒg‚Å‚Í‚È‚¢ )
+		//! ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã«ä½¿ç”¨ã™ã‚‹é–¢æ•°ãŒãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚‚ã®ã‹èª¿ã¹ã‚‹( TRUE:ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚‚ã®  FALSE:ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ãªã„ )
 		inline int GetStreamFunctionDefault(	void )DXLIBEX_NOEXCEPT{ return DxLib::GetStreamFunctionDefault(	void ); }
-		//! ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚ÅƒXƒgƒŠ[ƒ€ƒf[ƒ^ƒAƒNƒZƒX‚Ég—p‚·‚éŠÖ”‚ğ•ÏX‚·‚é
+		//! ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã«ä½¿ç”¨ã™ã‚‹é–¢æ•°ã‚’å¤‰æ›´ã™ã‚‹
 		inline int ChangeStreamFunction(		const STREAMDATASHREDTYPE2  *StreamThread  )DXLIBEX_NOEXCEPT{ return DxLib::ChangeStreamFunction(		const STREAMDATASHREDTYPE2  *StreamThread  ); }
-		//! ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚ÅƒXƒgƒŠ[ƒ€ƒf[ƒ^ƒAƒNƒZƒX‚Ég—p‚·‚éŠÖ”‚ğ•ÏX‚·‚é( wchar_t g—p”Å )
+		//! ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã«ä½¿ç”¨ã™ã‚‹é–¢æ•°ã‚’å¤‰æ›´ã™ã‚‹( wchar_t ä½¿ç”¨ç‰ˆ )
 		inline int ChangeStreamFunctionW(		const STREAMDATASHREDTYPE2W *StreamThreadW )DXLIBEX_NOEXCEPT{ return DxLib::ChangeStreamFunctionW(		const STREAMDATASHREDTYPE2W *StreamThreadW ); }
 
-		// •â•ŠÖŒWŠÖ”
+		// è£œåŠ©é–¢ä¿‚é–¢æ•°
 
-		//! ƒtƒ‹ƒpƒX‚Å‚Í‚È‚¢ƒpƒX•¶š—ñ‚ğƒtƒ‹ƒpƒX‚É•ÏŠ·‚·‚é( CurrentDir ‚Íƒtƒ‹ƒpƒX‚Å‚ ‚é•K—v‚ª‚ ‚é(Œê”ö‚Éw\x‚ª‚ ‚Á‚Ä‚à–³‚­‚Ä‚à—Ç‚¢) )( CurrentDir ‚ª NULL ‚Ìê‡‚ÍŒ»İ‚ÌƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğg—p‚·‚é )
+		//! ãƒ•ãƒ«ãƒ‘ã‚¹ã§ã¯ãªã„ãƒ‘ã‚¹æ–‡å­—åˆ—ã‚’ãƒ•ãƒ«ãƒ‘ã‚¹ã«å¤‰æ›ã™ã‚‹( CurrentDir ã¯ãƒ•ãƒ«ãƒ‘ã‚¹ã§ã‚ã‚‹å¿…è¦ãŒã‚ã‚‹(èªå°¾ã«ã€\ã€ãŒã‚ã£ã¦ã‚‚ç„¡ãã¦ã‚‚è‰¯ã„) )( CurrentDir ãŒ NULL ã®å ´åˆã¯ç¾åœ¨ã®ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½¿ç”¨ã™ã‚‹ )
 		inline int ConvertFullPath( const TCHAR *Src, TCHAR *Dest, const TCHAR *CurrentDir = NULL )DXLIBEX_NOEXCEPT{ return DxLib::ConvertFullPath( const TCHAR *Src, TCHAR *Dest, const TCHAR *CurrentDir = NULL ); }
 #endif
 	}
 
 
-	//----------ƒTƒEƒ“ƒhŠÖŒW----------//
+	//----------ã‚µã‚¦ãƒ³ãƒ‰é–¢ä¿‚----------//
 
-	//!ƒTƒEƒ“ƒhŠÖŒW
+	//!ã‚µã‚¦ãƒ³ãƒ‰é–¢ä¿‚
 	namespace Sound
 	{
-		//ƒI[ƒo[ƒwƒbƒh‚ª­‚È‚¢Ver
-		//‚½‚¾‚µƒRƒs[‚ª‚Å‚«‚È‚¢
+		//ã‚ªãƒ¼ãƒãƒ¼ãƒ˜ãƒƒãƒ‰ãŒå°‘ãªã„Ver
+		//ãŸã ã—ã‚³ãƒ”ãƒ¼ãŒã§ããªã„
 		class SoundEffect_Unique : public impl::Unique_Handle_Bace<SoundEffect_Unique>
 		{
 		public:
-			//!ƒTƒEƒ“ƒhƒnƒ“ƒhƒ‹‚ğíœ‚·‚é
+			//!ã‚µã‚¦ãƒ³ãƒ‰ãƒãƒ³ãƒ‰ãƒ«ã‚’å‰Šé™¤ã™ã‚‹
 			inline void Delete(bool LogOutFlag = false) {
 				DeleteSoundMem(GetHandle(), LogOutFlag);
 				//handle = -1;
 			}
-			//!‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ–³Œø‰»‚µA¡‚Ü‚Åg‚Á‚Ä‚¢‚½ƒnƒ“ƒhƒ‹‚ğ•Ô‚·
-			//!©“®íœ‚à–³Œø‰»‚³‚ê‚é
+			//!ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç„¡åŠ¹åŒ–ã—ã€ä»Šã¾ã§ä½¿ã£ã¦ã„ãŸãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
+			//!è‡ªå‹•å‰Šé™¤ã‚‚ç„¡åŠ¹åŒ–ã•ã‚Œã‚‹
 			inline int release(){ return ReleaseRun(); }
 
-			//----------staticŠÖ”----------//
+			//----------staticé–¢æ•°----------//
 
 			static SoundEffect_Unique LoadSoundMem(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1) {
 				return DxLib::LoadSoundMem(FileName, BufferNum, UnionHandle);
@@ -1391,12 +1391,12 @@ namespace dxle
 				: Unique_Handle_Bace()
 			{}
 
-			//Š—LŒ ‚Ì÷“n
+			//æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			SoundEffect_Unique(SoundEffect_Unique&& other)
 				: Unique_Handle_Bace(std::move(other))
 			{}
 
-			//Š—LŒ ‚Ì÷“n
+			//æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			SoundEffect_Unique& operator=(SoundEffect_Unique&& other)
 			{
 				Parent_T::operator=(std::move(other));
@@ -1404,7 +1404,7 @@ namespace dxle
 			}
 
 		private:
-			//ŠÔˆá‚¦‚Ä‘¼‚Ìí—Ş‚Ìƒnƒ“ƒhƒ‹‚ğ‚½‚È‚¢‚æ‚¤‚Éprivate‚É‚µ‚Ä‚¨‚­
+			//é–“é•ãˆã¦ä»–ã®ç¨®é¡ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’æŒãŸãªã„ã‚ˆã†ã«privateã«ã—ã¦ãŠã
 			SoundEffect_Unique(int param_handle)
 				: Unique_Handle_Bace(param_handle)
 			{}
@@ -1415,18 +1415,18 @@ namespace dxle
 			void Delete(bool LogOutFlag = false) {
 				p_handle->Delete(LogOutFlag);
 			}
-			//!‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ–³Œø‰»‚·‚é
-			//!ÅŒã‚ÌˆêŒÂ‚¾‚Á‚½ê‡ƒnƒ“ƒhƒ‹‚Í©“®“I‚Éíœ‚³‚ê‚é
+			//!ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç„¡åŠ¹åŒ–ã™ã‚‹
+			//!æœ€å¾Œã®ä¸€å€‹ã ã£ãŸå ´åˆãƒãƒ³ãƒ‰ãƒ«ã¯è‡ªå‹•çš„ã«å‰Šé™¤ã•ã‚Œã‚‹
 			void release_this() {
 				p_handle.reset();
 			}
-			//!‚±‚ÌƒIƒuƒWƒFƒNƒg‚¨‚æ‚Ñ“¯‚¶”h¶Œ³‚ÌƒIƒuƒWƒFƒNƒg‚ğ–³Œø‰»‚µA¡‚Ü‚Åg‚Á‚Ä‚¢‚½ƒnƒ“ƒhƒ‹‚ğ•Ô‚·
-			//!©“®íœ‚à–³Œø‰»‚³‚ê‚é
+			//!ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŠã‚ˆã³åŒã˜æ´¾ç”Ÿå…ƒã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç„¡åŠ¹åŒ–ã—ã€ä»Šã¾ã§ä½¿ã£ã¦ã„ãŸãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
+			//!è‡ªå‹•å‰Šé™¤ã‚‚ç„¡åŠ¹åŒ–ã•ã‚Œã‚‹
 			int release_all() {
 				return p_handle->release();
 			}
 
-			//----------staticŠÖ”----------//
+			//----------staticé–¢æ•°----------//
 
 			static SoundEffect LoadSoundMem(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1) {
 				return SoundEffect_Unique::LoadSoundMem(FileName, BufferNum, UnionHandle);
@@ -1453,9 +1453,9 @@ namespace dxle
 
 }
 
-//----------2DƒOƒ‰ƒtƒBƒbƒN----------//
+//----------2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯----------//
 #include "DxLibEx_Graph2D.h"
 
-//ŠÖ”‚Ì’è‹`
+//é–¢æ•°ã®å®šç¾©
 #include "DxLibEx_impl.h"
 #endif

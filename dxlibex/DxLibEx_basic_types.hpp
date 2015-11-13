@@ -18,6 +18,7 @@ namespace dxle {
 				declaration above, the following operations on points are implemented:
 	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換は`static_cast`を使用することで可能です(内部でも`static_cast`を使用します)
 				上記のメンバーのほかに、以下の演算をサポートします
+	\~
 	@code
 	    pt1 = pt2 + pt3;
 	    pt1 = pt2 - pt3;
@@ -33,6 +34,7 @@ namespace dxle {
 	@endcode
 	\~english	For your convenience, the following type aliases are defined:
 	\~japanese	利便性のために、以下の型が定義されています。
+	\~
 	@code
 		typedef point_c<int> pointi;
 		typedef point_c<uint8_t> pointu8i;
