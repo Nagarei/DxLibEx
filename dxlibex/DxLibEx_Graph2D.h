@@ -9,6 +9,7 @@
 #include "DxLibEx_Helper.h"
 #include "DxLibEx_Defines.h"
 #include "DxLibEx_basic_types.hpp"
+#include "DxLibEx_thread.h"
 
 //----------2Dグラフィック----------//
 
@@ -19,10 +20,19 @@ namespace dxle
 	//! 2Dグラフィック
 	namespace Graph2D
 	{
+		//!\~japanese DxLibの描画先スクリーン同期のためのmutex
+		//!\~english  mutex for DxLib's draw screen
+		class screen_mutex_c
+		{
+		protected:
+#ifdef DX_THREAD_SAFE
+			static std::mutex mtx;
+#endif
+		};
 
 		//!\~japanese 画像クラス(画像ハンドルクラスではない)
-		//!\~english  A image class (NOT a image handle class)
-		class Texture2D : public impl::Unique_HandledObject_Bace<Texture2D>
+		//!\~english  A image class (NOT an image handle class)
+		class Texture2D : public impl::Unique_HandledObject_Bace<Texture2D>, public screen_mutex_c
 		{
 		public:
 			//!\~japanese 画像を削除する
@@ -30,42 +40,53 @@ namespace dxle
 			inline void Delete(bool LogOutFlag = false) { DeleteGraph(GetHandle(), LogOutFlag); }
 
 			//生成用static関数
-	
+
 			// グラフィック作成関係関数
-	
+
 			//!\~japanese 指定サイズのグラフィックを作成する
-			//!\~english  Create image with sizes
-			static inline Texture2D MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
+			//!\~english  Create an image with sizes
+			static inline Texture2D MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
 			//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
-			static inline Texture2D DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle), false); }
-	
+			static inline Texture2D DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle), false); }
+
 			// 画像からグラフィックを作成する関数
-	
-			//! 画像ファイルからグラフィックを作成する
-			static inline Texture2D LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false); }
-			//! 画像ファイルからグラフィックを作成する
-			static inline Texture2D LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//! 画像ファイルを反転したものでグラフィックを作成する
-			static inline Texture2D LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadReverseGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//! 画像ファイルからブレンド用グラフィックを作成する
-			static inline Texture2D LoadBlendGraph(const TCHAR *FileName)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::LoadBlendGraph(FileName), false); }
-	
-			//! メモリ上の画像イメージからグラフィックを作成する
-			static inline Texture2D CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag), false); }
-			//! メモリ上の画像イメージから既存のグラフィックにデータを転送する
+
+			//!\~japanese 画像ファイルからグラフィックを作成する
+			//!\~english  Create an image form an image file
+			static inline Texture2D LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false); }
+			//!\~japanese 画像ファイルからグラフィックを作成する
+			//!\~english  Create an image form an image file
+			static inline Texture2D LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::LoadGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
+			//!\~japanese 画像ファイルからグラフィックを作成する
+			//!\~english  Create reverse image form an image file
+			static inline Texture2D LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::LoadReverseGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
+			//!\~japanese 画像ファイルからブレンド用グラフィックを作成する
+			//!\~english  Create an image for blend form an image file
+			static inline Texture2D LoadBlendGraph(const TCHAR *FileName)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::LoadBlendGraph(FileName), false); }
+
+			//!\~japanese メモリ上の画像イメージからグラフィックを作成する
+			//!\~english  Create an image form an image in the memory
+			static inline Texture2D CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag), false); }
+			//!\~japanese メモリ上の画像イメージから既存のグラフィックにデータを転送する
+			//!\~english  Forward one image in the memory to the other image
 			static inline int ReCreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, Texture2D& GrHandle, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromMem(RGBFileImage, RGBFileImageSize, GrHandle.GetHandle(), AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
-	
-			//! 基本イメージデータからサイズを割り出し、それに合ったグラフィックを作成する
-			static inline Texture2D CreateDXGraph(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag), false); }
-			//! 基本イメージデータからグラフィックを作成する
-			static inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag), false); }
-			//! 基本イメージデータからグラフィックを作成する
-			static inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT{ return Texture2D(DxLib::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag), false); }
-			//! 基本イメージデータから既存のグラフィックにデータを転送する
+
+			//!\~japanese 基本イメージデータからサイズを割り出し、それに合ったグラフィックを作成する
+			//!\~english  Create an image what is fit others BASEIMAGE
+			static inline Texture2D CreateDXGraph(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag), false); }
+			//!\~japanese 基本イメージデータからグラフィックを作成する
+			//!\~english  Create an image from a BASEIMAGE
+			static inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag), false); }
+			//!\~japanese 基本イメージデータからグラフィックを作成する
+			//!\~english  Create an image from others BASEIMAGE
+			static inline Texture2D CreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return Texture2D(DxLib::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag), false); }
+			//!\~japanese 基本イメージデータから既存のグラフィックにデータを転送する
+			//!\~english  Forward an image from the other BASEIMAGE
 			static inline int ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, Texture2D& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
-			//! 基本イメージデータから既存のグラフィックにデータを転送する
+			//!\~japanese 基本イメージデータから既存のグラフィックにデータを転送する
+			//!\~english  Forward images from the other BASEIMAGE
 			static inline int ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, Texture2D& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLIBEX_NOEXCEPT { return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
-	
+
 			//! メモリ上のビットマップイメージからグラフィックを作成する
 			static inline Texture2D CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const Texture2D& GrHandle = Texture2D())DXLIBEX_NOEXCEPT { return Texture2D(DxLib::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
 			//! メモリ上のビットマップイメージからグラフィックを再作成する
@@ -121,38 +142,38 @@ namespace dxle
 			inline std::basic_string<TCHAR> GetGraphFilePath()const DXLIBEX_NOEXCEPT { TCHAR FilePathBuffer[2048]; if (GetGraphFilePath(FilePathBuffer) == -1) { return std::basic_string<TCHAR>(); } return FilePathBuffer; }
 	
 			//! 画像の等倍描画
-			inline int DrawGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
+			inline int DrawGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
 			//! 画像の拡大描画
-			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
 			//! 画像の回転描画
-			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画２( 回転中心指定付き )
-			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
-			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の自由変形描画
-			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawModiGraph(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
+			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawModiGraph(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
 			//! 画像の左右反転描画
-			inline int DrawTurnGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawTurnGraph(x, y, GetHandle(), TransFlag); }
+			inline int DrawTurnGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawTurnGraph(x, y, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画
-			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }
 	
 			//! 画像の描画( 座標指定が float 版 )
-			inline int DrawGraphF(float xf, float yf, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
+			inline int DrawGraphF(float xf, float yf, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
 			//! 画像の拡大描画( 座標指定が float 版 )
-			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraphF(x1f, y1f, x2f, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawExtendGraphF(x1f, y1f, x2f, y2, GetHandle(), TransFlag); }
 			//! 画像の回転描画( 座標指定が float 版 )
-			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
-			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
-			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT { return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の自由変形描画( 座標指定が float 版 )
-			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawModiGraphF(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
+			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawModiGraphF(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
 			//! 画像の左右反転描画( 座標指定が float 版 )
-			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
+			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
-			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLIBEX_NOEXCEPT { return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }
+			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }
 	
 		private:
 			typedef Unique_HandledObject_Bace<Texture2D> Parent_T;
@@ -192,13 +213,14 @@ namespace dxle
 			//メンバ関数
 
 			template<typename Func_T>
-			void DrawnOn(Func_T&& draw_func) {
-				auto old_draw_screen = DxLib::GetDrawScreen();
+			inline void DrawnOn(Func_T&& draw_func) {
+				DXLIBEX_GET_LOCK();
+				struct Finary_ {
+					int old_draw_screen;
+					Finary_(): old_draw_screen(DxLib::GetDrawScreen()){}
+					~Finary_() { DxLib::SetDrawScreen(old_draw_screen); }
+				}finally_;
 				this->SetDrawScreen();
-				struct Finary_ { ~Finary_() {
-					DxLib::SetDrawScreen(old_draw_screen);
-				} }finally_;
-
 				draw_func();
 			}
 
@@ -220,7 +242,7 @@ namespace dxle
 			inline int BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, Texture2D& DestGrHandle)const DXLIBEX_NOEXCEPT{ return DxLib::BltDrawValidGraph(GetHandle(), x1, y1, x2, y2, DestX, DestY, Texture2D::GetTexture2DHandle(DestGrHandle)); }
 
 			//! 描画先画面を設定する
-			inline int SetDrawScreen()const DXLIBEX_NOEXCEPT { return DxLib::SetDrawScreen(GetHandle()); }
+			inline int SetDrawScreen()const DXLIBEX_NOEXCEPT { DXLIBEX_GET_LOCK(); return DxLib::SetDrawScreen(GetHandle()); }
 
 		public:
 			Screen() : Texture2D() {}

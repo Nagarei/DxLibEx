@@ -19,12 +19,17 @@
     <ClInclude Include="dxlibex\DxLibEx_impl.h" />
     <ClInclude Include="dxlibex\DxLibEx_LINK.h" />
     <ClInclude Include="dxlibex\DxLibEx_structs.h" />
+    <ClInclude Include="dxlibex\DxLibEx_thread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ProjectDxLibEx\Graph2D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A7FFFCCD-08A6-4826-84D4-B46438389B66}</ProjectGuid>
     <RootNamespace>ProjectDxLibEx</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <ProjectName>ProjectDxLibEx</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -55,19 +60,19 @@
     <LinkIncremental>true</LinkIncremental>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <TargetName>$(ProjectName)_$(DefaultPlatformToolset)_$(CharacterSet)_$(PlatformTarget)_d</TargetName>
-    <OutDir>$(SolutionDir)$(ProjectName)\</OutDir>
+    <OutDir>$(SolutionDir)dxlibex\</OutDir>
     <IncludePath>DxLib;C:\lib\DxLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>$(ProjectName)_$(DefaultPlatformToolset)_$(CharacterSet)_$(PlatformTarget)_r</TargetName>
-    <OutDir>$(SolutionDir)$(ProjectName)\</OutDir>
+    <OutDir>$(SolutionDir)dxlibex\</OutDir>
     <IncludePath>DxLib;C:\lib\DxLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./dxlibex;./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -79,7 +84,6 @@
       </DisableSpecificWarnings>
       <MultiProcessorCompilation>
       </MultiProcessorCompilation>
-      <ForcedIncludeFiles>MUG_CompileConfig.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
@@ -96,7 +100,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./dxlibex;./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -106,7 +110,6 @@
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <ForcedIncludeFiles>MUG_CompileConfig.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>

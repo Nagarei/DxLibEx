@@ -4,6 +4,9 @@
     <Filter Include="dxlibex">
       <UniqueIdentifier>{0b19b9cc-e6a2-4766-9390-6fa0c48bf16e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{5e414fab-c3b6-4294-81d5-d039e00b05fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dxlibex\DxLibEx.h">
@@ -30,5 +33,13 @@
     <ClInclude Include="dxlibex\DxLibEx_structs.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx_thread.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ProjectDxLibEx\Graph2D.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
