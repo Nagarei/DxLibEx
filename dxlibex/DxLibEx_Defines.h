@@ -1,31 +1,57 @@
 #ifndef DX_LIB_EX_DEFINES_H_2015_10_11_1714_185961646566518
 #define DX_LIB_EX_DEFINES_H_2015_10_11_1714_185961646566518
 
-//À‘•—pƒtƒ@ƒCƒ‹‚Å‚·
-//ŠJ”­ÒˆÈŠO‚ª‚±‚±‚Ì‹@”\‚ğg‚¤‚Ì‚Í‚¨Š©‚ß‚Å‚«‚Ü‚¹‚ñ
+//å®Ÿè£…ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™
+//é–‹ç™ºè€…ä»¥å¤–ãŒã“ã“ã®æ©Ÿèƒ½ã‚’ä½¿ã†ã®ã¯ãŠå‹§ã‚ã§ãã¾ã›ã‚“
 
-//‚±‚±‚Ìdefine‚ÍŠ®‘S‚Å‚Í‚ ‚è‚Ü‚¹‚ñ
+//ã“ã“ã®defineã¯å®Œå…¨ã§ã¯ã‚ã‚Šã¾ã›ã‚“
+#if defined(__INTEL_COMPILER)
+#	define DXLIBEX_INTEL_CXX_VERSION __INTEL_COMPILER
+#elif defined(__ICL)
+#	define DXLIBEX_INTEL_CXX_VERSION __ICL
+#elif defined(__ICC)
+#	define DXLIBEX_INTEL_CXX_VERSION __ICC
+#elif defined(__ECC)
+#	define DXLIBEX_INTEL_CXX_VERSION __ECC
+#endif
+#if (!(defined(_WIN32) || defined(_WIN64)) && defined(__STDC_HOSTED__) && (__STDC_HOSTED__ && (DXLIBEX_INTEL_CXX_VERSION <= 1200))) || defined(__GXX_EXPERIMENTAL_CPP0X__) || defined(__GXX_EXPERIMENTAL_CXX0X__)
+#	define DXLIBEX_INTEL_STDCXX11
+#endif
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
+#	define DXLIBEX_INTEL_STDCXX11
+#endif
+
 
 #ifdef _MSC_VER
-#if (_MSC_VER >= 1900)
-	//VC2015
-#	define DXLIBEX_NOEXCEPT noexcept
-#	define DXLIBEX_CONSTEXPR constexpr
-#	define DXLIBEX_SFINAE template<typename = void>
-#
-#elif (_MSC_VER >= 1700)
-	//VC2013,VC2012
-#	define DXLIBEX_NOEXCEPT throw()
-#	define DXLIBEX_CONSTEXPR
-#	define DXLIBEX_SFINAE
-#
-#endif
+#	if (_MSC_FULL_VER >= 190023026)
+		//VC2015
+#		define DXLIBEX_NOEXCEPT noexcept
+#		define DXLIBEX_CONSTEXPR constexpr
+#	elif (_MSC_VER >= 1700)
+		//VC2013,VC2012
+#		define DXLIBEX_NOEXCEPT throw()
+#		define DXLIBEX_CONSTEXPR
+#	endif
 //#ifdef _MSC_VER
 #else
-#	define DXLIBEX_NOEXCEPT noexcept
-#	define DXLIBEX_CONSTEXPR constexpr
-#	define DXLIBEX_SFINAE template<typename = void>
+#	if defined (_clang__)
+#		if __has_feature(cxx_noexcept)
+#			define DXLIBEX_NOEXCEPT noexcept
+#		endif
+#		if __has_feature(cxx_constexpr)
+#			define DXLIBEX_CONSTEXPR constexpr
+#		endif
+#	elif defined(SPROUT_INTEL_CXX_VERSION)
+#		if defined(SPROUT_INTEL_STDCXX11) && (SPROUT_INTEL_CXX_VERSION >= 1400) && !defined(_MSC_VER)
+#			define DXLIBEX_CONSTEXPR constexpr
+#		endif
+#	elif defined(__GNUC__)
+#		if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6) || defined(__GXX_EXPERIMENTAL_CXX0X__))
+#			define DXLIBEX_CONSTEXPR constexpr
+#			define DXLIBEX_NOEXCEPT noexcept
+#		endif
+#	endif
 #endif
 
-//ƒCƒ“ƒNƒ‹[ƒhƒK[ƒh
+//ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰
 #endif

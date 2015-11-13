@@ -8,6 +8,45 @@
 #include "DxLibEx_Defines.h"
 
 namespace dxle {
+	/** 
+	@brief	\~japanese 2次元座標(x, y)　テンプレートクラス。
+			\~english Template class for 2D points specified by its coordinates `x` and `y`.
+
+	\~english	An instance of the class is interchangeable with std::pair. There is also a cast operator
+				to convert point coordinates to the specified type (using static_cast). Commonly, the conversion
+				uses this operation for each of the coordinates. Besides the class members listed in the
+				declaration above, the following operations on points are implemented:
+	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換は`static_cast`を使用することで可能です(内部でも`static_cast`を使用します)
+				上記のメンバーのほかに、以下の演算をサポートします
+	@code
+	    pt1 = pt2 + pt3;
+	    pt1 = pt2 - pt3;
+	    pt1 = pt2 * a;
+	    pt1 = a * pt2;
+	    pt1 = pt2 / a;
+	    pt1 += pt2;
+	    pt1 -= pt2;
+	    pt1 *= a;
+	    pt1 /= a;
+	    pt1 == pt2;
+	    pt1 != pt2;
+	@endcode
+	\~english	For your convenience, the following type aliases are defined:
+	\~japanese	利便性のために、以下の型が定義されています。
+	@code
+		typedef point_c<int> pointi;
+		typedef point_c<uint8_t> pointu8i;
+		typedef point_c<int8_t> point8i;
+		typedef point_c<double> pointd;
+		typedef point_c<float> pointf;
+	@endcode
+	\~ Example:
+	@code
+	    dxle::pointf a(0.3f, 0.f), b(0.f, 0.4f);
+	    dxle::pointi pt = (a + b)*10.f;
+	    std::cout << pt << std::endl;
+	@endcode
+	*/
 	template<typename T, typename std::enable_if<std::is_arithmetic<T>::value, std::nullptr_t>::type = nullptr>
 	class point_c
 	{
@@ -36,13 +75,23 @@ namespace dxle {
 		}
 
 		//convert constructor
+
+		//!\~english conversion from std::pair
+		//!\~japanese std::pairからの変換
 		point_c(const std::pair<value_type, value_type>& p) DXLIBEX_NOEXCEPT : x(p.first), y(p.second) {}
 		point_c(std::pair<value_type, value_type>&& p) DXLIBEX_NOEXCEPT : x(std::move(p.first)), y(std::move(p.second)) {}
 		explicit operator bool() const DXLIBEX_NOEXCEPT {
 			return (0 != this->x) || (0 != this->y);
 		}
+		//!\~english conversion to another data type
+		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
 		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLIBEX_NOEXCEPT {
 			return point_c<_Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
+		}
+		//!\~english conversion to std::pair
+		//!\~japanese std::pairへの変換
+		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLIBEX_NOEXCEPT {
+			return std::pair<_Tp2, _Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 	};
 	//ostream operator
