@@ -40,8 +40,8 @@ var searchData=
   ['setusegraphzbuffer',['SetUseGraphZBuffer',['../classdxle_1_1_graph2_d_1_1_screen.html#a3bad1aabf0cf20fd089ad846aab7674f',1,'dxle::Graph2D::Screen']]],
   ['setuseimeflag',['SetUseIMEFlag',['../namespacedxle_1_1_input_string.html#aaa5fd51614e3e7d2fc82b09ee5ef129d',1,'dxle::InputString']]],
   ['setusetimestampflag',['SetUseTimeStampFlag',['../namespacedxle_1_1_dx_log.html#a53eb3f46c2dcedc773a9a99134e37705',1,'dxle::DxLog']]],
-  ['soundeffect',['SoundEffect',['../classdxle_1_1_sound_1_1_sound_effect.html#a8d13acd886c7baa27a17dfd321acc626',1,'dxle::Sound::SoundEffect::SoundEffect(SoundEffect_Unique &amp;&amp;handle)'],['../classdxle_1_1_sound_1_1_sound_effect.html#aa395f6b2535fe1fd3e72e5fb5e9ae114',1,'dxle::Sound::SoundEffect::SoundEffect()']]],
   ['soundeffect',['SoundEffect',['../classdxle_1_1_sound_1_1_sound_effect.html',1,'dxle::Sound']]],
+  ['soundeffect',['SoundEffect',['../classdxle_1_1_sound_1_1_sound_effect.html#a8d13acd886c7baa27a17dfd321acc626',1,'dxle::Sound::SoundEffect::SoundEffect(SoundEffect_Unique &amp;&amp;handle)'],['../classdxle_1_1_sound_1_1_sound_effect.html#aa395f6b2535fe1fd3e72e5fb5e9ae114',1,'dxle::Sound::SoundEffect::SoundEffect()']]],
   ['soundeffect_5funique',['SoundEffect_Unique',['../classdxle_1_1_sound_1_1_sound_effect___unique.html',1,'dxle::Sound']]],
   ['soundeffect_5funique',['SoundEffect_Unique',['../classdxle_1_1_sound_1_1_sound_effect___unique.html#a2532666bdee040323e861f5d8618205a',1,'dxle::Sound::SoundEffect_Unique::SoundEffect_Unique()'],['../classdxle_1_1_sound_1_1_sound_effect___unique.html#a7ac96030ff026d7ecdcff0d924cc1e62',1,'dxle::Sound::SoundEffect_Unique::SoundEffect_Unique(SoundEffect_Unique &amp;&amp;other)']]],
   ['sprintfdx',['sprintfDx',['../namespacedxle_1_1_dx_char.html#ac36ea6db8526d1011133539c10b81c14',1,'dxle::DxChar']]],
@@ -81,5 +81,6 @@ var searchData=
   ['strrstrdx',['strrstrDx',['../namespacedxle_1_1_dx_char.html#a86457e5009437ab1daaa3666fc9068fa',1,'dxle::DxChar']]],
   ['strstr2dx',['strstr2Dx',['../namespacedxle_1_1_dx_char.html#a663d4e649174cf1cf2d335dbb10f3b00',1,'dxle::DxChar']]],
   ['strstrdx',['strstrDx',['../namespacedxle_1_1_dx_char.html#abc4e1acf06b295d4539a81f278aa83be',1,'dxle::DxChar']]],
+  ['structs_2eh',['structs.h',['../structs_8h.html',1,'']]],
   ['struprdx',['struprDx',['../namespacedxle_1_1_dx_char.html#ae0fba57e0fe173a1d60e0af5581a7971',1,'dxle::DxChar']]]
 ];

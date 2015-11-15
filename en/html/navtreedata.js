@@ -34,9 +34,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_dx_lib_ex_8h.html",
-"_dx_lib_ex__thread_8h.html",
-"structdxle_1_1n_mouse_1_1_mouse_state.html#a062ee48819ebe0329acc6bcd0f2b286e"
+"_defines_8h.html",
+"classdxle_1_1_graph2_d_1_1_screen.html#a3bad1aabf0cf20fd089ad846aab7674f",
+"structs_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
