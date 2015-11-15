@@ -1,4 +1,4 @@
-#ifndef DXLE_H_
+﻿#ifndef DXLE_H_
 #define DXLE_H_
 
 #include "DxLib.h"

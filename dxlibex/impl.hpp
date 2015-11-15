@@ -1,13 +1,13 @@
-#ifndef DXLE_IMPL_H_2015_0930_0605_1596851632_
+ï»¿#ifndef DXLE_IMPL_H_2015_0930_0605_1596851632_
 #define DXLE_IMPL_H_2015_0930_0605_1596851632_
 
-//À‘•—pƒtƒ@ƒCƒ‹‚Å‚·B
-//ŠJ”­ÒˆÈŠO‚ª‚±‚±‚Ì‹@”\‚ğg‚¤‚Ì‚Í‚¨Š©‚ß‚Å‚«‚Ü‚¹‚ñ
+//å®Ÿè£…ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™ã€‚
+//é–‹ç™ºè€…ä»¥å¤–ãŒã“ã“ã®æ©Ÿèƒ½ã‚’ä½¿ã†ã®ã¯ãŠå‹§ã‚ã§ãã¾ã›ã‚“
 
 #include "dxlibex/DxLibEx.h"
 #include <type_traits>
 #include <new>
-//ŠeŠÖ”‚Ì’è‹`
+//å„é–¢æ•°ã®å®šç¾©
 
 namespace dxle
 {
@@ -15,32 +15,32 @@ namespace dxle
 	namespace nDxLibSys
 	{
 
-		//!DxLib_Init‚ğs‚¤B<br>
-		//!¸”s‚·‚é‚ÆintŒ^‚Ì—áŠO‚ğ“Š‚°‚éB<br>
-		//!‰‰ñ‚Ì‚İ—LŒøB<br>
-		//!WinMain‚©‚ç‚Ìreturn‚ÅDxLibEnd‚ğŒÄ‚Ño‚µ‚Ü‚·B
+		//!DxLib_Initã‚’è¡Œã†ã€‚<br>
+		//!å¤±æ•—ã™ã‚‹ã¨intå‹ã®ä¾‹å¤–ã‚’æŠ•ã’ã‚‹ã€‚<br>
+		//!åˆå›ã®ã¿æœ‰åŠ¹ã€‚<br>
+		//!WinMainã‹ã‚‰ã®returnã§DxLibEndã‚’å‘¼ã³å‡ºã—ã¾ã™ã€‚
 		inline void DxLibSys::Init()
 		{
 			static DxLibSys initer;
 		}
-		//!DxLib_End‚ğs‚¤
+		//!DxLib_Endã‚’è¡Œã†
 		inline void DxLibSys::End()DXLE_NOEXCEPT
 		{
 			DxLib::DxLib_End();
 		}
-		//!DXƒ‰ƒCƒuƒ‰ƒŠ‚Ì“à•”‚Åg—p‚µ‚Ä‚¢‚é\‘¢‘Ì‚ğƒ[ƒ‰Šú‰»‚µ‚ÄA
-		//!DxLib_Init ‚Ì‘O‚És‚Á‚½İ’è‚ğ–³Œø‰»‚·‚é( DxLib_Init ‚Ì‘O‚Å‚Ì‚İ—LŒø )
+		//!DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®å†…éƒ¨ã§ä½¿ç”¨ã—ã¦ã„ã‚‹æ§‹é€ ä½“ã‚’ã‚¼ãƒ­åˆæœŸåŒ–ã—ã¦ã€
+		//!DxLib_Init ã®å‰ã«è¡Œã£ãŸè¨­å®šã‚’ç„¡åŠ¹åŒ–ã™ã‚‹( DxLib_Init ã®å‰ã§ã®ã¿æœ‰åŠ¹ )
 		inline int DxLibSys::GlobalStructInitialize()DXLE_NOEXCEPT
 		{
 			return DxLib::DxLib_GlobalStructInitialize();
 		}
-		//!DXƒ‰ƒCƒuƒ‰ƒŠ‚ª‰Šú‰»‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-		//!@return true:‰Šú‰»‚³‚ê‚Ä‚¢‚é  false:‚³‚ê‚Ä‚¢‚È‚¢
+		//!DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªãŒåˆæœŸåŒ–ã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+		//!@return true:åˆæœŸåŒ–ã•ã‚Œã¦ã„ã‚‹  false:ã•ã‚Œã¦ã„ãªã„
 		inline bool DxLibSys::IsInit()DXLE_NOEXCEPT
 		{
 			return DxLib::DxLib_IsInit() != FALSE;
 		}
-		//!ƒEƒCƒ“ƒhƒEƒY‚ÌƒƒbƒZ[ƒWƒ‹[ƒv‚É‘ã‚í‚éˆ—‚ğs‚¤
+		//!ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚ºã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ«ãƒ¼ãƒ—ã«ä»£ã‚ã‚‹å‡¦ç†ã‚’è¡Œã†
 		inline int DxLibSys::ProcessMessage()
 		{
 			return DxLib::ProcessMessage();
@@ -55,44 +55,44 @@ namespace dxle
 		}
 	}
 
-	//----------Wait ƒEƒGƒCƒgŒnŠÖ”----------//
+	//----------Wait ã‚¦ã‚¨ã‚¤ãƒˆç³»é–¢æ•°----------//
 
 
-	//----------ƒJƒEƒ“ƒ^Œn----------//
+	//----------ã‚«ã‚¦ãƒ³ã‚¿ç³»----------//
 	namespace nCounter
 	{
 
-		//!ƒ~ƒŠ•b’PˆÊ‚Ì¸“x‚ğ‚ÂƒJƒEƒ“ƒ^‚ÌŒ»İ’l‚ğ“¾‚é
+		//!ãƒŸãƒªç§’å˜ä½ã®ç²¾åº¦ã‚’æŒã¤ã‚«ã‚¦ãƒ³ã‚¿ã®ç¾åœ¨å€¤ã‚’å¾—ã‚‹
 		inline Counter Counter::GetNowCount(bool UseRDTSCFlag)DXLE_NOEXCEPT {
 			return Counter(DxLib::GetNowCount(UseRDTSCFlag));
 		}
-		//! 1000‚ğ‚©‚¯‚ÄHiPerformanceCounter‚Æ‚İ‚È‚·‚æ‚¤‚É‚·‚é
+		//! 1000ã‚’ã‹ã‘ã¦HiPerformanceCounterã¨ã¿ãªã™ã‚ˆã†ã«ã™ã‚‹
 		inline HiPerformanceCounter Counter::CastToHiPerformance()const DXLE_NOEXCEPT {
 			return Cast<LONGLONG>::Do(static_cast<LONGLONG>(count()) * 1000);
 		}
-		//!ƒ}ƒCƒNƒ•b’PˆÊ‚Ì¸“x‚ğ‚ÂƒJƒEƒ“ƒ^‚ÌŒ»İ’l‚ğ“¾‚é
+		//!ãƒã‚¤ã‚¯ãƒ­ç§’å˜ä½ã®ç²¾åº¦ã‚’æŒã¤ã‚«ã‚¦ãƒ³ã‚¿ã®ç¾åœ¨å€¤ã‚’å¾—ã‚‹
 		inline HiPerformanceCounter HiPerformanceCounter::GetNowCount(bool UseRDTSCFlag)DXLE_NOEXCEPT {
 			return HiPerformanceCounter(DxLib::GetNowHiPerformanceCount(UseRDTSCFlag));
 		}
-		//! 1000‚ÅŠ„‚Á‚ÄCounter‚Æ‚İ‚È‚·‚æ‚¤‚É‚·‚é
+		//! 1000ã§å‰²ã£ã¦Counterã¨ã¿ãªã™ã‚ˆã†ã«ã™ã‚‹
 		inline Counter HiPerformanceCounter::CastToLowPerformance()const DXLE_NOEXCEPT {
 			return Cast<int>::Do(static_cast<int>(count() / 1000));
 		}
 	}
 
-	//----------—”Œn----------//
+	//----------ä¹±æ•°ç³»----------//
 
 
-	//----------ƒƒOŒn----------//
+	//----------ãƒ­ã‚°ç³»----------//
 
 
-	//----------”ñ“¯Šú“Ç‚İ‚İŠÖŒW----------//
+	//----------éåŒæœŸèª­ã¿è¾¼ã¿é–¢ä¿‚----------//
 
 
-	//----------ƒnƒ“ƒhƒ‹ŠÖŒW----------//
+	//----------ãƒãƒ³ãƒ‰ãƒ«é–¢ä¿‚----------//
 
 
-	//----------ƒ}ƒEƒXŠÖŒW----------//
+	//----------ãƒã‚¦ã‚¹é–¢ä¿‚----------//
 	namespace nMouse
 	{
 		inline MouseState::MouseState() DXLE_NOEXCEPT
@@ -105,17 +105,17 @@ namespace dxle
 			, XButton2(ButtonState::Released)
 			, Y(0)
 		{}
-		//!ƒQ[ƒ€‚Å‚Í’ÊíAGetState ‚ğg—p‚µ‚ÄÀÛ‚Ìƒ}ƒEƒX‚Ìó‘Ô‚ğæ“¾‚µ‚Ü‚·B
-		//!‚±‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^[‚ÍA‘ã‚í‚è‚ÉƒQ[ƒ€©‘Ì‚Ì“ü—ÍƒTƒuƒVƒXƒeƒ€“à‚Å“n‚·‚½‚ß‚Ì
-		//!ƒ}ƒEƒX“ü—Í‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é‚½‚ß‚Ég—p‚³‚ê‚Ü‚·B
-		//!@param[in] x              ƒ}ƒEƒX‚Ì…•½ˆÊ’uB
-		//!@param[in] y              ƒ}ƒEƒX‚Ì‚’¼ˆÊ’uB
-		//!@param[in] scrollWheel    ƒ}ƒEƒX ƒXƒNƒ[ƒ‹ ƒzƒC[ƒ‹‚Ì’lB
-		//!@param[in] leftButton     ¶ƒ}ƒEƒX ƒ{ƒ^ƒ“‚Ìó‘ÔB
-		//!@param[in] middleButton   ’†ƒ}ƒEƒX ƒ{ƒ^ƒ“‚Ìó‘ÔB
-		//!@param[in] rightButton    ‰Eƒ}ƒEƒX ƒ{ƒ^ƒ“‚Ìó‘ÔB
-		//!@param[in] xButton1       XBUTTON1 ‚Ìó‘ÔB
-		//!@param[in] xButton2       XBUTTON2 ‚Ìó‘ÔB
+		//!ã‚²ãƒ¼ãƒ ã§ã¯é€šå¸¸ã€GetState ã‚’ä½¿ç”¨ã—ã¦å®Ÿéš›ã®ãƒã‚¦ã‚¹ã®çŠ¶æ…‹ã‚’å–å¾—ã—ã¾ã™ã€‚
+		//!ã“ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼ã¯ã€ä»£ã‚ã‚Šã«ã‚²ãƒ¼ãƒ è‡ªä½“ã®å…¥åŠ›ã‚µãƒ–ã‚·ã‚¹ãƒ†ãƒ å†…ã§æ¸¡ã™ãŸã‚ã®
+		//!ãƒã‚¦ã‚¹å…¥åŠ›ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹ãŸã‚ã«ä½¿ç”¨ã•ã‚Œã¾ã™ã€‚
+		//!@param[in] x              ãƒã‚¦ã‚¹ã®æ°´å¹³ä½ç½®ã€‚
+		//!@param[in] y              ãƒã‚¦ã‚¹ã®å‚ç›´ä½ç½®ã€‚
+		//!@param[in] scrollWheel    ãƒã‚¦ã‚¹ ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ãƒ›ã‚¤ãƒ¼ãƒ«ã®å€¤ã€‚
+		//!@param[in] leftButton     å·¦ãƒã‚¦ã‚¹ ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
+		//!@param[in] middleButton   ä¸­ãƒã‚¦ã‚¹ ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
+		//!@param[in] rightButton    å³ãƒã‚¦ã‚¹ ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹ã€‚
+		//!@param[in] xButton1       XBUTTON1 ã®çŠ¶æ…‹ã€‚
+		//!@param[in] xButton2       XBUTTON2 ã®çŠ¶æ…‹ã€‚
 		inline MouseState::MouseState(int x, int y, int scrollWheel
 			, ButtonState leftButton, ButtonState middleButton, ButtonState rightButton
 			, ButtonState xButton1, ButtonState xButton2) DXLE_NOEXCEPT
@@ -153,8 +153,8 @@ namespace dxle
 			, Type(type)
 		{}
 
-		//!ƒ}ƒEƒX‚ÌŒ»İ‚Ìó‘Ô (ƒ}ƒEƒX‚ÌˆÊ’u‚â‰Ÿ‚³‚ê‚Ä‚¢‚éƒ{ƒ^ƒ“‚È‚Ç) ‚ğæ“¾‚µ‚Ü‚·B
-		//!@param ScrollWheelValueReset GetMouseWheelRotVol‚Ìˆø”CounterReset‚Æ“¯‚¶
+		//!ãƒã‚¦ã‚¹ã®ç¾åœ¨ã®çŠ¶æ…‹ (ãƒã‚¦ã‚¹ã®ä½ç½®ã‚„æŠ¼ã•ã‚Œã¦ã„ã‚‹ãƒœã‚¿ãƒ³ãªã©) ã‚’å–å¾—ã—ã¾ã™ã€‚
+		//!@param ScrollWheelValueReset GetMouseWheelRotVolã®å¼•æ•°CounterResetã¨åŒã˜
 		MouseState Mouse::GetState(bool ScrollWheelValueReset)DXLE_NOEXCEPT
 		{
 			int x, y;
@@ -172,9 +172,9 @@ namespace dxle
 				;
 			return MouseState(x, y, scrollWheel, leftButton, middleButton, rightButton, xButton1, xButton2);
 		}
-		//!ƒ}ƒEƒX‚ÌƒNƒŠƒbƒN—š—ğ‚ğ‚Ü‚Æ‚ß‚Äæ“¾‚·‚é
-		//!QÆFDxLib::GetMouseInputLog http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36
-		//!@attention “à•”‚ÅGetMouseInputLog‚ÌLogDelete‚ÉTRUE‚ğ“n‚µ‚ÄŒÄ‚Ño‚µ‚Ü‚·
+		//!ãƒã‚¦ã‚¹ã®ã‚¯ãƒªãƒƒã‚¯å±¥æ­´ã‚’ã¾ã¨ã‚ã¦å–å¾—ã™ã‚‹
+		//!å‚ç…§ï¼šDxLib::GetMouseInputLog http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_input.html#R5N36
+		//!@attention å†…éƒ¨ã§GetMouseInputLogã®LogDeleteã«TRUEã‚’æ¸¡ã—ã¦å‘¼ã³å‡ºã—ã¾ã™
 		std::queue<MouseInputInfo> Mouse::GetMouseInputLog()
 		{
 			std::queue<MouseInputInfo> result;
@@ -187,23 +187,23 @@ namespace dxle
 		}
 	}
 
-	//----------ƒ^ƒbƒ`ƒpƒlƒ‹“ü—ÍŠÖŒWŠÖ”----------//
+	//----------ã‚¿ãƒƒãƒãƒ‘ãƒãƒ«å…¥åŠ›é–¢ä¿‚é–¢æ•°----------//
 
 
-	//----------ƒƒ‚ƒŠŠm•ÛŒnŠÖ”----------//
+	//----------ãƒ¡ãƒ¢ãƒªç¢ºä¿ç³»é–¢æ•°----------//
 	namespace DxMemory
 	{
 #if 0
 		template<typename... Args>
-		//!Šm•Û‚É¸”s‚µ‚½‚çnew_handler‚ğŒÄ‚Ño‚· or std::bad_alloc‚ğ“Š‚°‚éDxRealloc
-		//!@param[in] Memory DxRealloc‚Ìˆø”Memory‚Æ“¯‚¶
-		//!@param[in] size DxRealloc‚Ìˆø”AllocSize‚Æ“¯‚¶
-		//!@param[in] File DxRealloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxRealloc‚Ìˆø”Line‚Æ“¯‚¶
-		//!@return DxRealloc‚Ì–ß‚è’l‚Æ“¯‚¶
+		//!ç¢ºä¿ã«å¤±æ•—ã—ãŸã‚‰new_handlerã‚’å‘¼ã³å‡ºã™ or std::bad_allocã‚’æŠ•ã’ã‚‹DxRealloc
+		//!@param[in] Memory DxReallocã®å¼•æ•°Memoryã¨åŒã˜
+		//!@param[in] size DxReallocã®å¼•æ•°AllocSizeã¨åŒã˜
+		//!@param[in] File DxReallocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxReallocã®å¼•æ•°Lineã¨åŒã˜
+		//!@return DxReallocã®æˆ»ã‚Šå€¤ã¨åŒã˜
 		void* DxNewWithLog(void* Memory, size_t size, const char *File/*__FILE__*/, int Line/*__LINE__*/)
 		{
-			//QÆ@http://cpplover.blogspot.jp/2010/07/operator-new.html
+			//å‚ç…§ã€€http://cpplover.blogspot.jp/2010/07/operator-new.html
 
 			// Executes a loop: Within the loop,
 			for (;;)
@@ -234,8 +234,8 @@ namespace dxle
 		}
 		template<typename T>
 		template<typename... Args>
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		inline Dx_Unique_Ptr<T> Dx_Unique_Ptr<T>::NewWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, Args&&... args)
 		{
 			void* ptr = DxNewWithLog(nullptr, sizeof(T), File, Line);
@@ -243,15 +243,15 @@ namespace dxle
 				return Dx_Unique_Ptr<T>(new(ptr) T(std::forward<Args>(args)...));
 			}
 			catch (...) {
-				//ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª—áŠO‚ğ“Š‚°‚½
+				//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒä¾‹å¤–ã‚’æŠ•ã’ãŸ
 				DxLib::DxFree(ptr);
 				throw;
 			}
 		}
 		template<typename T>
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
-		//!@param[in] n    ”z—ñ‚Ì—v‘f”
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
+		//!@param[in] n    é…åˆ—ã®è¦ç´ æ•°
 		inline Dx_Unique_Ptr<T[]> Dx_Unique_Ptr<T[]>::NewWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n)
 		{
 			void* ptr = DxNewWithLog(nullptr, sizeof(T) * n, File, Line);
@@ -259,19 +259,19 @@ namespace dxle
 				return Dx_Unique_Ptr<T[]>(new(ptr) T[n]);
 			}
 			catch (...) {
-				//ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª—áŠO‚ğ“Š‚°‚½
+				//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒä¾‹å¤–ã‚’æŠ•ã’ãŸ
 				DxLib::DxFree(ptr);
 				throw;
 			}
 		}
 #if 0
 		template<typename T>
-		//!ƒƒ‚ƒŠ‚ÌÄŠm•Û‚ğs‚¤i”z—ñ”Å‚Ì‚İj
-		//!@attention “r’†‚Å—áŠO‚ª“Š‚°‚ç‚ê‚½ê‡bace‚Í•K‚¸–³Œø‚É‚È‚è‚Ü‚·
-		//!@param[in,out] bace Šî‚É‚È‚éDx_Unique_Ptr
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
-		//!@param[in] n    V‚µ‚¢”z—ñ‚Ì—v‘f”
+		//!ãƒ¡ãƒ¢ãƒªã®å†ç¢ºä¿ã‚’è¡Œã†ï¼ˆé…åˆ—ç‰ˆã®ã¿ï¼‰
+		//!@attention é€”ä¸­ã§ä¾‹å¤–ãŒæŠ•ã’ã‚‰ã‚ŒãŸå ´åˆbaceã¯å¿…ãšç„¡åŠ¹ã«ãªã‚Šã¾ã™
+		//!@param[in,out] bace åŸºã«ãªã‚‹Dx_Unique_Ptr
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
+		//!@param[in] n    æ–°ã—ã„é…åˆ—ã®è¦ç´ æ•°
 		void Dx_Unique_Ptr<T[]>::NewWithLogRun(This_T&& bace, const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n)
 		{
 			void* ptr;
@@ -288,24 +288,24 @@ namespace dxle
 				bace.ptr.reset(new(ptr) T[n]);
 			}
 			catch (...) {
-				//ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª—áŠO‚ğ“Š‚°‚½
+				//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒä¾‹å¤–ã‚’æŠ•ã’ãŸ
 				DxLib::DxFree(ptr);
 				throw;
 			}
 		}
 #endif
 		template<typename T, typename... Args, typename>
-		//!Dx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i’PˆêƒIƒuƒWƒFƒNƒg”Åj
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆå˜ä¸€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç‰ˆï¼‰
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		inline Dx_Unique_Ptr<T> MakeUniqueDxWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, Args&&... args)
 		{
 			return Dx_Unique_Ptr<T>::NewWithLog(File, Line, std::forward<Args>(args)...);
 		}
 		template<typename T, typename>
-		//!Dx_Unique_PtrƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚éƒwƒ‹ƒpŠÖ”i”z—ñ”Åj
-		//!@param[in] File DxAlloc‚Ìˆø”File‚Æ“¯‚¶
-		//!@param[in] Line DxAlloc‚Ìˆø”Line‚Æ“¯‚¶
+		//!Dx_Unique_Ptrã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ãƒ˜ãƒ«ãƒ‘é–¢æ•°ï¼ˆé…åˆ—ç‰ˆï¼‰
+		//!@param[in] File DxAllocã®å¼•æ•°Fileã¨åŒã˜
+		//!@param[in] Line DxAllocã®å¼•æ•°Lineã¨åŒã˜
 		inline Dx_Unique_Ptr<T> MakeUniqueDxWithLog(const char *File/*__FILE__*/, int Line/*__LINE__*/, size_t n)
 		{
 			return Dx_Unique_Ptr<T>::NewWithLog(File, Line, n);
@@ -316,5 +316,5 @@ namespace dxle
 
 
 }//namespace dxle
-//ƒCƒ“ƒNƒ‹[ƒhƒK[ƒh
+//ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰
 #endif

@@ -1,4 +1,4 @@
-#ifndef DXLE_THREAD_H_201511132146_85168523652
+Ôªø#ifndef DXLE_THREAD_H_201511132146_85168523652
 #define DXLE_THREAD_H_201511132146_85168523652
 #include <mutex>
 #include "DxLib.h"
@@ -12,5 +12,5 @@
 #define DXLE_NOEXCEPT_SINGLE DXLE_NOEXCEPT
 #endif
 
-//ÉCÉìÉNÉãÅ[ÉhÉKÅ[Éh
+//„Ç§„É≥„ÇØ„É´„Éº„Éâ„Ç¨„Éº„Éâ
 #endif
