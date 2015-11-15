@@ -2,7 +2,7 @@
 #define DXLIBEX_THREAD_H_201511132146_85168523652
 #include <mutex>
 #include "DxLib.h"
-#include "DxLibEx_Defines.h"
+#include "Defines.h"
 
 #ifdef DX_THREAD_SAFE
 #define DXLIBEX_GET_LOCK() (std::lock_guard<std::mutex> lock(mtx);)

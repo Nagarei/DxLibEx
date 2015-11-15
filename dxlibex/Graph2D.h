@@ -6,10 +6,10 @@
 #include <utility>
 #include <memory>
 #include <string>
-#include "DxLibEx_Helper.h"
-#include "DxLibEx_Defines.h"
-#include "DxLibEx_basic_types.hpp"
-#include "DxLibEx_thread.h"
+#include "Helper.h"
+#include "Defines.h"
+#include "basic_types.hpp"
+#include "thread.h"
 
 //----------2Dグラフィック----------//
 

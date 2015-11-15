@@ -4,7 +4,7 @@
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
 #include <cassert>
-#include "DxLibEx_Defines.h"
+#include "Defines.h"
 
 namespace dxle{
 //!実装用のものが集まる名前空間です。開発者以外がここの機能を使うのはお勧めできません。

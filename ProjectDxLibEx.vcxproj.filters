@@ -1,45 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="dxlibex">
-      <UniqueIdentifier>{0b19b9cc-e6a2-4766-9390-6fa0c48bf16e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="cpp">
       <UniqueIdentifier>{5e414fab-c3b6-4294-81d5-d039e00b05fa}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="dxlibex\DxLibEx.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_basic_types.hpp">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_Defines.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_Graph2D.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_Helper.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_impl.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_LINK.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_structs.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx_thread.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
+    <Filter Include="dxlibex">
+      <UniqueIdentifier>{def64e83-5341-4a94-aa83-cef7cdbc8855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dxlibex\config">
+      <UniqueIdentifier>{4d4d9eb2-6fae-4381-a30b-7d0e5c437cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dxlibex\config\compiler">
+      <UniqueIdentifier>{9bd26de5-52ad-4f66-9afa-1574f358af95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectDxLibEx\Graph2D.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dxlibex\basic_types.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\Defines.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\DxLibEx.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\Graph2D.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\Helper.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\impl.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\structs.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\thread.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\LINK.h">
+      <Filter>dxlibex\config</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

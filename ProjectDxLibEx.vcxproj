@@ -11,18 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dxlibex\DxLibEx.h" />
-    <ClInclude Include="dxlibex\DxLibEx_basic_types.hpp" />
-    <ClInclude Include="dxlibex\DxLibEx_Defines.h" />
-    <ClInclude Include="dxlibex\DxLibEx_Graph2D.h" />
-    <ClInclude Include="dxlibex\DxLibEx_Helper.h" />
-    <ClInclude Include="dxlibex\DxLibEx_impl.h" />
-    <ClInclude Include="dxlibex\DxLibEx_LINK.h" />
-    <ClInclude Include="dxlibex\DxLibEx_structs.h" />
-    <ClInclude Include="dxlibex\DxLibEx_thread.h" />
+    <ClCompile Include="ProjectDxLibEx\Graph2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProjectDxLibEx\Graph2D.cpp" />
+    <ClInclude Include="dxlibex\basic_types.hpp" />
+    <ClInclude Include="dxlibex\config\LINK.h" />
+    <ClInclude Include="dxlibex\Defines.h" />
+    <ClInclude Include="dxlibex\DxLibEx.h" />
+    <ClInclude Include="dxlibex\Graph2D.h" />
+    <ClInclude Include="dxlibex\Helper.h" />
+    <ClInclude Include="dxlibex\impl.hpp" />
+    <ClInclude Include="dxlibex\structs.h" />
+    <ClInclude Include="dxlibex\thread.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A7FFFCCD-08A6-4826-84D4-B46438389B66}</ProjectGuid>
@@ -72,7 +72,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./dxlibex;./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -100,7 +100,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./dxlibex;./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;./$(ProjectName);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>

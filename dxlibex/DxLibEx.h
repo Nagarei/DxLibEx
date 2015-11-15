@@ -6,9 +6,9 @@
 #include <utility>
 #include <memory>
 #include <queue>
-#include "DxLibEx_basic_types.hpp"
-#include "DxLibEx_Helper.h"
-#include "DxLibEx_Defines.h"
+#include "dxlibex/basic_types.hpp"
+#include "dxlibex/Helper.h"
+#include "dxlibex/Defines.h"
 
 namespace dxle
 {
@@ -1454,8 +1454,8 @@ namespace dxle
 }
 
 //----------2Dグラフィック----------//
-#include "DxLibEx_Graph2D.h"
+#include "dxlibex/Graph2D.h"
 
 //関数の定義
-#include "DxLibEx_impl.h"
+#include "dxlibex/impl.hpp"
 #endif

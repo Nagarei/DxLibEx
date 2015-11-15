@@ -5,7 +5,7 @@
 #include <utility>//std::pair
 #include <type_traits>
 #include <cstdint>
-#include "DxLibEx_Defines.h"
+#include "Defines.h"
 
 namespace dxle {
 	/** 

@@ -1,4 +1,4 @@
-#include "DxLibEx_Graph2D.h"
+#include "Graph2D.h"
 
 namespace dxle{
 namespace Graph2D {
