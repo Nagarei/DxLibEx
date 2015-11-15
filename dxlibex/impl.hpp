@@ -1,5 +1,5 @@
-#ifndef DX_LIB_EX_IMPL_H_2015_0930_0605_1596851632_
-#define DX_LIB_EX_IMPL_H_2015_0930_0605_1596851632_
+#ifndef DXLE_IMPL_H_2015_0930_0605_1596851632_
+#define DXLE_IMPL_H_2015_0930_0605_1596851632_
 
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
@@ -24,19 +24,19 @@ namespace dxle
 			static DxLibSys initer;
 		}
 		//!DxLib_Endを行う
-		inline void DxLibSys::End()DXLIBEX_NOEXCEPT
+		inline void DxLibSys::End()DXLE_NOEXCEPT
 		{
 			DxLib::DxLib_End();
 		}
 		//!DXライブラリの内部で使用している構造体をゼロ初期化して、
 		//!DxLib_Init の前に行った設定を無効化する( DxLib_Init の前でのみ有効 )
-		inline int DxLibSys::GlobalStructInitialize()DXLIBEX_NOEXCEPT
+		inline int DxLibSys::GlobalStructInitialize()DXLE_NOEXCEPT
 		{
 			return DxLib::DxLib_GlobalStructInitialize();
 		}
 		//!DXライブラリが初期化されているかどうかを取得する
 		//!@return true:初期化されている  false:されていない
-		inline bool DxLibSys::IsInit()DXLIBEX_NOEXCEPT
+		inline bool DxLibSys::IsInit()DXLE_NOEXCEPT
 		{
 			return DxLib::DxLib_IsInit() != FALSE;
 		}
@@ -50,7 +50,7 @@ namespace dxle
 				throw - 1;
 			}
 		}
-		DxLibSys::~DxLibSys()DXLIBEX_NOEXCEPT {
+		DxLibSys::~DxLibSys()DXLE_NOEXCEPT {
 			DxLibSys::End();
 		}
 	}
@@ -63,19 +63,19 @@ namespace dxle
 	{
 
 		//!ミリ秒単位の精度を持つカウンタの現在値を得る
-		inline Counter Counter::GetNowCount(bool UseRDTSCFlag)DXLIBEX_NOEXCEPT {
+		inline Counter Counter::GetNowCount(bool UseRDTSCFlag)DXLE_NOEXCEPT {
 			return Counter(DxLib::GetNowCount(UseRDTSCFlag));
 		}
 		//! 1000をかけてHiPerformanceCounterとみなすようにする
-		inline HiPerformanceCounter Counter::CastToHiPerformance()const DXLIBEX_NOEXCEPT {
+		inline HiPerformanceCounter Counter::CastToHiPerformance()const DXLE_NOEXCEPT {
 			return Cast<LONGLONG>::Do(static_cast<LONGLONG>(count()) * 1000);
 		}
 		//!マイクロ秒単位の精度を持つカウンタの現在値を得る
-		inline HiPerformanceCounter HiPerformanceCounter::GetNowCount(bool UseRDTSCFlag)DXLIBEX_NOEXCEPT {
+		inline HiPerformanceCounter HiPerformanceCounter::GetNowCount(bool UseRDTSCFlag)DXLE_NOEXCEPT {
 			return HiPerformanceCounter(DxLib::GetNowHiPerformanceCount(UseRDTSCFlag));
 		}
 		//! 1000で割ってCounterとみなすようにする
-		inline Counter HiPerformanceCounter::CastToLowPerformance()const DXLIBEX_NOEXCEPT {
+		inline Counter HiPerformanceCounter::CastToLowPerformance()const DXLE_NOEXCEPT {
 			return Cast<int>::Do(static_cast<int>(count() / 1000));
 		}
 	}
@@ -95,7 +95,7 @@ namespace dxle
 	//----------マウス関係----------//
 	namespace nMouse
 	{
-		inline MouseState::MouseState() DXLIBEX_NOEXCEPT
+		inline MouseState::MouseState() DXLE_NOEXCEPT
 			: LeftButton(ButtonState::Released)
 			, MiddleButton(ButtonState::Released)
 			, RightButton(ButtonState::Released)
@@ -118,7 +118,7 @@ namespace dxle
 		//!@param[in] xButton2       XBUTTON2 の状態。
 		inline MouseState::MouseState(int x, int y, int scrollWheel
 			, ButtonState leftButton, ButtonState middleButton, ButtonState rightButton
-			, ButtonState xButton1, ButtonState xButton2) DXLIBEX_NOEXCEPT
+			, ButtonState xButton1, ButtonState xButton2) DXLE_NOEXCEPT
 			: LeftButton(leftButton)
 			, MiddleButton(middleButton)
 			, RightButton(rightButton)
@@ -128,7 +128,7 @@ namespace dxle
 			, XButton2(xButton2)
 			, Y(y)
 		{}
-		inline bool MouseState::operator==(const MouseState& right)DXLIBEX_NOEXCEPT
+		inline bool MouseState::operator==(const MouseState& right)DXLE_NOEXCEPT
 		{
 			return (
 				(LeftButton == right.LeftButton) &&
@@ -142,12 +142,12 @@ namespace dxle
 				);
 		}
 
-		inline MouseInputInfo::MouseInputInfo()DXLIBEX_NOEXCEPT
+		inline MouseInputInfo::MouseInputInfo()DXLE_NOEXCEPT
 			: X(0)
 			, Y(0)
 			, Type(0)
 		{}
-		inline MouseInputInfo::MouseInputInfo(int x, int y, int type)DXLIBEX_NOEXCEPT
+		inline MouseInputInfo::MouseInputInfo(int x, int y, int type)DXLE_NOEXCEPT
 			: X(x)
 			, Y(y)
 			, Type(type)
@@ -155,7 +155,7 @@ namespace dxle
 
 		//!マウスの現在の状態 (マウスの位置や押されているボタンなど) を取得します。
 		//!@param ScrollWheelValueReset GetMouseWheelRotVolの引数CounterResetと同じ
-		MouseState Mouse::GetState(bool ScrollWheelValueReset)DXLIBEX_NOEXCEPT
+		MouseState Mouse::GetState(bool ScrollWheelValueReset)DXLE_NOEXCEPT
 		{
 			int x, y;
 			DxLib::GetMousePoint(&x, &y);

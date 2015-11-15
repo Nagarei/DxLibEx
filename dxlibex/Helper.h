@@ -1,5 +1,5 @@
-#ifndef DX_LIB_EX_HELPER_H_2015_0930_0626_256841632_
-#define DX_LIB_EX_HELPER_H_2015_0930_0626_256841632_
+#ifndef DXLE_HELPER_H_2015_0930_0626_256841632_
+#define DXLE_HELPER_H_2015_0930_0626_256841632_
 
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
@@ -21,40 +21,40 @@ namespace impl{
 	public:
 		//ここのpublic関数はUIに直結するので破壊的変更は可能な限り避けるように
 
-		Counter_template()DXLIBEX_NOEXCEPT : value(-1){}
+		Counter_template()DXLE_NOEXCEPT : value(-1){}
 
 		//! 整数型の値を取得する
-		inline const T& GetInt()const DXLIBEX_NOEXCEPT{ return count(); }
+		inline const T& GetInt()const DXLE_NOEXCEPT{ return count(); }
 		//! 整数型の値を取得する
-		inline const T& count()const DXLIBEX_NOEXCEPT{ return value; }
+		inline const T& count()const DXLE_NOEXCEPT{ return value; }
 		//! 整数型の値を取得する
-		explicit inline operator T()const DXLIBEX_NOEXCEPT{ return count(); }
+		explicit inline operator T()const DXLE_NOEXCEPT{ return count(); }
 
-		inline const This_T& operator+()const DXLIBEX_NOEXCEPT{ return *this; }
-		inline This_T        operator-()const DXLIBEX_NOEXCEPT{ return This_T(-value); }
+		inline const This_T& operator+()const DXLE_NOEXCEPT{ return *this; }
+		inline This_T        operator-()const DXLE_NOEXCEPT{ return This_T(-value); }
 
-		inline This_T operator+(const T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return This_T(value + other); }
-		inline This_T operator-(const T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return This_T(value - other); }
-		inline friend This_T operator+(const T& other, const This_T& bace) DXLIBEX_NOEXCEPT{ assert(bace.value != -1); return This_T(other + bace.value); }
-		inline friend This_T operator-(const T& other, const This_T& bace) DXLIBEX_NOEXCEPT{ assert(bace.value != -1); return This_T(other - bace.value); }
-		inline This_T& operator+=(const T& other) DXLIBEX_NOEXCEPT{ assert(value != -1); value += other; return *this; }
-		inline This_T& operator-=(const T& other) DXLIBEX_NOEXCEPT{ assert(value != -1); value -= other; return *this; }
+		inline This_T operator+(const T& other)const DXLE_NOEXCEPT{ assert(value != -1); return This_T(value + other); }
+		inline This_T operator-(const T& other)const DXLE_NOEXCEPT{ assert(value != -1); return This_T(value - other); }
+		inline friend This_T operator+(const T& other, const This_T& bace) DXLE_NOEXCEPT{ assert(bace.value != -1); return This_T(other + bace.value); }
+		inline friend This_T operator-(const T& other, const This_T& bace) DXLE_NOEXCEPT{ assert(bace.value != -1); return This_T(other - bace.value); }
+		inline This_T& operator+=(const T& other) DXLE_NOEXCEPT{ assert(value != -1); value += other; return *this; }
+		inline This_T& operator-=(const T& other) DXLE_NOEXCEPT{ assert(value != -1); value -= other; return *this; }
 
-		inline T operator-(const This_T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return value - other.value; }
+		inline T operator-(const This_T& other)const DXLE_NOEXCEPT{ assert(value != -1); return value - other.value; }
 
-		inline bool operator< (const This_T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return value <  other.value; }
-		inline bool operator> (const This_T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return value >  other.value; }
-		inline bool operator<=(const This_T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return value <= other.value; }
-		inline bool operator>=(const This_T& other)const DXLIBEX_NOEXCEPT{ assert(value != -1); return value >= other.value; }
+		inline bool operator< (const This_T& other)const DXLE_NOEXCEPT{ assert(value != -1); return value <  other.value; }
+		inline bool operator> (const This_T& other)const DXLE_NOEXCEPT{ assert(value != -1); return value >  other.value; }
+		inline bool operator<=(const This_T& other)const DXLE_NOEXCEPT{ assert(value != -1); return value <= other.value; }
+		inline bool operator>=(const This_T& other)const DXLE_NOEXCEPT{ assert(value != -1); return value >= other.value; }
 
 	protected:
-		explicit Counter_template(T param)DXLIBEX_NOEXCEPT : value(param){}
+		explicit Counter_template(T param)DXLE_NOEXCEPT : value(param){}
 
 		template<typename U>
 		struct Cast : public Counter_template<U>{
 			explicit Cast(const U& param) :Counter_template<U>(param){}
 			//!Counter_template<T>からCounter_template<U>にキャストする
-			inline static Counter_template<U> Do(const U& value)DXLIBEX_NOEXCEPT
+			inline static Counter_template<U> Do(const U& value)DXLE_NOEXCEPT
 			{
 				return Counter_template<U>(Cast<U>(value));
 			}
@@ -75,19 +75,19 @@ namespace impl{
 		Unique_Handle_Bace(const Bace_T&) = delete;
 		Unique_Handle_Bace& operator=(const Bace_T&) = delete;
 	public:
-		Unique_Handle_Bace()DXLIBEX_NOEXCEPT
+		Unique_Handle_Bace()DXLE_NOEXCEPT
 			:handle(-1)
 		{}
 
 		//所有権の譲渡
-		Unique_Handle_Bace(Bace_T&& other)DXLIBEX_NOEXCEPT
+		Unique_Handle_Bace(Bace_T&& other)DXLE_NOEXCEPT
 			: handle(other.handle)
 		{
 			other.handle = -1;
 			SetDeleteHandleFlag(handle, &handle);
 		}
 		//所有権の譲渡
-		Unique_Handle_Bace& operator=(Bace_T&& other)DXLIBEX_NOEXCEPT
+		Unique_Handle_Bace& operator=(Bace_T&& other)DXLE_NOEXCEPT
 		{
 			if (this == &other) { return *this; }
 			handle = other.handle;
@@ -96,13 +96,13 @@ namespace impl{
 			return *this;
 		}
 
-		~Unique_Handle_Bace() DXLIBEX_NOEXCEPT{
+		~Unique_Handle_Bace() DXLE_NOEXCEPT{
 			//リソース解放
 			static_cast<Child*>(this)->Delete();
 		}
 	protected:
 		//間違えて他の種類のハンドルを持たないようにprotectedにしておく
-		Unique_Handle_Bace(int param_handle)DXLIBEX_NOEXCEPT
+		Unique_Handle_Bace(int param_handle)DXLE_NOEXCEPT
 			: handle(param_handle)
 		{
 			SetDeleteHandleFlag(handle, &handle);
@@ -110,13 +110,13 @@ namespace impl{
 
 		//!このオブジェクトを無効化し、今まで使っていたハンドルを返す
 		//!自動削除も無効化される
-		inline int ReleaseRun()DXLIBEX_NOEXCEPT{
+		inline int ReleaseRun()DXLE_NOEXCEPT{
 			int temp = GetHandle();
 			SetDeleteHandleFlag(handle, nullptr);
 			handle = -1;
 			return temp;
 		}
-		int GetHandle()const DXLIBEX_NOEXCEPT{ return handle; }
+		int GetHandle()const DXLE_NOEXCEPT{ return handle; }
 	private:
 		int handle;
 	};
@@ -131,18 +131,18 @@ namespace impl{
 		Unique_HandledObject_Bace(const Bace_T&) = delete;
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
 	public:
-		Unique_HandledObject_Bace()DXLIBEX_NOEXCEPT
+		Unique_HandledObject_Bace()DXLE_NOEXCEPT
 			: handle(-1)
 		{}
 
 		//所有権の譲渡
-		Unique_HandledObject_Bace(Bace_T&& other)DXLIBEX_NOEXCEPT
+		Unique_HandledObject_Bace(Bace_T&& other)DXLE_NOEXCEPT
 			: handle(other.handle)
 		{
 			other.handle = -1;
 		}
 		//所有権の譲渡
-		Unique_HandledObject_Bace& operator=(Bace_T&& other)DXLIBEX_NOEXCEPT
+		Unique_HandledObject_Bace& operator=(Bace_T&& other)DXLE_NOEXCEPT
 		{
 			if (this == &other) { return *this; }
 			handle = other.handle;
@@ -153,16 +153,16 @@ namespace impl{
 
 	protected:
 		//間違えて他の種類のハンドルを持たないようにprotectedにしておく
-		Unique_HandledObject_Bace(int param_handle)DXLIBEX_NOEXCEPT
+		Unique_HandledObject_Bace(int param_handle)DXLE_NOEXCEPT
 			: handle(param_handle)
 		{
 			DxLib::SetDeleteHandleFlag(handle, &handle);
 		}
-		virtual ~Unique_HandledObject_Bace() DXLIBEX_NOEXCEPT {
+		virtual ~Unique_HandledObject_Bace() DXLE_NOEXCEPT {
 			//リソース解放
 			static_cast<Child*>(this)->Delete();
 		}
-		int GetHandle()const DXLIBEX_NOEXCEPT { return handle; }
+		int GetHandle()const DXLE_NOEXCEPT { return handle; }
 		void SetHandle_IMPL(int new_handle) { handle = (param_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
 	private:
 		int handle;

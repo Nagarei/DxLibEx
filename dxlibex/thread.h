@@ -1,15 +1,15 @@
-#ifndef DXLIBEX_THREAD_H_201511132146_85168523652
-#define DXLIBEX_THREAD_H_201511132146_85168523652
+#ifndef DXLE_THREAD_H_201511132146_85168523652
+#define DXLE_THREAD_H_201511132146_85168523652
 #include <mutex>
 #include "DxLib.h"
 #include "Defines.h"
 
 #ifdef DX_THREAD_SAFE
-#define DXLIBEX_GET_LOCK() (std::lock_guard<std::mutex> lock(mtx);)
-#define DXLIBEX_NOEXCEPT_SINGLE
+#define DXLE_GET_LOCK() (std::lock_guard<std::mutex> lock(mtx);)
+#define DXLE_NOEXCEPT_SINGLE
 #else
-#define DXLIBEX_GET_LOCK()
-#define DXLIBEX_NOEXCEPT_SINGLE DXLIBEX_NOEXCEPT
+#define DXLE_GET_LOCK()
+#define DXLE_NOEXCEPT_SINGLE DXLE_NOEXCEPT
 #endif
 
 //インクルードガード

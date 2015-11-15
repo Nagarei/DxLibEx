@@ -1,5 +1,5 @@
-#ifndef INC_DXLIBEX_BASIC_TYPES_HPP
-#define INC_DXLIBEX_BASIC_TYPES_HPP
+#ifndef DXLE_BASIC_TYPES_HPP_2015111521451632
+#define DXLE_BASIC_TYPES_HPP_2015111521451632
 //#pragma once
 #include <iostream>//ostream
 #include <utility>//std::pair
@@ -55,22 +55,22 @@ namespace dxle {
 	public:
 		typedef T value_type;
 		value_type x, y;
-		point_c() DXLIBEX_NOEXCEPT : x(), y() {}
-		point_c(std::nullptr_t) DXLIBEX_NOEXCEPT : x(), y() {}//for compare with 0. rf.)http://faithandbrave.hateblo.jp/entry/20081222/1229936810
-		point_c(value_type x_, value_type y_) DXLIBEX_NOEXCEPT : x(x_), y(y_) {}
+		point_c() DXLE_NOEXCEPT : x(), y() {}
+		point_c(std::nullptr_t) DXLE_NOEXCEPT : x(), y() {}//for compare with 0. rf.)http://faithandbrave.hateblo.jp/entry/20081222/1229936810
+		point_c(value_type x_, value_type y_) DXLE_NOEXCEPT : x(x_), y(y_) {}
 
 		//copy constructor
-		point_c(const point_c<value_type>& o) DXLIBEX_NOEXCEPT : x(o.x), y(o.y) {}
+		point_c(const point_c<value_type>& o) DXLE_NOEXCEPT : x(o.x), y(o.y) {}
 		//move constructor
-		point_c(point_c<value_type>&& o) DXLIBEX_NOEXCEPT : x(std::move(o.x)), y(std::move(o.y)) {}
+		point_c(point_c<value_type>&& o) DXLE_NOEXCEPT : x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
-		point_c& operator=(const point_c<value_type>& r) DXLIBEX_NOEXCEPT {
+		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT {
 			this->x = r.x;
 			this->y = r.y;
 			return *this;
 		}
 		//move assignment operator
-		point_c& operator=(point_c<value_type>&& r) DXLIBEX_NOEXCEPT {
+		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT {
 			this->x = std::move(r.x);
 			this->y = std::move(r.y);
 			return *this;
@@ -80,19 +80,19 @@ namespace dxle {
 
 		//!\~english conversion from std::pair
 		//!\~japanese std::pairからの変換
-		point_c(const std::pair<value_type, value_type>& p) DXLIBEX_NOEXCEPT : x(p.first), y(p.second) {}
-		point_c(std::pair<value_type, value_type>&& p) DXLIBEX_NOEXCEPT : x(std::move(p.first)), y(std::move(p.second)) {}
-		explicit operator bool() const DXLIBEX_NOEXCEPT {
+		point_c(const std::pair<value_type, value_type>& p) DXLE_NOEXCEPT : x(p.first), y(p.second) {}
+		point_c(std::pair<value_type, value_type>&& p) DXLE_NOEXCEPT : x(std::move(p.first)), y(std::move(p.second)) {}
+		explicit operator bool() const DXLE_NOEXCEPT {
 			return (0 != this->x) || (0 != this->y);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLIBEX_NOEXCEPT {
+		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLE_NOEXCEPT {
 			return point_c<_Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLIBEX_NOEXCEPT {
+		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLE_NOEXCEPT {
 			return std::pair<_Tp2, _Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 	};
@@ -144,11 +144,11 @@ namespace dxle {
 	}
 
 	template <typename T>
-	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLIBEX_NOEXCEPT {
+	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT {
 		return static_cast<bool>(p);
 	}
 	template <typename T>
-	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLIBEX_NOEXCEPT {
+	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT {
 		return static_cast<bool>(p);
 	}
 	////////////////////////////////////////////////////////////
@@ -161,14 +161,14 @@ namespace dxle {
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator -(const point_c<T>& r) DXLIBEX_NOEXCEPT {
+	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT {
 		return point_c<T>(-r.x, -r.y);
 	}
 
 	template <typename T>
-	inline const point_c<T>& operator +(const point_c<T>& r) DXLIBEX_NOEXCEPT { return r; }
+	inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT { return r; }
 	template <typename T>
-	inline point_c<T>&& operator +(point_c<T>&& r) DXLIBEX_NOEXCEPT { return r; }
+	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT { return r; }
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c

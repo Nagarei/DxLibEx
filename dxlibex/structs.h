@@ -1,5 +1,5 @@
-#ifndef DX_LIB_EX_STRUCTS_H_
-#define DX_LIB_EX_STRUCTS_H_
+#ifndef DXLE_STRUCTS_H_
+#define DXLE_STRUCTS_H_
 #include "DxLib.h"
 
 namespace dxle{
