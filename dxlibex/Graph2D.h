@@ -139,8 +139,18 @@ namespace dxle
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する
 			inline int GetGraphFilePath(TCHAR FilePathBuffer[])const DXLIBEX_NOEXCEPT { return DxLib::GetGraphFilePath(GetHandle(), FilePathBuffer); }
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する
-			inline std::basic_string<TCHAR> GetGraphFilePath()const DXLIBEX_NOEXCEPT { TCHAR FilePathBuffer[2048]; if (GetGraphFilePath(FilePathBuffer) == -1) { return std::basic_string<TCHAR>(); } return FilePathBuffer; }
-	
+			inline std::basic_string<TCHAR> GetGraphFilePath()const DXLIBEX_NOEXCEPT {
+				std::basic_string<TCHAR> buf;
+				buf.resize(2048);
+				if (this->GetGraphFilePath(&buf[0]) == -1) {
+					return std::basic_string<TCHAR>();
+				}
+				buf.resize(std::strlen(buf.c_str()));
+				buf.shrink_to_fit();
+				return buf;
+			}
+
+
 			//! 画像の等倍描画
 			inline int DrawGraph(int x, int y, bool TransFlag)const DXLIBEX_NOEXCEPT_SINGLE{ DXLIBEX_GET_LOCK(); return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
 			//! 画像の拡大描画
