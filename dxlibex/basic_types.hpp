@@ -1,11 +1,11 @@
-#ifndef DXLE_BASIC_TYPES_HPP_2015111521451632
+﻿#ifndef DXLE_BASIC_TYPES_HPP_2015111521451632
 #define DXLE_BASIC_TYPES_HPP_2015111521451632
 //#pragma once
 #include <iostream>//ostream
 #include <utility>//std::pair
 #include <type_traits>
 #include <cstdint>
-#include "Defines.h"
+#include "dxlibex/Defines.h"
 
 namespace dxle {
 	/** 

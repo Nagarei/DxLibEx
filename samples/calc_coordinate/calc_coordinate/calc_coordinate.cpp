@@ -1,4 +1,4 @@
-﻿#include <dxlibex/DxLibEx_basic_types.hpp>
+﻿#include <dxlibex/basic_types.hpp>
 int main() {
 	using std::cout;
 	using std::endl;

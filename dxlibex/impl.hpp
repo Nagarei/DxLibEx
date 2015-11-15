@@ -4,7 +4,7 @@
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
 
-#include "DxLibEx.h"
+#include "dxlibex/DxLibEx.h"
 #include <type_traits>
 #include <new>
 //各関数の定義
