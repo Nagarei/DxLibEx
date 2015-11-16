@@ -5,6 +5,7 @@
 #include <utility>//std::pair
 #include <type_traits>
 #include <cstdint>
+#include <initializer_list>
 #include "dxlibex/Defines.h"
 
 namespace dxle {
@@ -12,7 +13,7 @@ namespace dxle {
 	@brief	\~japanese 2次元座標(x, y)　テンプレートクラス。
 			\~english Template class for 2D points specified by its coordinates `x` and `y`.
 
-	\~english	An instance of the class is interchangeable with std::pair. There is also a cast operator
+	\~english	An instance of the claess is interchangeable with std::pair. There is also a cast operator
 				to convert point coordinates to the specified type (using static_cast). Commonly, the conversion
 				uses this operation for each of the coordinates. Besides the class members listed in the
 				declaration above, the following operations on points are implemented:
@@ -78,6 +79,7 @@ namespace dxle {
 
 		//convert constructor
 
+		DXLE_CONSTEXPR point_c(std::initializer_list<T> values) DXLE_NOEXCEPT : x((values.size()) ? *values.begin() : 0), y((0 < values.size()) ? *(values.begin() + 1) : 0) {}
 		//!\~english conversion from std::pair
 		//!\~japanese std::pairからの変換
 		point_c(const std::pair<value_type, value_type>& p) DXLE_NOEXCEPT : x(p.first), y(p.second) {}
@@ -155,7 +157,7 @@ namespace dxle {
 	/// \relates point_c
 	/// \brief Overload of unary operator -
 	///
-	/// \param right Vector to negate
+	/// \param r Vector to negate
 	///
 	/// \return Memberwise opposite of the vector
 	///
@@ -175,144 +177,155 @@ namespace dxle {
 	/// \brief Overload of binary operator +=
 	///
 	/// This operator performs a memberwise addition of both vectors,
-	/// and assigns the result to \a left.
+	/// and assigns the result to \a l.
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a vector)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a vector)
 	///
-	/// \return Reference to \a left
+	/// \return Reference to \a l
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T>& operator +=(point_c<T>& left, const point_c<T>& right);
+	point_c<T>& operator +=(point_c<T>& l, const point_c<T>& r){
+	    l.x += r.x;
+	    l.y += r.y;
+	    return l;
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator -=
 	///
 	/// This operator performs a memberwise subtraction of both vectors,
-	/// and assigns the result to \a left.
+	/// and assigns the result to \a l.
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a vector)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a vector)
 	///
-	/// \return Reference to \a left
+	/// \return Reference to \a l
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T>& operator -=(point_c<T>& left, const point_c<T>& right);
+	point_c<T>& operator -=(point_c<T>& l, const point_c<T>& r){
+	    l.x -= r.x;
+	    l.y -= r.y;
+	    return l;
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator +
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a vector)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a vector)
 	///
 	/// \return Memberwise addition of both vectors
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator +(const point_c<T>& left, const point_c<T>& right);
+	point_c<T> operator +(const point_c<T>& l, const point_c<T>& r){
+		return point_c<T>(l.x + r.x, l.y + r.y);
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator -
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a vector)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a vector)
 	///
 	/// \return Memberwise subtraction of both vectors
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator -(const point_c<T>& left, const point_c<T>& right);
+	point_c<T> operator -(const point_c<T>& l, const point_c<T>& r){
+		return point_c<T>(l.x - r.x, l.y - r.y);
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator *
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a scalar value)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a scalar value)
 	///
-	/// \return Memberwise multiplication by \a right
+	/// \return Memberwise multiplication by \a r
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator *(const point_c<T>& left, T right);
+	point_c<T> operator *(const point_c<T>& l, T r){
+		return point_c<T>(l.x * r, l.y * r);
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator *
 	///
-	/// \param left  Left operand (a scalar value)
-	/// \param right Right operand (a vector)
+	/// \param l  L operand (a scalar value)
+	/// \param r Right operand (a vector)
 	///
-	/// \return Memberwise multiplication by \a left
+	/// \return Memberwise multiplication by \a l
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator *(T left, const point_c<T>& right);
+	point_c<T> operator *(T l, const point_c<T>& r){
+		return point_c<T>(l + r.x, l + r.y);
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator *=
 	///
-	/// This operator performs a memberwise multiplication by \a right,
-	/// and assigns the result to \a left.
+	/// This operator performs a memberwise multiplication by \a r,
+	/// and assigns the result to \a l.
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a scalar value)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a scalar value)
 	///
-	/// \return Reference to \a left
+	/// \return Reference to \a l
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T>& operator *=(point_c<T>& left, T right);
+	point_c<T>& operator *=(point_c<T>& l, T r){
+	    l.x *= r;
+	    l.y *= r;
+	    return l;
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator /
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a scalar value)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a scalar value)
 	///
-	/// \return Memberwise division by \a right
+	/// \return Memberwise division by \a r
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator /(const point_c<T>& left, T right);
+	point_c<T> operator /(const point_c<T>& l, T r){
+		return point_c<T>(l.x * r, l.y * r);
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator /=
 	///
-	/// This operator performs a memberwise division by \a right,
-	/// and assigns the result to \a left.
+	/// This operator performs a memberwise division by \a r,
+	/// and assigns the result to \a l.
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a scalar value)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a scalar value)
 	///
-	/// \return Reference to \a left
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T>
-	point_c<T>& operator /=(point_c<T>& left, T right);
-
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator ==
-	///
-	/// This operator compares strict equality between two vectors.
-	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a vector)
-	///
-	/// \return True if \a left is equal to \a right
+	/// \return Reference to \a l
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	bool operator ==(const point_c<T>& left, const point_c<T>& right);
+	point_c<T>& operator /=(point_c<T>& l, T r){
+	    l.x /= r;
+	    l.y /= r;
+	    return l;
+	}
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
@@ -320,14 +333,33 @@ namespace dxle {
 	///
 	/// This operator compares strict difference between two vectors.
 	///
-	/// \param left  Left operand (a vector)
-	/// \param right Right operand (a vector)
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a vector)
 	///
-	/// \return True if \a left is not equal to \a right
+	/// \return True if \a l is not equal to \a r
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	bool operator !=(const point_c<T>& left, const point_c<T>& right);
+	bool operator !=(const point_c<T>& l, const point_c<T>& r){
+		return (l.x != r.x) || (l.y != r.y);
+	}
+
+	////////////////////////////////////////////////////////////
+	/// \relates point_c
+	/// \brief Overload of binary operator ==
+	///
+	/// This operator compares strict equality between two vectors.
+	///
+	/// \param l  L operand (a vector)
+	/// \param r Right operand (a vector)
+	///
+	/// \return True if \a l is equal to \a r
+	///
+	////////////////////////////////////////////////////////////
+	template <typename T>
+	bool operator ==(const point_c<T>& l, const point_c<T>& r){
+		return !(l != r);
+	}
 
 
 	typedef point_c<int> pointi;
