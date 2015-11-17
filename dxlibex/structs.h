@@ -1,11 +1,11 @@
-﻿#ifndef DXLE_STRUCTS_H_
-#define DXLE_STRUCTS_H_
+﻿#ifndef DXLE_INC_STRUCTS_H_
+#define DXLE_INC_STRUCTS_H_
 #include "DxLib.h"
 
 namespace dxle{
 namespace DxStructs//!DxLibのstructのusing宣言を集めたnamespaceです
 {
-	
+
 	using DxLib::IMEINPUTCLAUSEDATA;//!ＩＭＥ入力文字列の描画に必要な情報の内の文節情報
 	using DxLib::LPIMEINPUTCLAUSEDATA;//!ＩＭＥ入力文字列の描画に必要な情報の内の文節情報
 

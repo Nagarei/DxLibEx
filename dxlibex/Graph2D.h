@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_GRAPH_2D_H_201510241561
-#define DXLE_GRAPH_2D_H_201510241561
+﻿#ifndef DXLE_INC_GRAPH_2D_H_
+#define DXLE_INC_GRAPH_2D_H_
 
 #include "DxLib.h"
 #include <type_traits>

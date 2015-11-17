@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_HELPER_H_2015_0930_0626_256841632_
-#define DXLE_HELPER_H_2015_0930_0626_256841632_
+﻿#ifndef DXLE_INC_HELPER_H_
+#define DXLE_INC_HELPER_H_
 
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません

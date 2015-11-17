@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_DEFINES_H_2015_10_11_1714_185961646566518
-#define DXLE_DEFINES_H_2015_10_11_1714_185961646566518
+﻿#ifndef DXLE_INC_DEFINES_H_
+#define DXLE_INC_DEFINES_H_
 
 //実装用ファイルです
 //開発者以外がここの機能を使うのはお勧めできません

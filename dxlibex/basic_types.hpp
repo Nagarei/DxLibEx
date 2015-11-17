@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_BASIC_TYPES_HPP_2015111521451632
-#define DXLE_BASIC_TYPES_HPP_2015111521451632
+﻿#ifndef DXLE_INC_BASIC_TYPES_HPP_
+#define DXLE_INC_BASIC_TYPES_HPP_
 //#pragma once
 #include <iostream>//ostream
 #include <utility>//std::pair

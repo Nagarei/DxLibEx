@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_THREAD_H_201511132146_85168523652
-#define DXLE_THREAD_H_201511132146_85168523652
+﻿#ifndef DXLE_INC_THREAD_H_
+#define DXLE_INC_THREAD_H_
 #include <mutex>
 #include "DxLib.h"
 #include "dxlibex/Defines.h"

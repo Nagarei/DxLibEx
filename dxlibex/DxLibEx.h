@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_H_
-#define DXLE_H_
+﻿#ifndef DXLE_INC_DXLIB_H_
+#define DXLE_INC_DXLIB_H_
 
 #include "DxLib.h"
 #include <type_traits>
