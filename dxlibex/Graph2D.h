@@ -181,9 +181,9 @@ namespace dxle
 			//! 画像の左右反転描画
 			inline int DrawTurnGraph(const pointi& p, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawTurnGraph(p.x, p.y, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画
-			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }//x1とx2はこれで正しい
 			//! 画像の拡大左右反転描画
-			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
+			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//lu.xとrb.xはこれで正しい
 	
 			//! 画像の描画( 座標指定が float 版 )
 			inline int DrawGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
@@ -200,7 +200,7 @@ namespace dxle
 			//! 画像の左右反転描画( 座標指定が float 版 )
 			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
-			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }
+			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
 	
 		private:
 			typedef Unique_HandledObject_Bace<Texture2D> Parent_T;
