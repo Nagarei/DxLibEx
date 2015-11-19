@@ -6,6 +6,7 @@
 #include <utility>
 #include <memory>
 #include <string>
+#include <array>
 #include "dxlibex/Helper.h"
 #include "dxlibex/Defines.h"
 #include "dxlibex/basic_types.hpp"
@@ -153,20 +154,36 @@ namespace dxle
 
 			//! 画像の等倍描画
 			inline int DrawGraph(int x, int y, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
+			//! 画像の等倍描画
+			inline int DrawGraph(const pointi& p, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawGraph(p.x, p.y, GetHandle(), TransFlag); }
 			//! 画像の拡大描画
 			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
+			//! 画像の拡大描画
+			inline int DrawExtendGraph(const pointi& lu, const pointi& rb, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
 			//! 画像の回転描画
 			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			//! 画像の回転描画
+			inline int DrawRotaGraph(const pointi& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawRotaGraph(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画２( 回転中心指定付き )
 			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			//! 画像の回転描画２( 回転中心指定付き )
+			inline int DrawRotaGraph2(const pointi& p, const pointi& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawRotaGraph2(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
 			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
+			inline int DrawRotaGraph3(const pointi& p, const pointi& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawRotaGraph3(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の自由変形描画
 			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawModiGraph(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
+			//! 画像の自由変形描画
+			inline int DrawModiGraph(const std::array<pointi, 4>& ps, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawModiGraph(ps[0].x, ps[0].y, ps[1].x, ps[1].y, ps[2].x, ps[2].y, ps[3].x, ps[3].y, GetHandle(), TransFlag); }
 			//! 画像の左右反転描画
 			inline int DrawTurnGraph(int x, int y, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawTurnGraph(x, y, GetHandle(), TransFlag); }
+			//! 画像の左右反転描画
+			inline int DrawTurnGraph(const pointi& p, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawTurnGraph(p.x, p.y, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画
-			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
+			//! 画像の拡大左右反転描画
+			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraph(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
 	
 			//! 画像の描画( 座標指定が float 版 )
 			inline int DrawGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
