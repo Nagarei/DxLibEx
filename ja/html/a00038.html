@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>DxLibEx: dxle::DxLog 名前空間</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>名前空間一覧</span></a></li>
+      <li><a href="namespacemembers.html"><span>名前空間メンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('a00038.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">dxle::DxLog 名前空間</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ログ系  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ac88ce40db0ea044eb1a3cb2d8225cb9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ac88ce40db0ea044eb1a3cb2d8225cb9d">ErrorLogAdd</a> (const TCHAR *ErrorStr) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:ac88ce40db0ea044eb1a3cb2d8225cb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に文字列を出力する  <a href="#ac88ce40db0ea044eb1a3cb2d8225cb9d">[詳解]</a><br /></td></tr>
+<tr class="separator:ac88ce40db0ea044eb1a3cb2d8225cb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27191e1f77578ec174eeabd7a0a0ea72"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a27191e1f77578ec174eeabd7a0a0ea72"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00038.html#a27191e1f77578ec174eeabd7a0a0ea72">ErrorLogFmtAdd</a> (const TCHAR *FormatString, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a27191e1f77578ec174eeabd7a0a0ea72"><td class="mdescLeft">&#160;</td><td class="mdescRight">書式付きで ログファイル( Log.txt ) に文字列を出力する( 書式は printf と同じ )  <a href="#a27191e1f77578ec174eeabd7a0a0ea72">[詳解]</a><br /></td></tr>
+<tr class="separator:a27191e1f77578ec174eeabd7a0a0ea72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af032e8c08e8f7288041f3f51005258ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#af032e8c08e8f7288041f3f51005258ba">ErrorLogTabAdd</a> (void) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:af032e8c08e8f7288041f3f51005258ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に出力する文字列の前に付けるタブの数を一つ増やす  <a href="#af032e8c08e8f7288041f3f51005258ba">[詳解]</a><br /></td></tr>
+<tr class="separator:af032e8c08e8f7288041f3f51005258ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af995fd1a6a0bf1405d1c7360754f8abf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#af995fd1a6a0bf1405d1c7360754f8abf">ErrorLogTabSub</a> (void) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:af995fd1a6a0bf1405d1c7360754f8abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に出力する文字列の前に付けるタブの数を一つ減らす  <a href="#af995fd1a6a0bf1405d1c7360754f8abf">[詳解]</a><br /></td></tr>
+<tr class="separator:af995fd1a6a0bf1405d1c7360754f8abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae11b89f5cef65ee70ac3b294893da9a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ae11b89f5cef65ee70ac3b294893da9a6">SetUseTimeStampFlag</a> (bool UseFlag) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:ae11b89f5cef65ee70ac3b294893da9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) に出力する文字列の前に起動してからの時間を付けるかどうかを設定する( TRUE:付ける( デフォルト) FALSE:付けない )  <a href="#ae11b89f5cef65ee70ac3b294893da9a6">[詳解]</a><br /></td></tr>
+<tr class="separator:ae11b89f5cef65ee70ac3b294893da9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7276b87633d325592d09831150395c1c"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a7276b87633d325592d09831150395c1c"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00038.html#a7276b87633d325592d09831150395c1c">AppLogAdd</a> (const TCHAR *String, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a7276b87633d325592d09831150395c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ErrorLogFmtAdd と同じ機能の関数  <a href="#a7276b87633d325592d09831150395c1c">[詳解]</a><br /></td></tr>
+<tr class="separator:a7276b87633d325592d09831150395c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1cb456cfd72259832d61d31797e477"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a3f1cb456cfd72259832d61d31797e477">SetOutApplicationLogValidFlag</a> (bool Flag) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:a3f1cb456cfd72259832d61d31797e477"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) を作成するかどうかを設定する( TRUE:作成する( デフォルト ) FALSE:作成しない )、DxLib_Init の前でのみ使用可能　  <a href="#a3f1cb456cfd72259832d61d31797e477">[詳解]</a><br /></td></tr>
+<tr class="separator:a3f1cb456cfd72259832d61d31797e477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f0facbe0b27f3556b267e16c3ff9d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a82f0facbe0b27f3556b267e16c3ff9d9">SetApplicationLogSaveDirectory</a> (const TCHAR *DirectoryPath) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:a82f0facbe0b27f3556b267e16c3ff9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル( Log.txt ) を保存するディレクトリパスを設定する  <a href="#a82f0facbe0b27f3556b267e16c3ff9d9">[詳解]</a><br /></td></tr>
+<tr class="separator:a82f0facbe0b27f3556b267e16c3ff9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c5e9050b614a359893728c01bbe10d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ad6c5e9050b614a359893728c01bbe10d">SetUseDateNameLogFile</a> (bool Flag) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:ad6c5e9050b614a359893728c01bbe10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ログファイル名に日付をつけるかどうかをセットする( TRUE:付ける FALSE:付けない( デフォルト ) )  <a href="#ad6c5e9050b614a359893728c01bbe10d">[詳解]</a><br /></td></tr>
+<tr class="separator:ad6c5e9050b614a359893728c01bbe10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53481c12341c03787b46e8052bd75ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ab53481c12341c03787b46e8052bd75ea">SetLogDrawOutFlag</a> (bool DrawFlag) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:ab53481c12341c03787b46e8052bd75ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果を画面に出力するかどうかを設定する、TRUE:出力を行う FALSE:出力を行わない( printfDx を実行すると内部で SetLogDrawOutFlag( TRUE ) ; が呼ばれます )  <a href="#ab53481c12341c03787b46e8052bd75ea">[詳解]</a><br /></td></tr>
+<tr class="separator:ab53481c12341c03787b46e8052bd75ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29642caa3af9dc0a4a5eac093a8178ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a29642caa3af9dc0a4a5eac093a8178ab">GetLogDrawFlag</a> (void) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:a29642caa3af9dc0a4a5eac093a8178ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果を画面に出力するかどうかの設定を取得する( 戻り値 TRUE:出力を行う FALSE:出力を行わない )  <a href="#a29642caa3af9dc0a4a5eac093a8178ab">[詳解]</a><br /></td></tr>
+<tr class="separator:a29642caa3af9dc0a4a5eac093a8178ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d6d88d3a648f3380da61b9a1a38c7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a90d6d88d3a648f3380da61b9a1a38c7a">SetLogFontSize</a> (int Size) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:a90d6d88d3a648f3380da61b9a1a38c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果を画面に出力する際に使用するフォントのサイズを設定する  <a href="#a90d6d88d3a648f3380da61b9a1a38c7a">[詳解]</a><br /></td></tr>
+<tr class="separator:a90d6d88d3a648f3380da61b9a1a38c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad554c83ba2cf05ede5af4a65f19eb4fd"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ad554c83ba2cf05ede5af4a65f19eb4fd"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00038.html#ad554c83ba2cf05ede5af4a65f19eb4fd">printfDx</a> (const TCHAR *FormatString, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ad554c83ba2cf05ede5af4a65f19eb4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">printf と同じ引数で画面に文字列を表示するための関数  <a href="#ad554c83ba2cf05ede5af4a65f19eb4fd">[詳解]</a><br /></td></tr>
+<tr class="separator:ad554c83ba2cf05ede5af4a65f19eb4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae654b32ad21a3df5db2e686b672ff3b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ae654b32ad21a3df5db2e686b672ff3b4">clsDx</a> (void) DXLE_NOEXCEPT</td></tr>
+<tr class="memdesc:ae654b32ad21a3df5db2e686b672ff3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">printfDx の結果をリセットするための関数  <a href="#ae654b32ad21a3df5db2e686b672ff3b4">[詳解]</a><br /></td></tr>
+<tr class="separator:ae654b32ad21a3df5db2e686b672ff3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ログ系 </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a7276b87633d325592d09831150395c1c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::AppLogAdd </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>String</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ErrorLogFmtAdd と同じ機能の関数 </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00159">159</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae654b32ad21a3df5db2e686b672ff3b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::clsDx </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>printfDx の結果をリセットするための関数 </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00185">185</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac88ce40db0ea044eb1a3cb2d8225cb9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::ErrorLogAdd </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>ErrorStr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル( Log.txt ) に文字列を出力する </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00147">147</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a27191e1f77578ec174eeabd7a0a0ea72"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::ErrorLogFmtAdd </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FormatString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>書式付きで ログファイル( Log.txt ) に文字列を出力する( 書式は printf と同じ ) </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00150">150</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af032e8c08e8f7288041f3f51005258ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::ErrorLogTabAdd </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル( Log.txt ) に出力する文字列の前に付けるタブの数を一つ増やす </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00152">152</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="af995fd1a6a0bf1405d1c7360754f8abf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::ErrorLogTabSub </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル( Log.txt ) に出力する文字列の前に付けるタブの数を一つ減らす </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00154">154</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a29642caa3af9dc0a4a5eac093a8178ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::GetLogDrawFlag </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>printfDx の結果を画面に出力するかどうかの設定を取得する( 戻り値 TRUE:出力を行う FALSE:出力を行わない ) </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00175">175</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad554c83ba2cf05ede5af4a65f19eb4fd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::printfDx </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>FormatString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>printf と同じ引数で画面に文字列を表示するための関数 </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00183">183</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a82f0facbe0b27f3556b267e16c3ff9d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::SetApplicationLogSaveDirectory </td>
+          <td>(</td>
+          <td class="paramtype">const TCHAR *&#160;</td>
+          <td class="paramname"><em>DirectoryPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル( Log.txt ) を保存するディレクトリパスを設定する </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00164">164</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab53481c12341c03787b46e8052bd75ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::SetLogDrawOutFlag </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>DrawFlag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>printfDx の結果を画面に出力するかどうかを設定する、TRUE:出力を行う FALSE:出力を行わない( printfDx を実行すると内部で SetLogDrawOutFlag( TRUE ) ; が呼ばれます ) </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00173">173</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a90d6d88d3a648f3380da61b9a1a38c7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::SetLogFontSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>printfDx の結果を画面に出力する際に使用するフォントのサイズを設定する </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00177">177</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f1cb456cfd72259832d61d31797e477"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::SetOutApplicationLogValidFlag </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>Flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル( Log.txt ) を作成するかどうかを設定する( TRUE:作成する( デフォルト ) FALSE:作成しない )、DxLib_Init の前でのみ使用可能　 </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00162">162</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6c5e9050b614a359893728c01bbe10d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::SetUseDateNameLogFile </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>Flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル名に日付をつけるかどうかをセットする( TRUE:付ける FALSE:付けない( デフォルト ) ) </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00166">166</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae11b89f5cef65ee70ac3b294893da9a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::DxLog::SetUseTimeStampFlag </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>UseFlag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ログファイル( Log.txt ) に出力する文字列の前に起動してからの時間を付けるかどうかを設定する( TRUE:付ける( デフォルト) FALSE:付けない ) </p>
+
+<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00156">156</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="a00031.html">dxle</a></li><li class="navelem"><a class="el" href="a00038.html">DxLog</a></li>
+    <li class="footer">2015年11月22日(日) 12時21分52秒作成 - DxLibEx / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

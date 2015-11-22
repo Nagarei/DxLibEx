@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['applogadd',['AppLogAdd',['../namespacedxle_1_1_dx_log.html#a7276b87633d325592d09831150395c1c',1,'dxle::DxLog']]],
-  ['atofdx',['atofDx',['../namespacedxle_1_1_dx_char.html#a5636a59af1a39af5186e1cf376c80f93',1,'dxle::DxChar']]],
-  ['atoidx',['atoiDx',['../namespacedxle_1_1_dx_char.html#a4a7a373cba5beacfdcfbfcac1188eb43',1,'dxle::DxChar']]]
+  ['applogadd',['AppLogAdd',['../a00038.html#a7276b87633d325592d09831150395c1c',1,'dxle::DxLog']]],
+  ['atofdx',['atofDx',['../a00034.html#a7fa1c7fbcf959d1be7e496bbb53a9290',1,'dxle::DxChar']]],
+  ['atoidx',['atoiDx',['../a00034.html#a43095bbd3b8daa916ef5384aee079e26',1,'dxle::DxChar']]]
 ];

@@ -1,4 +1,4 @@
 var annotated =
 [
-    [ "dxle", "namespacedxle.html", "namespacedxle" ]
+    [ "dxle", "a00031.html", "a00031" ]
 ];

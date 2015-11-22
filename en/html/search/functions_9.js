@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['keyinputnumber',['KeyInputNumber',['../namespacedxle_1_1_input_string.html#a0b5f6dbd21b66a78c1acd787fde558f6',1,'dxle::InputString']]],
-  ['keyinputsinglecharstring',['KeyInputSingleCharString',['../namespacedxle_1_1_input_string.html#a01bcc165b3b9b94635a86e8f5ee8474b',1,'dxle::InputString']]],
-  ['keyinputstring',['KeyInputString',['../namespacedxle_1_1_input_string.html#a170830c2da3f8ec935c2a876afdd541c',1,'dxle::InputString']]]
+  ['keyinputnumber',['KeyInputNumber',['../a00044.html#aec15949203678539ae90919b65deab53',1,'dxle::InputString']]],
+  ['keyinputsinglecharstring',['KeyInputSingleCharString',['../a00044.html#aa476292b76091f019d7cf93823fdf59a',1,'dxle::InputString']]],
+  ['keyinputstring',['KeyInputString',['../a00044.html#a722cb33a5974cd2fd5e207f066fb29c7',1,'dxle::InputString']]]
 ];

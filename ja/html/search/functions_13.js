@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vsprintfdx',['vsprintfDx',['../namespacedxle_1_1_dx_char.html#aa148018ea70258f1dc3ec824a64dcde1',1,'dxle::DxChar']]],
-  ['vsscanfdx',['vsscanfDx',['../namespacedxle_1_1_dx_char.html#a252509aa69e2e8a7545a2dc43324847f',1,'dxle::DxChar']]]
+  ['vsprintfdx',['vsprintfDx',['../a00034.html#a226b94254fc81c6da387b1fc3f708875',1,'dxle::DxChar']]],
+  ['vsscanfdx',['vsscanfDx',['../a00034.html#a75bccfbdea0e61ea34acf3349f0f342b',1,'dxle::DxChar']]]
 ];
