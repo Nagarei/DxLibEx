@@ -201,7 +201,6 @@ namespace dxle
 			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
 			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
-	
 		private:
 			typedef Unique_HandledObject_Bace<Texture2D> Parent_T;
 		public:
