@@ -129,12 +129,12 @@ namespace dxle
 			inline int GetGraphSize(int *SizeXBuf, int *SizeYBuf)const DXLE_NOEXCEPT { return DxLib::GetGraphSize(GetHandle(), SizeXBuf, SizeYBuf); }
 			//! グラフィックのサイズを得る
 			//!@return .first:SizeX .second:SizeY
-			inline pointi GetGraphSize()const DXLE_NOEXCEPT { int x, y; GetGraphSize(&x, &y); return {x, y}; }
+			inline pointi GetGraphSize()const DXLE_NOEXCEPT { int x, y; GetGraphSize(&x, &y); return pointi{ x, y }; }
 			//! グラフィックが持つ一つ目のテクスチャのサイズを得る
 			inline int GetGraphTextureSize(int *SizeXBuf, int *SizeYBuf)const DXLE_NOEXCEPT { return DxLib::GetGraphTextureSize(GetHandle(), SizeXBuf, SizeYBuf); }
 			//! グラフィックが持つ一つ目のテクスチャのサイズを得る
 			//!@return .first:SizeX .second:SizeY
-			inline pointi GetGraphTextureSize()const DXLE_NOEXCEPT { int x, y; GetGraphTextureSize(&x, &y); return{ x, y }; }
+			inline pointi GetGraphTextureSize()const DXLE_NOEXCEPT { int x, y; GetGraphTextureSize(&x, &y); return pointi{ x, y }; }
 			//! グラフィックが持つテクスチャのミップマップレベル数を取得する
 			inline int GetGraphMipmapCount()const DXLE_NOEXCEPT { return DxLib::GetGraphMipmapCount(GetHandle()); }
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する

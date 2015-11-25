@@ -15,8 +15,8 @@ int main() {
 	auto p4 = dxle::point_c<double>(4, 5);//move constructor call
 	dxle::point_c<int> p5;//default constructor call
 	auto p6 = dxle::point_c<float>(0);
-	dxle::point_c<int> p7 = 0;
-	dxle::point_c<float> p7_1 = 0;
+	dxle::point_c<int> p7{ 0 };
+	dxle::point_c<float> p7_1{ 0 };
 	auto p7_2 = dxle::point_c<int>(1);
 	cout << "p3:" << p3 << " p4:" << p4 << " p5:" << p5 << " p6:" << p6 << " p7:" << p7 << " p7_1:" << p7_1 << " p7_2:" << p7_2 << endl;
 
@@ -44,6 +44,9 @@ int main() {
 	dxle::pointi in_p;
 	std::cin >> in_p;
 	cout << "in_p:" << in_p << endl;
-
+	{
+		char c[100];
+		std::cin >> c;
+	}
 	return 0;
 }
