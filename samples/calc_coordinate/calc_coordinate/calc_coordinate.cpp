@@ -14,8 +14,8 @@ int main() {
 	auto p3 = p2;//copy constructor call
 	auto p4 = dxle::point_c<double>(4, 5);//move constructor call
 	dxle::point_c<int> p5;//default constructor call
-	auto p6 = dxle::point_c<float>(0);//convert from nullptr constructor call
-	dxle::point_c<int> p7 = 0;//convert from nullptr constructor call
+	auto p6 = dxle::point_c<float>(0);
+	dxle::point_c<int> p7 = 0;
 	dxle::point_c<float> p7_1 = 0;
 	auto p7_2 = dxle::point_c<int>(1);
 	cout << "p3:" << p3 << " p4:" << p4 << " p5:" << p5 << " p6:" << p6 << " p7:" << p7 << " p7_1:" << p7_1 << " p7_2:" << p7_2 << endl;
@@ -25,6 +25,7 @@ int main() {
 
 	//contextually converted to bool
 	if (p7) is_zero = false;//explicit operator bool call
+	cout << "is_zero:" << is_zero << endl;
 	//implicitly converted to a type T
 	dxle::point_c<int> p8 = dxle::make_point_c(std::pair<int, int>());//convert from std::pair move constructor call
 	std::pair<int, int> pa{ 2, 3 };

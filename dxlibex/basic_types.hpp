@@ -5,6 +5,7 @@
 #include <utility>//std::pair
 #include <type_traits>
 #include <cstdint>
+#include <cmath>
 #include "dxlibex/Defines.h"
 
 namespace dxle {
@@ -120,7 +121,7 @@ namespace dxle {
 		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
 			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
-				typedef detail::ToArithmetic<PointType>::type Arithmetic;
+				typedef typename ToArithmetic<PointType>::type Arithmetic;
 				os << static_cast<Arithmetic>(p.x) << str << static_cast<Arithmetic>(p.y);
 			}
 		};
@@ -147,7 +148,7 @@ namespace dxle {
 		detail::istream_operator_helper<char, T>()(is, p);
 		return is;
 	}
-	template<typename T> std::wistream& operator>>(std::wistream& os, point_c<T>& p) {
+	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p) {
 		detail::istream_operator_helper<wchar_t, T>()(is, p);
 		return is;
 	}

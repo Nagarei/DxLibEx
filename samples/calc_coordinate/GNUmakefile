@@ -25,9 +25,9 @@ endif
 
 LBITS := $(shell getconf LONG_BIT)
 ifeq ($(LBITS),64)
-   CPPFLAGS+= -mrdrnd
+   CPPFLAGS+=
 else
-   CPPFLAGS+= -mrdrnd -m32
+   CPPFLAGS+=
 endif
 
 # make
