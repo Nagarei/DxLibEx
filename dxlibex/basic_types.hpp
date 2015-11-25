@@ -5,7 +5,7 @@
 #include <utility>//std::pair
 #include <type_traits>
 #include <cstdint>
-#include <initializer_list>
+#include <cmath>
 #include "dxlibex/Defines.h"
 
 namespace dxle {
@@ -57,8 +57,9 @@ namespace dxle {
 		typedef T value_type;
 		value_type x, y;
 		point_c() DXLE_NOEXCEPT : x(), y() {}
-		point_c(std::nullptr_t) DXLE_NOEXCEPT : x(), y() {}//for compare with 0. rf.)http://faithandbrave.hateblo.jp/entry/20081222/1229936810
-		point_c(value_type x_, value_type y_) DXLE_NOEXCEPT : x(x_), y(y_) {}
+		//point_c(std::nullptr_t) DXLE_NOEXCEPT : x(), y() {}
+		explicit point_c(value_type x_) DXLE_NOEXCEPT : x(x_), y() {}
+		explicit point_c(value_type x_, value_type y_) DXLE_NOEXCEPT : x(x_), y(y_) {}
 
 		//copy constructor
 		point_c(const point_c<value_type>& o) DXLE_NOEXCEPT : x(o.x), y(o.y) {}
@@ -77,13 +78,7 @@ namespace dxle {
 			return *this;
 		}
 
-		//convert constructor
 
-		DXLE_CONSTEXPR point_c(std::initializer_list<T> values) DXLE_NOEXCEPT : x((values.size()) ? *values.begin() : 0), y((1 < values.size()) ? *(values.begin() + 1) : 0) {}
-		//!\~english conversion from std::pair
-		//!\~japanese std::pairからの変換
-		point_c(const std::pair<value_type, value_type>& p) DXLE_NOEXCEPT : x(p.first), y(p.second) {}
-		point_c(std::pair<value_type, value_type>&& p) DXLE_NOEXCEPT : x(std::move(p.first)), y(std::move(p.second)) {}
 		explicit operator bool() const DXLE_NOEXCEPT {
 			return (0 != this->x) || (0 != this->y);
 		}
@@ -98,6 +93,19 @@ namespace dxle {
 			return std::pair<_Tp2, _Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 	};
+	//convert from std::pair
+
+	//!\~english conversion from std::pair
+	//!\~japanese std::pairからの変換
+	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT {
+		return point_c<T>(p.first, p.second);
+	}
+	//!\~english conversion from std::pair
+	//!\~japanese std::pairからの変換
+	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT {
+		return point_c<T>(std::move(p.first), std::move(p.second));
+	}
+
 	//ostream operator
 	namespace detail {
 		template<typename T, bool is_arithmetical = std::is_arithmetic<T>::value, size_t s = sizeof(T), bool is_s = std::is_signed<T>::value> struct ToArithmetic;
@@ -113,7 +121,7 @@ namespace dxle {
 		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
 			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
-				typedef detail::ToArithmetic<PointType>::type Arithmetic;
+				typedef typename ToArithmetic<PointType>::type Arithmetic;
 				os << static_cast<Arithmetic>(p.x) << str << static_cast<Arithmetic>(p.y);
 			}
 		};
@@ -140,7 +148,7 @@ namespace dxle {
 		detail::istream_operator_helper<char, T>()(is, p);
 		return is;
 	}
-	template<typename T> std::wistream& operator>>(std::wistream& os, point_c<T>& p) {
+	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p) {
 		detail::istream_operator_helper<wchar_t, T>()(is, p);
 		return is;
 	}
@@ -361,6 +369,15 @@ namespace dxle {
 		return !(l != r);
 	}
 
+	namespace detail{
+		template<typename T, bool is_signed = std::is_signed<T>::value>struct abs_helper{
+			point_c<T> operator() (const point_c<T>& o){ return point_c<T>(std::abs(o.x), std::abs(o.y)); }
+		};
+		template<typename T> struct abs_helper<T, false> {
+			point_c<T> operator() (const point_c<T>& o){ return o; }
+		};
+	}
+	template<typename T> point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
 
 	typedef point_c<int> pointi;
 	typedef point_c<uint8_t> pointu8i;

@@ -129,12 +129,12 @@ namespace dxle
 			inline int GetGraphSize(int *SizeXBuf, int *SizeYBuf)const DXLE_NOEXCEPT { return DxLib::GetGraphSize(GetHandle(), SizeXBuf, SizeYBuf); }
 			//! グラフィックのサイズを得る
 			//!@return .first:SizeX .second:SizeY
-			inline pointi GetGraphSize()const DXLE_NOEXCEPT { int x, y; GetGraphSize(&x, &y); return std::make_pair(x, y); }
+			inline pointi GetGraphSize()const DXLE_NOEXCEPT { int x, y; GetGraphSize(&x, &y); return {x, y}; }
 			//! グラフィックが持つ一つ目のテクスチャのサイズを得る
 			inline int GetGraphTextureSize(int *SizeXBuf, int *SizeYBuf)const DXLE_NOEXCEPT { return DxLib::GetGraphTextureSize(GetHandle(), SizeXBuf, SizeYBuf); }
 			//! グラフィックが持つ一つ目のテクスチャのサイズを得る
 			//!@return .first:SizeX .second:SizeY
-			inline pointi GetGraphTextureSize()const DXLE_NOEXCEPT { int x, y; GetGraphTextureSize(&x, &y); return std::make_pair(x, y); }
+			inline pointi GetGraphTextureSize()const DXLE_NOEXCEPT { int x, y; GetGraphTextureSize(&x, &y); return{ x, y }; }
 			//! グラフィックが持つテクスチャのミップマップレベル数を取得する
 			inline int GetGraphMipmapCount()const DXLE_NOEXCEPT { return DxLib::GetGraphMipmapCount(GetHandle()); }
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する
@@ -201,7 +201,6 @@ namespace dxle
 			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(mtx); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
 			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLE_NOEXCEPT_SINGLE{ DXLE_GET_LOCK(mtx); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
-	
 		private:
 			typedef Unique_HandledObject_Bace<Texture2D> Parent_T;
 		public:
