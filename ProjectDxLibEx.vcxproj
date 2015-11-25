@@ -18,6 +18,7 @@
     <ClInclude Include="dxlibex\config\LINK.h" />
     <ClInclude Include="dxlibex\Defines.h" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
+    <ClInclude Include="dxlibex\DxLibWrap.h" />
     <ClInclude Include="dxlibex\Graph2D.h" />
     <ClInclude Include="dxlibex\Helper.h" />
     <ClInclude Include="dxlibex\impl.hpp" />

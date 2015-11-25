@@ -79,7 +79,7 @@ namespace dxle {
 
 		//convert constructor
 
-		DXLE_CONSTEXPR point_c(std::initializer_list<T> values) DXLE_NOEXCEPT : x((values.size()) ? *values.begin() : 0), y((0 < values.size()) ? *(values.begin() + 1) : 0) {}
+		DXLE_CONSTEXPR point_c(std::initializer_list<T> values) DXLE_NOEXCEPT : x((values.size()) ? *values.begin() : 0), y((1 < values.size()) ? *(values.begin() + 1) : 0) {}
 		//!\~english conversion from std::pair
 		//!\~japanese std::pairからの変換
 		point_c(const std::pair<value_type, value_type>& p) DXLE_NOEXCEPT : x(p.first), y(p.second) {}

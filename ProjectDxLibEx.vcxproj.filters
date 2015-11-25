@@ -47,5 +47,8 @@
     <ClInclude Include="dxlibex\config\LINK.h">
       <Filter>dxlibex\config</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\DxLibWrap.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
