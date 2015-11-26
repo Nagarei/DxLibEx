@@ -6,6 +6,7 @@
 #include <type_traits>
 #include <cstdint>
 #include <cmath>
+#include <limits>
 #include "dxlibex/Defines.h"
 
 namespace dxle {
