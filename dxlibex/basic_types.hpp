@@ -59,7 +59,7 @@ namespace dxle {
 		point_c() DXLE_NOEXCEPT : x(), y() {}
 		//point_c(std::nullptr_t) DXLE_NOEXCEPT : x(), y() {}
 		explicit point_c(value_type x_) DXLE_NOEXCEPT : x(x_), y() {}
-		explicit point_c(value_type x_, value_type y_) DXLE_NOEXCEPT : x(x_), y(y_) {}
+		point_c(value_type x_, value_type y_) DXLE_NOEXCEPT : x(x_), y(y_) {}
 
 		//copy constructor
 		point_c(const point_c<value_type>& o) DXLE_NOEXCEPT : x(o.x), y(o.y) {}
