@@ -44,9 +44,5 @@ int main() {
 	dxle::pointi in_p;
 	std::cin >> in_p;
 	cout << "in_p:" << in_p << endl;
-	{
-		char c[100];
-		std::cin >> c;
-	}
 	return 0;
 }
