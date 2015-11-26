@@ -130,8 +130,9 @@ namespace dxle {
 			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p) {
 				typedef typename ToArithmetic<PointType>::type Arithmetic;
 				Arithmetic x, y;
-				CharType buf[3];
-				is >> x >> buf >> y;
+				is >> x;
+				is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+				is >> y;
 				p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
 			}
 		};
