@@ -14,11 +14,9 @@ int main() {
 	auto p3 = p2;//copy constructor call
 	auto p4 = dxle::point_c<double>(4, 5);//move constructor call
 	dxle::point_c<int> p5;//default constructor call
-	auto p6 = dxle::point_c<float>(0);
-	dxle::point_c<int> p7{ 0 };
-	dxle::point_c<float> p7_1{ 0 };
-	auto p7_2 = dxle::point_c<int>(1);
-	cout << "p3:" << p3 << " p4:" << p4 << " p5:" << p5 << " p6:" << p6 << " p7:" << p7 << " p7_1:" << p7_1 << " p7_2:" << p7_2 << endl;
+	auto p6 = dxle::point_c<float>(0, 0);
+	dxle::point_c<int> p7{};
+	cout << "p3:" << p3 << " p4:" << p4 << " p5:" << p5 << " p6:" << p6 << " p7:" << p7 << endl;
 
 	bool is_zero = (0 == static_cast<bool>(p6)) ? true : false;//explicit operator bool call
 	if(0 == p7) is_zero = false;
