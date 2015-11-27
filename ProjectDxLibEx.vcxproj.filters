@@ -23,9 +23,6 @@
     <ClInclude Include="dxlibex\basic_types.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\Defines.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\DxLibEx.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
@@ -49,6 +46,30 @@
     </ClInclude>
     <ClInclude Include="dxlibex\DxLibWrap.h">
       <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\defines.h">
+      <Filter>dxlibex\config</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\compiler\clang.hpp">
+      <Filter>dxlibex\config\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\compiler\common_edg.hpp">
+      <Filter>dxlibex\config\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\compiler\gcc.hpp">
+      <Filter>dxlibex\config\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\compiler\intel.hpp">
+      <Filter>dxlibex\config\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\compiler\visualc.hpp">
+      <Filter>dxlibex\config\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\compiler.hpp">
+      <Filter>dxlibex\config</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\config\suffix.hpp">
+      <Filter>dxlibex\config</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

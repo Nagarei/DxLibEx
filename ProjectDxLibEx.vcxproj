@@ -15,8 +15,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dxlibex\basic_types.hpp" />
+    <ClInclude Include="dxlibex\config\compiler.hpp" />
+    <ClInclude Include="dxlibex\config\compiler\clang.hpp" />
+    <ClInclude Include="dxlibex\config\compiler\common_edg.hpp" />
+    <ClInclude Include="dxlibex\config\compiler\gcc.hpp" />
+    <ClInclude Include="dxlibex\config\compiler\intel.hpp" />
+    <ClInclude Include="dxlibex\config\compiler\visualc.hpp" />
+    <ClInclude Include="dxlibex\config\defines.h" />
     <ClInclude Include="dxlibex\config\LINK.h" />
-    <ClInclude Include="dxlibex\Defines.h" />
+    <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
     <ClInclude Include="dxlibex\DxLibWrap.h" />
     <ClInclude Include="dxlibex\Graph2D.h" />

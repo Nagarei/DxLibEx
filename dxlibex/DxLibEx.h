@@ -8,7 +8,7 @@
 #include <queue>
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/Helper.h"
-#include "config/defines.h"
+#include "dxlibex/config/defines.h"
 
 namespace dxle
 {

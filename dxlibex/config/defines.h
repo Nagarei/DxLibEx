@@ -1,5 +1,5 @@
-﻿#ifndef DXLE_INC_DEFINES_H_
-#define DXLE_INC_DEFINES_H_
+﻿#ifndef DXLE_INC_CONFIG_DEFINES_H_
+#define DXLE_INC_CONFIG_DEFINES_H_
 #include "suffix.hpp"
 #if 0
 //実装用ファイルです

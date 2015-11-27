@@ -8,7 +8,7 @@
 #include <string>
 #include <array>
 #include "dxlibex/Helper.h"
-#include "config/defines.h"
+#include "dxlibex/config/defines.h"
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/thread.h"
 
