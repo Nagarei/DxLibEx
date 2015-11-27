@@ -15,8 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dxlibex\basic_types.hpp" />
+    <ClInclude Include="dxlibex\config\defines.h" />
     <ClInclude Include="dxlibex\config\LINK.h" />
-    <ClInclude Include="dxlibex\Defines.h" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
     <ClInclude Include="dxlibex\DxLibWrap.h" />
     <ClInclude Include="dxlibex\Graph2D.h" />

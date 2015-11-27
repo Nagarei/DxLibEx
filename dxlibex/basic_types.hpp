@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <cmath>
 #include <limits>
-#include "config/defines.h"
+#include "dxlibex/config/defines.h"
 
 namespace dxle {
 	/** 
