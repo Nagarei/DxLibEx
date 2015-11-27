@@ -1,6 +1,7 @@
 ﻿#ifndef DXLE_INC_DEFINES_H_
 #define DXLE_INC_DEFINES_H_
-
+#include "suffix.hpp"
+#if 0
 //実装用ファイルです
 //開発者以外がここの機能を使うのはお勧めできません
 
@@ -54,4 +55,5 @@
 #endif
 
 //インクルードガード
+#endif
 #endif

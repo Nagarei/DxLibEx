@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <cmath>
 #include <limits>
-#include "dxlibex/Defines.h"
+#include "config/defines.h"
 
 namespace dxle {
 	/** 
@@ -57,40 +57,40 @@ namespace dxle {
 	public:
 		typedef T value_type;
 		value_type x, y;
-		point_c() DXLE_NOEXCEPT : x(), y() {}
-		//point_c(std::nullptr_t) DXLE_NOEXCEPT : x(), y() {}
-		explicit point_c(value_type x_) DXLE_NOEXCEPT : x(x_), y() {}
-		point_c(value_type x_, value_type y_) DXLE_NOEXCEPT : x(x_), y(y_) {}
+		point_c() DXLE_NOEXCEPT_OR_NOTHROW : x(), y() {}
+		//point_c(std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW : x(), y() {}
+		explicit point_c(value_type x_) DXLE_NOEXCEPT_OR_NOTHROW : x(x_), y() {}
+		point_c(value_type x_, value_type y_) DXLE_NOEXCEPT_OR_NOTHROW : x(x_), y(y_) {}
 
 		//copy constructor
-		point_c(const point_c<value_type>& o) DXLE_NOEXCEPT : x(o.x), y(o.y) {}
+		point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_OR_NOTHROW : x(o.x), y(o.y) {}
 		//move constructor
-		point_c(point_c<value_type>&& o) DXLE_NOEXCEPT : x(std::move(o.x)), y(std::move(o.y)) {}
+		point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
-		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT {
+		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 			this->x = r.x;
 			this->y = r.y;
 			return *this;
 		}
 		//move assignment operator
-		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT {
+		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_OR_NOTHROW {
 			this->x = std::move(r.x);
 			this->y = std::move(r.y);
 			return *this;
 		}
 
 
-		explicit operator bool() const DXLE_NOEXCEPT {
+		explicit operator bool() const DXLE_NOEXCEPT_OR_NOTHROW {
 			return (0 != this->x) || (0 != this->y);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLE_NOEXCEPT {
+		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW {
 			return point_c<_Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLE_NOEXCEPT {
+		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW {
 			return std::pair<_Tp2, _Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 	};
@@ -98,12 +98,12 @@ namespace dxle {
 
 	//!\~english conversion from std::pair
 	//!\~japanese std::pairからの変換
-	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT {
+	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
 		return point_c<T>(p.first, p.second);
 	}
 	//!\~english conversion from std::pair
 	//!\~japanese std::pairからの変換
-	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT {
+	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW {
 		return point_c<T>(std::move(p.first), std::move(p.second));
 	}
 
@@ -156,11 +156,11 @@ namespace dxle {
 	}
 
 	template <typename T>
-	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT {
+	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
 		return static_cast<bool>(p);
 	}
 	template <typename T>
-	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT {
+	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
 		return static_cast<bool>(p);
 	}
 	////////////////////////////////////////////////////////////
@@ -173,14 +173,14 @@ namespace dxle {
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT {
+	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return point_c<T>(-r.x, -r.y);
 	}
 
 	template <typename T>
-	inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT { return r; }
+	inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
 	template <typename T>
-	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT { return r; }
+	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
