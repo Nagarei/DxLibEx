@@ -1,6 +1,6 @@
 ﻿#ifndef DXLE_INC_DXLIBWRAP_H_
 #define DXLE_INC_DXLIBWRAP_H_
-#include "dxlibex/config\no_min_max.h"
+#include "dxlibex/config/no_min_max.h"
 #include "Graph2D.h"
 #include "dxlibex/thread.h"
 namespace dxle {

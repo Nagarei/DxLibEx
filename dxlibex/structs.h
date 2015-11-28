@@ -1,6 +1,6 @@
 ﻿#ifndef DXLE_INC_STRUCTS_H_
 #define DXLE_INC_STRUCTS_H_
-#include "dxlibex/config\no_min_max.h"
+#include "dxlibex/config/no_min_max.h"
 #include "DxLib.h"
 
 namespace dxle{

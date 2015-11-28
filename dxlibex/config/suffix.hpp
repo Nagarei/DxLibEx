@@ -1,5 +1,5 @@
-#ifndef DXLE_INC_CONFIG_SUFFIX_HPP
-#define DXLE_INC_CONFIG_SUFFIX_HPP
+#ifndef DXLE_INC_CONFIG_SUFFIX_HPP_
+#define DXLE_INC_CONFIG_SUFFIX_HPP_
 
 #include "dxlibex/config\no_min_max.h"
 #include "compiler.hpp"
@@ -114,4 +114,4 @@
 //
 #define DXLE_PREVENT_MACRO_SUBSTITUTION
 
-#endif	// #ifndef DXLE_INC_CONFIG_SUFFIX_HPP
+#endif	// #ifndef DXLE_INC_CONFIG_SUFFIX_HPP_

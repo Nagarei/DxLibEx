@@ -1,7 +1,7 @@
 ﻿#ifndef DXLE_INC_BASIC_TYPES_HPP_
 #define DXLE_INC_BASIC_TYPES_HPP_
 //#pragma once
-#include "dxlibex/config\no_min_max.h"
+#include "dxlibex/config/no_min_max.h"
 #include <iostream>//ostream
 #include <utility>//std::pair
 #include <type_traits>

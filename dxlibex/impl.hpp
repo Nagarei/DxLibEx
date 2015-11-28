@@ -4,7 +4,7 @@
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
 
-#include "dxlibex/config\no_min_max.h"
+#include "dxlibex/config/no_min_max.h"
 #include "dxlibex/DxLibEx.h"
 #include <type_traits>
 #include <new>
