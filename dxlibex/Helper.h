@@ -3,6 +3,7 @@
 
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
+#include "dxlibex/config\no_min_max.h"
 #include <cassert>
 #include "dxlibex/config/defines.h"
 

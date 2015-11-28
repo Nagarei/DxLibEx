@@ -23,6 +23,7 @@
     <ClInclude Include="dxlibex\config\compiler\visualc.hpp" />
     <ClInclude Include="dxlibex\config\defines.h" />
     <ClInclude Include="dxlibex\config\LINK.h" />
+    <ClInclude Include="dxlibex\config\no_min_max.h" />
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
     <ClInclude Include="dxlibex\DxLibWrap.h" />

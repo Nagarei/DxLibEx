@@ -1,5 +1,7 @@
 ﻿#ifndef DXLE_INC_THREAD_H_
 #define DXLE_INC_THREAD_H_
+
+#include "dxlibex/config\no_min_max.h"
 #include <mutex>
 #include "DxLib.h"
 #include "dxlibex/config/defines.h"

@@ -1,5 +1,5 @@
-#ifndef DXLE_INC_CONFIG_COMPILER_HPP
-#define DXLE_INC_CONFIG_COMPILER_HPP
+#ifndef DXLE_INC_CONFIG_COMPILER_HPP_
+#define DXLE_INC_CONFIG_COMPILER_HPP_
 
 #if defined(__clang__)
 #	include "compiler/clang.hpp"
