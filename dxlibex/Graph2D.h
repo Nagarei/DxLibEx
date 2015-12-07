@@ -244,9 +244,17 @@ namespace dxle
 				DXLE_GET_LOCK(mtx);
 				struct Finary_ {
 					int old_draw_screen;
-					Finary_(): old_draw_screen(DxLib::GetDrawScreen()){}
-					~Finary_() { DxLib::SetDrawScreen(old_draw_screen); }
+					int old_is_setting_reset;
+					Finary_()
+						: old_draw_screen(DxLib::GetDrawScreen())
+						, old_is_setting_reset(DxLib::GetUseSetDrawScreenSettingReset())
+					{}
+					~Finary_() {
+						DxLib::SetDrawScreen(old_draw_screen);
+						DxLib::SetUseSetDrawScreenSettingReset(old_is_setting_reset);
+					}
 				}finally_;
+				DxLib::SetUseSetDrawScreenSettingReset(FALSE);
 				this->SetDrawScreen();
 				draw_func();
 			}
