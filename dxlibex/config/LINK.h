@@ -3,15 +3,18 @@
 
 //TOOLSET
 #ifdef _MSC_VER
-#if (_MSC_VER < 1800)
+#	if (_MSC_VER < 1800)
 // Note: no compilers before 1800 are supported
 #error no compilers before 1800 are supported
-#elif (_MSC_VER < 1900)
+#	elif (_MSC_VER < 1900)
 // vc12:
 #	define DXLE_LIB_TOOLSET "_v120"
-#elif (_MSC_VER < 2000)
+#	elif (_MSC_VER < 2000)
 // vc14:
 #	define DXLE_LIB_TOOLSET "_v140"
+#	elif
+	static_assert(false, "this version of visual studio is not supported yet")
+#	endif
 #elif
 //other
 #	define DXLE_LIB_TOOLSET ""
@@ -35,5 +38,4 @@
 #endif
 
 #pragma comment(lib,"DXLIBEX" DXLE_LIB_TOOLSET DXLE_CHARACTERSET DXLE_PLATFORM_TARGET DXLE_CONFIGURATION ".lib")
-#endif //ifdef _MSC_VER
 #endif

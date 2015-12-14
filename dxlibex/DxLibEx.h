@@ -2,6 +2,14 @@
 #define DXLE_INC_DXLIB_H_
 
 #include "dxlibex/config/no_min_max.h"
+#include "dxlibex/basic_types.hpp"
+#include "dxlibex/Color.hpp"
+//#include "dxlibex/DxLibWrap.h"
+#include "dxlibex/Graph2D.h"
+
+#if 0
+
+#include "dxlibex/config/no_min_max.h"
 #include "DxLib.h"
 #include <type_traits>
 #include <utility>
@@ -10,7 +18,6 @@
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/Helper.h"
 #include "dxlibex/config/defines.h"
-
 namespace dxle
 {
 	//!DxLibExの公開クラスが全て入ったnamespaceです
@@ -1459,4 +1466,7 @@ namespace dxle
 
 //関数の定義
 #include "dxlibex/impl.hpp"
+#endif//#if 0 (old version)
+
+
 #endif

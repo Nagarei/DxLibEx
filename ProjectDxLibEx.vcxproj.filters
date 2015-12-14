@@ -74,5 +74,8 @@
     <ClInclude Include="dxlibex\config\no_min_max.h">
       <Filter>dxlibex\config</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\Color.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
