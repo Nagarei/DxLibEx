@@ -22,8 +22,8 @@ struct Color
 	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255, 165,   0); } } static const orange     ;//!< オレンジ
 	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255, 192, 203); } } static const pink       ;//!< ピンク
 	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255,   0,   0); } } static const red        ;//!< 赤
-	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255, 255, 255); } } static const red        ;//!< 白
-	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255, 255,   0); } } static const yellow     ;//!< Yellow
+	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255, 255, 255); } } static const white      ;//!< 白
+	struct{ inline operator Color()const DXLE_NOEXCEPT{ return DxLib::GetColor(255, 255,   0); } } static const yellow     ;//!< 黄色
 
 	//! DrawPixel 等の描画関数で使用するカラー値を取得する
 	static Color GetColor (int Red, int Green, int Blue)DXLE_NOEXCEPT{ return DxLib::GetColor(Red, Green, Blue); }
