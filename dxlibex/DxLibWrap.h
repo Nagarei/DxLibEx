@@ -22,25 +22,25 @@ static_assert(false, "実装用define");
 	//図形描画関数
 
 	//!\~japanese 線を描画する
-	inline int DrawLine(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int Thickness = 1){ return DxLib::DrawLine(x1, y1, x2, y2, Color, Thickness); }
+	inline int DrawLine(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int Thickness = 1){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawLine(x1, y1, x2, y2, Color, Thickness); }
 	//!\~japanese 四角形の描画する
-	inline int DrawBox(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int FillFlag){ return DxLib::DrawBox(x1, y1, x2, y2, Color, FillFlag); }
+	inline int DrawBox(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int FillFlag){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawBox(x1, y1, x2, y2, Color, FillFlag); }
 	//!\~japanese 中身を塗りつぶす四角形を描画する
-	inline int DrawFillBox(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color){ return DxLib::DrawFillBox(x1, y1, x2, y2, Color); }
+	inline int DrawFillBox(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawFillBox(x1, y1, x2, y2, Color); }
 	//!\~japanese 枠だけの四角形の描画 する
-	inline int DrawLineBox(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color){ return DxLib::DrawLineBox(x1, y1, x2, y2, Color); }
+	inline int DrawLineBox(dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx); return DxLib::DrawLineBox(x1, y1, x2, y2, Color); }
 	//!\~japanese 円を描画する
-	inline int DrawCircle(dxle_mutex, int x, int y, int r, unsigned int Color, int FillFlag = TRUE, int LineThickness = 1){ return DxLib::DrawCircle(x, y, r, Color, FillFlag, LineThickness); }
+	inline int DrawCircle(dxle_mutex, int x, int y, int r, unsigned int Color, int FillFlag = TRUE, int LineThickness = 1){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx); return DxLib::DrawCircle(x, y, r, Color, FillFlag, LineThickness); }
 	//!\~japanese 楕円を描画する
-	inline int DrawOval(dxle_mutex, int x, int y, int rx, int ry, unsigned int Color, int FillFlag, int LineThickness = 1){ return DxLib::DrawOval(x, y, rx, ry, Color, FillFlag, LineThickness); }
+	inline int DrawOval(dxle_mutex, int x, int y, int rx, int ry, unsigned int Color, int FillFlag, int LineThickness = 1){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawOval(x, y, rx, ry, Color, FillFlag, LineThickness); }
 	//!\~japanese 三角形を描画する
-	inline int DrawTriangle(dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, unsigned int Color, int FillFlag){ return DxLib::DrawTriangle(x1, y1, x2, y2, x3, y3, Color, FillFlag); }
+	inline int DrawTriangle(dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, unsigned int Color, int FillFlag){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawTriangle(x1, y1, x2, y2, x3, y3, Color, FillFlag); }
 	//!\~japanese 四角形を描画する
-	inline int DrawQuadrangle(dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, unsigned int Color, int FillFlag){ return DxLib::DrawQuadrangle(x1, y1, x2, y2, x3, y3, x4, y4, Color, FillFlag); }
+	inline int DrawQuadrangle(dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, unsigned int Color, int FillFlag){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawQuadrangle(x1, y1, x2, y2, x3, y3, x4, y4, Color, FillFlag); }
 	//!\~japanese 角の丸い四角形を描画する
-	inline int DrawRoundRect(dxle_mutex, int x1, int y1, int x2, int y2, int rx, int ry, unsigned int Color, int FillFlag){ return DxLib::DrawRoundRect(x1, y1, x2, y2, rx, ry, Color, FillFlag); }
+	inline int DrawRoundRect(dxle_mutex, int x1, int y1, int x2, int y2, int rx, int ry, unsigned int Color, int FillFlag){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawRoundRect(x1, y1, x2, y2, rx, ry, Color, FillFlag); }
 	//!\~japanese 点を描画する
-	inline int DrawPixel(dxle_mutex, int x, int y, unsigned int Color){ return DxLib::DrawPixel(x, y, Color); }
+	inline int DrawPixel(dxle_mutex, int x, int y, unsigned int Color){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx);  return DxLib::DrawPixel(x, y, Color); }
 
 
 	//グラフィックデータ制御関数
