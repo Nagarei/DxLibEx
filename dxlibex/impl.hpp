@@ -1,4 +1,11 @@
-﻿#ifndef DXLE_INC_IMPL_H_
+﻿/*=============================================================================
+  Copyright (C) 2015 DxLibEx project
+  https://github.com/Nagarei/DxLibEx/
+
+  Distributed under the Boost Software License, Version 1.0.
+  (See http://www.boost.org/LICENSE_1_0.txt)
+=============================================================================*/
+#ifndef DXLE_INC_IMPL_H_
 #define DXLE_INC_IMPL_H_
 
 //実装用ファイルです。
