@@ -1,4 +1,12 @@
-﻿#ifndef DXLE_INC_DXLIBWRAP_H_
+﻿/**
+* \~english  this is thread-safe wrapper of DxLib's functions
+* \~japanese DxLibの関数のスレッドセーフなラッパー
+* \~
+*
+* <a href="file:///Z:/%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/Dx%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA/DxLib_VC_2015_0926/help/dxfunc.html#R1N1">ＤＸライブラリ　関数リファレンスページ</a>
+*/
+
+#ifndef DXLE_INC_DXLIBWRAP_H_
 #define DXLE_INC_DXLIBWRAP_H_
 #include "dxlibex/config/no_min_max.h"
 #include "Graph2D.h"
@@ -11,13 +19,15 @@ namespace dxle {
 static_assert(false, "実装用define");
 #ifdef DX_THREAD_SAFE
 
-	struct dxle_mutex {};
+	enum class dxle_mutex { dxle_mutex };
 
 	//使用必須関数
 
 	int DxLib_Init(dxle_mutex) { return DxLib::DxLib_Init(); }
 	int DxLib_End(dxle_mutex) { return DxLib::DxLib_End(); }
+	int ProcessMessage(dxle_mutex) { return DxLib::ProcessMessage(); }
 
+	//３Ｄ関係関数
 
 	//図形描画関数
 
@@ -82,7 +92,7 @@ static_assert(false, "実装用define");
 	inline int DrawRectGraph(dxle_mutex, int DestX, int DestY, int SrcX, int SrcY, int    Width, int    Height, int GraphHandle, int TransFlag, int TurnFlag){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx); return DxLib::DrawRectGraph(DestX, DestY, SrcX, SrcY, Width, Height, GraphHandle, TransFlag, TurnFlag); }
 
 	//!\~japanese 指定のグラフィックハンドルの指定部分だけを抜き出して新たなグラフィックハンドルを作成する
-	inline int DerivationGraph(dxle_mutex, int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx); return DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle); }
+	inline int DerivationGraph(dxle_mutex, int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle){ return DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle); }
 	//!\~japanese 描画先の画面から指定領域の画像情報をグラフィックハンドルに転送する
 	inline int GetDrawScreenGraph(dxle_mutex, int x1, int y1, int x2, int y2, int GrHandle, int UseClientFlag = TRUE){ DXLE_GET_LOCK(dxle::Graph2D::screen_mutex_c::mtx); return DxLib::GetDrawScreenGraph(x1, y1, x2, y2, GrHandle, UseClientFlag); }
 	//!\~japanese グラフィックハンドルが持つ画像のサイズを得る
@@ -91,8 +101,16 @@ static_assert(false, "実装用define");
 	inline int InitGraph(dxle_mutex, int LogOutFlag = FALSE){ return DxLib::InitGraph(LogOutFlag); }
 	//!\~japanese グラフィックハンドルを削除する
 	inline int DeleteGraph(dxle_mutex, int GrHandle, int LogOutFlag = FALSE){ return DxLib::DeleteGraph(GrHandle, LogOutFlag); }
-
-
+	//!\~japanese 描画モードを設定する
+	inline int SetDrawMode(dxle_mutex, int DrawMode){ return DxLib::SetDrawMode(DrawMode); }
+	//!\~japanese 描画ブレンドモードを設定する
+	inline int SetDrawBlendMode(dxle_mutex, int BlendMode, int BlendParam){ return DxLib::SetDrawBlendMode(BlendMode, BlendParam); }
+	//!\~japanese 描画輝度を設定する
+	inline int SetDrawBright(dxle_mutex, int RedBright, int GreenBright, int BlueBright){ return DxLib::SetDrawBright(RedBright, GreenBright, BlueBright); }
+	//!\~japanese 作成するグラフィックハンドルに適用する透過色を設定する( Red,Green,Blue:透過色を光の３原色で表したもの( 各色０～２５５ ) )
+	inline int SetTransColor(dxle_mutex, int Red, int Green, int Blue){ return DxLib::SetTransColor(Red, Green, Blue); }
+	//!\~japanese 画像ファイルからブレンド用グラフィックハンドルを作成する
+	inline int LoadBlendGraph(dxle_mutex, const TCHAR *FileName){ return DxLib::LoadBlendGraph(FileName); }
 
 #endif
 }

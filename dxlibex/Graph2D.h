@@ -62,9 +62,6 @@ namespace dxle
 			//!\~japanese 画像ファイルからグラフィックを作成する
 			//!\~english  Create reverse image form an image file
 			static inline Texture2D LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return Texture2D(DxLib::LoadReverseGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//!\~japanese 画像ファイルからブレンド用グラフィックを作成する
-			//!\~english  Create an image for blend form an image file
-			static inline Texture2D LoadBlendGraph(const TCHAR *FileName)DXLE_NOEXCEPT_OR_NOTHROW { return Texture2D(DxLib::LoadBlendGraph(FileName), false); }
 
 			//!\~japanese メモリ上の画像イメージからグラフィックを作成する
 			//!\~english  Create an image form an image in the memory
