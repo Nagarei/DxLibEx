@@ -10,7 +10,7 @@ Distributed under the Boost Software License, Version 1.0.
 * \~japanese DxLibの関数のスレッドセーフなラッパー
 * \~
 *
-* <a href="file:///Z:/%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/Dx%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA/DxLib_VC_2015_0926/help/dxfunc.html#R1N1">ＤＸライブラリ　関数リファレンスページ</a>
+* <a href="http://homepage2.nifty.com/natupaji/DxLib/dxfunc.html">ＤＸライブラリ　関数リファレンスページ</a>
 */
 
 #ifndef DXLE_INC_DXLIBWRAP_H_
