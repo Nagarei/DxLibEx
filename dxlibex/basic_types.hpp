@@ -186,7 +186,7 @@ namespace dxle {
 	template <typename T>
 	inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
 	template <typename T>
-	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
+	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
 
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
