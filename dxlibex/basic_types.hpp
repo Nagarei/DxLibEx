@@ -60,7 +60,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, typename std::enable_if<std::is_arithmetic<T>::value, std::nullptr_t>::type = nullptr>
-	class point_c
+	class point_c final
 	{
 	public:
 		typedef T value_type;

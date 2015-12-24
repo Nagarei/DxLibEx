@@ -33,24 +33,37 @@ namespace color{
 		yellow   ,//!< 黄色
 	};
 
-	class RGB
+	class dxleRGB;
+	class DxColor;
+
+	class dxleRGB final
 	{
 	public:
-		DXLE_CONSTEXPR RGB DXLE_PREVENT_MACRO_SUBSTITUTION()
+		DXLE_CONSTEXPR dxleRGB()
 			: red_(), green_(), blue_()
 		{}
-		DXLE_CONSTEXPR RGB DXLE_PREVENT_MACRO_SUBSTITUTION(int red, int green, int blue)
+		DXLE_CONSTEXPR dxleRGB(int red, int green, int blue)
 			: red_(red), green_(green), blue_(blue)
 		{}
+
+		explicit operator DxColor()const DXLE_NOEXCEPT;
 	private:
 		int red_;
 		int green_;
 		int blue_;
 	};
 
-	class DxColor
+	class DxColor final
 	{
+	public:
 		typedef decltype(DxLib::GetColor(0, 0, 0)) value_type;
+
+		DXLE_CONSTEXPR DxColor()DXLE_NOEXCEPT
+			: value(0)
+		{}
+		DxColor(int Red, int Green, int Blue)DXLE_NOEXCEPT
+			: value(DxLib::GetColor(Red, Green, Blue))
+		{}
 
 		//! DrawPixel 等の描画関数で使用するカラー値を取得する
 		static DxColor MakeDxColor(int Red, int Green, int Blue)DXLE_NOEXCEPT { return DxLib::GetColor(Red, Green, Blue); }
@@ -68,7 +81,7 @@ namespace color{
 		//! カラー値から赤、緑、青の値を取得する
 		int GetRGB(int *Red, int *Green, int *Blue)const DXLE_NOEXCEPT { return DxLib::GetColor2(value, Red, Green, Blue); }
 		//! カラー値から赤、緑、青の値を取得する
-		RGB GetRGB()const DXLE_NOEXCEPT;
+		dxleRGB GetRGB()const DXLE_NOEXCEPT;
 		//! 指定のカラーフォーマットのカラー値を赤、緑、青、アルファの値を取得する
 		int GetColor5(const COLORDATA *ColorData, int *Red, int *Green, int *Blue, int *Alpha = NULL)const DXLE_NOEXCEPT { return DxLib::GetColor5(ColorData, value, Red, Green, Blue, Alpha); }
 
@@ -105,6 +118,24 @@ namespace color{
 	{
 		return static_cast<to>(std::forward<from>(bace));
 	}
+
+
+	//定義
+
+
+	inline dxleRGB::operator DxColor()const DXLE_NOEXCEPT
+	{
+		return DxColor::GetColor(red_, green_, blue_);
+	}
+	//! カラー値から赤、緑、青の値を取得する
+	inline dxleRGB DxColor::GetRGB()const DXLE_NOEXCEPT
+	{
+		int r, g, b;
+		DxColor:GetColor2(&r, &g, &b);
+		return dxleRGB{ r, g, b };
+	}
+
+
 }}//namespace
 
 
