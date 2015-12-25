@@ -9,6 +9,8 @@
 #define DXLE_INC_BASIC_TYPES_HPP_
 //#pragma once
 #include "dxlibex/config/no_min_max.h"
+#include "dxlibex/type_traits/first_enabled.hpp"
+#include "dxlibex/type_traits/enable_if.hpp"
 #include <iostream>//ostream
 #include <utility>//std::pair
 #include <type_traits>
@@ -59,7 +61,7 @@ namespace dxle {
 	    std::cout << pt << std::endl;
 	@endcode
 	*/
-	template<typename T, typename std::enable_if<std::is_arithmetic<T>::value, std::nullptr_t>::type = nullptr>
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	class point_c final
 	{
 	public:
@@ -115,28 +117,23 @@ namespace dxle {
 
 	//ostream operator
 	namespace detail {
-		template<typename T, bool is_arithmetical = std::is_arithmetic<T>::value, size_t s = sizeof(T), bool is_s = std::is_signed<T>::value> struct ToArithmetic;
-		template<typename T, size_t s, bool is_s> struct ToArithmetic<T, true, s, is_s> {
-			typedef T type;
-		};
-		template<typename T> struct ToArithmetic<T, true, 1, false> {
-			typedef unsigned int type;
-		};
-		template<typename T> struct ToArithmetic<T, true, 1, true> {
-			typedef int type;
-		};
 		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
 			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
-				typedef typename ToArithmetic<PointType>::type Arithmetic;
-				os << static_cast<Arithmetic>(p.x) << str << static_cast<Arithmetic>(p.y);
+				using arithmetic_p = arithmetic_t<PointType>;
+				os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y);
 			}
 		};
+		template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+		using arithmetic_t = first_enabled_t <
+			enable_if<1 != sizeof(T), T>,
+			enable_if<std::is_signed<T>::value, int>,
+			unsigned int
+		>;
 		template<typename CharType, typename PointType>
 		struct istream_operator_helper {
 			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p) {
-				typedef typename ToArithmetic<PointType>::type Arithmetic;
-				Arithmetic x, y;
+				arithmetic_t<PointType> x, y;
 				is >> x;
 				is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
 				is >> y;
