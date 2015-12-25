@@ -191,4 +191,4 @@ ModelManifest.xml
 
 #other
 Log.txt
-ProjectDxLibEx.VC.opendb
+*.VC.opendb
