@@ -7,6 +7,22 @@
 =============================================================================*/
 #include <type_traits>
 namespace dxle {
+	/**
+	@brief	\~japanese 複数条件のあるTMP用if
+	\~english multi-conditional if struct for TMP.
+	\~japanese	std::enable_ifと組み合わせて使います。
+	\~english	This class is used in conjunction with std::enable_if.
+	\~
+	@code
+	template<typename T>
+	using bar = first_enabled_t<
+		std::enbale_if<cond1, type1>,
+		std::enbale_if<cond2, type2>,
+		std::enbale_if<cond3, type3>,
+		default_type
+	>;
+	@endcode
+	*/
 	template<typename ...Args>
 	struct first_enabled {};
 

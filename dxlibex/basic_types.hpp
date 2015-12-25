@@ -24,12 +24,12 @@ namespace dxle {
 	@brief	\~japanese 2次元座標(x, y)　テンプレートクラス。
 			\~english Template class for 2D points specified by its coordinates `x` and `y`.
 
+	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換はstatic_castを使用することで可能です(内部でも`static_cast`を使用します)
+				上記のメンバーのほかに、以下の演算をサポートします
 	\~english	An instance of the claess is interchangeable with std::pair. There is also a cast operator
 				to convert point coordinates to the specified type (using static_cast). Commonly, the conversion
 				uses this operation for each of the coordinates. Besides the class members listed in the
 				declaration above, the following operations on points are implemented:
-	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換は`static_cast`を使用することで可能です(内部でも`static_cast`を使用します)
-				上記のメンバーのほかに、以下の演算をサポートします
 	\~
 	@code
 	    pt1 = pt2 + pt3;
