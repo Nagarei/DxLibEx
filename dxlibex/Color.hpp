@@ -1,4 +1,4 @@
-/*=============================================================================
+ï»¿/*=============================================================================
   Copyright (C) 2015 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -18,19 +18,19 @@ namespace dxle {
 namespace color{
 
 	enum class color_tag {
-		black    ,//!< •
-		blue     ,//!< Â
-		cyan     ,//!< ƒVƒAƒ“ 
-		darkgray ,//!< ƒ_[ƒNƒOƒŒ[(X11)
-		gray     ,//!< ƒOƒŒ[
-		green    ,//!< —Î(X11)
-		lightgray,//!< ƒ‰ƒCƒgƒOƒŒ[
-		magenta  ,//!< ƒ}ƒ[ƒ“ƒ^
-		orange   ,//!< ƒIƒŒƒ“ƒW
-		pink     ,//!< ƒsƒ“ƒN
-		red      ,//!< Ô
-		white    ,//!< ”’
-		yellow   ,//!< ‰©F
+		black    ,//!< é»’
+		blue     ,//!< é’
+		cyan     ,//!< ã‚·ã‚¢ãƒ³ 
+		darkgray ,//!< ãƒ€ãƒ¼ã‚¯ã‚°ãƒ¬ãƒ¼(X11)
+		gray     ,//!< ã‚°ãƒ¬ãƒ¼
+		green    ,//!< ç·‘(X11)
+		lightgray,//!< ãƒ©ã‚¤ãƒˆã‚°ãƒ¬ãƒ¼
+		magenta  ,//!< ãƒžã‚¼ãƒ³ã‚¿
+		orange   ,//!< ã‚ªãƒ¬ãƒ³ã‚¸
+		pink     ,//!< ãƒ”ãƒ³ã‚¯
+		red      ,//!< èµ¤
+		white    ,//!< ç™½
+		yellow   ,//!< é»„è‰²
 	};
 
 	class dxleRGB;
@@ -65,45 +65,45 @@ namespace color{
 			: value(DxLib::GetColor(Red, Green, Blue))
 		{}
 
-		//! DrawPixel “™‚Ì•`‰æŠÖ”‚ÅŽg—p‚·‚éƒJƒ‰[’l‚ðŽæ“¾‚·‚é
+		//! DrawPixel ç­‰ã®æç”»é–¢æ•°ã§ä½¿ç”¨ã™ã‚‹ã‚«ãƒ©ãƒ¼å€¤ã‚’å–å¾—ã™ã‚‹
 		static DxColor MakeDxColor(int Red, int Green, int Blue)DXLE_NOEXCEPT { return DxLib::GetColor(Red, Green, Blue); }
-		//! DrawPixel “™‚Ì•`‰æŠÖ”‚ÅŽg—p‚·‚éƒJƒ‰[’l‚ðŽæ“¾‚·‚é
+		//! DrawPixel ç­‰ã®æç”»é–¢æ•°ã§ä½¿ç”¨ã™ã‚‹ã‚«ãƒ©ãƒ¼å€¤ã‚’å–å¾—ã™ã‚‹
 		static DxColor GetColor(int Red, int Green, int Blue)DXLE_NOEXCEPT { return MakeDxColor(Red, Green, Blue); }
-		//! Žw’è‚ÌƒsƒNƒZƒ‹ƒtƒH[ƒ}ƒbƒg‚É‘Î‰ž‚µ‚½ƒJƒ‰[’l‚ð“¾‚é
+		//! æŒ‡å®šã®ãƒ”ã‚¯ã‚»ãƒ«ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã«å¯¾å¿œã—ãŸã‚«ãƒ©ãƒ¼å€¤ã‚’å¾—ã‚‹
 		static DxColor GetColor3(const COLORDATA *ColorData, int Red, int Green, int Blue, int Alpha = 255)DXLE_NOEXCEPT { return DxLib::GetColor3(ColorData, Red, Green, Blue, Alpha); }
-		//! Žw’è‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ÌƒJƒ‰[’l‚ð•Ê‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ÌƒJƒ‰[’l‚É•ÏŠ·‚·‚é
+		//! æŒ‡å®šã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã‚’åˆ¥ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã«å¤‰æ›ã™ã‚‹
 		static DxColor GetColor4(const COLORDATA *DestColorData, const COLORDATA* SrcColorData, const DxColor& SrcColor)DXLE_NOEXCEPT { return DxLib::GetColor4(DestColorData, SrcColorData, SrcColor.value); }
 
-		//ƒƒ“ƒoŠÖ”
+		//ãƒ¡ãƒ³ãƒé–¢æ•°
 
-		//! ƒJƒ‰[’l‚©‚çÔA—ÎAÂ‚Ì’l‚ðŽæ“¾‚·‚é
+		//! ã‚«ãƒ©ãƒ¼å€¤ã‹ã‚‰èµ¤ã€ç·‘ã€é’ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		int GetColor2(int *Red, int *Green, int *Blue)const DXLE_NOEXCEPT { return GetRGB(Red, Green, Blue); }
-		//! ƒJƒ‰[’l‚©‚çÔA—ÎAÂ‚Ì’l‚ðŽæ“¾‚·‚é
+		//! ã‚«ãƒ©ãƒ¼å€¤ã‹ã‚‰èµ¤ã€ç·‘ã€é’ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		int GetRGB(int *Red, int *Green, int *Blue)const DXLE_NOEXCEPT { return DxLib::GetColor2(value, Red, Green, Blue); }
-		//! ƒJƒ‰[’l‚©‚çÔA—ÎAÂ‚Ì’l‚ðŽæ“¾‚·‚é
+		//! ã‚«ãƒ©ãƒ¼å€¤ã‹ã‚‰èµ¤ã€ç·‘ã€é’ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		dxleRGB GetRGB()const DXLE_NOEXCEPT;
-		//! Žw’è‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ÌƒJƒ‰[’l‚ðÔA—ÎAÂAƒAƒ‹ƒtƒ@‚Ì’l‚ðŽæ“¾‚·‚é
+		//! æŒ‡å®šã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã‚’èµ¤ã€ç·‘ã€é’ã€ã‚¢ãƒ«ãƒ•ã‚¡ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		int GetColor5(const COLORDATA *ColorData, int *Red, int *Green, int *Blue, int *Alpha = NULL)const DXLE_NOEXCEPT { return DxLib::GetColor5(ColorData, value, Red, Green, Blue, Alpha); }
 
 		value_type get()const DXLE_NOEXCEPT { return value; }
 
 		/*
-		extern	COLOR_F			GetColorF(float Red, float Green, float Blue, float Alpha);												// •‚“®¬”“_Œ^‚ÌƒJƒ‰[’l‚ðì¬‚·‚é
-		extern	COLOR_U8		GetColorU8(int Red, int Green, int Blue, int Alpha);														// •„†‚È‚µ®”‚Wƒrƒbƒg‚ÌƒJƒ‰[’l‚ðì¬‚·‚é
-		extern	int				CreatePaletteColorData(COLORDATA *ColorDataBuf);																		// ƒpƒŒƒbƒgƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGBF32ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚aŠeƒ`ƒƒƒ“ƒlƒ‹ 32bit •‚“®¬”“_Œ^ƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGBF16ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚aŠeƒ`ƒƒƒ“ƒlƒ‹ 16bit •‚“®¬”“_Œ^ƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateXRGB8ColorData(COLORDATA *ColorDataBuf);																		// ‚w‚q‚f‚a‚WƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGB8ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚a‚WƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGB4ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚a‚SƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateFullColorData(COLORDATA *ColorDataBuf);																		// ‚Q‚SƒrƒbƒgƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateGrayColorData(COLORDATA *ColorDataBuf);																		// ƒOƒŒ[ƒXƒP[ƒ‹‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreatePal8ColorData(COLORDATA *ColorDataBuf);																		// ƒpƒŒƒbƒg‚Q‚T‚UF‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
+		extern	COLOR_F			GetColorF(float Red, float Green, float Blue, float Alpha);												// æµ®å‹•å°æ•°ç‚¹åž‹ã®ã‚«ãƒ©ãƒ¼å€¤ã‚’ä½œæˆã™ã‚‹
+		extern	COLOR_U8		GetColorU8(int Red, int Green, int Blue, int Alpha);														// ç¬¦å·ãªã—æ•´æ•°ï¼˜ãƒ“ãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã‚’ä½œæˆã™ã‚‹
+		extern	int				CreatePaletteColorData(COLORDATA *ColorDataBuf);																		// ãƒ‘ãƒ¬ãƒƒãƒˆã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGBF32ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢å„ãƒãƒ£ãƒ³ãƒãƒ« 32bit æµ®å‹•å°æ•°ç‚¹åž‹ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGBF16ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢å„ãƒãƒ£ãƒ³ãƒãƒ« 16bit æµ®å‹•å°æ•°ç‚¹åž‹ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateXRGB8ColorData(COLORDATA *ColorDataBuf);																		// ï¼¸ï¼²ï¼§ï¼¢ï¼˜ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGB8ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢ï¼˜ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGB4ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢ï¼”ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateFullColorData(COLORDATA *ColorDataBuf);																		// ï¼’ï¼”ãƒ“ãƒƒãƒˆã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateGrayColorData(COLORDATA *ColorDataBuf);																		// ã‚°ãƒ¬ãƒ¼ã‚¹ã‚±ãƒ¼ãƒ«ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreatePal8ColorData(COLORDATA *ColorDataBuf);																		// ãƒ‘ãƒ¬ãƒƒãƒˆï¼’ï¼•ï¼–è‰²ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
 		extern	int				CreateColorData(COLORDATA *ColorDataBuf, int ColorBitDepth,
 		DWORD RedMask, DWORD GreenMask, DWORD BlueMask, DWORD AlphaMask,
-		int ChannelNum = 0, int ChannelBitDepth = 0, int FloatTypeFlag = FALSE);						// ƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ðì¬‚·‚é
-		extern	void			SetColorDataNoneMask(COLORDATA *ColorData);																		// NoneMask ˆÈŠO‚Ì—v‘f‚ð–„‚ß‚½ COLORDATA \‘¢‘Ì‚Ìî•ñ‚ðŒ³‚É NoneMask ‚ðƒZƒbƒg‚·‚é
-		extern	int				CmpColorData(const COLORDATA *ColorData1, const COLORDATA *ColorData2);									// “ñ‚Â‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ª“™‚µ‚¢‚©‚Ç‚¤‚©’²‚×‚é( –ß‚è’l@TRUE:“™‚µ‚¢  FALSE:“™‚µ‚­‚È‚¢ )
+		int ChannelNum = 0, int ChannelBitDepth = 0, int FloatTypeFlag = FALSE);						// ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’ä½œæˆã™ã‚‹
+		extern	void			SetColorDataNoneMask(COLORDATA *ColorData);																		// NoneMask ä»¥å¤–ã®è¦ç´ ã‚’åŸ‹ã‚ãŸ COLORDATA æ§‹é€ ä½“ã®æƒ…å ±ã‚’å…ƒã« NoneMask ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+		extern	int				CmpColorData(const COLORDATA *ColorData1, const COLORDATA *ColorData2);									// äºŒã¤ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆãŒç­‰ã—ã„ã‹ã©ã†ã‹èª¿ã¹ã‚‹( æˆ»ã‚Šå€¤ã€€TRUE:ç­‰ã—ã„  FALSE:ç­‰ã—ããªã„ )
 		*/
 
 	private:
@@ -120,14 +120,14 @@ namespace color{
 	}
 
 
-	//’è‹`
+	//å®šç¾©
 
 
 	inline dxleRGB::operator DxColor()const DXLE_NOEXCEPT
 	{
 		return DxColor::GetColor(red_, green_, blue_);
 	}
-	//! ƒJƒ‰[’l‚©‚çÔA—ÎAÂ‚Ì’l‚ðŽæ“¾‚·‚é
+	//! ã‚«ãƒ©ãƒ¼å€¤ã‹ã‚‰èµ¤ã€ç·‘ã€é’ã®å€¤ã‚’å–å¾—ã™ã‚‹
 	inline dxleRGB DxColor::GetRGB()const DXLE_NOEXCEPT
 	{
 		int r, g, b;
@@ -152,53 +152,53 @@ namespace dxle
 	{
 		typedef decltype(DxLib::GetColor(0, 0, 0)) value_type;
 
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0,   0,   0); } } static const black    ;//!< •
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0,   0, 255); } } static const blue     ;//!< Â
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0, 255, 255); } } static const cyan     ;//!< ƒVƒAƒ“ 
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(169, 169, 169); } } static const darkgray ;//!< ƒ_[ƒNƒOƒŒ[(X11)
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(190, 190, 190); } } static const gray     ;//!< ƒOƒŒ[
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0, 255,   0); } } static const green    ;//!< —Î(X11)
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(211, 211, 211); } } static const lightgray;//!< ƒ‰ƒCƒgƒOƒŒ[
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255,   0, 255); } } static const magenta  ;//!< ƒ}ƒ[ƒ“ƒ^
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 165,   0); } } static const orange   ;//!< ƒIƒŒƒ“ƒW
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 192, 203); } } static const pink     ;//!< ƒsƒ“ƒN
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255,   0,   0); } } static const red      ;//!< Ô
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 255, 255); } } static const white    ;//!< ”’
-		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 255,   0); } } static const yellow   ;//!< ‰©F
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0,   0,   0); } } static const black    ;//!< é»’
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0,   0, 255); } } static const blue     ;//!< é’
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0, 255, 255); } } static const cyan     ;//!< ã‚·ã‚¢ãƒ³ 
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(169, 169, 169); } } static const darkgray ;//!< ãƒ€ãƒ¼ã‚¯ã‚°ãƒ¬ãƒ¼(X11)
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(190, 190, 190); } } static const gray     ;//!< ã‚°ãƒ¬ãƒ¼
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(  0, 255,   0); } } static const green    ;//!< ç·‘(X11)
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(211, 211, 211); } } static const lightgray;//!< ãƒ©ã‚¤ãƒˆã‚°ãƒ¬ãƒ¼
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255,   0, 255); } } static const magenta  ;//!< ãƒžã‚¼ãƒ³ã‚¿
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 165,   0); } } static const orange   ;//!< ã‚ªãƒ¬ãƒ³ã‚¸
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 192, 203); } } static const pink     ;//!< ãƒ”ãƒ³ã‚¯
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255,   0,   0); } } static const red      ;//!< èµ¤
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 255, 255); } } static const white    ;//!< ç™½
+		struct { inline operator Color()const DXLE_NOEXCEPT { return DxLib::GetColor(255, 255,   0); } } static const yellow   ;//!< é»„è‰²
 
-		//! DrawPixel “™‚Ì•`‰æŠÖ”‚ÅŽg—p‚·‚éƒJƒ‰[’l‚ðŽæ“¾‚·‚é
+		//! DrawPixel ç­‰ã®æç”»é–¢æ•°ã§ä½¿ç”¨ã™ã‚‹ã‚«ãƒ©ãƒ¼å€¤ã‚’å–å¾—ã™ã‚‹
 		static Color GetColor(int Red, int Green, int Blue)DXLE_NOEXCEPT { return DxLib::GetColor(Red, Green, Blue); }
-		//! Žw’è‚ÌƒsƒNƒZƒ‹ƒtƒH[ƒ}ƒbƒg‚É‘Î‰ž‚µ‚½ƒJƒ‰[’l‚ð“¾‚é
+		//! æŒ‡å®šã®ãƒ”ã‚¯ã‚»ãƒ«ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã«å¯¾å¿œã—ãŸã‚«ãƒ©ãƒ¼å€¤ã‚’å¾—ã‚‹
 		static Color GetColor3(const COLORDATA *ColorData, int Red, int Green, int Blue, int Alpha = 255)DXLE_NOEXCEPT { return DxLib::GetColor3(ColorData, Red, Green, Blue, Alpha); }
-		//! Žw’è‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ÌƒJƒ‰[’l‚ð•Ê‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ÌƒJƒ‰[’l‚É•ÏŠ·‚·‚é
+		//! æŒ‡å®šã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã‚’åˆ¥ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã«å¤‰æ›ã™ã‚‹
 		static Color GetColor4(const COLORDATA *DestColorData, const COLORDATA* SrcColorData, const Color& SrcColor)DXLE_NOEXCEPT { return DxLib::GetColor4(DestColorData, SrcColorData, SrcColor.value); }
 
-		//ƒƒ“ƒoŠÖ”
+		//ãƒ¡ãƒ³ãƒé–¢æ•°
 
-		//! ƒJƒ‰[’l‚©‚çÔA—ÎAÂ‚Ì’l‚ðŽæ“¾‚·‚é
+		//! ã‚«ãƒ©ãƒ¼å€¤ã‹ã‚‰èµ¤ã€ç·‘ã€é’ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		int GetColor2(int *Red, int *Green, int *Blue)const DXLE_NOEXCEPT { return DxLib::GetColor2(value, Red, Green, Blue); }
-		//! Žw’è‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ÌƒJƒ‰[’l‚ðÔA—ÎAÂAƒAƒ‹ƒtƒ@‚Ì’l‚ðŽæ“¾‚·‚é
+		//! æŒ‡å®šã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã‚’èµ¤ã€ç·‘ã€é’ã€ã‚¢ãƒ«ãƒ•ã‚¡ã®å€¤ã‚’å–å¾—ã™ã‚‹
 		int GetColor5(const COLORDATA *ColorData, int *Red, int *Green, int *Blue, int *Alpha = NULL)const DXLE_NOEXCEPT { return DxLib::GetColor5(ColorData, value, Red, Green, Blue, Alpha); }
 
 		value_type get()const DXLE_NOEXCEPT { return value; }
 
 		/*
-		extern	COLOR_F			GetColorF(float Red, float Green, float Blue, float Alpha);												// •‚“®¬”“_Œ^‚ÌƒJƒ‰[’l‚ðì¬‚·‚é
-		extern	COLOR_U8		GetColorU8(int Red, int Green, int Blue, int Alpha);														// •„†‚È‚µ®”‚Wƒrƒbƒg‚ÌƒJƒ‰[’l‚ðì¬‚·‚é
-		extern	int				CreatePaletteColorData(COLORDATA *ColorDataBuf);																		// ƒpƒŒƒbƒgƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGBF32ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚aŠeƒ`ƒƒƒ“ƒlƒ‹ 32bit •‚“®¬”“_Œ^ƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGBF16ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚aŠeƒ`ƒƒƒ“ƒlƒ‹ 16bit •‚“®¬”“_Œ^ƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateXRGB8ColorData(COLORDATA *ColorDataBuf);																		// ‚w‚q‚f‚a‚WƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGB8ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚a‚WƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateARGB4ColorData(COLORDATA *ColorDataBuf);																		// ‚`‚q‚f‚a‚SƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateFullColorData(COLORDATA *ColorDataBuf);																		// ‚Q‚SƒrƒbƒgƒJƒ‰[‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreateGrayColorData(COLORDATA *ColorDataBuf);																		// ƒOƒŒ[ƒXƒP[ƒ‹‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
-		extern	int				CreatePal8ColorData(COLORDATA *ColorDataBuf);																		// ƒpƒŒƒbƒg‚Q‚T‚UF‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ð\’z‚·‚é
+		extern	COLOR_F			GetColorF(float Red, float Green, float Blue, float Alpha);												// æµ®å‹•å°æ•°ç‚¹åž‹ã®ã‚«ãƒ©ãƒ¼å€¤ã‚’ä½œæˆã™ã‚‹
+		extern	COLOR_U8		GetColorU8(int Red, int Green, int Blue, int Alpha);														// ç¬¦å·ãªã—æ•´æ•°ï¼˜ãƒ“ãƒƒãƒˆã®ã‚«ãƒ©ãƒ¼å€¤ã‚’ä½œæˆã™ã‚‹
+		extern	int				CreatePaletteColorData(COLORDATA *ColorDataBuf);																		// ãƒ‘ãƒ¬ãƒƒãƒˆã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGBF32ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢å„ãƒãƒ£ãƒ³ãƒãƒ« 32bit æµ®å‹•å°æ•°ç‚¹åž‹ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGBF16ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢å„ãƒãƒ£ãƒ³ãƒãƒ« 16bit æµ®å‹•å°æ•°ç‚¹åž‹ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateXRGB8ColorData(COLORDATA *ColorDataBuf);																		// ï¼¸ï¼²ï¼§ï¼¢ï¼˜ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGB8ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢ï¼˜ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateARGB4ColorData(COLORDATA *ColorDataBuf);																		// ï¼¡ï¼²ï¼§ï¼¢ï¼”ã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateFullColorData(COLORDATA *ColorDataBuf);																		// ï¼’ï¼”ãƒ“ãƒƒãƒˆã‚«ãƒ©ãƒ¼ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreateGrayColorData(COLORDATA *ColorDataBuf);																		// ã‚°ãƒ¬ãƒ¼ã‚¹ã‚±ãƒ¼ãƒ«ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
+		extern	int				CreatePal8ColorData(COLORDATA *ColorDataBuf);																		// ãƒ‘ãƒ¬ãƒƒãƒˆï¼’ï¼•ï¼–è‰²ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
 		extern	int				CreateColorData(COLORDATA *ColorDataBuf, int ColorBitDepth,
 			DWORD RedMask, DWORD GreenMask, DWORD BlueMask, DWORD AlphaMask,
-			int ChannelNum = 0, int ChannelBitDepth = 0, int FloatTypeFlag = FALSE);						// ƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ðì¬‚·‚é
-		extern	void			SetColorDataNoneMask(COLORDATA *ColorData);																		// NoneMask ˆÈŠO‚Ì—v‘f‚ð–„‚ß‚½ COLORDATA \‘¢‘Ì‚Ìî•ñ‚ðŒ³‚É NoneMask ‚ðƒZƒbƒg‚·‚é
-		extern	int				CmpColorData(const COLORDATA *ColorData1, const COLORDATA *ColorData2);									// “ñ‚Â‚ÌƒJƒ‰[ƒtƒH[ƒ}ƒbƒg‚ª“™‚µ‚¢‚©‚Ç‚¤‚©’²‚×‚é( –ß‚è’l@TRUE:“™‚µ‚¢  FALSE:“™‚µ‚­‚È‚¢ )
+			int ChannelNum = 0, int ChannelBitDepth = 0, int FloatTypeFlag = FALSE);						// ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’ä½œæˆã™ã‚‹
+		extern	void			SetColorDataNoneMask(COLORDATA *ColorData);																		// NoneMask ä»¥å¤–ã®è¦ç´ ã‚’åŸ‹ã‚ãŸ COLORDATA æ§‹é€ ä½“ã®æƒ…å ±ã‚’å…ƒã« NoneMask ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+		extern	int				CmpColorData(const COLORDATA *ColorData1, const COLORDATA *ColorData2);									// äºŒã¤ã®ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆãŒç­‰ã—ã„ã‹ã©ã†ã‹èª¿ã¹ã‚‹( æˆ»ã‚Šå€¤ã€€TRUE:ç­‰ã—ã„  FALSE:ç­‰ã—ããªã„ )
 		*/
 
 	private:
