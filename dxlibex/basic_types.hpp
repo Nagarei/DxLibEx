@@ -117,6 +117,12 @@ namespace dxle {
 
 	//ostream operator
 	namespace detail {
+		template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+		using arithmetic_t = first_enabled_t <
+			enable_if<1 != sizeof(T), T>,
+			enable_if<std::is_signed<T>::value, int>,
+			unsigned int
+		>;
 		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
 			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
@@ -124,12 +130,6 @@ namespace dxle {
 				os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y);
 			}
 		};
-		template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-		using arithmetic_t = first_enabled_t <
-			enable_if<1 != sizeof(T), T>,
-			enable_if<std::is_signed<T>::value, int>,
-			unsigned int
-		>;
 		template<typename CharType, typename PointType>
 		struct istream_operator_helper {
 			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p) {
