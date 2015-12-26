@@ -14,6 +14,7 @@
 #include <iostream>//ostream
 #include <utility>//std::pair
 #include <type_traits>
+#include <algorithm>
 #include <cstdint>
 #include <cmath>
 #include <limits>
@@ -384,6 +385,21 @@ namespace dxle {
 	}
 	template<typename T> point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
 
+	template<typename T1, typename T2> auto dot(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x * p2.x) {
+		return p1.x * p2.x + p1.y * p2.y;
+	}
+	template<typename T1, typename T2> double cross(const point_c<T1>& p1, const point_c<T2>& p2) {
+		return static_cast<double>(p1.x) * p2.y + static_cast<double>(p1.y) * p2.x;
+	}
+	namespace detail {
+		template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+		auto safe_dist(T1 n1, T2 n2) -> decltype(n1 - n2) {
+			return (n1 < n2) ? n2 - n1 : n1 - n2;
+		}
+	}
+	template<typename T1, typename T2> auto distance(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x + p2.x) {
+		return std::hypot(detail::safe_dist(p1.x, p2.x), detail::safe_dist(p1.y, p2.y));
+	}
 	typedef point_c<int> pointi;
 	typedef point_c<uint8_t> pointu8i;
 	typedef point_c<int8_t> point8i;

@@ -49,5 +49,8 @@ int main() {
 	dxle::pointi in_p;
 	std::cin >> in_p;
 	cout << "in_p:" << in_p << endl;
+
+	//distance
+	auto d = dxle::distance(p1, p11);
 	return 0;
 }
