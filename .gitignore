@@ -50,6 +50,7 @@ dlldata.c
 *.tmp
 *.tmp_proj
 *.log
+*.tlog
 *.exe
 *.vspscc
 *.vssscc
@@ -57,6 +58,7 @@ dlldata.c
 *.pidb
 *.svclog
 *.scc
+*.lastbuildstate
 
 # Chutzpah Test files
 _Chutzpah*
