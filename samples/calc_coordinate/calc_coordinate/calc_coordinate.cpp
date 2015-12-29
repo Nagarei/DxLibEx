@@ -38,19 +38,28 @@ int main() {
 	cout << "p8:" << p8 << " p9:" << p9 << endl;
 
 	//abs
-	dxle::pointd p11(-2.3, -3.4);
-	auto p12 = dxle::abs(p11);
-	cout << "p11:" << p11 << " p12:" << p12 << endl;
-
-	//cast
-	auto p10 = static_cast<dxle::pointu8i>(dxle::pointf(3.2f, 2.4f));
-	cout << "p10:" << p10 << endl;
-	cout << "3, 5 のように入力してください" << endl;
-	dxle::pointi in_p;
-	std::cin >> in_p;
-	cout << "in_p:" << in_p << endl;
+	dxle::pointd p10(-2.3, -3.4);
+	auto p11 = dxle::abs(p10);
+	cout << "abs : p10(src):(" << p10 << ")  result=(" << p11 << ")" << endl;
 
 	//distance
-	auto d = dxle::distance(p1, p11);
+	auto d = dxle::distance(p1, p10);
+	cout << "distance : p1(" << p1 << ") p10(" << p10 << ") result=" << d << endl;
+
+	//dot(2D-vector)
+	const dxle::pointi p_a1 = { 2, 3 };
+	const dxle::pointi p_b1 = { 4, 1 };
+	cout << "2D-vcror dot   : a(" << p_a1 << ") b(" << p_b1 << ") result=" << dxle::dot(p_a1, p_b1) << endl;
+	cout << "2D-vcror cross : a(" << p_a1 << ") b(" << p_b1 << ") result=" << dxle::cross(p_a1, p_b1) << endl;
+
+	//cast
+	const dxle::pointf p12 = { 3.2f, 2.4f };
+	auto p13 = static_cast<dxle::pointu8i>(p12);
+	cout << "cast : p12(dxle::pointf):(" << p12 << ") result(p13)=(" << p13 << ")" << endl;
+	cout << "3, 5 のように入力してください" << endl;
+	dxle::pointi in_p;
+	std::cin >> in_p;//input
+	cout << "in_p:" << in_p << endl;
+
 	return 0;
 }
