@@ -105,11 +105,13 @@ namespace dxle {
 	};
 	//convert from std::pair
 
+	//	@relates point_c
 	//!\~english conversion from std::pair
 	//!\~japanese std::pairからの変換
 	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
 		return point_c<T>(p.first, p.second);
 	}
+	//	@relates point_c
 	//!\~english conversion from std::pair
 	//!\~japanese std::pairからの変換
 	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW {
@@ -118,6 +120,7 @@ namespace dxle {
 
 	//ostream operator
 	namespace detail {
+		//! for int8_t/uint8_t
 		template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 		using arithmetic_t = first_enabled_t <
 			enable_if<1 != sizeof(T), T>,
@@ -142,31 +145,67 @@ namespace dxle {
 			}
 		};
 	}
+	/**
+	@relates point_c
+	@brief		\~japanese	出力ストリーム演算子
+				\~english	ostream operator
+	@param os	\~japanese	出力ストリームへのlvalue reference
+				\~english	lvalue reference to ostream
+	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c
+	@return		\~japanese	第一引数に指定した出力ストリームへのlvalue reference
+				\~english	lvalue reference to ostream whitch is specified at first argument
+	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p) {
 		detail::ostream_operator_helper<char, T>()(os, ", ", p);
 		return os;
 	}
+	/**
+	@relates point_c
+	@brief		\~japanese	出力ストリーム演算子
+				\~english	ostream operator
+	@param os	\~japanese	出力ストリームへのlvalue reference
+				\~english	lvalue reference to ostream
+	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c
+	@return		\~japanese	第一引数に指定した出力ストリームへのlvalue reference
+				\~english	lvalue reference to ostream whitch is specified at first argument
+	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p) {
 		detail::ostream_operator_helper<wchar_t, T>()(os, L", ", p);
 		return os;
 	}
+	/**
+	@relates point_c
+	@brief		\~japanese	入力ストリーム演算子
+				\~english	istream operator
+	@param os	\~japanese	入力ストリームへのlvalue reference
+				\~english	lvalue reference to istream
+	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c
+	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
+				\~english	lvalue reference to istream whitch is specified at first argument
+	*/
 	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p) {
 		detail::istream_operator_helper<char, T>()(is, p);
 		return is;
 	}
+	/**
+	@relates point_c
+	@brief		\~japanese	入力ストリーム演算子
+				\~english	istream operator
+	@param os	\~japanese	入力ストリームへのlvalue reference
+				\~english	lvalue reference to istream
+	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c
+	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
+				\~english	lvalue reference to istream whitch is specified at first argument
+	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p) {
 		detail::istream_operator_helper<wchar_t, T>()(is, p);
 		return is;
 	}
 
-	template <typename T>
-	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
-		return static_cast<bool>(p);
-	}
-	template <typename T>
-	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
-		return static_cast<bool>(p);
-	}
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of unary operator -
@@ -341,6 +380,14 @@ namespace dxle {
 	    return l;
 	}
 
+	template <typename T>
+	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
+		return static_cast<bool>(p);
+	}
+	template <typename T>
+	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
+		return static_cast<bool>(p);
+	}
 	////////////////////////////////////////////////////////////
 	/// \relates point_c
 	/// \brief Overload of binary operator !=
@@ -354,7 +401,7 @@ namespace dxle {
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	bool operator !=(const point_c<T>& l, const point_c<T>& r){
+	bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return (l.x != r.x) || (l.y != r.y);
 	}
 
@@ -371,7 +418,7 @@ namespace dxle {
 	///
 	////////////////////////////////////////////////////////////
 	template <typename T>
-	bool operator ==(const point_c<T>& l, const point_c<T>& r){
+	bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return !(l != r);
 	}
 
@@ -383,11 +430,48 @@ namespace dxle {
 			point_c<T> operator() (const point_c<T>& o){ return o; }
 		};
 	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	point_cの絶対値(ベクトルの絶対値ではないのでその場合はdistanceを使ってください)
+				\~english	Absolute value of point_c(THIS IS NOT THE ABSOLUTE VALUE OF THE VECTOR! use distance instead.)
+	@param o	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
+				\~english	The absolute value of o.
+	@code
+	const dxle::pointi p1 = { -2, 4 };
+	const auto result = dxle::abs(p1);//(2, 4)
+	@endcode
+	*/
 	template<typename T> point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
 
+	/**
+	@relates point_c
+	@brief		\~japanese	２つのpoint_cクラスオブジェクトをベクトルとして内積を計算する
+				\~english	Computes a dot-product of two point_c value as vectors.
+	@param p1	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@param p2	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@return		\~japanese	計算結果。戻り値の型は暗黙の型変換で得られるものです。
+				\~english	Computed result. return value's type is a result of Implicit conversions.
+	*/
 	template<typename T1, typename T2> auto dot(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x * p2.x) {
 		return p1.x * p2.x + p1.y * p2.y;
 	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	２つのpoint_cクラスオブジェクトをベクトルとして外積を計算する
+				\~english	Computes a cross-product of two point_c value as vectors.
+	@param p1	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@param p2	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@return		\~japanese	計算結果。
+				\~english	Computed result.
+	*/
 	template<typename T1, typename T2> double cross(const point_c<T1>& p1, const point_c<T2>& p2) {
 		return static_cast<double>(p1.x) * p2.y + static_cast<double>(p1.y) * p2.x;
 	}
@@ -397,6 +481,18 @@ namespace dxle {
 			return (n1 < n2) ? n2 - n1 : n1 - n2;
 		}
 	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	三平方の定理(std::hypot)にもとづき、２つのpoint_cクラスオブジェクトの距離を計算する
+				\~english	Calculate the distance of the two point_c class object based on the Pythagorean theorem(std::hypot)
+	@param p1	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@param p2	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value
+	@return		\~japanese	計算結果。
+				\~english	Computed result.
+	*/
 	template<typename T1, typename T2> auto distance(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x + p2.x) {
 		return std::hypot(detail::safe_dist(p1.x, p2.x), detail::safe_dist(p1.y, p2.y));
 	}
