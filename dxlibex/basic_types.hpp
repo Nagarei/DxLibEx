@@ -76,7 +76,7 @@ namespace dxle {
 		//move constructor
 		point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
-		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_OR_NOTHROW {
+		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_OR_NOTHROW{
 			this->x = r.x;
 			this->y = r.y;
 			return *this;
@@ -179,7 +179,7 @@ namespace dxle {
 	@relates point_c
 	@brief		\~japanese	入力ストリーム演算子
 				\~english	istream operator
-	@param os	\~japanese	入力ストリームへのlvalue reference
+	@param is	\~japanese	入力ストリームへのlvalue reference
 				\~english	lvalue reference to istream
 	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
 				\~english	const-lvalue reference to point_c
@@ -194,7 +194,7 @@ namespace dxle {
 	@relates point_c
 	@brief		\~japanese	入力ストリーム演算子
 				\~english	istream operator
-	@param os	\~japanese	入力ストリームへのlvalue reference
+	@param is	\~japanese	入力ストリームへのlvalue reference
 				\~english	lvalue reference to istream
 	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
 				\~english	const-lvalue reference to point_c
@@ -206,22 +206,41 @@ namespace dxle {
 		return is;
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of unary operator -
-	///
-	/// \param r Vector to negate
-	///
-	/// \return Memberwise opposite of the vector
-	///
-	////////////////////////////////////////////////////////////
+	/**
+	@relates point_c
+	@brief		\~japanese	単項演算子-のオーバーロード
+				\~english	Overload of unary operator -
+	@param r	\~japanese	point_cクラスオブジェクト
+				\~english	point_c value to negate
+	@return		\~japanese	符号を逆転させた結果
+				\~english	Memberwise opposite of the point_c value
+	*/
 	template <typename T>
 	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return point_c<T>(-r.x, -r.y);
 	}
 
+	/**
+	@relates point_c
+	@brief		\~japanese	単項演算子+のオーバーロード
+				\~english	Overload of unary operator +
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	第一引数へのconst-lvalue reference
+				\~english	const-lvalue reference to first argument
+	*/
 	template <typename T>
 	inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
+
+	/**
+	@relates point_c
+	@brief		\~japanese	単項演算子+のオーバーロード
+				\~english	Overload of unary operator +
+	@param r	\~japanese	point_cクラスオブジェクトへのrvalue reference
+				\~english	rvalue reference to point_c value
+	@return		\~japanese	第一引数へのrvalue reference
+				\~english	rvalue reference to first argument
+	*/
 	template <typename T>
 	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
 
