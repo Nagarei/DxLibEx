@@ -76,13 +76,15 @@ namespace dxle {
 		//move constructor
 		point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
-		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_OR_NOTHROW{
+		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		{
 			this->x = r.x;
 			this->y = r.y;
 			return *this;
 		}
 		//move assignment operator
-		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_OR_NOTHROW {
+		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_OR_NOTHROW
+		{
 			this->x = std::move(r.x);
 			this->y = std::move(r.y);
 			return *this;
@@ -94,12 +96,14 @@ namespace dxle {
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW {
+		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
+		{
 			return point_c<_Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW {
+		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
+		{
 			return std::pair<_Tp2, _Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
 		}
 	};
@@ -108,13 +112,15 @@ namespace dxle {
 	//	@relates point_c
 	//!\~english conversion from std::pair
 	//!\~japanese std::pairからの変換
-	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
+	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return point_c<T>(p.first, p.second);
 	}
 	//	@relates point_c
 	//!\~english conversion from std::pair
 	//!\~japanese std::pairからの変換
-	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW {
+	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return point_c<T>(std::move(p.first), std::move(p.second));
 	}
 
@@ -129,14 +135,16 @@ namespace dxle {
 		>;
 		template<typename CharType, typename PointType>
 		struct ostream_operator_helper {
-			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p) {
+			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p)
+			{
 				using arithmetic_p = arithmetic_t<PointType>;
 				os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y);
 			}
 		};
 		template<typename CharType, typename PointType>
 		struct istream_operator_helper {
-			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p) {
+			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p)
+			{
 				arithmetic_t<PointType> x, y;
 				is >> x;
 				is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
@@ -156,7 +164,8 @@ namespace dxle {
 	@return		\~japanese	第一引数に指定した出力ストリームへのlvalue reference
 				\~english	lvalue reference to ostream whitch is specified at first argument
 	*/
-	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p) {
+	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p)
+	{
 		detail::ostream_operator_helper<char, T>()(os, ", ", p);
 		return os;
 	}
@@ -171,7 +180,8 @@ namespace dxle {
 	@return		\~japanese	第一引数に指定した出力ストリームへのlvalue reference
 				\~english	lvalue reference to ostream whitch is specified at first argument
 	*/
-	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p) {
+	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p)
+	{
 		detail::ostream_operator_helper<wchar_t, T>()(os, L", ", p);
 		return os;
 	}
@@ -186,7 +196,8 @@ namespace dxle {
 	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
 				\~english	lvalue reference to istream whitch is specified at first argument
 	*/
-	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p) {
+	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p)
+	{
 		detail::istream_operator_helper<char, T>()(is, p);
 		return is;
 	}
@@ -201,7 +212,8 @@ namespace dxle {
 	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
 				\~english	lvalue reference to istream whitch is specified at first argument
 	*/
-	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p) {
+	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
+	{
 		detail::istream_operator_helper<wchar_t, T>()(is, p);
 		return is;
 	}
@@ -216,7 +228,8 @@ namespace dxle {
 				\~english	Memberwise opposite of the point_c value
 	*/
 	template <typename T>
-	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
+	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return point_c<T>(-r.x, -r.y);
 	}
 
@@ -256,7 +269,8 @@ namespace dxle {
 				\~english	lvalue reference to first argument
 	*/
 	template <typename T>
-	point_c<T>& operator +=(point_c<T>& l, const point_c<T>& r){
+	point_c<T>& operator +=(point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 	    l.x += r.x;
 	    l.y += r.y;
 	    return l;
@@ -274,7 +288,8 @@ namespace dxle {
 				\~english	lvalue reference to first argument
 	*/
 	template <typename T>
-	point_c<T>& operator -=(point_c<T>& l, const point_c<T>& r){
+	point_c<T>& operator -=(point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 	    l.x -= r.x;
 	    l.y -= r.y;
 	    return l;
@@ -292,7 +307,8 @@ namespace dxle {
 				\~english	Memberwise addition of both point_c value
 	*/
 	template <typename T>
-	point_c<T> operator +(const point_c<T>& l, const point_c<T>& r){
+	point_c<T> operator +(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return {l.x + r.x, l.y + r.y};
 	}
 
@@ -308,7 +324,8 @@ namespace dxle {
 				\~english	Memberwise subtraction of both point_c value
 	*/
 	template <typename T>
-	point_c<T> operator -(const point_c<T>& l, const point_c<T>& r){
+	point_c<T> operator -(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return {l.x - r.x, l.y - r.y};
 	}
 
@@ -324,7 +341,7 @@ namespace dxle {
 				\~english	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator *(const point_c<T1>& l, T2 r) -> point_c<decltype(l.x * r)>
+	auto operator *(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x * r)>
 	{
 		return {l.x * r, l.y * r};
 	}
@@ -341,7 +358,7 @@ namespace dxle {
 				\~english	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator *(T1 l, const point_c<T2>& r) -> point_c<decltype(l * r.x)>
+	auto operator *(T1 l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l * r.x)>
 	{
 		return {l + r.x, l + r.y};
 	}
@@ -358,7 +375,8 @@ namespace dxle {
 				\~english	lvalue reference to 1st argument
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point_c<T>& operator *=(point_c<T>& l, T r){
+	point_c<T>& operator *=(point_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 	    l.x *= r;
 	    l.y *= r;
 	    return l;
@@ -376,7 +394,7 @@ namespace dxle {
 				\~english	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator /(const point_c<T1>& l, T2 r) -> point_c<decltype(l.x / r)>
+	auto operator /(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x / r)>
 	{
 		return {l.x / r, l.y / r};
 	}
@@ -393,7 +411,8 @@ namespace dxle {
 				\~english	lvalue reference to 1st argument
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point_c<T>& operator /=(point_c<T>& l, T r){
+	point_c<T>& operator /=(point_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW 
+	{
 	    l.x /= r;
 	    l.y /= r;
 	    return l;
@@ -411,7 +430,8 @@ namespace dxle {
 				\~english	true if left operand is not equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
+	bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return (l.x != r.x) || (l.y != r.y);
 	}
 
@@ -427,7 +447,8 @@ namespace dxle {
 				\~english	true if left operand is not equal to (0, 0)
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
+	bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return !static_cast<bool>(p);
 	}
 
@@ -443,7 +464,8 @@ namespace dxle {
 				\~english	true if left operand is not equal to (0, 0)
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
+	bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return !static_cast<bool>(p);
 	}
 
@@ -459,9 +481,7 @@ namespace dxle {
 				\~english	true if left operand is equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
-		return !(l != r);
-	}
+	bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return !(l != r);	}
 
 	/**
 	@relates point_c
@@ -475,7 +495,8 @@ namespace dxle {
 				\~english	true if left operand is equal to (0, 0)
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
+	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return static_cast<bool>(p);
 	}
 
@@ -491,16 +512,17 @@ namespace dxle {
 				\~english	true if left operand is equal to (0, 0)
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
+	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return static_cast<bool>(p);
 	}
 
 	namespace detail{
-		template<typename T, bool is_signed = std::is_signed<T>::value>struct abs_helper{
-			point_c<T> operator() (const point_c<T>& o){ return point_c<T>(std::abs(o.x), std::abs(o.y)); }
+		template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
+			point_c<T> operator() (const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return point_c<T>(std::abs(o.x), std::abs(o.y)); }
 		};
 		template<typename T> struct abs_helper<T, false> {
-			point_c<T> operator() (const point_c<T>& o){ return o; }
+			point_c<T> operator() (const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
 		};
 	}
 
@@ -518,7 +540,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
+	point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>()(o); }
 
 	/**
 	@relates point_c
@@ -532,7 +554,8 @@ namespace dxle {
 				\~english	Computed result. return value's type is a result of Implicit conversions.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto dot(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x * p2.x) {
+	auto dot(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x * p2.x)
+	{
 		return p1.x * p2.x + p1.y * p2.y;
 	}
 
@@ -548,12 +571,14 @@ namespace dxle {
 				\~english	Computed result.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	double cross(const point_c<T1>& p1, const point_c<T2>& p2) {
+	double cross(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
+	{
 		return static_cast<double>(p1.x) * p2.y + static_cast<double>(p1.y) * p2.x;
 	}
 	namespace detail {
 		template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-		auto safe_dist(T1 n1, T2 n2) -> decltype(n1 - n2) {
+		auto safe_dist(T1 n1, T2 n2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(n1 - n2)
+		{
 			return (n1 < n2) ? n2 - n1 : n1 - n2;
 		}
 	}
@@ -569,7 +594,8 @@ namespace dxle {
 	@return		\~japanese	計算結果。
 				\~english	Computed result.
 	*/
-	template<typename T1, typename T2> auto distance(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x + p2.x) {
+	template<typename T1, typename T2> auto distance(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x + p2.x)
+	{
 		return std::hypot(detail::safe_dist(p1.x, p2.x), detail::safe_dist(p1.y, p2.y));
 	}
 	typedef point_c<int> pointi;
