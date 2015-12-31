@@ -230,7 +230,7 @@ namespace dxle {
 	template <typename T>
 	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
-		return point_c<T>(-r.x, -r.y);
+		return { -r.x, -r.y };
 	}
 
 	/**
