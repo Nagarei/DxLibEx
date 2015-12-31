@@ -61,5 +61,7 @@ int main() {
 	std::cin >> in_p;//input
 	cout << "in_p:" << in_p << endl;
 
+	//multiplication
+	const auto p14 = p13 * 2;
 	return 0;
 }

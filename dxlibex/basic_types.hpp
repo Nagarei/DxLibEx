@@ -244,19 +244,17 @@ namespace dxle {
 	template <typename T>
 	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator +=
-	///
-	/// This operator performs a memberwise addition of both vectors,
-	/// and assigns the result to \a l.
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a vector)
-	///
-	/// \return Reference to \a l
-	///
-	////////////////////////////////////////////////////////////
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子+=のオーバーロード
+				\~english	Overload of binary operator +=
+	@param l	\~japanese	point_cクラスオブジェクトへのlvalue reference
+				\~english	lvalue reference to point_c value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	第一引数へのlvalue reference
+				\~english	lvalue reference to first argument
+	*/
 	template <typename T>
 	point_c<T>& operator +=(point_c<T>& l, const point_c<T>& r){
 	    l.x += r.x;
@@ -264,19 +262,17 @@ namespace dxle {
 	    return l;
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator -=
-	///
-	/// This operator performs a memberwise subtraction of both vectors,
-	/// and assigns the result to \a l.
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a vector)
-	///
-	/// \return Reference to \a l
-	///
-	////////////////////////////////////////////////////////////
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子-=のオーバーロード
+				\~english	Overload of binary operator -=
+	@param l	\~japanese	point_cクラスオブジェクトへのlvalue reference
+				\~english	lvalue reference to point_c value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	第一引数へのlvalue reference
+				\~english	lvalue reference to first argument
+	*/
 	template <typename T>
 	point_c<T>& operator -=(point_c<T>& l, const point_c<T>& r){
 	    l.x -= r.x;
@@ -284,80 +280,84 @@ namespace dxle {
 	    return l;
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator +
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a vector)
-	///
-	/// \return Memberwise addition of both vectors
-	///
-	////////////////////////////////////////////////////////////
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子+のオーバーロード
+				\~english	Overload of binary operator +
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	2つのpoint_cクラスオブジェクトの各メンバー同士の加算結果
+				\~english	Memberwise addition of both point_c value
+	*/
 	template <typename T>
 	point_c<T> operator +(const point_c<T>& l, const point_c<T>& r){
-		return point_c<T>(l.x + r.x, l.y + r.y);
+		return {l.x + r.x, l.y + r.y};
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator -
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a vector)
-	///
-	/// \return Memberwise subtraction of both vectors
-	///
-	////////////////////////////////////////////////////////////
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子-のオーバーロード
+				\~english	Overload of binary operator -
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	2つのpoint_cクラスオブジェクトの各メンバー同士の減算結果
+				\~english	Memberwise subtraction of both point_c value
+	*/
 	template <typename T>
 	point_c<T> operator -(const point_c<T>& l, const point_c<T>& r){
-		return point_c<T>(l.x - r.x, l.y - r.y);
+		return {l.x - r.x, l.y - r.y};
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator *
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a scalar value)
-	///
-	/// \return Memberwise multiplication by \a r
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T>
-	point_c<T> operator *(const point_c<T>& l, T r){
-		return point_c<T>(l.x * r, l.y * r);
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子*のオーバーロード
+				\~english	Overload of binary operator *
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	整数型の値
+				\~english	arithmetic value
+	@return		\~japanese	point_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
+				\~english	Memberwise multiplication by 2nd argument
+	*/
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	auto operator *(const point_c<T1>& l, T2 r) -> point_c<decltype(l.x * r)>
+	{
+		return {l.x * r, l.y * r};
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator *
-	///
-	/// \param l  L operand (a scalar value)
-	/// \param r Right operand (a vector)
-	///
-	/// \return Memberwise multiplication by \a l
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T>
-	point_c<T> operator *(T l, const point_c<T>& r){
-		return point_c<T>(l + r.x, l + r.y);
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子*のオーバーロード
+				\~english	Overload of binary operator *
+	@param l	\~japanese	整数型の値
+				\~english	arithmetic value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	point_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
+				\~english	Memberwise multiplication by 1st argument
+	*/
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	auto operator *(T1 l, const point_c<T2>& r) -> point_c<decltype(l * r.x)>
+	{
+		return {l + r.x, l + r.y};
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator *=
-	///
-	/// This operator performs a memberwise multiplication by \a r,
-	/// and assigns the result to \a l.
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a scalar value)
-	///
-	/// \return Reference to \a l
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T>
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子*=のオーバーロード
+				\~english	Overload of binary operator *=
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	整数型の値
+				\~english	arithmetic value
+	@return		\~japanese	第一引数へのlvalue reference
+				\~english	lvalue reference to 1st argument
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
 	point_c<T>& operator *=(point_c<T>& l, T r){
 	    l.x *= r;
 	    l.y *= r;
@@ -374,9 +374,21 @@ namespace dxle {
 	/// \return Memberwise division by \a r
 	///
 	////////////////////////////////////////////////////////////
-	template <typename T>
-	point_c<T> operator /(const point_c<T>& l, T r){
-		return point_c<T>(l.x * r, l.y * r);
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子/のオーバーロード
+				\~english	Overload of binary operator /
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	整数型の値
+				\~english	arithmetic value
+	@return		\~japanese	point_cクラスオブジェクトの各メンバーを第一引数で割った結果
+				\~english	Memberwise multiplication by 1st argument
+	*/
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	auto operator /(const point_c<T1>& l, T2 r) -> point_c<decltype(l.x / r)>
+	{
+		return {l.x / r, l.y / r};
 	}
 
 	////////////////////////////////////////////////////////////
@@ -392,18 +404,18 @@ namespace dxle {
 	/// \return Reference to \a l
 	///
 	////////////////////////////////////////////////////////////
-	template <typename T>
+	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
 	point_c<T>& operator /=(point_c<T>& l, T r){
 	    l.x /= r;
 	    l.y /= r;
 	    return l;
 	}
 
-	template <typename T>
+	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
 	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
 		return static_cast<bool>(p);
 	}
-	template <typename T>
+	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
 	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
 		return static_cast<bool>(p);
 	}
@@ -419,7 +431,7 @@ namespace dxle {
 	/// \return True if \a l is not equal to \a r
 	///
 	////////////////////////////////////////////////////////////
-	template <typename T>
+	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
 	bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return (l.x != r.x) || (l.y != r.y);
 	}
@@ -436,7 +448,7 @@ namespace dxle {
 	/// \return True if \a l is equal to \a r
 	///
 	////////////////////////////////////////////////////////////
-	template <typename T>
+	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
 	bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return !(l != r);
 	}
@@ -463,7 +475,7 @@ namespace dxle {
 	const auto result = dxle::abs(p1);//(2, 4)
 	@endcode
 	*/
-	template<typename T> point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
+	template<typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr> point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
 
 	/**
 	@relates point_c
