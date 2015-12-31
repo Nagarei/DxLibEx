@@ -357,23 +357,13 @@ namespace dxle {
 	@return		\~japanese	第一引数へのlvalue reference
 				\~english	lvalue reference to 1st argument
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	point_c<T>& operator *=(point_c<T>& l, T r){
 	    l.x *= r;
 	    l.y *= r;
 	    return l;
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator /
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a scalar value)
-	///
-	/// \return Memberwise division by \a r
-	///
-	////////////////////////////////////////////////////////////
 	/**
 	@relates point_c
 	@brief		\~japanese	二項演算子/のオーバーロード
@@ -391,66 +381,118 @@ namespace dxle {
 		return {l.x / r, l.y / r};
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator /=
-	///
-	/// This operator performs a memberwise division by \a r,
-	/// and assigns the result to \a l.
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a scalar value)
-	///
-	/// \return Reference to \a l
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子/=のオーバーロード
+				\~english	Overload of binary operator /=
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	整数型の値
+				\~english	arithmetic value
+	@return		\~japanese	第一引数へのlvalue reference
+				\~english	lvalue reference to 1st argument
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	point_c<T>& operator /=(point_c<T>& l, T r){
 	    l.x /= r;
 	    l.y /= r;
 	    return l;
 	}
 
-	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
-	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
-		return static_cast<bool>(p);
-	}
-	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
-	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
-		return static_cast<bool>(p);
-	}
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator !=
-	///
-	/// This operator compares strict difference between two vectors.
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a vector)
-	///
-	/// \return True if \a l is not equal to \a r
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子!=のオーバーロード。厳密な比較が行われます
+				\~english	Overload of binary operator !=. This operator compares strict difference
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	左辺と右辺が等しくなければtrueを返す
+				\~english	true if left operand is not equal to right operand
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return (l.x != r.x) || (l.y != r.y);
 	}
 
-	////////////////////////////////////////////////////////////
-	/// \relates point_c
-	/// \brief Overload of binary operator ==
-	///
-	/// This operator compares strict equality between two vectors.
-	///
-	/// \param l  L operand (a vector)
-	/// \param r Right operand (a vector)
-	///
-	/// \return True if \a l is equal to \a r
-	///
-	////////////////////////////////////////////////////////////
-	template <typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr>
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子!=のオーバーロード。厳密な比較が行われます
+				\~english	Overload of binary operator !=. This operator compares strict difference
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
+				\~english	std::nullptr_t type value, like nullptr, 0...
+	@return		\~japanese	(0, 0)と等しくなければtrueを返す
+				\~english	true if left operand is not equal to (0, 0)
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
+		return !static_cast<bool>(p);
+	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子!=のオーバーロード。厳密な比較が行われます
+				\~english	Overload of binary operator !=. This operator compares strict difference
+	@param l	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
+				\~english	std::nullptr_t type value, like nullptr, 0...
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	(0, 0)と等しくなければtrueを返す
+				\~english	true if left operand is not equal to (0, 0)
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
+		return !static_cast<bool>(p);
+	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子==のオーバーロード。厳密な比較が行われます
+				\~english	Overload of binary operator ==. This operator compares strict difference
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	左辺と右辺が等しければtrueを返す
+				\~english	true if left operand is equal to right operand
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW {
 		return !(l != r);
+	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子==のオーバーロード。厳密な比較が行われます
+				\~english	Overload of binary operator ==. This operator compares strict difference
+	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@param r	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
+				\~english	std::nullptr_t type value, like nullptr, 0...
+	@return		\~japanese	(0, 0)と等しければtrueを返す
+				\~english	true if left operand is equal to (0, 0)
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW {
+		return static_cast<bool>(p);
+	}
+
+	/**
+	@relates point_c
+	@brief		\~japanese	二項演算子==のオーバーロード。厳密な比較が行われます
+				\~english	Overload of binary operator ==. This operator compares strict difference
+	@param l	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
+				\~english	std::nullptr_t type value, like nullptr, 0...
+	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
+				\~english	const-lvalue reference to point_c value
+	@return		\~japanese	(0, 0)と等しければtrueを返す
+				\~english	true if left operand is equal to (0, 0)
+	*/
+	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW {
+		return static_cast<bool>(p);
 	}
 
 	namespace detail{
@@ -475,7 +517,8 @@ namespace dxle {
 	const auto result = dxle::abs(p1);//(2, 4)
 	@endcode
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>, std::nullptr_t> = nullptr> point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	point_c<T> abs(const point_c<T>& o) { return detail::abs_helper<T>()(o); }
 
 	/**
 	@relates point_c
@@ -488,7 +531,8 @@ namespace dxle {
 	@return		\~japanese	計算結果。戻り値の型は暗黙の型変換で得られるものです。
 				\~english	Computed result. return value's type is a result of Implicit conversions.
 	*/
-	template<typename T1, typename T2> auto dot(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x * p2.x) {
+	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	auto dot(const point_c<T1>& p1, const point_c<T2>& p2) -> decltype(p1.x * p2.x) {
 		return p1.x * p2.x + p1.y * p2.y;
 	}
 
@@ -503,7 +547,8 @@ namespace dxle {
 	@return		\~japanese	計算結果。
 				\~english	Computed result.
 	*/
-	template<typename T1, typename T2> double cross(const point_c<T1>& p1, const point_c<T2>& p2) {
+	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	double cross(const point_c<T1>& p1, const point_c<T2>& p2) {
 		return static_cast<double>(p1.x) * p2.y + static_cast<double>(p1.y) * p2.x;
 	}
 	namespace detail {

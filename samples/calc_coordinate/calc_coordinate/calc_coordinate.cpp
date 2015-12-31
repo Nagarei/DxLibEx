@@ -63,5 +63,6 @@ int main() {
 
 	//multiplication
 	const auto p14 = p13 * 2;
+	cout << "multiplication: p13:(" << p13 << ") * 2 = (" << p14 << ")" << endl;
 	return 0;
 }
