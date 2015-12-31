@@ -131,7 +131,7 @@ namespace color{
 	inline dxleRGB DxColor::GetRGB()const DXLE_NOEXCEPT
 	{
 		int r, g, b;
-		DxColor:GetColor2(&r, &g, &b);
+		DxColor::GetColor2(&r, &g, &b);
 		return dxleRGB{ r, g, b };
 	}
 
