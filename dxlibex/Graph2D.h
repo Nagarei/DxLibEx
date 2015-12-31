@@ -307,7 +307,7 @@ namespace dxle
 
 			Screen new_screen = Screen::MakeScreen(graph_size_x, graph_size_y, UseAlphaChannel);
 			this->BltDrawValidGraph(0, 0, graph_size_x, graph_size_y, 0, 0, new_screen);
-			return std::move(new_screen);
+			return new_screen;
 		}
 		inline Texture2D Screen::cloneGr()const
 		{
@@ -316,7 +316,7 @@ namespace dxle
 
 			Texture2D new_graph = Texture2D::MakeGraph(graph_size_x, graph_size_y, NotUse3DFlag);
 			this->BltDrawValidGraph(0, 0, graph_size_x, graph_size_y, 0, 0, new_graph);
-			return std::move(new_graph);
+			return new_graph;
 		}
 	
 		//生成用関数
