@@ -22,8 +22,8 @@
 
 namespace dxle {
 	/** 
-	@brief	\~japanese 2次元座標(x, y)　テンプレートクラス。
-			\~english Template class for 2D points specified by its coordinates `x` and `y`.
+	\~japanese	@brief	2次元座標(x, y)　テンプレートクラス。
+	\~english	@brief	Template class for 2D points specified by its coordinates `x` and `y`.
 
 	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換はstatic_castを使用することで可能です(内部でも`static_cast`を使用します)
 				上記のメンバーのほかに、以下の演算をサポートします
@@ -443,7 +443,7 @@ namespace dxle {
 	\~english	@param p	const-lvalue reference to point_c value
 	\~japanese	@return	(0, 0)と等しくなければtrueを返す
 	\~english	@return	true if left operand is not equal to (0, 0)
-	@code
+	\~@code
 	dxle::pointi p = { 0 , 0 };
 	bool re = p != 0;//false
 	@endcode
@@ -462,7 +462,7 @@ namespace dxle {
 	\~english	@param p	const-lvalue reference to point_c value
 	\~japanese	@return	(0, 0)と等しくなければtrueを返す
 	\~english	@return	true if left operand is not equal to (0, 0)
-	@code
+	\~@code
 	dxle::pointi p = { 0 , 0 };
 	bool re = 0 != p;//false
 	@endcode
@@ -495,7 +495,7 @@ namespace dxle {
 	\~english	@param p	const-lvalue reference to point_c value
 	\~japanese	@return	(0, 0)と等しければtrueを返す
 	\~english	@return	true if left operand is equal to (0, 0)
-	@code
+	\~@code
 	dxle::pointi p = { 0 , 0 };
 	bool re = 0 == p;//true
 	@endcode
@@ -514,7 +514,7 @@ namespace dxle {
 	\~english	@param p	const-lvalue reference to point_c value
 	\~japanese	@return	(0, 0)と等しければtrueを返す
 	\~english	@return	true if left operand is equal to (0, 0)
-	@code
+	\~@code
 	dxle::pointi p = { 0 , 0 };
 	bool re = 0 == p;//true
 	@endcode
@@ -542,7 +542,7 @@ namespace dxle {
 	\~english	@param o	point_c value
 	\~japanese	@return	第一引数に指定した入力ストリームへのlvalue reference
 	\~english	@return	The absolute value of o.
-	@code
+	\~@code
 	const dxle::pointi p1 = { -2, 4 };
 	const auto result = dxle::abs(p1);//(2, 4)
 	@endcode
