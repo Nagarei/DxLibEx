@@ -155,14 +155,14 @@ namespace dxle {
 	}
 	/**
 	@relates point_c
-	@brief		\~japanese	出力ストリーム演算子
-				\~english	ostream operator
-	@param os	\~japanese	出力ストリームへのlvalue reference
-				\~english	lvalue reference to ostream
-	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c
-	@return		\~japanese	第一引数に指定した出力ストリームへのlvalue reference
-				\~english	lvalue reference to ostream whitch is specified at first argument
+	\~japanese	@brief	出力ストリーム演算子
+	\~english	@brief	ostream operator
+	\~japanese	@param os	出力ストリームへのlvalue reference
+	\~english	@param os	lvalue reference to ostream
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c
+	\~japanese	@return	第一引数に指定した出力ストリームへのlvalue reference
+	\~english	@return	lvalue reference to ostream whitch is specified at first argument
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p)
 	{
@@ -171,14 +171,14 @@ namespace dxle {
 	}
 	/**
 	@relates point_c
-	@brief		\~japanese	出力ストリーム演算子
-				\~english	ostream operator
-	@param os	\~japanese	出力ストリームへのlvalue reference
-				\~english	lvalue reference to ostream
-	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c
-	@return		\~japanese	第一引数に指定した出力ストリームへのlvalue reference
-				\~english	lvalue reference to ostream whitch is specified at first argument
+	\~japanese	@brief	出力ストリーム演算子
+	\~english	@brief	ostream operator
+	\~japanese	@param os	出力ストリームへのlvalue reference
+	\~english	@param os	lvalue reference to ostream
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c
+	\~japanese	@return	第一引数に指定した出力ストリームへのlvalue reference
+	\~english	@return	lvalue reference to ostream whitch is specified at first argument
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p)
 	{
@@ -187,14 +187,14 @@ namespace dxle {
 	}
 	/**
 	@relates point_c
-	@brief		\~japanese	入力ストリーム演算子
-				\~english	istream operator
-	@param is	\~japanese	入力ストリームへのlvalue reference
-				\~english	lvalue reference to istream
-	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c
-	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
-				\~english	lvalue reference to istream whitch is specified at first argument
+	\~japanese	@brief	入力ストリーム演算子
+	\~english	@brief	istream operator
+	\~japanese	@param is	入力ストリームへのlvalue reference
+	\~english	@param is	lvalue reference to istream
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c
+	\~japanese	@return	第一引数に指定した入力ストリームへのlvalue reference
+	\~english	@return	lvalue reference to istream whitch is specified at first argument
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p)
 	{
@@ -203,14 +203,14 @@ namespace dxle {
 	}
 	/**
 	@relates point_c
-	@brief		\~japanese	入力ストリーム演算子
-				\~english	istream operator
-	@param is	\~japanese	入力ストリームへのlvalue reference
-				\~english	lvalue reference to istream
-	@param p 	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c
-	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
-				\~english	lvalue reference to istream whitch is specified at first argument
+	\~japanese	@brief	入力ストリーム演算子
+	\~english	@brief	istream operator
+	\~japanese	@param is	入力ストリームへのlvalue reference
+	\~english	@param is	lvalue reference to istream
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c
+	\~japanese	@return	第一引数に指定した入力ストリームへのlvalue reference
+	\~english	@return	lvalue reference to istream whitch is specified at first argument
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
 	{
@@ -220,12 +220,12 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	単項演算子-のオーバーロード
-				\~english	Overload of unary operator -
-	@param r	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value to negate
-	@return		\~japanese	符号を逆転させた結果
-				\~english	Memberwise opposite of the point_c value
+	\~japanese	@brief	単項演算子-のオーバーロード
+	\~english	@brief	Overload of unary operator -
+	\~japanese	@param r	point_cクラスオブジェクト
+	\~english	@param r	point_c value to negate
+	\~japanese	@return	符号を逆転させた結果
+	\~english	@return	Memberwise opposite of the point_c value
 	*/
 	template <typename T>
 	point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -235,38 +235,38 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	単項演算子+のオーバーロード
-				\~english	Overload of unary operator +
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	第一引数へのconst-lvalue reference
-				\~english	const-lvalue reference to first argument
+	\~japanese	@brief	単項演算子+のオーバーロード
+	\~english	@brief	Overload of unary operator +
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	第一引数へのconst-lvalue reference
+	\~english	@return	const-lvalue reference to first argument
 	*/
 	template <typename T>
 	inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
 
 	/**
 	@relates point_c
-	@brief		\~japanese	単項演算子+のオーバーロード
-				\~english	Overload of unary operator +
-	@param r	\~japanese	point_cクラスオブジェクトへのrvalue reference
-				\~english	rvalue reference to point_c value
-	@return		\~japanese	第一引数へのrvalue reference
-				\~english	rvalue reference to first argument
+	\~japanese	@brief	単項演算子+のオーバーロード
+	\~english	@brief	Overload of unary operator +
+	\~japanese	@param r	point_cクラスオブジェクトへのrvalue reference
+	\~english	@param r	rvalue reference to point_c value
+	\~japanese	@return	第一引数へのrvalue reference
+	\~english	@return	rvalue reference to first argument
 	*/
 	template <typename T>
 	inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子+=のオーバーロード
-				\~english	Overload of binary operator +=
-	@param l	\~japanese	point_cクラスオブジェクトへのlvalue reference
-				\~english	lvalue reference to point_c value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	第一引数へのlvalue reference
-				\~english	lvalue reference to first argument
+	\~japanese	@brief	二項演算子+=のオーバーロード
+	\~english	@brief	Overload of binary operator +=
+	\~japanese	@param l	point_cクラスオブジェクトへのlvalue reference
+	\~english	@param l	lvalue reference to point_c value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	第一引数へのlvalue reference
+	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T>
 	point_c<T>& operator +=(point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -278,14 +278,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子-=のオーバーロード
-				\~english	Overload of binary operator -=
-	@param l	\~japanese	point_cクラスオブジェクトへのlvalue reference
-				\~english	lvalue reference to point_c value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	第一引数へのlvalue reference
-				\~english	lvalue reference to first argument
+	\~japanese	@brief	二項演算子-=のオーバーロード
+	\~english	@brief	Overload of binary operator -=
+	\~japanese	@param l	point_cクラスオブジェクトへのlvalue reference
+	\~english	@param l	lvalue reference to point_c value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	第一引数へのlvalue reference
+	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T>
 	point_c<T>& operator -=(point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -297,14 +297,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子+のオーバーロード
-				\~english	Overload of binary operator +
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	2つのpoint_cクラスオブジェクトの各メンバー同士の加算結果
-				\~english	Memberwise addition of both point_c value
+	\~japanese	@brief	二項演算子+のオーバーロード
+	\~english	@brief	Overload of binary operator +
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	2つのpoint_cクラスオブジェクトの各メンバー同士の加算結果
+	\~english	@return	Memberwise addition of both point_c value
 	*/
 	template <typename T>
 	point_c<T> operator +(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -314,14 +314,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子-のオーバーロード
-				\~english	Overload of binary operator -
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	2つのpoint_cクラスオブジェクトの各メンバー同士の減算結果
-				\~english	Memberwise subtraction of both point_c value
+	\~japanese	@brief	二項演算子-のオーバーロード
+	\~english	@brief	Overload of binary operator -
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	2つのpoint_cクラスオブジェクトの各メンバー同士の減算結果
+	\~english	@return	Memberwise subtraction of both point_c value
 	*/
 	template <typename T>
 	point_c<T> operator -(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -331,14 +331,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子*のオーバーロード
-				\~english	Overload of binary operator *
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	整数型の値
-				\~english	arithmetic value
-	@return		\~japanese	point_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
-				\~english	Memberwise multiplication by 2nd argument
+	\~japanese	@brief	二項演算子*のオーバーロード
+	\~english	@brief	Overload of binary operator *
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	整数型の値
+	\~english	@param r	arithmetic value
+	\~japanese	@return	point_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
+	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator *(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x * r)>
@@ -348,14 +348,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子*のオーバーロード
-				\~english	Overload of binary operator *
-	@param l	\~japanese	整数型の値
-				\~english	arithmetic value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	point_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
-				\~english	Memberwise multiplication by 1st argument
+	\~japanese	@brief	二項演算子*のオーバーロード
+	\~english	@brief	Overload of binary operator *
+	\~japanese	@param l	整数型の値
+	\~english	@param l	arithmetic value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	point_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
+	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator *(T1 l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l * r.x)>
@@ -365,14 +365,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子*=のオーバーロード
-				\~english	Overload of binary operator *=
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	整数型の値
-				\~english	arithmetic value
-	@return		\~japanese	第一引数へのlvalue reference
-				\~english	lvalue reference to 1st argument
+	\~japanese	@brief	二項演算子*=のオーバーロード
+	\~english	@brief	Overload of binary operator *=
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	整数型の値
+	\~english	@param r	arithmetic value
+	\~japanese	@return	第一引数へのlvalue reference
+	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	point_c<T>& operator *=(point_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -384,14 +384,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子/のオーバーロード
-				\~english	Overload of binary operator /
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	整数型の値
-				\~english	arithmetic value
-	@return		\~japanese	point_cクラスオブジェクトの各メンバーを第一引数で割った結果
-				\~english	Memberwise multiplication by 1st argument
+	\~japanese	@brief	二項演算子/のオーバーロード
+	\~english	@brief	Overload of binary operator /
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	整数型の値
+	\~english	@param r	arithmetic value
+	\~japanese	@return	point_cクラスオブジェクトの各メンバーを第一引数で割った結果
+	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator /(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x / r)>
@@ -401,14 +401,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子/=のオーバーロード
-				\~english	Overload of binary operator /=
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	整数型の値
-				\~english	arithmetic value
-	@return		\~japanese	第一引数へのlvalue reference
-				\~english	lvalue reference to 1st argument
+	\~japanese	@brief	二項演算子/=のオーバーロード
+	\~english	@brief	Overload of binary operator /=
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	整数型の値
+	\~english	@param r	arithmetic value
+	\~japanese	@return	第一引数へのlvalue reference
+	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	point_c<T>& operator /=(point_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW 
@@ -420,14 +420,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子!=のオーバーロード。厳密な比較が行われます
-				\~english	Overload of binary operator !=. This operator compares strict difference
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	左辺と右辺が等しくなければtrueを返す
-				\~english	true if left operand is not equal to right operand
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	左辺と右辺が等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
@@ -437,14 +437,16 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子!=のオーバーロード。厳密な比較が行われます
-				\~english	Overload of binary operator !=. This operator compares strict difference
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
-				\~english	std::nullptr_t type value, like nullptr, 0...
-	@return		\~japanese	(0, 0)と等しくなければtrueを返す
-				\~english	true if left operand is not equal to (0, 0)
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to (0, 0)
+	@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = p != 0;//false
+	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
@@ -454,14 +456,16 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子!=のオーバーロード。厳密な比較が行われます
-				\~english	Overload of binary operator !=. This operator compares strict difference
-	@param l	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
-				\~english	std::nullptr_t type value, like nullptr, 0...
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	(0, 0)と等しくなければtrueを返す
-				\~english	true if left operand is not equal to (0, 0)
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to (0, 0)
+	@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = 0 != p;//false
+	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
@@ -471,28 +475,30 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子==のオーバーロード。厳密な比較が行われます
-				\~english	Overload of binary operator ==. This operator compares strict difference
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	左辺と右辺が等しければtrueを返す
-				\~english	true if left operand is equal to right operand
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param l	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param l	const-lvalue reference to point_c value
+	\~japanese	@param r	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param r	const-lvalue reference to point_c value
+	\~japanese	@return	左辺と右辺が等しければtrueを返す
+	\~english	@return	true if left operand is equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return !(l != r);	}
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子==のオーバーロード。厳密な比較が行われます
-				\~english	Overload of binary operator ==. This operator compares strict difference
-	@param l	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@param r	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
-				\~english	std::nullptr_t type value, like nullptr, 0...
-	@return		\~japanese	(0, 0)と等しければtrueを返す
-				\~english	true if left operand is equal to (0, 0)
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しければtrueを返す
+	\~english	@return	true if left operand is equal to (0, 0)
+	@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = 0 == p;//true
+	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
@@ -502,14 +508,16 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	二項演算子==のオーバーロード。厳密な比較が行われます
-				\~english	Overload of binary operator ==. This operator compares strict difference
-	@param l	\~japanese	std::nullptr_t型の値。nullptrないし0が該当します。
-				\~english	std::nullptr_t type value, like nullptr, 0...
-	@param r	\~japanese	point_cクラスオブジェクトへのconst-lvalue reference
-				\~english	const-lvalue reference to point_c value
-	@return		\~japanese	(0, 0)と等しければtrueを返す
-				\~english	true if left operand is equal to (0, 0)
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しければtrueを返す
+	\~english	@return	true if left operand is equal to (0, 0)
+	@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = 0 == p;//true
+	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 	bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
@@ -528,12 +536,12 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	point_cの絶対値(ベクトルの絶対値ではないのでその場合はdistanceを使ってください)
-				\~english	Absolute value of point_c(THIS IS NOT THE ABSOLUTE VALUE OF THE VECTOR! use distance instead.)
-	@param o	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@return		\~japanese	第一引数に指定した入力ストリームへのlvalue reference
-				\~english	The absolute value of o.
+	\~japanese	@brief	point_cの絶対値(ベクトルの絶対値ではないのでその場合はdistanceを使ってください)
+	\~english	@brief	Absolute value of point_c(THIS IS NOT THE ABSOLUTE VALUE OF THE VECTOR! use distance instead.)
+	\~japanese	@param o	point_cクラスオブジェクト
+	\~english	@param o	point_c value
+	\~japanese	@return	第一引数に指定した入力ストリームへのlvalue reference
+	\~english	@return	The absolute value of o.
 	@code
 	const dxle::pointi p1 = { -2, 4 };
 	const auto result = dxle::abs(p1);//(2, 4)
@@ -544,14 +552,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	２つのpoint_cクラスオブジェクトをベクトルとして内積を計算する
-				\~english	Computes a dot-product of two point_c value as vectors.
-	@param p1	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@param p2	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@return		\~japanese	計算結果。戻り値の型は暗黙の型変換で得られるものです。
-				\~english	Computed result. return value's type is a result of Implicit conversions.
+	\~japanese	@brief	２つのpoint_cクラスオブジェクトをベクトルとして内積を計算する
+	\~english	@brief	Computes a dot-product of two point_c value as vectors.
+	\~japanese	@param p1	point_cクラスオブジェクト
+	\~english	@param p1	point_c value
+	\~japanese	@param p2	point_cクラスオブジェクト
+	\~english	@param p2	point_c value
+	\~japanese	@return	計算結果。戻り値の型は暗黙の型変換で得られるものです。
+	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto dot(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x * p2.x)
@@ -561,14 +569,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	２つのpoint_cクラスオブジェクトをベクトルとして外積を計算する
-				\~english	Computes a cross-product of two point_c value as vectors.
-	@param p1	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@param p2	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@return		\~japanese	計算結果。
-				\~english	Computed result.
+	\~japanese	@brief	２つのpoint_cクラスオブジェクトをベクトルとして外積を計算する
+	\~english	@brief	Computes a cross-product of two point_c value as vectors.
+	\~japanese	@param p1	point_cクラスオブジェクト
+	\~english	@param p1	point_c value
+	\~japanese	@param p2	point_cクラスオブジェクト
+	\~english	@param p2	point_c value
+	\~japanese	@return	計算結果。
+	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	double cross(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
@@ -585,14 +593,14 @@ namespace dxle {
 
 	/**
 	@relates point_c
-	@brief		\~japanese	三平方の定理(std::hypot)にもとづき、２つのpoint_cクラスオブジェクトの距離を計算する
-				\~english	Calculate the distance of the two point_c class object based on the Pythagorean theorem(std::hypot)
-	@param p1	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@param p2	\~japanese	point_cクラスオブジェクト
-				\~english	point_c value
-	@return		\~japanese	計算結果。
-				\~english	Computed result.
+	\~japanese	@brief	三平方の定理(std::hypot)にもとづき、２つのpoint_cクラスオブジェクトの距離を計算する
+	\~english	@brief	Calculate the distance of the two point_c class object based on the Pythagorean theorem(std::hypot)
+	\~japanese	@param p1	point_cクラスオブジェクト
+	\~english	@param p1	point_c value
+	\~japanese	@param p2	point_cクラスオブジェクト
+	\~english	@param p2	point_c value
+	\~japanese	@return	計算結果。
+	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2> auto distance(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x + p2.x)
 	{
