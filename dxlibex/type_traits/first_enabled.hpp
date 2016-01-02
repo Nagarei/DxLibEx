@@ -5,6 +5,8 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
+#ifndef DXLE_INC_TYPE_TRAITS_FIRST_ENABLED_HPP_
+#define DXLE_INC_TYPE_TRAITS_FIRST_ENABLED_HPP_
 #include <type_traits>
 namespace dxle {
 	/**
@@ -36,3 +38,4 @@ namespace dxle {
 	template<typename ...Args>
 	using first_enabled_t = typename first_enabled<Args...>::type;
 }
+#endif //DXLE_INC_TYPE_TRAITS_FIRST_ENABLED_HPP_
