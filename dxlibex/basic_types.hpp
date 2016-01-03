@@ -109,16 +109,28 @@ namespace dxle {
 	};
 	//convert from std::pair
 
-	//	@relates point_c
-	//!\~english conversion from std::pair
-	//!\~japanese std::pairからの変換
+	/**
+	@relates point_c
+	\~japanese	@brief	std::pairからの変換
+	\~english	@brief	conversion from std::pair
+	\~japanese	@param p	std::pairオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to std::pair
+	\~japanese	@return	point_cクラスオブジェクト
+	\~english	@return	point_c value
+	*/
 	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return point_c<T>(p.first, p.second);
 	}
-	//	@relates point_c
-	//!\~english conversion from std::pair
-	//!\~japanese std::pairからの変換
+	/**
+	@relates point_c
+	\~japanese	@brief	std::pairからの変換
+	\~english	@brief	conversion from std::pair
+	\~japanese	@param p	std::pairオブジェクトへのrvalue reference
+	\~english	@param p	rvalue reference to std::pair
+	\~japanese	@return	point_cクラスオブジェクト
+	\~english	@return	point_c value
+	*/
 	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return point_c<T>(std::move(p.first), std::move(p.second));
