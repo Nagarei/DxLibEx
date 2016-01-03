@@ -8,6 +8,7 @@
 #ifndef DXLE_INC_IMPL_H_
 #define DXLE_INC_IMPL_H_
 
+#if 0 //(old version)
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
 
@@ -324,5 +325,8 @@ namespace dxle
 
 
 }//namespace dxle
+#endif //#if 0 //(old version)
+
+
 //インクルードガード
 #endif
