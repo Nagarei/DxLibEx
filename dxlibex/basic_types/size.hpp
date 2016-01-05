@@ -4,6 +4,7 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
+//#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
 #include <type_traits>
@@ -14,45 +15,46 @@
 #include "dxlibex/config/defines.h"
 
 namespace dxle {
-	/** 
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t>> class point_c;
+	/**
 	\~japanese	@brief	2次元の大きさ(width, height)　テンプレートクラス。
 	\~english	@brief	Template class for 2D sizes specified by its coordinates `width` and `height`.
 
 	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるsize_cクラス同士の変換はstatic_castを使用することで可能です(内部でも`static_cast`を使用します)
-				上記のメンバーのほかに、以下の演算をサポートします
+	上記のメンバーのほかに、以下の演算をサポートします
 	\~english	An instance of the claess is interchangeable with std::pair. There is also a cast operator
-				to convert size coordinates to the specified type (using static_cast). Commonly, the conversion
-				uses this operation for each of the coordinates. Besides the class members listed in the
-				declaration above, the following operations on sizes are implemented:
+	to convert size coordinates to the specified type (using static_cast). Commonly, the conversion
+	uses this operation for each of the coordinates. Besides the class members listed in the
+	declaration above, the following operations on sizes are implemented:
 	\~
 	@code
-	    pt1 = pt2 + pt3;
-	    pt1 = pt2 - pt3;
-	    pt1 = pt2 * a;
-	    pt1 = a * pt2;
-	    pt1 = pt2 / a;
-	    pt1 += pt2;
-	    pt1 -= pt2;
-	    pt1 *= a;
-	    pt1 /= a;
-	    pt1 == pt2;
-	    pt1 != pt2;
+	pt1 = pt2 + pt3;
+	pt1 = pt2 - pt3;
+	pt1 = pt2 * a;
+	pt1 = a * pt2;
+	pt1 = pt2 / a;
+	pt1 += pt2;
+	pt1 -= pt2;
+	pt1 *= a;
+	pt1 /= a;
+	pt1 == pt2;
+	pt1 != pt2;
 	@endcode
 	\~english	For your convenience, the following type aliases are defined:
 	\~japanese	利便性のために、以下の型が定義されています。
 	\~
 	@code
-		typedef size_c<int> sizei;
-		typedef size_c<unsigned int> sizeui;
-		typedef size_c<double> sized;
-		typedef size_c<float> sizef;
-		typedef size_c<size_t> size;
+	typedef size_c<int> sizei;
+	typedef size_c<unsigned int> sizeui;
+	typedef size_c<double> sized;
+	typedef size_c<float> sizef;
+	typedef size_c<size_t> size;
 	@endcode
 	\~ Example:
 	@code
-	    dxle::sizef a(0.3f, 0.f), b(0.f, 0.4f);
-	    dxle::sizei pt = (a + b)*10.f;
-	    std::cout << pt << std::endl;
+	dxle::sizef a(0.3f, 0.f), b(0.f, 0.4f);
+	dxle::sizei pt = (a + b)*10.f;
+	std::cout << pt << std::endl;
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
@@ -91,7 +93,13 @@ namespace dxle {
 		//!\~japanese 内部型の異なるsize_cクラス同士の変換
 		template<typename _Tp2> explicit operator size_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return size_c<_Tp2>(static_cast<_Tp2>(this->width), static_cast<_Tp2>(this->height));
+			return{ static_cast<_Tp2>(this->width), static_cast<_Tp2>(this->height) };
+		}
+		//!\~english conversion to point_c
+		//!\~japanese point_cクラスへの変換
+		template<typename _Tp2> explicit operator point_c<_Tp2, nullptr>() const DXLE_NOEXCEPT_OR_NOTHROW
+		{
+			return{ static_cast<_Tp2>(this->width), static_cast<_Tp2>(this->height) };
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
@@ -521,7 +529,7 @@ namespace dxle {
 
 	namespace detail{
 		template<typename T, enable_if_t<std::is_signed<T>::value, std::nullptr_t> = nullptr>
-		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.x), std::abs(o.y) }; }
+		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.width), std::abs(o.height) }; }
 		template<typename T, enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
 		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
 	}

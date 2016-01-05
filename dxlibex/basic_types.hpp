@@ -11,6 +11,9 @@
 #include "dxlibex/basic_types/point3d.hpp"
 #include "dxlibex/basic_types/size.hpp"
 namespace dxle {
+
+	//operators betwin point_c and size_c
+
 	/**
 	@relates point_c
 	\~japanese	@brief	二項演算子+=のオーバーロード
@@ -98,8 +101,8 @@ namespace dxle {
 	\~japanese	@return	2つのpoint_cクラスオブジェクトの各メンバー同士の加算結果
 	\~english	@return	Memberwise addition of both point_c value
 	*/
-	template <typename T>
-	point_c<T> operator +(const point_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator +(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x + r.height)>
 	{
 		return {l.x + r.width, l.y + r.height};
 	}
@@ -115,8 +118,8 @@ namespace dxle {
 	\~japanese	@return	2つのsize_cクラスオブジェクトの各メンバー同士の加算結果
 	\~english	@return	Memberwise addition of both size_c value
 	*/
-	template <typename T>
-	size_c<T> operator +(const size_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator +(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width + r.x)>
 	{
 		return {l.width + r.x, l.height + r.y};
 	}
@@ -132,8 +135,8 @@ namespace dxle {
 	\~japanese	@return	2つのpoint_cクラスオブジェクトの各メンバー同士の加算結果
 	\~english	@return	Memberwise addition of both point_c value
 	*/
-	template <typename T>
-	point_c<T> operator -(const point_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator -(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x - r.height)>
 	{
 		return {l.x - r.width, l.y - r.height};
 	}
@@ -149,8 +152,8 @@ namespace dxle {
 	\~japanese	@return	2つのsize_cクラスオブジェクトの各メンバー同士の加算結果
 	\~english	@return	Memberwise addition of both size_c value
 	*/
-	template <typename T>
-	size_c<T> operator -(const size_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator -(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width + r.x)>
 	{
 		return {l.width - r.x, l.height - r.y};
 	}

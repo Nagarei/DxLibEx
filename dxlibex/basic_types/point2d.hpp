@@ -4,6 +4,7 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
+//#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
 #include <type_traits>
@@ -14,45 +15,46 @@
 #include "dxlibex/config/defines.h"
 
 namespace dxle {
-	/** 
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t>> class size_c;
+	/**
 	\~japanese	@brief	2次元座標(x, y)　テンプレートクラス。
 	\~english	@brief	Template class for 2D points specified by its coordinates `x` and `y`.
 
 	\~japanese	このクラスはstd::pairと相互変換が可能です。また、内部型の異なるpoint_cクラス同士の変換はstatic_castを使用することで可能です(内部でも`static_cast`を使用します)
-				上記のメンバーのほかに、以下の演算をサポートします
+	上記のメンバーのほかに、以下の演算をサポートします
 	\~english	An instance of the claess is interchangeable with std::pair. There is also a cast operator
-				to convert point coordinates to the specified type (using static_cast). Commonly, the conversion
-				uses this operation for each of the coordinates. Besides the class members listed in the
-				declaration above, the following operations on points are implemented:
+	to convert point coordinates to the specified type (using static_cast). Commonly, the conversion
+	uses this operation for each of the coordinates. Besides the class members listed in the
+	declaration above, the following operations on points are implemented:
 	\~
 	@code
-	    pt1 = pt2 + pt3;
-	    pt1 = pt2 - pt3;
-	    pt1 = pt2 * a;
-	    pt1 = a * pt2;
-	    pt1 = pt2 / a;
-	    pt1 += pt2;
-	    pt1 -= pt2;
-	    pt1 *= a;
-	    pt1 /= a;
-	    pt1 == pt2;
-	    pt1 != pt2;
+	pt1 = pt2 + pt3;
+	pt1 = pt2 - pt3;
+	pt1 = pt2 * a;
+	pt1 = a * pt2;
+	pt1 = pt2 / a;
+	pt1 += pt2;
+	pt1 -= pt2;
+	pt1 *= a;
+	pt1 /= a;
+	pt1 == pt2;
+	pt1 != pt2;
 	@endcode
 	\~english	For your convenience, the following type aliases are defined:
 	\~japanese	利便性のために、以下の型が定義されています。
 	\~
 	@code
-		typedef point_c<int> pointi;
-		typedef point_c<uint8_t> pointu8i;
-		typedef point_c<int8_t> point8i;
-		typedef point_c<double> pointd;
-		typedef point_c<float> pointf;
+	typedef point_c<int> pointi;
+	typedef point_c<uint8_t> pointu8i;
+	typedef point_c<int8_t> point8i;
+	typedef point_c<double> pointd;
+	typedef point_c<float> pointf;
 	@endcode
 	\~ Example:
 	@code
-	    dxle::pointf a(0.3f, 0.f), b(0.f, 0.4f);
-	    dxle::pointi pt = (a + b)*10.f;
-	    std::cout << pt << std::endl;
+	dxle::pointf a(0.3f, 0.f), b(0.f, 0.4f);
+	dxle::pointi pt = (a + b)*10.f;
+	std::cout << pt << std::endl;
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
@@ -91,7 +93,13 @@ namespace dxle {
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
 		template<typename _Tp2> explicit operator point_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return point_c<_Tp2>(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y));
+			return{ static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y) };
+		}
+		//!\~english conversion to size_c
+		//!\~japanese size_cクラスへの変換
+		template<typename _Tp2> explicit operator size_c<_Tp2, nullptr>() const DXLE_NOEXCEPT_OR_NOTHROW
+		{
+			return{ static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y) };
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
