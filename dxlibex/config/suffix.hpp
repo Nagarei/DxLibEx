@@ -9,7 +9,7 @@
 #define DXLE_INC_CONFIG_SUFFIX_HPP_
 
 #include "dxlibex/config/no_min_max.h"
-#include "compiler.hpp"
+#include "dxlibex/config/compiler.hpp"
 //
 // DXLE_CONSTEXPR
 // DXLE_CONSTEXPR_OR_CONST
