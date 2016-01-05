@@ -1,8 +1,9 @@
-#ifndef DXLE_INC_BASIC_TYPES_POINT2D_HPP_
+﻿#ifndef DXLE_INC_BASIC_TYPES_POINT2D_HPP_
 #define DXLE_INC_BASIC_TYPES_POINT2D_HPP_
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
+#include "dxlibex/basic_types/arithmetic_t.hpp"
 #include <iostream>
 #include <utility>//std::pair
 #include <type_traits>
@@ -130,32 +131,21 @@ namespace dxle {
 
 	//ostream operator
 	namespace detail {
-		//! for int8_t/uint8_t
-		template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-		using arithmetic_t = first_enabled_t <
-			enable_if<1 != sizeof(T), T>,
-			enable_if<std::is_signed<T>::value, int>,
-			unsigned int
-		>;
 		template<typename CharType, typename PointType>
-		struct ostream_operator_helper {
-			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p)
-			{
-				using arithmetic_p = arithmetic_t<PointType>;
-				os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y);
-			}
-		};
+		void ostream_operator_helper(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p)
+		{
+			using arithmetic_p = arithmetic_t<PointType>;
+			os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y);
+		}
 		template<typename CharType, typename PointType>
-		struct istream_operator_helper {
-			void operator()(std::basic_istream<CharType>& is, point_c<PointType>& p)
-			{
-				arithmetic_t<PointType> x, y;
-				is >> x;
-				is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
-				is >> y;
-				p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
-			}
-		};
+		void istream_operator_helper(std::basic_istream<CharType>& is, point_c<PointType>& p)
+		{
+			arithmetic_t<PointType> x, y;
+			is >> x;
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is >> y;
+			p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
+		}
 	}
 	/**
 	@relates point_c
@@ -170,7 +160,7 @@ namespace dxle {
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p)
 	{
-		detail::ostream_operator_helper<char, T>()(os, ", ", p);
+		detail::ostream_operator_helper<char, T>(os, ", ", p);
 		return os;
 	}
 	/**
@@ -186,7 +176,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p)
 	{
-		detail::ostream_operator_helper<wchar_t, T>()(os, L", ", p);
+		detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
 		return os;
 	}
 	/**
@@ -202,7 +192,7 @@ namespace dxle {
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p)
 	{
-		detail::istream_operator_helper<char, T>()(is, p);
+		detail::istream_operator_helper<char, T>(is, p);
 		return is;
 	}
 	/**
@@ -218,7 +208,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
 	{
-		detail::istream_operator_helper<wchar_t, T>()(is, p);
+		detail::istream_operator_helper<wchar_t, T>(is, p);
 		return is;
 	}
 
@@ -530,12 +520,10 @@ namespace dxle {
 	}
 
 	namespace detail{
-		template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
-			point_c<T> operator() (const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return point_c<T>(std::abs(o.x), std::abs(o.y)); }
-		};
-		template<typename T> struct abs_helper<T, false> {
-			point_c<T> operator() (const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
-		};
+		template<typename T, enable_if_t<std::is_signed<T>::value, std::nullptr_t> = nullptr>
+		point_c<T> abs_helper(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.x), std::abs(o.y) }; }
+		template<typename T, enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+		point_c<T> abs_helper(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
 	}
 
 	/**
@@ -552,7 +540,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>()(o); }
+	point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>(o); }
 
 	/**
 	@relates point_c

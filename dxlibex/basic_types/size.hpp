@@ -1,8 +1,9 @@
-#ifndef DXLE_INC_BASIC_TYPES_SIZE_HPP_
+﻿#ifndef DXLE_INC_BASIC_TYPES_SIZE_HPP_
 #define DXLE_INC_BASIC_TYPES_SIZE_HPP_
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
+#include "dxlibex/basic_types/arithmetic_t.hpp"
 #include <iostream>
 #include <utility>//std::pair
 #include <type_traits>
@@ -130,32 +131,21 @@ namespace dxle {
 
 	//ostream operator
 	namespace detail {
-		//! for int8_t/uint8_t
-		template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-		using arithmetic_t = first_enabled_t <
-			enable_if<1 != sizeof(T), T>,
-			enable_if<std::is_signed<T>::value, int>,
-			unsigned int
-		>;
 		template<typename CharType, typename Size_cType>
-		struct ostream_operator_helper {
-			void operator()(std::basic_ostream<CharType>& os, const CharType* str, const size_c<Size_cType>& s)
-			{
-				using arithmetic_p = arithmetic_t<Size_cType>;
-				os << static_cast<arithmetic_p>(s.width) << str << static_cast<arithmetic_p>(s.height);
-			}
-		};
+		void ostream_operator_helper(std::basic_ostream<CharType>& os, const CharType* str, const size_c<Size_cType>& s)
+		{
+			using arithmetic_p = arithmetic_t<Size_cType>;
+			os << static_cast<arithmetic_p>(s.width) << str << static_cast<arithmetic_p>(s.height);
+		}
 		template<typename CharType, typename Size_cType>
-		struct istream_operator_helper {
-			void operator()(std::basic_istream<CharType>& is, size_c<Size_cType>& s)
-			{
-				arithmetic_t<Size_cType> width, height;
-				is >> width;
-				is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
-				is >> height;
-				s.width = static_cast<Size_cType>(width); s.height = static_cast<Size_cType>(height);
-			}
-		};
+		void istream_operator_helper(std::basic_istream<CharType>& is, size_c<Size_cType>& s)
+		{
+			arithmetic_t<Size_cType> width, height;
+			is >> width;
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is >> height;
+			s.width = static_cast<Size_cType>(width); s.height = static_cast<Size_cType>(height);
+		}
 	}
 	/**
 	@relates size_c
@@ -170,7 +160,7 @@ namespace dxle {
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const size_c<T>& s)
 	{
-		detail::ostream_operator_helper<char, T>()(os, ", ", s);
+		detail::ostream_operator_helper<char, T>(os, ", ", s);
 		return os;
 	}
 	/**
@@ -186,7 +176,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const size_c<T>& s)
 	{
-		detail::ostream_operator_helper<wchar_t, T>()(os, L", ", s);
+		detail::ostream_operator_helper<wchar_t, T>(os, L", ", s);
 		return os;
 	}
 	/**
@@ -202,7 +192,7 @@ namespace dxle {
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, size_c<T>& s)
 	{
-		detail::istream_operator_helper<char, T>()(is, s);
+		detail::istream_operator_helper<char, T>(is, s);
 		return is;
 	}
 	/**
@@ -218,7 +208,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, size_c<T>& s)
 	{
-		detail::istream_operator_helper<wchar_t, T>()(is, s);
+		detail::istream_operator_helper<wchar_t, T>(is, s);
 		return is;
 	}
 
@@ -530,12 +520,10 @@ namespace dxle {
 	}
 
 	namespace detail{
-		template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
-			size_c<T> operator() (const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return size_c<T>(std::abs(o.width), std::abs(o.height)); }
-		};
-		template<typename T> struct abs_helper<T, false> {
-			size_c<T> operator() (const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
-		};
+		template<typename T, enable_if_t<std::is_signed<T>::value, std::nullptr_t> = nullptr>
+		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.x), std::abs(o.y) }; }
+		template<typename T, enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
 	}
 
 	/**
@@ -552,7 +540,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>()(o); }
+	size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>(o); }
 
 	typedef size_c<int> sizei;
 	typedef size_c<unsigned int> sizeui;
