@@ -46,8 +46,8 @@ namespace dxle {
 	\~
 	@code
 	typedef point_c<int> pointi;
-	typedef point_c<uint8_t> pointu8i;
-	typedef point_c<int8_t> point8i;
+	typedef point_c<std::uint8_t> pointu8i;
+	typedef point_c<std::int8_t> point8i;
 	typedef point_c<double> pointd;
 	typedef point_c<float> pointf;
 	@endcode
@@ -271,8 +271,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	point_c<T>& operator +=(point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<enable_if_t<std::is_same<decltype(l.x + r.x), T1>::value, T1>>&
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -600,8 +600,8 @@ namespace dxle {
 		return std::hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));
 	}
 	typedef point_c<int> pointi;
-	typedef point_c<uint8_t> pointu8i;
-	typedef point_c<int8_t> point8i;
+	typedef point_c<std::uint8_t> pointu8i;
+	typedef point_c<std::int8_t> point8i;
 	typedef point_c<double> pointd;
 	typedef point_c<float> pointf;
 };

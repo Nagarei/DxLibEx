@@ -45,8 +45,8 @@ namespace dxle {
 	\~
 	@code
 	typedef point3d_c<int> point3di;
-	typedef point3d_c<uint8_t> point3du8i;
-	typedef point3d_c<int8_t> point3d8i;
+	typedef point3d_c<std::uint8_t> point3du8i;
+	typedef point3d_c<std::int8_t> point3d8i;
 	typedef point3d_c<double> point3dd;
 	typedef point3d_c<float> point3df;
 	@endcode
@@ -603,8 +603,8 @@ namespace dxle {
 		return std::hypot(safe_dist(p1.x, p2.x), std::hypot(safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
 	}
 	typedef point3d_c<int> point3di;
-	typedef point3d_c<uint8_t> point3du8i;
-	typedef point3d_c<int8_t> point3d8i;
+	typedef point3d_c<std::uint8_t> point3du8i;
+	typedef point3d_c<std::int8_t> point3d8i;
 	typedef point3d_c<double> point3dd;
 	typedef point3d_c<float> point3df;
 };

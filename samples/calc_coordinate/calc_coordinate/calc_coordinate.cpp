@@ -6,6 +6,11 @@
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
 #include <dxlibex/basic_types.hpp>
+void foo() {
+	dxle::pointi p1 = { 2, 5 };
+	dxle::pointu8i p2 = { 3, 5 };
+	p1 += p2;
+}
 int main() {
 	using std::cout;
 	using std::endl;
