@@ -362,7 +362,7 @@ namespace dxle {
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l * r.width)>
 	{
-		return {l + r.width, l + r.height};
+		return {l * r.width, l * r.height};
 	}
 
 	/**

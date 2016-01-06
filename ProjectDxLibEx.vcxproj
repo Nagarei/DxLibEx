@@ -15,6 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dxlibex\basic_types.hpp" />
+    <ClInclude Include="dxlibex\basic_types\arithmetic_t.hpp" />
+    <ClInclude Include="dxlibex\basic_types\point2d.hpp" />
+    <ClInclude Include="dxlibex\basic_types\point3d.hpp" />
+    <ClInclude Include="dxlibex\basic_types\size.hpp" />
     <ClInclude Include="dxlibex\Color.hpp" />
     <ClInclude Include="dxlibex\config\compiler.hpp" />
     <ClInclude Include="dxlibex\config\compiler\clang.hpp" />
@@ -33,6 +37,8 @@
     <ClInclude Include="dxlibex\impl.hpp" />
     <ClInclude Include="dxlibex\structs.h" />
     <ClInclude Include="dxlibex\thread.h" />
+    <ClInclude Include="dxlibex\type_traits\enable_if.hpp" />
+    <ClInclude Include="dxlibex\type_traits\first_enabled.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A7FFFCCD-08A6-4826-84D4-B46438389B66}</ProjectGuid>
