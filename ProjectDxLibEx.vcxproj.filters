@@ -13,6 +13,15 @@
     <Filter Include="dxlibex\config\compiler">
       <UniqueIdentifier>{9bd26de5-52ad-4f66-9afa-1574f358af95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="dxlibex\basic_types">
+      <UniqueIdentifier>{b2723ad7-7dfe-4f8d-be2a-d28baa2af898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dxlibex\type_traits">
+      <UniqueIdentifier>{51fd1766-6630-4b10-9e80-7e1c7fef477a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dxlibex\algorithm">
+      <UniqueIdentifier>{49a04db0-aeb9-4a04-9734-5d7bf6b894ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectDxLibEx\Graph2D.cpp">
@@ -76,6 +85,30 @@
     </ClInclude>
     <ClInclude Include="dxlibex\Color.hpp">
       <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\arithmetic_t.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\point2d.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\point3d.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\size.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\enable_if.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\first_enabled.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\algorithm\safe_dist.hpp">
+      <Filter>dxlibex\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\ignore.hpp">
+      <Filter>dxlibex\type_traits</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

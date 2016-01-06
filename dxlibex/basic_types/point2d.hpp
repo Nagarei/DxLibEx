@@ -3,6 +3,7 @@
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
+#include "dxlibex/type_traits/ignore.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/algorithm/safe_dist.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
@@ -272,7 +273,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2>
-	auto operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<enable_if_t<std::is_same<decltype(l.x + r.x), T1>::value, T1>>&
+	auto operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> enable_if_t<ignore<decltype(l.x += r.x)>::value, point_c<T1>&>
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -363,7 +364,7 @@ namespace dxle {
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator *(T1 l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l * r.x)>
 	{
-		return {l + r.x, l + r.y};
+		return {l * r.x, l * r.y};
 	}
 
 	/**
