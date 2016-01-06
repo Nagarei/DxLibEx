@@ -178,11 +178,11 @@ int main() {
 	auto d2 = dxle::distance(p3_1, p3_10);
 	cout << "distance : p3_1(" << p3_1 << ") p3_10(" << p3_10 << ") result=" << d2 << endl;
 
-	//dot(2D-vector), cross(2D-vector)
+	//dot(3D-vector), cross(3D-vector)
 	const dxle::point3di p3_a1 = { 1, 2, 0 };
 	const dxle::point3di p3_b1 = { 0, 1, -1 };
-	cout << "2D-vcror dot   : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::dot(p_a1, p_b1) << endl;
-	cout << "2D-vcror cross : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::cross(p_a1, p_b1) << endl;
+	cout << "3D-vcror dot   : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::dot(p_a1, p_b1) << endl;
+	cout << "3D-vcror cross : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::cross(p_a1, p_b1) << endl;
 
 	//cast
 	const dxle::point3df p3_12 = { 3.2f, 2.4f, 1.4f };
