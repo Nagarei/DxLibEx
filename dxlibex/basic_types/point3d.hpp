@@ -148,6 +148,7 @@ namespace dxle {
 			is >> x;
 			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
 			is >> y;
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
 			is >> z;
 			p.x = static_cast<point3dType>(x); p.y = static_cast<point3dType>(y); p.z = static_cast<point3dType>(z);
 		}
