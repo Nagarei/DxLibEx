@@ -1,4 +1,4 @@
-/*=============================================================================
+ï»¿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -10,9 +10,9 @@
 #include <type_traits>
 namespace dxle {
 	/**
-	@brief	\~japanese “n‚³‚ê‚½Œ^‚É‚©‚©‚í‚ç‚¸í‚Étrue‚Èvalue‚ğ‚ÂƒNƒ‰ƒXB
+	@brief	\~japanese æ¸¡ã•ã‚ŒãŸå‹ã«ã‹ã‹ã‚ã‚‰ãšå¸¸ã«trueãªvalueã‚’æŒã¤ã‚¯ãƒ©ã‚¹ã€‚
 	\~english Trait class whose `value` is true regardless of what `T` is.
-	\~japanese	decltype®‚ÉSFINAE‚ğŒø‚©‚¹‚½‚¢‚Æ‚«‚Ég‚¢‚Ü‚·B
+	\~japanese	decltypeå¼ã«SFINAEã‚’åŠ¹ã‹ã›ãŸã„ã¨ãã«ä½¿ã„ã¾ã™ã€‚
 	\~english	we can use it, when we want to let SFINAE work for a decltype expressions.
 	\~
 	@code

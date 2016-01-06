@@ -10,8 +10,10 @@ void foo() {
 	dxle::pointi p1 = { 2, 5 };
 	dxle::pointu8i p2 = { 3, 5 };
 	p1 += p2;
+	std::cout << p1 << std::endl;
 }
 int main() {
+	foo();
 	using std::cout;
 	using std::endl;
 
