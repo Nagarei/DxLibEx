@@ -4,6 +4,7 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
+#include "dxlibex/algorithm/safe_dist.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
@@ -583,14 +584,6 @@ namespace dxle {
 	{
 		return static_cast<double>(p1.x) * p2.y + static_cast<double>(p1.y) * p2.x;
 	}
-	namespace detail {
-		template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-		auto safe_dist(T1 n1, T2 n2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(n1 - n2)
-		{
-			return (n1 < n2) ? n2 - n1 : n1 - n2;
-		}
-	}
-
 	/**
 	@relates point_c
 	\~japanese	@brief	三平方の定理(std::hypot)にもとづき、２つのpoint_cクラスオブジェクトの距離を計算する
@@ -604,7 +597,7 @@ namespace dxle {
 	*/
 	template<typename T1, typename T2> auto distance(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x + p2.x)
 	{
-		return std::hypot(detail::safe_dist(p1.x, p2.x), detail::safe_dist(p1.y, p2.y));
+		return std::hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));
 	}
 	typedef point_c<int> pointi;
 	typedef point_c<uint8_t> pointu8i;
