@@ -55,8 +55,13 @@ namespace dxle
 			//!\~japanese 指定サイズのグラフィックを作成する
 			//!\~english  Create an image with sizes
 			static inline texture_2d MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
+			//!\~japanese 指定サイズのグラフィックを作成する
+			//!\~english  Create an image with sizes
+			static inline texture_2d MakeGraph(const sizei& size, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::MakeGraph(size.width, size.height, NotUse3DFlag), NotUse3DFlag); }
 			//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
 			static inline texture_2d DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle), false); }
+			//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
+			static inline texture_2d DerivationGraph(const sizei& src, const sizei& size, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::DerivationGraph(src.width, src.height, size.width, size.height, SrcGraphHandle), false); }
 
 			// 画像からグラフィックを作成する関数
 
@@ -95,9 +100,13 @@ namespace dxle
 
 			//! メモリ上のビットマップイメージからグラフィックを作成する
 			static inline texture_2d CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture_2d& GrHandle = texture_2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
+			//! メモリ上のビットマップイメージからグラフィックを作成する
+			static inline texture_2d CreateGraph(const sizei& size, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture_2d& GrHandle = texture_2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraph(size.width, size.height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
 			//! メモリ上のビットマップイメージからグラフィックを再作成する
 			static inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
-	#ifndef DX_NON_SOFTIMAGE
+			//! メモリ上のビットマップイメージからグラフィックを再作成する
+			static inline int ReCreateGraph(const sizei& size, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraph(size.width, size.height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
+#ifndef DX_NON_SOFTIMAGE
 			//extern	int			CreateBlendGraphFromSoftImage(int SIHandle);																													// ソフトウエアで扱うイメージからブレンド用画像グラフィックハンドルを作成する( -1:エラー  -1以外:ブレンド用グラフィックハンドル )
 			//extern	int			CreateGraphFromSoftImage(int SIHandle);																													// ソフトウエアで扱うイメージからグラフィックハンドルを作成する( -1:エラー  -1以外:グラフィックハンドル )
 			//extern	int			CreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY);																				// ソフトウエアで扱うイメージの指定の領域を使ってグラフィックハンドルを作成する( -1:エラー  -1以外:グラフィックハンドル )
@@ -109,10 +118,14 @@ namespace dxle
 			static inline texture_2d CreateGraphFromBaseImage(const BASEIMAGE *BaseImage)DXLE_NOEXCEPT_OR_NOTHROW{ return texture_2d(DxLib::CreateGraphFromBaseImage(BaseImage), false); }
 			//! 基本イメージデータの指定の領域を使ってグラフィックを作成する
 			static inline texture_2d CreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY)DXLE_NOEXCEPT_OR_NOTHROW{ return texture_2d(DxLib::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY), false); }
+			//! 基本イメージデータの指定の領域を使ってグラフィックを作成する
+			static inline texture_2d CreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, const pointi& pos, const sizei& size)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraphFromRectBaseImage(BaseImage, pos.x, pos.y, size.width, size.height), false); }
 			//! 基本イメージデータから既存のグラフィックに画像データを転送する
 			static inline int ReCreateGraphFromBaseImage(const BASEIMAGE *BaseImage, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraphFromBaseImage(BaseImage, GrHandle.GetHandle()); }
 			//! 基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する
 			static inline int ReCreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY, GrHandle.GetHandle()); }
+			//! 基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する
+			static inline int ReCreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, const pointi& pos, const sizei& size, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraphFromRectBaseImage(BaseImage, pos.x, pos.y, size.width, size.height, GrHandle.GetHandle()); }
 			//! 画像ファイルからグラフィックへ画像データを転送する
 			static inline int ReloadGraph(const TCHAR *FileName, texture_2d& GrHandle, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReloadGraph(FileName, GrHandle.GetHandle(), ReverseFlag); }
 			//! ReloadGraph の画像反転処理追加版
@@ -133,13 +146,11 @@ namespace dxle
 			//! グラフィックのサイズを得る
 			inline int GetGraphSize(int *SizeXBuf, int *SizeYBuf)const DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetGraphSize(GetHandle(), SizeXBuf, SizeYBuf); }
 			//! グラフィックのサイズを得る
-			//!@return .first:SizeX .second:SizeY
-			inline pointi GetGraphSize()const DXLE_NOEXCEPT_OR_NOTHROW { int x, y; GetGraphSize(&x, &y); return pointi{ x, y }; }
+			inline sizei GetGraphSize()const DXLE_NOEXCEPT_OR_NOTHROW { int x, y; GetGraphSize(&x, &y); return { x, y }; }
 			//! グラフィックが持つ一つ目のテクスチャのサイズを得る
 			inline int GetGraphTextureSize(int *SizeXBuf, int *SizeYBuf)const DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetGraphTextureSize(GetHandle(), SizeXBuf, SizeYBuf); }
 			//! グラフィックが持つ一つ目のテクスチャのサイズを得る
-			//!@return .first:SizeX .second:SizeY
-			inline pointi GetGraphTextureSize()const DXLE_NOEXCEPT_OR_NOTHROW { int x, y; GetGraphTextureSize(&x, &y); return pointi{ x, y }; }
+			inline sizei GetGraphTextureSize()const DXLE_NOEXCEPT_OR_NOTHROW { int x, y; GetGraphTextureSize(&x, &y); return { x, y }; }
 			//! グラフィックが持つテクスチャのミップマップレベル数を取得する
 			inline int GetGraphMipmapCount()const DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetGraphMipmapCount(GetHandle()); }
 			//! グラフィックが画像ファイルから読み込まれていた場合、その画像のファイルパスを取得する
@@ -192,20 +203,36 @@ namespace dxle
 	
 			//! 画像の描画( 座標指定が float 版 )
 			inline int DrawGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
+			//! 画像の描画( 座標指定が float 版 )
+			inline int DrawGraphF(const pointf& p, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraphF(p.x, p.y, GetHandle(), TransFlag); }
 			//! 画像の拡大描画( 座標指定が float 版 )
 			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x1f, y1f, x2f, y2, GetHandle(), TransFlag); }
+			//! 画像の拡大描画( 座標指定が float 版 )
+			inline int DrawExtendGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
 			//! 画像の回転描画( 座標指定が float 版 )
 			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			//! 画像の回転描画( 座標指定が float 版 )
+			inline int DrawRotaGraphF(const pointf& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraphF(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
-			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
+			inline int DrawRotaGraph2F(const pointf& p, const pointf& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
 			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
+			inline int DrawRotaGraph3F(const pointf& p, const pointf& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3F(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
 			//! 画像の自由変形描画( 座標指定が float 版 )
 			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraphF(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
+			//! 画像の自由変形描画( 座標指定が float 版 )
+			inline int DrawModiGraphF(const std::array<pointf, 4>& ps, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraphF(ps[0].x, ps[0].y, ps[1].x, ps[1].y, ps[2].x, ps[2].y, ps[3].x, ps[3].y, GetHandle(), TransFlag); }
 			//! 画像の左右反転描画( 座標指定が float 版 )
 			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
+			//! 画像の左右反転描画( 座標指定が float 版 )
+			inline int DrawTurnGraphF(const pointf& p, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraphF(p.x, p.y, GetHandle(), TransFlag); }
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
 			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
+			//! 画像の拡大左右反転描画( 座標指定が float 版 )
+			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
 		private:
 			typedef Unique_HandledObject_Bace<texture_2d> Parent_T;
 		public:
@@ -240,6 +267,8 @@ namespace dxle
 
 			//! SetDrawScreen で描画対象にできるグラフィックを作成する
 			static inline screen MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW { return screen(DxLib::MakeScreen(SizeX, SizeY, UseAlphaChannel), UseAlphaChannel); }
+			//! SetDrawScreen で描画対象にできるグラフィックを作成する
+			static inline screen MakeScreen(const sizei& size, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW { return screen(DxLib::MakeScreen(size.width, size.height, UseAlphaChannel), UseAlphaChannel); }
 
 			//メンバ関数
 
@@ -279,7 +308,13 @@ namespace dxle
 			//!@param DestX, DestY 転送先の矩形の左上座標
 			//!@param DestGrHandle 転送先の画像
 			inline int BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, texture_2d& DestGrHandle)const DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::BltDrawValidGraph(GetHandle(), x1, y1, x2, y2, DestX, DestY, texture_2d::GetTexture2DHandle(DestGrHandle)); }
-
+//
+			//! SetDrawScreen で描画対象にできるグラフィックハンドルから指定領域の画像情報を別のグラフィックハンドルに転送する
+			//!@param lu 転送元の矩形の左上座標
+			//!@param rb 転送元の矩形の右下座標
+			//!@param dest 転送先の矩形の左上座標
+			//!@param DestGrHandle 転送先の画像
+			inline int BltDrawValidGraph(const pointi& lu, const pointi& rb, const pointi& dest, texture_2d& DestGrHandle)const DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::BltDrawValidGraph(GetHandle(), rb.x, lu.y, lu.x, rb.y, dest.x, dest.y, texture_2d::GetTexture2DHandle(DestGrHandle)); }
 			//! 描画先画面を設定する
 			inline int SetDrawScreen()const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::SetDrawScreen(GetHandle()); }
 
@@ -325,11 +360,17 @@ namespace dxle
 	
 		//! 指定サイズのグラフィックを作成する
 		inline texture_2d MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::MakeGraph(SizeX, SizeY, NotUse3DFlag); }
+		//! 指定サイズのグラフィックを作成する
+		inline texture_2d MakeGraph(const sizei& size, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::MakeGraph(size.width, size.height, NotUse3DFlag); }
 		//! SetDrawScreen で描画対象にできるグラフィックを作成する
 		inline screen MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW { return screen::MakeScreen(SizeX, SizeY, UseAlphaChannel); }
+		//! SetDrawScreen で描画対象にできるグラフィックを作成する
+		inline screen MakeScreen(const sizei& size, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW { return screen::MakeScreen(size.width, size.height, UseAlphaChannel); }
 		//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
 		inline texture_2d DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle); }
-	
+		//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
+		inline texture_2d DerivationGraph(const pointi& src, const sizei& size, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::DerivationGraph(src.x, src.y, size.width, size.height, SrcGraphHandle); }
+
 		// 画像からグラフィックを作成する関数
 	
 		//! 画像ファイルからグラフィックを作成する
@@ -357,18 +398,26 @@ namespace dxle
 	
 		//! メモリ上のビットマップイメージからグラフィックを作成する
 		inline texture_2d CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture_2d& GrHandle = texture_2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle); }
+		//! メモリ上のビットマップイメージからグラフィックを作成する
+		inline texture_2d CreateGraph(const sizei& size, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture_2d& GrHandle = texture_2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::CreateGraph(size.width, size.height, Pitch, RGBImage, AlphaImage, GrHandle); }
 		//! メモリ上のビットマップイメージからグラフィックを再作成する
 		inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle, AlphaImage); }
-	#ifndef DX_NON_SOFTIMAGE
+		//! メモリ上のビットマップイメージからグラフィックを再作成する
+		inline int ReCreateGraph(const sizei& size, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraph(size.width, size.height, Pitch, RGBImage, GrHandle, AlphaImage); }
+#ifndef DX_NON_SOFTIMAGE
 	#endif // DX_NON_SOFTIMAGE
 		//! 基本イメージデータからグラフィックを作成する
 		inline texture_2d CreateGraphFromBaseImage(const BASEIMAGE *BaseImage)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::CreateGraphFromBaseImage(BaseImage); }
 		//! 基本イメージデータの指定の領域を使ってグラフィックを作成する
 		inline texture_2d CreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY); }
+		//! 基本イメージデータの指定の領域を使ってグラフィックを作成する
+		inline texture_2d CreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, const pointi& p, const sizei& size)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::CreateGraphFromRectBaseImage(BaseImage, p.x, p.y, size.width, size.height); }
 		//! 基本イメージデータから既存のグラフィックに画像データを転送する
 		inline int ReCreateGraphFromBaseImage(const BASEIMAGE *BaseImage, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraphFromBaseImage(BaseImage, GrHandle); }
 		//! 基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する
 		inline int ReCreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY, GrHandle); }
+		//! 基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する
+		inline int ReCreateGraphFromRectBaseImage(const BASEIMAGE *BaseImage, const pointi& p, const sizei& size, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraphFromRectBaseImage(BaseImage, p.x, p.y, size.width, size.height, GrHandle); }
 		//! 画像ファイルからグラフィックへ画像データを転送する
 		inline int ReloadGraph(const TCHAR *FileName, texture_2d& GrHandle, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadGraph(FileName, GrHandle, ReverseFlag); }
 		//! ReloadGraph の画像反転処理追加版
