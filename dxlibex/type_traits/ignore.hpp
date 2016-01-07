@@ -33,5 +33,13 @@ namespace dxle {
 	*/
 	template<typename>
 	struct ignore : std::true_type {};
+
+	template<typename T, typename...>
+	struct first_type {
+		typedef T type;
+	};
+	template<typename T, typename... args>
+	using first_type_t = first_type<T, args>;
+
 }
 #endif //DXLE_INC_TYPE_TRAITS_IGNORE_HPP_
