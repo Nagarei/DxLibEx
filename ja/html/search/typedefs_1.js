@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['point8i',['point8i',['../a00031.html#a22e90e41e1bf700b2264883a2ef4e135',1,'dxle']]],
-  ['pointd',['pointd',['../a00031.html#a0a673b5565da9d03b487301ae2c089eb',1,'dxle']]],
-  ['pointf',['pointf',['../a00031.html#a96474248bdd32fe46ace1e2c134cac3d',1,'dxle']]],
-  ['pointi',['pointi',['../a00031.html#ad6705043c3b3698b12f909a27820c9ef',1,'dxle']]],
-  ['pointu8i',['pointu8i',['../a00031.html#ac501cd493a08a0901eb4e988a096a1a0',1,'dxle']]]
+  ['bace_5ft',['Bace_T',['../a00013.html#ae2cacc4cd70891502d3724b905fd6726',1,'dxle::impl::Unique_Handle_Bace::Bace_T()'],['../a00014.html#a441bd574f1d98a8eaa4fccbfdd003667',1,'dxle::impl::Unique_HandledObject_Bace::Bace_T()']]]
 ];

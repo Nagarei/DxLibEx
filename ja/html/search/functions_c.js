@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['networkrecv',['NetWorkRecv',['../a00047.html#a5418bd9dd693565ec1eced22e46ffede',1,'dxle::Network']]],
-  ['networkrecvbufferclear',['NetWorkRecvBufferClear',['../a00047.html#a2bbfcf6415e44d6619971c8129e94d74',1,'dxle::Network']]],
-  ['networkrecvtopeek',['NetWorkRecvToPeek',['../a00047.html#a9b467250b160f4a4ac3c66fba5d688bb',1,'dxle::Network']]],
-  ['networkrecvudp',['NetWorkRecvUDP',['../a00047.html#af7581b3ce5b01c4450512b3f769a6e0d',1,'dxle::Network']]],
-  ['networkrecvudp_5fipv6',['NetWorkRecvUDP_IPv6',['../a00047.html#aadbdddd09f18aadafd532651ec4f35d4',1,'dxle::Network']]],
-  ['networksend',['NetWorkSend',['../a00047.html#a9832721ebb3ae7987fd75da884e998f3',1,'dxle::Network']]],
-  ['networksendudp',['NetWorkSendUDP',['../a00047.html#ae6a71ec4f791819dc7145824509545ea',1,'dxle::Network']]],
-  ['networksendudp_5fipv6',['NetWorkSendUDP_IPv6',['../a00047.html#a94afdb7cff31ee5b6f72191f3c833bbe',1,'dxle::Network']]],
-  ['now',['now',['../a00002.html#a1dc550355e74dade7b11a849c2771953',1,'dxle::nCounter::Counter::now()'],['../a00005.html#a2e082309bff4bf2456c52b677a3c51d3',1,'dxle::nCounter::HiPerformanceCounter::now()']]]
+  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../a00008.html#a32e0322bbef6fdf9152c3f87d5787f13',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace() DXLE_NOEXCEPT_OR_NOTHROW'],['../a00008.html#a652416b45b21929b55ce585ad84d1c5f',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace(Bace_T &amp;&amp;other) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00008.html#a5ebf09a7c8cb391b3543fd4e8c18ae28',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW']]],
+  ['unique_5fhandledobject_5fbace',['Unique_HandledObject_Bace',['../a00009.html#afe8e97c74851845860eb07d32ead52e8',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW'],['../a00009.html#a7db3af92ad655aa767ba505839c08759',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace(Bace_T &amp;&amp;other) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00009.html#a4dd36a7000fdd1385d999399f806390d',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW']]]
 ];

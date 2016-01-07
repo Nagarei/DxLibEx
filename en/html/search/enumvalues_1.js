@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['released',['Released',['../a00048.html#a3d513541d69817254b447fcd7ff85c3daea1e34304a5d8ffa7c9b0ed8ede4ef1a',1,'dxle::nMouse']]]
+  ['cyan',['cyan',['../a00020.html#a4e455c7989a99cdf1ef729b83b3be8c3a6411532ba4971f378391776a9db629d3',1,'dxle::color']]]
 ];

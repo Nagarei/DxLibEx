@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scrollwheelvalue',['ScrollWheelValue',['../a00009.html#a1841369232227ff169c5f40903e27cee',1,'dxle::nMouse::MouseState']]]
+  ['y',['y',['../a00009.html#a5aa7e4f40488bb9fcc3104e53a8c5986',1,'dxle::point_c']]]
 ];

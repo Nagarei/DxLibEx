@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['networkrecv',['NetWorkRecv',['../a00047.html#a5418bd9dd693565ec1eced22e46ffede',1,'dxle::Network']]],
-  ['networkrecvbufferclear',['NetWorkRecvBufferClear',['../a00047.html#a2bbfcf6415e44d6619971c8129e94d74',1,'dxle::Network']]],
-  ['networkrecvtopeek',['NetWorkRecvToPeek',['../a00047.html#a9b467250b160f4a4ac3c66fba5d688bb',1,'dxle::Network']]],
-  ['networkrecvudp',['NetWorkRecvUDP',['../a00047.html#af7581b3ce5b01c4450512b3f769a6e0d',1,'dxle::Network']]],
-  ['networkrecvudp_5fipv6',['NetWorkRecvUDP_IPv6',['../a00047.html#aadbdddd09f18aadafd532651ec4f35d4',1,'dxle::Network']]],
-  ['networksend',['NetWorkSend',['../a00047.html#a9832721ebb3ae7987fd75da884e998f3',1,'dxle::Network']]],
-  ['networksendudp',['NetWorkSendUDP',['../a00047.html#ae6a71ec4f791819dc7145824509545ea',1,'dxle::Network']]],
-  ['networksendudp_5fipv6',['NetWorkSendUDP_IPv6',['../a00047.html#a94afdb7cff31ee5b6f72191f3c833bbe',1,'dxle::Network']]],
-  ['notuse3dflag',['NotUse3DFlag',['../a00016.html#af6cef9a9c10c8da37f31e7b23f785e5d',1,'dxle::Graph2D::Texture2D']]],
-  ['now',['now',['../a00002.html#a1dc550355e74dade7b11a849c2771953',1,'dxle::nCounter::Counter::now()'],['../a00005.html#a2e082309bff4bf2456c52b677a3c51d3',1,'dxle::nCounter::HiPerformanceCounter::now()']]]
+  ['screen',['screen',['../a00005.html',1,'dxle::Graph2D']]],
+  ['screen',['screen',['../a00005.html#a0ec96a27baa1d152db3180a4c6da100f',1,'dxle::Graph2D::screen::screen()'],['../a00005.html#a67bf45a1d4f33cee75269dfe4de0ff10',1,'dxle::Graph2D::screen::screen(const screen &amp;other)=delete'],['../a00005.html#ad606a9d526c445f517e25ae7efd17921',1,'dxle::Graph2D::screen::screen(screen &amp;&amp;other)'],['../a00005.html#a19d160a02547c1007127fb8276755e64',1,'dxle::Graph2D::screen::screen(int param_handle, bool param_UseAlphaChannel) DXLE_NOEXCEPT_OR_NOTHROW']]],
+  ['screen_5fmutex_5fc',['screen_mutex_c',['../a00006.html',1,'dxle::Graph2D']]],
+  ['setcreatedrawvalidgraphchannelnum',['SetCreateDrawValidGraphChannelNum',['../a00019.html#ab5e08ea789ed1a54734419be076ab1aa',1,'dxle']]],
+  ['setcreatedrawvalidgraphmultisample',['SetCreateDrawValidGraphMultiSample',['../a00019.html#a237e57c2480bdf0db2a845bcd53ba3fa',1,'dxle']]],
+  ['setcreategraphcolorbitdepth',['SetCreateGraphColorBitDepth',['../a00019.html#a63331c9ba6d56f20199695b2043ad8fc',1,'dxle']]],
+  ['setdevicelostdeletegraphflag',['SetDeviceLostDeleteGraphFlag',['../a00007.html#a64b89894ff95bd18e41633ae83c3d9b8',1,'dxle::Graph2D::texture_2d']]],
+  ['setdrawblendmode',['SetDrawBlendMode',['../a00019.html#a2ace1dc82e96fe3cf185c161f17249d2',1,'dxle']]],
+  ['setdrawbright',['SetDrawBright',['../a00019.html#addc1cfc8b9e50d6b0ed01f3ee6bf0321',1,'dxle']]],
+  ['setdrawmode',['SetDrawMode',['../a00019.html#a29401e97f46f3978efb8dc14917f32e2',1,'dxle']]],
+  ['setdrawscreen',['SetDrawScreen',['../a00005.html#a9fa71e4e8ba31ed55349e7d0a636235e',1,'dxle::Graph2D::screen']]],
+  ['setdrawvalidfloattypegraphcreateflag',['SetDrawValidFloatTypeGraphCreateFlag',['../a00019.html#ad05b51f70486d313615861402cd80f4e',1,'dxle']]],
+  ['sethandle_5fimpl',['SetHandle_IMPL',['../a00009.html#a8be129708cc06fe672d6963e923abf2e',1,'dxle::impl::Unique_HandledObject_Bace']]],
+  ['settranscolor',['SetTransColor',['../a00019.html#a44eb52720fcf39fa4fecd3b690e583bf',1,'dxle']]],
+  ['setusegraphzbuffer',['SetUseGraphZBuffer',['../a00005.html#a7e45917b9430d1f11a9b11299944fdfe',1,'dxle::Graph2D::screen']]],
+  ['setusepremulalphaconvertload',['SetUsePremulAlphaConvertLoad',['../a00019.html#a9203872ec329b3371d47e3360af720f5',1,'dxle']]],
+  ['structs_2eh',['structs.h',['../a00017.html',1,'']]]
 ];

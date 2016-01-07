@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['istream_5foperator_5fhelper',['istream_operator_helper',['../a00006.html',1,'dxle::detail']]]
+  ['screen',['screen',['../a00005.html',1,'dxle::Graph2D']]],
+  ['screen_5fmutex_5fc',['screen_mutex_c',['../a00006.html',1,'dxle::Graph2D']]]
 ];

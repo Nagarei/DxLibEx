@@ -1,4 +1,3 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$a00003.html" title="dxle::impl::Counter\l_template\&lt; U \&gt;" alt="" coords="5,5,136,47"/>
-<area shape="rect" id="node2" href="$a00001.html" title="dxle::impl::Counter\l_template\&lt; T \&gt;::Cast\&lt; U \&gt;" alt="" coords="184,5,363,47"/>
+<area shape="rect" id="node1" href="$a00013.html" title="ハンドル自動削除実装用 " alt="" coords="5,5,164,47"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rightbutton',['RightButton',['../a00009.html#aceaf8179631c52380dcd9bf717994816',1,'dxle::nMouse::MouseState']]]
+  ['x',['x',['../a00009.html#acded1fdfda0e4d69a5a53e3041592f86',1,'dxle::point_c']]]
 ];

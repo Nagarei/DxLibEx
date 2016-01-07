@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['graph2d_2eh',['Graph2D.h',['../a00026.html',1,'']]]
+  ['dxlibex_2eh',['DxLibEx.h',['../a00012.html',1,'']]],
+  ['dxlibwrap_2eh',['DxLibWrap.h',['../a00013.html',1,'']]]
 ];

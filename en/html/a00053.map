@@ -1,5 +1,4 @@
-<map id="dxlibex/basic_types.hpp" name="dxlibex/basic_types.hpp">
-<area shape="rect" id="node2" href="$a00025.html" title="dxlibex/DxLibEx.h" alt="" coords="23,155,150,181"/>
-<area shape="rect" id="node4" href="$a00026.html" title="dxlibex/Graph2D.h" alt="" coords="74,80,203,107"/>
-<area shape="rect" id="node3" href="$a00028.html" title="dxlibex/impl.hpp" alt="" coords="29,229,145,256"/>
+<map id="dxle::Graph2D::Screen" name="dxle::Graph2D::Screen">
+<area shape="rect" id="node2" href="$a00012.html" title="dxle::Graph2D::Texture2D" alt="" coords="5,109,177,136"/>
+<area shape="rect" id="node3" href="$a00014.html" title="dxle::impl::Unique\l_HandledObject_Bace\l\&lt; Texture2D \&gt;" alt="" coords="16,5,167,61"/>
 </map>

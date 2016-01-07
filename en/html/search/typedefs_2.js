@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['type',['type',['../a00020.html#aee8244e570a1aa3bef098988c9e26406',1,'dxle::detail::ToArithmetic&lt; T, true, s, is_s &gt;::type()'],['../a00018.html#ae72a13f33cc65677b1649c25865dba36',1,'dxle::detail::ToArithmetic&lt; T, true, 1, false &gt;::type()'],['../a00019.html#ac57dc0f4ca9e6593e57632909727c3d4',1,'dxle::detail::ToArithmetic&lt; T, true, 1, true &gt;::type()']]]
+  ['point8i',['point8i',['../a00024.html#a22e90e41e1bf700b2264883a2ef4e135',1,'dxle']]],
+  ['pointd',['pointd',['../a00024.html#a0a673b5565da9d03b487301ae2c089eb',1,'dxle']]],
+  ['pointf',['pointf',['../a00024.html#a96474248bdd32fe46ace1e2c134cac3d',1,'dxle']]],
+  ['pointi',['pointi',['../a00024.html#ad6705043c3b3698b12f909a27820c9ef',1,'dxle']]],
+  ['pointu8i',['pointu8i',['../a00024.html#ac501cd493a08a0901eb4e988a096a1a0',1,'dxle']]]
 ];

@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['makegraph',['MakeGraph',['../a00016.html#aa98332a6bda954ea5d753bc78723ba18',1,'dxle::Graph2D::Texture2D::MakeGraph()'],['../a00042.html#a44e60997323ef176eda34c8797fdb892',1,'dxle::Graph2D::MakeGraph()']]],
-  ['makekeyinput',['MakeKeyInput',['../a00044.html#ad9c63b47d045697078ebc1b7e287d53a',1,'dxle::InputString']]],
-  ['makescreen',['MakeScreen',['../a00012.html#a0af1948696c10b3b1952bf80da045cae',1,'dxle::Graph2D::Screen::MakeScreen()'],['../a00042.html#a961d6c823262507fbad25da9201f2722',1,'dxle::Graph2D::MakeScreen()']]],
-  ['makeudpsocket',['MakeUDPSocket',['../a00047.html#ab02648a49f6d54521a1864ef8c8a2c5b',1,'dxle::Network']]],
-  ['makeudpsocket_5fipv6',['MakeUDPSocket_IPv6',['../a00047.html#adb37360e036add36f0dda938499ec98f',1,'dxle::Network']]],
-  ['middlebutton',['MiddleButton',['../a00009.html#a1e4e2a874af55f5d82f1d78dc1a86572',1,'dxle::nMouse::MouseState']]],
-  ['mouse',['Mouse',['../a00007.html',1,'dxle::nMouse']]],
-  ['mouseinputinfo',['MouseInputInfo',['../a00008.html',1,'dxle::nMouse']]],
-  ['mouseinputinfo',['MouseInputInfo',['../a00008.html#afd53a53e435fb56b74e871591088002c',1,'dxle::nMouse::MouseInputInfo::MouseInputInfo() DXLE_NOEXCEPT'],['../a00008.html#a2009568c77b7e89cd4719c0b260660e3',1,'dxle::nMouse::MouseInputInfo::MouseInputInfo(int x, int y, int type) DXLE_NOEXCEPT']]],
-  ['mousestate',['MouseState',['../a00009.html',1,'dxle::nMouse']]],
-  ['mousestate',['MouseState',['../a00009.html#accab527ca4bff805e48cf8a174c1d1d5',1,'dxle::nMouse::MouseState::MouseState() DXLE_NOEXCEPT'],['../a00009.html#a15ad6e877064e575af4834ad127f8991',1,'dxle::nMouse::MouseState::MouseState(int x, int y, int scrollWheel, ButtonState leftButton, ButtonState middleButton, ButtonState rightButton, ButtonState xButton1, ButtonState xButton2) DXLE_NOEXCEPT']]]
+  ['recreategraph',['ReCreateGraph',['../a00007.html#abac2ab449ce427867909bc2ebf92f7eb',1,'dxle::Graph2D::texture_2d::ReCreateGraph()'],['../a00023.html#ad809af61cc0affa88e5406fd0cea4e03',1,'dxle::Graph2D::ReCreateGraph()']]],
+  ['recreategraphfrombaseimage',['ReCreateGraphFromBaseImage',['../a00007.html#a6f5bc14964074abd05a5f58eaf403e8e',1,'dxle::Graph2D::texture_2d::ReCreateGraphFromBaseImage()'],['../a00023.html#a830f2f2f9e17a17409980c16ab5331eb',1,'dxle::Graph2D::ReCreateGraphFromBaseImage()']]],
+  ['recreategraphfromgraphimage',['ReCreateGraphFromGraphImage',['../a00007.html#a9f12cec3244999ba3b7b1ce05557e31a',1,'dxle::Graph2D::texture_2d::ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, texture_2d &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00007.html#ab17dd03762caf9e51ded2842547b53fc',1,'dxle::Graph2D::texture_2d::ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, texture_2d &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00023.html#a7b9145fe03b6f59a062b6513843030d6',1,'dxle::Graph2D::ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, texture_2d &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00023.html#a3bec95ad902c72b3ba301063235fe9ab',1,'dxle::Graph2D::ReCreateGraphFromGraphImage(const BASEIMAGE *RgbBaseImage, const BASEIMAGE *AlphaBaseImage, texture_2d &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) DXLE_NOEXCEPT_OR_NOTHROW']]],
+  ['recreategraphfrommem',['ReCreateGraphFromMem',['../a00007.html#ab25c03fc1723ebcaebff61a32a696c67',1,'dxle::Graph2D::texture_2d::ReCreateGraphFromMem()'],['../a00023.html#ac5b31d774be7d948f51e10c41c863c1c',1,'dxle::Graph2D::ReCreateGraphFromMem()']]],
+  ['recreategraphfromrectbaseimage',['ReCreateGraphFromRectBaseImage',['../a00007.html#a37c081472fa71e1242a8ed6b128b5058',1,'dxle::Graph2D::texture_2d::ReCreateGraphFromRectBaseImage()'],['../a00023.html#a98a67bc3603d1eaedf1756849db48262',1,'dxle::Graph2D::ReCreateGraphFromRectBaseImage()']]],
+  ['red',['red',['../a00020.html#a4e455c7989a99cdf1ef729b83b3be8c3abda9643ac6601722a28f238714274da4',1,'dxle::color']]],
+  ['releaserun',['ReleaseRun',['../a00008.html#af30a408e38aeadecf7d157b35244dcce',1,'dxle::impl::Unique_Handle_Bace']]],
+  ['reloadgraph',['ReloadGraph',['../a00007.html#a442e1659cd91c38f0d4073c34a659f64',1,'dxle::Graph2D::texture_2d::ReloadGraph()'],['../a00023.html#a6b12a27ae5c15198571c3dbd2de34092',1,'dxle::Graph2D::ReloadGraph()']]],
+  ['reloadreversegraph',['ReloadReverseGraph',['../a00007.html#a75b91db35e15d4c69c16bd40191d3ffb',1,'dxle::Graph2D::texture_2d::ReloadReverseGraph()'],['../a00023.html#a62d1c48ecc4938944552c9b11633be77',1,'dxle::Graph2D::ReloadReverseGraph()']]],
+  ['rgb',['rgb',['../a00004.html',1,'dxle::color']]],
+  ['rgb',['rgb',['../a00004.html#a77a99cb613ee0ec0fb75dac237482b89',1,'dxle::color::rgb::rgb()'],['../a00004.html#aa236491b600037f4183408b046929e07',1,'dxle::color::rgb::rgb(int red, int green, int blue)']]]
 ];

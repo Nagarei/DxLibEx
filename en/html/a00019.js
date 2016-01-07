@@ -1,4 +1,6 @@
 var a00019 =
 [
-    [ "type", "a00019.html#ac57dc0f4ca9e6593e57632909727c3d4", null ]
+    [ "color", "a00020.html", "a00020" ],
+    [ "Graph2D", "a00023.html", "a00023" ],
+    [ "impl", "a00024.html", "a00024" ]
 ];

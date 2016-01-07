@@ -1,4 +1,5 @@
 var a00018 =
 [
-    [ "type", "a00018.html#ae72a13f33cc65677b1649c25865dba36", null ]
+    [ "DXLE_GET_LOCK", "a00018.html#a6d889363dff6fc88b73713bab71515bf", null ],
+    [ "DXLE_NOEXCEPT_OR_NOTHROW_SINGLE", "a00018.html#a104e6e443a5edb01c847fd2a9f8c7aba", null ]
 ];

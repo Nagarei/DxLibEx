@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>DxLibEx: dxle::Touch 名前空間</title>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>DxLibEx: メンバ一覧</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">DxLibEx
    </div>
   </td>
@@ -39,15 +39,15 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.9.1 -->
+<!-- 構築: Doxygen 1.8.10 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>総合概要</span></a></li>
-      <li class="current"><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -69,8 +69,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="namespaces.html"><span>名前空間一覧</span></a></li>
-      <li><a href="namespacemembers.html"><span>名前空間メンバ</span></a></li>
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00050.html','');});
+$(document).ready(function(){initNavTree('a00008.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,230 +105,29 @@ $(document).ready(function(){initNavTree('a00050.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">関数</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::Touch 名前空間</div>  </div>
+<div class="title">dxle::impl::Unique_Handle_Bace&lt; Child &gt; メンバ一覧</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>タッチパネル入力関係  
-<a href="#details">[詳解]</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-関数</h2></td></tr>
-<tr class="memitem:aa3c849036516a5b0a3a962dbc88709c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#aa3c849036516a5b0a3a962dbc88709c6">GetTouchInputNum</a> (void) DXLE_NOEXCEPT</td></tr>
-<tr class="memdesc:aa3c849036516a5b0a3a962dbc88709c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">タッチされている数を取得する  <a href="#aa3c849036516a5b0a3a962dbc88709c6">[詳解]</a><br /></td></tr>
-<tr class="separator:aa3c849036516a5b0a3a962dbc88709c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5e4859890f563b43a0b9111b8705954"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#ae5e4859890f563b43a0b9111b8705954">GetTouchInput</a> (int InputNo, int *PositionX, int *PositionY, int *ID=NULL, int *Device=NULL) DXLE_NOEXCEPT</td></tr>
-<tr class="memdesc:ae5e4859890f563b43a0b9111b8705954"><td class="mdescLeft">&#160;</td><td class="mdescRight">タッチの情報を取得する  <a href="#ae5e4859890f563b43a0b9111b8705954">[詳解]</a><br /></td></tr>
-<tr class="separator:ae5e4859890f563b43a0b9111b8705954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ccd48f92719a17f5bd8e86d25f87a31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a5ccd48f92719a17f5bd8e86d25f87a31">GetTouchInputLogNum</a> (void) DXLE_NOEXCEPT</td></tr>
-<tr class="memdesc:a5ccd48f92719a17f5bd8e86d25f87a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">ストックされているタッチ情報の数を取得する  <a href="#a5ccd48f92719a17f5bd8e86d25f87a31">[詳解]</a><br /></td></tr>
-<tr class="separator:a5ccd48f92719a17f5bd8e86d25f87a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa55c74fbcbcb319277843bd19347f517"><td class="memItemLeft" align="right" valign="top">TOUCHINPUTDATA&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#aa55c74fbcbcb319277843bd19347f517">GetTouchInputLogOne</a> (int PeekFlag=FALSE) DXLE_NOEXCEPT</td></tr>
-<tr class="memdesc:aa55c74fbcbcb319277843bd19347f517"><td class="mdescLeft">&#160;</td><td class="mdescRight">ストックされているタッチ情報から一番古い情報をひとつ取得する  <a href="#aa55c74fbcbcb319277843bd19347f517">[詳解]</a><br /></td></tr>
-<tr class="separator:aa55c74fbcbcb319277843bd19347f517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadad29942468937dbcf40aaa07c991d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#aadad29942468937dbcf40aaa07c991d7">GetTouchInputLog</a> (TOUCHINPUTDATA *TouchData, int GetNum, int PeekFlag=FALSE) DXLE_NOEXCEPT</td></tr>
-<tr class="memdesc:aadad29942468937dbcf40aaa07c991d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ストックされているタッチ情報から古い順に指定数バッファに取得する( 戻り値 -1:エラー 0以上:取得した情報の数 )  <a href="#aadad29942468937dbcf40aaa07c991d7">[詳解]</a><br /></td></tr>
-<tr class="separator:aadad29942468937dbcf40aaa07c991d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>タッチパネル入力関係 </p>
-</div><h2 class="groupheader">関数詳解</h2>
-<a class="anchor" id="ae5e4859890f563b43a0b9111b8705954"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int dxle::Touch::GetTouchInput </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>InputNo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>PositionX</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>PositionY</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>ID</em> = <code>NULL</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>Device</em> = <code>NULL</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>タッチの情報を取得する </p>
-
-<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00352">352</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="aadad29942468937dbcf40aaa07c991d7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int dxle::Touch::GetTouchInputLog </td>
-          <td>(</td>
-          <td class="paramtype">TOUCHINPUTDATA *&#160;</td>
-          <td class="paramname"><em>TouchData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>GetNum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>PeekFlag</em> = <code>FALSE</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ストックされているタッチ情報から古い順に指定数バッファに取得する( 戻り値 -1:エラー 0以上:取得した情報の数 ) </p>
-
-<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00361">361</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a5ccd48f92719a17f5bd8e86d25f87a31"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int dxle::Touch::GetTouchInputLogNum </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ストックされているタッチ情報の数を取得する </p>
-
-<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00355">355</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="aa55c74fbcbcb319277843bd19347f517"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TOUCHINPUTDATA dxle::Touch::GetTouchInputLogOne </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>PeekFlag</em> = <code>FALSE</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ストックされているタッチ情報から一番古い情報をひとつ取得する </p>
-
-<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00358">358</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="aa3c849036516a5b0a3a962dbc88709c6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int dxle::Touch::GetTouchInputNum </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>タッチされている数を取得する </p>
-
-<p> <a class="el" href="a00025_source.html">DxLibEx.h</a> の <a class="el" href="a00025_source.html#l00349">349</a> 行目に定義があります。</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>継承メンバを含む <a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a> の全メンバ一覧です。</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00008.html#ae2cacc4cd70891502d3724b905fd6726">Bace_T</a> typedef</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00008.html#a6cc3a3571e704f53a6645ad4083f2263">GetHandle</a>() const DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00008.html#a8b9fe3765b99c1d8f58087a8adc7a966">operator=</a>(Bace_T &amp;&amp;other) DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00008.html#af30a408e38aeadecf7d157b35244dcce">ReleaseRun</a>() DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00008.html#a32e0322bbef6fdf9152c3f87d5787f13">Unique_Handle_Bace</a>() DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00008.html#a652416b45b21929b55ce585ad84d1c5f">Unique_Handle_Bace</a>(Bace_T &amp;&amp;other) DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00008.html#a5ebf09a7c8cb391b3543fd4e8c18ae28">Unique_Handle_Bace</a>(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00008.html#a405a1ad6b86239dd5315ee7d7c722f84">~Unique_Handle_Bace</a>() DXLE_NOEXCEPT_OR_NOTHROW</td><td class="entry"><a class="el" href="a00008.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00031.html">dxle</a></li><li class="navelem"><a class="el" href="a00050.html">Touch</a></li>
-    <li class="footer">2015年11月22日(日) 12時21分52秒作成 - DxLibEx / 構成: 
+    <li class="footer">2016年01月07日(木) 15時02分56秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>
 </div>
 </body>

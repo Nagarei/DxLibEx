@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dxlibsys',['DxLibSys',['../a00004.html',1,'dxle::nDxLibSys']]]
+  ['dx_5fcolor',['dx_color',['../a00003.html',1,'dxle::color']]]
 ];

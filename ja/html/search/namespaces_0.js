@@ -1,24 +1,9 @@
 var searchData=
 [
-  ['detail',['detail',['../a00032.html',1,'dxle']]],
-  ['dxasyncload',['DxAsyncLoad',['../a00033.html',1,'dxle']]],
-  ['dxchar',['DxChar',['../a00034.html',1,'dxle']]],
-  ['dxfile',['DxFile',['../a00035.html',1,'dxle']]],
-  ['dxhandle',['DxHandle',['../a00036.html',1,'dxle']]],
-  ['dxle',['dxle',['../a00031.html',1,'']]],
-  ['dxlibex_5fclasses',['DxLibEx_Classes',['../a00037.html',1,'dxle']]],
-  ['dxlog',['DxLog',['../a00038.html',1,'dxle']]],
-  ['dxmemory',['DxMemory',['../a00039.html',1,'dxle']]],
-  ['dxrand',['DxRand',['../a00040.html',1,'dxle']]],
-  ['dxstructs',['DxStructs',['../a00041.html',1,'dxle']]],
-  ['graph2d',['Graph2D',['../a00042.html',1,'dxle']]],
-  ['impl',['impl',['../a00043.html',1,'dxle']]],
-  ['inputstring',['InputString',['../a00044.html',1,'dxle']]],
-  ['ncounter',['nCounter',['../a00045.html',1,'dxle']]],
-  ['ndxlibsys',['nDxLibSys',['../a00046.html',1,'dxle']]],
-  ['network',['Network',['../a00047.html',1,'dxle']]],
-  ['nmouse',['nMouse',['../a00048.html',1,'dxle']]],
-  ['sound',['Sound',['../a00049.html',1,'dxle']]],
-  ['touch',['Touch',['../a00050.html',1,'dxle']]],
-  ['wait',['Wait',['../a00051.html',1,'dxle']]]
+  ['color',['color',['../a00020.html',1,'dxle']]],
+  ['dxle',['dxle',['../a00019.html',1,'']]],
+  ['dxlibex_5fclasses',['DxLibEx_Classes',['../a00021.html',1,'dxle']]],
+  ['dxstructs',['DxStructs',['../a00022.html',1,'dxle']]],
+  ['graph2d',['Graph2D',['../a00023.html',1,'dxle']]],
+  ['impl',['impl',['../a00024.html',1,'dxle']]]
 ];

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['helper_2eh',['Helper.h',['../a00027.html',1,'']]],
-  ['hiperformancecounter',['HiPerformanceCounter',['../a00005.html#a564dcfe9a09821c49ec85fccaa4c41a0',1,'dxle::nCounter::HiPerformanceCounter::HiPerformanceCounter() DXLE_NOEXCEPT'],['../a00005.html#aa2d9db8692e5e7c5f7500f5de0018cd4',1,'dxle::nCounter::HiPerformanceCounter::HiPerformanceCounter(const Counter_template&lt; LONGLONG &gt; &amp;param) DXLE_NOEXCEPT'],['../a00005.html#a89b569ec52f4c8be09e7a272aadf5ea0',1,'dxle::nCounter::HiPerformanceCounter::HiPerformanceCounter(LONGLONG param) DXLE_NOEXCEPT']]],
-  ['hiperformancecounter',['HiPerformanceCounter',['../a00005.html',1,'dxle::nCounter']]]
+  ['magenta',['magenta',['../a00020.html#a4e455c7989a99cdf1ef729b83b3be8c3a4c2a4a7078da0ac6733464eacfd00f86',1,'dxle::color']]],
+  ['makedxcolor',['MakeDxColor',['../a00003.html#ab18b192dec99be8f851778a4420ef670',1,'dxle::color::dx_color']]],
+  ['makegraph',['MakeGraph',['../a00007.html#a2570ac5e66de8c72aaaa10effa9ce489',1,'dxle::Graph2D::texture_2d::MakeGraph()'],['../a00019.html#ac0691d68c411c82eee19dd8b205c4cdd',1,'dxle::MakeGraph()'],['../a00023.html#ac74699d0b42b0652527925a417f12477',1,'dxle::Graph2D::MakeGraph()']]],
+  ['makescreen',['MakeScreen',['../a00005.html#aa08003f375efd86dd4bb6cc541e29522',1,'dxle::Graph2D::screen::MakeScreen()'],['../a00019.html#a270dca5dda244eeeccdf5afa4407c071',1,'dxle::MakeScreen()'],['../a00023.html#a5255eb796cdae7e91c3937f4008ec16f',1,'dxle::Graph2D::MakeScreen()']]]
 ];

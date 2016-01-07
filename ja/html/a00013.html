@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>DxLibEx: dxle::Graph2D::screen_mutex_c クラス</title>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>DxLibEx: dxlibex/DxLibWrap.h ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">DxLibEx
    </div>
   </td>
@@ -39,7 +39,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.9.1 -->
+<!-- 構築: Doxygen 1.8.10 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
@@ -47,8 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
     <ul class="tablist">
       <li><a href="index.html"><span>総合概要</span></a></li>
       <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
-      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -69,10 +69,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
-      <li><a href="classes.html"><span>クラス索引</span></a></li>
-      <li><a href="inherits.html"><span>クラス階層</span></a></li>
-      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,35 +103,192 @@ $(document).ready(function(){initNavTree('a00013.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::Graph2D::screen_mutex_c クラス</div>  </div>
+<div class="title">DxLibWrap.h ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a00026_source.html">Graph2D.h</a>&gt;</code></p>
-<div class="dynheader">
-dxle::Graph2D::screen_mutex_c の継承関係図</div>
+<div class="textblock"><code>#include &quot;dxlibex/config/no_min_max.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00014_source.html">Graph2D.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00018_source.html">dxlibex/thread.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+DxLibWrap.h の依存先関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00075.png" border="0" usemap="#dxle_1_1_graph2_d_1_1screen__mutex__c_inherit__map" alt="Inheritance graph"/></div>
-<map name="dxle_1_1_graph2_d_1_1screen__mutex__c_inherit__map" id="dxle_1_1_graph2_d_1_1screen__mutex__c_inherit__map">
-<area shape="rect" id="node2" href="a00016.html" title="dxle::Graph2D::Texture2D" alt="" coords="5,95,177,121"/><area shape="rect" id="node3" href="a00012.html" title="描画可能画像クラス " alt="" coords="14,169,169,196"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>DxLibの描画先スクリーン同期のためのmutex </p>
+<div class="center"><img src="a00030.png" border="0" usemap="#dxlibex_2_dx_lib_wrap_8h" alt=""/></div>
+<map name="dxlibex_2_dx_lib_wrap_8h" id="dxlibex_2_dx_lib_wrap_8h">
+<area shape="rect" id="node3" href="a00014.html" title="Graph2D.h" alt="" coords="2214,80,2298,107"/>
+<area shape="rect" id="node29" href="a00018.html" title="dxlibex/thread.h" alt="" coords="2533,155,2648,181"/>
+<area shape="rect" id="node10" href="a00015.html" title="dxlibex/Helper.h" alt="" coords="2344,155,2459,181"/>
+<area shape="rect" id="node13" href="a00010.html" title="dxlibex/basic_types.hpp" alt="" coords="1055,155,1217,181"/>
+</map>
+</div>
+</div>
+<p><a href="a00013_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:a00019"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html">dxle</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:aacdb3e3dd8b77e3668664ec699a5b7b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#aacdb3e3dd8b77e3668664ec699a5b7b4">DX_THREAD_SAFE</a></td></tr>
+<tr class="separator:aacdb3e3dd8b77e3668664ec699a5b7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a61c0fd6dabbcfa835a56f0925e08f83a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a61c0fd6dabbcfa835a56f0925e08f83a">dxle::dxle_mutex</a> { <a class="el" href="a00019.html#a61c0fd6dabbcfa835a56f0925e08f83aa300823911ddd27809d71b3bff0a00d9d">dxle::dxle_mutex::dxle_mutex</a>
+ }<tr class="separator:a61c0fd6dabbcfa835a56f0925e08f83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a24c8ee7763798be221c2ccaa76056e98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a24c8ee7763798be221c2ccaa76056e98">dxle::DxLib_Init</a> (dxle_mutex)</td></tr>
+<tr class="separator:a24c8ee7763798be221c2ccaa76056e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2a30df21add723c452037cc939c96e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a6d2a30df21add723c452037cc939c96e">dxle::DxLib_End</a> (dxle_mutex)</td></tr>
+<tr class="separator:a6d2a30df21add723c452037cc939c96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b453656fc5744ad0786541ef53b11c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a8b453656fc5744ad0786541ef53b11c1">dxle::ProcessMessage</a> (dxle_mutex)</td></tr>
+<tr class="separator:a8b453656fc5744ad0786541ef53b11c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a833cf018ab4c9034ff2dd714b3f5241b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a833cf018ab4c9034ff2dd714b3f5241b">dxle::DrawLine</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int Thickness=1)</td></tr>
+<tr class="memdesc:a833cf018ab4c9034ff2dd714b3f5241b"><td class="mdescLeft">&#160;</td><td class="mdescRight">線を描画する  <a href="a00019.html#a833cf018ab4c9034ff2dd714b3f5241b">[詳解]</a><br /></td></tr>
+<tr class="separator:a833cf018ab4c9034ff2dd714b3f5241b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ce87e05264fb3793c7941cedbd3cd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a32ce87e05264fb3793c7941cedbd3cd9">dxle::DrawBox</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int FillFlag)</td></tr>
+<tr class="memdesc:a32ce87e05264fb3793c7941cedbd3cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">四角形の描画する  <a href="a00019.html#a32ce87e05264fb3793c7941cedbd3cd9">[詳解]</a><br /></td></tr>
+<tr class="separator:a32ce87e05264fb3793c7941cedbd3cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd695a1bea82a9a07ad546deed16698"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a4cd695a1bea82a9a07ad546deed16698">dxle::DrawFillBox</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color)</td></tr>
+<tr class="memdesc:a4cd695a1bea82a9a07ad546deed16698"><td class="mdescLeft">&#160;</td><td class="mdescRight">中身を塗りつぶす四角形を描画する  <a href="a00019.html#a4cd695a1bea82a9a07ad546deed16698">[詳解]</a><br /></td></tr>
+<tr class="separator:a4cd695a1bea82a9a07ad546deed16698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9688f0d4a1278b5c5b3d411c5bdf6358"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a9688f0d4a1278b5c5b3d411c5bdf6358">dxle::DrawLineBox</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color)</td></tr>
+<tr class="memdesc:a9688f0d4a1278b5c5b3d411c5bdf6358"><td class="mdescLeft">&#160;</td><td class="mdescRight">枠だけの四角形の描画 する  <a href="a00019.html#a9688f0d4a1278b5c5b3d411c5bdf6358">[詳解]</a><br /></td></tr>
+<tr class="separator:a9688f0d4a1278b5c5b3d411c5bdf6358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e4bf4788c102e83b0361c330859c3cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a6e4bf4788c102e83b0361c330859c3cf">dxle::DrawCircle</a> (dxle_mutex, int x, int y, int r, unsigned int Color, int FillFlag=TRUE, int LineThickness=1)</td></tr>
+<tr class="memdesc:a6e4bf4788c102e83b0361c330859c3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">円を描画する  <a href="a00019.html#a6e4bf4788c102e83b0361c330859c3cf">[詳解]</a><br /></td></tr>
+<tr class="separator:a6e4bf4788c102e83b0361c330859c3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48564b47a74aaebe52d3260c689c04c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ab48564b47a74aaebe52d3260c689c04c">dxle::DrawOval</a> (dxle_mutex, int x, int y, int rx, int ry, unsigned int Color, int FillFlag, int LineThickness=1)</td></tr>
+<tr class="memdesc:ab48564b47a74aaebe52d3260c689c04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">楕円を描画する  <a href="a00019.html#ab48564b47a74aaebe52d3260c689c04c">[詳解]</a><br /></td></tr>
+<tr class="separator:ab48564b47a74aaebe52d3260c689c04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0270557ee225b1c95a811dea746b354"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ae0270557ee225b1c95a811dea746b354">dxle::DrawTriangle</a> (dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, unsigned int Color, int FillFlag)</td></tr>
+<tr class="memdesc:ae0270557ee225b1c95a811dea746b354"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角形を描画する  <a href="a00019.html#ae0270557ee225b1c95a811dea746b354">[詳解]</a><br /></td></tr>
+<tr class="separator:ae0270557ee225b1c95a811dea746b354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd6e36f2f4c2656df5dca44e159b61a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#abcd6e36f2f4c2656df5dca44e159b61a">dxle::DrawQuadrangle</a> (dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, unsigned int Color, int FillFlag)</td></tr>
+<tr class="memdesc:abcd6e36f2f4c2656df5dca44e159b61a"><td class="mdescLeft">&#160;</td><td class="mdescRight">四角形を描画する  <a href="a00019.html#abcd6e36f2f4c2656df5dca44e159b61a">[詳解]</a><br /></td></tr>
+<tr class="separator:abcd6e36f2f4c2656df5dca44e159b61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d77b1751fd13ae64e9e3ea811ac8212"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a6d77b1751fd13ae64e9e3ea811ac8212">dxle::DrawRoundRect</a> (dxle_mutex, int x1, int y1, int x2, int y2, int rx, int ry, unsigned int Color, int FillFlag)</td></tr>
+<tr class="memdesc:a6d77b1751fd13ae64e9e3ea811ac8212"><td class="mdescLeft">&#160;</td><td class="mdescRight">角の丸い四角形を描画する  <a href="a00019.html#a6d77b1751fd13ae64e9e3ea811ac8212">[詳解]</a><br /></td></tr>
+<tr class="separator:a6d77b1751fd13ae64e9e3ea811ac8212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9a8759077440ea52c8339ad4205a56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#add9a8759077440ea52c8339ad4205a56">dxle::DrawPixel</a> (dxle_mutex, int x, int y, unsigned int Color)</td></tr>
+<tr class="memdesc:add9a8759077440ea52c8339ad4205a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">点を描画する  <a href="a00019.html#add9a8759077440ea52c8339ad4205a56">[詳解]</a><br /></td></tr>
+<tr class="separator:add9a8759077440ea52c8339ad4205a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9626515c331cde479e3180681310a2a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a9626515c331cde479e3180681310a2a2">dxle::LoadGraphScreen</a> (dxle_mutex, int x, int y, const TCHAR *GraphName, int TransFlag)</td></tr>
+<tr class="memdesc:a9626515c331cde479e3180681310a2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを読みこんで画面に描画する  <a href="a00019.html#a9626515c331cde479e3180681310a2a2">[詳解]</a><br /></td></tr>
+<tr class="separator:a9626515c331cde479e3180681310a2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25658c86ae142e2a04f7ac044d2d3ce4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a25658c86ae142e2a04f7ac044d2d3ce4">dxle::LoadGraph</a> (dxle_mutex, const TCHAR *FileName, int NotUse3DFlag=FALSE)</td></tr>
+<tr class="memdesc:a25658c86ae142e2a04f7ac044d2d3ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックハンドルを作成する  <a href="a00019.html#a25658c86ae142e2a04f7ac044d2d3ce4">[詳解]</a><br /></td></tr>
+<tr class="separator:a25658c86ae142e2a04f7ac044d2d3ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d156c11aeb6d4b25c951c49554a23e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a01d156c11aeb6d4b25c951c49554a23e">dxle::LoadDivGraph</a> (dxle_mutex, const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int *HandleBuf, int NotUse3DFlag=FALSE)</td></tr>
+<tr class="memdesc:a01d156c11aeb6d4b25c951c49554a23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを分割してグラフィックハンドルを作成する  <a href="a00019.html#a01d156c11aeb6d4b25c951c49554a23e">[詳解]</a><br /></td></tr>
+<tr class="separator:a01d156c11aeb6d4b25c951c49554a23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0691d68c411c82eee19dd8b205c4cdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ac0691d68c411c82eee19dd8b205c4cdd">dxle::MakeGraph</a> (dxle_mutex, int SizeX, int SizeY, int NotUse3DFlag=FALSE)</td></tr>
+<tr class="memdesc:ac0691d68c411c82eee19dd8b205c4cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定サイズのグラフィックハンドルを作成する  <a href="a00019.html#ac0691d68c411c82eee19dd8b205c4cdd">[詳解]</a><br /></td></tr>
+<tr class="separator:ac0691d68c411c82eee19dd8b205c4cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270dca5dda244eeeccdf5afa4407c071"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a270dca5dda244eeeccdf5afa4407c071">dxle::MakeScreen</a> (dxle_mutex, int SizeX, int SizeY, int UseAlphaChannel=FALSE)</td></tr>
+<tr class="memdesc:a270dca5dda244eeeccdf5afa4407c071"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen で描画対象にできるグラフィックハンドルを作成する  <a href="a00019.html#a270dca5dda244eeeccdf5afa4407c071">[詳解]</a><br /></td></tr>
+<tr class="separator:a270dca5dda244eeeccdf5afa4407c071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a237e57c2480bdf0db2a845bcd53ba3fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a237e57c2480bdf0db2a845bcd53ba3fa">dxle::SetCreateDrawValidGraphMultiSample</a> (dxle_mutex, int Samples, int Quality)</td></tr>
+<tr class="memdesc:a237e57c2480bdf0db2a845bcd53ba3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen の引数として渡せる( 描画対象として使用できる )グラフィックハンドルに適用するマルチサンプリング( アンチエイリアシング )設定を行う( Samples:マルチサンプル処理に使用するドット数( 多いほど重くなります ) Quality:マルチサンプル処理の品質 )  <a href="a00019.html#a237e57c2480bdf0db2a845bcd53ba3fa">[詳解]</a><br /></td></tr>
+<tr class="separator:a237e57c2480bdf0db2a845bcd53ba3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63331c9ba6d56f20199695b2043ad8fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a63331c9ba6d56f20199695b2043ad8fc">dxle::SetCreateGraphColorBitDepth</a> (dxle_mutex, int BitDepth)</td></tr>
+<tr class="memdesc:a63331c9ba6d56f20199695b2043ad8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">作成するグラフィックハンドルの色深度を設定する  <a href="a00019.html#a63331c9ba6d56f20199695b2043ad8fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a63331c9ba6d56f20199695b2043ad8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05b51f70486d313615861402cd80f4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ad05b51f70486d313615861402cd80f4e">dxle::SetDrawValidFloatTypeGraphCreateFlag</a> (dxle_mutex, int Flag)</td></tr>
+<tr class="memdesc:ad05b51f70486d313615861402cd80f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen の引数として渡せる( 描画対象として使用できる )ピクセルフォーマットが浮動小数点型のグラフィックハンドルを作成するかどうかを設定する( SetDrawValidGraphCreateFlag 関数で描画対象として使用できるグラフィックハンドルを作成するように設定されていないと効果ありません )、グラフィックスデバイスが浮動小数点型のピクセルフォーマットに対応していない場合はグラフィックハンドルの作成に失敗する( TRUE:浮動小数点型　　FALSE:整数型( デフォルト ) )  <a href="a00019.html#ad05b51f70486d313615861402cd80f4e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad05b51f70486d313615861402cd80f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e08ea789ed1a54734419be076ab1aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ab5e08ea789ed1a54734419be076ab1aa">dxle::SetCreateDrawValidGraphChannelNum</a> (dxle_mutex, int ChannelNum)</td></tr>
+<tr class="memdesc:ab5e08ea789ed1a54734419be076ab1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen の引数として渡せる( 描画対象として使用できる )グラフィックハンドルに適用する色のチャンネル数を設定する( ChannelNum:チャンネル数( 指定可能な値は 1, 2, 4 の何れか( SetDrawValidGraphCreateFlag 関数で描画対象として使用できるグラフィックハンドルを作成するように設定されていないと効果ありません )  <a href="a00019.html#ab5e08ea789ed1a54734419be076ab1aa">[詳解]</a><br /></td></tr>
+<tr class="separator:ab5e08ea789ed1a54734419be076ab1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9203872ec329b3371d47e3360af720f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a9203872ec329b3371d47e3360af720f5">dxle::SetUsePremulAlphaConvertLoad</a> (dxle_mutex, int UseFlag)</td></tr>
+<tr class="memdesc:a9203872ec329b3371d47e3360af720f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイル読み込み時に乗算済みアルファ画像に変換するかどうかを設定する( TRUE:変換処理を行う FALSE:変換処理を行わない( デフォルト ) )  <a href="a00019.html#a9203872ec329b3371d47e3360af720f5">[詳解]</a><br /></td></tr>
+<tr class="separator:a9203872ec329b3371d47e3360af720f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b567769e58db79ffc14f0fec8fe13e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ac7b567769e58db79ffc14f0fec8fe13e">dxle::DrawGraph</a> (dxle_mutex, int x, int y, int GrHandle, int TransFlag)</td></tr>
+<tr class="memdesc:ac7b567769e58db79ffc14f0fec8fe13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の等倍描画  <a href="a00019.html#ac7b567769e58db79ffc14f0fec8fe13e">[詳解]</a><br /></td></tr>
+<tr class="separator:ac7b567769e58db79ffc14f0fec8fe13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db5d185ad9d29217dd9e57ef2c32aa1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a8db5d185ad9d29217dd9e57ef2c32aa1">dxle::DrawExtendGraph</a> (dxle_mutex, int x1, int y1, int x2, int y2, int GrHandle, int TransFlag)</td></tr>
+<tr class="memdesc:a8db5d185ad9d29217dd9e57ef2c32aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の拡大描画  <a href="a00019.html#a8db5d185ad9d29217dd9e57ef2c32aa1">[詳解]</a><br /></td></tr>
+<tr class="separator:a8db5d185ad9d29217dd9e57ef2c32aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a650683ca6705c055b2b5178b3487264e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a650683ca6705c055b2b5178b3487264e">dxle::DrawRotaGraph</a> (dxle_mutex, int x, int y, double ExRate, double Angle, int GrHandle, int TransFlag, int TurnFlag=FALSE)</td></tr>
+<tr class="memdesc:a650683ca6705c055b2b5178b3487264e"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画  <a href="a00019.html#a650683ca6705c055b2b5178b3487264e">[詳解]</a><br /></td></tr>
+<tr class="separator:a650683ca6705c055b2b5178b3487264e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1b85cbd4521f796c7c052196884348"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a4c1b85cbd4521f796c7c052196884348">dxle::DrawRotaGraph2</a> (dxle_mutex, int x, int y, int cx, int cy, double ExtRate, double Angle, int GrHandle, int TransFlag, int TurnFlag=FALSE)</td></tr>
+<tr class="memdesc:a4c1b85cbd4521f796c7c052196884348"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画２( 回転中心指定付き )  <a href="a00019.html#a4c1b85cbd4521f796c7c052196884348">[詳解]</a><br /></td></tr>
+<tr class="separator:a4c1b85cbd4521f796c7c052196884348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f81ee80da117b6a0cabd367616ed424"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a6f81ee80da117b6a0cabd367616ed424">dxle::DrawRotaGraph3</a> (dxle_mutex, int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, int GrHandle, int TransFlag, int TurnFlag=FALSE)</td></tr>
+<tr class="memdesc:a6f81ee80da117b6a0cabd367616ed424"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )  <a href="a00019.html#a6f81ee80da117b6a0cabd367616ed424">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f81ee80da117b6a0cabd367616ed424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad6aaae76d847b8e3d8c6c01a4bd2d66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#aad6aaae76d847b8e3d8c6c01a4bd2d66">dxle::DrawModiGraph</a> (dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, int GrHandle, int TransFlag)</td></tr>
+<tr class="memdesc:aad6aaae76d847b8e3d8c6c01a4bd2d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の自由変形描画  <a href="a00019.html#aad6aaae76d847b8e3d8c6c01a4bd2d66">[詳解]</a><br /></td></tr>
+<tr class="separator:aad6aaae76d847b8e3d8c6c01a4bd2d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbaf584de6bde10ab5bc42d37abffa8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#adbaf584de6bde10ab5bc42d37abffa8d">dxle::DrawRectGraph</a> (dxle_mutex, int DestX, int DestY, int SrcX, int SrcY, int Width, int Height, int GraphHandle, int TransFlag, int TurnFlag)</td></tr>
+<tr class="memdesc:adbaf584de6bde10ab5bc42d37abffa8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の指定矩形部分のみを等倍描画  <a href="a00019.html#adbaf584de6bde10ab5bc42d37abffa8d">[詳解]</a><br /></td></tr>
+<tr class="separator:adbaf584de6bde10ab5bc42d37abffa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f32cd4db5b6af2158fc8351b51129a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a6f32cd4db5b6af2158fc8351b51129a3">dxle::DerivationGraph</a> (dxle_mutex, int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)</td></tr>
+<tr class="memdesc:a6f32cd4db5b6af2158fc8351b51129a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のグラフィックハンドルの指定部分だけを抜き出して新たなグラフィックハンドルを作成する  <a href="a00019.html#a6f32cd4db5b6af2158fc8351b51129a3">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f32cd4db5b6af2158fc8351b51129a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e1ccb5f36ec39d7fbe86044262673f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a86e1ccb5f36ec39d7fbe86044262673f">dxle::GetDrawScreenGraph</a> (dxle_mutex, int x1, int y1, int x2, int y2, int GrHandle, int UseClientFlag=TRUE)</td></tr>
+<tr class="memdesc:a86e1ccb5f36ec39d7fbe86044262673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画先の画面から指定領域の画像情報をグラフィックハンドルに転送する  <a href="a00019.html#a86e1ccb5f36ec39d7fbe86044262673f">[詳解]</a><br /></td></tr>
+<tr class="separator:a86e1ccb5f36ec39d7fbe86044262673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82440c7b67016ce52194015a0ddb78e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a82440c7b67016ce52194015a0ddb78e5">dxle::GetGraphSize</a> (dxle_mutex, int GrHandle, int *SizeXBuf, int *SizeYBuf)</td></tr>
+<tr class="memdesc:a82440c7b67016ce52194015a0ddb78e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルが持つ画像のサイズを得る  <a href="a00019.html#a82440c7b67016ce52194015a0ddb78e5">[詳解]</a><br /></td></tr>
+<tr class="separator:a82440c7b67016ce52194015a0ddb78e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac127b37edf25fbf539e69748c165d09e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#ac127b37edf25fbf539e69748c165d09e">dxle::InitGraph</a> (dxle_mutex, int LogOutFlag=FALSE)</td></tr>
+<tr class="memdesc:ac127b37edf25fbf539e69748c165d09e"><td class="mdescLeft">&#160;</td><td class="mdescRight">すべてのグラフィックハンドルを削除する  <a href="a00019.html#ac127b37edf25fbf539e69748c165d09e">[詳解]</a><br /></td></tr>
+<tr class="separator:ac127b37edf25fbf539e69748c165d09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ffc009f0d581a6c76a89c66287be6fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a0ffc009f0d581a6c76a89c66287be6fd">dxle::DeleteGraph</a> (dxle_mutex, int GrHandle, int LogOutFlag=FALSE)</td></tr>
+<tr class="memdesc:a0ffc009f0d581a6c76a89c66287be6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフィックハンドルを削除する  <a href="a00019.html#a0ffc009f0d581a6c76a89c66287be6fd">[詳解]</a><br /></td></tr>
+<tr class="separator:a0ffc009f0d581a6c76a89c66287be6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29401e97f46f3978efb8dc14917f32e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a29401e97f46f3978efb8dc14917f32e2">dxle::SetDrawMode</a> (dxle_mutex, int DrawMode)</td></tr>
+<tr class="memdesc:a29401e97f46f3978efb8dc14917f32e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画モードを設定する  <a href="a00019.html#a29401e97f46f3978efb8dc14917f32e2">[詳解]</a><br /></td></tr>
+<tr class="separator:a29401e97f46f3978efb8dc14917f32e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ace1dc82e96fe3cf185c161f17249d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a2ace1dc82e96fe3cf185c161f17249d2">dxle::SetDrawBlendMode</a> (dxle_mutex, int BlendMode, int BlendParam)</td></tr>
+<tr class="memdesc:a2ace1dc82e96fe3cf185c161f17249d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画ブレンドモードを設定する  <a href="a00019.html#a2ace1dc82e96fe3cf185c161f17249d2">[詳解]</a><br /></td></tr>
+<tr class="separator:a2ace1dc82e96fe3cf185c161f17249d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc1cfc8b9e50d6b0ed01f3ee6bf0321"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#addc1cfc8b9e50d6b0ed01f3ee6bf0321">dxle::SetDrawBright</a> (dxle_mutex, int RedBright, int GreenBright, int BlueBright)</td></tr>
+<tr class="memdesc:addc1cfc8b9e50d6b0ed01f3ee6bf0321"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画輝度を設定する  <a href="a00019.html#addc1cfc8b9e50d6b0ed01f3ee6bf0321">[詳解]</a><br /></td></tr>
+<tr class="separator:addc1cfc8b9e50d6b0ed01f3ee6bf0321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44eb52720fcf39fa4fecd3b690e583bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a44eb52720fcf39fa4fecd3b690e583bf">dxle::SetTransColor</a> (dxle_mutex, int Red, int Green, int Blue)</td></tr>
+<tr class="memdesc:a44eb52720fcf39fa4fecd3b690e583bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">作成するグラフィックハンドルに適用する透過色を設定する( Red,Green,Blue:透過色を光の３原色で表したもの( 各色０～２５５ ) )  <a href="a00019.html#a44eb52720fcf39fa4fecd3b690e583bf">[詳解]</a><br /></td></tr>
+<tr class="separator:a44eb52720fcf39fa4fecd3b690e583bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135ef43e70868e4da410f1d962608f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00019.html#a135ef43e70868e4da410f1d962608f16">dxle::LoadBlendGraph</a> (dxle_mutex, const TCHAR *FileName)</td></tr>
+<tr class="memdesc:a135ef43e70868e4da410f1d962608f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからブレンド用グラフィックハンドルを作成する  <a href="a00019.html#a135ef43e70868e4da410f1d962608f16">[詳解]</a><br /></td></tr>
+<tr class="separator:a135ef43e70868e4da410f1d962608f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="aacdb3e3dd8b77e3668664ec699a5b7b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DX_THREAD_SAFE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p> <a class="el" href="a00026_source.html">Graph2D.h</a> の <a class="el" href="a00026_source.html#l00026">26</a> 行目に定義があります。</p>
-</div><hr/>このクラス詳解は次のファイルから抽出されました:<ul>
-<li>dxlibex/<a class="el" href="a00026_source.html">Graph2D.h</a></li>
-</ul>
+<p> <a class="el" href="a00013_source.html">DxLibWrap.h</a> の <a class="el" href="a00013_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00031.html">dxle</a></li><li class="navelem"><a class="el" href="a00042.html">Graph2D</a></li><li class="navelem"><a class="el" href="a00013.html">screen_mutex_c</a></li>
-    <li class="footer">2015年11月22日(日) 12時21分52秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="a00013.html">DxLibWrap.h</a></li>
+    <li class="footer">2016年01月07日(木) 15時02分55秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>
 </div>
 </body>
