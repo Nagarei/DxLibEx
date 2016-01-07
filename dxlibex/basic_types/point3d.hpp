@@ -268,8 +268,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	point3d_c<T>& operator +=(point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	point3d_c<T1>& operator +=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -288,8 +288,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	point3d_c<T>& operator -=(point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	point3d_c<T1>& operator -=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x -= r.x;
 	    l.y -= r.y;
@@ -308,8 +308,8 @@ namespace dxle {
 	\~japanese	@return	2つのpoint3d_cクラスオブジェクトの各メンバー同士の加算結果
 	\~english	@return	Memberwise addition of both point3d_c value
 	*/
-	template <typename T>
-	point3d_c<T> operator +(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x - r.x)>
 	{
 		return { l.x + r.x, l.y + r.y, l.z + r.z };
 	}
@@ -325,8 +325,8 @@ namespace dxle {
 	\~japanese	@return	2つのpoint3d_cクラスオブジェクトの各メンバー同士の減算結果
 	\~english	@return	Memberwise subtraction of both point3d_c value
 	*/
-	template <typename T>
-	point3d_c<T> operator -(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x - r.x)>
 	{
 		return { l.x - r.x, l.y - r.y, l.z - r.z };
 	}
@@ -342,7 +342,7 @@ namespace dxle {
 	\~japanese	@return	point3d_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x * r)>
 	{
 		return { l.x * r, l.y * r, l.z * r };
@@ -359,7 +359,7 @@ namespace dxle {
 	\~japanese	@return	point3d_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
 	auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l * r.x)>
 	{
 		return { l + r.x, l + r.y, l + r.z };
@@ -376,8 +376,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point3d_c<T>& operator *=(point3d_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	point3d_c<T1>& operator *=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x *= r;
 	    l.y *= r;
@@ -396,7 +396,7 @@ namespace dxle {
 	\~japanese	@return	point3d_cクラスオブジェクトの各メンバーを第一引数で割った結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x / r)>
 	{
 		return { l.x / r, l.y / r, l.z / r};
@@ -413,8 +413,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point3d_c<T>& operator /=(point3d_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW 
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	point3d_c<T1>& operator /=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW 
 	{
 	    l.x /= r;
 	    l.y /= r;

@@ -270,8 +270,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	size_c<T>& operator +=(size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	size_c<T1>& operator +=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width += r.width;
 	    l.height += r.height;
@@ -289,8 +289,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	size_c<T>& operator -=(size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	size_c<T1>& operator -=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width -= r.width;
 	    l.height -= r.height;
@@ -308,8 +308,8 @@ namespace dxle {
 	\~japanese	@return	2つのsize_cクラスオブジェクトの各メンバー同士の加算結果
 	\~english	@return	Memberwise addition of both size_c value
 	*/
-	template <typename T>
-	size_c<T> operator +(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator +(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width + r.width)>
 	{
 		return {l.width + r.width, l.height + r.height};
 	}
@@ -325,8 +325,8 @@ namespace dxle {
 	\~japanese	@return	2つのsize_cクラスオブジェクトの各メンバー同士の減算結果
 	\~english	@return	Memberwise subtraction of both size_c value
 	*/
-	template <typename T>
-	size_c<T> operator -(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	auto operator -(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width - r.width)>
 	{
 		return {l.width - r.width, l.height - r.height};
 	}
@@ -342,7 +342,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
 	auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width * r)>
 	{
 		return {l.width * r, l.height * r};
@@ -359,7 +359,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
 	auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l * r.width)>
 	{
 		return {l * r.width, l * r.height};
@@ -376,8 +376,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	size_c<T>& operator *=(size_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	size_c<T1>& operator *=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width *= r;
 	    l.height *= r;
@@ -395,7 +395,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーを第一引数で割った結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator /(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width / r)>
 	{
 		return {l.width / r, l.height / r};
@@ -412,8 +412,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	size_c<T>& operator /=(size_c<T>& l, T r) DXLE_NOEXCEPT_OR_NOTHROW 
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	size_c<T1>& operator /=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW 
 	{
 	    l.width /= r;
 	    l.height /= r;

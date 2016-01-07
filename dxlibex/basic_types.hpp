@@ -25,8 +25,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	point_c<T>& operator +=(point_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	point_c<T1>& operator +=(point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x += r.width;
 	    l.y += r.height;
@@ -44,8 +44,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	size_c<T>& operator +=(size_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	size_c<T1>& operator +=(size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width += r.x;
 	    l.height += r.y;
@@ -63,8 +63,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	point_c<T>& operator -=(point_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	point_c<T1>& operator -=(point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x -= r.width;
 	    l.y -= r.height;
@@ -82,8 +82,8 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T>
-	size_c<T>& operator -=(size_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	template <typename T1, typename T2>
+	size_c<T1>& operator -=(size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width -= r.x;
 	    l.height -= r.y;
