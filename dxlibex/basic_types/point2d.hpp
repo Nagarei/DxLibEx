@@ -46,8 +46,8 @@ namespace dxle {
 	\~
 	@code
 	typedef point_c<int> pointi;
-	typedef point_c<uint8_t> pointu8i;
-	typedef point_c<int8_t> point8i;
+	typedef point_c<std::uint8_t> pointu8i;
+	typedef point_c<std::int8_t> point8i;
 	typedef point_c<double> pointd;
 	typedef point_c<float> pointf;
 	@endcode
@@ -600,8 +600,8 @@ namespace dxle {
 		return std::hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));
 	}
 	typedef point_c<int> pointi;
-	typedef point_c<uint8_t> pointu8i;
-	typedef point_c<int8_t> point8i;
+	typedef point_c<std::uint8_t> pointu8i;
+	typedef point_c<std::int8_t> point8i;
 	typedef point_c<double> pointd;
 	typedef point_c<float> pointf;
 };

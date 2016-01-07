@@ -48,7 +48,7 @@ namespace dxle {
 	typedef size_c<unsigned int> sizeui;
 	typedef size_c<double> sized;
 	typedef size_c<float> sizef;
-	typedef size_c<size_t> size;
+	typedef size_c<std::size_t> size;
 	@endcode
 	\~ Example:
 	@code
@@ -554,6 +554,6 @@ namespace dxle {
 	typedef size_c<unsigned int> sizeui;
 	typedef size_c<double> sized;
 	typedef size_c<float> sizef;
-	typedef size_c<size_t> size;
+	typedef size_c<std::size_t> size;
 };
 #endif //DXLE_INC_BASIC_TYPES_SIZE_HPP_
