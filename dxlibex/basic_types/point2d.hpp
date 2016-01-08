@@ -537,10 +537,14 @@ namespace dxle {
 	}
 
 	namespace detail{
-		template<typename T, enable_if_t<std::is_signed<T>::value, std::nullptr_t> = nullptr>
-		point_c<T> abs_helper(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.x), std::abs(o.y) }; }
-		template<typename T, enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-		point_c<T> abs_helper(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+		namespace point2d_helper {
+			template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
+				point_c<T> operator() (const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.x), std::abs(o.y) }; }
+			};
+			template<typename T> struct abs_helper<T, false> {
+				point_c<T> operator() (const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+			};
+		}
 	}
 
 	/**
@@ -557,7 +561,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>(o); }
+	point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::point2d_helper::abs_helper<T>()(o); }
 
 	/**
 	@relates point_c

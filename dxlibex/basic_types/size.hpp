@@ -536,10 +536,14 @@ namespace dxle {
 	}
 
 	namespace detail{
-		template<typename T, enable_if_t<std::is_signed<T>::value, std::nullptr_t> = nullptr>
-		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.width), std::abs(o.height) }; }
-		template<typename T, enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-		size_c<T> abs_helper(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+		namespace size_helper {
+			template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
+				size_c<T> operator() (const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.width), std::abs(o.height) }; }
+			};
+			template<typename T> struct abs_helper<T, false> {
+				size_c<T> operator() (const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+			};
+		}
 	}
 
 	/**
@@ -556,7 +560,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>(o); }
+	size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::size_helper::abs_helper<T>()(o); }
 
 	typedef size_c<int> sizei;
 	typedef size_c<unsigned int> sizeui;

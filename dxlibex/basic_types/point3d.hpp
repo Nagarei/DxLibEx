@@ -538,10 +538,14 @@ namespace dxle {
 	}
 
 	namespace detail{
-		template<typename T, enable_if_t<std::is_signed<T>::value, std::nullptr_t> = nullptr>
-		point3d_c<T> abs_helper(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.x), std::abs(o.y), std::abs(o.z) }; }
-		template<typename T, enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-		point3d_c<T> abs_helper(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+		namespace point3d_helper {
+			template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
+				point3d_c<T> operator() (const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return{ std::abs(o.x), std::abs(o.y), std::abs(o.z) }; }
+			};
+			template<typename T> struct abs_helper<T, false> {
+				point3d_c<T> operator() (const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+			};
+		}
 	}
 
 	/**
@@ -558,7 +562,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::abs_helper<T>(o); }
+	point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::point3d_helper::abs_helper<T>()(o); }
 
 	/**
 	@relates point3d_c
