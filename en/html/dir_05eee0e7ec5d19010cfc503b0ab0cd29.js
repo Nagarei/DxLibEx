@@ -13,5 +13,6 @@ var dir_05eee0e7ec5d19010cfc503b0ab0cd29 =
     ] ],
     [ "impl.hpp", "a00016.html", null ],
     [ "structs.h", "a00017.html", null ],
-    [ "thread.h", "a00018.html", "a00018" ]
+    [ "thread.h", "a00018.html", "a00018" ],
+    [ "type_traits.hpp", "a00019.html", null ]
 ];

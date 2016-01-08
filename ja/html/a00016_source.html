@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('a00016_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;new&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//各関数の定義</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00019.html">dxle</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00020.html">dxle</a></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//----------DxLibSys----------//</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">namespace </span>nDxLibSys</div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('a00016_source.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> DxLibSys::End()DXLE_NOEXCEPT_OR_NOTHROW</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="a00019.html#a6d2a30df21add723c452037cc939c96e">DxLib::DxLib_End</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="a00020.html#a6d2a30df21add723c452037cc939c96e">DxLib::DxLib_End</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> DxLibSys::GlobalStructInitialize()DXLE_NOEXCEPT_OR_NOTHROW</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
@@ -149,12 +149,12 @@ $(document).ready(function(){initNavTree('a00016_source.html','');});
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span> DxLib::DxLib_IsInit() != FALSE;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00019.html#a8b453656fc5744ad0786541ef53b11c1">DxLibSys::ProcessMessage</a>()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00020.html#a8b453656fc5744ad0786541ef53b11c1">DxLibSys::ProcessMessage</a>()</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="a00019.html#a8b453656fc5744ad0786541ef53b11c1">DxLib::ProcessMessage</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="a00020.html#a8b453656fc5744ad0786541ef53b11c1">DxLib::ProcessMessage</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        DxLibSys::DxLibSys() {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="a00019.html#a24c8ee7763798be221c2ccaa76056e98">DxLib::DxLib_Init</a>() == -1) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="a00020.html#a24c8ee7763798be221c2ccaa76056e98">DxLib::DxLib_Init</a>() == -1) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">throw</span> - 1;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
@@ -386,18 +386,18 @@ $(document).ready(function(){initNavTree('a00016_source.html','');});
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">//インクルードガード</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00019_html_a24c8ee7763798be221c2ccaa76056e98"><div class="ttname"><a href="a00019.html#a24c8ee7763798be221c2ccaa76056e98">dxle::DxLib_Init</a></div><div class="ttdeci">int DxLib_Init(dxle_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="a00013_source.html#l00033">DxLibWrap.h:33</a></div></div>
-<div class="ttc" id="a00019_html_a6d2a30df21add723c452037cc939c96e"><div class="ttname"><a href="a00019.html#a6d2a30df21add723c452037cc939c96e">dxle::DxLib_End</a></div><div class="ttdeci">int DxLib_End(dxle_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="a00013_source.html#l00034">DxLibWrap.h:34</a></div></div>
+<div class="ttc" id="a00020_html_a24c8ee7763798be221c2ccaa76056e98"><div class="ttname"><a href="a00020.html#a24c8ee7763798be221c2ccaa76056e98">dxle::DxLib_Init</a></div><div class="ttdeci">int DxLib_Init(dxle_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="a00013_source.html#l00033">DxLibWrap.h:33</a></div></div>
+<div class="ttc" id="a00020_html_a6d2a30df21add723c452037cc939c96e"><div class="ttname"><a href="a00020.html#a6d2a30df21add723c452037cc939c96e">dxle::DxLib_End</a></div><div class="ttdeci">int DxLib_End(dxle_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="a00013_source.html#l00034">DxLibWrap.h:34</a></div></div>
 <div class="ttc" id="a00012_html"><div class="ttname"><a href="a00012.html">DxLibEx.h</a></div></div>
-<div class="ttc" id="a00019_html_a8b453656fc5744ad0786541ef53b11c1"><div class="ttname"><a href="a00019.html#a8b453656fc5744ad0786541ef53b11c1">dxle::ProcessMessage</a></div><div class="ttdeci">int ProcessMessage(dxle_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="a00013_source.html#l00035">DxLibWrap.h:35</a></div></div>
-<div class="ttc" id="a00019_html"><div class="ttname"><a href="a00019.html">dxle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00010_source.html#l00013">basic_types.hpp:13</a></div></div>
+<div class="ttc" id="a00020_html"><div class="ttname"><a href="a00020.html">dxle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00010_source.html#l00013">basic_types.hpp:13</a></div></div>
+<div class="ttc" id="a00020_html_a8b453656fc5744ad0786541ef53b11c1"><div class="ttname"><a href="a00020.html#a8b453656fc5744ad0786541ef53b11c1">dxle::ProcessMessage</a></div><div class="ttdeci">int ProcessMessage(dxle_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="a00013_source.html#l00035">DxLibWrap.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="a00016.html">impl.hpp</a></li>
-    <li class="footer">2016年01月07日(木) 15時02分55秒作成 - DxLibEx / 構成: 
+    <li class="footer">2016年01月08日(金) 14時54分58秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

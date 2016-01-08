@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>DxLibEx: dxle::color Namespace Reference</title>
+<title>DxLibEx: dxle::impl Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,142 +104,35 @@ $(document).ready(function(){initNavTree('a00025.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::color Namespace Reference</div>  </div>
+<div class="title">dxle::impl Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>実装用のものが集まる名前空間です。開発者以外がここの機能を使うのはお勧めできません。  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html">DxColor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html">Counter_template</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00006.html">dxleRGB</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html">Unique_Handle_Bace</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドル自動削除実装用  <a href="a00008.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a4e455c7989a99cdf1ef729b83b3be8c3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3">color_tag</a> { <br />
-&#160;&#160;<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3a1ffd9e753c8054cc61456ac7fac1ac89">color_tag::black</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3a48d6215903dff56238e52e8891380c8f">color_tag::blue</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3a6411532ba4971f378391776a9db629d3">color_tag::cyan</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3adf3d32740b6229c55f6498f07bffafa1">color_tag::darkgray</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3acda7a650c5856cf2f6738072447d7825">color_tag::gray</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3a9f27410725ab8cc8854a2769c7a516b8">color_tag::green</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3aa33ab79f7fc578194d82415ddfee833a">color_tag::lightgray</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3a4c2a4a7078da0ac6733464eacfd00f86">color_tag::magenta</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3afe01d67a002dfa0f3ac084298142eccd">color_tag::orange</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3a4a0b0dcedd48f780778d1cd1bb8f9877">color_tag::pink</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3abda9643ac6601722a28f238714274da4">color_tag::red</a>, 
-<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3ad508fe45cecaf653904a0e774084bb5c">color_tag::white</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3ad487dd0b55dfcacdd920ccbdaeafa351">color_tag::yellow</a>
-<br />
- }<tr class="separator:a4e455c7989a99cdf1ef729b83b3be8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ad6d585a051c4c12b37c58892c7149638"><td class="memTemplParams" colspan="2">template&lt;typename to , typename from &gt; </td></tr>
-<tr class="memitem:ad6d585a051c4c12b37c58892c7149638"><td class="memTemplItemLeft" align="right" valign="top">to&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00025.html#ad6d585a051c4c12b37c58892c7149638">color_cast</a> (from &amp;&amp;bace)</td></tr>
-<tr class="separator:ad6d585a051c4c12b37c58892c7149638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html">Unique_HandledObject_Bace</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドルの指すオブジェクト実装用  <a href="a00009.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00025.html#a4e455c7989a99cdf1ef729b83b3be8c3">dxle::color::color_tag</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3a1ffd9e753c8054cc61456ac7fac1ac89"></a>black&#160;</td><td class="fielddoc">
-<p>黒 </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3a48d6215903dff56238e52e8891380c8f"></a>blue&#160;</td><td class="fielddoc">
-<p>青 </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3a6411532ba4971f378391776a9db629d3"></a>cyan&#160;</td><td class="fielddoc">
-<p>シアン </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3adf3d32740b6229c55f6498f07bffafa1"></a>darkgray&#160;</td><td class="fielddoc">
-<p>ダークグレー(X11) </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3acda7a650c5856cf2f6738072447d7825"></a>gray&#160;</td><td class="fielddoc">
-<p>グレー </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3a9f27410725ab8cc8854a2769c7a516b8"></a>green&#160;</td><td class="fielddoc">
-<p>緑(X11) </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3aa33ab79f7fc578194d82415ddfee833a"></a>lightgray&#160;</td><td class="fielddoc">
-<p>ライトグレー </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3a4c2a4a7078da0ac6733464eacfd00f86"></a>magenta&#160;</td><td class="fielddoc">
-<p>マゼンタ </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3afe01d67a002dfa0f3ac084298142eccd"></a>orange&#160;</td><td class="fielddoc">
-<p>オレンジ </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3a4a0b0dcedd48f780778d1cd1bb8f9877"></a>pink&#160;</td><td class="fielddoc">
-<p>ピンク </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3abda9643ac6601722a28f238714274da4"></a>red&#160;</td><td class="fielddoc">
-<p>赤 </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3ad508fe45cecaf653904a0e774084bb5c"></a>white&#160;</td><td class="fielddoc">
-<p>白 </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a4e455c7989a99cdf1ef729b83b3be8c3ad487dd0b55dfcacdd920ccbdaeafa351"></a>yellow&#160;</td><td class="fielddoc">
-<p>黄色 </p>
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00016_source.html#l00020">20</a> of file <a class="el" href="a00016_source.html">Color.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ad6d585a051c4c12b37c58892c7149638"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename to , typename from &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">to dxle::color::color_cast </td>
-          <td>(</td>
-          <td class="paramtype">from &amp;&amp;&#160;</td>
-          <td class="paramname"><em>bace</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00016_source.html#l00117">117</a> of file <a class="el" href="a00016_source.html">Color.hpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>実装用のものが集まる名前空間です。開発者以外がここの機能を使うのはお勧めできません。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00024.html">dxle</a></li><li class="navelem"><a class="el" href="a00025.html">color</a></li>
-    <li class="footer">Generated on Sun Jan 3 2016 14:18:09 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00020.html">dxle</a></li><li class="navelem"><a class="el" href="a00025.html">impl</a></li>
+    <li class="footer">Generated on Fri Jan 8 2016 14:54:59 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

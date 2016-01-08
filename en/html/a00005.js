@@ -6,6 +6,7 @@ var a00005 =
     [ "~screen", "a00005.html#a5dfe1131b3fcff3edfdf503772bf8d03", null ],
     [ "screen", "a00005.html#a19d160a02547c1007127fb8276755e64", null ],
     [ "BltDrawValidGraph", "a00005.html#afcdb244c79c210b5482563eace79e340", null ],
+    [ "BltDrawValidGraph", "a00005.html#afdca0b9e7e659a6ab1e5c1297594116c", null ],
     [ "clone", "a00005.html#a38eb43db68a6ae08c5d44f4ca0846006", null ],
     [ "cloneGr", "a00005.html#ac7e0be8a0cae424ddf301b87c9a3f021", null ],
     [ "CopyGraphZBufferImage", "a00005.html#a5a7fe76dc3df4560ea72c33f9a5e484e", null ],

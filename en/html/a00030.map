@@ -1,6 +1,7 @@
-<map id="dxlibex/DxLibWrap.h" name="dxlibex/DxLibWrap.h">
-<area shape="rect" id="node3" href="$a00014.html" title="Graph2D.h" alt="" coords="2214,80,2298,107"/>
-<area shape="rect" id="node29" href="$a00018.html" title="dxlibex/thread.h" alt="" coords="2533,155,2648,181"/>
-<area shape="rect" id="node10" href="$a00015.html" title="dxlibex/Helper.h" alt="" coords="2344,155,2459,181"/>
-<area shape="rect" id="node13" href="$a00010.html" title="dxlibex/basic_types.hpp" alt="" coords="1055,155,1217,181"/>
+<map id="dxlibex/DxLibEx.h" name="dxlibex/DxLibEx.h">
+<area shape="rect" id="node3" href="$a00010.html" title="dxlibex/basic_types.hpp" alt="" coords="1412,155,1575,181"/>
+<area shape="rect" id="node24" href="$a00011.html" title="dxlibex/Color.hpp" alt="" coords="115,155,237,181"/>
+<area shape="rect" id="node28" href="$a00014.html" title="dxlibex/Graph2D.h" alt="" coords="601,80,730,107"/>
+<area shape="rect" id="node32" href="$a00015.html" title="dxlibex/Helper.h" alt="" coords="656,155,771,181"/>
+<area shape="rect" id="node33" href="$a00018.html" title="dxlibex/thread.h" alt="" coords="312,155,427,181"/>
 </map>

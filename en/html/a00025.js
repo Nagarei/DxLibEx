@@ -1,5 +1,6 @@
 var a00025 =
 [
-    [ "DxColor", "a00005.html", "a00005" ],
-    [ "dxleRGB", "a00006.html", "a00006" ]
+    [ "Counter_template", "a00002.html", "a00002" ],
+    [ "Unique_Handle_Bace", "a00008.html", "a00008" ],
+    [ "Unique_HandledObject_Bace", "a00009.html", "a00009" ]
 ];

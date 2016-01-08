@@ -1,4 +1,4 @@
-<map id="dxle::Graph2D::texture_2d" name="dxle::Graph2D::texture_2d">
-<area shape="rect" id="node3" href="$a00005.html" title="描画可能画像クラス " alt="" coords="17,184,169,211"/>
-<area shape="rect" id="node2" href="$a00009.html" title="dxle::impl::Unique\l_HandledObject_Bace\l\&lt; texture_2d \&gt;" alt="" coords="17,5,168,61"/>
+<map id="dxle::Graph2D::screen" name="dxle::Graph2D::screen">
+<area shape="rect" id="node2" href="$a00007.html" title="dxle::Graph2D::texture_2d" alt="" coords="5,109,180,136"/>
+<area shape="rect" id="node3" href="$a00009.html" title="dxle::impl::Unique\l_HandledObject_Bace\l\&lt; texture_2d \&gt;" alt="" coords="17,5,168,61"/>
 </map>

@@ -11,5 +11,5 @@ var searchData=
   ['operator_3d',['operator=',['../a00007.html#a5ec7ca33a203134edc14f836527b2c97',1,'dxle::Graph2D::texture_2d::operator=(const texture_2d &amp;other)=delete'],['../a00007.html#a424a780512330a9f0434f1a5e51752c5',1,'dxle::Graph2D::texture_2d::operator=(texture_2d &amp;&amp;other)'],['../a00005.html#abeef6863052eb4f3e9b43711185f8a78',1,'dxle::Graph2D::screen::operator=(const screen &amp;other)=delete'],['../a00005.html#aa9bf6b8e07364faa92dcb1bbfb19730d',1,'dxle::Graph2D::screen::operator=(screen &amp;&amp;other)'],['../a00008.html#a8b9fe3765b99c1d8f58087a8adc7a966',1,'dxle::impl::Unique_Handle_Bace::operator=()'],['../a00009.html#a4628490ebce51819fc8ab569f2afa240',1,'dxle::impl::Unique_HandledObject_Bace::operator=()']]],
   ['operator_3e',['operator&gt;',['../a00002.html#a4f5c4dad5e7d603d41a5b4bf2d6fb4f7',1,'dxle::impl::Counter_template']]],
   ['operator_3e_3d',['operator&gt;=',['../a00002.html#a39377393d3343f6a881a2cbcd55553b1',1,'dxle::impl::Counter_template']]],
-  ['orange',['orange',['../a00020.html#a4e455c7989a99cdf1ef729b83b3be8c3afe01d67a002dfa0f3ac084298142eccd',1,'dxle::color']]]
+  ['orange',['orange',['../a00021.html#a4e455c7989a99cdf1ef729b83b3be8c3afe01d67a002dfa0f3ac084298142eccd',1,'dxle::color']]]
 ];
