@@ -128,6 +128,11 @@ int main() {
 	const auto p15 = static_cast<dxle::pointi>(in_s);
 	cout << "p15:" << p15 << endl;
 
+	//add
+	dxle::sizei s16 = { 3, 4 };
+	dxle::size_c<uint64_t> s17 = { 15645, 2254613 };
+	//s16 += s17;//error
+	s17 += s16
 
 	/************************************************
 	**************  point_c & size_c   **************
