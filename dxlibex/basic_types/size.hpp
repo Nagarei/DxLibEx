@@ -350,7 +350,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
 	auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width * r)>
 	{
 		return {l.width * r, l.height * r};
