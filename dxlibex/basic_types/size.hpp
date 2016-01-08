@@ -297,7 +297,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	size_c<T1>& operator -=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width -= r.width;
@@ -384,7 +384,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	size_c<T1>& operator *=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width *= r;
@@ -420,7 +420,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	size_c<T1>& operator /=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW 
 	{
 	    l.width /= r;
