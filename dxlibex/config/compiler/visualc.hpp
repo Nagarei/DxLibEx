@@ -15,7 +15,7 @@
 #	define DXLE_NO_CXX11_USER_DEFINED_LITERALS
 #	define DXLE_NO_CXX11_UNICODE_LITERALS
 #endif
-#if _MSC_FULL_VER < 180031101
+#if (_MSC_VER < 1900) || (_MSC_FULL_VER == 180021114)//Visual Studio 2013 Nobemver CTP or Visual Studio2015 or later
 #	define DXLE_NO_CXX11_NOEXCEPT
 #endif
 #define DXLE_NO_CXX11_ATTRIBUTES
