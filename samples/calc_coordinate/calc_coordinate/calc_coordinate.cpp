@@ -6,13 +6,11 @@
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
 #include <dxlibex/basic_types.hpp>
-int main() {
+std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
+{
 	using std::cout;
 	using std::endl;
 
-	/************************************************
-	**************       point_c       **************
-	*************************************************/
 	dxle::point_c<int> p1(3, 2);
 	dxle::pointi p2{ 3, 5 };
 	cout << "p1:" << p1 << " p2:" << p2 << endl;
@@ -29,7 +27,7 @@ int main() {
 	cout << "p3:" << p3 << " p4:" << p4 << " p5:" << p5 << " p6:" << p6 << " p7:" << p7 << endl;
 
 	bool is_zero = (0 == static_cast<bool>(p6)) ? true : false;//explicit operator bool call
-	if(0 == p7) is_zero = false;
+	if (0 == p7) is_zero = false;
 
 	//contextually converted to bool
 	if (p7) is_zero = false;//explicit operator bool call
@@ -74,9 +72,13 @@ int main() {
 	const auto s15 = static_cast<dxle::sizei>(in_p);
 	cout << "s15:" << s15 << endl;
 
-	/************************************************
-	**************       size_c        **************
-	*************************************************/
+	return { p13, p14 };
+}
+std::pair<dxle::sizeui, dxle::sizeui> size_c_sample()
+{
+	using std::cout;
+	using std::endl;
+
 	dxle::size_c<int> s1(3, 2);
 	dxle::sizei s2{ 3, 5 };
 	cout << "s1:" << s1 << " s2:" << s2 << endl;
@@ -134,18 +136,12 @@ int main() {
 	//s16 += s17;//error
 	s17 += s16;
 
-	/************************************************
-	**************  point_c & size_c   **************
-	*************************************************/
-	const auto c1 = p14 + s14;
-	const auto c2 = p14 - s13;
-	const auto c3 = s14 + p14;
-	const auto c4 = s14 - p13;
-	cout << "c1:" << c1 << " c2:" << c2 << " c3:" << c3 << " c4:" << c4 << endl;
-
-	/************************************************
-	**************     point3d_c       **************
-	*************************************************/
+	return { s13, s14 };
+}
+void point3d_c_sample()
+{
+	using std::cout;
+	using std::endl;
 
 	dxle::point3d_c<int> p3_1(3, 2, 4);
 	dxle::point3di p3_2{ 3, 5, 6 };
@@ -186,8 +182,8 @@ int main() {
 	//dot(3D-vector), cross(3D-vector)
 	const dxle::point3di p3_a1 = { 1, 2, 0 };
 	const dxle::point3di p3_b1 = { 0, 1, -1 };
-	cout << "3D-vcror dot   : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::dot(p_a1, p_b1) << endl;
-	cout << "3D-vcror cross : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::cross(p_a1, p_b1) << endl;
+	cout << "3D-vcror dot   : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::dot(p3_a1, p3_b1) << endl;
+	cout << "3D-vcror cross : a(" << p3_a1 << ") b(" << p3_b1 << ") result=" << dxle::cross(p3_a1, p3_b1) << endl;
 
 	//cast
 	const dxle::point3df p3_12 = { 3.2f, 2.4f, 1.4f };
@@ -203,6 +199,36 @@ int main() {
 	//multiplication
 	const auto p3_14 = p3_13 * 2;
 	cout << "multiplication: p3_13:(" << p3_13 << ") * 2 = (" << p3_14 << ")" << endl;
+}
+int main() 
+{
+	using std::cout;
+	using std::endl;
+
+	/************************************************
+	**************       point_c       **************
+	*************************************************/
+	dxle::pointu8i p13;
+	dxle::pointi p14;
+	std::tie(p13, p14) = point_c_sample();
+	/************************************************
+	**************       size_c        **************
+	*************************************************/
+	dxle::sizeui s13, s14;
+	std::tie(s13, s14) = size_c_sample();
+	/************************************************
+	**************  point_c & size_c   **************
+	*************************************************/
+	const auto c1 = p14 + s14;
+	const auto c2 = p14 - s13;
+	const auto c3 = s14 + p14;
+	const auto c4 = s14 - p13;
+	cout << "c1:" << c1 << " c2:" << c2 << " c3:" << c3 << " c4:" << c4 << endl;
+
+	/************************************************
+	**************     point3d_c       **************
+	*************************************************/
+	point3d_c_sample();
 
 
 	return 0;
