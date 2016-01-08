@@ -1,9 +1,9 @@
 ﻿/*=============================================================================
-Copyright (C) 2015-2016 DxLibEx project
-https://github.com/Nagarei/DxLibEx/
+  Copyright (C) 2015-2016 DxLibEx project
+  https://github.com/Nagarei/DxLibEx/
 
-Distributed under the Boost Software License, Version 1.0.
-(See http://www.boost.org/LICENSE_1_0.txt)
+  Distributed under the Boost Software License, Version 1.0.
+  (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
 #include <dxlibex/basic_types.hpp>
 std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
@@ -72,7 +72,7 @@ std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
 	const auto s15 = static_cast<dxle::sizei>(in_p);
 	cout << "s15:" << s15 << endl;
 
-	return{ p13, p14 };
+	return { p13, p14 };
 }
 std::pair<dxle::sizeui, dxle::sizeui> size_c_sample()
 {
@@ -133,10 +133,10 @@ std::pair<dxle::sizeui, dxle::sizeui> size_c_sample()
 	//add
 	dxle::sizei s16 = { 3, 4 };
 	dxle::size_c<std::uint64_t> s17 = { 15645, 2254613 };
-	//s16 += s17;
+	//s16 += s17;//error
 	s17 += s16;
 
-	return{ s13, s14 };
+	return { s13, s14 };
 }
 void point3d_c_sample()
 {
@@ -200,7 +200,7 @@ void point3d_c_sample()
 	const auto p3_14 = p3_13 * 2;
 	cout << "multiplication: p3_13:(" << p3_13 << ") * 2 = (" << p3_14 << ")" << endl;
 }
-int main()
+int main() 
 {
 	using std::cout;
 	using std::endl;

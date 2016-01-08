@@ -10,6 +10,7 @@
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
+#include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/algorithm/safe_dist.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
@@ -275,7 +276,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	point3d_c<T1>& operator +=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x += r.x;
@@ -295,7 +296,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	point3d_c<T1>& operator -=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x -= r.x;
@@ -383,7 +384,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	point3d_c<T1>& operator *=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x *= r;
@@ -420,7 +421,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
 	point3d_c<T1>& operator /=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW 
 	{
 	    l.x /= r;
