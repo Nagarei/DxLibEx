@@ -99,21 +99,21 @@ namespace dxle {
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるsize_cクラス同士の変換
-		template<typename _Tp2> explicit operator size_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> explicit operator size_c<Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return{ static_cast<_Tp2>(this->width), static_cast<_Tp2>(this->height) };
+			return{ static_cast<Tp2_>(this->width), static_cast<Tp2_>(this->height) };
 		}
 		//!\~english conversion to point_c
 		//!\~japanese point_cクラスへの変換
-		template<typename _Tp2> explicit operator point_c<_Tp2, nullptr>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> explicit operator point_c<Tp2_, nullptr>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return{ static_cast<_Tp2>(this->width), static_cast<_Tp2>(this->height) };
+			return{ static_cast<Tp2_>(this->width), static_cast<Tp2_>(this->height) };
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename _Tp2> explicit operator std::pair<_Tp2, _Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> explicit operator std::pair<Tp2_, Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return std::pair<_Tp2, _Tp2>(static_cast<_Tp2>(this->width), static_cast<_Tp2>(this->height));
+			return std::pair<Tp2_, Tp2_>(static_cast<Tp2_>(this->width), static_cast<Tp2_>(this->height));
 		}
 	};
 	//convert from std::pair

@@ -101,15 +101,15 @@ namespace dxle {
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint3d_cクラス同士の変換
-		template<typename _Tp2> explicit operator point3d_c<_Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> explicit operator point3d_c<Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return{ static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y), static_cast<_Tp2>(this->z) };
+			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z) };
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename _Tp2> explicit operator std::tuple<_Tp2, _Tp2, _Tp2>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			return std::forward_as_tuple(static_cast<_Tp2>(this->x), static_cast<_Tp2>(this->y), static_cast<_Tp2>(this->z));
+			return std::forward_as_tuple(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z));
 		}
 	};
 	//convert from std::pair
