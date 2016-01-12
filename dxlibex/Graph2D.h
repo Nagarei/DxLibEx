@@ -240,11 +240,11 @@ namespace dxle
 			//! コピー禁止
 			texture_2d(const texture_2d& other) = delete;
 			//!所有権の譲渡
-			texture_2d(texture_2d&& other) : Unique_HandledObject_Bace(std::move(other)), NotUse3DFlag(std::move(other.NotUse3DFlag)) {}
+			texture_2d(texture_2d&& other) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)), NotUse3DFlag(std::move(other.NotUse3DFlag)) {}
 			//! コピー禁止
 			texture_2d& operator=(const texture_2d& other) = delete;
 			//! 所有権の譲渡
-			texture_2d& operator=(texture_2d&& other) { Parent_T::operator=(std::move(other)); NotUse3DFlag = (std::move(other.NotUse3DFlag)); return *this; }
+			texture_2d& operator=(texture_2d&& other) DXLE_NOEXCEPT_OR_NOTHROW { Parent_T::operator=(std::move(other)); NotUse3DFlag = (std::move(other.NotUse3DFlag)); return *this; }
 
 			virtual ~texture_2d()DXLE_NOEXCEPT_OR_NOTHROW {}
 		protected:
@@ -323,11 +323,11 @@ namespace dxle
 			//! コピー禁止
 			screen(const screen& other) = delete;
 			//!所有権の譲渡
-			screen(screen&& other) : texture_2d(std::move(other)), UseAlphaChannel(std::move(other.UseAlphaChannel)) {}
+			screen(screen&& other) DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(std::move(other)), UseAlphaChannel(std::move(other.UseAlphaChannel)) {}
 			//! コピー禁止
 			screen& operator=(const screen& other) = delete;
 			//! 所有権の譲渡
-			screen& operator=(screen&& other) { texture_2d::operator=(std::move(other)); UseAlphaChannel = (std::move(other.UseAlphaChannel)); return *this; }
+			screen& operator=(screen&& other) DXLE_NOEXCEPT_OR_NOTHROW { texture_2d::operator=(std::move(other)); UseAlphaChannel = (std::move(other.UseAlphaChannel)); return *this; }
 
 			virtual ~screen()DXLE_NOEXCEPT_OR_NOTHROW {}
 		protected:
