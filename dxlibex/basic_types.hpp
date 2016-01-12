@@ -102,7 +102,8 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator +(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x + r.height)>
+	auto operator +(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		-> point_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x + r.width, l.y + r.height};
 	}
@@ -119,7 +120,8 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both size_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator +(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width + r.x)>
+	auto operator +(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		-> size_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width + r.x, l.height + r.y};
 	}
@@ -136,7 +138,8 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator -(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point_c<decltype(l.x - r.height)>
+	auto operator -(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		-> point_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x - r.width, l.y - r.height};
 	}
@@ -153,7 +156,8 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both size_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator -(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width + r.x)>
+	auto operator -(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		-> size_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width - r.x, l.height - r.y};
 	}
