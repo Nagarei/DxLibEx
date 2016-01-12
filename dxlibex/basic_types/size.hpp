@@ -317,7 +317,8 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both size_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator +(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width + r.width)>
+	auto operator +(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width + r.width, l.height + r.height};
 	}
@@ -334,7 +335,8 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both size_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator -(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width - r.width)>
+	auto operator -(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width - r.width, l.height - r.height};
 	}
@@ -351,7 +353,8 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width * r)>
+	auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
+		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width * r, l.height * r};
 	}
@@ -368,7 +371,8 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
-	auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l * r.width)>
+	auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l * r.width, l * r.height};
 	}
@@ -404,7 +408,8 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator /(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> size_c<decltype(l.width / r)>
+	auto operator /(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
+		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width / r, l.height / r};
 	}

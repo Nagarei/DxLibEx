@@ -12,6 +12,7 @@
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
+#include "DxLibEx/basic_types/distance_result_type_t.hpp"
 #include "dxlibex/algorithm/safe_dist.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
@@ -317,7 +318,8 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x - r.x)>
+	auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x + r.x, l.y + r.y, l.z + r.z };
 	}
@@ -334,7 +336,8 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x - r.x)>
+	auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x - r.x, l.y - r.y, l.z - r.z };
 	}
@@ -351,7 +354,8 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x * r)>
+	auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
+		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x * r, l.y * r, l.z * r };
 	}
@@ -368,7 +372,8 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
-	auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l * r.x)>
+	auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l + r.x, l + r.y, l + r.z };
 	}
@@ -405,7 +410,8 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(l.x / r)>
+	auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
+		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x / r, l.y / r, l.z / r};
 	}
@@ -576,7 +582,8 @@ namespace dxle {
 	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x * p2.x)
+	auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
+		-> decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 	{
 		return p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;
 	}
@@ -593,7 +600,8 @@ namespace dxle {
 	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto cross(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> point3d_c<decltype(p1.x * p2.x)>
+	auto cross(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
+		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		//a＝（a1,a2,a3）、 b＝（b1,b2,b3）としたとき、（a2b3-a3b2, a3b1-a1b3, a1b2-a2b1）
 		return { p1.y * p2.z - p1.z * p2.y, p1.z * p2.x - p1.x * p2.z, p1.x * p2.y - p1.y * p2.x };
@@ -610,7 +618,8 @@ namespace dxle {
 	\~japanese	@return	計算結果。
 	\~english	@return	Computed result.
 	*/
-	template<typename T1, typename T2> auto distance(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW -> decltype(p1.x + p2.x)
+	template<typename T1, typename T2> 
+	distance_result_type_t<T1, T2> distance(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return std::hypot(safe_dist(p1.x, p2.x), std::hypot(safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
 	}
