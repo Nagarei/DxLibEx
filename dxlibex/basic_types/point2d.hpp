@@ -107,7 +107,7 @@ namespace dxle {
 		}
 		//!\~english conversion to size_c
 		//!\~japanese size_cクラスへの変換
-		template<typename Tp2_> explicit operator size_c<Tp2_, nullptr>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator size_c<Tp2_, nullptr>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y) };
 		}
