@@ -72,13 +72,13 @@ namespace dxle {
 	public:
 		typedef T value_type;
 		value_type x, y, z;
-		point3d_c() DXLE_NOEXCEPT_OR_NOTHROW : x(), y(), z() {}
-		point3d_c(value_type x_, value_type y_, value_type z_) DXLE_NOEXCEPT_OR_NOTHROW : x(x_), y(y_), z(z_) {}
+		DXLE_CONSTEXPR_CLASS point3d_c() DXLE_NOEXCEPT_OR_NOTHROW : x(), y(), z() {}
+		DXLE_CONSTEXPR_CLASS point3d_c(value_type x_, value_type y_, value_type z_) DXLE_NOEXCEPT_OR_NOTHROW : x(x_), y(y_), z(z_) {}
 
 		//copy constructor
-		point3d_c(const point3d_c<value_type>& o) DXLE_NOEXCEPT_OR_NOTHROW : x(o.x), y(o.y), z(o.z) {}
+		DXLE_CONSTEXPR_CLASS point3d_c(const point3d_c<value_type>& o) DXLE_NOEXCEPT_OR_NOTHROW : x(o.x), y(o.y), z(o.z) {}
 		//move constructor
-		point3d_c(point3d_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(o.x)), y(std::move(o.y)), z(std::move(o.z)) {}
+		DXLE_CONSTEXPR_CLASS point3d_c(point3d_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(o.x)), y(std::move(o.y)), z(std::move(o.z)) {}
 		//copy assignment operator
 		point3d_c& operator=(const point3d_c<value_type>& r) DXLE_NOEXCEPT_OR_NOTHROW
 		{
@@ -97,12 +97,12 @@ namespace dxle {
 		}
 
 
-		explicit operator bool() const DXLE_NOEXCEPT_OR_NOTHROW {
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_OR_NOTHROW {
 			return (0 != this->x) || (0 != this->y) || (0 != this->z);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint3d_cクラス同士の変換
-		template<typename Tp2_> explicit operator point3d_c<Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator point3d_c<Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z) };
 		}
@@ -237,7 +237,7 @@ namespace dxle {
 	\~english	@return	Memberwise opposite of the point3d_c value
 	*/
 	template <typename T>
-	point3d_c<T> operator -(const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS point3d_c<T> operator -(const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return { -r.x, -r.y, -r.z };
 	}
@@ -252,7 +252,7 @@ namespace dxle {
 	\~english	@return	const-lvalue reference to first argument
 	*/
 	template <typename T>
-	inline const point3d_c<T>& operator +(const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
+	DXLE_CONSTEXPR_CLASS inline const point3d_c<T>& operator +(const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
 
 	/**
 	@relates point3d_c
@@ -264,7 +264,7 @@ namespace dxle {
 	\~english	@return	rvalue reference to first argument
 	*/
 	template <typename T>
-	inline point3d_c<T>&& operator +(point3d_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
+	DXLE_CONSTEXPR_CLASS inline point3d_c<T>&& operator +(point3d_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
 
 	/**
 	@relates point3d_c
@@ -318,7 +318,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x + r.x, l.y + r.y, l.z + r.z };
@@ -336,7 +336,7 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x - r.x, l.y - r.y, l.z - r.z };
@@ -354,7 +354,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x * r, l.y * r, l.z * r };
@@ -372,7 +372,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, std::nullptr_t> = nullptr>
-	auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l + r.x, l + r.y, l + r.z };
@@ -410,7 +410,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x / r, l.y / r, l.z / r};
@@ -448,7 +448,7 @@ namespace dxle {
 	\~english	@return	true if left operand is not equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator !=(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return (l.x != r.x) || (l.y != r.y) || (l.z != r.z);
 	}
@@ -467,7 +467,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator !=(const point3d_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return !static_cast<bool>(p);
 	}
@@ -486,7 +486,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator !=(std::nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator !=(std::nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return !static_cast<bool>(p);
 	}
@@ -503,7 +503,7 @@ namespace dxle {
 	\~english	@return	true if left operand is equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator ==(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return !(l != r);	}
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return !(l != r);	}
 
 	/**
 	@relates point3d_c
@@ -519,7 +519,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator ==(const point3d_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return static_cast<bool>(p);
 	}
@@ -538,7 +538,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	bool operator ==(std::nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return static_cast<bool>(p);
 	}
@@ -546,10 +546,10 @@ namespace dxle {
 	namespace detail{
 		namespace point3d_helper {
 			template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
-				point3d_c<T> operator() (const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return{ std::abs(o.x), std::abs(o.y), std::abs(o.z) }; }
+				DXLE_CONSTEXPR_CLASS point3d_c<T> operator() (const point3d_c<T>& o) const DXLE_NOEXCEPT_OR_NOTHROW { return{ std::abs(o.x), std::abs(o.y), std::abs(o.z) }; }
 			};
 			template<typename T> struct abs_helper<T, false> {
-				point3d_c<T> operator() (const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return o; }
+				DXLE_CONSTEXPR_CLASS point3d_c<T> operator() (const point3d_c<T>& o) const DXLE_NOEXCEPT_OR_NOTHROW { return o; }
 			};
 		}
 	}
@@ -568,7 +568,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::point3d_helper::abs_helper<T>()(o); }
+	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::point3d_helper::abs_helper<T>()(o); }
 
 	/**
 	@relates point3d_c
@@ -582,7 +582,7 @@ namespace dxle {
 	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
 		-> decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 	{
 		return p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;
@@ -600,7 +600,7 @@ namespace dxle {
 	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
-	auto cross(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS auto cross(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_OR_NOTHROW
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		//a＝（a1,a2,a3）、 b＝（b1,b2,b3）としたとき、（a2b3-a3b2, a3b1-a1b3, a1b2-a2b1）
