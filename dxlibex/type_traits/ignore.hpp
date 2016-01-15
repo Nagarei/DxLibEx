@@ -39,7 +39,7 @@ namespace dxle {
 		typedef T type;
 	};
 	template<typename T, typename... args>
-	using first_type_t = first_type<T, args>;
+	using first_type_t = first_type<T, args...>;
 
 }
 #endif //DXLE_INC_TYPE_TRAITS_IGNORE_HPP_

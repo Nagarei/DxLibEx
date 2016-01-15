@@ -5,13 +5,11 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#ifndef DXLE_INC_TYPE_TRAITS_HPP_
-#define DXLE_INC_TYPE_TRAITS_HPP_
+#ifndef DXLE_INC_MATH_HPP_
+#define DXLE_INC_MATH_HPP_
+#include "dxlibex/math/copysign.hpp"
+#include "dxlibex/math/fabs.hpp"
+#include "dxlibex/math/abs.hpp"
+#include "dxlibex/math/hypot.hpp"
 
-#include "dxlibex/type_traits/enable_if.hpp"
-#include "dxlibex/type_traits/first_enabled.hpp"
-#include "dxlibex/type_traits/ignore.hpp"
-#include "dxlibex/type_traits/is_representable.hpp"
-#include "dxlibex/type_traits/float_promote.hpp"
-
-#endif//#ifndef DXLE_INC_TYPE_TRAITS_HPP_
+#endif //DXLE_INC_MATH_HPP_
