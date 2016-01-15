@@ -176,7 +176,7 @@ namespace dxle {
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const size_c<T>& s)
 	{
-		detail::ostream_operator_helper<char, T>(os, ", ", s);
+		dxle::detail::ostream_operator_helper<char, T>(os, ", ", s);
 		return os;
 	}
 	/**
@@ -192,7 +192,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const size_c<T>& s)
 	{
-		detail::ostream_operator_helper<wchar_t, T>(os, L", ", s);
+		dxle::detail::ostream_operator_helper<wchar_t, T>(os, L", ", s);
 		return os;
 	}
 	/**
@@ -208,7 +208,7 @@ namespace dxle {
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, size_c<T>& s)
 	{
-		detail::istream_operator_helper<char, T>(is, s);
+		dxle::detail::istream_operator_helper<char, T>(is, s);
 		return is;
 	}
 	/**
@@ -224,7 +224,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, size_c<T>& s)
 	{
-		detail::istream_operator_helper<wchar_t, T>(is, s);
+		dxle::detail::istream_operator_helper<wchar_t, T>(is, s);
 		return is;
 	}
 
@@ -565,7 +565,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::size_helper::abs_helper<T>()(o); }
+	DXLE_CONSTEXPR_CLASS size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return dxle::detail::size_helper::abs_helper<T>()(o); }
 
 	typedef size_c<int> sizei;
 	typedef size_c<unsigned int> sizeui;

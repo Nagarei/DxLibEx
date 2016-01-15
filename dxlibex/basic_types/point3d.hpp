@@ -175,7 +175,7 @@ namespace dxle {
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point3d_c<T>& p)
 	{
-		detail::ostream_operator_helper<char, T>(os, ", ", p);
+		dxle::detail::ostream_operator_helper<char, T>(os, ", ", p);
 		return os;
 	}
 	/**
@@ -191,7 +191,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point3d_c<T>& p)
 	{
-		detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
+		dxle::detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
 		return os;
 	}
 	/**
@@ -207,7 +207,7 @@ namespace dxle {
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, point3d_c<T>& p)
 	{
-		detail::istream_operator_helper<char, T>(is, p);
+		dxle::detail::istream_operator_helper<char, T>(is, p);
 		return is;
 	}
 	/**
@@ -568,7 +568,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::point3d_helper::abs_helper<T>()(o); }
+	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return dxle::detail::point3d_helper::abs_helper<T>()(o); }
 
 	/**
 	@relates point3d_c

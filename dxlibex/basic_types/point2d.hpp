@@ -180,7 +180,7 @@ namespace dxle {
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point_c<T>& p)
 	{
-		detail::ostream_operator_helper<char, T>(os, ", ", p);
+		dxle::detail::ostream_operator_helper<char, T>(os, ", ", p);
 		return os;
 	}
 	/**
@@ -212,7 +212,7 @@ namespace dxle {
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, point_c<T>& p)
 	{
-		detail::istream_operator_helper<char, T>(is, p);
+		dxle::detail::istream_operator_helper<char, T>(is, p);
 		return is;
 	}
 	/**

@@ -43,14 +43,14 @@ namespace type_traits {
 		template<typename... Types> struct float_promote_impl;
 		template<typename T, typename U, typename... Tail>
 		struct float_promote_impl<T, U, Tail...>
-			: public dxle::detail::float_promote_impl<
-				typename dxle::detail::float_promote2<T, U>::type,
+			: public dxle::type_traits::detail::float_promote_impl<
+			typename dxle::type_traits::detail::float_promote2<T, U>::type,
 				Tail...
 			>
 		{};
 		template<typename T>
 		struct float_promote_impl<T>
-			: public dxle::detail::float_promote1<T>
+			: public dxle::type_traits::detail::float_promote1<T>
 		{};
 	}	// namespace detail
 
@@ -59,7 +59,7 @@ namespace type_traits {
 	//
 	template<typename... Types>
 	struct float_promote
-		: public dxle::detail::float_promote_impl<
+		: public dxle::type_traits::detail::float_promote_impl<
 			typename std::remove_cv<Types>::type...
 		>
 	{};
