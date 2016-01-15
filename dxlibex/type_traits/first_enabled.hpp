@@ -9,6 +9,9 @@
 #define DXLE_INC_TYPE_TRAITS_FIRST_ENABLED_HPP_
 #include <type_traits>
 namespace dxle {
+//!inline
+namespace type_traits {
+
 	/**
 	@brief	\~japanese 複数条件のあるTMP用if
 	\~english multi-conditional if struct for TMP.
@@ -37,5 +40,8 @@ namespace dxle {
 
 	template<typename ...Args>
 	using first_enabled_t = typename first_enabled<Args...>::type;
+
+}//namespace
+using namespace type_traits;
 }
 #endif //DXLE_INC_TYPE_TRAITS_FIRST_ENABLED_HPP_

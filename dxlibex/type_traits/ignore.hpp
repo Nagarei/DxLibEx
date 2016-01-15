@@ -8,7 +8,11 @@
 #ifndef DXLE_INC_TYPE_TRAITS_IGNORE_HPP_
 #define DXLE_INC_TYPE_TRAITS_IGNORE_HPP_
 #include <type_traits>
+
 namespace dxle {
+//!inline
+namespace type_traits{
+
 	/**
 	@brief	\~japanese 渡された型にかかわらず常にtrueなvalueを持つクラス。
 	\~english Trait class whose `value` is true regardless of what `T` is.
@@ -41,5 +45,7 @@ namespace dxle {
 	template<typename T, typename... args>
 	using first_type_t = first_type<T, args...>;
 
-}
+}//namespace
+using namespace type_traits;
+}//namespace
 #endif //DXLE_INC_TYPE_TRAITS_IGNORE_HPP_

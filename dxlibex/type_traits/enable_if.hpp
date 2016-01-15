@@ -9,13 +9,14 @@
 #define DXLE_INC_TYPE_TRAITS_ENABLE_IF_HPP_
 #include <type_traits>
 namespace dxle {
+//!inline
+namespace type_traits {
+
 	using std::enable_if;
 	template<bool B, typename T = void>
 	using enable_if_t = typename dxle::enable_if<B, T>::type;
 
-	template<bool B>
-	struct enable_if_nullptr : dxle::enable_if<B, std::nullptr_t>{};
-	template<bool B>
-	using enable_if_nullptr_t = typename dxle::enable_if_nullptr<B>::type;
+}//namespace
+using namespace type_traits;
 }
 #endif //DXLE_INC_TYPE_TRAITS_ENABLE_IF_HPP_
