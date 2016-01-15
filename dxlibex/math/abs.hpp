@@ -10,8 +10,11 @@
 #ifndef DXLE_INC_MATH_ABS_HPP_
 #define DXLE_INC_MATH_ABS_HPP_
 #include "dxlibex/config/defines.h"
-#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 #include <cmath>
+#include "dxlibex/type_traits/enable_if.hpp"
+#include "dxlibex/math/isnan.hpp"
+#include "dxlibex/math/fabs.hpp"
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 namespace dxle{
 	namespace math{
 		using std::abs;
@@ -19,9 +22,6 @@ namespace dxle{
 	using dxle::math::abs;
 }
 #else //DXLE_NO_CXX11_CONSTEXPR_CLASS
-#include "dxlibex/type_traits/enable_if.hpp"
-#include "dxlibex/math/isnan.hpp"
-#include "dxlibex/math/fabs.hpp"
 namespace dxle {
 	namespace math {
 		template<typename FloatType, enable_if_t<std::is_floating_point<FloatType>::value, std::nullptr_t> = nullptr>

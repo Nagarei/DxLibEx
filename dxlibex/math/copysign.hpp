@@ -10,8 +10,12 @@
 #ifndef DXLE_INC_MATH_COPYSIGN_HPP_
 #define DXLE_INC_MATH_COPYSIGN_HPP_
 #include "dxlibex/config/defines.h"
-#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 #include <cmath>
+#include "dxlibex/math/isnan.hpp"
+#include <type_traits>
+#include <limits>
+#include "dxlibex/type_traits/float_promote.hpp"
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 namespace dxle{
 	namespace math{
 		using std::copysign;
@@ -19,11 +23,6 @@ namespace dxle{
 	using dxle::math::copysign;
 }
 #else //DXLE_NO_CXX11_CONSTEXPR_CLASS
-#include "dxlibex/math/isnan.hpp"
-#include <type_traits>
-#include <limits>
-#include "dxlibex/type_traits/float_promote.hpp"
-
 namespace dxle {
 	namespace math {
 		namespace detail {

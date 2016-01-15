@@ -8,14 +8,14 @@
 #ifndef DXLE_INC_CSTDLIB_ABS_HPP_
 #define DXLE_INC_CSTDLIB_ABS_HPP_
 #include "dxlibex/config/defines.h"
-#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 #include <cstdlib>
+#include "dxlibex/type_traits/enable_if.hpp"
+#include <type_traits>
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 namespace dxle{
 	using std::abs;
 }
 #else //DXLE_NO_CXX11_CONSTEXPR_CLASS
-#include "dxlibex/type_traits/enable_if.hpp"
-#include <type_traits>
 namespace dxle {
 
 	// 7.20.6.1 abs，labs，及び llabs 関数

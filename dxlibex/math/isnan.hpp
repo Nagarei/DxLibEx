@@ -8,8 +8,10 @@
 #ifndef DXLE_INC_MATH_ISNAN_HPP_
 #define DXLE_INC_MATH_ISNAN_HPP_
 #include "dxlibex/config/defines.h"
-#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 #include <cmath>
+#include "dxlibex/config/defines.h"
+#include "dxlibex/type_traits.hpp"
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
 namespace dxle{
 	namespace math{
 		using std::isnan;
@@ -17,8 +19,6 @@ namespace dxle{
 	using dxle::math::isnan;
 }
 #else //DXLE_NO_CXX11_CONSTEXPR_CLASS
-#include "dxlibex/config/defines.h"
-#include "dxlibex/type_traits.hpp"
 namespace dxle {
 	namespace math {
 		template<typename FloatType, enable_if_t<std::is_floating_point<FloatType>::value, std::nullptr_t> = nullptr>
