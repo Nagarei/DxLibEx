@@ -1,4 +1,4 @@
-/*=============================================================================
+Ôªø/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -11,7 +11,7 @@
 #include <type_traits>
 namespace dxle {
 
-	// 7.20.6.1 absÅClabsÅCãyÇ— llabs ä÷êî
+	// 7.20.6.1 absÔºålabsÔºåÂèä„Å≥ llabs Èñ¢Êï∞
 	inline DXLE_CONSTEXPR int abs(int j) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return j < 0 ? -j : j;
