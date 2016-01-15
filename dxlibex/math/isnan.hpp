@@ -8,6 +8,16 @@
 #ifndef DXLE_INC_MATH_ISNAN_HPP_
 #define DXLE_INC_MATH_ISNAN_HPP_
 #include "dxlibex/config/defines.h"
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
+#include <cmath>
+namespace dxle{
+	namespace math{
+		using std::isnan;
+	}
+	using dxle::math::isnan;
+}
+#else //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#include "dxlibex/config/defines.h"
 #include "dxlibex/type_traits.hpp"
 namespace dxle {
 	namespace math {
@@ -19,4 +29,5 @@ namespace dxle {
 
 	using dxle::math::isnan;
 }
+#endif //DXLE_NO_CXX11_CONSTEXPR_CLASS
 #endif //DXLE_INC_MATH_ISNAN_HPP_

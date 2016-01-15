@@ -39,8 +39,8 @@ std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
 	cout << "p8:" << p8 << " p9:" << p9 << endl;
 
 	//abs
-	constexpr dxle::pointd p10(-2.3, -3.4);
-	constexpr auto p11 = dxle::abs(p10);
+	DXLE_CONSTEXPR_CLASS dxle::pointd p10(-2.3, -3.4);
+	DXLE_CONSTEXPR_CLASS auto p11 = dxle::abs(p10);
 	cout << "abs : p10(src):(" << p10 << ")  result=(" << p11 << ")" << endl;
 
 	//distance

@@ -7,6 +7,17 @@
 =============================================================================*/
 #ifndef DXLE_INC_MATH_ABS_HPP_
 #define DXLE_INC_MATH_ABS_HPP_
+#include "dxlibex/config/defines.h"
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
+#include <cmath>
+namespace dxle{
+	namespace math{
+		using std::abs;
+	}
+	using dxle::math::abs;
+}
+#else //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/math/isnan.hpp"
 #include "dxlibex/math/fabs.hpp"
 namespace dxle {
@@ -20,4 +31,5 @@ namespace dxle {
 
 	using dxle::math::abs;
 }	// namespace dxle
+#endif //DXLE_NO_CXX11_CONSTEXPR_CLASS
 #endif //DXLE_INC_MATH_ABS_HPP_

@@ -8,6 +8,13 @@
 #ifndef DXLE_INC_CSTDLIB_ABS_HPP_
 #define DXLE_INC_CSTDLIB_ABS_HPP_
 #include "dxlibex/config/defines.h"
+#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
+#include <cstdlib>
+namespace dxle{
+	using std::abs;
+}
+#else //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#include "dxlibex/type_traits/enable_if.hpp"
 #include <type_traits>
 namespace dxle {
 
@@ -45,5 +52,5 @@ namespace dxle {
 		}
 	}	// unnamed namespace
 }	// namespace dxle
-
+#endif //DXLE_NO_CXX11_CONSTEXPR_CLASS
 #endif //DXLE_INC_CSTDLIB_ABS_HPP_
