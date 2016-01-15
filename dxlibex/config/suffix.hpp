@@ -38,6 +38,8 @@
 //
 #ifndef DXLE_NO_CXX11_CONSTEXPR_CLASS
 #	define DXLE_CONSTEXPR_CLASS constexpr
+#else
+#	define DXLE_CONSTEXPR_CLASS
 #endif  // #ifndef DXLE_NO_CXX11_CONSTEXPR_CLASS
 
 //
