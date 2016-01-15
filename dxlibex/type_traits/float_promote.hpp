@@ -13,6 +13,8 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 
 namespace dxle {
+//!inline
+namespace type_traits {
 	namespace detail {
 		template<typename T> struct float_promote1 : public std::conditional<std::is_floating_point<T>::value, T, double>
 		{
@@ -64,6 +66,8 @@ namespace dxle {
 
 	template<typename... Types>
 	using float_promote_t = typename dxle::float_promote<Types...>::type;
+}//namespace
+using namespace type_traits;
 }	// namespace dxle
 
 #endif	// #ifndef DXLE_TYPE_TRAITS_FLOAT_PROMOTE_HPP
