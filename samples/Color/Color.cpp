@@ -6,3 +6,9 @@
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
 #include "dxlibex\Color.hpp"
+
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+	using namespace dxle::color;
+	rgb r;
+	r.red = r.green = r.blue;
+}

@@ -38,19 +38,28 @@ namespace color{
 
 	class rgb final
 	{
-	public:
-		DXLE_CONSTEXPR rgb()
-			: red_(), green_(), blue_()
-		{}
-		DXLE_CONSTEXPR rgb(int red, int green, int blue)
-			: red_(red), green_(green), blue_(blue)
-		{}
-
-		explicit operator dx_color()const DXLE_NOEXCEPT;
 	private:
-		int red_;
-		int green_;
-		int blue_;
+		struct rgb_value_t {
+			DXLE_CONSTEXPR rgb_value_t(int& v) :value(v) {}
+			DXLE_CONSTEXPR operator int()const DXLE_NOEXCEPT_OR_NOTHROW { return value; }
+			DXLE_CXX14_CONSTEXPR rgb_value_t& operator=(int v)DXLE_NOEXCEPT_OR_NOTHROW { assert(0 <= v && v <= 255); value = v; return *this; }
+			DXLE_CXX14_CONSTEXPR rgb_value_t& operator=(const rgb_value_t& v)DXLE_NOEXCEPT_OR_NOTHROW { return (*this = static_cast<int>(v)); }
+		private:
+			int& value;
+		};
+		int m_red, m_green, m_blue;
+	public:
+		rgb_value_t red = m_red;
+		rgb_value_t green = m_green;
+		rgb_value_t blue = m_blue;
+
+		DXLE_CONSTEXPR rgb()DXLE_NOEXCEPT_OR_NOTHROW
+			: m_red(), m_green(), m_blue()
+		{}
+		DXLE_CONSTEXPR rgb(int red_, int green_, int blue_)DXLE_NOEXCEPT_OR_NOTHROW
+			: m_red(red_), m_green(green_), m_blue(blue_)
+		{}
+		rgb(dx_color)DXLE_NOEXCEPT_OR_NOTHROW;
 	};
 
 	class dx_color final
@@ -63,6 +72,9 @@ namespace color{
 		{}
 		dx_color(int Red, int Green, int Blue)DXLE_NOEXCEPT
 			: value(DxLib::GetColor(Red, Green, Blue))
+		{}
+		explicit dx_color(rgb rgb_color)DXLE_NOEXCEPT
+			: value(DxLib::GetColor(rgb_color.red, rgb_color.green, rgb_color.blue))
 		{}
 
 		//! DrawPixel 等の描画関数で使用するカラー値を取得する
@@ -123,10 +135,9 @@ namespace color{
 	//定義
 
 
-	inline rgb::operator dx_color()const DXLE_NOEXCEPT
-	{
-		return dx_color::GetColor(red_, green_, blue_);
-	}
+	inline rgb::rgb(dx_color dx_color_) DXLE_NOEXCEPT_OR_NOTHROW
+		: rgb(dx_color_.GetRGB())
+	{}
 	//! カラー値から赤、緑、青の値を取得する
 	inline rgb dx_color::GetRGB()const DXLE_NOEXCEPT
 	{
