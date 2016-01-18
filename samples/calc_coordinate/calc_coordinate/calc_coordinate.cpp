@@ -39,8 +39,8 @@ std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
 	cout << "p8:" << p8 << " p9:" << p9 << endl;
 
 	//abs
-	dxle::pointd p10(-2.3, -3.4);
-	auto p11 = dxle::abs(p10);
+	DXLE_CONSTEXPR_CLASS dxle::pointd p10(-2.3, -3.4);
+	DXLE_CONSTEXPR_CLASS auto p11 = dxle::abs(p10);
 	cout << "abs : p10(src):(" << p10 << ")  result=(" << p11 << ")" << endl;
 
 	//distance
@@ -107,8 +107,8 @@ std::pair<dxle::sizeui, dxle::sizeui> size_c_sample()
 	cout << "s8:" << s8 << " s9:" << s9 << endl;
 
 	//abs
-	dxle::sized s10(-2.3, -3.4);
-	auto s11 = dxle::abs(s10);
+	DXLE_CONSTEXPR_CLASS dxle::sized s10(-2.3, -3.4);
+	DXLE_CONSTEXPR_CLASS auto s11 = dxle::abs(s10);
 	cout << "abs : s10(src):(" << s10 << ")  result=(" << s11 << ")" << endl;
 
 	//cast
@@ -171,8 +171,8 @@ void point3d_c_sample()
 	cout << "p3_8:" << p3_8 << " p3_9:" << p3_9 << endl;
 
 	//abs
-	dxle::point3dd p3_10(-2.3, -3.4, -5.2);
-	auto p3_11 = dxle::abs(p3_10);
+	DXLE_CONSTEXPR_CLASS dxle::point3dd p3_10(-2.3, -3.4, -5.2);
+	DXLE_CONSTEXPR_CLASS auto p3_11 = dxle::abs(p3_10);
 	cout << "abs : p3_10(src):(" << p3_10 << ")  result=(" << p3_11 << ")" << endl;
 
 	//distance

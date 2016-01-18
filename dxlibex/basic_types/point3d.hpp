@@ -12,8 +12,10 @@
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
-#include "DxLibEx/basic_types/distance_result_type_t.hpp"
+#include "dxlibex/basic_types/distance_result_type_t.hpp"
 #include "dxlibex/algorithm/safe_dist.hpp"
+#include "dxlibex/math.hpp"
+#include "dxlibex/cstdlib.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <tuple>
@@ -175,7 +177,7 @@ namespace dxle {
 	*/
 	template<typename T> std::ostream& operator<<(std::ostream& os, const point3d_c<T>& p)
 	{
-		detail::ostream_operator_helper<char, T>(os, ", ", p);
+		dxle::detail::ostream_operator_helper<char, T>(os, ", ", p);
 		return os;
 	}
 	/**
@@ -191,7 +193,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point3d_c<T>& p)
 	{
-		detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
+		dxle::detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
 		return os;
 	}
 	/**
@@ -207,7 +209,7 @@ namespace dxle {
 	*/
 	template<typename T> std::istream& operator>>(std::istream& is, point3d_c<T>& p)
 	{
-		detail::istream_operator_helper<char, T>(is, p);
+		dxle::detail::istream_operator_helper<char, T>(is, p);
 		return is;
 	}
 	/**
@@ -543,17 +545,6 @@ namespace dxle {
 		return static_cast<bool>(p);
 	}
 
-	namespace detail{
-		namespace point3d_helper {
-			template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
-				DXLE_CONSTEXPR_CLASS point3d_c<T> operator() (const point3d_c<T>& o) const DXLE_NOEXCEPT_OR_NOTHROW { return{ std::abs(o.x), std::abs(o.y), std::abs(o.z) }; }
-			};
-			template<typename T> struct abs_helper<T, false> {
-				DXLE_CONSTEXPR_CLASS point3d_c<T> operator() (const point3d_c<T>& o) const DXLE_NOEXCEPT_OR_NOTHROW { return o; }
-			};
-		}
-	}
-
 	/**
 	@relates point3d_c
 	\~japanese	@brief	point3d_cの絶対値(ベクトルの絶対値ではないのでその場合はdistanceを使ってください)
@@ -568,7 +559,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return detail::point3d_helper::abs_helper<T>()(o); }
+	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return{ dxle::abs(o.x), dxle::abs(o.y), dxle::abs(o.z) }; }
 
 	/**
 	@relates point3d_c

@@ -12,5 +12,6 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/ignore.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
+#include "dxlibex/type_traits/float_promote.hpp"
 
 #endif//#ifndef DXLE_INC_TYPE_TRAITS_HPP_

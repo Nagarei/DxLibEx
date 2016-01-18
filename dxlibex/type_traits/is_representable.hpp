@@ -10,9 +10,13 @@
 #include <type_traits>
 #include "dxlibex/type_traits/common_type.hpp"
 namespace dxle {
+//!inline
+namespace type_traits {
 	template < typename from, typename to >
 	struct is_representable
 	    : std::integral_constant<bool, std::is_same<common_type_t<from, to>, to >::value >
 	{ } ;
+}//namespace
+using namespace type_traits;
 }
 #endif //DXLE_INC_TYPE_TRAITS_IS_REPRESENTABLE_HPP_

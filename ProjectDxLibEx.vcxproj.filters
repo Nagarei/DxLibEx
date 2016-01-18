@@ -22,6 +22,12 @@
     <Filter Include="dxlibex\algorithm">
       <UniqueIdentifier>{49a04db0-aeb9-4a04-9734-5d7bf6b894ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="dxlibex\cstdlib">
+      <UniqueIdentifier>{f51f303c-3ab0-4966-ba0c-614871221b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dxlibex\math">
+      <UniqueIdentifier>{29c3d5e2-1263-40c2-ae45-667a8df7510c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectDxLibEx\Graph2D.cpp">
@@ -109,6 +115,33 @@
     </ClInclude>
     <ClInclude Include="dxlibex\type_traits\ignore.hpp">
       <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\cstdlib.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\math.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\cstdlib\abs.hpp">
+      <Filter>dxlibex\cstdlib</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\math\abs.hpp">
+      <Filter>dxlibex\math</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\math\copysign.hpp">
+      <Filter>dxlibex\math</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\math\fabs.hpp">
+      <Filter>dxlibex\math</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\math\hypot.hpp">
+      <Filter>dxlibex\math</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\math\isnan.hpp">
+      <Filter>dxlibex\math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

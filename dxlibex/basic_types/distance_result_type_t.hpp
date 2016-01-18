@@ -22,7 +22,7 @@ namespace dxle {
 			typedef double type;//If any argument has integral type, it is cast to double.
 		};
 	}
-	template<typename T1, typename T2> struct distance_result_type : detail::distance_result_type_impl<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())> {};
+	template<typename T1, typename T2> struct distance_result_type : dxle::detail::distance_result_type_impl<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())> {};
 	template<typename T1, typename T2>
 	using distance_result_type_t = typename distance_result_type<T1, T2>::type;
 }

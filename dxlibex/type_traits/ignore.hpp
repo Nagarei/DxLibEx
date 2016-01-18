@@ -43,7 +43,7 @@ namespace type_traits{
 		typedef T type;
 	};
 	template<typename T, typename... args>
-	using first_type_t = first_type<T, args>;
+	using first_type_t = first_type<T, args...>;
 
 }//namespace
 using namespace type_traits;
