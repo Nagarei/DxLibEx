@@ -12,6 +12,8 @@
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
+#include "dxlibex/math.hpp"
+#include "dxlibex/cstdlib.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
@@ -540,17 +542,6 @@ namespace dxle {
 		return static_cast<bool>(s);
 	}
 
-	namespace detail{
-		namespace size_helper {
-			template<typename T, bool is_signed = std::is_signed<T>::value> struct abs_helper {
-				DXLE_CONSTEXPR_CLASS size_c<T> operator() (const size_c<T>& o) const DXLE_NOEXCEPT_OR_NOTHROW { return { std::abs(o.width), std::abs(o.height) }; }
-			};
-			template<typename T> struct abs_helper<T, false> {
-				DXLE_CONSTEXPR_CLASS size_c<T> operator() (const size_c<T>& o) const DXLE_NOEXCEPT_OR_NOTHROW { return o; }
-			};
-		}
-	}
-
 	/**
 	@relates size_c
 	\~japanese	@brief	size_cの絶対値(ベクトルの絶対値ではないのでその場合はdistanceを使ってください)
@@ -565,7 +556,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return dxle::detail::size_helper::abs_helper<T>()(o); }
+	DXLE_CONSTEXPR_CLASS size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_OR_NOTHROW { return { dxle::abs(o.width), dxle::abs(o.height) }; }
 
 	typedef size_c<int> sizei;
 	typedef size_c<unsigned int> sizeui;
