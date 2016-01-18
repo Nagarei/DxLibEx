@@ -83,11 +83,16 @@ namespace color{
 		DXLE_CONSTEXPR dx_color()DXLE_NOEXCEPT_OR_NOTHROW
 			: value(0)
 		{}
+		DXLE_CONSTEXPR dx_color(const dx_color&) = default;
+		DXLE_CONSTEXPR dx_color(dx_color&& other)
+			: value(static_cast<value_type&&>(other.value))
+		{}
 		dx_color(int Red, int Green, int Blue)DXLE_NOEXCEPT_OR_NOTHROW
 			: value(DxLib::GetColor(Red, Green, Blue))
 		{}
 		dx_color(color_tag)DXLE_NOEXCEPT_OR_NOTHROW;
-		explicit dx_color(rgb rgb_color)DXLE_NOEXCEPT_OR_NOTHROW
+
+		explicit dx_color(const rgb& rgb_color)DXLE_NOEXCEPT_OR_NOTHROW
 			: value(DxLib::GetColor(rgb_color.red, rgb_color.green, rgb_color.blue))
 		{}
 
@@ -226,7 +231,9 @@ namespace color{
 			(param == color_tag::yellow   ) ? (  0) :
 			-1//error
 			)
-	{}
+	{
+		static_assert((unsigned)color_tag::numof_variation == 13u, "color variation is not match. Please debug DxLibEx.");
+	}
 #else
 	inline DXLE_CXX14_CONSTEXPR rgb::rgb(color_tag color_tag_)DXLE_NOEXCEPT_OR_NOTHROW
 	{

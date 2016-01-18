@@ -33,8 +33,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 }
 
 //for test
+#if !defined(_MSC_VER) || (defined(_MSC_VER) && _MSC_VER >= 1900)
 
-constexpr	dxle::color::rgb gr2{ 0,0,222 };
+constexpr dxle::color::rgb gr2{ 0,0,222 };
 static_assert(gr2.red == 0, "");
 static_assert(gr2.green == 0, "");
 static_assert(gr2.blue == 222, "");
@@ -46,3 +47,4 @@ DXLE_CXX14_CONSTEXPR void func()
 	rgb r3(color_tag::red);
 	r3.red = r3.green = r3.blue;
 }
+#endif
