@@ -14,7 +14,7 @@ namespace type_traits {
 
 	using std::enable_if;
 	template<bool B, typename T = void>
-	using enable_if_t = typename dxle::enable_if<B, T>::type;
+	using enable_if_t = typename type_traits::enable_if<B, T>::type;
 
 }//namespace
 using namespace type_traits;
