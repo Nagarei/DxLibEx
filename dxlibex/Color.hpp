@@ -47,7 +47,7 @@ namespace color{
 		//like C#'s property
 		struct rgb_value_t {
 			DXLE_CONSTEXPR rgb_value_t()DXLE_NOEXCEPT_OR_NOTHROW :value() {}
-			DXLE_CONSTEXPR rgb_value_t(int v)DXLE_NOEXCEPT_OR_NOTHROW : value(v)
+			DXLE_CONSTEXPR rgb_value_t(int v) : value(v)
 			{
 #ifndef DXLE_NO_CXX14_CONSTEXPR
 				assert(0 <= v && v <= 255);
@@ -55,8 +55,8 @@ namespace color{
 			}
 
 			DXLE_CONSTEXPR operator int()const DXLE_NOEXCEPT_OR_NOTHROW { return value; }
-			DXLE_CXX14_CONSTEXPR rgb_value_t& operator=(int v)DXLE_NOEXCEPT_OR_NOTHROW { assert(0 <= v && v <= 255); value = v; return *this; }
-			DXLE_CXX14_CONSTEXPR rgb_value_t& operator=(const rgb_value_t& v)DXLE_NOEXCEPT_OR_NOTHROW { return (*this = static_cast<int>(v)); }
+			DXLE_CXX14_CONSTEXPR rgb_value_t& operator=(int v) { assert(0 <= v && v <= 255); value = v; return *this; }
+			DXLE_CXX14_CONSTEXPR rgb_value_t& operator=(const rgb_value_t& v)DXLE_NOEXCEPT_OR_NOTHROW { value = v.value; return *this; }
 		private:
 			int value;
 		};
@@ -68,10 +68,10 @@ namespace color{
 		DXLE_CONSTEXPR rgb()DXLE_NOEXCEPT_OR_NOTHROW
 			: red(), green(), blue()
 		{}
-		DXLE_CONSTEXPR rgb(int red_, int green_, int blue_)DXLE_NOEXCEPT_OR_NOTHROW
+		DXLE_CONSTEXPR rgb(int red_, int green_, int blue_)
 			: red(red_), green(green_), blue(blue_)
 		{}
-		DXLE_CONSTEXPR rgb(color_tag)DXLE_NOEXCEPT_OR_NOTHROW;
+		DXLE_CONSTEXPR rgb(color_tag);
 		rgb(dx_color)DXLE_NOEXCEPT_OR_NOTHROW;
 	};
 
@@ -83,27 +83,33 @@ namespace color{
 		DXLE_CONSTEXPR dx_color()DXLE_NOEXCEPT_OR_NOTHROW
 			: value(0)
 		{}
-		DXLE_CONSTEXPR dx_color(const dx_color&) = default;
-		DXLE_CONSTEXPR dx_color(dx_color&& other)
+		DXLE_CONSTEXPR dx_color(const dx_color&)DXLE_NOEXCEPT_OR_NOTHROW = default;
+		DXLE_CONSTEXPR dx_color(dx_color&& other)DXLE_NOEXCEPT_OR_NOTHROW
 			: value(static_cast<value_type&&>(other.value))
 		{}
-		dx_color(int Red, int Green, int Blue)DXLE_NOEXCEPT_OR_NOTHROW
+		dx_color(int Red, int Green, int Blue)
 			: value(DxLib::GetColor(Red, Green, Blue))
-		{}
-		dx_color(color_tag)DXLE_NOEXCEPT_OR_NOTHROW;
+		{
+#ifndef DXLE_NO_CXX14_CONSTEXPR
+			assert(0 <= Red   && Red <= 255);
+			assert(0 <= Green && Green <= 255);
+			assert(0 <= Blue  && Blue <= 255);
+#endif
+		}
+		dx_color(color_tag);
 
 		explicit dx_color(const rgb& rgb_color)DXLE_NOEXCEPT_OR_NOTHROW
 			: value(DxLib::GetColor(rgb_color.red, rgb_color.green, rgb_color.blue))
 		{}
 
 		//! DrawPixel 等の描画関数で使用するカラー値を取得する
-		static dx_color MakeDxColor(int Red, int Green, int Blue)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor(Red, Green, Blue); }
+		static dx_color MakeDxColor(int Red, int Green, int Blue) { return dx_color{ Red, Green, Blue }; }
 		//! DrawPixel 等の描画関数で使用するカラー値を取得する
-		static dx_color GetColor(int Red, int Green, int Blue)DXLE_NOEXCEPT_OR_NOTHROW { return MakeDxColor(Red, Green, Blue); }
+		static dx_color GetColor(int Red, int Green, int Blue) { return MakeDxColor(Red, Green, Blue); }
 		//! 指定のピクセルフォーマットに対応したカラー値を得る
-		static dx_color GetColor3(const COLORDATA *ColorData, int Red, int Green, int Blue, int Alpha = 255)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor3(ColorData, Red, Green, Blue, Alpha); }
+		static dx_color GetColor3(const COLORDATA *ColorData, int Red, int Green, int Blue, int Alpha = 255) { return DxLib::GetColor3(ColorData, Red, Green, Blue, Alpha); }
 		//! 指定のカラーフォーマットのカラー値を別のカラーフォーマットのカラー値に変換する
-		static dx_color GetColor4(const COLORDATA *DestColorData, const COLORDATA* SrcColorData, const dx_color& SrcColor)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor4(DestColorData, SrcColorData, SrcColor.value); }
+		static dx_color GetColor4(const COLORDATA *DestColorData, const COLORDATA* SrcColorData, const dx_color& SrcColor) { return DxLib::GetColor4(DestColorData, SrcColorData, SrcColor.value); }
 
 		//メンバ関数
 
@@ -182,7 +188,7 @@ namespace color{
 	//rgb
 
 #if defined(DXLE_NO_CXX14_CONSTEXPR) && !defined(DXLE_NO_CXX11_CONSTEXPR)
-	inline DXLE_CONSTEXPR rgb::rgb(color_tag param)DXLE_NOEXCEPT_OR_NOTHROW
+	inline DXLE_CONSTEXPR rgb::rgb(color_tag param)
 		: red(
 			(param == color_tag::black    ) ? (  0) :
 			(param == color_tag::blue     ) ? (  0) :
@@ -235,7 +241,7 @@ namespace color{
 		static_assert((unsigned)color_tag::numof_variation == 13u, "color variation is not match. Please debug DxLibEx.");
 	}
 #else
-	inline DXLE_CXX14_CONSTEXPR rgb::rgb(color_tag color_tag_)DXLE_NOEXCEPT_OR_NOTHROW
+	inline DXLE_CXX14_CONSTEXPR rgb::rgb(color_tag color_tag_)
 	{
 		DXLE_CONSTEXPR_OR_CONST int rgb_meta[][3] = {
 			{   0,   0,   0 }, //黒
@@ -266,7 +272,7 @@ namespace color{
 
 	//dx_color
 
-	inline dx_color::dx_color(color_tag color_tag_)DXLE_NOEXCEPT_OR_NOTHROW
+	inline dx_color::dx_color(color_tag color_tag_)
 		: value(static_cast<dx_color>(rgb{ color_tag_ }).get())
 	{}
 	//! カラー値から赤、緑、青の値を取得する
