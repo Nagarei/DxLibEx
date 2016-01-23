@@ -115,7 +115,7 @@ namespace dxle {
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename Tp2_> explicit operator std::pair<Tp2_, Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
+		template<typename Tp2_> explicit operator std::pair<Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<std::pair<Tp2_, Tp2_>, Tp2_, Tp2_>::value))
 		{
 			return std::pair<Tp2_, Tp2_>(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y));
 		}
@@ -430,7 +430,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
-	point_c<T1>& operator /=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_OR_NOTHROW 
+	point_c<T1>& operator /=(point_c<T1>& l, T2 r) 
 	{
 	    l.x /= r;
 	    l.y /= r;
@@ -467,11 +467,11 @@ namespace dxle {
 	bool re = p != 0;//false
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
-	{
-		return !static_cast<bool>(p);
-	}
+	//template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	//DXLE_CONSTEXPR_CLASS bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	//{
+	//	return !static_cast<bool>(p);
+	//}
 
 	/**
 	@relates point_c
@@ -486,11 +486,11 @@ namespace dxle {
 	bool re = 0 != p;//false
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
-	{
-		return !static_cast<bool>(p);
-	}
+	//template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	//DXLE_CONSTEXPR_CLASS bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	//{
+	//	return !static_cast<bool>(p);
+	//}
 
 	/**
 	@relates point_c
@@ -519,11 +519,11 @@ namespace dxle {
 	bool re = 0 == p;//true
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
-	{
-		return static_cast<bool>(p);
-	}
+	//template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	//DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	//{
+	//	return static_cast<bool>(p);
+	//}
 
 	/**
 	@relates point_c
@@ -538,11 +538,11 @@ namespace dxle {
 	bool re = 0 == p;//true
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
-	{
-		return static_cast<bool>(p);
-	}
+	//template <typename T, enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
+	//DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	//{
+	//	return static_cast<bool>(p);
+	//}
 
 	/**
 	@relates point_c
