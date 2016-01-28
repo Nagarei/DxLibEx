@@ -10,6 +10,7 @@
 #include "dxlibex/basic_types/point2d.hpp"
 #include "dxlibex/basic_types/point3d.hpp"
 #include "dxlibex/basic_types/size.hpp"
+#include "dxlibex/basic_types/tchar.hpp"
 namespace dxle {
 
 	//operators betwin point_c and size_c
