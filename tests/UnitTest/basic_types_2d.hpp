@@ -9,7 +9,7 @@
 #include <dxlibex/basic_types.hpp>
 #define BOOST_TEST_MODULE basic_types_2d
 #define BOOST_TEST_NO_LIB
-#include <boost/test/included/unit_test.hpp>
+#include "boost/test/included/unit_test.hpp"
 #include <cmath>
 
 
