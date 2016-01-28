@@ -168,7 +168,7 @@ namespace impl{
 		}
 		virtual ~Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW {
 			//リソース解放
-			static_cast<Child*>(this)->Delete();
+			static_cast<Child*>(this)->delete_this();
 		}
 		int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW { return handle; }
 		void SetHandle_IMPL(int new_handle) { handle = (param_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }

@@ -105,9 +105,9 @@ namespace color{
 		//! DrawPixel 等の描画関数で使用するカラー値を取得する
 		static dx_color GetColor(int Red, int Green, int Blue)DXLE_NOEXCEPT_OR_NOTHROW { return MakeDxColor(Red, Green, Blue); }
 		//! 指定のピクセルフォーマットに対応したカラー値を得る
-		static dx_color GetColor3(const COLORDATA *ColorData, int Red, int Green, int Blue, int Alpha = 255)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor3(ColorData, Red, Green, Blue, Alpha); }
+		static dx_color GetColor3(const DxLib::COLORDATA *ColorData, int Red, int Green, int Blue, int Alpha = 255)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor3(ColorData, Red, Green, Blue, Alpha); }
 		//! 指定のカラーフォーマットのカラー値を別のカラーフォーマットのカラー値に変換する
-		static dx_color GetColor4(const COLORDATA *DestColorData, const COLORDATA* SrcColorData, const dx_color& SrcColor)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor4(DestColorData, SrcColorData, SrcColor.value); }
+		static dx_color GetColor4(const DxLib::COLORDATA *DestColorData, const DxLib::COLORDATA* SrcColorData, const dx_color& SrcColor)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor4(DestColorData, SrcColorData, SrcColor.value); }
 
 		//メンバ関数
 
@@ -118,27 +118,27 @@ namespace color{
 		//! カラー値から赤、緑、青の値を取得する
 		rgb GetRGB()const DXLE_NOEXCEPT_OR_NOTHROW;
 		//! 指定のカラーフォーマットのカラー値を赤、緑、青、アルファの値を取得する
-		int GetColor5(const COLORDATA *ColorData, int *Red, int *Green, int *Blue, int *Alpha = NULL)const DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor5(ColorData, value, Red, Green, Blue, Alpha); }
+		int GetColor5(const DxLib::COLORDATA *ColorData, int *Red, int *Green, int *Blue, int *Alpha = NULL)const DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::GetColor5(ColorData, value, Red, Green, Blue, Alpha); }
 
 		value_type get()const DXLE_NOEXCEPT_OR_NOTHROW { return value; }
 
 		/*
 		extern	COLOR_F			GetColorF(float Red, float Green, float Blue, float Alpha);												// 浮動小数点型のカラー値を作成する
 		extern	COLOR_U8		GetColorU8(int Red, int Green, int Blue, int Alpha);														// 符号なし整数８ビットのカラー値を作成する
-		extern	int				CreatePaletteColorData(COLORDATA *ColorDataBuf);																		// パレットカラーのカラーフォーマットを構築する
-		extern	int				CreateARGBF32ColorData(COLORDATA *ColorDataBuf);																		// ＡＲＧＢ各チャンネル 32bit 浮動小数点型カラーのカラーフォーマットを構築する
-		extern	int				CreateARGBF16ColorData(COLORDATA *ColorDataBuf);																		// ＡＲＧＢ各チャンネル 16bit 浮動小数点型カラーのカラーフォーマットを構築する
-		extern	int				CreateXRGB8ColorData(COLORDATA *ColorDataBuf);																		// ＸＲＧＢ８カラーのカラーフォーマットを構築する
-		extern	int				CreateARGB8ColorData(COLORDATA *ColorDataBuf);																		// ＡＲＧＢ８カラーのカラーフォーマットを構築する
-		extern	int				CreateARGB4ColorData(COLORDATA *ColorDataBuf);																		// ＡＲＧＢ４カラーのカラーフォーマットを構築する
-		extern	int				CreateFullColorData(COLORDATA *ColorDataBuf);																		// ２４ビットカラーのカラーフォーマットを構築する
-		extern	int				CreateGrayColorData(COLORDATA *ColorDataBuf);																		// グレースケールのカラーフォーマットを構築する
-		extern	int				CreatePal8ColorData(COLORDATA *ColorDataBuf);																		// パレット２５６色のカラーフォーマットを構築する
-		extern	int				CreateColorData(COLORDATA *ColorDataBuf, int ColorBitDepth,
+		extern	int				CreatePaletteColorData(DxLib::COLORDATA *ColorDataBuf);																		// パレットカラーのカラーフォーマットを構築する
+		extern	int				CreateARGBF32ColorData(DxLib::COLORDATA *ColorDataBuf);																		// ＡＲＧＢ各チャンネル 32bit 浮動小数点型カラーのカラーフォーマットを構築する
+		extern	int				CreateARGBF16ColorData(DxLib::COLORDATA *ColorDataBuf);																		// ＡＲＧＢ各チャンネル 16bit 浮動小数点型カラーのカラーフォーマットを構築する
+		extern	int				CreateXRGB8ColorData(DxLib::COLORDATA *ColorDataBuf);																		// ＸＲＧＢ８カラーのカラーフォーマットを構築する
+		extern	int				CreateARGB8ColorData(DxLib::COLORDATA *ColorDataBuf);																		// ＡＲＧＢ８カラーのカラーフォーマットを構築する
+		extern	int				CreateARGB4ColorData(DxLib::COLORDATA *ColorDataBuf);																		// ＡＲＧＢ４カラーのカラーフォーマットを構築する
+		extern	int				CreateFullColorData(DxLib::COLORDATA *ColorDataBuf);																		// ２４ビットカラーのカラーフォーマットを構築する
+		extern	int				CreateGrayColorData(DxLib::COLORDATA *ColorDataBuf);																		// グレースケールのカラーフォーマットを構築する
+		extern	int				CreatePal8ColorData(DxLib::COLORDATA *ColorDataBuf);																		// パレット２５６色のカラーフォーマットを構築する
+		extern	int				CreateColorData(DxLib::COLORDATA *ColorDataBuf, int ColorBitDepth,
 		DWORD RedMask, DWORD GreenMask, DWORD BlueMask, DWORD AlphaMask,
 		int ChannelNum = 0, int ChannelBitDepth = 0, int FloatTypeFlag = FALSE);						// カラーフォーマットを作成する
-		extern	void			SetColorDataNoneMask(COLORDATA *ColorData);																		// NoneMask 以外の要素を埋めた COLORDATA 構造体の情報を元に NoneMask をセットする
-		extern	int				CmpColorData(const COLORDATA *ColorData1, const COLORDATA *ColorData2);									// 二つのカラーフォーマットが等しいかどうか調べる( 戻り値　TRUE:等しい  FALSE:等しくない )
+		extern	void			SetColorDataNoneMask(DxLib::COLORDATA *ColorData);																		// NoneMask 以外の要素を埋めた DxLib::COLORDATA 構造体の情報を元に NoneMask をセットする
+		extern	int				CmpColorData(const DxLib::COLORDATA *ColorData1, const DxLib::COLORDATA *ColorData2);									// 二つのカラーフォーマットが等しいかどうか調べる( 戻り値　TRUE:等しい  FALSE:等しくない )
 		*/
 
 	private:
