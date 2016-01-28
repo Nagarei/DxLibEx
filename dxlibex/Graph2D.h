@@ -24,10 +24,8 @@
 
 namespace dxle
 {
-	//!\~japanese DxLibExの公開クラスが全て入ったnamespaceです
-	namespace DxLibEx_Classes {}
 	//! 2Dグラフィック
-	namespace Graph2D
+	namespace graph2d
 	{
 		//!\~japanese DxLibの描画先スクリーン同期のためのmutex
 		//!\~english  mutex for DxLib's draw screen
@@ -41,13 +39,33 @@ namespace dxle
 
 		//!\~japanese 画像クラス(画像ハンドルクラスではない)
 		//!\~english  A image class (NOT an image handle class)
-		class texture_2d : public impl::Unique_HandledObject_Bace<texture_2d>
+		class texture_2d /*final*/ : private impl::Unique_HandledObject_Bace<texture_2d>
 		{
 		public:
+			texture_2d() : Unique_HandledObject_Bace() {}
+			//! コピー禁止
+			texture_2d(const texture_2d& other) = delete;
+			//!所有権の譲渡
+			texture_2d(texture_2d&& other) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)), NotUse3DFlag(std::move(other.NotUse3DFlag)) {}
+			//! コピー禁止
+			texture_2d& operator=(const texture_2d& other) = delete;
+			//! 所有権の譲渡
+			texture_2d& operator=(texture_2d&& other) DXLE_NOEXCEPT_OR_NOTHROW{ Unique_HandledObject_Bace<texture_2d>::operator=(std::move(other)); NotUse3DFlag = (std::move(other.NotUse3DFlag)); return *this; }
+
+			//!画像を複製する
+			virtual texture_2d cloneGr()const;
+
 			//!\~japanese 画像を削除する
 			//!\~english  Delete this image
-			inline void Delete(bool LogOutFlag = false) { DeleteGraph(GetHandle(), LogOutFlag); }
+			inline void delete_this(bool LogOutFlag = false) { DeleteGraph(GetHandle(), LogOutFlag); }
 
+			//! グラフィックのサイズを得る
+			inline sizei size()const DXLE_NOEXCEPT_OR_NOTHROW{ return GetGraphSize(); }
+
+
+			virtual ~texture_2d()DXLE_NOEXCEPT_OR_NOTHROW {}
+
+		public:
 			//生成用static関数
 
 			// グラフィック作成関係関数
@@ -233,35 +251,24 @@ namespace dxle
 			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
 			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
-		private:
-			typedef Unique_HandledObject_Bace<texture_2d> Parent_T;
-		public:
-			texture_2d() : Unique_HandledObject_Bace() {}
-			//! コピー禁止
-			texture_2d(const texture_2d& other) = delete;
-			//!所有権の譲渡
-			texture_2d(texture_2d&& other) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)), NotUse3DFlag(std::move(other.NotUse3DFlag)) {}
-			//! コピー禁止
-			texture_2d& operator=(const texture_2d& other) = delete;
-			//! 所有権の譲渡
-			texture_2d& operator=(texture_2d&& other) DXLE_NOEXCEPT_OR_NOTHROW { Parent_T::operator=(std::move(other)); NotUse3DFlag = (std::move(other.NotUse3DFlag)); return *this; }
 
-			virtual ~texture_2d()DXLE_NOEXCEPT_OR_NOTHROW {}
-		protected:
+		private:
 			texture_2d(int param_handle, bool param_NotUse3DFlag)DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(param_handle), NotUse3DFlag(param_NotUse3DFlag){}
 			bool NotUse3DFlag;
 
 			//screen等の子クラスからGetHandleにアクセスできるようにする為
 			static int GetTexture2DHandle(const texture_2d& texture2d_obj) { return texture2d_obj.GetHandle(); }
+
+			friend class screen;
 		};
 		//! 描画可能画像クラス
 		class screen : public texture_2d
 		{
 		public:
 			//!画像を複製する
-			screen clone()const;
+			screen cloneSc()const;
 			//!画像を複製する
-			texture_2d cloneGr()const;
+			texture_2d cloneGr()const override;
 
 			//生成用static関数
 
@@ -273,7 +280,7 @@ namespace dxle
 			//メンバ関数
 
 			template<typename Func_T>
-			inline void DrawnOn(Func_T&& draw_func) {
+			inline void drawn_on(Func_T&& draw_func) {
 				DXLE_GET_LOCK(screen_mutex_c::mtx);
 				struct Finary_ {
 					int old_draw_screen;
@@ -335,7 +342,15 @@ namespace dxle
 			bool UseAlphaChannel;
 		};
 		//! 複製
-		inline screen screen::clone()const
+		inline texture_2d texture_2d::cloneGr()const
+		{
+			screen temp_sc{ screen::MakeScreen(GetGraphSize()) };
+			temp_sc.drawn_on([this](){
+				DrawGraph({ 0, 0 }, false);
+			});
+			return temp_sc.cloneGr();
+		}
+		inline screen screen::cloneSc()const
 		{
 			int graph_size_x, graph_size_y;
 			GetGraphSize(&graph_size_x, &graph_size_y);
@@ -404,7 +419,7 @@ namespace dxle
 		inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle, AlphaImage); }
 		//! メモリ上のビットマップイメージからグラフィックを再作成する
 		inline int ReCreateGraph(const sizei& size, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReCreateGraph(size.width, size.height, Pitch, RGBImage, GrHandle, AlphaImage); }
-#ifndef DX_NON_SOFTIMAGE
+	#ifndef DX_NON_SOFTIMAGE
 	#endif // DX_NON_SOFTIMAGE
 		//! 基本イメージデータからグラフィックを作成する
 		inline texture_2d CreateGraphFromBaseImage(const BASEIMAGE *BaseImage)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::CreateGraphFromBaseImage(BaseImage); }
@@ -422,11 +437,8 @@ namespace dxle
 		inline int ReloadGraph(const TCHAR *FileName, texture_2d& GrHandle, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadGraph(FileName, GrHandle, ReverseFlag); }
 		//! ReloadGraph の画像反転処理追加版
 		inline int ReloadReverseGraph(const TCHAR *FileName, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadReverseGraph(FileName, GrHandle); }
-	
 	}
-	namespace DxLibEx_Classes {
-		using Graph2D::texture_2d;
-	}
+	using namespace graph2d;
 }
 
 #endif
