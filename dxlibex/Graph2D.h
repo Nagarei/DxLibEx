@@ -475,15 +475,9 @@ namespace dxle
 		inline int ReloadGraph(const tstring& FileName, texture_2d& GrHandle, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadGraph(FileName.c_str(), GrHandle, ReverseFlag); }
 		//! ReloadGraph の画像反転処理追加版
 		inline int ReloadReverseGraph(const TCHAR *FileName, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadReverseGraph(FileName, GrHandle); }
-<<<<<<< HEAD
-=======
 		//! ReloadGraph の画像反転処理追加版
 		inline int ReloadReverseGraph(const tstring& FileName, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadReverseGraph(FileName.c_str(), GrHandle); }
 
-	}
-	namespace DxLibEx_Classes {
-		using Graph2D::texture_2d;
->>>>>>> origin/master
 	}
 	using namespace graph2d;
 }
