@@ -38,10 +38,14 @@ namespace color{
 		numof_variation
 	};
 
+	class color_base {};
+	template<typename T>
+	struct is_colortype : std::is_base_of<color_base, T>{};
+
 	class rgb;
 	class dx_color;
 
-	class rgb final
+	class rgb final : private color_base
 	{
 	private:
 		//like C#'s property
@@ -75,7 +79,7 @@ namespace color{
 		rgb(dx_color)DXLE_NOEXCEPT_OR_NOTHROW;
 	};
 
-	class dx_color final
+	class dx_color final : private color_base
 	{
 	public:
 		typedef decltype(DxLib::GetColor(0, 0, 0)) value_type;
@@ -168,7 +172,7 @@ namespace color{
 		dx_color value;
 	};
 
-	template<typename to, typename from>
+	template<typename to, typename from, enable_if_t<is_colortype<from>::value && is_colortype<to>::value, nullptr_t> = nullptr>
 	to color_cast(from&& bace)
 	{
 		return static_cast<to>(std::forward<from>(bace));

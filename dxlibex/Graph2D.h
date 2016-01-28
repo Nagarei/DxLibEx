@@ -310,7 +310,11 @@ namespace dxle
 			//メンバ関数
 
 			template<typename Func_T>
-			inline void drawn_on(Func_T&& draw_func) {
+			inline screen& drawn_on(Func_T&& draw_func) {
+#ifdef DX_THREAD_SAFE
+				//現状screen_mutexを使うとほぼ確実にデッドロックする
+				static_assert(false, "");
+#endif
 				DXLE_GET_LOCK(screen_mutex_c::mtx);
 				struct Finary_ {
 					int old_draw_screen;
@@ -327,6 +331,7 @@ namespace dxle
 				DxLib::SetUseSetDrawScreenSettingReset(FALSE);
 				this->SetDrawScreen();
 				draw_func();
+				return *this;
 			}
 
 			//! グラフィック専用のＺバッファを持つかどうかを設定する
