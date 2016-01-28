@@ -138,7 +138,7 @@ namespace impl{
 		//コピー禁止
 		Unique_HandledObject_Bace(const Bace_T&) = delete;
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
-	public:
+	protected:
 		Unique_HandledObject_Bace()DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(-1)
 		{}
