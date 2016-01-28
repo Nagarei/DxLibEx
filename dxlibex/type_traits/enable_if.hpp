@@ -16,6 +16,7 @@ namespace type_traits {
 	template<bool B, typename T = void>
 	using enable_if_t = typename type_traits::enable_if<B, T>::type;
 
+	using std::nullptr_t;
 }//namespace
 using namespace type_traits;
 }

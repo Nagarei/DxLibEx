@@ -10,6 +10,7 @@
 #include "dxlibex/basic_types/point2d.hpp"
 #include "dxlibex/basic_types/point3d.hpp"
 #include "dxlibex/basic_types/size.hpp"
+#include "dxlibex/basic_types/tchar.hpp"
 namespace dxle {
 
 	//operators betwin point_c and size_c
@@ -25,7 +26,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	point_c<T1>& operator +=(point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x += r.width;
@@ -44,7 +45,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	size_c<T1>& operator +=(size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width += r.x;
@@ -63,7 +64,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	point_c<T1>& operator -=(point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.x -= r.width;
@@ -82,7 +83,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to first argument
 	*/
-	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	size_c<T1>& operator -=(size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 	    l.width -= r.x;

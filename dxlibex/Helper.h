@@ -138,7 +138,7 @@ namespace impl{
 		//コピー禁止
 		Unique_HandledObject_Bace(const Bace_T&) = delete;
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
-	public:
+	protected:
 		Unique_HandledObject_Bace()DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(-1)
 		{}
@@ -168,7 +168,7 @@ namespace impl{
 		}
 		virtual ~Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW {
 			//リソース解放
-			static_cast<Child*>(this)->Delete();
+			static_cast<Child*>(this)->delete_this();
 		}
 		int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW { return handle; }
 		void SetHandle_IMPL(int new_handle) { handle = (param_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
