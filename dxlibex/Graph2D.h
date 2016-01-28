@@ -39,6 +39,16 @@ namespace dxle
 #endif
 		};
 
+		/**
+		@relates texture_2d
+		\~japanese	@brief	texture_2dとscreen_cのfilter_bright_clipメンバー関数向けのenum
+		\~english	@brief	for filter_bright_clip(texture_2d and screen_c )
+		*/
+		enum class bright_clip_mode : int {
+			LESS,
+			GREATER
+		};
+
 		//!\~japanese 画像クラス(画像ハンドルクラスではない)
 		//!\~english  A image class (NOT an image handle class)
 		class texture_2d : public impl::Unique_HandledObject_Bace<texture_2d>
