@@ -247,6 +247,23 @@ namespace dxle
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
 			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
 
+			int filter_mono(int16_t Cb, int16_t Cr)DXLE_NOEXCEPT_OR_NOTHROW{ return GraphFilter(GetHandle(), DX_GRAPH_FILTER_MONO, Cb, Cr);}
+			int filter_gaussian(uint16_t PixelWidth, int Param)DXLE_NOEXCEPT_OR_NOTHROW { return GraphFilter(GetHandle(), DX_GRAPH_FILTER_GAUSS, PixelWidth, Param); }
+			int filter_down_scale(uint8_t DivNum)DXLE_NOEXCEPT_OR_NOTHROW { return GraphFilter(GetHandle(), DX_GRAPH_FILTER_DOWN_SCALE, DivNum); }
+			int filter_bright_clip(bright_clip_mode clipmode, uint8_t clip_pram, unsigned int fillcolor, uint8_t fillalpha)DXLE_NOEXCEPT_OR_NOTHROW {
+				return GraphFilter(GetHandle(), DX_GRAPH_FILTER_BRIGHT_CLIP, clipmode, clip_pram, fillcolor, fillalpha);
+			}
+			int filter_HSB(bool HueType, int16_t Hue, int Saturation, int16_t Bright)DXLE_NOEXCEPT_OR_NOTHROW {
+				return GraphFilter(GetHandle(), DX_GRAPH_FILTER_HSB, HueType, Hue, Saturation, Bright);
+			}
+			int filter_invert()DXLE_NOEXCEPT_OR_NOTHROW { return GraphFilter(GetHandle(), DX_GRAPH_FILTER_INVERT); }
+			int filter_level(uint8_t min, uint8_t max, int Gamma, uint8_t Aftermin, uint8_t Aftermax)DXLE_NOEXCEPT_OR_NOTHROW {
+				return GraphFilter(GetHandle(), DX_GRAPH_FILTER_LEVEL, min, max, Gamma, Aftermin, Aftermax);
+			}
+			int filter_two_color(uint8_t threshold, unsigned int LowColor, uint8_t LowAlpha, unsigned int HighColor, uint8_t HighAlpha)DXLE_NOEXCEPT_OR_NOTHROW {
+				return GraphFilter(GetHandle(), DX_GRAPH_FILTER_LEVEL, threshold, LowColor, LowAlpha, HighColor, HighAlpha);
+			}
+
 		private:
 			typedef Unique_HandledObject_Bace<texture_2d> Parent_T;
 		public:
