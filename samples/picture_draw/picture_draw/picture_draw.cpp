@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	SetDrawScreen(DX_SCREEN_BACK);
 	// BMP画像のメモリへの読みこみ
 	//添付の絵素材は https://www.pakutaso.com/20150142021post-5083.html より
-	auto GHandle = dxle::Graph2D::LoadGraph("bsHIRO92_tukinomieruoka.jpg");//Texture2D型
+	auto GHandle = dxle::graph2d::LoadGraph("bsHIRO92_tukinomieruoka.jpg");//Texture2D型
 	GHandle.DrawGraph(0, 0, false);// 画面左上に描画します(『DrawGraph』を使用)
 	const auto font_h = CreateFontToHandle(nullptr, 12, 2, DX_FONTTYPE_ANTIALIASING);//フォントハンドルの作成
 	DrawStringToHandle(20, 20, GHandle.GetGraphFilePath().c_str(), GetColor(250, 250, 0), font_h);//画像のフルパスを表示
