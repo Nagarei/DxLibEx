@@ -24,13 +24,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		auto GHandle = LoadGraph("test1.bmp");
 
 		// 読みこんだグラフィックを画面左上に描画
-		GHandle.DrawGraph({ 0, 0 }, TRUE);
+		GHandle.DrawGraph({ 0, 0 }, true);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();
 
 		// 読みこんだグラフィックを画面中央に描画
-		DrawGraph(dxle::pointi(sizei{640, 480} - GHandle.size()) / 2, GHandle, TRUE);
+		DrawGraph(dxle::pointi(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();
