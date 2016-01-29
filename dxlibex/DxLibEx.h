@@ -11,8 +11,12 @@
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/Color.hpp"
+#include "dxlibex/cstdlib.hpp"
 //#include "dxlibex/DxLibWrap.h"
 #include "dxlibex/Graph2D.h"
+#include "dxlibex/math.hpp"
+#include "dxlibex/thread.h"
+#include "dxlibex/type_traits.hpp"
 
 #if 0
 

@@ -1,5 +1,5 @@
-//Œ»óƒeƒXƒg‚Æ‚¢‚¤‚æ‚èƒTƒ“ƒvƒ‹
-//Œã‚Å‘‚«’¼‚·
+ï»¿//ç¾çŠ¶ãƒ†ã‚¹ãƒˆã¨ã„ã†ã‚ˆã‚Šã‚µãƒ³ãƒ—ãƒ«
+//å¾Œã§æ›¸ãç›´ã™
 #define DX_NON_USING_NAMESPACE_DXLIB
 #include "dxlibex\Graph2D.h"
 #include "dxlibex\basic_types.hpp"
@@ -14,22 +14,22 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	using namespace dxle::graph2d;
 	using dxle::sizei;
 	DxLib::ChangeWindowMode(TRUE);
-	if (DxLib::DxLib_Init() == -1)        // ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»ˆ—
+	if (DxLib::DxLib_Init() == -1)        // ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–å‡¦ç†
 	{
-		return -1;        // ƒGƒ‰[‚ª‹N‚«‚½‚ç’¼‚¿‚ÉI—¹
+		return -1;        // ã‚¨ãƒ©ãƒ¼ãŒèµ·ããŸã‚‰ç›´ã¡ã«çµ‚äº†
 	}
 
 	{
-		// test1.bmp‚Ì“Ç‚İ‚İ
+		// test1.bmpã®èª­ã¿è¾¼ã¿
 		auto GHandle = LoadGraph("test1.bmp");
 
-		// “Ç‚İ‚±‚ñ‚¾ƒOƒ‰ƒtƒBƒbƒN‚ğ‰æ–Ê¶ã‚É•`‰æ
-		DrawGraph({0, 0}, GHandle, TRUE);
+		// èª­ã¿ã“ã‚“ã ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ç”»é¢å·¦ä¸Šã«æç”»
+		GHandle.DrawGraph({ 0, 0 }, TRUE);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();
 
-		// “Ç‚İ‚±‚ñ‚¾ƒOƒ‰ƒtƒBƒbƒN‚ğ‰æ–Ê’†‰›‚É•`‰æ
+		// èª­ã¿ã“ã‚“ã ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ç”»é¢ä¸­å¤®ã«æç”»
 		DrawGraph(dxle::pointi(sizei{640, 480} - GHandle.size()) / 2, GHandle, TRUE);
 
 		DxLib::WaitKey();
@@ -38,7 +38,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 
 
-	DxLib::DxLib_End();            // ‚c‚wƒ‰ƒCƒuƒ‰ƒŠg—p‚ÌI—¹ˆ—
+	DxLib::DxLib_End();            // ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªä½¿ç”¨ã®çµ‚äº†å‡¦ç†
 
-	return 0;            // ƒ\ƒtƒg‚ÌI—¹
+	return 0;            // ã‚½ãƒ•ãƒˆã®çµ‚äº†
 }
