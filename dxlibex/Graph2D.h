@@ -15,6 +15,8 @@
 #include <memory>
 #include <string>
 #include <array>
+#include <vector>
+#include <algorithm>
 #include "dxlibex/Helper.h"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/basic_types.hpp"
@@ -33,7 +35,7 @@ namespace dxle
 		{
 		public:
 #ifdef DX_THREAD_SAFE
-			static std::mutex mtx;
+			static std::recursive_mutex mtx;
 #endif
 		};
 
@@ -49,7 +51,7 @@ namespace dxle
 
 		//!\~japanese 画像クラス(画像ハンドルクラスではない)
 		//!\~english  A image class (NOT an image handle class)
-		class texture_2d /*final*/ : private impl::Unique_HandledObject_Bace<texture_2d>
+		class texture_2d /*final*/ : public impl::Unique_HandledObject_Bace<texture_2d>
 		{
 		public:
 			texture_2d() : Unique_HandledObject_Bace() {}
@@ -89,7 +91,7 @@ namespace dxle
 			//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
 			static inline texture_2d DerivationGraph(int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle), false); }
 			//! 指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する
-			static inline texture_2d DerivationGraph(const sizei& src, const sizei& size, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::DerivationGraph(src.width, src.height, size.width, size.height, SrcGraphHandle), false); }
+			static inline texture_2d DerivationGraph(const pointi& src, const sizei& size, int SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::DerivationGraph(src.x, src.y, size.width, size.height, SrcGraphHandle), false); }
 
 			// 画像からグラフィックを作成する関数
 
@@ -111,6 +113,35 @@ namespace dxle
 			//!\~japanese 画像ファイルからグラフィックを作成する
 			//!\~english  Create reverse image form an image file
 			static inline texture_2d LoadReverseGraph(const dxle::tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadReverseGraph(FileName.c_str(), NotUse3DFlag), NotUse3DFlag); }
+			
+			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する
+			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(FileName, AllNum, { XNum, YNum }, { XSize, YSize }, NotUse3DFlag); }
+			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する
+			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE)
+			{
+				auto HandleBuf = std::make_unique<int[]>(AllNum);
+				DxLib::LoadDivGraph(FileName, AllNum, Num.x, Num.y, Size.width, Size.height, HandleBuf, NotUse3DFlag);
+				try{
+					std::remove_reference_t<std::remove_cv_t<Cont>> cont;
+					std::for_each(HandleBuf.get(), HandleBuf.get() + AllNum, [&cont](int& handle){
+						texture_2d temp{ handle, NotUse3DFlag };
+						handle = -1;
+						cont.emplace_back(std::move(temp));
+					});
+					return cont;
+				}
+				catch (...){
+					std::for_each(HandleBuf.get(), HandleBuf.get() + AllNum, [&cont](int handle){
+						DeleteGraph(handle);
+					});
+					throw;
+				}
+			}
+			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する
+			static inline Cont LoadDivGraph(const dxle::tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag); }
 
 			//!\~japanese メモリ上の画像イメージからグラフィックを作成する
 			//!\~english  Create an image form an image in the memory
@@ -321,10 +352,6 @@ namespace dxle
 
 			template<typename Func_T>
 			inline screen& drawn_on(Func_T&& draw_func) {
-#ifdef DX_THREAD_SAFE
-				//現状screen_mutexを使うとほぼ確実にデッドロックする
-				static_assert(false, "");
-#endif
 				DXLE_GET_LOCK(screen_mutex_c::mtx);
 				struct Finary_ {
 					int old_draw_screen;
