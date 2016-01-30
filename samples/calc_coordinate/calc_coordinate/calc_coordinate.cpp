@@ -27,7 +27,7 @@ std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
 	cout << "p3:" << p3 << " p4:" << p4 << " p5:" << p5 << " p6:" << p6 << " p7:" << p7 << endl;
 
 	bool is_zero = (0 == static_cast<bool>(p6)) ? true : false;//explicit operator bool call
-	if (0 == p7) is_zero = false;
+	//if (0 == p7) is_zero = false;
 
 	//contextually converted to bool
 	if (p7) is_zero = false;//explicit operator bool call
