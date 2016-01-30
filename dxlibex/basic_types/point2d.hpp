@@ -76,7 +76,7 @@ namespace dxle {
 		typedef typename std::remove_cv<T>::type value_type;
 		value_type x, y;
 		DXLE_CONSTEXPR_CLASS point_c() DXLE_NOEXCEPT_OR_NOTHROW : x(), y() {}
-		DXLE_CONSTEXPR_CLASS point_c(value_type x_, value_type y_) DXLE_NOEXCEPT_OR_NOTHROW : x(x_), y(y_) {}
+		DXLE_CONSTEXPR_CLASS point_c(value_type x_, value_type y_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)) {}
 
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_OR_NOTHROW : x(o.x), y(o.y) {}
@@ -242,7 +242,7 @@ namespace dxle {
 	\~english	@return	Memberwise opposite of the point_c value
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(-std::declval<T>())
 	{
 		return { -r.x, -r.y };
 	}
@@ -257,7 +257,7 @@ namespace dxle {
 	\~english	@return	const-lvalue reference to first argument
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_OR_NOTHROW { return r; }
+	DXLE_CONSTEXPR_CLASS inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value) { return r; }
 
 	/**
 	@relates point_c
