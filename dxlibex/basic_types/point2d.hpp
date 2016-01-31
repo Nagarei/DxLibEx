@@ -76,13 +76,13 @@ namespace dxle {
 		typedef typename std::remove_cv<T>::type value_type;
 		value_type x, y;
 		DXLE_CONSTEXPR_CLASS point_c() DXLE_NOEXCEPT_IF(std::is_nothrow_constructible<value_type>::value) : x(), y() {}
-		DXLE_CONSTEXPR_CLASS point_c(value_type x_, value_type y_) DXLE_NOEXCEPT_IF(std::is_nothrow_move_constructible<value_type>::value)
+		DXLE_CONSTEXPR_CLASS point_c(value_type x_, value_type y_) DXLE_NOEXCEPT_OR_NOTHROW
 			: x(std::move(x_)), y(std::move(y_)) {}
 
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<value_type>::value) : x(o.x), y(o.y) {}
 		//move constructor
-		DXLE_CONSTEXPR_CLASS point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_IF(std::is_nothrow_move_constructible<value_type>::value) 
+		DXLE_CONSTEXPR_CLASS point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW
 			: x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
 		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_assignable<value_type>::value)
@@ -285,7 +285,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point_c<T1>& operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() += std::declval<T2>())
+	point_c<T1>& operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() += std::declval<T2>())
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -304,7 +304,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point_c<T1>& operator -=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() -= std::declval<T2>())
+	point_c<T1>& operator -=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() -= std::declval<T2>())
 	{
 	    l.x -= r.x;
 	    l.y -= r.y;
@@ -395,7 +395,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point_c<T1>& operator *=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() *= std::declval<T2>())
+	point_c<T1>& operator *=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() *= std::declval<T2>())
 	{
 	    l.x *= r;
 	    l.y *= r;
@@ -432,7 +432,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
-	point_c<T1>& operator /=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() /= std::declval<T2>())
+	point_c<T1>& operator /=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() /= std::declval<T2>())
 	{
 	    l.x /= r;
 	    l.y /= r;
