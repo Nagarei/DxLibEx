@@ -25,7 +25,7 @@
 #include "dxlibex/config/defines.h"
 
 namespace dxle {
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t>> class point_c;
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_move_constructible<T>::value, nullptr_t>> class point_c;
 	/**
 	\~japanese	@brief	2次元の大きさ(width, height)　テンプレートクラス。
 	\~english	@brief	Template class for 2D sizes specified by its coordinates `width` and `height`.
@@ -67,7 +67,7 @@ namespace dxle {
 	std::cout << pt << std::endl;
 	@endcode
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_move_constructible<T>::value, nullptr_t> = nullptr>
 	class size_c final
 	{
 	public:

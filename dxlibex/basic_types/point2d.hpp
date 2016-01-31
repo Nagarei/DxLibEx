@@ -27,7 +27,7 @@
 #include "dxlibex/config/defines.h"
 
 namespace dxle {
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t>> class size_c;
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_move_constructible<T>::value, nullptr_t>> class size_c;
 	/**
 	\~japanese	@brief	2次元座標(x, y)　テンプレートクラス。
 	\~english	@brief	Template class for 2D points specified by its coordinates `x` and `y`.
@@ -69,7 +69,7 @@ namespace dxle {
 	std::cout << pt << std::endl;
 	@endcode
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_move_constructible<T>::value, nullptr_t> = nullptr>
 	class point_c final
 	{
 	public:
@@ -598,7 +598,7 @@ namespace dxle {
 			+ static_cast_if<T1, double, std::is_integral<T1>::value>(std::declval<T1>()) * std::declval<T2>()
 		))
 	{
-		return static_cast_if<T1, double, std::is_integral<T1>::value>(std::move(p1.x)) * p2.y + static_cast_if<T1, double, std::is_integral<T1>::value>(std::move(p1.y)) * p2.x;
+		return static_cast_if<T1, double, std::is_integral<T1>::value>(p1.x) * p2.y + static_cast_if<T1, double, std::is_integral<T1>::value>(p1.y) * p2.x;
 	}
 	/**
 	@relates point_c
