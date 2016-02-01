@@ -464,7 +464,7 @@ namespace dxle {
 	\~japanese	@return	左辺と右辺が等しくなければtrueを返す
 	\~english	@return	true if left operand is not equal to right operand
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x)
 	{
 		return (l.x != r.x) || (l.y != r.y);
@@ -481,7 +481,7 @@ namespace dxle {
 	\~japanese	@return	左辺と右辺が等しければtrueを返す
 	\~english	@return	true if left operand is equal to right operand
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T>() != std::declval<T>()) { return !(l != r);	}
 
 
@@ -498,7 +498,7 @@ namespace dxle {
 	const auto result = dxle::abs(p1);//(2, 4)
 	@endcode
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template<typename T>
 	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(point_c<T>{abs(o.x), abs(o.y)}) { return{ abs(o.x), abs(o.y) }; }
 
 	/**
@@ -512,7 +512,7 @@ namespace dxle {
 	\~japanese	@return	計算結果。戻り値の型は暗黙の型変換で得られるものです。
 	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
-	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template<typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto dot(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(p1.x * p2.x + p1.y * p2.y)
 		->decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 	{
@@ -530,7 +530,7 @@ namespace dxle {
 	\~japanese	@return	計算結果。
 	\~english	@return	Computed result.
 	*/
-	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template<typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS double cross(const point_c<T1>& p1, const point_c<T2>& p2) 
 		DXLE_NOEXCEPT_IF_EXPR((
 			static_cast_if<T1, double, std::is_integral<T1>::value>(std::declval<T1>()) * std::declval<T2>() 
