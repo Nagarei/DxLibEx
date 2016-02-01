@@ -11,6 +11,7 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
+#include "dxlibex/type_traits/is_nothrow.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
 #include "DxLibEx/basic_types/distance_result_type_t.hpp"
@@ -23,6 +24,7 @@
 #include <type_traits>
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
 #include <limits>
 #include "dxlibex/config/defines.h"
 
@@ -68,8 +70,20 @@ namespace dxle {
 	dxle::pointi pt = (a + b)*10.f;
 	std::cout << pt << std::endl;
 	@endcode
+	\~japanese	型Tは少なくとも以下の条件を満たしている必要があります。
+	\~japanese	・std::is_arithmetic<T>::value == trueであること
+	\~japanese	・型が例外を投げずにムーブ構築可能であること（is_nothrow_move_constructible<T>::value == trueであること）
+	\~japanese	・型が例外を投げずにムーブ代入可能であること（is_nothrow_move_assignable<T>::value == trueであること）
+	\~japanese	また、以下の条件を満たしている事が期待されています。
+	\~japanese	・型がデフォルト構築可能であること（is_default_constructible<T>::value == trueであること）
+	\~japanese	・型がコピー構築可能であること（is_copy_constructible<T>::value == trueであること）
+	\~japanese	・型がコピー代入可能であること（is_copy_assignable<T>::value == trueであること）
+	\~japanese	・0と!=で比較することが可能であること（  t != 0;  (tはconst T&型の変数)がコンパイル可能であること）
+	\~japanese	・単項 + - 演算子を持つこと
+	\~japanese	・二項 + - * / += -= *= /= == != 演算子を持つこと
+	\~
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
 	class point_c final
 	{
 	public:
@@ -100,24 +114,24 @@ namespace dxle {
 		}
 
 
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_OR_NOTHROW {
-			return this->x || this->y;
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->x != 0)) {
+			return this->x != 0 || this->y != 0;
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator point_c<Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(std::declval<Tp2_>()))
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator point_c<Tp2_>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
 		{
 			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y) };
 		}
 		//!\~english conversion to size_c
 		//!\~japanese size_cクラスへの変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator size_c<Tp2_, nullptr>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(std::declval<Tp2_>()))
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator size_c<Tp2_, nullptr>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
 		{
 			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y) };
 		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
-		template<typename Tp2_> explicit operator std::pair<Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<std::pair<Tp2_, Tp2_>, Tp2_, Tp2_>::value))
+		template<typename Tp2_> explicit operator std::pair<Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
 		{
 			return std::pair<Tp2_, Tp2_>(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y));
 		}
@@ -244,7 +258,7 @@ namespace dxle {
 	\~english	@return	Memberwise opposite of the point_c value
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(-std::declval<T>())
+	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR((point_c<T>{ -r.x, -r.y }))
 	{
 		return { -r.x, -r.y };
 	}
@@ -560,7 +574,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(dxle::abs(std::declval<T>())) { return { dxle::abs(o.x), dxle::abs(o.y) }; }
+	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(std::declval<T>())) { return{ abs(o.x), abs(o.y) }; }
 
 	/**
 	@relates point_c

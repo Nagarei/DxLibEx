@@ -143,5 +143,14 @@
     <ClInclude Include="dxlibex\math\isnan.hpp">
       <Filter>dxlibex\math</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\algorithm.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\algorithm\cast_if.hpp">
+      <Filter>dxlibex\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_nothrow.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
