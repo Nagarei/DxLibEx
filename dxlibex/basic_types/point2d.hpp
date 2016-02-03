@@ -29,7 +29,8 @@
 #include "dxlibex/config/defines.h"
 
 namespace dxle {
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_move_constructible<T>::value, nullptr_t>> class size_c;
+	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t>>
+	class size_c;
 	/**
 	\~japanese	@brief	2次元座標(x, y)　テンプレートクラス。
 	\~english	@brief	Template class for 2D points specified by its coordinates `x` and `y`.
@@ -94,19 +95,19 @@ namespace dxle {
 			: x(std::move(x_)), y(std::move(y_)) {}
 
 		//copy constructor
-		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<value_type>::value) : x(o.x), y(o.y) {}
+		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(o.x), y(o.y) {}
 		//move constructor
 		DXLE_CONSTEXPR_CLASS point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW
 			: x(std::move(o.x)), y(std::move(o.y)) {}
 		//copy assignment operator
-		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_assignable<value_type>::value)
+		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_assignable<value_type>::value))
 		{
 			this->x = r.x;
 			this->y = r.y;
 			return *this;
 		}
 		//move assignment operator
-		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_IF(std::is_nothrow_move_assignable<value_type>::value)
+		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<value_type>::value))
 		{
 			this->x = std::move(r.x);
 			this->y = std::move(r.y);
@@ -115,7 +116,7 @@ namespace dxle {
 
 
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->x != 0)) {
-			return this->x != 0 || this->y != 0;
+			return (this->x != 0) || (this->y != 0);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
@@ -273,7 +274,7 @@ namespace dxle {
 	\~english	@return	const-lvalue reference to first argument
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS inline const point_c<T>& operator +(const point_c<T>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value) { return r; }
+	DXLE_CONSTEXPR_CLASS inline point_c<T> operator +(const point_c<T>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value) { return r; }
 
 	/**
 	@relates point_c
@@ -299,7 +300,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point_c<T1>& operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x += r.x)
+	point_c<T1>& operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR((l.x += r.x))
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -499,7 +500,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(point_c<T>{abs(o.x), abs(o.y)}) { return{ abs(o.x), abs(o.y) }; }
+	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR((point_c<T>{abs(o.x), abs(o.y)})) { return{ abs(o.x), abs(o.y) }; }
 
 	/**
 	@relates point_c
