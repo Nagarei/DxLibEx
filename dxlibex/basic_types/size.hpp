@@ -485,6 +485,79 @@ namespace dxle {
 
 	/**
 	@relates size_c
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param s	size_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param s	const-lvalue reference to size_c value
+	\~japanese	@return	(0, 0)と等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to (0, 0)
+	\~@code
+	dxle::sizei s = { 0 , 0 };
+	bool re = s != 0;//false
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator !=(const size_c<T>& s, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
+	{
+		return static_cast<bool>(s);
+	}
+	/**
+	@relates size_c
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param s	size_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param s	const-lvalue reference to size_c value
+	\~japanese	@return	(0, 0)と等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to (0, 0)
+	\~@code
+	dxle::sizei s = { 0 , 0 };
+	bool re = 0 != s;//false
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator !=(std::nullptr_t, const size_c<T>& s) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
+	{
+		return static_cast<bool>(s);
+	}
+	/**
+	@relates size_c
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param p	size_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to size_c value
+	\~japanese	@return	(0, 0)と等しければtrueを返す
+	\~english	@return	true if left operand is equal to (0, 0)
+	\~@code
+	dxle::sizei s = { 0 , 0 };
+	bool re = 0 == s;//true
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator ==(const size_c<T>& s, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
+	{
+		return !static_cast<bool>(s);
+	}
+	/**
+	@relates size_c
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param s	size_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param s	const-lvalue reference to size_c value
+	\~japanese	@return	(0, 0)と等しければtrueを返す
+	\~english	@return	true if left operand is equal to (0, 0)
+	\~@code
+	dxle::sizei s = { 0 , 0 };
+	bool re = 0 == s;//true
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const size_c<T>& s) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
+	{
+		return !static_cast<bool>(s);
+	}
+
+	/**
+	@relates size_c
 	\~japanese	@brief	size_cの絶対値(ベクトルの絶対値ではないのでその場合はdistanceを使ってください)
 	\~english	@brief	Absolute value of size_c(THIS IS NOT THE ABSOLUTE VALUE OF THE VECTOR! use distance instead.)
 	\~japanese	@param o	size_cクラスオブジェクト

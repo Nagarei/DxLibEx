@@ -485,6 +485,78 @@ namespace dxle {
 	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T>() != std::declval<T>()) { return !(l != r);	}
 
+	/**
+	@relates point_c
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to (0, 0)
+	\~@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = p != 0;//false
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	{
+		return static_cast<bool>(p);
+	}
+	/**
+	@relates point_c
+	\~japanese	@brief	二項演算子!=のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator !=. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しくなければtrueを返す
+	\~english	@return	true if left operand is not equal to (0, 0)
+	\~@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = 0 != p;//false
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	{
+		return static_cast<bool>(p);
+	}
+	/**
+	@relates point_c
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しければtrueを返す
+	\~english	@return	true if left operand is equal to (0, 0)
+	\~@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = 0 == p;//true
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	{
+		return !static_cast<bool>(p);
+	}
+	/**
+	@relates point_c
+	\~japanese	@brief	二項演算子==のオーバーロード。厳密な比較が行われます
+	\~english	@brief	Overload of binary operator ==. This operator compares strict difference
+	\~japanese	@param p	point_cクラスオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to point_c value
+	\~japanese	@return	(0, 0)と等しければtrueを返す
+	\~english	@return	true if left operand is equal to (0, 0)
+	\~@code
+	dxle::pointi p = { 0 , 0 };
+	bool re = 0 == p;//true
+	@endcode
+	*/
+	template <typename T>
+	DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	{
+		return !static_cast<bool>(p);
+	}
 
 	/**
 	@relates point_c
@@ -501,6 +573,7 @@ namespace dxle {
 	*/
 	template<typename T>
 	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR((point_c<T>{abs(o.x), abs(o.y)})) { return{ abs(o.x), abs(o.y) }; }
+
 
 	/**
 	@relates point_c
