@@ -108,21 +108,21 @@ namespace dxle {
 		{
 			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z) };
 		}
-		//!\~english conversion to std::pair
-		//!\~japanese std::pairへの変換
+		//!\~english conversion to std::tuple
+		//!\~japanese std::tupleへの変換
 		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			return std::forward_as_tuple(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z));
 		}
 	};
-	//convert from std::pair
+	//convert from std::tuple
 
 	/**
 	@relates point3d_c
-	\~japanese	@brief	std::pairからの変換
-	\~english	@brief	conversion from std::pair
-	\~japanese	@param p	std::pairオブジェクトへのconst-lvalue reference
-	\~english	@param p	const-lvalue reference to std::pair
+	\~japanese	@brief	std::tupleからの変換
+	\~english	@brief	conversion from std::tuple
+	\~japanese	@param p	std::tupleオブジェクトへのconst-lvalue reference
+	\~english	@param p	const-lvalue reference to std::tuple
 	\~japanese	@return	point3d_cクラスオブジェクト
 	\~english	@return	point3d_c value
 	*/
@@ -132,14 +132,14 @@ namespace dxle {
 	}
 	/**
 	@relates point3d_c
-	\~japanese	@brief	std::pairからの変換
-	\~english	@brief	conversion from std::pair
-	\~japanese	@param p	std::pairオブジェクトへのrvalue reference
-	\~english	@param p	rvalue reference to std::pair
+	\~japanese	@brief	std::tupleからの変換
+	\~english	@brief	conversion from std::tuple
+	\~japanese	@param p	std::tupleオブジェクトへのrvalue reference
+	\~english	@param p	rvalue reference to std::tuple
 	\~japanese	@return	point3d_cクラスオブジェクト
 	\~english	@return	point3d_c value
 	*/
-	template<typename T> point3d_c<T> make_point3d_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW
+	template<typename T> point3d_c<T> make_point3d_c(std::tuple<T, T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW
 	{
 		return point3d_c<T>(std::move(std::get<0>(p)), std::move(std::get<1>(p)), std::move(std::get<2>(p)));
 	}
