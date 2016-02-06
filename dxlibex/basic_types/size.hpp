@@ -113,7 +113,7 @@ namespace dxle {
 		}
 
 
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->x != 0)) {
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->width != 0)) {
 			return (this->width != 0) || (this->height != 0);
 		}
 		//!\~english conversion to another data type
@@ -570,7 +570,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T>
-	DXLE_CONSTEXPR_CLASS size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_IF_EXPR((size_c<T>{abs(o.x), abs(o.y)})) { return { abs(o.width), abs(o.height) }; }
+	DXLE_CONSTEXPR_CLASS size_c<T> abs(const size_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(o.width)) { return { abs(o.width), abs(o.height) }; }
 
 	typedef size_c<int> sizei;
 	typedef size_c<unsigned int> sizeui;
