@@ -257,7 +257,7 @@ namespace dxle {
 	\~english	@return	Memberwise opposite of the size_c value
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS size_c<T> operator -(const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR((size_c<T>{-r.width, -r.height}))
+	DXLE_CONSTEXPR_CLASS size_c<T> operator -(const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(-r.width)
 	{
 		return { -r.width, -r.height };
 	}
@@ -298,7 +298,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	size_c<T1>& operator +=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR((l.width += r.width))
+	size_c<T1>& operator +=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width += r.width)
 	{
 	    l.width += r.width;
 	    l.height += r.height;
@@ -317,7 +317,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	size_c<T1>& operator -=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR((l.width -= r.width))
+	size_c<T1>& operator -=(size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width -= r.width)
 	{
 	    l.width -= r.width;
 	    l.height -= r.height;

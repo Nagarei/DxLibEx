@@ -280,7 +280,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point3d_c<T1>& operator +=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() += std::declval<T2>())
+	point3d_c<T1>& operator +=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x += r.x)
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -300,7 +300,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point3d_c<T1>& operator -=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() -= std::declval<T2>())
+	point3d_c<T1>& operator -=(point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x -= r.x)
 	{
 	    l.x -= r.x;
 	    l.y -= r.y;
@@ -320,7 +320,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() + std::declval<T2>())
+	DXLE_CONSTEXPR_CLASS auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x + r.x, l.y + r.y, l.z + r.z };
@@ -338,7 +338,7 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() - std::declval<T2>())
+	DXLE_CONSTEXPR_CLASS auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x - r.x, l.y - r.y, l.z - r.z };
@@ -356,7 +356,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() * std::declval<T2>())
+	DXLE_CONSTEXPR_CLASS auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x * r, l.y * r, l.z * r };
@@ -374,7 +374,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() * std::declval<T2>())
+	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l + r.x, l + r.y, l + r.z };
@@ -392,7 +392,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point3d_c<T1>& operator *=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() *= std::declval<T2>())
+	point3d_c<T1>& operator *=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x *= r)
 	{
 	    l.x *= r;
 	    l.y *= r;
@@ -412,7 +412,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() / std::declval<T2>())
+	DXLE_CONSTEXPR_CLASS auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x / r, l.y / r, l.z / r};
@@ -430,7 +430,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point3d_c<T1>& operator /=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1&>() /= std::declval<T2>())
+	point3d_c<T1>& operator /=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x /= r)
 	{
 	    l.x /= r;
 	    l.y /= r;
@@ -450,7 +450,7 @@ namespace dxle {
 	\~english	@return	true if left operand is not equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T>() != std::declval<T>())
+	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x)
 	{
 		return (l.x != r.x) || (l.y != r.y) || (l.z != r.z);
 	}
@@ -469,7 +469,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& p, nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
 	}
@@ -488,7 +488,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator !=(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator !=(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
 	}
@@ -505,7 +505,7 @@ namespace dxle {
 	\~english	@return	true if left operand is equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T>() != std::declval<T>()) { return !(l != r);	}
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x) { return !(l != r);	}
 
 	/**
 	@relates point3d_c
@@ -521,7 +521,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& p, nullptr_t) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return static_cast<bool>(p);
 	}
@@ -540,7 +540,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator ==(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_OR_NOTHROW
+	DXLE_CONSTEXPR_CLASS bool operator ==(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return static_cast<bool>(p);
 	}
@@ -559,7 +559,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(dxle::abs(std::declval<T>())) { return{ dxle::abs(o.x), dxle::abs(o.y), dxle::abs(o.z) }; }
+	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(o.x)) { return{ abs(o.x), abs(o.y), abs(o.z) }; }
 
 	/**
 	@relates point3d_c
@@ -573,7 +573,7 @@ namespace dxle {
 	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
 	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() * std::declval<T2>() + std::declval<T1>() * std::declval<T2>())
+	DXLE_CONSTEXPR_CLASS auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(p1.x * p2.x + p1.y * p2.y + p1.z * p2.z)
 		-> decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 	{
 		return p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;

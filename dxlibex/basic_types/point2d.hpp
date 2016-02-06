@@ -259,7 +259,7 @@ namespace dxle {
 	\~english	@return	Memberwise opposite of the point_c value
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR((point_c<T>{ -r.x, -r.y }))
+	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(-r.x)
 	{
 		return { -r.x, -r.y };
 	}
@@ -300,7 +300,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to first argument
 	*/
 	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	point_c<T1>& operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR((l.x += r.x))
+	point_c<T1>& operator +=(point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x += r.x)
 	{
 	    l.x += r.x;
 	    l.y += r.y;
@@ -483,7 +483,7 @@ namespace dxle {
 	\~english	@return	true if left operand is equal to right operand
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<T>() != std::declval<T>()) { return !(l != r);	}
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x) { return !(l != r);	}
 
 	/**
 	@relates point_c
@@ -572,7 +572,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR((point_c<T>{abs(o.x), abs(o.y)})) { return{ abs(o.x), abs(o.y) }; }
+	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(o.x)) { return{ abs(o.x), abs(o.y) }; }
 
 
 	/**
