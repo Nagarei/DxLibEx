@@ -13,6 +13,7 @@
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/type_traits/is_nothrow.hpp"
 #include "dxlibex/type_traits/is_castable.hpp"
+#include "dxlibex/type_traits/ignore.hpp"
 #include "dxlibex/type_traits/is_well_format.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
@@ -125,14 +126,14 @@ namespace dxle {
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((static_cast<bool>(this->x))) {
 			return static_cast<bool>(this->x) || static_cast<bool>(this->y);
 		}
-		template<enable_if_t<
+		template<nullptr_t n = nullptr, enable_if_t<ignore_type<decltype(n)>::value &&
 			(!std::is_scalar<value_type>::value && is_castable<value_type, bool>::value) == false &&
 			has_operator_notequal_to_zero<value_type>::value
 		, nullptr_t> = nullptr>
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->x != 0)) {
 			return (this->x != 0) || (this->y != 0);
 		}
-		template<enable_if_t<
+		template<nullptr_t n = nullptr, enable_if_t<ignore_type<decltype(n)>::value &&
 			(!std::is_scalar<value_type>::value && is_castable<value_type, bool>::value) == false &&
 			has_operator_notequal_to_zero<value_type>::value == false &&
 			ignore_type<decltype(value_type{} != value_type{})>::value
