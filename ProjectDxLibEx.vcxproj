@@ -49,10 +49,15 @@
     <ClInclude Include="dxlibex\structs.h" />
     <ClInclude Include="dxlibex\thread.h" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
+    <ClInclude Include="dxlibex\type_traits\common_type.hpp" />
     <ClInclude Include="dxlibex\type_traits\enable_if.hpp" />
     <ClInclude Include="dxlibex\type_traits\first_enabled.hpp" />
+    <ClInclude Include="dxlibex\type_traits\float_promote.hpp" />
     <ClInclude Include="dxlibex\type_traits\ignore.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_castable.hpp" />
     <ClInclude Include="dxlibex\type_traits\is_nothrow.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_representable.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_well_format.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A7FFFCCD-08A6-4826-84D4-B46438389B66}</ProjectGuid>

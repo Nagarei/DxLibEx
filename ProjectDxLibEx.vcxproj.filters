@@ -152,5 +152,20 @@
     <ClInclude Include="dxlibex\type_traits\is_nothrow.hpp">
       <Filter>dxlibex\type_traits</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_castable.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_well_format.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\common_type.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\float_promote.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_representable.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

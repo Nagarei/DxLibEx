@@ -12,6 +12,8 @@
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/type_traits/is_nothrow.hpp"
+#include "dxlibex/type_traits/is_castable.hpp"
+#include "dxlibex/type_traits/is_well_format.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
 #include "DxLibEx/basic_types/distance_result_type_t.hpp"
@@ -114,10 +116,31 @@ namespace dxle {
 			return *this;
 		}
 
+		//operator bool
+		//1. operator bool
+		//2. operator != (nullptr)
+		//3. default constector + operator !=
 
+		template<nullptr_t n=nullptr, enable_if_t<ignore_type<decltype(n)>::value && !std::is_scalar<value_type>::value && is_castable<value_type, bool>::value, nullptr_t> =nullptr>
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((static_cast<bool>(this->x))) {
+			return static_cast<bool>(this->x) || static_cast<bool>(this->y);
+		}
+		template<enable_if_t<
+			(!std::is_scalar<value_type>::value && is_castable<value_type, bool>::value) == false &&
+			has_operator_notequal_to_zero<value_type>::value
+		, nullptr_t> = nullptr>
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->x != 0)) {
 			return (this->x != 0) || (this->y != 0);
 		}
+		template<enable_if_t<
+			(!std::is_scalar<value_type>::value && is_castable<value_type, bool>::value) == false &&
+			has_operator_notequal_to_zero<value_type>::value == false &&
+			ignore_type<decltype(value_type{} != value_type{})>::value
+		,nullptr_t> = nullptr>
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF((std::is_nothrow_default_constructible<value_type>::value)) {
+			return (this->x != value_type{}) || (this->y != value_type{});
+		}
+
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
 		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator point_c<Tp2_>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
