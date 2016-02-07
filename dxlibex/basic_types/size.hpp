@@ -14,6 +14,7 @@
 #include "dxlibex/type_traits/is_nothrow.hpp"
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
+#include "dxlibex/basic_types/coordinate_operator_bool_helper.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
@@ -112,9 +113,12 @@ namespace dxle {
 			return *this;
 		}
 
-
+		//operator bool
+		//1. operator bool
+		//2. operator != (nullptr)
+		//3. default constector + operator !=
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR(this->width != 0) {
-			return (this->width != 0) || (this->height != 0);
+			return operator_bool_helper(this->width, this->height);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるsize_cクラス同士の変換

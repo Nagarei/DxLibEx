@@ -14,6 +14,7 @@
 #include "dxlibex/basic_types/arithmetic_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
 #include "dxlibex/basic_types/distance_result_type_t.hpp"
+#include "dxlibex/basic_types/coordinate_operator_bool_helper.hpp"
 #include "dxlibex/algorithm/safe_dist.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
@@ -98,9 +99,12 @@ namespace dxle {
 			return *this;
 		}
 
-
+		//operator bool
+		//1. operator bool
+		//2. operator != (nullptr)
+		//3. default constector + operator !=
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_OR_NOTHROW {
-			return this->x || this->y || this->z;
+			return operator_bool_helper(this->x, this->y, this->z);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint3d_cクラス同士の変換
