@@ -320,7 +320,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator +(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x + r.x)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x + r.x, l.y + r.y, l.z + r.z };
@@ -338,7 +338,7 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both point3d_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator -(const point3d_c<T1>& l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x - r.x)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x - r.x, l.y - r.y, l.z - r.z };
@@ -356,7 +356,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x * r)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x * r, l.y * r, l.z * r };
@@ -374,7 +374,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l + r.x)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l + r.x, l + r.y, l + r.z };
@@ -412,7 +412,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x / r)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return { l.x / r, l.y / r, l.z / r};

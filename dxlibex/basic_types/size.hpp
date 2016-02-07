@@ -113,7 +113,7 @@ namespace dxle {
 		}
 
 
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->width != 0)) {
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR(this->width != 0) {
 			return (this->width != 0) || (this->height != 0);
 		}
 		//!\~english conversion to another data type
@@ -336,7 +336,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both size_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator +(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator +(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width + r.width)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width + r.width, l.height + r.height};
@@ -354,7 +354,7 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both size_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator -(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator -(const size_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width - r.width)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width - r.width, l.height - r.height};
@@ -372,7 +372,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width * r)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width * r, l.height * r};
@@ -390,7 +390,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
+	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l * r.width)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l * r.width, l * r.height};
@@ -408,7 +408,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	size_c<T1>& operator *=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR((l.width *= r))
+	size_c<T1>& operator *=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width *= r)
 	{
 	    l.width *= r;
 	    l.height *= r;
@@ -427,7 +427,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS auto operator /(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR((l.width / r))
+	DXLE_CONSTEXPR_CLASS auto operator /(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width / r)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width / r, l.height / r};
@@ -445,7 +445,7 @@ namespace dxle {
 	\~english	@return	lvalue reference to 1st argument
 	*/
 	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
-	size_c<T1>& operator /=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR((l.width /= r))
+	size_c<T1>& operator /=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width /= r)
 	{
 	    l.width /= r;
 	    l.height /= r;
@@ -464,7 +464,7 @@ namespace dxle {
 	\~english	@return	true if left operand is not equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator !=(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR((l.width != r.width))
+	DXLE_CONSTEXPR_CLASS bool operator !=(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.width != r.width)
 	{
 		return (l.width != r.width) || (l.height != r.height);
 	}
@@ -481,7 +481,7 @@ namespace dxle {
 	\~english	@return	true if left operand is equal to right operand
 	*/
 	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR((l != r)) { return !(l != r);	}
+	DXLE_CONSTEXPR_CLASS bool operator ==(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l != r) { return !(l != r);	}
 
 	/**
 	@relates size_c
