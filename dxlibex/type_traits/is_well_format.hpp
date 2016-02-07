@@ -20,6 +20,14 @@ namespace type_traits {
 	template<typename T>
 	struct has_operator_notequal_to_zero : has_operator_notequal_to_zero_impl<T> {};
 	
+	template<typename T, typename = std::nullptr_t>
+	struct has_operator_notequal_to_this_impl : std::false_type {};
+	template<typename T>
+	struct has_operator_notequal_to_this_impl < T, typename enable_if<ignore_type<decltype(std::declval<T>() != std::declval<T>())>::value, std::nullptr_t>::type >
+		: std::true_type {};
+	template<typename T>
+	struct has_operator_notequal_to_this : has_operator_notequal_to_this_impl<T> {};
+
 }//namespace
 using namespace type_traits;
 }
