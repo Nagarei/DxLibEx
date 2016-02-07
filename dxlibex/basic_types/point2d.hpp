@@ -122,26 +122,6 @@ namespace dxle {
 		//1. operator bool
 		//2. operator != (nullptr)
 		//3. default constector + operator !=
-
-		//template<nullptr_t n=nullptr, enable_if_t<ignore_type<decltype(n)>::value && !std::is_scalar<value_type>::value && is_castable<value_type, bool>::value, nullptr_t> =nullptr>
-		//DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((static_cast<bool>(this->x))) {
-		//	return static_cast<bool>(this->x) || static_cast<bool>(this->y);
-		//}
-		//template<nullptr_t n = nullptr, enable_if_t<ignore_type<decltype(n)>::value &&
-		//	(!std::is_scalar<value_type>::value && is_castable<value_type, bool>::value) == false &&
-		//	has_operator_notequal_to_zero<const value_type>::value
-		//, nullptr_t> = nullptr>
-		//DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((this->x != 0)) {
-		//	return (this->x != 0) || (this->y != 0);
-		//}
-		//template<nullptr_t n = nullptr, enable_if_t<ignore_type<decltype(n)>::value &&
-		//	(!std::is_scalar<value_type>::value && is_castable<value_type, bool>::value) == false &&
-		//	has_operator_notequal_to_zero<const value_type>::value == false &&
-		//	(std::is_default_constructible<value_type>::value && has_operator_notequal_to_this<value_type>::value)
-		//,nullptr_t> = nullptr>
-		//DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF((std::is_nothrow_default_constructible<value_type>::value)) {
-		//	return (this->x != value_type{}) || (this->y != value_type{});
-		//}
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR(operator_bool_helper(this->x, this->y)){
 			return operator_bool_helper(this->x, this->y);
 		}
