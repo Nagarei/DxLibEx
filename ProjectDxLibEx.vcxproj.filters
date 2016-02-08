@@ -167,5 +167,17 @@
     <ClInclude Include="dxlibex\type_traits\is_representable.hpp">
       <Filter>dxlibex\type_traits</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\coordinate_operator_bool_helper.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\distance_result_type_t.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\stdint.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\tchar.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

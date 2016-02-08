@@ -93,8 +93,8 @@ namespace dxle {
 		typedef typename std::remove_cv<T>::type value_type;
 		value_type x, y;
 		DXLE_CONSTEXPR_CLASS point_c() DXLE_NOEXCEPT_IF(std::is_nothrow_constructible<value_type>::value) : x(), y() {}
-		DXLE_CONSTEXPR_CLASS point_c(value_type x_, value_type y_) DXLE_NOEXCEPT_OR_NOTHROW
-			: x(std::move(x_)), y(std::move(y_)) {}
+		DXLE_CONSTEXPR_CLASS point_c(const value_type& x_, const value_type& y_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>())) : x(x_), y(y_) {}
+		DXLE_CONSTEXPR_CLASS point_c(value_type&& x_, value_type&& y_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)) {}
 
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(o.x), y(o.y) {}
@@ -109,19 +109,18 @@ namespace dxle {
 			return *this;
 		}
 		//move assignment operator
-		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<value_type>::value))
+		point_c& operator=(point_c<value_type>&& r) DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			this->x = std::move(r.x);
 			this->y = std::move(r.y);
 			return *this;
 		}
-
-		//operator bool
-		//1. operator bool
-		//2. operator != (nullptr)
-		//3. default constector + operator !=
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR(operator_bool_helper(this->x, this->y)){
-			return operator_bool_helper(this->x, this->y);
+		//!operator bool
+		//!1. operator bool
+		//!2. operator != (nullptr)
+		//!3. default constector + operator !=
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y))){
+			return dxle::detail::operator_bool_helper(this->x, this->y);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換

@@ -90,9 +90,8 @@ namespace dxle {
 		typedef T value_type;
 		value_type width, height;
 		DXLE_CONSTEXPR_CLASS size_c() DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<value_type>::value)) : width(), height() {}
-		DXLE_CONSTEXPR_CLASS size_c(value_type width_, value_type height_) DXLE_NOEXCEPT_OR_NOTHROW
-			: width(std::move(width_)), height(std::move(height_))
-		{}
+		DXLE_CONSTEXPR_CLASS size_c(const value_type& width_, const value_type& height_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>())) : width(width_), height(height_) {}
+		DXLE_CONSTEXPR_CLASS size_c(value_type&& width_, value_type&& height_) DXLE_NOEXCEPT_OR_NOTHROW : width(std::move(width_)), height(std::move(height_)) {}
 
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS size_c(const size_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : width(o.width), height(o.height) {}
@@ -106,19 +105,19 @@ namespace dxle {
 			return *this;
 		}
 		//move assignment operator
-		size_c& operator=(size_c<value_type>&& r) DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<value_type>::value))
+		size_c& operator=(size_c<value_type>&& r) DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			this->width = std::move(r.width);
 			this->height = std::move(r.height);
 			return *this;
 		}
 
-		//operator bool
-		//1. operator bool
-		//2. operator != (nullptr)
-		//3. default constector + operator !=
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR(this->width != 0) {
-			return operator_bool_helper(this->width, this->height);
+		//!operator bool
+		//!1. operator bool
+		//!2. operator != (nullptr)
+		//!3. default constector + operator !=
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->width, this->height))) {
+			return dxle::detail::operator_bool_helper(this->width, this->height);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるsize_cクラス同士の変換

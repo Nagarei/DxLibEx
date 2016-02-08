@@ -48,18 +48,19 @@ namespace dxle {
 				return first != T{} && second != T{} && third != T{};
 			}
 		};
-	}
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS inline bool operator_bool_helper(const T& first, const T& second) 
-		DXLE_NOEXCEPT_IF_EXPR(dxle::detail::operator_bool_helper_impl<T>()(first, second))
-	{ 
-		return dxle::detail::operator_bool_helper_impl<T>()(first, second);
-	}
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
-	DXLE_CONSTEXPR_CLASS inline bool operator_bool_helper(const T& first, const T& second, const T& third)
-		DXLE_NOEXCEPT_IF_EXPR(dxle::detail::operator_bool_helper_impl<T>()(first, second, third))
-	{
-		return dxle::detail::operator_bool_helper_impl<T>()(first, second, third);
+
+		template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+		DXLE_CONSTEXPR_CLASS inline bool operator_bool_helper(const T& first, const T& second)
+			DXLE_NOEXCEPT_IF_EXPR(dxle::detail::operator_bool_helper_impl<T>()(first, second))
+		{
+			return dxle::detail::operator_bool_helper_impl<T>()(first, second);
+		}
+		template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+		DXLE_CONSTEXPR_CLASS inline bool operator_bool_helper(const T& first, const T& second, const T& third)
+			DXLE_NOEXCEPT_IF_EXPR(dxle::detail::operator_bool_helper_impl<T>()(first, second, third))
+		{
+			return dxle::detail::operator_bool_helper_impl<T>()(first, second, third);
+		}
 	}
 }
 #endif //DXLE_INC_BASIC_TYPES_COORDINATE_OPERATOR_BOOL_HELPER_HPP_

@@ -76,7 +76,8 @@ namespace dxle {
 		typedef T value_type;
 		value_type x, y, z;
 		DXLE_CONSTEXPR_CLASS point3d_c() DXLE_NOEXCEPT_IF(std::is_nothrow_constructible<value_type>::value) : x(), y(), z() {}
-		DXLE_CONSTEXPR_CLASS point3d_c(value_type x_, value_type y_, value_type z_) DXLE_NOEXCEPT_OR_NOTHROW : x(x_), y(y_), z(z_) {}
+		DXLE_CONSTEXPR_CLASS point3d_c(const value_type& x_, const value_type& y_, const value_type& z_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>())) : x(x_), y(y_), z(z_) {}
+		DXLE_CONSTEXPR_CLASS point3d_c(value_type&& x_, value_type&& y_, value_type&& z_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)), z(std::move(z_)) {}
 
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS point3d_c(const point3d_c<value_type>& o) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<value_type>::value) : x(o.x), y(o.y), z(o.z) {}
@@ -91,7 +92,7 @@ namespace dxle {
 			return *this;
 		}
 		//move assignment operator
-		point3d_c& operator=(point3d_c<value_type>&& r) DXLE_NOEXCEPT_IF(std::is_nothrow_move_assignable<value_type>::value)
+		point3d_c& operator=(point3d_c<value_type>&& r) DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			this->x = std::move(r.x);
 			this->y = std::move(r.y);
@@ -99,12 +100,12 @@ namespace dxle {
 			return *this;
 		}
 
-		//operator bool
-		//1. operator bool
-		//2. operator != (nullptr)
-		//3. default constector + operator !=
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_OR_NOTHROW {
-			return operator_bool_helper(this->x, this->y, this->z);
+		//!operator bool
+		//!1. operator bool
+		//!2. operator != (nullptr)
+		//!3. default constector + operator !=
+		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y, this->z))){
+			return dxle::detail::operator_bool_helper(this->x, this->y, this->z);
 		}
 		//!\~english conversion to another data type
 		//!\~japanese 内部型の異なるpoint3d_cクラス同士の変換
@@ -114,7 +115,7 @@ namespace dxle {
 		}
 		//!\~english conversion to std::tuple
 		//!\~japanese std::tupleへの変換
-		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(std::declval<Tp2_>()))
+		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(this->x))
 		{
 			return std::forward_as_tuple(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z));
 		}

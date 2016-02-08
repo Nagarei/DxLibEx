@@ -19,9 +19,13 @@
     <ClInclude Include="dxlibex\algorithm\safe_dist.hpp" />
     <ClInclude Include="dxlibex\basic_types.hpp" />
     <ClInclude Include="dxlibex\basic_types\arithmetic_t.hpp" />
+    <ClInclude Include="dxlibex\basic_types\coordinate_operator_bool_helper.hpp" />
+    <ClInclude Include="dxlibex\basic_types\distance_result_type_t.hpp" />
     <ClInclude Include="dxlibex\basic_types\point2d.hpp" />
     <ClInclude Include="dxlibex\basic_types\point3d.hpp" />
     <ClInclude Include="dxlibex\basic_types\size.hpp" />
+    <ClInclude Include="dxlibex\basic_types\stdint.hpp" />
+    <ClInclude Include="dxlibex\basic_types\tchar.hpp" />
     <ClInclude Include="dxlibex\Color.hpp" />
     <ClInclude Include="dxlibex\config\compiler.hpp" />
     <ClInclude Include="dxlibex\config\compiler\clang.hpp" />
