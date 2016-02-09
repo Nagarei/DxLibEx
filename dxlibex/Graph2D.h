@@ -242,7 +242,9 @@ namespace dxle
 			//! 画像の等倍描画
 			inline int DrawGraph(int x, int y, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
 			//! 画像の等倍描画
-			template<typename T> inline int DrawGraph(const point_c<T>& p, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); if (std::is_integral<T>::value) { return DxLib::DrawGraph(p.x, p.y, GetHandle(), TransFlag) } else { return DxLib::DrawGraphF(p.x, p.y, GetHandle(), TransFlag); } }
+			inline int DrawGraph(const pointi& p, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraph(p.x, p.y, GetHandle(), TransFlag); }
+			//! 画像の等倍描画
+			template<typename T> inline int DrawGraph(const point_c<T>& p, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); if (std::is_integral<T>::value) { return DxLib::DrawGraph(p.x, p.y, GetHandle(), TransFlag); } else { return DxLib::DrawGraphF(p.x, p.y, GetHandle(), TransFlag); } }
 			//! 画像の拡大描画
 			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
 			//! 画像の拡大描画
