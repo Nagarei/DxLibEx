@@ -234,7 +234,7 @@ namespace dxle
 				if (this->GetGraphFilePath(&buf[0]) == -1) {
 					return {};
 				}
-				buf.resize(std::strlen(buf.c_str()));
+				buf.resize(dxle::tstrlen(buf.c_str()));
 				buf.shrink_to_fit();
 				return buf;
 			}
