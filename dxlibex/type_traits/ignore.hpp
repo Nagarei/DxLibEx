@@ -14,7 +14,8 @@ namespace dxle {
 namespace type_traits{
 
 	/**
-	@brief	\~japanese 渡された型にかかわらず常にtrueなvalueを持つクラス。
+	@brief
+	\~japanese 渡された型にかかわらず常にtrueなvalueを持つクラス。
 	\~english Trait class whose `value` is true regardless of what `T` is.
 	\~japanese	decltype式にSFINAEを効かせたいときに使います。
 	\~english	we can use it, when we want to let SFINAE work for a decltype expressions.
@@ -22,7 +23,7 @@ namespace type_traits{
 	@code
 	template<typename T>
 	//return int
-	auto add(int a, T b)->std::enable_if_t<dxle::ignore<decltype(a + b)>::value, int>
+	auto add(int a, T b)->std::enable_if_t<dxle::ignore_type<decltype(a + b)>::value, int>
 	{
 		return a + b;
 	}
@@ -36,7 +37,7 @@ namespace type_traits{
 	@endcode
 	*/
 	template<typename>
-	struct ignore : std::true_type {};
+	struct ignore_type : std::true_type {};
 
 	template<typename T, typename...>
 	struct first_type {

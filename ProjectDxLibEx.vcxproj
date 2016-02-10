@@ -14,12 +14,18 @@
     <ClCompile Include="ProjectDxLibEx\Graph2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dxlibex\algorithm.hpp" />
+    <ClInclude Include="dxlibex\algorithm\cast_if.hpp" />
     <ClInclude Include="dxlibex\algorithm\safe_dist.hpp" />
     <ClInclude Include="dxlibex\basic_types.hpp" />
     <ClInclude Include="dxlibex\basic_types\arithmetic_t.hpp" />
+    <ClInclude Include="dxlibex\basic_types\coordinate_operator_bool_helper.hpp" />
+    <ClInclude Include="dxlibex\basic_types\distance_result_type_t.hpp" />
     <ClInclude Include="dxlibex\basic_types\point2d.hpp" />
     <ClInclude Include="dxlibex\basic_types\point3d.hpp" />
     <ClInclude Include="dxlibex\basic_types\size.hpp" />
+    <ClInclude Include="dxlibex\basic_types\stdint.hpp" />
+    <ClInclude Include="dxlibex\basic_types\tchar.hpp" />
     <ClInclude Include="dxlibex\Color.hpp" />
     <ClInclude Include="dxlibex\config\compiler.hpp" />
     <ClInclude Include="dxlibex\config\compiler\clang.hpp" />
@@ -47,9 +53,15 @@
     <ClInclude Include="dxlibex\structs.h" />
     <ClInclude Include="dxlibex\thread.h" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
+    <ClInclude Include="dxlibex\type_traits\common_type.hpp" />
     <ClInclude Include="dxlibex\type_traits\enable_if.hpp" />
     <ClInclude Include="dxlibex\type_traits\first_enabled.hpp" />
+    <ClInclude Include="dxlibex\type_traits\float_promote.hpp" />
     <ClInclude Include="dxlibex\type_traits\ignore.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_castable.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_nothrow.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_representable.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_well_format.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A7FFFCCD-08A6-4826-84D4-B46438389B66}</ProjectGuid>

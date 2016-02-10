@@ -114,10 +114,10 @@ namespace dxle
 			//!\~english  Create reverse image form an image file
 			static inline texture_2d LoadReverseGraph(const dxle::tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadReverseGraph(FileName.c_str(), NotUse3DFlag), NotUse3DFlag); }
 			
-			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する
 			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(FileName, AllNum, { XNum, YNum }, { XSize, YSize }, NotUse3DFlag); }
-			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する
 			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE)
 			{
@@ -139,7 +139,7 @@ namespace dxle
 					throw;
 				}
 			}
-			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する
 			static inline Cont LoadDivGraph(const dxle::tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag); }
 
