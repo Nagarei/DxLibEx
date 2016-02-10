@@ -76,7 +76,7 @@ namespace dxle {
 		typedef T value_type;
 		value_type x, y, z;
 		DXLE_CONSTEXPR_CLASS point3d_c() DXLE_NOEXCEPT_IF(std::is_nothrow_constructible<value_type>::value) : x(), y(), z() {}
-		DXLE_CONSTEXPR_CLASS point3d_c(const value_type& x_, const value_type& y_, const value_type& z_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>())) : x(x_), y(y_), z(z_) {}
+		DXLE_CONSTEXPR_CLASS point3d_c(const value_type& x_, const value_type& y_, const value_type& z_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(x_), y(y_), z(z_) {}
 		DXLE_CONSTEXPR_CLASS point3d_c(value_type&& x_, value_type&& y_, value_type&& z_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)), z(std::move(z_)) {}
 
 		//copy constructor

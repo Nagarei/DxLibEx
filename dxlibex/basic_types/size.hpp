@@ -90,7 +90,7 @@ namespace dxle {
 		typedef T value_type;
 		value_type width, height;
 		DXLE_CONSTEXPR_CLASS size_c() DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<value_type>::value)) : width(), height() {}
-		DXLE_CONSTEXPR_CLASS size_c(const value_type& width_, const value_type& height_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>())) : width(width_), height(height_) {}
+		DXLE_CONSTEXPR_CLASS size_c(const value_type& width_, const value_type& height_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : width(width_), height(height_) {}
 		DXLE_CONSTEXPR_CLASS size_c(value_type&& width_, value_type&& height_) DXLE_NOEXCEPT_OR_NOTHROW : width(std::move(width_)), height(std::move(height_)) {}
 
 		//copy constructor
