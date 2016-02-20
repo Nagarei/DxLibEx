@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['magenta',['magenta',['../a00021.html#a4e455c7989a99cdf1ef729b83b3be8c3a4c2a4a7078da0ac6733464eacfd00f86',1,'dxle::color']]],
-  ['makedxcolor',['MakeDxColor',['../a00003.html#ab18b192dec99be8f851778a4420ef670',1,'dxle::color::dx_color']]],
-  ['makegraph',['MakeGraph',['../a00007.html#a2570ac5e66de8c72aaaa10effa9ce489',1,'dxle::Graph2D::texture_2d::MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00007.html#a92dcd4a5bd8f62f279a5dd825994c27c',1,'dxle::Graph2D::texture_2d::MakeGraph(const sizei &amp;size, bool NotUse3DFlag=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00020.html#ac0691d68c411c82eee19dd8b205c4cdd',1,'dxle::MakeGraph()'],['../a00024.html#ac74699d0b42b0652527925a417f12477',1,'dxle::Graph2D::MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00024.html#a63e600929484281a8acdfdabdf018ba5',1,'dxle::Graph2D::MakeGraph(const sizei &amp;size, bool NotUse3DFlag=false) DXLE_NOEXCEPT_OR_NOTHROW']]],
-  ['makescreen',['MakeScreen',['../a00005.html#aa08003f375efd86dd4bb6cc541e29522',1,'dxle::Graph2D::screen::MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00005.html#a8ae5baaf7500e4f129b6c96049a267c5',1,'dxle::Graph2D::screen::MakeScreen(const sizei &amp;size, bool UseAlphaChannel=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00020.html#a270dca5dda244eeeccdf5afa4407c071',1,'dxle::MakeScreen()'],['../a00024.html#a5255eb796cdae7e91c3937f4008ec16f',1,'dxle::Graph2D::MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel=false) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00024.html#a91bd5c90f0ebd8d8a4ce574956d5dcf4',1,'dxle::Graph2D::MakeScreen(const sizei &amp;size, bool UseAlphaChannel=false) DXLE_NOEXCEPT_OR_NOTHROW']]]
+  ['has_5foperator_5fnotequal_5fto_5fthis',['has_operator_notequal_to_this',['../a00022.html',1,'dxle::type_traits']]],
+  ['has_5foperator_5fnotequal_5fto_5fthis_5fimpl',['has_operator_notequal_to_this_impl',['../a00023.html',1,'dxle::type_traits']]],
+  ['has_5foperator_5fnotequal_5fto_5fthis_5fimpl_3c_20t_20_3e',['has_operator_notequal_to_this_impl&lt; T &gt;',['../a00023.html',1,'dxle::type_traits']]],
+  ['has_5foperator_5fnotequal_5fto_5fzero',['has_operator_notequal_to_zero',['../a00024.html',1,'dxle::type_traits']]],
+  ['has_5foperator_5fnotequal_5fto_5fzero_5fimpl',['has_operator_notequal_to_zero_impl',['../a00025.html',1,'dxle::type_traits']]],
+  ['has_5foperator_5fnotequal_5fto_5fzero_5fimpl_3c_20t_20_3e',['has_operator_notequal_to_zero_impl&lt; T &gt;',['../a00025.html',1,'dxle::type_traits']]],
+  ['has_5foperator_5fnotequal_5fto_5fzero_5fimpl_3c_20t_2c_20enable_5fif_5ft_3c_20ignore_5ftype_3c_20decltype_28std_3a_3adeclval_3c_20t_20_3e_28_29_21_3d0_29_3e_3a_3avalue_2c_20nullptr_5ft_20_3e',['has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt;',['../a00026.html',1,'dxle::type_traits']]],
+  ['height',['height',['../a00042.html#a22e1720925dfb6d20f54b3ff5e9d633e',1,'dxle::size_c']]],
+  ['helper_2eh',['Helper.h',['../a00078.html',1,'']]],
+  ['hypot_2ehpp',['hypot.hpp',['../a00083.html',1,'']]]
 ];

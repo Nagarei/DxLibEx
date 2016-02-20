@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y',['y',['../a00009.html#a5aa7e4f40488bb9fcc3104e53a8c5986',1,'dxle::point_c']]]
+  ['red',['red',['../a00039.html#a84de727b22db26036c9ce3a4871efc91',1,'dxle::color::rgb']]]
 ];

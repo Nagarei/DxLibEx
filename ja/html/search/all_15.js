@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['x',['x',['../a00011.html#a61cf9db5d19bc277777b207caf95a439',1,'dxle::point_c::x()'],['../a00009.html#a33c3fc06ea0a34a2a1a2791f3d3b3535',1,'dxle::nMouse::MouseState::X()'],['../a00008.html#a35e673f78f143417189554a9a0256f9e',1,'dxle::nMouse::MouseInputInfo::X()']]],
-  ['xbutton1',['XButton1',['../a00009.html#a5d6be4718e284ee08a9e6433821d3084',1,'dxle::nMouse::MouseState']]],
-  ['xbutton2',['XButton2',['../a00009.html#a4fc22690aa282ae6f1884e84e4d047f2',1,'dxle::nMouse::MouseState']]]
+  ['y',['y',['../a00038.html#a5aa7e4f40488bb9fcc3104e53a8c5986',1,'dxle::point_c::y()'],['../a00037.html#aebbc1e2c2ec888c4031827a55b7309e9',1,'dxle::point3d_c::y()']]],
+  ['yellow',['yellow',['../a00099.html#aacfedd2e718cf65ba03a123d54b16f34ad487dd0b55dfcacdd920ccbdaeafa351',1,'dxle::color']]]
 ];

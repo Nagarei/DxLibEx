@@ -1,11 +1,22 @@
 var a00003 =
 [
-    [ "dx_color", "a00003.html#a4c0615a10645ff448a25cd48e22e31c2", null ],
-    [ "dx_color", "a00003.html#a3426d55289184de304144241aef5af11", null ],
-    [ "get", "a00003.html#a16435ffed4cf75a9fbd81cf5346836fc", null ],
-    [ "GetColor2", "a00003.html#a53d7ef98f1cd7fe0c3046bfb435a3aa9", null ],
-    [ "GetColor5", "a00003.html#a0e6b660f2fd4a97f6230062720d64505", null ],
-    [ "GetRGB", "a00003.html#aeb6df1607b8edea0420ca90b44b3c808", null ],
-    [ "GetRGB", "a00003.html#a7db98fb2dbc6fb76d2f11fe64135ce47", null ],
-    [ "value_type", "a00003.html#a412084582244ca7eb3119da5893cf930", null ]
+    [ "Cast", "a00001.html", "a00001" ],
+    [ "Counter_template", "a00003.html#a23c936936671437a0eceb1f20fc5bb4e", null ],
+    [ "Counter_template", "a00003.html#ad457c9e60ab72e5487687dc303b66340", null ],
+    [ "count", "a00003.html#ae75537824c7ae4d7ed0db78abcdaf93c", null ],
+    [ "GetInt", "a00003.html#a6251eca6f72a0eaad74eceb7e48ac1d3", null ],
+    [ "operator T", "a00003.html#a23bbb02ab09731686a9033c781a66233", null ],
+    [ "operator+", "a00003.html#abd193b28707b1354ff1c264200f670c3", null ],
+    [ "operator+", "a00003.html#a65057c87bf6f286158048256cc5f4c00", null ],
+    [ "operator+=", "a00003.html#ae9be8403c6ff5328a58939cf60d0ffbb", null ],
+    [ "operator-", "a00003.html#a22a6a0942d160d4cd9a87ee6762e2a41", null ],
+    [ "operator-", "a00003.html#a0aed1678d63bfcec67ad9f0475650c20", null ],
+    [ "operator-", "a00003.html#ae903e2111d810c22c2c4d4f252148f15", null ],
+    [ "operator-=", "a00003.html#a79c73cd71b3a4a2ffc1392ba35a06e7f", null ],
+    [ "operator<", "a00003.html#a6370cbc5509ad2486b95efb6d076f2b2", null ],
+    [ "operator<=", "a00003.html#af2ac57149b67845d0582ac1e646c9475", null ],
+    [ "operator>", "a00003.html#a4f5c4dad5e7d603d41a5b4bf2d6fb4f7", null ],
+    [ "operator>=", "a00003.html#a39377393d3343f6a881a2cbcd55553b1", null ],
+    [ "operator+", "a00003.html#a25d771348467e442db64ce14c7c1e4b4", null ],
+    [ "operator-", "a00003.html#aa7619e78cc35703ca893b5fcb5187428", null ]
 ];

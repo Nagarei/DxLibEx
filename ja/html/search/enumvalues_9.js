@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['white',['white',['../a00021.html#a4e455c7989a99cdf1ef729b83b3be8c3ad508fe45cecaf653904a0e774084bb5c',1,'dxle::color']]]
+  ['red',['red',['../a00099.html#aacfedd2e718cf65ba03a123d54b16f34abda9643ac6601722a28f238714274da4',1,'dxle::color']]]
 ];

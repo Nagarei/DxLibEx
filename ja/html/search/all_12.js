@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['_7escreen',['~screen',['../a00005.html#a5dfe1131b3fcff3edfdf503772bf8d03',1,'dxle::Graph2D::screen']]],
-  ['_7etexture_5f2d',['~texture_2d',['../a00007.html#a0c7796e2d470d18420dfec77fc36db6b',1,'dxle::Graph2D::texture_2d']]],
-  ['_7eunique_5fhandle_5fbace',['~Unique_Handle_Bace',['../a00008.html#a405a1ad6b86239dd5315ee7d7c722f84',1,'dxle::impl::Unique_Handle_Bace']]],
-  ['_7eunique_5fhandledobject_5fbace',['~Unique_HandledObject_Bace',['../a00009.html#a9727bd8659198c3d1ed73e180b33a776',1,'dxle::impl::Unique_HandledObject_Bace']]]
+  ['value_5ftype',['value_type',['../a00038.html#a747cb8c5472e746a4fd649c8f8b0d22f',1,'dxle::point_c::value_type()'],['../a00037.html#a48f7491f19ad758a3405968a9112f548',1,'dxle::point3d_c::value_type()'],['../a00042.html#a7d75f77ea84f3e327642b35499658ae0',1,'dxle::size_c::value_type()'],['../a00008.html#a412084582244ca7eb3119da5893cf930',1,'dxle::color::dx_color::value_type()']]],
+  ['visualc_2ehpp',['visualc.hpp',['../a00067.html',1,'']]]
 ];

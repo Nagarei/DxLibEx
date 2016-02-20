@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_5ftype',['value_type',['../a00009.html#aa919741292b05871da71393d66fc3955',1,'dxle::point_c']]]
+  ['distance_5fresult_5ftype_5ft',['distance_result_type_t',['../a00097.html#acb3d96a94b5987b9cc374033f5491ca2',1,'dxle']]]
 ];

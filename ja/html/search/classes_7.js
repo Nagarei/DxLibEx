@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['texture2d',['Texture2D',['../a00012.html',1,'dxle::Graph2D']]]
+  ['point3d_5fc',['point3d_c',['../a00037.html',1,'dxle']]],
+  ['point_5fc',['point_c',['../a00038.html',1,'dxle']]]
 ];

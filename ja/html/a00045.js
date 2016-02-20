@@ -1,5 +1,5 @@
 var a00045 =
 [
-    [ "Counter", "a00002.html", "a00002" ],
-    [ "HiPerformanceCounter", "a00005.html", "a00005" ]
+    [ "operator()", "a00045.html#ac882d08bb2ee81c287477a2ae5c30e51", null ],
+    [ "operator()", "a00045.html#a00dd4bc99b4defa6d123714a6de8cfbe", null ]
 ];

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$a00026.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_zero_impl\&lt; T, enable\l_if_t\&lt; ignore_type\&lt; decltype\l(std::declval\&lt; T \&gt;()!=0)\&gt;::\lvalue, nullptr_t \&gt;" alt="" coords="129,5,316,105"/>
+<area shape="rect" id="node3" href="$a00027.html" title="Trait class whose value is true regardless of what T is. we can use it, when we want to let SFINAE wo..." alt="" coords="137,129,308,171"/>
+<area shape="rect" id="node4" href="$a00032.html" title="dxle::type_traits::\lnullptr_t\&lt; T \&gt;" alt="" coords="161,195,284,236"/>
+</map>

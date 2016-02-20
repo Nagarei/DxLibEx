@@ -1,3 +1,5 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$a00003.html" title="dxle::color::dx_color" alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node1" href="$a00002.html" title="dxle::color::color_base" alt="" coords="5,31,159,57"/>
+<area shape="rect" id="node2" href="$a00008.html" title="dxle::color::dx_color" alt="" coords="207,5,345,32"/>
+<area shape="rect" id="node3" href="$a00039.html" title="dxle::color::rgb" alt="" coords="222,56,330,83"/>
 </map>

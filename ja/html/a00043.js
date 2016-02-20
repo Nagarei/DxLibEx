@@ -1,6 +1,4 @@
 var a00043 =
 [
-    [ "Counter_template", "a00003.html", "a00003" ],
-    [ "Unique_Handle_Bace", "a00021.html", "a00021" ],
-    [ "Unique_HandledObject_Bace", "a00022.html", "a00022" ]
+    [ "operator()", "a00043.html#a1bc57e45511b3b31b5c33f9f8ec4788d", null ]
 ];

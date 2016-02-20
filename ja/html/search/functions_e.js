@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['_7escreen',['~Screen',['../a00010.html#a09d2d5570e5f9ed46e3fb18a4b7b1760',1,'dxle::Graph2D::Screen']]],
-  ['_7etexture2d',['~Texture2D',['../a00012.html#a724526f8c947845e6b250a36bce73105',1,'dxle::Graph2D::Texture2D']]],
-  ['_7eunique_5fhandle_5fbace',['~Unique_Handle_Bace',['../a00013.html#a405a1ad6b86239dd5315ee7d7c722f84',1,'dxle::impl::Unique_Handle_Bace']]],
-  ['_7eunique_5fhandledobject_5fbace',['~Unique_HandledObject_Bace',['../a00014.html#a9727bd8659198c3d1ed73e180b33a776',1,'dxle::impl::Unique_HandledObject_Bace']]]
+  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../a00047.html#a32e0322bbef6fdf9152c3f87d5787f13',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace() DXLE_NOEXCEPT_OR_NOTHROW'],['../a00047.html#a652416b45b21929b55ce585ad84d1c5f',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace(Bace_T &amp;&amp;other) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00047.html#a5ebf09a7c8cb391b3543fd4e8c18ae28',1,'dxle::impl::Unique_Handle_Bace::Unique_Handle_Bace(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW']]],
+  ['unique_5fhandledobject_5fbace',['Unique_HandledObject_Bace',['../a00048.html#afe8e97c74851845860eb07d32ead52e8',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW'],['../a00048.html#a7db3af92ad655aa767ba505839c08759',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace(Bace_T &amp;&amp;other) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00048.html#a4dd36a7000fdd1385d999399f806390d',1,'dxle::impl::Unique_HandledObject_Bace::Unique_HandledObject_Bace(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW']]]
 ];

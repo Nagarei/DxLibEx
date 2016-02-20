@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['color_5ftag',['color_tag',['../a00021.html#a4e455c7989a99cdf1ef729b83b3be8c3',1,'dxle::color']]]
+  ['bright_5fclip_5fmode',['bright_clip_mode',['../a00046.html#a2cc69e3e6d926219229983b9464565e4',1,'dxle::graph2d::texture_2d']]]
 ];

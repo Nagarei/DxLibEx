@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['unique_5fhandle_5fbace',['Unique_Handle_Bace',['../a00021.html',1,'dxle::impl']]],
-  ['unique_5fhandle_5fbace_3c_20soundeffect_5funique_20_3e',['Unique_Handle_Bace&lt; SoundEffect_Unique &gt;',['../a00021.html',1,'dxle::impl']]],
-  ['unique_5fhandledobject_5fbace',['Unique_HandledObject_Bace',['../a00022.html',1,'dxle::impl']]],
-  ['unique_5fhandledobject_5fbace_3c_20texture2d_20_3e',['Unique_HandledObject_Bace&lt; Texture2D &gt;',['../a00022.html',1,'dxle::impl']]]
+  ['screen',['screen',['../a00040.html',1,'dxle::graph2d']]],
+  ['screen_5fmutex_5fc',['screen_mutex_c',['../a00041.html',1,'dxle::graph2d']]],
+  ['size_5fc',['size_c',['../a00042.html',1,'dxle']]],
+  ['static_5fcast_5fif_5fhelper',['static_cast_if_helper',['../a00043.html',1,'dxle::detail']]],
+  ['static_5fcast_5fif_5fhelper_3c_20to_2c_20from_2c_20false_2c_20false_20_3e',['static_cast_if_helper&lt; to, from, false, false &gt;',['../a00044.html',1,'dxle::detail']]],
+  ['static_5fcast_5fif_5fhelper_3c_20to_2c_20from_2c_20false_2c_20true_20_3e',['static_cast_if_helper&lt; to, from, false, true &gt;',['../a00045.html',1,'dxle::detail']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bltdrawvalidgraph',['BltDrawValidGraph',['../a00005.html#afcdb244c79c210b5482563eace79e340',1,'dxle::Graph2D::screen::BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, texture_2d &amp;DestGrHandle) const DXLE_NOEXCEPT_OR_NOTHROW'],['../a00005.html#afdca0b9e7e659a6ab1e5c1297594116c',1,'dxle::Graph2D::screen::BltDrawValidGraph(const pointi &amp;lu, const pointi &amp;rb, const pointi &amp;dest, texture_2d &amp;DestGrHandle) const DXLE_NOEXCEPT_OR_NOTHROW']]]
+  ['abs',['abs',['../a00097.html#add868758055d956eae7d455badeb4f48',1,'dxle::abs(int j) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00097.html#ae57f54deedc0056c24aadd3720f31901',1,'dxle::abs(long j) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00097.html#a19bc5495d2ef808caeba956c106dcb4a',1,'dxle::abs(long long j) DXLE_NOEXCEPT_OR_NOTHROW'],['../a00104.html#aa36371b8a0b46964798fc05318486545',1,'dxle::math::abs()']]]
 ];

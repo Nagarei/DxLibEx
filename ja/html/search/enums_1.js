@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dxle_5fmutex',['dxle_mutex',['../a00020.html#a61c0fd6dabbcfa835a56f0925e08f83a',1,'dxle']]]
+  ['color_5ftag',['color_tag',['../a00099.html#aacfedd2e718cf65ba03a123d54b16f34',1,'dxle::color']]]
 ];

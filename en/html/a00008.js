@@ -1,11 +1,15 @@
 var a00008 =
 [
-    [ "Bace_T", "a00008.html#ae2cacc4cd70891502d3724b905fd6726", null ],
-    [ "Unique_Handle_Bace", "a00008.html#a32e0322bbef6fdf9152c3f87d5787f13", null ],
-    [ "Unique_Handle_Bace", "a00008.html#a652416b45b21929b55ce585ad84d1c5f", null ],
-    [ "~Unique_Handle_Bace", "a00008.html#a405a1ad6b86239dd5315ee7d7c722f84", null ],
-    [ "Unique_Handle_Bace", "a00008.html#a5ebf09a7c8cb391b3543fd4e8c18ae28", null ],
-    [ "GetHandle", "a00008.html#a6cc3a3571e704f53a6645ad4083f2263", null ],
-    [ "operator=", "a00008.html#a8b9fe3765b99c1d8f58087a8adc7a966", null ],
-    [ "ReleaseRun", "a00008.html#af30a408e38aeadecf7d157b35244dcce", null ]
+    [ "dx_color", "a00008.html#a42caeba8e6498f778f6b9422d1b5412f", null ],
+    [ "dx_color", "a00008.html#a3682fd3731b7324d2115390791e74474", null ],
+    [ "dx_color", "a00008.html#a042ee437e4fde8ce13b3eb80520f886d", null ],
+    [ "dx_color", "a00008.html#a2251f31c33e4163f75d9ff096c9fece8", null ],
+    [ "dx_color", "a00008.html#ad84f893053d06831ccc153bc93ba88bf", null ],
+    [ "dx_color", "a00008.html#afc833de7b4525ae59384e2998e559e89", null ],
+    [ "get", "a00008.html#a86dc1e5c9e5435a4de742aa1fd4665d5", null ],
+    [ "GetColor2", "a00008.html#a66c057e8f0cad6362ddd7d492a7ecc76", null ],
+    [ "GetColor5", "a00008.html#aaa04fa8d7ba7360c54a93fa4d1414aef", null ],
+    [ "GetRGB", "a00008.html#adb168001fc5a9b53a756cff13d161f7d", null ],
+    [ "GetRGB", "a00008.html#a34337cb4a225edc6cd589942e64eadb5", null ],
+    [ "value_type", "a00008.html#a412084582244ca7eb3119da5893cf930", null ]
 ];

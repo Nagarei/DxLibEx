@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pink',['pink',['../a00021.html#a4e455c7989a99cdf1ef729b83b3be8c3a4a0b0dcedd48f780778d1cd1bb8f9877',1,'dxle::color']]]
+  ['orange',['orange',['../a00099.html#aacfedd2e718cf65ba03a123d54b16f34afe01d67a002dfa0f3ac084298142eccd',1,'dxle::color']]]
 ];

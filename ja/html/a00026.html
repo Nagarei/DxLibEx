@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
-<title>DxLibEx: dxle::detail 名前空間</title>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>DxLibEx: dxle::type_traits::has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt; 構造体テンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,15 +39,15 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.10 -->
+<!-- 構築: Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>総合概要</span></a></li>
-      <li class="current"><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -69,8 +69,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="namespaces.html"><span>名前空間一覧</span></a></li>
-      <li><a href="namespacemembers.html"><span>名前空間メンバ</span></a></li>
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -103,99 +105,40 @@ $(document).ready(function(){initNavTree('a00026.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">クラス</a> &#124;
-<a href="#typedef-members">型定義</a> &#124;
-<a href="#func-members">関数</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::detail 名前空間</div>  </div>
+<div class="title">dxle::type_traits::has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt; 構造体テンプレート</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html">abs_helper</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html">abs_helper&lt; T, false &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html">istream_operator_helper</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html">ostream_operator_helper</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-型定義</h2></td></tr>
-<tr class="memitem:a958c1dd5574c96728fe68d0ccf667363"><td class="memTemplParams" colspan="2">template&lt;typename T , enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:a958c1dd5574c96728fe68d0ccf667363"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00026.html#a958c1dd5574c96728fe68d0ccf667363">arithmetic_t</a> = first_enabled_t&lt; enable_if&lt; 1!=sizeof(T), T &gt;, enable_if&lt; std::is_signed&lt; T &gt;::value, int &gt;, unsigned int &gt;</td></tr>
-<tr class="memdesc:a958c1dd5574c96728fe68d0ccf667363"><td class="mdescLeft">&#160;</td><td class="mdescRight">for int8_t/uint8_t  <a href="#a958c1dd5574c96728fe68d0ccf667363">[詳解]</a><br /></td></tr>
-<tr class="separator:a958c1dd5574c96728fe68d0ccf667363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-関数</h2></td></tr>
-<tr class="memitem:a419ace75703c93ebdf01e363e8eeea79"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T1 &gt;::value &amp;&amp;std::is_arithmetic&lt; T2 &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:a419ace75703c93ebdf01e363e8eeea79"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00026.html#a419ace75703c93ebdf01e363e8eeea79">safe_dist</a> (T1 n1, T2 n2) DXLE_NOEXCEPT_OR_NOTHROW-&gt; decltype(n1-n2)</td></tr>
-<tr class="separator:a419ace75703c93ebdf01e363e8eeea79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">型定義詳解</h2>
-<a class="anchor" id="a958c1dd5574c96728fe68d0ccf667363"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="a00026.html#a958c1dd5574c96728fe68d0ccf667363">dxle::detail::arithmetic_t</a> = typedef first_enabled_t &lt; enable_if&lt;1 != sizeof(T), T&gt;, enable_if&lt;std::is_signed&lt;T&gt;::value, int&gt;, unsigned int &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
-<p>for int8_t/uint8_t </p>
+<p><code>#include &lt;<a class="el" href="a00096_source.html">is_well_format.hpp</a>&gt;</code></p>
+<div class="dynheader">
+dxle::type_traits::has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="a00235.png" border="0" usemap="#dxle_1_1type__traits_1_1has__operator__notequal__to__zero__impl_3_01_t_00_01enable__if__t_3_01ignore__type_3_01decltype_07std_1_1declval_3_01_t_01_4_07_08_9_0A0_08_4_1_1value_00_01nullptr__t_01_4_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+dxle::type_traits::has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="a00236.png" border="0" usemap="#dxle_1_1type__traits_1_1has__operator__notequal__to__zero__impl_3_01_t_00_01enable__if__t_3_01ignore__type_3_01decltype_07std_1_1declval_3_01_t_01_4_07_08_9_0A0_08_4_1_1value_00_01nullptr__t_01_4_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+struct dxle::type_traits::has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt;</h3>
 
-<p> <a class="el" href="a00015_source.html">basic_types.hpp</a> の <a class="el" href="a00015_source.html#l00147">147</a> 行目に定義があります。</p>
 
-</div>
-</div>
-<h2 class="groupheader">関数詳解</h2>
-<a class="anchor" id="a419ace75703c93ebdf01e363e8eeea79"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T1 &gt;::value &amp;&amp;std::is_arithmetic&lt; T2 &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto dxle::detail::safe_dist </td>
-          <td>(</td>
-          <td class="paramtype">T1&#160;</td>
-          <td class="paramname"><em>n1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T2&#160;</td>
-          <td class="paramname"><em>n2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; decltype(n1 - n2)
-		</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00015_source.html">basic_types.hpp</a> の <a class="el" href="a00015_source.html#l00600">600</a> 行目に定義があります。</p>
-
-</div>
-</div>
+<p> <a class="el" href="a00096_source.html">is_well_format.hpp</a> の <a class="el" href="a00096_source.html#l00019">19</a> 行目に定義があります。</p>
+</div><hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>dxlibex/type_traits/<a class="el" href="a00096_source.html">is_well_format.hpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00024.html">dxle</a></li><li class="navelem"><a class="el" href="a00026.html">detail</a></li>
-    <li class="footer">2016年01月03日(日) 14時18分09秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="a00097.html">dxle</a></li><li class="navelem"><a class="el" href="a00106.html">type_traits</a></li><li class="navelem"><a class="el" href="a00026.html">has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt;</a></li>
+    <li class="footer">2016年02月20日(土) 17時19分30秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
 </div>
 </body>

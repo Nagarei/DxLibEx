@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00002.html" title="dxle::impl::Counter\l_template\&lt; T \&gt;" alt="" coords="5,5,136,47"/>
+<area shape="rect" id="node1" href="$a00005.html" title="dxle::detail::distance\l_result_type_impl\&lt; decltype\l(std::declval\&lt; std::remove\l_cv_t\&lt; T1 \&gt;\&gt;()&#45;std::declval\l\&lt; std::remove_cv_t\&lt; T2 \&gt;\&gt;())\&gt;" alt="" coords="5,5,203,91"/>
+<area shape="rect" id="node2" href="$a00004.html" title="dxle::distance_result\l_type\&lt; T1, T2 \&gt;" alt="" coords="251,27,393,69"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orange',['orange',['../a00021.html#a4e455c7989a99cdf1ef729b83b3be8c3afe01d67a002dfa0f3ac084298142eccd',1,'dxle::color']]]
+  ['numof_5fvariation',['numof_variation',['../a00099.html#aacfedd2e718cf65ba03a123d54b16f34ae6d3b56322b77f3b6138a00c6464308c',1,'dxle::color']]]
 ];

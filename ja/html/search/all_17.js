@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_7escreen',['~Screen',['../a00012.html#a83f4584ce3c5d8e838d3b586031e454b',1,'dxle::Graph2D::Screen']]],
-  ['_7etexture2d',['~Texture2D',['../a00016.html#a7037150d9a1140795d83e4857a1b9948',1,'dxle::Graph2D::Texture2D']]],
-  ['_7eunique_5fhandle_5fbace',['~Unique_Handle_Bace',['../a00021.html#a3bbc0eba218a07c96c280c59024e3423',1,'dxle::impl::Unique_Handle_Bace']]],
-  ['_7eunique_5fhandledobject_5fbace',['~Unique_HandledObject_Bace',['../a00022.html#ab6cd4242c7039166b1f429a1ca9734af',1,'dxle::impl::Unique_HandledObject_Bace']]]
+  ['_7escreen',['~screen',['../a00040.html#ab5f86bd3966c9907f77003811357fd9d',1,'dxle::graph2d::screen']]],
+  ['_7etexture_5f2d',['~texture_2d',['../a00046.html#a7ea2174f1d71d07559d0aec1b9c8ca9b',1,'dxle::graph2d::texture_2d']]],
+  ['_7eunique_5fhandle_5fbace',['~Unique_Handle_Bace',['../a00047.html#a405a1ad6b86239dd5315ee7d7c722f84',1,'dxle::impl::Unique_Handle_Bace']]],
+  ['_7eunique_5fhandledobject_5fbace',['~Unique_HandledObject_Bace',['../a00048.html#a9727bd8659198c3d1ed73e180b33a776',1,'dxle::impl::Unique_HandledObject_Bace']]]
 ];
