@@ -77,6 +77,11 @@ namespace color{
 		{}
 		DXLE_CONSTEXPR rgb(color_tag);
 		rgb(dx_color)DXLE_NOEXCEPT_OR_NOTHROW;
+
+		DXLE_CXX14_CONSTEXPR rgb& reverse()DXLE_NOEXCEPT_OR_NOTHROW {
+			red = 255 - red; green = 255 - green; blue = 255 - blue;//理論上nothrow
+			return *this;
+		}
 	};
 
 	class dx_color final : private color_base

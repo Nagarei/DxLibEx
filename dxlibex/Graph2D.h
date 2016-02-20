@@ -78,6 +78,16 @@ namespace dxle
 			virtual ~texture_2d()DXLE_NOEXCEPT_OR_NOTHROW {}
 
 		public:
+			//生成用コンストラクタ
+
+			//!\~japanese 指定サイズのグラフィックを作成する
+			//!\~english  Create an image with sizes
+			inline texture_2d(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag){}
+			//!\~japanese 画像ファイルからグラフィックを作成する
+			//!\~english  Create an image form an image file
+			inline texture_2d(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false){}
+
+
 			//生成用static関数
 
 			// グラフィック作成関係関数
@@ -333,7 +343,7 @@ namespace dxle
 			friend class screen;
 		};
 		//! 描画可能画像クラス
-		class screen : public texture_2d
+		class screen final : public texture_2d
 		{
 		public:
 			//!画像を複製する

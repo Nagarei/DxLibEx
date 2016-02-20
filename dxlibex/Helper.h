@@ -139,13 +139,13 @@ namespace impl{
 		Unique_HandledObject_Bace(const Bace_T&) = delete;
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
 	protected:
-		Unique_HandledObject_Bace()DXLE_NOEXCEPT_OR_NOTHROW
+		DXLE_CONSTEXPR Unique_HandledObject_Bace()DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(-1)
 		{}
 
 		//所有権の譲渡
 		Unique_HandledObject_Bace(Bace_T&& other)DXLE_NOEXCEPT_OR_NOTHROW
-			: handle(other.handle)
+			: handle(std::move(other.handle))
 		{
 			other.handle = -1;
 		}
@@ -170,7 +170,7 @@ namespace impl{
 			//リソース解放
 			static_cast<Child*>(this)->delete_this();
 		}
-		int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW { return handle; }
+		DXLE_CONSTEXPR int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
 		void SetHandle_IMPL(int new_handle) { handle = (param_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
 	private:
 		int handle;
