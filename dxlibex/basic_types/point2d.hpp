@@ -666,6 +666,6 @@ namespace std
 	DXLE_TEMP_make_hash(uint, 32, 64);
 
 #undef DXLE_TEMP_make_hash
-
 }
+
 #endif //DXLE_INC_BASIC_TYPES_POINT2D_HPP_

@@ -581,4 +581,31 @@ namespace dxle {
 	typedef size_c<float> sizef;
 	typedef size_c<std::size_t> size;
 };
+
+namespace std
+{
+	//hash
+#define DXLE_TEMP_make_hash(int_t, bit, bit2)\
+	template <> struct hash<dxle::size_c<int_t##bit##_t>> {\
+		hash() = default;\
+		hash(const hash&) = default;\
+		hash(hash&& other) :hash_run(std::move(other.hash_run)) {}\
+		~hash() {}\
+		hash& operator=(const hash& other) { hash_run = other.hash_run; return *this; }\
+		hash& operator=(hash&& other) { hash_run = std::move(other.hash_run); return *this; }\
+		size_t operator()(const dxle::size_c<int_t##bit##_t>& key) const { return hash_run((static_cast<int_t##_fast##bit2##_t>(key.width) << bit) | static_cast<int_t##_fast##bit2##_t>(key.height)); }\
+		private:\
+			std::hash<int_t##_fast##bit2##_t> hash_run;\
+	}
+
+	DXLE_TEMP_make_hash(int, 8, 16);
+	DXLE_TEMP_make_hash(int, 16, 32);
+	DXLE_TEMP_make_hash(int, 32, 64);
+	DXLE_TEMP_make_hash(uint, 8, 16);
+	DXLE_TEMP_make_hash(uint, 16, 32);
+	DXLE_TEMP_make_hash(uint, 32, 64);
+
+#undef DXLE_TEMP_make_hash
+}
+
 #endif //DXLE_INC_BASIC_TYPES_SIZE_HPP_

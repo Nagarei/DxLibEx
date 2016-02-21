@@ -50,6 +50,7 @@
     <ClInclude Include="dxlibex\math\fabs.hpp" />
     <ClInclude Include="dxlibex\math\hypot.hpp" />
     <ClInclude Include="dxlibex\math\isnan.hpp" />
+    <ClInclude Include="dxlibex\Sound.h" />
     <ClInclude Include="dxlibex\structs.h" />
     <ClInclude Include="dxlibex\thread.h" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
