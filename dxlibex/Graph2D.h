@@ -81,7 +81,7 @@ namespace dxle
 			//生成用コンストラクタ
 
 			//!\~japanese 指定サイズのグラフィックを作成する
-			//!\~english  Create an image with sizes
+			//!\~english  Create an image with a specific size
 			inline texture_2d(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag){}
 			//!\~japanese 画像ファイルからグラフィックを作成する
 			//!\~english  Create an image form an image file
@@ -93,7 +93,7 @@ namespace dxle
 			// グラフィック作成関係関数
 
 			//!\~japanese 指定サイズのグラフィックを作成する
-			//!\~english  Create an image with sizes
+			//!\~english  Create an image with a specific size
 			static inline texture_2d MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
 			//!\~japanese 指定サイズのグラフィックを作成する
 			//!\~english  Create an image with sizes
@@ -106,83 +106,94 @@ namespace dxle
 			// 画像からグラフィックを作成する関数
 
 			//!\~japanese 画像ファイルからグラフィックを作成する
-			//!\~english  Create an image form an image file
+			//!\~english  Create an image from an image file
 			static inline texture_2d LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false); }
 			//!\~japanese 画像ファイルからグラフィックを作成する
-			//!\~english  Create an image form an image file
+			//!\~english  Create an image from an image file
 			static inline texture_2d LoadBmpToGraph(const dxle::tstring& FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadBmpToGraph(FileName.c_str(), TextureFlag, ReverseFlag, SurfaceMode), false); }
 			//!\~japanese 画像ファイルからグラフィックを作成する
-			//!\~english  Create an image form an image file
+			//!\~english  Create an image from an image file
 			static inline texture_2d LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
 			//!\~japanese 画像ファイルからグラフィックを作成する
-			//!\~english  Create an image form an image file
+			//!\~english  Create an image from an image file
 			static inline texture_2d LoadGraph(const dxle::tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadGraph(FileName.c_str(), NotUse3DFlag), NotUse3DFlag); }
 			//!\~japanese 画像ファイルからグラフィックを作成する
-			//!\~english  Create reverse image form an image file
+			//!\~english  Create a reversed image from an image file
 			static inline texture_2d LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadReverseGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
 			//!\~japanese 画像ファイルからグラフィックを作成する
-			//!\~english  Create reverse image form an image file
+			//!\~english  Create a reversed image from an image file
 			static inline texture_2d LoadReverseGraph(const dxle::tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::LoadReverseGraph(FileName.c_str(), NotUse3DFlag), NotUse3DFlag); }
 			
+			//LoadDivGraph
+
 			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
-			//! 画像ファイルを分割してグラフィックハンドルを作成する
-			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(FileName, AllNum, { XNum, YNum }, { XSize, YSize }, NotUse3DFlag); }
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(DxLib互換)
+			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<Cont>(FileName, AllNum, { XNum, YNum }, { XSize, YSize }, NotUse3DFlag); }
+
 			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
-			//! 画像ファイルを分割してグラフィックハンドルを作成する
-			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE)
-			{
-				auto HandleBuf = std::make_unique<int[]>(AllNum);
-				DxLib::LoadDivGraph(FileName, AllNum, Num.x, Num.y, Size.width, Size.height, HandleBuf, NotUse3DFlag);
-				try{
-					std::remove_reference_t<std::remove_cv_t<Cont>> cont;
-					std::for_each(HandleBuf.get(), HandleBuf.get() + AllNum, [&cont](int& handle){
-						texture_2d temp{ handle, NotUse3DFlag };
-						handle = -1;
-						cont.emplace_back(std::move(temp));
-					});
-					return cont;
-				}
-				catch (...){
-					std::for_each(HandleBuf.get(), HandleBuf.get() + AllNum, [&cont](int handle){
-						DeleteGraph(handle);
-					});
-					throw;
-				}
-			}
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定)
+			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+
 			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
-			//! 画像ファイルを分割してグラフィックハンドルを作成する
-			static inline Cont LoadDivGraph(const dxle::tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag); }
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定)
+			static inline Cont LoadDivGraph(const dxle::tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<Cont>(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag); }
+
+			template<size_t AllNum, typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定, AllNumがテンプレート引数)
+			inline Cont LoadDivGraph(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			template<size_t AllNum, typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定, AllNumがテンプレート引数)
+			inline Cont LoadDivGraph(const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<AllNum, Cont>(FileName.c_str(), Num, Size, NotUse3DFlag); }
+
+			template<size_t AllNum>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定, 出力先指定(std::array))
+			inline void LoadDivGraph(std::array<texture_2d, AllNum>& out, const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			template<size_t AllNum>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定, 出力先指定(texture_2d[]))
+			inline void LoadDivGraph(texture_2d(&out)[AllNum], const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			template<size_t AllNum>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定, 出力先指定(std::array))
+			inline void LoadDivGraph(std::array<texture_2d, AllNum>& out, const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(out, FileName.c_str(), Num, Size, NotUse3DFlag); }
+			template<size_t AllNum>
+			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定, 出力先指定(texture_2d[]))
+			inline void LoadDivGraph(texture_2d(&out)[AllNum], const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(out, FileName.c_str(), Num, Size, NotUse3DFlag); }
+
+
 
 			//!\~japanese メモリ上の画像イメージからグラフィックを作成する
-			//!\~english  Create an image form an image in the memory
+			//!\~english  Create an graphic from an image stored in the computer memory
 			static inline texture_2d CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag), false); }
 			//!\~japanese メモリ上の画像イメージから既存のグラフィックにデータを転送する
-			//!\~english  Forward one image in the memory to the other image
+			//!\~english  Recreate an graphic from an existing image stored in the computer memory
 			static inline int ReCreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, texture_2d& GrHandle, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraphFromMem(RGBFileImage, RGBFileImageSize, GrHandle.GetHandle(), AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
 
 			//!\~japanese 基本イメージデータからサイズを割り出し、それに合ったグラフィックを作成する
-			//!\~english  Create an image what is fit others BASEIMAGE
+			//!\~english  Determine the size of the basic image data and create a compatible graphics
 			static inline texture_2d CreateDXGraph(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag), false); }
 			//!\~japanese 基本イメージデータからグラフィックを作成する
-			//!\~english  Create an image from a BASEIMAGE
+			//!\~english  Create a graphic from a basic image data
 			static inline texture_2d CreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag), false); }
 			//!\~japanese 基本イメージデータからグラフィックを作成する
-			//!\~english  Create an image from others BASEIMAGE
+			//!\~english  Create a graphic from a basic image data
 			static inline texture_2d CreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag), false); }
 			//!\~japanese 基本イメージデータから既存のグラフィックにデータを転送する
-			//!\~english  Forward an image from the other BASEIMAGE
+			//!\~english  Recreate a graphic from an existing basic image data
 			static inline int ReCreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, texture_2d& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
 			//!\~japanese 基本イメージデータから既存のグラフィックにデータを転送する
-			//!\~english  Forward images from the other BASEIMAGE
+			//!\~english  Recreate a graphic from an existing basic image data
 			static inline int ReCreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, texture_2d& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
 
 			//! メモリ上のビットマップイメージからグラフィックを作成する
+			//!\~english  Create a graphic from a bitmap image stored in the computer memory
 			static inline texture_2d CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture_2d& GrHandle = texture_2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
 			//! メモリ上のビットマップイメージからグラフィックを作成する
+			//!\~english  Create a graphic from a bitmap image stored in the computer memory
 			static inline texture_2d CreateGraph(const sizei& size, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture_2d& GrHandle = texture_2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraph(size.width, size.height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
 			//! メモリ上のビットマップイメージからグラフィックを再作成する
+			//!\~english  Recreate a graphic from a bitmap image stored in the computer memory
 			static inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
 			//! メモリ上のビットマップイメージからグラフィックを再作成する
+			//!\~english  Recreate a graphic from a bitmap image stored in the computer memory
 			static inline int ReCreateGraph(const sizei& size, int Pitch, const void *RGBImage, texture_2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::ReCreateGraph(size.width, size.height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
 #ifndef DX_NON_SOFTIMAGE
 			//extern	int			CreateBlendGraphFromSoftImage(int SIHandle);																													// ソフトウエアで扱うイメージからブレンド用画像グラフィックハンドルを作成する( -1:エラー  -1以外:ブレンド用グラフィックハンドル )
@@ -193,8 +204,10 @@ namespace dxle
 			//extern	int			CreateDivGraphFromSoftImage(int SIHandle, int AllNum, int XNum, int YNum, int SizeX, int SizeY, int *HandleBuf);												// ソフトウエアで扱うイメージから分割グラフィックハンドルを作成する
 	#endif // DX_NON_SOFTIMAGE
 			//! 基本イメージデータからグラフィックを作成する
+			//!\~english  Create a graphic from a basic image data
 			static inline texture_2d CreateGraphFromBaseImage(const DxLib::BASEIMAGE *BaseImage)DXLE_NOEXCEPT_OR_NOTHROW{ return texture_2d(DxLib::CreateGraphFromBaseImage(BaseImage), false); }
 			//! 基本イメージデータの指定の領域を使ってグラフィックを作成する
+			//!\~english  Create a graphic from a degsinated area clipped from a basic image data 
 			static inline texture_2d CreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY)DXLE_NOEXCEPT_OR_NOTHROW{ return texture_2d(DxLib::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY), false); }
 			//! 基本イメージデータの指定の領域を使ってグラフィックを作成する
 			static inline texture_2d CreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, const pointi& pos, const sizei& size)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d(DxLib::CreateGraphFromRectBaseImage(BaseImage, pos.x, pos.y, size.width, size.height), false); }
@@ -339,6 +352,10 @@ namespace dxle
 
 			//screen等の子クラスからGetHandleにアクセスできるようにする為
 			static int GetTexture2DHandle(const texture_2d& texture2d_obj) { return texture2d_obj.GetHandle(); }
+
+			//画像ファイルを分割してグラフィックハンドルを作成する
+			template<typename BuffT, typename OutFunc>
+			void texture_2d::LoadDivGraph_impl(OutFunc&& out_func, BuffT&& HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag);
 
 			friend class screen;
 		};
@@ -529,6 +546,69 @@ namespace dxle
 		inline int ReloadReverseGraph(const TCHAR *FileName, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadReverseGraph(FileName, GrHandle); }
 		//! ReloadGraph の画像反転処理追加版
 		inline int ReloadReverseGraph(const tstring& FileName, texture_2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture_2d::ReloadReverseGraph(FileName.c_str(), GrHandle); }
+
+
+
+
+		//実装
+
+		template<typename BuffT, typename OutFunc>
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline void texture_2d::LoadDivGraph_impl(OutFunc&& out_func, BuffT&& HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		{
+			DxLib::LoadDivGraph(FileName, AllNum, Num.x, Num.y, Size.width, Size.height, HandleBuf, NotUse3DFlag);
+			try{
+				std::for_each(HandleBuf.get(), HandleBuf.get() + AllNum, [&out_func](int& handle){
+					texture_2d temp{ handle, NotUse3DFlag };
+					handle = -1;
+					out_func(std::move(temp));
+					
+				});
+				return cont;
+			}
+			catch (...){
+				std::for_each(HandleBuf.get(), HandleBuf.get() + AllNum, [&cont](int handle){
+					DeleteGraph(handle);
+				});
+				throw;
+			}
+		}
+		template<size_t AllNum, typename Cont, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t>>
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline Cont texture_2d::LoadDivGraph(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		{
+			int HandleBuf[AllNum];
+			typename std::remove_all_extents<Cont>::type cont;
+			LoadDivGraph_impl([&cont](texture_2d&& new_obj){ cont.emplace_back(std::move(new_obj)); }, std::move(HandleBuf), FileName, AllNum, Num, Size, NotUse3DFlag);
+			return cont;
+		}
+		template<typename Cont, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t>>
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline Cont texture_2d::LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		{
+			auto HandleBuf = std::make_unique<int[]>(AllNum);
+			typename std::remove_all_extents<Cont>::type cont;
+			LoadDivGraph_impl([&cont](texture_2d&& new_obj){ cont.emplace_back(std::move(new_obj)); }, std::move(HandleBuf), FileName, AllNum, Num, Size, NotUse3DFlag);
+			return cont;
+		}
+		template<size_t AllNum>
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline void texture_2d::LoadDivGraph(std::array<texture_2d, AllNum>& out, const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		{
+			int HandleBuf[AllNum];
+			int i = 0;
+			LoadDivGraph_impl([&out](texture_2d&& new_obj){ out[i++] = std::move(new_obj); }, std::move(HandleBuf), FileName, AllNum, Num, Size, NotUse3DFlag);
+			return;
+		}
+		template<size_t AllNum>
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline void texture_2d::LoadDivGraph(texture_2d(&out)[AllNum], const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		{
+			int HandleBuf[AllNum];
+			int i = 0;
+			LoadDivGraph_impl([&out](texture_2d&& new_obj){ out[i++] = std::move(new_obj); }, std::move(HandleBuf), FileName, AllNum, Num, Size, NotUse3DFlag);
+			return;
+		}
 
 	}
 	using namespace graph2d;
