@@ -73,24 +73,24 @@ namespace dxle
 			int			stop();						// サウンドハンドルの再生を停止する
 			int			is_playing();						// サウンドハンドルが再生中かどうかを取得する
 			int			SetPan(int PanPal);						// サウンドハンドルのパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangePan(int PanPal);						// サウンドハンドルのパンを設定する( -255 ～ 255 )
+			int			ChangePan(int16_t PanPal);						// サウンドハンドルのパンを設定する( -255 ～ 255 )
 			int			GetPan();						// サウンドハンドルのパンを取得する
 			int			SetVolume(int VolumePal);						// サウンドハンドルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeVolume(int VolumePal);						// サウンドハンドルのボリュームを設定する( 0 ～ 255 )
+			int			ChangeVolume(uint8_t VolumePal);						// サウンドハンドルのボリュームを設定する( 0 ～ 255 )
 			int			GetVolume();						// サウンドハンドルのボリュームを取得する
 			int			SetChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )
+			int			ChangeChannelVolume(int Channel, uint8_t VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )
 			int			GetChannelVolume(int Channel);						// サウンドハンドルの指定のチャンネルのボリュームを取得する
 			int			SetFrequency(int FrequencyPal);						// サウンドハンドルの再生周波数を設定する
 			int			GetFrequency();						// サウンドハンドルの再生周波数を取得する
 			int			ResetFrequency();						// サウンドハンドルの再生周波数を読み込み直後の状態に戻す
 
 			int			SetNextPlayPan(int PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeNextPlayPan(int PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
+			int			ChangeNextPlayPan(int16_t PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
 			int			SetNextPlayVolume(int VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeNextPlayVolume(int VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 0 ～ 255 )
+			int			ChangeNextPlayVolume(uint8_t VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 0 ～ 255 )
 			int			SetNextPlayChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeNextPlayChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 0 ～ 255 )
+			int			ChangeNextPlayChannelVolume(int Channel, uint8_t VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 0 ～ 255 )
 			int			SetNextPlayFrequency(int FrequencyPal);						// サウンドハンドルの次の再生にのみ使用する再生周波数を設定する
 
 			int			SetCurrentPosition(int SamplePosition);						// サウンドハンドルの再生位置をサンプル単位で設定する(再生が止まっている時のみ有効)
