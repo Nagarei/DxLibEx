@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::type_traits Namespace Reference</title>
+<title>DxLibEx: dxle::math Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,156 +105,255 @@ $(document).ready(function(){initNavTree('a00106.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::type_traits Namespace Reference</div>  </div>
+<div class="title">dxle::math Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>inline  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:a00107"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107.html">detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html">first_enabled</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">multi-conditional if struct for TMP. This class is used in conjunction with std::enable_if.  <a href="a00010.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html">first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html">first_enabled&lt; std::enable_if&lt; true, T &gt;, Args... &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html">first_enabled&lt; T, Args... &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html">first_type</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00015.html">float_promote</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00022.html">has_operator_notequal_to_this</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html">has_operator_notequal_to_this_impl</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00024.html">has_operator_notequal_to_zero</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html">has_operator_notequal_to_zero_impl</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html">has_operator_notequal_to_zero_impl&lt; T, enable_if_t&lt; ignore_type&lt; decltype(std::declval&lt; T &gt;()!=0)&gt;::value, nullptr_t &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html">ignore_type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait class whose <code>value</code> is true regardless of what <code>T</code> is. we can use it, when we want to let SFINAE work for a decltype expressions.  <a href="a00027.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00028.html">is_castable</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00030.html">is_nothrow_convertable</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00031.html">is_representable</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html">nullptr_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a79f18448674482322b7ff0b230b8431c"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
-<tr class="memitem:a79f18448674482322b7ff0b230b8431c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a79f18448674482322b7ff0b230b8431c">common_type_t</a> = typename common_type&lt; T... &gt;::type</td></tr>
-<tr class="separator:a79f18448674482322b7ff0b230b8431c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eed606bc11a03d2a04bbc782dcf0e4f"><td class="memTemplParams" colspan="2">template&lt;bool B, typename T  = void&gt; </td></tr>
-<tr class="memitem:a3eed606bc11a03d2a04bbc782dcf0e4f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a3eed606bc11a03d2a04bbc782dcf0e4f">enable_if_t</a> = typename type_traits::enable_if&lt; B, T &gt;::type</td></tr>
-<tr class="separator:a3eed606bc11a03d2a04bbc782dcf0e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f390cdb60fda0114b60cf6f34eb9093"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a2f390cdb60fda0114b60cf6f34eb9093"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a2f390cdb60fda0114b60cf6f34eb9093">first_enabled_t</a> = typename <a class="el" href="a00010.html">first_enabled</a>&lt; Args... &gt;::type</td></tr>
-<tr class="separator:a2f390cdb60fda0114b60cf6f34eb9093"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85a48acc3617ecafa35111327621c77d"><td class="memTemplParams" colspan="2">template&lt;typename... Types&gt; </td></tr>
-<tr class="memitem:a85a48acc3617ecafa35111327621c77d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a85a48acc3617ecafa35111327621c77d">float_promote_t</a> = typename <a class="el" href="a00015.html">dxle::float_promote</a>&lt; Types... &gt;::type</td></tr>
-<tr class="separator:a85a48acc3617ecafa35111327621c77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a573f48bafbd419bf962694d19a6dc77d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... args&gt; </td></tr>
-<tr class="memitem:a573f48bafbd419bf962694d19a6dc77d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a573f48bafbd419bf962694d19a6dc77d">first_type_t</a> = <a class="el" href="a00014.html">first_type</a>&lt; T, args... &gt;</td></tr>
-<tr class="separator:a573f48bafbd419bf962694d19a6dc77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa36371b8a0b46964798fc05318486545"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:aa36371b8a0b46964798fc05318486545"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#aa36371b8a0b46964798fc05318486545">abs</a> (FloatType x) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:aa36371b8a0b46964798fc05318486545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac33baf95d0a00c9e3f8e1b9290923286"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:ac33baf95d0a00c9e3f8e1b9290923286"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#ac33baf95d0a00c9e3f8e1b9290923286">copysign</a> (FloatType x, FloatType y) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:ac33baf95d0a00c9e3f8e1b9290923286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2073b4b9d7ca18a5bc2cdf345d90e1"><td class="memTemplParams" colspan="2">template&lt;typename ArithmeticType1 , typename ArithmeticType2 , enable_if_t&lt; std::is_arithmetic&lt; ArithmeticType1 &gt;::value &amp;&amp;std::is_arithmetic&lt; ArithmeticType2 &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:aef2073b4b9d7ca18a5bc2cdf345d90e1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> <a class="el" href="a00109.html#a85a48acc3617ecafa35111327621c77d">dxle::float_promote_t</a>&lt; ArithmeticType1, ArithmeticType2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#aef2073b4b9d7ca18a5bc2cdf345d90e1">copysign</a> (ArithmeticType1 x, ArithmeticType2 y) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:aef2073b4b9d7ca18a5bc2cdf345d90e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d0b5287fbf8e9c84b4eec65dce37f2"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a35d0b5287fbf8e9c84b4eec65dce37f2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a35d0b5287fbf8e9c84b4eec65dce37f2">fabs</a> (FloatType x) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a35d0b5287fbf8e9c84b4eec65dce37f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce3cba31a6666fb3d58b4991ee20944"><td class="memTemplParams" colspan="2">template&lt;typename IntType , enable_if_t&lt; std::is_integral&lt; IntType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:adce3cba31a6666fb3d58b4991ee20944"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> <a class="el" href="a00099.html#aacd9976edf701f05928e902ff67cf8a2">double</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#adce3cba31a6666fb3d58b4991ee20944">fabs</a> (IntType x) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:adce3cba31a6666fb3d58b4991ee20944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a13613c440b7d0339633ed4914c76d"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a44a13613c440b7d0339633ed4914c76d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#a44a13613c440b7d0339633ed4914c76d">isnan</a> (FloatType x) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a44a13613c440b7d0339633ed4914c76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea4b45468d76f9c6df4bfdbed3e573e"><td class="memTemplParams" colspan="2">template&lt;typename IntType , enable_if_t&lt; std::is_integral&lt; IntType &gt;::value &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:abea4b45468d76f9c6df4bfdbed3e573e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00106.html#abea4b45468d76f9c6df4bfdbed3e573e">isnan</a> (IntType) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:abea4b45468d76f9c6df4bfdbed3e573e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>inline </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a79f18448674482322b7ff0b230b8431c"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aa36371b8a0b46964798fc05318486545"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... T&gt; </div>
+template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="a00106.html#a79f18448674482322b7ff0b230b8431c">dxle::type_traits::common_type_t</a> = typedef typename common_type&lt;T...&gt;::type</td>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> FloatType dxle::math::abs </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00088_source.html#l00015">15</a> of file <a class="el" href="a00088_source.html">common_type.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00075_source.html#l00028">28</a> of file <a class="el" href="a00075_source.html">abs.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3eed606bc11a03d2a04bbc782dcf0e4f"></a>
+<a class="anchor" id="ac33baf95d0a00c9e3f8e1b9290923286"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;bool B, typename T  = void&gt; </div>
+template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="a00106.html#a3eed606bc11a03d2a04bbc782dcf0e4f">dxle::type_traits::enable_if_t</a> = typedef typename type_traits::enable_if&lt;B, T&gt;::type</td>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> FloatType dxle::math::copysign </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00089_source.html#l00017">17</a> of file <a class="el" href="a00089_source.html">enable_if.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00082_source.html#l00047">47</a> of file <a class="el" href="a00082_source.html">copysign.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2f390cdb60fda0114b60cf6f34eb9093"></a>
+<a class="anchor" id="aef2073b4b9d7ca18a5bc2cdf345d90e1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... Args&gt; </div>
+template&lt;typename ArithmeticType1 , typename ArithmeticType2 , enable_if_t&lt; std::is_arithmetic&lt; ArithmeticType1 &gt;::value &amp;&amp;std::is_arithmetic&lt; ArithmeticType2 &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="a00106.html#a2f390cdb60fda0114b60cf6f34eb9093">dxle::type_traits::first_enabled_t</a> = typedef typename <a class="el" href="a00010.html">first_enabled</a>&lt;Args...&gt;::type</td>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> <a class="el" href="a00109.html#a85a48acc3617ecafa35111327621c77d">dxle::float_promote_t</a>&lt;ArithmeticType1, ArithmeticType2&gt; dxle::math::copysign </td>
+          <td>(</td>
+          <td class="paramtype">ArithmeticType1&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ArithmeticType2&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00090_source.html#l00042">42</a> of file <a class="el" href="a00090_source.html">first_enabled.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00082_source.html#l00068">68</a> of file <a class="el" href="a00082_source.html">copysign.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a573f48bafbd419bf962694d19a6dc77d"></a>
+<a class="anchor" id="a35d0b5287fbf8e9c84b4eec65dce37f2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename... args&gt; </div>
+template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="a00106.html#a573f48bafbd419bf962694d19a6dc77d">dxle::type_traits::first_type_t</a> = typedef <a class="el" href="a00014.html">first_type</a>&lt;T, args...&gt;</td>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> FloatType dxle::math::fabs </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00092_source.html#l00047">47</a> of file <a class="el" href="a00092_source.html">ignore.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00083_source.html#l00027">27</a> of file <a class="el" href="a00083_source.html">fabs.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a85a48acc3617ecafa35111327621c77d"></a>
+<a class="anchor" id="adce3cba31a6666fb3d58b4991ee20944"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... Types&gt; </div>
+template&lt;typename IntType , enable_if_t&lt; std::is_integral&lt; IntType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="a00106.html#a85a48acc3617ecafa35111327621c77d">dxle::type_traits::float_promote_t</a> = typedef typename <a class="el" href="a00015.html">dxle::float_promote</a>&lt;Types...&gt;::type</td>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> <a class="el" href="a00099.html#aacd9976edf701f05928e902ff67cf8a2">double</a> dxle::math::fabs </td>
+          <td>(</td>
+          <td class="paramtype">IntType&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00091_source.html#l00068">68</a> of file <a class="el" href="a00091_source.html">float_promote.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00083_source.html#l00036">36</a> of file <a class="el" href="a00083_source.html">fabs.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a44a13613c440b7d0339633ed4914c76d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , enable_if_t&lt; std::is_floating_point&lt; FloatType &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> bool dxle::math::isnan </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00085_source.html#l00025">25</a> of file <a class="el" href="a00085_source.html">isnan.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abea4b45468d76f9c6df4bfdbed3e573e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IntType , enable_if_t&lt; std::is_integral&lt; IntType &gt;::value &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> bool dxle::math::isnan </td>
+          <td>(</td>
+          <td class="paramtype">IntType&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00085_source.html#l00027">27</a> of file <a class="el" href="a00085_source.html">isnan.hpp</a>.</p>
 
 </div>
 </div>
@@ -263,8 +362,8 @@ template&lt;typename... Types&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00097.html">dxle</a></li><li class="navelem"><a class="el" href="a00106.html">type_traits</a></li>
-    <li class="footer">Generated on Sat Feb 20 2016 17:19:31 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00106.html">math</a></li>
+    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxlibex/DxLibWrap.h File Reference</title>
+<title>DxLibEx: dxlibex/DxLibEx.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,180 +103,68 @@ $(document).ready(function(){initNavTree('a00076.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">DxLibWrap.h File Reference</div>  </div>
+<div class="title">DxLibEx.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00070_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00077_source.html">Graph2D.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00086_source.html">dxlibex/thread.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00071_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00053_source.html">dxlibex/basic_types.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00062_source.html">dxlibex/Color.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00073_source.html">dxlibex/cstdlib.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00078_source.html">dxlibex/Graph2D.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00081_source.html">dxlibex/math.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00088_source.html">dxlibex/thread.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00089_source.html">dxlibex/type_traits.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for DxLibWrap.h:</div>
+Include dependency graph for DxLibEx.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00149.png" border="0" usemap="#dxlibex_2_dx_lib_wrap_8h" alt=""/></div>
-<map name="dxlibex_2_dx_lib_wrap_8h" id="dxlibex_2_dx_lib_wrap_8h">
-<area shape="rect" id="node2" href="a00070.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="1473,751,1620,792"/>
-<area shape="rect" id="node3" href="a00077.html" title="Graph2D.h" alt="" coords="951,80,1035,107"/>
-<area shape="rect" id="node49" href="a00086.html" title="dxlibex/thread.h" alt="" coords="3523,155,3637,181"/>
-<area shape="rect" id="node12" href="a00078.html" title="dxlibex/Helper.h" alt="" coords="347,519,461,546"/>
-<area shape="rect" id="node14" href="a00068.html" title="dxlibex/config/defines.h" alt="" coords="2692,601,2849,628"/>
-<area shape="rect" id="node17" href="a00052.html" title="dxlibex/basic_types.hpp" alt="" coords="1081,155,1244,181"/>
-<area shape="rect" id="node15" href="a00071.html" title="dxlibex/config/suffix.hpp" alt="" coords="3429,676,3589,703"/>
-<area shape="rect" id="node16" href="a00062.html" title="dxlibex/config/compiler.hpp" alt="" coords="3420,758,3599,785"/>
-<area shape="rect" id="node18" href="a00056.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="1711,229,1849,271"/>
-<area shape="rect" id="node42" href="a00057.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="2446,229,2583,271"/>
-<area shape="rect" id="node44" href="a00058.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="869,229,1006,271"/>
-<area shape="rect" id="node45" href="a00060.html" title="dxlibex/basic_types\l/tchar.hpp" alt="" coords="273,229,410,271"/>
-<area shape="rect" id="node19" href="a00090.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="1813,423,1941,464"/>
-<area shape="rect" id="node20" href="a00089.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="1920,512,2048,553"/>
-<area shape="rect" id="node21" href="a00095.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="1441,326,1588,367"/>
-<area shape="rect" id="node23" href="a00094.html" title="dxlibex/type_traits\l/is_nothrow.hpp" alt="" coords="660,512,788,553"/>
-<area shape="rect" id="node24" href="a00092.html" title="dxlibex/type_traits\l/ignore.hpp" alt="" coords="1496,423,1624,464"/>
-<area shape="rect" id="node25" href="a00053.html" title="dxlibex/basic_types\l/arithmetic_t.hpp" alt="" coords="1765,326,1902,367"/>
-<area shape="rect" id="node26" href="a00059.html" title="dxlibex/basic_types\l/stdint.hpp" alt="" coords="2339,326,2477,367"/>
-<area shape="rect" id="node28" href="a00055.html" title="dxlibex/basic_types\l/distance_result_type_t.hpp" alt="" coords="2603,326,2786,367"/>
-<area shape="rect" id="node29" href="a00054.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="1978,319,2118,375"/>
-<area shape="rect" id="node32" href="a00049.html" title="dxlibex/algorithm.hpp" alt="" coords="2963,333,3109,360"/>
-<area shape="rect" id="node35" href="a00080.html" title="dxlibex/math.hpp" alt="" coords="2194,333,2315,360"/>
-<area shape="rect" id="node40" href="a00072.html" title="dxlibex/cstdlib.hpp" alt="" coords="1089,333,1220,360"/>
-<area shape="rect" id="node22" href="a00088.html" title="dxlibex/type_traits\l/common_type.hpp" alt="" coords="964,512,1097,553"/>
-<area shape="rect" id="node30" href="a00093.html" title="dxlibex/type_traits\l/is_castable.hpp" alt="" coords="2072,512,2200,553"/>
-<area shape="rect" id="node31" href="a00096.html" title="dxlibex/type_traits\l/is_well_format.hpp" alt="" coords="1965,423,2099,464"/>
-<area shape="rect" id="node33" href="a00050.html" title="dxlibex/algorithm/cast\l_if.hpp" alt="" coords="2837,423,2987,464"/>
-<area shape="rect" id="node34" href="a00051.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="3011,423,3159,464"/>
-<area shape="rect" id="node36" href="a00081.html" title="dxlibex/math/copysign.hpp" alt="" coords="2403,519,2581,546"/>
-<area shape="rect" id="node39" href="a00082.html" title="dxlibex/math/fabs.hpp" alt="" coords="2275,430,2424,457"/>
+<div class="center"><img src="a00152.png" border="0" usemap="#dxlibex_2_dx_lib_ex_8h" alt=""/></div>
+<map name="dxlibex_2_dx_lib_ex_8h" id="dxlibex_2_dx_lib_ex_8h">
+<area shape="rect" id="node2" href="a00071.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="2999,869,3146,911"/>
+<area shape="rect" id="node3" href="a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="2866,155,3029,181"/>
+<area shape="rect" id="node22" href="a00081.html" title="dxlibex/math.hpp" alt="" coords="2941,326,3063,353"/>
+<area shape="rect" id="node30" href="a00073.html" title="dxlibex/cstdlib.hpp" alt="" coords="1530,326,1661,353"/>
+<area shape="rect" id="node40" href="a00062.html" title="dxlibex/Color.hpp" alt="" coords="3186,519,3309,546"/>
+<area shape="rect" id="node43" href="a00078.html" title="dxlibex/Graph2D.h" alt="" coords="3333,80,3463,107"/>
+<area shape="rect" id="node48" href="a00088.html" title="dxlibex/thread.h" alt="" coords="3797,519,3911,546"/>
+<area shape="rect" id="node50" href="a00089.html" title="dxlibex/type_traits.hpp" alt="" coords="501,423,655,449"/>
+<area shape="rect" id="node4" href="a00057.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="1000,229,1137,271"/>
+<area shape="rect" id="node36" href="a00058.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="1997,229,2135,271"/>
+<area shape="rect" id="node37" href="a00059.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="2908,229,3045,271"/>
+<area shape="rect" id="node38" href="a00061.html" title="dxlibex/basic_types\l/tchar.hpp" alt="" coords="3179,229,3316,271"/>
+<area shape="rect" id="node5" href="a00092.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="1178,780,1306,821"/>
+<area shape="rect" id="node7" href="a00091.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="1814,601,1942,643"/>
+<area shape="rect" id="node8" href="a00097.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="805,512,951,553"/>
+<area shape="rect" id="node10" href="a00096.html" title="dxlibex/type_traits\l/is_nothrow.hpp" alt="" coords="298,512,426,553"/>
+<area shape="rect" id="node11" href="a00094.html" title="dxlibex/type_traits\l/ignore.hpp" alt="" coords="45,512,173,553"/>
+<area shape="rect" id="node12" href="a00054.html" title="dxlibex/basic_types\l/arithmetic_t.hpp" alt="" coords="1736,319,1873,360"/>
+<area shape="rect" id="node13" href="a00060.html" title="dxlibex/basic_types\l/stdint.hpp" alt="" coords="2051,319,2188,360"/>
+<area shape="rect" id="node15" href="a00056.html" title="dxlibex/basic_types\l/distance_result_type_t.hpp" alt="" coords="1229,415,1412,457"/>
+<area shape="rect" id="node16" href="a00055.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="1943,408,2083,464"/>
+<area shape="rect" id="node19" href="a00069.html" title="dxlibex/config/defines.h" alt="" coords="2715,787,2873,814"/>
+<area shape="rect" id="node20" href="a00050.html" title="dxlibex/algorithm.hpp" alt="" coords="1107,326,1252,353"/>
+<area shape="rect" id="node9" href="a00090.html" title="dxlibex/type_traits\l/common_type.hpp" alt="" coords="551,601,685,643"/>
+<area shape="rect" id="node17" href="a00095.html" title="dxlibex/type_traits\l/is_castable.hpp" alt="" coords="602,512,730,553"/>
+<area shape="rect" id="node18" href="a00098.html" title="dxlibex/type_traits\l/is_well_format.hpp" alt="" coords="1330,512,1463,553"/>
+<area shape="rect" id="node21" href="a00052.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="1617,415,1765,457"/>
+<area shape="rect" id="node23" href="a00082.html" title="dxlibex/math/copysign.hpp" alt="" coords="2477,609,2655,635"/>
+<area shape="rect" id="node27" href="a00083.html" title="dxlibex/math/fabs.hpp" alt="" coords="2658,519,2807,546"/>
+<area shape="rect" id="node28" href="a00075.html" title="dxlibex/math/abs.hpp" alt="" coords="2735,423,2882,449"/>
+<area shape="rect" id="node29" href="a00084.html" title="dxlibex/math/hypot.hpp" alt="" coords="2906,423,3063,449"/>
+<area shape="rect" id="node26" href="a00093.html" title="dxlibex/type_traits\l/float_promote.hpp" alt="" coords="1381,691,1511,732"/>
+<area shape="rect" id="node31" href="a00074.html" title="dxlibex/cstdlib/abs.hpp" alt="" coords="1487,519,1642,546"/>
+<area shape="rect" id="node47" href="a00079.html" title="dxlibex/Helper.h" alt="" coords="3333,519,3447,546"/>
 </map>
 </div>
 </div>
 <p><a href="a00076_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a00097"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html">dxle</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aacdb3e3dd8b77e3668664ec699a5b7b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00076.html#aacdb3e3dd8b77e3668664ec699a5b7b4">DX_THREAD_SAFE</a></td></tr>
-<tr class="separator:aacdb3e3dd8b77e3668664ec699a5b7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a61c0fd6dabbcfa835a56f0925e08f83a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a61c0fd6dabbcfa835a56f0925e08f83a">dxle::dxle_mutex</a> { <a class="el" href="a00097.html#a61c0fd6dabbcfa835a56f0925e08f83aa300823911ddd27809d71b3bff0a00d9d">dxle::dxle_mutex::dxle_mutex</a>
- }</td></tr>
-<tr class="separator:a61c0fd6dabbcfa835a56f0925e08f83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a24c8ee7763798be221c2ccaa76056e98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a24c8ee7763798be221c2ccaa76056e98">dxle::DxLib_Init</a> (dxle_mutex)</td></tr>
-<tr class="separator:a24c8ee7763798be221c2ccaa76056e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d2a30df21add723c452037cc939c96e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6d2a30df21add723c452037cc939c96e">dxle::DxLib_End</a> (dxle_mutex)</td></tr>
-<tr class="separator:a6d2a30df21add723c452037cc939c96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b453656fc5744ad0786541ef53b11c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a8b453656fc5744ad0786541ef53b11c1">dxle::ProcessMessage</a> (dxle_mutex)</td></tr>
-<tr class="separator:a8b453656fc5744ad0786541ef53b11c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a833cf018ab4c9034ff2dd714b3f5241b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a833cf018ab4c9034ff2dd714b3f5241b">dxle::DrawLine</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int Thickness=1)</td></tr>
-<tr class="separator:a833cf018ab4c9034ff2dd714b3f5241b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32ce87e05264fb3793c7941cedbd3cd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a32ce87e05264fb3793c7941cedbd3cd9">dxle::DrawBox</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color, int FillFlag)</td></tr>
-<tr class="separator:a32ce87e05264fb3793c7941cedbd3cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd695a1bea82a9a07ad546deed16698"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a4cd695a1bea82a9a07ad546deed16698">dxle::DrawFillBox</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color)</td></tr>
-<tr class="separator:a4cd695a1bea82a9a07ad546deed16698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9688f0d4a1278b5c5b3d411c5bdf6358"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a9688f0d4a1278b5c5b3d411c5bdf6358">dxle::DrawLineBox</a> (dxle_mutex, int x1, int y1, int x2, int y2, unsigned int Color)</td></tr>
-<tr class="separator:a9688f0d4a1278b5c5b3d411c5bdf6358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e4bf4788c102e83b0361c330859c3cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6e4bf4788c102e83b0361c330859c3cf">dxle::DrawCircle</a> (dxle_mutex, int x, int y, int r, unsigned int Color, int FillFlag=TRUE, int LineThickness=1)</td></tr>
-<tr class="separator:a6e4bf4788c102e83b0361c330859c3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab48564b47a74aaebe52d3260c689c04c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ab48564b47a74aaebe52d3260c689c04c">dxle::DrawOval</a> (dxle_mutex, int x, int y, int rx, int ry, unsigned int Color, int FillFlag, int LineThickness=1)</td></tr>
-<tr class="separator:ab48564b47a74aaebe52d3260c689c04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0270557ee225b1c95a811dea746b354"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ae0270557ee225b1c95a811dea746b354">dxle::DrawTriangle</a> (dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, unsigned int Color, int FillFlag)</td></tr>
-<tr class="separator:ae0270557ee225b1c95a811dea746b354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcd6e36f2f4c2656df5dca44e159b61a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#abcd6e36f2f4c2656df5dca44e159b61a">dxle::DrawQuadrangle</a> (dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, unsigned int Color, int FillFlag)</td></tr>
-<tr class="separator:abcd6e36f2f4c2656df5dca44e159b61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d77b1751fd13ae64e9e3ea811ac8212"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6d77b1751fd13ae64e9e3ea811ac8212">dxle::DrawRoundRect</a> (dxle_mutex, int x1, int y1, int x2, int y2, int rx, int ry, unsigned int Color, int FillFlag)</td></tr>
-<tr class="separator:a6d77b1751fd13ae64e9e3ea811ac8212"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add9a8759077440ea52c8339ad4205a56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#add9a8759077440ea52c8339ad4205a56">dxle::DrawPixel</a> (dxle_mutex, int x, int y, unsigned int Color)</td></tr>
-<tr class="separator:add9a8759077440ea52c8339ad4205a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9626515c331cde479e3180681310a2a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a9626515c331cde479e3180681310a2a2">dxle::LoadGraphScreen</a> (dxle_mutex, int x, int y, const TCHAR *GraphName, int TransFlag)</td></tr>
-<tr class="separator:a9626515c331cde479e3180681310a2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25658c86ae142e2a04f7ac044d2d3ce4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a25658c86ae142e2a04f7ac044d2d3ce4">dxle::LoadGraph</a> (dxle_mutex, const TCHAR *FileName, int NotUse3DFlag=FALSE)</td></tr>
-<tr class="separator:a25658c86ae142e2a04f7ac044d2d3ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d156c11aeb6d4b25c951c49554a23e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a01d156c11aeb6d4b25c951c49554a23e">dxle::LoadDivGraph</a> (dxle_mutex, const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int *HandleBuf, int NotUse3DFlag=FALSE)</td></tr>
-<tr class="separator:a01d156c11aeb6d4b25c951c49554a23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0691d68c411c82eee19dd8b205c4cdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ac0691d68c411c82eee19dd8b205c4cdd">dxle::MakeGraph</a> (dxle_mutex, int SizeX, int SizeY, int NotUse3DFlag=FALSE)</td></tr>
-<tr class="separator:ac0691d68c411c82eee19dd8b205c4cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a270dca5dda244eeeccdf5afa4407c071"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a270dca5dda244eeeccdf5afa4407c071">dxle::MakeScreen</a> (dxle_mutex, int SizeX, int SizeY, int UseAlphaChannel=FALSE)</td></tr>
-<tr class="separator:a270dca5dda244eeeccdf5afa4407c071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a237e57c2480bdf0db2a845bcd53ba3fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a237e57c2480bdf0db2a845bcd53ba3fa">dxle::SetCreateDrawValidGraphMultiSample</a> (dxle_mutex, int Samples, int Quality)</td></tr>
-<tr class="separator:a237e57c2480bdf0db2a845bcd53ba3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63331c9ba6d56f20199695b2043ad8fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a63331c9ba6d56f20199695b2043ad8fc">dxle::SetCreateGraphColorBitDepth</a> (dxle_mutex, int BitDepth)</td></tr>
-<tr class="separator:a63331c9ba6d56f20199695b2043ad8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad05b51f70486d313615861402cd80f4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ad05b51f70486d313615861402cd80f4e">dxle::SetDrawValidFloatTypeGraphCreateFlag</a> (dxle_mutex, int Flag)</td></tr>
-<tr class="separator:ad05b51f70486d313615861402cd80f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5e08ea789ed1a54734419be076ab1aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ab5e08ea789ed1a54734419be076ab1aa">dxle::SetCreateDrawValidGraphChannelNum</a> (dxle_mutex, int ChannelNum)</td></tr>
-<tr class="separator:ab5e08ea789ed1a54734419be076ab1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9203872ec329b3371d47e3360af720f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a9203872ec329b3371d47e3360af720f5">dxle::SetUsePremulAlphaConvertLoad</a> (dxle_mutex, int UseFlag)</td></tr>
-<tr class="separator:a9203872ec329b3371d47e3360af720f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b567769e58db79ffc14f0fec8fe13e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ac7b567769e58db79ffc14f0fec8fe13e">dxle::DrawGraph</a> (dxle_mutex, int x, int y, int GrHandle, int TransFlag)</td></tr>
-<tr class="separator:ac7b567769e58db79ffc14f0fec8fe13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8db5d185ad9d29217dd9e57ef2c32aa1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a8db5d185ad9d29217dd9e57ef2c32aa1">dxle::DrawExtendGraph</a> (dxle_mutex, int x1, int y1, int x2, int y2, int GrHandle, int TransFlag)</td></tr>
-<tr class="separator:a8db5d185ad9d29217dd9e57ef2c32aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a650683ca6705c055b2b5178b3487264e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a650683ca6705c055b2b5178b3487264e">dxle::DrawRotaGraph</a> (dxle_mutex, int x, int y, double ExRate, double Angle, int GrHandle, int TransFlag, int TurnFlag=FALSE)</td></tr>
-<tr class="separator:a650683ca6705c055b2b5178b3487264e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c1b85cbd4521f796c7c052196884348"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a4c1b85cbd4521f796c7c052196884348">dxle::DrawRotaGraph2</a> (dxle_mutex, int x, int y, int cx, int cy, double ExtRate, double Angle, int GrHandle, int TransFlag, int TurnFlag=FALSE)</td></tr>
-<tr class="separator:a4c1b85cbd4521f796c7c052196884348"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f81ee80da117b6a0cabd367616ed424"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6f81ee80da117b6a0cabd367616ed424">dxle::DrawRotaGraph3</a> (dxle_mutex, int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, int GrHandle, int TransFlag, int TurnFlag=FALSE)</td></tr>
-<tr class="separator:a6f81ee80da117b6a0cabd367616ed424"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6aaae76d847b8e3d8c6c01a4bd2d66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#aad6aaae76d847b8e3d8c6c01a4bd2d66">dxle::DrawModiGraph</a> (dxle_mutex, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, int GrHandle, int TransFlag)</td></tr>
-<tr class="separator:aad6aaae76d847b8e3d8c6c01a4bd2d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbaf584de6bde10ab5bc42d37abffa8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#adbaf584de6bde10ab5bc42d37abffa8d">dxle::DrawRectGraph</a> (dxle_mutex, int DestX, int DestY, int SrcX, int SrcY, int Width, int Height, int GraphHandle, int TransFlag, int TurnFlag)</td></tr>
-<tr class="separator:adbaf584de6bde10ab5bc42d37abffa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f32cd4db5b6af2158fc8351b51129a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6f32cd4db5b6af2158fc8351b51129a3">dxle::DerivationGraph</a> (dxle_mutex, int SrcX, int SrcY, int Width, int Height, int SrcGraphHandle)</td></tr>
-<tr class="separator:a6f32cd4db5b6af2158fc8351b51129a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e1ccb5f36ec39d7fbe86044262673f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a86e1ccb5f36ec39d7fbe86044262673f">dxle::GetDrawScreenGraph</a> (dxle_mutex, int x1, int y1, int x2, int y2, int GrHandle, int UseClientFlag=TRUE)</td></tr>
-<tr class="separator:a86e1ccb5f36ec39d7fbe86044262673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82440c7b67016ce52194015a0ddb78e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a82440c7b67016ce52194015a0ddb78e5">dxle::GetGraphSize</a> (dxle_mutex, int GrHandle, int *SizeXBuf, int *SizeYBuf)</td></tr>
-<tr class="separator:a82440c7b67016ce52194015a0ddb78e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac127b37edf25fbf539e69748c165d09e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ac127b37edf25fbf539e69748c165d09e">dxle::InitGraph</a> (dxle_mutex, int LogOutFlag=FALSE)</td></tr>
-<tr class="separator:ac127b37edf25fbf539e69748c165d09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ffc009f0d581a6c76a89c66287be6fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a0ffc009f0d581a6c76a89c66287be6fd">dxle::DeleteGraph</a> (dxle_mutex, int GrHandle, int LogOutFlag=FALSE)</td></tr>
-<tr class="separator:a0ffc009f0d581a6c76a89c66287be6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29401e97f46f3978efb8dc14917f32e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a29401e97f46f3978efb8dc14917f32e2">dxle::SetDrawMode</a> (dxle_mutex, int DrawMode)</td></tr>
-<tr class="separator:a29401e97f46f3978efb8dc14917f32e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ace1dc82e96fe3cf185c161f17249d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a2ace1dc82e96fe3cf185c161f17249d2">dxle::SetDrawBlendMode</a> (dxle_mutex, int BlendMode, int BlendParam)</td></tr>
-<tr class="separator:a2ace1dc82e96fe3cf185c161f17249d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addc1cfc8b9e50d6b0ed01f3ee6bf0321"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#addc1cfc8b9e50d6b0ed01f3ee6bf0321">dxle::SetDrawBright</a> (dxle_mutex, int RedBright, int GreenBright, int BlueBright)</td></tr>
-<tr class="separator:addc1cfc8b9e50d6b0ed01f3ee6bf0321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44eb52720fcf39fa4fecd3b690e583bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a44eb52720fcf39fa4fecd3b690e583bf">dxle::SetTransColor</a> (dxle_mutex, int Red, int Green, int Blue)</td></tr>
-<tr class="separator:a44eb52720fcf39fa4fecd3b690e583bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a135ef43e70868e4da410f1d962608f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a135ef43e70868e4da410f1d962608f16">dxle::LoadBlendGraph</a> (dxle_mutex, const TCHAR *FileName)</td></tr>
-<tr class="separator:a135ef43e70868e4da410f1d962608f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="aacdb3e3dd8b77e3668664ec699a5b7b4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DX_THREAD_SAFE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00076_source.html#l00025">25</a> of file <a class="el" href="a00076_source.html">DxLibWrap.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="a00076.html">DxLibWrap.h</a></li>
-    <li class="footer">Generated on Sat Feb 20 2016 17:19:31 for DxLibEx by
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="a00076.html">DxLibEx.h</a></li>
+    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

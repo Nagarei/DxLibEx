@@ -1,15 +1,16 @@
-<map id="dxlibex/type_traits/float_promote.hpp" name="dxlibex/type_traits/float_promote.hpp">
-<area shape="rect" id="node2" href="$a00087.html" title="dxlibex/type_traits.hpp" alt="" coords="330,95,483,121"/>
-<area shape="rect" id="node4" href="$a00081.html" title="dxlibex/math/copysign.hpp" alt="" coords="202,244,379,271"/>
-<area shape="rect" id="node3" href="$a00084.html" title="dxlibex/math/isnan.hpp" alt="" coords="329,169,485,196"/>
-<area shape="rect" id="node8" href="$a00075.html" title="dxlibex/DxLibEx.h" alt="" coords="243,781,370,808"/>
-<area shape="rect" id="node14" href="$a00074.html" title="dxlibex/math/abs.hpp" alt="" coords="287,393,433,420"/>
-<area shape="rect" id="node5" href="$a00080.html" title="dxlibex/math.hpp" alt="" coords="189,468,310,495"/>
-<area shape="rect" id="node13" href="$a00082.html" title="dxlibex/math/fabs.hpp" alt="" coords="231,319,380,345"/>
-<area shape="rect" id="node6" href="$a00056.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="25,543,162,584"/>
-<area shape="rect" id="node11" href="$a00057.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="186,543,323,584"/>
-<area shape="rect" id="node12" href="$a00058.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="347,543,485,584"/>
-<area shape="rect" id="node7" href="$a00052.html" title="dxlibex/basic_types.hpp" alt="" coords="173,632,336,659"/>
-<area shape="rect" id="node9" href="$a00077.html" title="dxlibex/Graph2D.h" alt="" coords="139,707,269,733"/>
-<area shape="rect" id="node10" href="$a00076.html" title="dxlibex/DxLibWrap.h" alt="" coords="77,781,219,808"/>
+<map id="dxlibex/type_traits/common_type.hpp" name="dxlibex/type_traits/common_type.hpp">
+<area shape="rect" id="node2" href="$a00097.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="123,95,270,136"/>
+<area shape="rect" id="node8" href="$a00089.html" title="dxlibex/type_traits.hpp" alt="" coords="5,184,159,211"/>
+<area shape="rect" id="node3" href="$a00057.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="501,632,639,673"/>
+<area shape="rect" id="node12" href="$a00058.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="125,632,263,673"/>
+<area shape="rect" id="node13" href="$a00059.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="340,632,477,673"/>
+<area shape="rect" id="node4" href="$a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="338,721,501,748"/>
+<area shape="rect" id="node5" href="$a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="237,871,364,897"/>
+<area shape="rect" id="node6" href="$a00078.html" title="dxlibex/Graph2D.h" alt="" coords="389,796,519,823"/>
+<area shape="rect" id="node7" href="$a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="388,871,531,897"/>
+<area shape="rect" id="node9" href="$a00085.html" title="dxlibex/math/isnan.hpp" alt="" coords="232,259,388,285"/>
+<area shape="rect" id="node10" href="$a00082.html" title="dxlibex/math/copysign.hpp" alt="" coords="283,333,460,360"/>
+<area shape="rect" id="node15" href="$a00075.html" title="dxlibex/math/abs.hpp" alt="" coords="231,483,378,509"/>
+<area shape="rect" id="node11" href="$a00081.html" title="dxlibex/math.hpp" alt="" coords="348,557,469,584"/>
+<area shape="rect" id="node14" href="$a00083.html" title="dxlibex/math/fabs.hpp" alt="" coords="282,408,431,435"/>
 </map>

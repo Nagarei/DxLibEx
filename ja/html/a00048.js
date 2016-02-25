@@ -1,11 +1,11 @@
 var a00048 =
 [
-    [ "Bace_T", "a00048.html#a441bd574f1d98a8eaa4fccbfdd003667", null ],
-    [ "Unique_HandledObject_Bace", "a00048.html#afe8e97c74851845860eb07d32ead52e8", null ],
-    [ "Unique_HandledObject_Bace", "a00048.html#a7db3af92ad655aa767ba505839c08759", null ],
-    [ "Unique_HandledObject_Bace", "a00048.html#a4dd36a7000fdd1385d999399f806390d", null ],
-    [ "~Unique_HandledObject_Bace", "a00048.html#a9727bd8659198c3d1ed73e180b33a776", null ],
-    [ "GetHandle", "a00048.html#a649a18fbf9dcdfff360ef9575c7201d9", null ],
-    [ "operator=", "a00048.html#a4628490ebce51819fc8ab569f2afa240", null ],
-    [ "SetHandle_IMPL", "a00048.html#a8be129708cc06fe672d6963e923abf2e", null ]
+    [ "Bace_T", "a00048.html#ae2cacc4cd70891502d3724b905fd6726", null ],
+    [ "Unique_Handle_Bace", "a00048.html#a32e0322bbef6fdf9152c3f87d5787f13", null ],
+    [ "Unique_Handle_Bace", "a00048.html#a652416b45b21929b55ce585ad84d1c5f", null ],
+    [ "~Unique_Handle_Bace", "a00048.html#a405a1ad6b86239dd5315ee7d7c722f84", null ],
+    [ "Unique_Handle_Bace", "a00048.html#a5ebf09a7c8cb391b3543fd4e8c18ae28", null ],
+    [ "GetHandle", "a00048.html#a6cc3a3571e704f53a6645ad4083f2263", null ],
+    [ "operator=", "a00048.html#a8b9fe3765b99c1d8f58087a8adc7a966", null ],
+    [ "ReleaseRun", "a00048.html#af30a408e38aeadecf7d157b35244dcce", null ]
 ];

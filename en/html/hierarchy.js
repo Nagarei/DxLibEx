@@ -60,9 +60,9 @@ var hierarchy =
     [ "dxle::point_c< T, >", "a00038.html", null ],
     [ "dxle::graph2d::screen_mutex_c", "a00041.html", null ],
     [ "dxle::size_c< T, >", "a00042.html", null ],
-    [ "dxle::detail::static_cast_if_helper< from, to, do_cast, is_nothrow_move_constructible >", "a00043.html", null ],
-    [ "dxle::detail::static_cast_if_helper< to, from, false, false >", "a00044.html", null ],
-    [ "dxle::detail::static_cast_if_helper< to, from, false, true >", "a00045.html", null ],
+    [ "dxle::detail::static_cast_if_helper< from, to, do_cast, is_nothrow_move_constructible >", "a00044.html", null ],
+    [ "dxle::detail::static_cast_if_helper< to, from, false, false >", "a00045.html", null ],
+    [ "dxle::detail::static_cast_if_helper< to, from, false, true >", "a00046.html", null ],
     [ "true_type", null, [
       [ "dxle::type_traits::has_operator_notequal_to_zero_impl< T, enable_if_t< ignore_type< decltype(std::declval< T >()!=0)>::value, nullptr_t >", "a00026.html", null ],
       [ "dxle::type_traits::ignore_type< typename >", "a00027.html", null ],
@@ -72,10 +72,13 @@ var hierarchy =
       [ "dxle::type_traits::is_castable< From, To >", "a00028.html", null ],
       [ "dxle::type_traits::is_nothrow_convertable< From, To >", "a00030.html", null ]
     ] ],
-    [ "dxle::impl::Unique_Handle_Bace< Child >", "a00047.html", null ],
-    [ "dxle::impl::Unique_HandledObject_Bace< Child >", "a00048.html", null ],
-    [ "dxle::impl::Unique_HandledObject_Bace< texture_2d >", "a00048.html", [
-      [ "dxle::graph2d::texture_2d", "a00046.html", [
+    [ "dxle::impl::Unique_Handle_Bace< Child >", "a00048.html", null ],
+    [ "dxle::impl::Unique_HandledObject_Bace< Child >", "a00049.html", null ],
+    [ "dxle::impl::Unique_HandledObject_Bace< sound >", "a00049.html", [
+      [ "dxle::sound::sound", "a00043.html", null ]
+    ] ],
+    [ "dxle::impl::Unique_HandledObject_Bace< texture_2d >", "a00049.html", [
+      [ "dxle::graph2d::texture_2d", "a00047.html", [
         [ "dxle::graph2d::screen", "a00040.html", null ]
       ] ]
     ] ]

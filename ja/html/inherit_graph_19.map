@@ -1,5 +1,4 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$a00048.html" title="dxle::impl::Unique\l_HandledObject_Bace\l\&lt; texture_2d \&gt;" alt="" coords="5,5,156,61"/>
-<area shape="rect" id="node2" href="$a00046.html" title="dxle::graph2d::texture_2d" alt="" coords="204,20,373,47"/>
-<area shape="rect" id="node3" href="$a00040.html" title="描画可能画像クラス " alt="" coords="421,20,568,47"/>
+<area shape="rect" id="node1" href="$a00049.html" title="dxle::impl::Unique\l_HandledObject_Bace\l\&lt; sound \&gt;" alt="" coords="5,5,156,61"/>
+<area shape="rect" id="node2" href="$a00043.html" title="dxle::sound::sound" alt="" coords="204,20,336,47"/>
 </map>

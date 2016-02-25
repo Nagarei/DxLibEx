@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxlibex/basic_types/point3d.hpp File Reference</title>
+<title>DxLibEx: dxlibex/basic_types/point2d.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,73 +106,81 @@ $(document).ready(function(){initNavTree('a00057.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">point3d.hpp File Reference</div>  </div>
+<div class="title">point2d.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00070_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00090_source.html">dxlibex/type_traits/first_enabled.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00089_source.html">dxlibex/type_traits/enable_if.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00095_source.html">dxlibex/type_traits/is_representable.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00053_source.html">dxlibex/basic_types/arithmetic_t.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00059_source.html">dxlibex/basic_types/stdint.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00055_source.html">dxlibex/basic_types/distance_result_type_t.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00054_source.html">dxlibex/basic_types/coordinate_operator_bool_helper.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00051_source.html">dxlibex/algorithm/safe_dist.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00080_source.html">dxlibex/math.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00072_source.html">dxlibex/cstdlib.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00071_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00092_source.html">dxlibex/type_traits/first_enabled.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00091_source.html">dxlibex/type_traits/enable_if.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00097_source.html">dxlibex/type_traits/is_representable.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00096_source.html">dxlibex/type_traits/is_nothrow.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00094_source.html">dxlibex/type_traits/ignore.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00054_source.html">dxlibex/basic_types/arithmetic_t.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00060_source.html">dxlibex/basic_types/stdint.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00056_source.html">dxlibex/basic_types/distance_result_type_t.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00055_source.html">dxlibex/basic_types/coordinate_operator_bool_helper.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00050_source.html">dxlibex/algorithm.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00081_source.html">dxlibex/math.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00073_source.html">dxlibex/cstdlib.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;tuple&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00068_source.html">dxlibex/config/defines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00069_source.html">dxlibex/config/defines.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for point3d.hpp:</div>
+Include dependency graph for point2d.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00124.png" border="0" usemap="#dxlibex_2basic__types_2point3d_8hpp" alt=""/></div>
-<map name="dxlibex_2basic__types_2point3d_8hpp" id="dxlibex_2basic__types_2point3d_8hpp">
-<area shape="rect" id="node2" href="a00070.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="1996,840,2143,881"/>
-<area shape="rect" id="node3" href="a00090.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="465,676,593,717"/>
-<area shape="rect" id="node5" href="a00089.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="1293,676,1421,717"/>
-<area shape="rect" id="node6" href="a00095.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="620,587,767,628"/>
-<area shape="rect" id="node8" href="a00053.html" title="dxlibex/basic_types\l/arithmetic_t.hpp" alt="" coords="407,587,545,628"/>
-<area shape="rect" id="node9" href="a00059.html" title="dxlibex/basic_types\l/stdint.hpp" alt="" coords="1191,95,1329,136"/>
-<area shape="rect" id="node11" href="a00055.html" title="dxlibex/basic_types\l/distance_result_type_t.hpp" alt="" coords="201,587,383,628"/>
-<area shape="rect" id="node12" href="a00054.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="1091,483,1231,539"/>
-<area shape="rect" id="node15" href="a00068.html" title="dxlibex/config/defines.h" alt="" coords="1932,683,2089,710"/>
-<area shape="rect" id="node18" href="a00051.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="2034,587,2182,628"/>
-<area shape="rect" id="node19" href="a00080.html" title="dxlibex/math.hpp" alt="" coords="1530,102,1651,129"/>
-<area shape="rect" id="node31" href="a00072.html" title="dxlibex/cstdlib.hpp" alt="" coords="2321,259,2452,285"/>
-<area shape="rect" id="node7" href="a00088.html" title="dxlibex/type_traits\l/common_type.hpp" alt="" coords="731,676,864,717"/>
-<area shape="rect" id="node13" href="a00093.html" title="dxlibex/type_traits\l/is_castable.hpp" alt="" coords="892,587,1020,628"/>
-<area shape="rect" id="node14" href="a00096.html" title="dxlibex/type_traits\l/is_well_format.hpp" alt="" coords="1095,587,1228,628"/>
-<area shape="rect" id="node16" href="a00071.html" title="dxlibex/config/suffix.hpp" alt="" coords="1872,765,2032,792"/>
-<area shape="rect" id="node17" href="a00062.html" title="dxlibex/config/compiler.hpp" alt="" coords="1793,847,1972,874"/>
-<area shape="rect" id="node20" href="a00081.html" title="dxlibex/math/copysign.hpp" alt="" coords="1883,333,2061,360"/>
-<area shape="rect" id="node28" href="a00082.html" title="dxlibex/math/fabs.hpp" alt="" coords="1505,259,1655,285"/>
-<area shape="rect" id="node29" href="a00074.html" title="dxlibex/math/abs.hpp" alt="" coords="1693,184,1840,211"/>
-<area shape="rect" id="node30" href="a00083.html" title="dxlibex/math/hypot.hpp" alt="" coords="1512,184,1669,211"/>
-<area shape="rect" id="node22" href="a00084.html" title="dxlibex/math/isnan.hpp" alt="" coords="1709,408,1865,435"/>
-<area shape="rect" id="node24" href="a00091.html" title="dxlibex/type_traits\l/float_promote.hpp" alt="" coords="1506,587,1635,628"/>
-<area shape="rect" id="node23" href="a00087.html" title="dxlibex/type_traits.hpp" alt="" coords="897,497,1050,524"/>
-<area shape="rect" id="node25" href="a00092.html" title="dxlibex/type_traits\l/ignore.hpp" alt="" coords="888,676,1016,717"/>
-<area shape="rect" id="node26" href="a00094.html" title="dxlibex/type_traits\l/is_nothrow.hpp" alt="" coords="1141,676,1269,717"/>
-<area shape="rect" id="node32" href="a00073.html" title="dxlibex/cstdlib/abs.hpp" alt="" coords="2308,594,2463,621"/>
+<div class="center"><img src="a00126.png" border="0" usemap="#dxlibex_2basic__types_2point2d_8hpp" alt=""/></div>
+<map name="dxlibex_2basic__types_2point2d_8hpp" id="dxlibex_2basic__types_2point2d_8hpp">
+<area shape="rect" id="node2" href="a00071.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="249,840,396,881"/>
+<area shape="rect" id="node3" href="a00092.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="2128,676,2256,717"/>
+<area shape="rect" id="node5" href="a00091.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="1360,676,1488,717"/>
+<area shape="rect" id="node6" href="a00097.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="1944,587,2091,628"/>
+<area shape="rect" id="node8" href="a00096.html" title="dxlibex/type_traits\l/is_nothrow.hpp" alt="" coords="259,676,387,717"/>
+<area shape="rect" id="node9" href="a00094.html" title="dxlibex/type_traits\l/ignore.hpp" alt="" coords="1461,587,1589,628"/>
+<area shape="rect" id="node10" href="a00054.html" title="dxlibex/basic_types\l/arithmetic_t.hpp" alt="" coords="2373,587,2510,628"/>
+<area shape="rect" id="node11" href="a00060.html" title="dxlibex/basic_types\l/stdint.hpp" alt="" coords="2523,95,2661,136"/>
+<area shape="rect" id="node13" href="a00056.html" title="dxlibex/basic_types\l/distance_result_type_t.hpp" alt="" coords="2166,587,2349,628"/>
+<area shape="rect" id="node14" href="a00055.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="1146,483,1286,539"/>
+<area shape="rect" id="node17" href="a00069.html" title="dxlibex/config/defines.h" alt="" coords="412,683,569,710"/>
+<area shape="rect" id="node20" href="a00050.html" title="dxlibex/algorithm.hpp" alt="" coords="146,497,291,524"/>
+<area shape="rect" id="node23" href="a00081.html" title="dxlibex/math.hpp" alt="" coords="747,102,869,129"/>
+<area shape="rect" id="node33" href="a00073.html" title="dxlibex/cstdlib.hpp" alt="" coords="1772,333,1903,360"/>
+<area shape="rect" id="node7" href="a00090.html" title="dxlibex/type_traits\l/common_type.hpp" alt="" coords="1847,676,1980,717"/>
+<area shape="rect" id="node15" href="a00095.html" title="dxlibex/type_traits\l/is_castable.hpp" alt="" coords="1051,587,1179,628"/>
+<area shape="rect" id="node16" href="a00098.html" title="dxlibex/type_traits\l/is_well_format.hpp" alt="" coords="1253,587,1387,628"/>
+<area shape="rect" id="node18" href="a00072.html" title="dxlibex/config/suffix.hpp" alt="" coords="411,765,571,792"/>
+<area shape="rect" id="node19" href="a00063.html" title="dxlibex/config/compiler.hpp" alt="" coords="420,847,599,874"/>
+<area shape="rect" id="node21" href="a00051.html" title="dxlibex/algorithm/cast\l_if.hpp" alt="" coords="144,587,293,628"/>
+<area shape="rect" id="node22" href="a00052.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="571,587,719,628"/>
+<area shape="rect" id="node24" href="a00082.html" title="dxlibex/math/copysign.hpp" alt="" coords="897,333,1074,360"/>
+<area shape="rect" id="node30" href="a00083.html" title="dxlibex/math/fabs.hpp" alt="" coords="733,259,883,285"/>
+<area shape="rect" id="node31" href="a00075.html" title="dxlibex/math/abs.hpp" alt="" coords="507,184,653,211"/>
+<area shape="rect" id="node32" href="a00084.html" title="dxlibex/math/hypot.hpp" alt="" coords="309,259,467,285"/>
+<area shape="rect" id="node26" href="a00085.html" title="dxlibex/math/isnan.hpp" alt="" coords="614,408,770,435"/>
+<area shape="rect" id="node28" href="a00093.html" title="dxlibex/type_traits\l/float_promote.hpp" alt="" coords="897,587,1026,628"/>
+<area shape="rect" id="node27" href="a00089.html" title="dxlibex/type_traits.hpp" alt="" coords="1322,497,1475,524"/>
+<area shape="rect" id="node34" href="a00074.html" title="dxlibex/cstdlib/abs.hpp" alt="" coords="1715,594,1869,621"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00125.png" border="0" usemap="#dxlibex_2basic__types_2point3d_8hppdep" alt=""/></div>
-<map name="dxlibex_2basic__types_2point3d_8hppdep" id="dxlibex_2basic__types_2point3d_8hppdep">
-<area shape="rect" id="node2" href="a00052.html" title="dxlibex/basic_types.hpp" alt="" coords="38,95,201,121"/>
-<area shape="rect" id="node3" href="a00075.html" title="dxlibex/DxLibEx.h" alt="" coords="5,244,132,271"/>
-<area shape="rect" id="node4" href="a00077.html" title="dxlibex/Graph2D.h" alt="" coords="107,169,236,196"/>
-<area shape="rect" id="node5" href="a00076.html" title="dxlibex/DxLibWrap.h" alt="" coords="156,244,299,271"/>
+<div class="center"><img src="a00127.png" border="0" usemap="#dxlibex_2basic__types_2point2d_8hppdep" alt=""/></div>
+<map name="dxlibex_2basic__types_2point2d_8hppdep" id="dxlibex_2basic__types_2point2d_8hppdep">
+<area shape="rect" id="node2" href="a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="38,95,201,121"/>
+<area shape="rect" id="node3" href="a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="5,244,132,271"/>
+<area shape="rect" id="node4" href="a00078.html" title="dxlibex/Graph2D.h" alt="" coords="107,169,236,196"/>
+<area shape="rect" id="node5" href="a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="156,244,299,271"/>
 </map>
 </div>
 </div>
@@ -180,50 +188,121 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html">dxle::point3d_c&lt; T, &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template class for 3D points specified by its coordinates <code>x</code> and <code>y</code>.  <a href="a00037.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00042.html">dxle::size_c&lt; T, &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template class for 2D sizes specified by its coordinates <code>width</code> and <code>height</code>.  <a href="a00042.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html">dxle::point_c&lt; T, &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template class for 2D points specified by its coordinates <code>x</code> and <code>y</code>.  <a href="a00038.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00097"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html">dxle</a></td></tr>
+<tr class="memitem:a00099"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html">dxle</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00100"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00100.html">dxle::detail</a></td></tr>
+<tr class="memitem:a00102"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00102.html">dxle::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00111"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html">std</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a37f371d5d44a6ec81308c9e10dfbd4be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00057.html#a37f371d5d44a6ec81308c9e10dfbd4be">DXLE_TEMP_make_hash</a>(int_t,  bit,  bit2)</td></tr>
+<tr class="separator:a37f371d5d44a6ec81308c9e10dfbd4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad1e837904ba0f3d9dd71c38ed35d86a1"><td class="memItemLeft" align="right" valign="top">typedef point3d_c&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#ad1e837904ba0f3d9dd71c38ed35d86a1">dxle::point3di</a></td></tr>
-<tr class="separator:ad1e837904ba0f3d9dd71c38ed35d86a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6565dcf79cc5c222cb550804ec2e9cb4"><td class="memItemLeft" align="right" valign="top">typedef point3d_c&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6565dcf79cc5c222cb550804ec2e9cb4">dxle::point3du8i</a></td></tr>
-<tr class="separator:a6565dcf79cc5c222cb550804ec2e9cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f70f11d4a3529023e9f87c30678d641"><td class="memItemLeft" align="right" valign="top">typedef point3d_c&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a2f70f11d4a3529023e9f87c30678d641">dxle::point3d8i</a></td></tr>
-<tr class="separator:a2f70f11d4a3529023e9f87c30678d641"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83cf9e21f9c086c4b4a7e5f5d1f4c429"><td class="memItemLeft" align="right" valign="top">typedef point3d_c&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a83cf9e21f9c086c4b4a7e5f5d1f4c429">dxle::point3dd</a></td></tr>
-<tr class="separator:a83cf9e21f9c086c4b4a7e5f5d1f4c429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83f7ef5efdb6b43cceadbe6b09aab2be"><td class="memItemLeft" align="right" valign="top">typedef point3d_c&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a83f7ef5efdb6b43cceadbe6b09aab2be">dxle::point3df</a></td></tr>
-<tr class="separator:a83f7ef5efdb6b43cceadbe6b09aab2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6705043c3b3698b12f909a27820c9ef"><td class="memItemLeft" align="right" valign="top">typedef point_c&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#ad6705043c3b3698b12f909a27820c9ef">dxle::pointi</a></td></tr>
+<tr class="separator:ad6705043c3b3698b12f909a27820c9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a4ac37c98f9d516d6ee0ef4588ff16"><td class="memItemLeft" align="right" valign="top">typedef point_c&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#ab7a4ac37c98f9d516d6ee0ef4588ff16">dxle::pointu8i</a></td></tr>
+<tr class="separator:ab7a4ac37c98f9d516d6ee0ef4588ff16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86f944b636f9dce144c93a1f568fb9c"><td class="memItemLeft" align="right" valign="top">typedef point_c&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#aa86f944b636f9dce144c93a1f568fb9c">dxle::point8i</a></td></tr>
+<tr class="separator:aa86f944b636f9dce144c93a1f568fb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a673b5565da9d03b487301ae2c089eb"><td class="memItemLeft" align="right" valign="top">typedef point_c&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#a0a673b5565da9d03b487301ae2c089eb">dxle::pointd</a></td></tr>
+<tr class="separator:a0a673b5565da9d03b487301ae2c089eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96474248bdd32fe46ace1e2c134cac3d"><td class="memItemLeft" align="right" valign="top">typedef point_c&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#a96474248bdd32fe46ace1e2c134cac3d">dxle::pointf</a></td></tr>
+<tr class="separator:a96474248bdd32fe46ace1e2c134cac3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a66deb3296869f884d2d8fe847c6cd05b"><td class="memTemplParams" colspan="2">template&lt;typename CharType , typename point3dType &gt; </td></tr>
-<tr class="memitem:a66deb3296869f884d2d8fe847c6cd05b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00100.html#a66deb3296869f884d2d8fe847c6cd05b">dxle::detail::ostream_operator_helper</a> (std::basic_ostream&lt; CharType &gt; &amp;os, const CharType *str, const point3d_c&lt; point3dType &gt; &amp;p)</td></tr>
-<tr class="separator:a66deb3296869f884d2d8fe847c6cd05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1220b6f8c5ab734e6c77bf41d0bdd04a"><td class="memTemplParams" colspan="2">template&lt;typename CharType , typename point3dType &gt; </td></tr>
-<tr class="memitem:a1220b6f8c5ab734e6c77bf41d0bdd04a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00100.html#a1220b6f8c5ab734e6c77bf41d0bdd04a">dxle::detail::istream_operator_helper</a> (std::basic_istream&lt; CharType &gt; &amp;is, point3d_c&lt; point3dType &gt; &amp;p)</td></tr>
-<tr class="separator:a1220b6f8c5ab734e6c77bf41d0bdd04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f65201f04a53a467faef95985d9889c"><td class="memItemLeft" align="right" valign="top">point3d_c&lt; T1 &gt; T2 <a class="el" href="a00071.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a6f65201f04a53a467faef95985d9889c">dxle::operator+</a> (const point3d_c&lt; T1 &gt; &amp;l, const point3d_c&lt; T2 &gt; &amp;r) <a class="el" href="a00071.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x+r.x) -&gt; point3d_c&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()+std::declval&lt; std::remove_cv_t&lt; T2 &gt;&gt;())&gt;</td></tr>
-<tr class="separator:a6f65201f04a53a467faef95985d9889c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f51c142671e7c7a864530c1ca6ccd09"><td class="memItemLeft" align="right" valign="top">point3d_c&lt; T1 &gt; T2 distance_result_type_t&lt; T1, T2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html#a0f51c142671e7c7a864530c1ca6ccd09">dxle::distance</a> (const point3d_c&lt; T1 &gt; &amp;p1, const point3d_c&lt; T2 &gt; &amp;p2) <a class="el" href="a00071.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(std</td></tr>
-<tr class="separator:a0f51c142671e7c7a864530c1ca6ccd09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66e4b0ff5fef0d7471dff0b3ba0997e"><td class="memTemplParams" colspan="2">template&lt;typename CharType , typename PointType &gt; </td></tr>
+<tr class="memitem:af66e4b0ff5fef0d7471dff0b3ba0997e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00102.html#af66e4b0ff5fef0d7471dff0b3ba0997e">dxle::detail::ostream_operator_helper</a> (std::basic_ostream&lt; CharType &gt; &amp;os, const CharType *str, const point_c&lt; PointType &gt; &amp;p)</td></tr>
+<tr class="separator:af66e4b0ff5fef0d7471dff0b3ba0997e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd29e730552efcc2a7a68bdb75758fa"><td class="memTemplParams" colspan="2">template&lt;typename CharType , typename PointType &gt; </td></tr>
+<tr class="memitem:a8fd29e730552efcc2a7a68bdb75758fa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00102.html#a8fd29e730552efcc2a7a68bdb75758fa">dxle::detail::istream_operator_helper</a> (std::basic_istream&lt; CharType &gt; &amp;is, point_c&lt; PointType &gt; &amp;p)</td></tr>
+<tr class="separator:a8fd29e730552efcc2a7a68bdb75758fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a258530a9d252b81a413284ec4dfdb4"><td class="memItemLeft" align="right" valign="top">point_c&lt; T1 &gt; T2 <a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#a3a258530a9d252b81a413284ec4dfdb4">dxle::operator+</a> (const point_c&lt; T1 &gt; &amp;l, const point_c&lt; T2 &gt; &amp;r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x+r.x) -&gt; point_c&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()+std::declval&lt; std::remove_cv_t&lt; T2 &gt;&gt;())&gt;</td></tr>
+<tr class="separator:a3a258530a9d252b81a413284ec4dfdb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23eb93110cfbb6395930a46c68890f3"><td class="memItemLeft" align="right" valign="top">point_c&lt; T1 &gt; T2 <a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#ac23eb93110cfbb6395930a46c68890f3">dxle::operator/</a> (const point_c&lt; T1 &gt; &amp;l, T2 r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x/r) -&gt; point_c&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()/std::declval&lt; std::remove_cv_t&lt; T2 &gt;&gt;())&gt;</td></tr>
+<tr class="separator:ac23eb93110cfbb6395930a46c68890f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2503dc5f1fa58ade16912a89a2a891"><td class="memItemLeft" align="right" valign="top">point_c&lt; T1 &gt; T2 <a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#aae2503dc5f1fa58ade16912a89a2a891">dxle::dot</a> (const point_c&lt; T1 &gt; &amp;p1, const point_c&lt; T2 &gt; &amp;p2) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(p1.x *p2.x+p1.y *p2.y) -&gt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()*std::declval&lt; std::remove_cv_t&lt; T2 &gt;&gt;())</td></tr>
+<tr class="separator:aae2503dc5f1fa58ade16912a89a2a891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a5de9fb0441a453be541d8821f0d034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html#a3a5de9fb0441a453be541d8821f0d034">std::DXLE_TEMP_make_hash</a> (int, 8, 16)</td></tr>
+<tr class="separator:a3a5de9fb0441a453be541d8821f0d034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fa1ef9522a9607783f80e0fa3f0f42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html#aa3fa1ef9522a9607783f80e0fa3f0f42">std::DXLE_TEMP_make_hash</a> (int, 16, 32)</td></tr>
+<tr class="separator:aa3fa1ef9522a9607783f80e0fa3f0f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba2689db01ec23609c40cd50b731197"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html#a9ba2689db01ec23609c40cd50b731197">std::DXLE_TEMP_make_hash</a> (int, 32, 64)</td></tr>
+<tr class="separator:a9ba2689db01ec23609c40cd50b731197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aa7973982ea94020dc7e3a53d2d218e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html#a2aa7973982ea94020dc7e3a53d2d218e">std::DXLE_TEMP_make_hash</a> (uint, 8, 16)</td></tr>
+<tr class="separator:a2aa7973982ea94020dc7e3a53d2d218e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22aeb7034066f13f35def976d7da0dfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html#a22aeb7034066f13f35def976d7da0dfa">std::DXLE_TEMP_make_hash</a> (uint, 16, 32)</td></tr>
+<tr class="separator:a22aeb7034066f13f35def976d7da0dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0428c0a79e5c7671e62a9d193033b3da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html#a0428c0a79e5c7671e62a9d193033b3da">std::DXLE_TEMP_make_hash</a> (uint, 32, 64)</td></tr>
+<tr class="separator:a0428c0a79e5c7671e62a9d193033b3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8f698b193d5579f6879460be2d870a45"><td class="memItemLeft" align="right" valign="top">point_c&lt; T1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">dxle::T2</a></td></tr>
+<tr class="separator:a8f698b193d5579f6879460be2d870a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd9976edf701f05928e902ff67cf8a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html#aacd9976edf701f05928e902ff67cf8a2">dxle::double</a></td></tr>
+<tr class="separator:aacd9976edf701f05928e902ff67cf8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a37f371d5d44a6ec81308c9e10dfbd4be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_TEMP_make_hash</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">int_t, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">bit, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">bit2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span>hash&lt;<a class="code" href="a00099.html">dxle</a>::point_c&lt;int_t##bit##_t&gt;&gt; {\</div><div class="line">        hash() = <span class="keywordflow">default</span>;\</div><div class="line">        hash(<span class="keyword">const</span> hash&amp;) = <span class="keywordflow">default</span>;\</div><div class="line">        hash(hash&amp;&amp; other) :hash_run(<a class="code" href="a00111.html">std</a>::move(other.hash_run)) {}\</div><div class="line">        ~hash() {}\</div><div class="line">        hash&amp; operator=(<span class="keyword">const</span> hash&amp; other) { hash_run = other.hash_run; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }\</div><div class="line">        hash&amp; operator=(hash&amp;&amp; other) { hash_run = std::move(other.hash_run); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }\</div><div class="line">        size_t operator()(<span class="keyword">const</span> <a class="code" href="a00038.html">dxle::point_c&lt;int_t##bit##_t&gt;</a>&amp; key)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> hash_run((static_cast&lt;int_t##_fast##bit2##_t&gt;(key.<a class="code" href="a00038.html#acded1fdfda0e4d69a5a53e3041592f86">x</a>) &lt;&lt; bit) | static_cast&lt;int_t##_fast##bit2##_t&gt;(key.<a class="code" href="a00038.html#a5aa7e4f40488bb9fcc3104e53a8c5986">y</a>)); }\</div><div class="line">        private:\</div><div class="line">            std::hash&lt;int_t##_fast##bit2##_t&gt; hash_run;\</div><div class="line">    }</div><div class="ttc" id="a00038_html_acded1fdfda0e4d69a5a53e3041592f86"><div class="ttname"><a href="a00038.html#acded1fdfda0e4d69a5a53e3041592f86">dxle::point_c::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="a00057_source.html#l00109">point2d.hpp:109</a></div></div>
+<div class="ttc" id="a00099_html"><div class="ttname"><a href="a00099.html">dxle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00051_source.html#l00011">cast_if.hpp:11</a></div></div>
+<div class="ttc" id="a00038_html"><div class="ttname"><a href="a00038.html">dxle::point_c</a></div><div class="ttdoc">Template class for 2D points specified by its coordinates x and y. </div><div class="ttdef"><b>Definition:</b> <a href="a00057_source.html#l00105">point2d.hpp:105</a></div></div>
+<div class="ttc" id="a00111_html"><div class="ttname"><a href="a00111.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="a00057_source.html#l00659">point2d.hpp:659</a></div></div>
+<div class="ttc" id="a00038_html_a5aa7e4f40488bb9fcc3104e53a8c5986"><div class="ttname"><a href="a00038.html#a5aa7e4f40488bb9fcc3104e53a8c5986">dxle::point_c::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="a00057_source.html#l00109">point2d.hpp:109</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00057_source.html#l00662">662</a> of file <a class="el" href="a00057_source.html">point2d.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_414ed2069a979a8d2b003ad6824e1b2d.html">basic_types</a></li><li class="navelem"><a class="el" href="a00057.html">point3d.hpp</a></li>
-    <li class="footer">Generated on Sat Feb 20 2016 17:19:31 for DxLibEx by
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_414ed2069a979a8d2b003ad6824e1b2d.html">basic_types</a></li><li class="navelem"><a class="el" href="a00057.html">point2d.hpp</a></li>
+    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

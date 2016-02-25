@@ -113,16 +113,16 @@ $(document).ready(function(){initNavTree('a00027.html','');});
 <p>Trait class whose <code>value</code> is true regardless of what <code>T</code> is. we can use it, when we want to let SFINAE work for a decltype expressions.  
  <a href="a00027.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00092_source.html">ignore.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00094_source.html">ignore.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for dxle::type_traits::ignore_type&lt; typename &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00237.png" border="0" usemap="#dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_inherit__map" alt="Inheritance graph"/></div>
+<div class="center"><img src="a00246.png" border="0" usemap="#dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for dxle::type_traits::ignore_type&lt; typename &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00238.png" border="0" usemap="#dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="a00247.png" border="0" usemap="#dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename&gt;<br />
@@ -130,17 +130,17 @@ struct dxle::type_traits::ignore_type&lt; typename &gt;</h3>
 
 <p>Trait class whose <code>value</code> is true regardless of what <code>T</code> is. we can use it, when we want to let SFINAE work for a decltype expressions. </p>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="comment">//return int</span></div><div class="line"><span class="keyword">auto</span> add(<span class="keywordtype">int</span> a, T b)-&gt;std::enable_if_t&lt;<a class="code" href="a00027.html">dxle::ignore_type&lt;decltype(a + b)&gt;::value</a>, <span class="keywordtype">int</span>&gt;</div><div class="line">{</div><div class="line">    <span class="keywordflow">return</span> a + b;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    add(0, 0);<span class="comment">//OK</span></div><div class="line">    <span class="comment">//add(0, nullptr);//compile error</span></div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --> 
-<p>Definition at line <a class="el" href="a00092_source.html#l00040">40</a> of file <a class="el" href="a00092_source.html">ignore.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00094_source.html#l00040">40</a> of file <a class="el" href="a00094_source.html">ignore.hpp</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dxlibex/type_traits/<a class="el" href="a00092_source.html">ignore.hpp</a></li>
+<li>dxlibex/type_traits/<a class="el" href="a00094_source.html">ignore.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00097.html">dxle</a></li><li class="navelem"><a class="el" href="a00106.html">type_traits</a></li><li class="navelem"><a class="el" href="a00027.html">ignore_type</a></li>
-    <li class="footer">Generated on Sat Feb 20 2016 17:19:31 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00109.html">type_traits</a></li><li class="navelem"><a class="el" href="a00027.html">ignore_type</a></li>
+    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

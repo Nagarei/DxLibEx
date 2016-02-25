@@ -1,12 +1,6 @@
-<map id="dxlibex/math/copysign.hpp" name="dxlibex/math/copysign.hpp">
-<area shape="rect" id="node2" href="$a00080.html" title="dxlibex/math.hpp" alt="" coords="255,229,376,256"/>
-<area shape="rect" id="node10" href="$a00082.html" title="dxlibex/math/fabs.hpp" alt="" coords="242,80,391,107"/>
-<area shape="rect" id="node3" href="$a00056.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="5,304,143,345"/>
-<area shape="rect" id="node5" href="$a00075.html" title="dxlibex/DxLibEx.h" alt="" coords="367,543,493,569"/>
-<area shape="rect" id="node8" href="$a00057.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="167,304,304,345"/>
-<area shape="rect" id="node9" href="$a00058.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="328,304,465,345"/>
-<area shape="rect" id="node4" href="$a00052.html" title="dxlibex/basic_types.hpp" alt="" coords="203,393,366,420"/>
-<area shape="rect" id="node6" href="$a00077.html" title="dxlibex/Graph2D.h" alt="" coords="220,468,349,495"/>
-<area shape="rect" id="node7" href="$a00076.html" title="dxlibex/DxLibWrap.h" alt="" coords="200,543,343,569"/>
-<area shape="rect" id="node11" href="$a00074.html" title="dxlibex/math/abs.hpp" alt="" coords="242,155,389,181"/>
+<map id="dxlibex/Helper.h" name="dxlibex/Helper.h">
+<area shape="rect" id="node2" href="$a00078.html" title="dxlibex/Graph2D.h" alt="" coords="83,80,212,107"/>
+<area shape="rect" id="node5" href="$a00086.html" title="dxlibex/Sound.h" alt="" coords="237,80,351,107"/>
+<area shape="rect" id="node3" href="$a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="156,155,299,181"/>
 </map>

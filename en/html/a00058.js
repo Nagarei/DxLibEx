@@ -1,12 +1,13 @@
 var a00058 =
 [
-    [ "point_c", "a00038.html", "a00038" ],
-    [ "size_c", "a00042.html", "a00042" ],
-    [ "size", "a00058.html#adf405de7f513a71717a788fc40acb969", null ],
-    [ "sized", "a00058.html#accf6b4e16bcdbe8c13f4fe2cec45bdab", null ],
-    [ "sizef", "a00058.html#a6b27effe2d95a2f41eb832b023ba4eb3", null ],
-    [ "sizeui", "a00058.html#afe897e1533e2bcea7a244c8be28fbb0d", null ],
-    [ "istream_operator_helper", "a00058.html#ad449acfc69070763dbe9d888eba6697d", null ],
-    [ "operator+", "a00058.html#a47ce3e93aa827caa3d7749e383c05c4f", null ],
-    [ "ostream_operator_helper", "a00058.html#ac29cf46a39dcaa244d39a8773e6bc8c3", null ]
+    [ "point3d_c", "a00037.html", "a00037" ],
+    [ "point3d8i", "a00058.html#a2f70f11d4a3529023e9f87c30678d641", null ],
+    [ "point3dd", "a00058.html#a83cf9e21f9c086c4b4a7e5f5d1f4c429", null ],
+    [ "point3df", "a00058.html#a83f7ef5efdb6b43cceadbe6b09aab2be", null ],
+    [ "point3di", "a00058.html#ad1e837904ba0f3d9dd71c38ed35d86a1", null ],
+    [ "point3du8i", "a00058.html#a6565dcf79cc5c222cb550804ec2e9cb4", null ],
+    [ "distance", "a00058.html#a0f51c142671e7c7a864530c1ca6ccd09", null ],
+    [ "istream_operator_helper", "a00058.html#a1220b6f8c5ab734e6c77bf41d0bdd04a", null ],
+    [ "operator+", "a00058.html#a6f65201f04a53a467faef95985d9889c", null ],
+    [ "ostream_operator_helper", "a00058.html#a66deb3296869f884d2d8fe847c6cd05b", null ]
 ];

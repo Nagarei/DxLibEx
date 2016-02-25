@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lightgray',['lightgray',['../a00099.html#aacfedd2e718cf65ba03a123d54b16f34aa33ab79f7fc578194d82415ddfee833a',1,'dxle::color']]]
+  ['lightgray',['lightgray',['../a00101.html#aacfedd2e718cf65ba03a123d54b16f34aa33ab79f7fc578194d82415ddfee833a',1,'dxle::color']]]
 ];

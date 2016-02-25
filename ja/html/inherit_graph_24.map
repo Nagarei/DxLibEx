@@ -1,3 +1,4 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$a00017.html" title="dxle::type_traits::\ldetail::float_promote2\l\&lt; T, U, is_arithmetic \&gt;" alt="" coords="5,5,157,61"/>
+<area shape="rect" id="node2" href="$a00016.html" title="dxle::type_traits::\ldetail::float_promote1\&lt; T \&gt;" alt="" coords="137,13,315,54"/>
+<area shape="rect" id="node3" href="$a00020.html" title="dxle::type_traits::\ldetail::float_promote\l_impl\&lt; T \&gt;" alt="" coords="363,5,501,61"/>
 </map>
