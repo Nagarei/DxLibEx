@@ -143,5 +143,44 @@
     <ClInclude Include="dxlibex\math\isnan.hpp">
       <Filter>dxlibex\math</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\algorithm.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\algorithm\cast_if.hpp">
+      <Filter>dxlibex\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_nothrow.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_castable.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_well_format.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\common_type.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\float_promote.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\type_traits\is_representable.hpp">
+      <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\coordinate_operator_bool_helper.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\distance_result_type_t.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\stdint.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\basic_types\tchar.hpp">
+      <Filter>dxlibex\basic_types</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\Sound.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
