@@ -101,7 +101,7 @@ namespace dxle {
 	\~japanese - <a href="http://cpprefjp.github.io/reference/type_traits/is_floating_point.html">std::is_floating_point</a><T> == true又はdoubleにキャスト可能
 	\~
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
 	class point_c final
 	{
 	public:
