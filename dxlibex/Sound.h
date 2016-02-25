@@ -17,9 +17,11 @@
 #include <array>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 #include "dxlibex/Helper.h"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/thread.h"
+#include "dxlibex/basic_types.hpp"
 
 //----------2Dグラフィック----------//
 
@@ -66,62 +68,66 @@ namespace dxle
 			int	DeleteSoundMem(int LogOutFlag = FALSE) { return DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
 
 			//操作
-			int			play(int SoundHandle, int PlayType, int TopPositionFlag = TRUE);								// サウンドハンドルを再生する
-			int			stop(int SoundHandle);						// サウンドハンドルの再生を停止する
-			int			is_playing(int SoundHandle);						// サウンドハンドルが再生中かどうかを取得する
-			int			SetPan(int PanPal, int SoundHandle);						// サウンドハンドルのパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangePan(int PanPal, int SoundHandle);						// サウンドハンドルのパンを設定する( -255 ～ 255 )
-			int			GetPan(int SoundHandle);						// サウンドハンドルのパンを取得する
-			int			SetVolume(int VolumePal, int SoundHandle);						// サウンドハンドルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeVolume(int VolumePal, int SoundHandle);						// サウンドハンドルのボリュームを設定する( 0 ～ 255 )
-			int			GetVolume(int SoundHandle);						// サウンドハンドルのボリュームを取得する
-			int			SetChannelVolume(int Channel, int VolumePal, int SoundHandle);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeChannelVolume(int Channel, int VolumePal, int SoundHandle);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )
-			int			GetChannelVolume(int Channel, int SoundHandle);						// サウンドハンドルの指定のチャンネルのボリュームを取得する
-			int			SetFrequency(int FrequencyPal, int SoundHandle);						// サウンドハンドルの再生周波数を設定する
-			int			GetFrequency(int SoundHandle);						// サウンドハンドルの再生周波数を取得する
-			int			ResetFrequency(int SoundHandle);						// サウンドハンドルの再生周波数を読み込み直後の状態に戻す
+			int			play(int PlayType, int TopPositionFlag = TRUE);								// サウンドハンドルを再生する
+			int			stop();						// サウンドハンドルの再生を停止する
+			int			is_playing();						// サウンドハンドルが再生中かどうかを取得する
+			int			SetPan(int PanPal);						// サウンドハンドルのパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			int			ChangePan(int PanPal);						// サウンドハンドルのパンを設定する( -255 ～ 255 )
+			int			GetPan();						// サウンドハンドルのパンを取得する
+			int			SetVolume(int VolumePal);						// サウンドハンドルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			int			ChangeVolume(int VolumePal);						// サウンドハンドルのボリュームを設定する( 0 ～ 255 )
+			int			GetVolume();						// サウンドハンドルのボリュームを取得する
+			int			SetChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			int			ChangeChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )
+			int			GetChannelVolume(int Channel);						// サウンドハンドルの指定のチャンネルのボリュームを取得する
+			int			SetFrequency(int FrequencyPal);						// サウンドハンドルの再生周波数を設定する
+			int			GetFrequency();						// サウンドハンドルの再生周波数を取得する
+			int			ResetFrequency();						// サウンドハンドルの再生周波数を読み込み直後の状態に戻す
 
-			int			SetNextPlayPan(int PanPal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeNextPlayPan(int PanPal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
-			int			SetNextPlayVolume(int VolumePal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeNextPlayVolume(int VolumePal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 0 ～ 255 )
-			int			SetNextPlayChannelVolume(int Channel, int VolumePal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int			ChangeNextPlayChannelVolume(int Channel, int VolumePal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 0 ～ 255 )
-			int			SetNextPlayFrequency(int FrequencyPal, int SoundHandle);						// サウンドハンドルの次の再生にのみ使用する再生周波数を設定する
+			int			SetNextPlayPan(int PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			int			ChangeNextPlayPan(int PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
+			int			SetNextPlayVolume(int VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			int			ChangeNextPlayVolume(int VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 0 ～ 255 )
+			int			SetNextPlayChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			int			ChangeNextPlayChannelVolume(int Channel, int VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 0 ～ 255 )
+			int			SetNextPlayFrequency(int FrequencyPal);						// サウンドハンドルの次の再生にのみ使用する再生周波数を設定する
 
-			int			SetCurrentPosition(int SamplePosition, int SoundHandle);						// サウンドハンドルの再生位置をサンプル単位で設定する(再生が止まっている時のみ有効)
-			int			GetCurrentPosition(int SoundHandle);						// サウンドハンドルの再生位置をサンプル単位で取得する
-			int			SetSoundCurrentPosition(int Byte, int SoundHandle);						// サウンドハンドルの再生位置をバイト単位で設定する(再生が止まっている時のみ有効)
-			int			GetSoundCurrentPosition(int SoundHandle);						// サウンドハンドルの再生位置をバイト単位で取得する
-			int			SetSoundCurrentTime(int Time, int SoundHandle);						// サウンドハンドルの再生位置をミリ秒単位で設定する(圧縮形式の場合は正しく設定されない場合がある)
-			int			GetSoundCurrentTime(int SoundHandle);						// サウンドハンドルの再生位置をミリ秒単位で取得する(圧縮形式の場合は正しい値が返ってこない場合がある)
-			int			GetSoundTotalSample(int SoundHandle);						// サウンドハンドルの音の総時間をサンプル単位で取得する
-			int			GetSoundTotalTime(int SoundHandle);						// サウンドハンドルの音の総時間をミリ秒単位で取得する
+			int			SetCurrentPosition(int SamplePosition);						// サウンドハンドルの再生位置をサンプル単位で設定する(再生が止まっている時のみ有効)
+			int			GetCurrentPosition();						// サウンドハンドルの再生位置をサンプル単位で取得する
+			int			SetSoundCurrentPosition(int Byte);						// サウンドハンドルの再生位置をバイト単位で設定する(再生が止まっている時のみ有効)
+			int			GetSoundCurrentPosition();						// サウンドハンドルの再生位置をバイト単位で取得する
+			int			SetSoundCurrentTime(std::chrono::milliseconds Time);						// サウンドハンドルの再生位置をミリ秒単位で設定する(圧縮形式の場合は正しく設定されない場合がある)
+			std::chrono::milliseconds GetSoundCurrentTime();						// サウンドハンドルの再生位置をミリ秒単位で取得する(圧縮形式の場合は正しい値が返ってこない場合がある)
+			int			GetSoundTotalSample();						// サウンドハンドルの音の総時間をサンプル単位で取得する
+			std::chrono::milliseconds GetSoundTotalTime();						// サウンドハンドルの音の総時間をミリ秒単位で取得する
 
-			int			SetLoopPos(int LoopTime, int SoundHandle);						// SetLoopTimePos の別名関数
-			int			SetLoopTimePos(int LoopTime, int SoundHandle);						// サウンドハンドルにループ位置を設定する(ミリ秒単位)
-			int			SetLoopSamplePos(int LoopSamplePosition, int SoundHandle);						// サウンドハンドルにループ位置を設定する(サンプル単位)
+			int			SetLoopPos(std::chrono::milliseconds LoopTime);						// SetLoopTimePos の別名関数
+			int			SetLoopTimePos(std::chrono::milliseconds LoopTime);						// サウンドハンドルにループ位置を設定する(ミリ秒単位)
+			int			SetLoopSamplePos(int LoopSamplePosition);						// サウンドハンドルにループ位置を設定する(サンプル単位)
 
-			int			SetLoopStartTimePos(int LoopStartTime, int SoundHandle);						// サウンドハンドルにループ開始位置を設定する(ミリ秒単位)
-			int			SetLoopStartSamplePos(int LoopStartSamplePosition, int SoundHandle);						// サウンドハンドルにループ開始位置を設定する(サンプル単位)
+			int			SetLoopStartTimePos(std::chrono::milliseconds LoopStartTime);						// サウンドハンドルにループ開始位置を設定する(ミリ秒単位)
+			int			SetLoopStartSamplePos(int LoopStartSamplePosition);						// サウンドハンドルにループ開始位置を設定する(サンプル単位)
 
-			int			SetPlayFinishDelete(int DeleteFlag, int SoundHandle);						// サウンドハンドルの再生が終了したら自動的にハンドルを削除するかどうかを設定する
+			int			SetPlayFinishDelete(int DeleteFlag);						// サウンドハンドルの再生が終了したら自動的にハンドルを削除するかどうかを設定する
 
-			int			Set3DReverbParam(const SOUND3D_REVERB_PARAM *Param, int SoundHandle);						// サウンドハンドルの３Ｄサウンド用のリバーブパラメータを設定する
-			int			Set3DPresetReverbParam(int PresetNo /* DX_REVERB_PRESET_DEFAULT 等 */, int SoundHandle);						// サウンドハンドルの３Ｄサウンド用のリバーブパラメータをプリセットを使用して設定する
+			int			Set3DReverbParam(const SOUND3D_REVERB_PARAM *Param);						// サウンドハンドルの３Ｄサウンド用のリバーブパラメータを設定する
+			int			Set3DPresetReverbParam(int PresetNo /* DX_REVERB_PRESET_DEFAULT 等 */);						// サウンドハンドルの３Ｄサウンド用のリバーブパラメータをプリセットを使用して設定する
 			int			Set3DReverbParamAll(const SOUND3D_REVERB_PARAM *Param, int PlaySoundOnly = FALSE);							// 全ての３Ｄサウンドのサウンドハンドルにリバーブパラメータを設定する( PlaySoundOnly TRUE:再生中のサウンドにのみ設定する  FALSE:再生していないサウンドにも設定する )
 			int			Set3DPresetReverbParamAll(int PresetNo /* DX_REVERB_PRESET_DEFAULT 等 */, int PlaySoundOnly = FALSE);			// 全ての３Ｄサウンドのサウンドハンドルにリバーブパラメータをプリセットを使用して設定する( PlaySoundOnly TRUE:再生中のサウンドにのみ設定する  FALSE:再生していないサウンドにも設定する )
-			int			Get3DReverbParam(SOUND3D_REVERB_PARAM *ParamBuffer, int SoundHandle);						// サウンドハンドルに設定されている３Ｄサウンド用のリバーブパラメータを取得する
+			int			Get3DReverbParam(SOUND3D_REVERB_PARAM *ParamBuffer);						// サウンドハンドルに設定されている３Ｄサウンド用のリバーブパラメータを取得する
 			int			Get3DPresetReverbParam(SOUND3D_REVERB_PARAM *ParamBuffer, int PresetNo /* DX_REVERB_PRESET_DEFAULT 等 */);		// プリセットの３Ｄサウンド用のリバーブパラメータを取得する
 
-			int			Set3DPosition(VECTOR Position, int SoundHandle);						// サウンドハンドルの３Ｄサウンド用の再生位置を設定する
-			int			Set3DRadius(float Radius, int SoundHandle);						// サウンドハンドルの３Ｄサウンド用の音が聞こえる距離を設定する
-			int			Set3DVelocity(VECTOR Velocity, int SoundHandle);						// サウンドハンドルの３Ｄサウンド用の移動速度を設定する
+			int			Set3DPosition(VECTOR Position);						// サウンドハンドルの３Ｄサウンド用の再生位置を設定する
+			int			Set3DPosition(const point3df& Position);						// サウンドハンドルの３Ｄサウンド用の再生位置を設定する
+			int			Set3DRadius(float Radius);						// サウンドハンドルの３Ｄサウンド用の音が聞こえる距離を設定する
+			int			Set3DVelocity(VECTOR Velocity);						// サウンドハンドルの３Ｄサウンド用の移動速度を設定する
+			int			Set3DVelocity(const point3df& Velocity);						// サウンドハンドルの３Ｄサウンド用の移動速度を設定する
 
-			int			SetNextPlay3DPosition(VECTOR Position, int SoundHandle);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の再生位置を設定する
-			int			SetNextPlay3DRadius(float Radius, int SoundHandle);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の音が聞こえる距離を設定する
-			int			SetNextPlay3DVelocity(VECTOR Velocity, int SoundHandle);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の移動速度を設定する
+			int			SetNextPlay3DPosition(VECTOR Position);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の再生位置を設定する
+			int			SetNextPlay3DPosition(const point3df& Position);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の再生位置を設定する
+			int			SetNextPlay3DRadius(float Radius);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の音が聞こえる距離を設定する
+			int			SetNextPlay3DVelocity(VECTOR Velocity);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の移動速度を設定する
+			int			SetNextPlay3DVelocity(const point3df& Velocity);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の移動速度を設定する
 
 		private:
 			sound(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(param_handle){}
