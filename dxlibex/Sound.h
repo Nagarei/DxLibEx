@@ -30,6 +30,7 @@ namespace dxle
 	//! サウンド
 	namespace sound
 	{
+		namespace ch = std::chrono;
 		class sound final : public impl::Unique_HandledObject_Bace < sound >
 		{
 		public:
@@ -96,16 +97,16 @@ namespace dxle
 			int			GetCurrentPosition();						// サウンドハンドルの再生位置をサンプル単位で取得する
 			int			SetSoundCurrentPosition(int Byte);						// サウンドハンドルの再生位置をバイト単位で設定する(再生が止まっている時のみ有効)
 			int			GetSoundCurrentPosition();						// サウンドハンドルの再生位置をバイト単位で取得する
-			int			SetSoundCurrentTime(std::chrono::milliseconds Time);						// サウンドハンドルの再生位置をミリ秒単位で設定する(圧縮形式の場合は正しく設定されない場合がある)
-			std::chrono::milliseconds GetSoundCurrentTime();						// サウンドハンドルの再生位置をミリ秒単位で取得する(圧縮形式の場合は正しい値が返ってこない場合がある)
+			int			SetSoundCurrentTime(ch::milliseconds Time);						// サウンドハンドルの再生位置をミリ秒単位で設定する(圧縮形式の場合は正しく設定されない場合がある)
+			ch::milliseconds GetSoundCurrentTime();						// サウンドハンドルの再生位置をミリ秒単位で取得する(圧縮形式の場合は正しい値が返ってこない場合がある)
 			int			GetSoundTotalSample();						// サウンドハンドルの音の総時間をサンプル単位で取得する
-			std::chrono::milliseconds GetSoundTotalTime();						// サウンドハンドルの音の総時間をミリ秒単位で取得する
+			ch::milliseconds GetSoundTotalTime();						// サウンドハンドルの音の総時間をミリ秒単位で取得する
 
-			int			SetLoopPos(std::chrono::milliseconds LoopTime);						// SetLoopTimePos の別名関数
-			int			SetLoopTimePos(std::chrono::milliseconds LoopTime);						// サウンドハンドルにループ位置を設定する(ミリ秒単位)
+			int			SetLoopPos(ch::milliseconds LoopTime);						// SetLoopTimePos の別名関数
+			int			SetLoopTimePos(ch::milliseconds LoopTime);						// サウンドハンドルにループ位置を設定する(ミリ秒単位)
 			int			SetLoopSamplePos(int LoopSamplePosition);						// サウンドハンドルにループ位置を設定する(サンプル単位)
 
-			int			SetLoopStartTimePos(std::chrono::milliseconds LoopStartTime);						// サウンドハンドルにループ開始位置を設定する(ミリ秒単位)
+			int			SetLoopStartTimePos(ch::milliseconds LoopStartTime);						// サウンドハンドルにループ開始位置を設定する(ミリ秒単位)
 			int			SetLoopStartSamplePos(int LoopStartSamplePosition);						// サウンドハンドルにループ開始位置を設定する(サンプル単位)
 
 			int			SetPlayFinishDelete(int DeleteFlag);						// サウンドハンドルの再生が終了したら自動的にハンドルを削除するかどうかを設定する
