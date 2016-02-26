@@ -154,7 +154,7 @@ namespace dxle
 			int set_3d_velocity(const point3df& Velocity);						// サウンドハンドルの３Ｄサウンド用の移動速度を設定する
 			int set_next_play_3d_position(VECTOR Position);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の再生位置を設定する
 			int set_next_play_3d_position(const point3df& Position);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の再生位置を設定する
-			int set_next_play_3d_rdius(float Radius);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の音が聞こえる距離を設定する
+			int set_next_play_3d_radius(float Radius);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の音が聞こえる距離を設定する
 			int set_next_play_3d_velocity(VECTOR Velocity);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の移動速度を設定する
 			int set_next_play_3d_velocity(const point3df& Velocity);						// サウンドハンドルの次の再生のみに使用する３Ｄサウンド用の移動速度を設定する
 
