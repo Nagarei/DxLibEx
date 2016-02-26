@@ -18,7 +18,7 @@
     <ClInclude Include="dxlibex\algorithm\cast_if.hpp" />
     <ClInclude Include="dxlibex\algorithm\safe_dist.hpp" />
     <ClInclude Include="dxlibex\basic_types.hpp" />
-    <ClInclude Include="dxlibex\basic_types\arithmetic_t.hpp" />
+    <ClInclude Include="dxlibex\basic_types\use_big_type_when_one_byte_t.hpp" />
     <ClInclude Include="dxlibex\basic_types\coordinate_operator_bool_helper.hpp" />
     <ClInclude Include="dxlibex\basic_types\distance_result_type_t.hpp" />
     <ClInclude Include="dxlibex\basic_types\point2d.hpp" />
