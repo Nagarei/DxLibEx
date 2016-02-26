@@ -6,7 +6,7 @@
 
 int DrawGraph(const dxle::pointi& point, const dxle::texture_2d& Graph, bool TransFlag)
 {
-	return Graph.DrawGraph(point.x, point.y, TransFlag);
+	return Graph.DrawGraph(point, TransFlag);
 }
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -30,7 +30,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		DxLib::ClearDrawScreen();
 
 		// 読みこんだグラフィックを画面中央に描画
-		DrawGraph(dxle::pointd(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
+		//DrawGraph(dxle::pointd(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
+		GHandle.DrawGraph(dxle::pointd(sizei{ 640, 480 } -GHandle.size()) / 2, true);
+		GHandle.DrawGraph({ 0,0 }, true);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();
