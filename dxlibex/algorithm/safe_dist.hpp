@@ -10,7 +10,7 @@
 #include "dxlibex/config/defines.h"
 #include "dxlibex/type_traits/enable_if.hpp"
 namespace dxle {
-	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, std::nullptr_t> = nullptr>
+	template<typename T1, typename T2>
 	DXLE_CONSTEXPR auto safe_dist(const T1& n1, const T2& n2) DXLE_NOEXCEPT_IF_EXPR((n1 - n2)) -> decltype(n1 - n2)
 	{
 		return (n1 < n2) ? n2 - n1 : n1 - n2;
