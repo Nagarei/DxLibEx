@@ -12,7 +12,7 @@
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/type_traits/is_nothrow.hpp"
-#include "dxlibex/basic_types/arithmetic_t.hpp"
+#include "dxlibex/basic_types/use_big_type_when_one_byte_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
 #include "dxlibex/basic_types/coordinate_operator_bool_helper.hpp"
 #include "dxlibex/math.hpp"
@@ -70,20 +70,32 @@ namespace dxle {
 	dxle::sizei pt = (a + b)*10.f;
 	std::cout << pt << std::endl;
 	@endcode
-	\~japanese	型Tは少なくとも以下の条件を満たしている必要があります。
-	\~japanese	・std::is_arithmetic<T>::value == trueであること
-	\~japanese	・型が例外を投げずにムーブ構築可能であること（is_nothrow_move_constructible<T>::value == trueであること）
-	\~japanese	・型が例外を投げずにムーブ代入可能であること（is_nothrow_move_assignable<T>::value == trueであること）
-	\~japanese	また、以下の条件を満たしている事が期待されています。
-	\~japanese	・型がデフォルト構築可能であること（is_default_constructible<T>::value == trueであること）
-	\~japanese	・型がコピー構築可能であること（is_copy_constructible<T>::value == trueであること）
-	\~japanese	・型がコピー代入可能であること（is_copy_assignable<T>::value == trueであること）
-	\~japanese	・0と!=で比較することが可能であること（  t != 0;  (tはconst T&型の変数)がコンパイル可能であること）
-	\~japanese	・単項 + - 演算子を持つこと
-	\~japanese	・二項 + - * / += -= *= /= == != 演算子を持つこと
+	\~english @tparam T
+	\~english T is the type of the elements. T must meet the requirements of <a href="http://en.cppreference.com/w/cpp/types/is_move_assignable">NothrowMoveAssignable</a> and <a href="http://en.cppreference.com/w/cpp/types/is_move_constructible">NothrowConstructable</a>.
+	\~english T is expected the following conditions to use all features.
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/DefaultConstructible">DefaultConstructible</a>
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/CopyConstructible">CopyConstructible</a>
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/CopyAssignable">CopyAssignable</a>
+	\~english - has unary operator + -
+	\~english - has binary operator + - * / += -= *= /= == !=
+	\~english - has binary operator != to compare with 0
+	\~english - able to call functon abs.
+	\~japanese @tparam T
+	\~japanese 型Tは少なくとも以下の条件を満たしている必要があります。
+	\~japanese - 型が例外を投げずにムーブ構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible</a><T>::value == trueであること）
+	\~japanese - 型が例外を投げずにムーブ代入可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_nothrow_move_assignable.html">is_nothrow_move_assignable</a><T>::value == trueであること）
+	\~japanese .
+	\~japanese また、以下の条件を満たしている事が期待されています。
+	\~japanese - 型がデフォルト構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_default_constructible.html">is_default_constructible</a><T>::value == trueであること）
+	\~japanese - 型がコピー構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_copy_constructible.html">is_copy_constructible</a><T>::value == trueであること）
+	\~japanese - 型がコピー代入可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_copy_assignable.html">is_copy_assignable</a><T>::value == trueであること）
+	\~japanese - 単項 + - 演算子を持つこと
+	\~japanese - 二項 + - * / += -= *= /= == != 演算子を持つこと
+	\~japanese - 0と!=で比較することが可能であること（  t != 0;  (tはconst T&型の変数)がコンパイル可能であること）
+	\~japanese - abs関数がADLなどで見つかること
 	\~
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
 	class size_c final
 	{
 	public:
@@ -172,13 +184,13 @@ namespace dxle {
 		template<typename CharType, typename Size_cType>
 		void ostream_operator_helper(std::basic_ostream<CharType>& os, const CharType* str, const size_c<Size_cType>& s)
 		{
-			using arithmetic_p = arithmetic_t<Size_cType>;
-			os << static_cast<arithmetic_p>(s.width) << str << static_cast<arithmetic_p>(s.height);
+			using use_big_type_when_one_byte_p = use_big_type_when_one_byte_t<Size_cType>;
+			os << static_cast<use_big_type_when_one_byte_p>(s.width) << str << static_cast<use_big_type_when_one_byte_p>(s.height);
 		}
 		template<typename CharType, typename Size_cType>
 		void istream_operator_helper(std::basic_istream<CharType>& is, size_c<Size_cType>& s)
 		{
-			arithmetic_t<Size_cType> width, height;
+			use_big_type_when_one_byte_t<Size_cType> width, height;
 			is >> width;
 			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
 			is >> height;
@@ -374,7 +386,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator *(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width * r)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -392,7 +404,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l * r.width)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -410,7 +422,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	size_c<T1>& operator *=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width *= r)
 	{
 	    l.width *= r;
@@ -429,7 +441,7 @@ namespace dxle {
 	\~japanese	@return	size_cクラスオブジェクトの各メンバーを第一引数で割った結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator /(const size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width / r)
 		->size_c<decltype(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -447,7 +459,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	size_c<T1>& operator /=(size_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.width /= r)
 	{
 	    l.width /= r;
@@ -466,7 +478,7 @@ namespace dxle {
 	\~japanese	@return	左辺と右辺が等しくなければtrueを返す
 	\~english	@return	true if left operand is not equal to right operand
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator !=(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.width != r.width)
 	{
 		return (l.width != r.width) || (l.height != r.height);
@@ -483,7 +495,7 @@ namespace dxle {
 	\~japanese	@return	左辺と右辺が等しければtrueを返す
 	\~english	@return	true if left operand is equal to right operand
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator ==(const size_c<T>& l, const size_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l != r) { return !(l != r);	}
 
 	/**
@@ -536,7 +548,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const size_c<T>& s, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
+	DXLE_CONSTEXPR_CLASS bool operator ==(const size_c<T>& s, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
 	{
 		return !static_cast<bool>(s);
 	}
@@ -554,7 +566,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const size_c<T>& s) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
+	DXLE_CONSTEXPR_CLASS bool operator ==(nullptr_t, const size_c<T>& s) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(s))
 	{
 		return !static_cast<bool>(s);
 	}
