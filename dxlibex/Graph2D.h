@@ -82,7 +82,8 @@ namespace dxle
 
 			//!\~japanese 指定サイズのグラフィックを作成する
 			//!\~english  Create an image with a specific size
-			inline texture_2d(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag){}
+			//inline texture_2d(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag){}
+			
 			//!\~japanese 画像ファイルからグラフィックを作成する
 			//!\~english  Create an image form an image file
 			inline texture_2d(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLE_NOEXCEPT_OR_NOTHROW : texture_2d(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false){}
@@ -128,35 +129,35 @@ namespace dxle
 
 			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(DxLib互換)
-			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<Cont>(FileName, AllNum, { XNum, YNum }, { XSize, YSize }, NotUse3DFlag); }
+			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, int XNum, int YNum, int XSize, int YSize, bool NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<Cont>(FileName, AllNum, { XNum, YNum }, { XSize, YSize }, NotUse3DFlag); }
 
 			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定)
-			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			static inline Cont LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE);
 
 			template<typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定)
-			static inline Cont LoadDivGraph(const dxle::tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<Cont>(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag); }
+			static inline Cont LoadDivGraph(const dxle::tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<Cont>(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag); }
 
 			template<size_t AllNum, typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定, AllNumがテンプレート引数)
-			static inline Cont LoadDivGraph(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			static inline Cont LoadDivGraph(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE);
 			template<size_t AllNum, typename Cont = std::vector<texture_2d>, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t> = nullptr>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定, AllNumがテンプレート引数)
-			static inline Cont LoadDivGraph(const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<AllNum, Cont>(FileName.c_str(), Num, Size, NotUse3DFlag); }
+			static inline Cont LoadDivGraph(const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph<AllNum, Cont>(FileName.c_str(), Num, Size, NotUse3DFlag); }
 
 			template<size_t AllNum>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定, 出力先指定(std::array))
-			static inline void LoadDivGraph(std::array<texture_2d, AllNum>& out, const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			static inline void LoadDivGraph(std::array<texture_2d, AllNum>& out, const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE);
 			template<size_t AllNum>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(char[], dxle::sizei指定, 出力先指定(texture_2d[]))
-			static inline void LoadDivGraph(texture_2d(&out)[AllNum], const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE);
+			static inline void LoadDivGraph(texture_2d(&out)[AllNum], const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE);
 			template<size_t AllNum>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定, 出力先指定(std::array))
-			static inline void LoadDivGraph(std::array<texture_2d, AllNum>& out, const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(out, FileName.c_str(), Num, Size, NotUse3DFlag); }
+			static inline void LoadDivGraph(std::array<texture_2d, AllNum>& out, const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(out, FileName.c_str(), Num, Size, NotUse3DFlag); }
 			template<size_t AllNum>
 			//! 画像ファイルを分割してグラフィックハンドルを作成する(string, dxle::sizei指定, 出力先指定(texture_2d[]))
-			static inline void LoadDivGraph(texture_2d(&out)[AllNum], const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(out, FileName.c_str(), Num, Size, NotUse3DFlag); }
+			static inline void LoadDivGraph(texture_2d(&out)[AllNum], const dxle::tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = FALSE){ return texture_2d::LoadDivGraph(out, FileName.c_str(), Num, Size, NotUse3DFlag); }
 
 
 
@@ -355,7 +356,7 @@ namespace dxle
 
 			//画像ファイルを分割してグラフィックハンドルを作成する
 			template<typename BuffT, typename OutFunc>
-			static void LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag);
+			static void LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag);
 
 			friend class screen;
 		};
@@ -554,7 +555,7 @@ namespace dxle
 
 		template<typename BuffT, typename OutFunc>
 		//! 画像ファイルを分割してグラフィックハンドルを作成する
-		inline void texture_2d::LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		inline void texture_2d::LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			DxLib::LoadDivGraph(FileName, AllNum, Num.width, Num.height, Size.width, Size.height, HandleBuf, NotUse3DFlag);
 			try{
@@ -574,7 +575,7 @@ namespace dxle
 		}
 		template<size_t AllNum, typename Cont, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t>>
 		//! 画像ファイルを分割してグラフィックハンドルを作成する
-		inline Cont texture_2d::LoadDivGraph(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		inline Cont texture_2d::LoadDivGraph(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			int HandleBuf[AllNum];
 			typename std::remove_all_extents<Cont>::type cont;
@@ -583,7 +584,7 @@ namespace dxle
 		}
 		template<typename Cont, enable_if_t<std::is_same<typename Cont::value_type, texture_2d>::value/* && dxle::ignore_type<decltype(std::declval<Cont>().emplace_back())>::value*/, nullptr_t>>
 		//! 画像ファイルを分割してグラフィックハンドルを作成する
-		inline Cont texture_2d::LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		inline Cont texture_2d::LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			auto HandleBuf = std::make_unique<int[]>(AllNum);
 			typename std::remove_all_extents<Cont>::type cont;
@@ -592,7 +593,7 @@ namespace dxle
 		}
 		template<size_t AllNum>
 		//! 画像ファイルを分割してグラフィックハンドルを作成する
-		inline void texture_2d::LoadDivGraph(std::array<texture_2d, AllNum>& out, const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		inline void texture_2d::LoadDivGraph(std::array<texture_2d, AllNum>& out, const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			int HandleBuf[AllNum];
 			int i = 0;
@@ -601,7 +602,7 @@ namespace dxle
 		}
 		template<size_t AllNum>
 		//! 画像ファイルを分割してグラフィックハンドルを作成する
-		inline void texture_2d::LoadDivGraph(texture_2d(&out)[AllNum], const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, int NotUse3DFlag)
+		inline void texture_2d::LoadDivGraph(texture_2d(&out)[AllNum], const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			int HandleBuf[AllNum];
 			int i = 0;
