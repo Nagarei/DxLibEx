@@ -1,4 +1,4 @@
-/*=============================================================================
+﻿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -7,5 +7,11 @@
 =============================================================================*/
 #ifndef DXLE_INC_MATH_HYPOT_HPP_
 #define DXLE_INC_MATH_HYPOT_HPP_
-//中略
+#include <cmath>
+namespace dxle {
+	namespace math {
+		using std::hypot;
+	}
+	using dxle::math::abs;
+}
 #endif //DXLE_INC_MATH_HYPOT_HPP_

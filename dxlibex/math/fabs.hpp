@@ -1,5 +1,5 @@
 ﻿/*=============================================================================
-  Copyright (c) 2011-2015 Bolero MURAKAMI
+  Copyright (c) 2011-2016 Bolero MURAKAMI
   https://github.com/bolero-MURAKAMI/Sprout
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/

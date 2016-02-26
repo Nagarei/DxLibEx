@@ -74,20 +74,34 @@ namespace dxle {
 	dxle::pointi pt = (a + b)*10.f;
 	std::cout << pt << std::endl;
 	@endcode
-	\~japanese	型Tは少なくとも以下の条件を満たしている必要があります。
-	\~japanese	・std::is_arithmetic<T>::value == trueであること
-	\~japanese	・型が例外を投げずにムーブ構築可能であること（is_nothrow_move_constructible<T>::value == trueであること）
-	\~japanese	・型が例外を投げずにムーブ代入可能であること（is_nothrow_move_assignable<T>::value == trueであること）
-	\~japanese	また、以下の条件を満たしている事が期待されています。
-	\~japanese	・型がデフォルト構築可能であること（is_default_constructible<T>::value == trueであること）
-	\~japanese	・型がコピー構築可能であること（is_copy_constructible<T>::value == trueであること）
-	\~japanese	・型がコピー代入可能であること（is_copy_assignable<T>::value == trueであること）
-	\~japanese	・0と!=で比較することが可能であること（  t != 0;  (tはconst T&型の変数)がコンパイル可能であること）
-	\~japanese	・単項 + - 演算子を持つこと
-	\~japanese	・二項 + - * / += -= *= /= == != 演算子を持つこと
+	\~english @tparam T
+	\~english T is the type of the elements. T must meet the requirements of <a href="http://en.cppreference.com/w/cpp/types/is_move_assignable">NothrowMoveAssignable</a> and <a href="http://en.cppreference.com/w/cpp/types/is_move_constructible">NothrowConstructable</a>.
+	\~english T is expected the following conditions to use all features.
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/DefaultConstructible">DefaultConstructible</a>
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/CopyConstructible">CopyConstructible</a>
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/CopyAssignable">CopyAssignable</a>
+	\~english - has unary operator + -
+	\~english - has binary operator + - * / += -= *= /= == !=
+	\~english - has binary operator != to compare with 0
+	\~english - able to call functon abs and hypot.
+	\~english - <a href="http://en.cppreference.com/w/cpp/types/is_floating_point">std::is_floating_point</a><T> == true or able to convert to double via static_cast.
+	\~japanese @tparam T
+	\~japanese 型Tは少なくとも以下の条件を満たしている必要があります。
+	\~japanese - 型が例外を投げずにムーブ構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible</a><T>::value == trueであること）
+	\~japanese - 型が例外を投げずにムーブ代入可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_nothrow_move_assignable.html">is_nothrow_move_assignable</a><T>::value == trueであること）
+	\~japanese .
+	\~japanese また、以下の条件を満たしている事が期待されています。
+	\~japanese - 型がデフォルト構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_default_constructible.html">is_default_constructible</a><T>::value == trueであること）
+	\~japanese - 型がコピー構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_copy_constructible.html">is_copy_constructible</a><T>::value == trueであること）
+	\~japanese - 型がコピー代入可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_copy_assignable.html">is_copy_assignable</a><T>::value == trueであること）
+	\~japanese - 単項 + - 演算子を持つこと
+	\~japanese - 二項 + - * / += -= *= /= == != 演算子を持つこと
+	\~japanese - 0と!=で比較することが可能であること（  t != 0;  (tはconst T&型の変数)がコンパイル可能であること）
+	\~japanese - abs, hypot関数がADLなどで見つかること
+	\~japanese - <a href="http://cpprefjp.github.io/reference/type_traits/is_floating_point.html">std::is_floating_point</a><T> == true又はdoubleにキャスト可能
 	\~
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
 	class point_c final
 	{
 	public:
@@ -378,7 +392,7 @@ namespace dxle {
 	\~japanese	@return	point_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator *(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x * r)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -396,7 +410,7 @@ namespace dxle {
 	\~japanese	@return	point_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l * r.x)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -414,7 +428,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	point_c<T1>& operator *=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x *= r)
 	{
 	    l.x *= r;
@@ -433,7 +447,7 @@ namespace dxle {
 	\~japanese	@return	point_cクラスオブジェクトの各メンバーを第一引数で割った結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator /(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x / r)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -451,7 +465,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, std::nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	point_c<T1>& operator /=(point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x /= r)
 	{
 	    l.x /= r;
@@ -612,11 +626,11 @@ namespace dxle {
 	template<typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS double cross(const point_c<T1>& p1, const point_c<T2>& p2) 
 		DXLE_NOEXCEPT_IF_EXPR((
-			static_cast_if<T1, double, std::is_integral<T1>::value>(std::declval<T1>()) * std::declval<T2>() 
-			+ static_cast_if<T1, double, std::is_integral<T1>::value>(std::declval<T1>()) * std::declval<T2>()
+			static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
+			+ static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
 		))
 	{
-		return static_cast_if<T1, double, std::is_integral<T1>::value>(p1.x) * p2.y + static_cast_if<T1, double, std::is_integral<T1>::value>(p1.y) * p2.x;
+		return static_cast_if<T1, double, !std::is_floating_point<T1>::value>(p1.x) * p2.y + static_cast_if<T1, double, !std::is_floating_point<T1>::value>(p1.y) * p2.x;
 	}
 	/**
 	@relates point_c
@@ -631,9 +645,9 @@ namespace dxle {
 	*/
 	template<typename T1, typename T2>
 	distance_result_type_t<T1, T2> distance(const point_c<T1>& p1, const point_c<T2>& p2) 
-		DXLE_NOEXCEPT_IF_EXPR(std::hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
+		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
 	{
-		return std::hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));
+		return hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));
 	}
 	typedef point_c<int> pointi;
 	typedef point_c<std::uint8_t> pointu8i;
