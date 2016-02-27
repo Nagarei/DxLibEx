@@ -31,6 +31,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 		// 読みこんだグラフィックを画面中央に描画
 		DrawGraph(dxle::pointi(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
+		GHandle.DrawGraph({0.1,0.1}, true);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();
