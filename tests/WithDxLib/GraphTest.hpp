@@ -4,7 +4,7 @@
 #include "dxlibex\Graph2D.h"
 #include "dxlibex\basic_types.hpp"
 
-int DrawGraph(const dxle::pointi& point, const dxle::texture_2d& Graph, bool TransFlag)
+int DrawGraph(const dxle::pointi& point, const dxle::texture2d& Graph, bool TransFlag)
 {
 	return Graph.DrawGraph(point.x, point.y, TransFlag);
 }
