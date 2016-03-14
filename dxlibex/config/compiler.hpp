@@ -18,4 +18,7 @@
 #	include "compiler/visualc.hpp"
 #endif
 
+#ifndef DXLE_NO_CXX11_USER_DEFINED_LITERALS
+#define DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
+#endif
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_HPP

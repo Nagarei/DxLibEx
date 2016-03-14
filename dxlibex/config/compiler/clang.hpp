@@ -30,6 +30,10 @@
 #	define DXLE_NO_CXX14_VARIABLE_TEMPLATES
 #endif
 
+#if !__has_feature(cxx_user_literals)
+#define DXLE_NO_CXX11_USER_DEFINED_LITERALS
+#endif
+
 #if (__clang_major__ > 3 || (__clang_major__ == 3 && __clang_minor__ >= 0))
 #	define DXLE_HAS_CONSTEXPR_COPYSIGN_FUNCTION
 #endif

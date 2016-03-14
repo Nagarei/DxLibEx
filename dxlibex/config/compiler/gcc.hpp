@@ -34,6 +34,10 @@
 #	define DXLE_HAS_CONSTEXPR_BIT_OPERATION
 #endif
 
+#ifndef __cpp_user_defined_literals
+#define DXLE_NO_CXX11_USER_DEFINED_LITERALS
+#endif
+
 #if !defined(__cpp_constexpr) || (__cpp_constexpr < 201304)
 #  define DXLE_NO_CXX14_CONSTEXPR
 #endif
