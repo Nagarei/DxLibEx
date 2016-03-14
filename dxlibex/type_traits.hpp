@@ -17,5 +17,6 @@
 #include "dxlibex/type_traits/is_nothrow.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/type_traits/is_well_format.hpp"
+#include "dxlibex/type_traits/is_ratio.hpp"
 
 #endif//#ifndef DXLE_INC_TYPE_TRAITS_HPP_
