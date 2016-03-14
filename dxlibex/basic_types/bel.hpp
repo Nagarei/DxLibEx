@@ -40,7 +40,7 @@ namespace dxle {
 			bel_c(const bel_c&) = default;
 
 			template<typename T2, enable_if_t<std::is_convertible<T2, T>::value && (std::is_floating_point<T>::value || !std::is_floating_point<T2>::value), nullptr_t> = nullptr>
-			DXLE_CONSTEXPR explicit bel_c(const T2& o) : value_(static_cast<T>(o.value_)) {}
+			DXLE_CONSTEXPR explicit bel_c(const T2& o) : value_(static_cast<T>(o)) {}
 
 			template<typename T2, typename Period2, enable_if_t<
 				std::is_floating_point<value_type>::value || (std::ratio_divide<Period2, period>::den == 1 && !std::is_floating_point<T2>::value), 
@@ -67,29 +67,29 @@ namespace dxle {
 			template<typename To, typename T, typename Period, typename CF, typename ToT, typename CR>
 			struct bel_cast_helper<To, T, Period, CF, ToT, CR, true, true> {
 				static DXLE_CONSTEXPR To cast(const bel_c<T, Period>& o) {
-					return{ static_cast<ToT>(static_cast<ToT>(o.count())) };
+					return To{ static_cast<ToT>(static_cast<ToT>(o.count())) };
 				}
 			};
 			template<typename To, typename T, typename Period, typename CF, typename ToT, typename CR>
 			struct bel_cast_helper<To, T, Period, CF, ToT, CR, false, true> {
 				static DXLE_CONSTEXPR To cast(const bel_c<T, Period>& o) {
-					return{ static_cast<ToT>(static_cast<CR>(o.count()) * static_cast<CR>(CF::num)) };
+					return To{ static_cast<ToT>(static_cast<CR>(o.count()) * static_cast<CR>(CF::num)) };
 				}
 			};
 			template<typename To, typename T, typename Period, typename CF, typename ToT, typename CR>
 			struct bel_cast_helper<To, T, Period, CF, ToT, CR, true, false> {
 				static DXLE_CONSTEXPR To cast(const bel_c<T, Period>& o) {
-					return{ static_cast<ToT>(static_cast<ToT>(static_cast<CR>(o.count()) / static_cast<CR>(CF::den))) };
+					return To{ static_cast<ToT>(static_cast<ToT>(static_cast<CR>(o.count()) / static_cast<CR>(CF::den))) };
 				}
 			};
 		}
 		template<typename To, typename T, typename Period, enable_if_t<is_bel_c<To>::value, nullptr_t>>
 		inline DXLE_CONSTEXPR To bel_cast(const bel_c<T, Period>& o)
 		{	// convert duration to another duration
-			typedef std::ratio_divide<Period, typename To::Period> CF;
+			typedef std::ratio_divide<Period, typename To::period> CF;
 
 			typedef typename To::value_type ToT;
-			typedef typename common_type<ToT, T, intmax_t>::type CR;
+			typedef std::common_type_t<ToT, T, intmax_t> CR;
 			return detail::bel_cast_helper<To, T, Period, CF, ToT, CR, CF::num == 1, CF::den == 1>::cast(o);
 				//return (CF::num == 1 && CF::den == 1
 				//? To(static_cast<ToT>(_Dur.count()))
@@ -111,7 +111,17 @@ namespace dxle {
 		typedef bel_c<int, std::deci> deci_bel;
 		typedef bel_c<int, std::ratio<1>> bel;
 	}
-#ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
-#endif
+	using namespace sound_units;
 }
+#ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
+namespace dxle { namespace sound_units { namespace sound_units_literals {
+	inline constexpr myrio_bel operator "" _myrioB(unsigned long long myrioB) {
+		return myrio_bel(static_cast<int>(myrioB));
+	}
+	inline constexpr myrio_bel operator "" _dB(unsigned long long myrioB) {
+		return deci_bel(static_cast<int>(myrioB));
+	}
+} } }
+using namespace dxle::sound_units::sound_units_literals;
+#endif
 #endif //DXLE_INC_BASIC_TYPES_BEL_HPP_
