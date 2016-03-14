@@ -112,7 +112,7 @@ namespace dxle {
 		//!\~english conversion from another data type
 		//!\~japanese 内部型の異なるsize_cクラス同士の変換
 		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit size_c(size_c<Tp2_>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value))
-			: width(static_cast<value_type>(std::move(other.width))), y(static_cast<value_type>(std::move(other.height))) {}
+			: width(static_cast<value_type>(std::move(other.width))), height(static_cast<value_type>(std::move(other.height))) {}
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS size_c(const size_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : width(o.width), height(o.height) {}
 		//move constructor
