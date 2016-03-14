@@ -32,7 +32,7 @@ namespace dxle
 	{
 		namespace ch = std::chrono;
 		enum class reverb : int {
-			default          = DX_REVERB_PRESET_DEFAULT,// デフォルト
+			default_airspace = DX_REVERB_PRESET_DEFAULT,// デフォルト
 			generic          = DX_REVERB_PRESET_GENERIC,// 一般的な空間
 			padded_cell      = DX_REVERB_PRESET_PADDEDCELL,// 精神病患者室(？)
 			room             = DX_REVERB_PRESET_ROOM,// 部屋
