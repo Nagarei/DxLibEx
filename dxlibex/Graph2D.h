@@ -148,7 +148,7 @@ namespace dxle
 				}
 				catch (...){
 					std::for_each(HandleBuf, HandleBuf + AllNum, [](int handle){
-						DeleteGraph(handle);
+						::DxLib::DeleteGraph(handle);
 					});
 					throw;
 				}
@@ -160,7 +160,7 @@ namespace dxle
 		class texture2d /*final*/
 		{
 		public:
-			texture2d()DXLE_NOEXCEPT_OR_NOTHROW {}
+			DXLE_CONSTEXPR texture2d()DXLE_NOEXCEPT_OR_NOTHROW{}
 			//! コピー禁止
 			texture2d(const texture2d& other) = delete;
 			texture2d& operator=(const texture2d& other) = delete;
@@ -517,12 +517,10 @@ namespace dxle
 			std::shared_ptr<texture2d> impl;
 		};
 
-#if 1
-		//ただのtexture2dの配列にするか迷い中
-
 		//!N = AllNum
 		template<size_t N>
-		//!LoadDivGraphの戻り値
+		//!画像ファイルを分割したグラフィック
+		//!AllSizeが定数の場合
 		//!コンテナの用件を満たさない
 		//!moveに線形時間がかかることに注意
 		class static_derivative_texture2d final
@@ -538,6 +536,10 @@ namespace dxle
 
 			void load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
 			void load(const std::string& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+
+		//----------utility----------//
+
+			void delete_all();
 
 		//----------コンテナ部----------//
 
@@ -555,9 +557,9 @@ namespace dxle
 
 			DXLE_CONSTEXPR static_derivative_texture2d()DXLE_NOEXCEPT_OR_NOTHROW{}
 			static_derivative_texture2d(const static_derivative_texture2d&) = delete;
-			static_derivative_texture2d(static_derivative_texture2d&&);
+			static_derivative_texture2d(static_derivative_texture2d&&)DXLE_NOEXCEPT_OR_NOTHROW;
 			static_derivative_texture2d& operator=(const static_derivative_texture2d&) = delete;
-			static_derivative_texture2d& operator=(static_derivative_texture2d&&);
+			static_derivative_texture2d& operator=(static_derivative_texture2d&&)DXLE_NOEXCEPT_OR_NOTHROW;
 
 			      reference at(size_t index)     { return textures.at(index); }
 			const_reference at(size_t index)const{ return textures.at(index); }
@@ -589,8 +591,7 @@ namespace dxle
 
 			void swap(static_derivative_texture2d& other){ textures.swap(other.textures); }
 		};
-		//!LoadDivGraphの戻り値
-		//!AllSizeが定数でない場合の特殊化
+		//!画像ファイルを分割したグラフィック
 		//!コンテナの用件を満たさない
 		//!moveは定数時間
 		class derivative_texture2d final
@@ -601,11 +602,18 @@ namespace dxle
 		public:
 			//----------生成関数----------//
 
-			derivative_texture2d(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
-			derivative_texture2d(const std::string& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+			derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+			derivative_texture2d(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
 
-			void load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
-			void load(const std::string& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+			void load(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+			void load(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+
+			static inline derivative_texture2d LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+			static inline derivative_texture2d LoadDivGraph(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+
+			//----------utility----------//
+
+			void delete_all();
 
 			//----------コンテナ部----------//
 
@@ -623,9 +631,9 @@ namespace dxle
 
 			derivative_texture2d()DXLE_NOEXCEPT_OR_NOTHROW{}
 			derivative_texture2d(const derivative_texture2d&) = delete;
-			derivative_texture2d(derivative_texture2d&&);
+			derivative_texture2d(derivative_texture2d&&)DXLE_NOEXCEPT_IF((std::is_nothrow_move_constructible<cont_type>::value));
 			derivative_texture2d& operator=(const derivative_texture2d&) = delete;
-			derivative_texture2d& operator=(derivative_texture2d&&);
+			derivative_texture2d& operator=(derivative_texture2d&&)DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<cont_type>::value));
 
 			      reference at(size_t index)     { return textures.at(index); }
 			const_reference at(size_t index)const{ return textures.at(index); }
@@ -658,90 +666,6 @@ namespace dxle
 			void swap(derivative_texture2d& other){ textures.swap(other.textures); }
 		};
 
-		template<size_t N>
-		void static_derivative_texture2d<N>::load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
-		{
-			int HandleBuf[N];
-			auto iter = textures.begin();
-			gr_impl::LoadDivGraph_impl([&out, &i](texture_2d&& new_obj){ *iter++ = std::move(new_obj); }, HandleBuf, FileName, N, Num, Size, NotUse3DFlag);
-			return;
-		}
-		template<size_t N>
-		inline void static_derivative_texture2d<N>::load(const std::string& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
-		{
-			load(FileName.c_str(), Num, Size, NotUse3DFlag);
-		}
-
-#else
-		//ただのtexture2dの配列にするか迷い中
-
-		//!  for derivative_texture2d
-		class divided_texture2d final : public texture2d
-		{
-		private:
-			divided_texture2d(int& handle)
-				: texture2d(gr_impl::lookup_handle_manager::get_unique(handle))
-			{}
-			template<size_t N> friend derivative_texture2d<N>;
-		public:
-			//! コピー禁止
-			divided_texture2d(const divided_texture2d&) = delete;
-			divided_texture2d& operator=(const divided_texture2d&) = delete;
-			//!所有権の譲渡
-			divided_texture2d(divided_texture2d&& other) DXLE_NOEXCEPT_OR_NOTHROW : texture2d(std::move(other)){}
-			divided_texture2d& operator=(divided_texture2d&& other) DXLE_NOEXCEPT_OR_NOTHROW{ texture2d::operator=(std::move(other)); return *this; }
-		};
-		//!N = AllNum
-		template<size_t N>
-		//!LoadDivGraphの戻り値
-		//!コンテナの用件を満たさない
-		//!moveに線形時間がかかることに注意
-		class derivative_texture2d final
-		{
-		public:
-			DXLE_CONSTEXPR derivative_texture2d()DXLE_NOEXCEPT_OR_NOTHROW{}
-			derivative_texture2d(const derivative_texture2d&) = delete;
-			derivative_texture2d(derivative_texture2d&&);
-			derivative_texture2d& operator=(const derivative_texture2d&) = delete;
-			derivative_texture2d& operator=(derivative_texture2d&&);
-
-			divided_texture2d at(size_t index){ return derivative_texture2d(handles.at(index)); }
-
-		private:
-			std::array<int, N> handles;
-			std::array<divided_texture2d, N> textures;
-		};
-		//!LoadDivGraphの戻り値
-		//!AllSizeが定数でない場合の特殊化
-		//!コンテナの用件を満たさない
-		//!moveは定数時間
-		template<> class derivative_texture2d<0> final
-		{
-		};
-
-		template<size_t N>
-		derivative_texture2d<N>::derivative_texture2d(derivative_texture2d&& other)
-			: handles(other.handles)
-		{
-			for (auto& handle : this->handles){
-				DxLib::SetDeleteHandleFlag(handle, &handle);
-			}
-			other.handles.fill(-1);
-		}
-		template<size_t N>
-		derivative_texture2d<N>& derivative_texture2d<N>::operator=(derivative_texture2d&& other)
-		{
-			auto this_i = handles.begin();
-			auto this_end = handles.end();
-			auto another_i = other.handles.begin();
-			while (this_i != this_end){
-				*this_i = *another_i;
-				DxLib::SetDeleteHandleFlag(*this_i, &*this_i);
-				*another_i = -1;
-				++this_i; ++another_i;
-			}
-		}
-#endif
 
 	//--------------------生成用関数--------------------//
 
@@ -774,6 +698,11 @@ namespace dxle
 		inline texture2d LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadReverseGraph(FileName, NotUse3DFlag); }
 		//! 画像ファイルを反転したものでグラフィックを作成する
 		inline texture2d LoadReverseGraph(const tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadReverseGraph(FileName.c_str(), NotUse3DFlag); }
+
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline derivative_texture2d LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
+		//! 画像ファイルを分割してグラフィックハンドルを作成する
+		inline derivative_texture2d LoadDivGraph(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
 
 		//! メモリ上の画像イメージからグラフィックを作成する
 		inline texture2d CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
@@ -908,6 +837,97 @@ namespace dxle
 			return std::make_unique<screen>(std::move(new_screen));
 		}
 
+		template<size_t N>
+		inline static_derivative_texture2d<N>::static_derivative_texture2d(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			load(FileName, Num, Size, NotUse3DFlag);
+		}
+		template<size_t N>
+		inline static_derivative_texture2d<N>::static_derivative_texture2d(const std::string& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			load(FileName, Num, Size, NotUse3DFlag);
+		}
+		template<size_t N>
+		inline void static_derivative_texture2d<N>::load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
+		{
+			int HandleBuf[N];
+			auto iter = textures.begin();
+			gr_impl::LoadDivGraph_impl([&iter](texture2d&& new_obj){ *iter++ = std::move(new_obj); }, HandleBuf, FileName, N, Num, Size, NotUse3DFlag);
+			return;
+		}
+		template<size_t N>
+		inline void static_derivative_texture2d<N>::load(const std::string& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
+		{
+			load(FileName.c_str(), Num, Size, NotUse3DFlag);
+		}
+		template<size_t N>
+		inline static_derivative_texture2d<N>::static_derivative_texture2d(static_derivative_texture2d&& other)DXLE_NOEXCEPT_OR_NOTHROW
+			//: textures(std::move(other.textures))//VS2013はmoveコンストラクタの暗黙の定義に対応していない
+		{
+			std::move(std::begin(other.textures), std::end(other.textures), std::begin(textures));
+		}
+		template<size_t N>
+		inline static_derivative_texture2d<N>& static_derivative_texture2d<N>::operator=(static_derivative_texture2d&& other)DXLE_NOEXCEPT_OR_NOTHROW
+		{
+			//textures = std::move(other.textures);//VS2013はmoveコンストラクタの暗黙の定義に対応していない
+			std::move(std::begin(other.textures), std::end(other.textures), std::begin(textures));
+		}
+		template<size_t N>
+		inline void static_derivative_texture2d<N>::delete_all()
+		{
+			for (auto& i : textures)
+			{
+				i.delete_this();
+			}
+		}
+
+			inline derivative_texture2d::derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			load(FileName, AllNum, Num, Size, NotUse3DFlag);
+		}
+		inline derivative_texture2d::derivative_texture2d(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			load(FileName, AllNum, Num, Size, NotUse3DFlag);
+		}
+		inline void derivative_texture2d::load(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			auto HandleBuf = std::make_unique<int>(AllNum);
+			auto iter = textures.begin();
+			gr_impl::LoadDivGraph_impl([&iter](texture2d&& new_obj){ *iter++ = std::move(new_obj); }, HandleBuf.get(), FileName, AllNum, Num, Size, NotUse3DFlag);
+			return;
+		}
+		inline void derivative_texture2d::load(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			load(FileName.c_str(), AllNum, Num, Size, NotUse3DFlag);
+		}
+		inline derivative_texture2d::derivative_texture2d(derivative_texture2d&& other)DXLE_NOEXCEPT_IF((std::is_nothrow_move_constructible<cont_type>::value))
+			: textures(std::move(other.textures))
+		{}
+		inline derivative_texture2d& derivative_texture2d::operator=(derivative_texture2d&& other)DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<cont_type>::value))
+		{
+			textures = std::move(other.textures);
+		}
+		inline void derivative_texture2d::delete_all()
+		{
+			textures.clear();
+		}
+
+		inline derivative_texture2d LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			return derivative_texture2d(FileName, AllNum, Num, Size, NotUse3DFlag);
+		}
+		inline derivative_texture2d LoadDivGraph(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			return derivative_texture2d(FileName, AllNum, Num, Size, NotUse3DFlag);
+		}
+		inline derivative_texture2d derivative_texture2d::LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			return derivative_texture2d(FileName, AllNum, Num, Size, NotUse3DFlag);
+		}
+		inline derivative_texture2d derivative_texture2d::LoadDivGraph(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		{
+			return derivative_texture2d(FileName, AllNum, Num, Size, NotUse3DFlag);
+		}
 
 
 
