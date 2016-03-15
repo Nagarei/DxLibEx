@@ -32,5 +32,8 @@
 #ifndef __cpp_user_defined_literals
 #define DXLE_NO_CXX11_USER_DEFINED_LITERALS
 #endif
+#if _MSC_VER == 1900
+#undef DXLE_NO_CXX11_USER_DEFINED_LITERALS
+#endif
 
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_VISUALC_HPP_
