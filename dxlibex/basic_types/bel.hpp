@@ -114,15 +114,23 @@ namespace dxle {
 	using namespace sound_units;
 }
 #ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
-namespace dxle { namespace sound_units { namespace sound_units_literals {
-	inline DXLE_CONSTEXPR myrio_bel operator "" _myrioB(unsigned long long myrioB) {
-		return myrio_bel(static_cast<int>(myrioB));
+namespace dxle {
+	namespace literals {
+		namespace sound_units_literals {
+			inline DXLE_CONSTEXPR myrio_bel operator "" _myrioB(unsigned long long myrioB) {
+				return myrio_bel(static_cast<int>(myrioB));
+			}
+			inline DXLE_CONSTEXPR deci_bel operator "" _dB(unsigned long long myrioB) {
+				return deci_bel(static_cast<int>(myrioB));
+			}
+		}
+		using namespace sound_units_literals;
 	}
-	inline DXLE_CONSTEXPR deci_bel operator "" _dB(unsigned long long myrioB) {
-		return deci_bel(static_cast<int>(myrioB));
+	using namespace literals;
+
+	namespace sound_units {
+		using namespace literals::sound_units_literals;
 	}
 }
-using namespace sound_units_literals;
-}}
 #endif
 #endif //DXLE_INC_BASIC_TYPES_BEL_HPP_
