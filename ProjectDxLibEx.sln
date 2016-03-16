@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "tests\UnitTest\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WithDxLib", "tests\WithDxLib\WithDxLib.vcxproj", "{280349E1-6523-4483-97DB-2D16B0716396}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sound_play", "samples\sound_play\sound_play\sound_play.vcxproj", "{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		clang_Debug|Win32 = clang_Debug|Win32
@@ -119,6 +121,22 @@ Global
 		{280349E1-6523-4483-97DB-2D16B0716396}.Release|Win32.ActiveCfg = Release|Win32
 		{280349E1-6523-4483-97DB-2D16B0716396}.Release|Win32.Build.0 = Release|Win32
 		{280349E1-6523-4483-97DB-2D16B0716396}.Release|x64.ActiveCfg = Release|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Debug|Win32.ActiveCfg = clang_Debug|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Debug|Win32.Build.0 = clang_Debug|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Debug|x64.ActiveCfg = clang_Debug|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Debug|x64.Build.0 = clang_Debug|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Release|Win32.ActiveCfg = clang_Release|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Release|Win32.Build.0 = clang_Release|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Release|x64.ActiveCfg = clang_Release|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.clang_Release|x64.Build.0 = clang_Release|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Debug|Win32.Build.0 = Debug|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Debug|x64.ActiveCfg = Debug|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Debug|x64.Build.0 = Debug|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Release|Win32.ActiveCfg = Release|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Release|Win32.Build.0 = Release|Win32
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Release|x64.ActiveCfg = Release|x64
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,5 +147,6 @@ Global
 		{D0B701B2-9FFB-45DC-A26E-4C9012E0D237} = {8301B3DC-D95E-4277-8614-FE1CF783AB18}
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95} = {373EF964-F08D-40C8-8543-221ADCE91DE5}
 		{280349E1-6523-4483-97DB-2D16B0716396} = {373EF964-F08D-40C8-8543-221ADCE91DE5}
+		{BF458CEF-25D4-4FA5-AFF9-BF4BA4C14AD4} = {8301B3DC-D95E-4277-8614-FE1CF783AB18}
 	EndGlobalSection
 EndGlobal

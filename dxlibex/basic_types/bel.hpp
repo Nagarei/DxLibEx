@@ -121,7 +121,8 @@ namespace dxle { namespace sound_units { namespace sound_units_literals {
 	inline DXLE_CONSTEXPR deci_bel operator "" _dB(unsigned long long myrioB) {
 		return deci_bel(static_cast<int>(myrioB));
 	}
-} } }
-using namespace dxle::sound_units::sound_units_literals;
+}
+using namespace sound_units_literals;
+}}
 #endif
 #endif //DXLE_INC_BASIC_TYPES_BEL_HPP_
