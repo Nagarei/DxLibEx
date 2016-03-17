@@ -25,8 +25,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	WaitKey();//キーの入力待ち(『WaitKey』を使用)
 
 	{
+		// 一定時間待つ(『WaitTimer』使用)
+		DxLib::WaitTimer(100);
 		//DxLibのLoadDivGraphのsampleより
 
+		SetDrawScreen(DX_SCREEN_BACK);
 		// ＢＭＰ画像のメモリへの分割読み込み
 		dxle::derivative_texture2d div_graph("test2.bmp", 10, { 4, 3 }, { 48, 56 });
 		int i = 0;
@@ -35,6 +38,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		// キーが押されるまでループ(キー判定には『CheckHitKeyAll』を使用)
 		while (DxLib::CheckHitKeyAll() == 0)
 		{
+			ScreenFlip();
+			ClearDrawScreen();
+
 			// グラフィックの描画(『DrawGraph』使用)
 			//dxle::DrawGraph({ 0, 0 }, div_graph[i], false);
 			div_graph[i].DrawGraph({ 0, 0 }, false);
