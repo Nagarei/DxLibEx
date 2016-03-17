@@ -881,7 +881,7 @@ namespace dxle
 			}
 		}
 
-			inline derivative_texture2d::derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
+		inline derivative_texture2d::derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			load(FileName, AllNum, Num, Size, NotUse3DFlag);
 		}
@@ -892,8 +892,7 @@ namespace dxle
 		inline void derivative_texture2d::load(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			auto HandleBuf = std::make_unique<int>(AllNum);
-			auto iter = textures.begin();
-			gr_impl::LoadDivGraph_impl([&iter](texture2d&& new_obj){ *iter++ = std::move(new_obj); }, HandleBuf.get(), FileName, AllNum, Num, Size, NotUse3DFlag);
+			gr_impl::LoadDivGraph_impl([this](texture2d&& new_obj){ this->textures.emplace_back(std::move(new_obj)); }, HandleBuf.get(), FileName, AllNum, Num, Size, NotUse3DFlag);
 			return;
 		}
 		inline void derivative_texture2d::load(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)

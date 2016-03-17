@@ -23,6 +23,37 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	ScreenFlip();//表画面と裏画面を入れ替え
 
 	WaitKey();//キーの入力待ち(『WaitKey』を使用)
+
+	{
+		//DxLibのLoadDivGraphのsampleより
+
+		// ＢＭＰ画像のメモリへの分割読み込み
+		dxle::derivative_texture2d div_graph("test2.bmp", 10, { 4, 3 }, { 48, 56 });
+		int i = 0;
+
+		// ロードしたグラフィックのアニメーション
+		// キーが押されるまでループ(キー判定には『CheckHitKeyAll』を使用)
+		while (DxLib::CheckHitKeyAll() == 0)
+		{
+			// グラフィックの描画(『DrawGraph』使用)
+			//dxle::DrawGraph({ 0, 0 }, div_graph[i], false);
+			div_graph[i].DrawGraph({ 0, 0 }, false);
+
+			// アニメーションパターンナンバーを変更
+			i++;
+			if (i == 10) i = 0;
+
+			// 一定時間待つ(『WaitTimer』使用)
+			DxLib::WaitTimer(100);
+
+			// メッセージ処理
+			if (DxLib::ProcessMessage() == -1)
+			{
+				break;        // エラーが起きたらループから抜ける
+			}
+		}
+	}
+
 	DxLib_End();// ＤＸライブラリ使用の終了処理
 	return 0;
 }
