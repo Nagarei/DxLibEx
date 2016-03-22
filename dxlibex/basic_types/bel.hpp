@@ -248,8 +248,8 @@ namespace dxle {
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
 			typedef bel_c<T2, Period2>			bel_c2;
-			typedef common_type_t<bel_c1, bel_c2>	__ct;
-			return __ct(l).count() == __ct(r).count();
+			typedef common_type_t<bel_c1, bel_c2>	c_t;
+			return c_t(l).count() == c_t(r).count();
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
@@ -257,8 +257,8 @@ namespace dxle {
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
 			typedef bel_c<T2, Period2>			bel_c2;
-			typedef common_type_t<bel_c1, bel_c2>	__ct;
-			return __ct(l).count() < __ct(r).count();
+			typedef common_type_t<bel_c1, bel_c2>	c_t;
+			return c_t(l).count() < c_t(r).count();
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
