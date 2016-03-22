@@ -22,11 +22,13 @@
 #include "dxlibex/config/defines.h"
 #include "dxlibex/thread.h"
 #include "dxlibex/basic_types.hpp"
+#include "dxlibex/exception.hpp"
 
-//----------2Dグラフィック----------//
+//----------サウンド----------//
 
 namespace dxle
 {
+
 	//! サウンド
 	namespace sound
 	{
@@ -63,6 +65,11 @@ namespace dxle
 			large_hall       = DX_REVERB_PRESET_LARGEHALL,// 大ホール
 			plate            = DX_REVERB_PRESET_PLATE// 板
 		};
+		enum class playtype : uint8_t {
+			normal = DX_PLAYTYPE_NORMAL,
+			back   = DX_PLAYTYPE_BACK,
+			loop   = DX_PLAYTYPE_LOOP
+		};
 		class sound final : public impl::Unique_HandledObject_Bace < sound >
 		{
 		public:
@@ -98,15 +105,86 @@ namespace dxle
 
 			//!\~japanese サウンドを削除する
 			//!\~english  Delete this sound data
-			int	DeleteSoundMem(int LogOutFlag = FALSE) { return DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
+			int	DeleteSoundMem(int LogOutFlag = FALSE) DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
 
 			//操作
-			int play(int PlayType, int TopPositionFlag = TRUE);								// サウンドハンドルを再生する
-			int stop();						// サウンドハンドルの再生を停止する
-			int is_playing();						// サウンドハンドルが再生中かどうかを取得する
-			int set_pan(int PanPal);						// サウンドハンドルのパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int change_pan(int16_t PanPal);						// サウンドハンドルのパンを設定する( -255 ～ 255 )
-			int get_pan();						// サウンドハンドルのパンを取得する
+
+			//!\~japanese サウンドを再生する
+			//!\~english  Play sound.
+			int play(playtype PlayType, bool TopPositionFlag, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				return DxLib::PlaySoundMem(GetHandle(), static_cast<int>(PlayType), TopPositionFlag);
+			}
+			//!\~japanese サウンドを再生する
+			//!\~english  Play sound.
+			int play(playtype PlayType, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				return DxLib::PlaySoundMem(GetHandle(), static_cast<int>(PlayType), true);
+			}
+			//!\~japanese サウンドを再生する
+			//!\~english  Play sound.
+			void play(playtype PlayType, bool TopPositionFlag) {
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->play(PlayType, TopPositionFlag, std::nothrow)), "fail DxLib::PlaySoundMem().");
+			}
+			//!\~japanese サウンドを再生する
+			//!\~english  Play sound.
+			void play(playtype PlayType) {
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->play(PlayType, std::nothrow)), "fail DxLib::PlaySoundMem().");
+			}
+			//!\~japanese サウンドの再生を停止する
+			//!\~english  Stop playing sound.
+			int stop(std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				return DxLib::StopSoundMem(this->GetHandle());
+			}
+			//!\~japanese サウンドの再生を停止する
+			//!\~english  Stop playing sound.
+			void stop() {
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->stop(std::nothrow)), "fail DxLib::StopSoundMem().");
+			}
+			//!\~japanese サウンドが再生中かどうかを取得する
+			//!\~english  check whether this sound is playing.
+			int is_playing(std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				return DxLib::CheckSoundMem(this->GetHandle());
+			}
+			//!\~japanese サウンドが再生中かどうかを取得する
+			//!\~english  check whether this sound is playing.
+			bool is_playing() {
+				const auto re = this->is_playing(std::nothrow);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == re), "fail DxLib::CheckSoundMem().");
+				return 0 != re;
+			}
+			//!\~japanese サウンドハンドルのパンを設定する
+			//!\~english  Set the pan of this sound.
+			template<typename T, typename Period>int set_pan(bel_c<T, Period> PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				return DxLib::SetPanSoundMem(bel_cast<myrio_bel>(PanPal).get(), this->GetHandle());
+			}
+			//!\~japanese サウンドハンドルのパンを設定する
+			//!\~english  Set the pan of this sound.
+			template<typename T, typename Period>void set_pan(bel_c<T, Period> PanPal) {
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_pan(PanPal, std::nothrow)), "fail DxLib::SetPanSoundMem().");
+			}
+			//!\~japanese サウンドハンドルのパンを設定する( -255 ～ 255 )
+			//!\~english  Set the pan of this sound.( -255 to 255 )
+			int change_pan(int16_t PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				assert(-255 <= PanPal && PanPal <= 255);
+				return DxLib::ChangePanSoundMem(PanPal, this->GetHandle());
+			}
+			//!\~japanese サウンドハンドルのパンを設定する( -255 ～ 255 )
+			//!\~english  Set the pan of this sound.( -255 to 255 )
+			void change_pan(int16_t PanPal) {
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((PanPal < -255 || 255 < PanPal), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_pan(PanPal, std::nothrow)), "fail DxLib::ChangePanSoundMem().");
+			}
+			//!\~japanese サウンドハンドルのパンを取得する
+			//!\~english  Get the pan of this sound.
+			myrio_bel get_pan(std::nothrow_t) {
+				return myrio_bel(DxLib::GetPanSoundMem(this->GetHandle()));
+			}
+			//!\~japanese サウンドハンドルのパンを取得する
+			//!\~english  Get the pan of this sound.
+			myrio_bel get_pan() {
+				const auto re = this->get_pan(std::nothrow);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetPanSoundMem().");
+				return re;
+			}
 			int set_volume(int VolumePal);						// サウンドハンドルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
 			int change_volume(uint8_t VolumePal);						// サウンドハンドルのボリュームを設定する( 0 ～ 255 )
 			int get_volume();						// サウンドハンドルのボリュームを取得する
