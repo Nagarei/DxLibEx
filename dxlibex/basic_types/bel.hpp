@@ -31,7 +31,7 @@ namespace dxle {
 			static DXLE_CONSTEXPR _Rep min(){ return std::numeric_limits<_Rep>::lowest();	}
 		};
 
-		template<typename T, typename Period, enable_if_t<is_ratio<Period>::value, nullptr_t>>
+		template<typename T, typename Period, enable_if_t<is_ratio<Period>::value, nullptr_t>/* = nullptr*/>
 		class bel_c {
 		public:
 			typedef T value_type;
@@ -62,6 +62,8 @@ namespace dxle {
 			DXLE_CONSTEXPR value_type count() const { return value_; }
 			DXLE_CONSTEXPR value_type get() const { return value_; }
 			DXLE_CONSTEXPR value_type operator*() const { return value_; }
+
+			//arithmetic
 			DXLE_CONSTEXPR bel_c operator+() const { return *this; }
 			DXLE_CONSTEXPR bel_c operator-() const { return bel_c(-value_); }
 			bel_c& operator++()
@@ -104,15 +106,14 @@ namespace dxle {
 			  return *this;
 			}
 
-			// DR 934.
-			template<typename T2 = T, std::enable_if_t<!std::is_floating_point<T2>::value, std::nullptr_t> = nullptr>
+			template<typename T2 = T, std::enable_if_t<!std::is_floating_point<T2>::value, nullptr_t> = nullptr>
 			bel_c& operator%=(const T& r)
 			{
 				value_ %= r;
 				return *this;
 			}
 
-			template<typename T2 = T, std::enable_if_t<!std::is_floating_point<T2>::value, std::nullptr_t> = nullptr>
+			template<typename T2 = T, std::enable_if_t<!std::is_floating_point<T2>::value, nullptr_t> = nullptr>
 			bel_c& operator%=(const bel_c& o)
 			{
 				value_ %= o.count();
@@ -153,7 +154,7 @@ namespace dxle {
 				}
 			};
 		}
-		template<typename To, typename T, typename Period, enable_if_t<is_bel_c<To>::value, nullptr_t>>
+		template<typename To, typename T, typename Period, enable_if_t<is_bel_c<To>::value, nullptr_t>/* = nullptr*/>
 		inline DXLE_CONSTEXPR To bel_cast(const bel_c<T, Period>& o)
 		{	// convert bel_c to another bel_c
 			typedef std::ratio_divide<Period, typename To::period> CF;
@@ -163,6 +164,7 @@ namespace dxle {
 			return detail::bel_cast_helper<To, T, Period, CF, ToT, CR, CF::num == 1, CF::den == 1>::cast(o);
 		}
 
+		//arithmetic
 		template<typename T1, typename Period1, typename T2, typename Period2>
 		DXLE_CONSTEXPR common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2 >>
 			operator+(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
@@ -193,16 +195,14 @@ namespace dxle {
 		}
 
 		template<typename T1, typename _Period, typename T2>
-		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T1, T2>, _Period>
-			operator*(const bel_c<T1, _Period>& b, const T2& r)
+		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T1, T2>, _Period> operator*(const bel_c<T1, _Period>& b, const T2& r)
 		{
 			typedef bel_c<common_type_t<T1, T2>, _Period> result_t;
 			return result_t(result_t(b).count() * r);
 		}
 
 		template<typename T1, typename T2, typename _Period>
-		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T2, T1>, _Period>
-			operator*(const T1& r, const bel_c<T2, _Period>& b)
+		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T2, T1>, _Period> operator*(const T1& r, const bel_c<T2, _Period>& b)
 		{
 			return b * r;
 		}
@@ -216,8 +216,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		DXLE_CONSTEXPR common_type_t<T1, T2>
-			operator/(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR common_type_t<T1, T2> operator/(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
 			typedef bel_c<T2, Period2>			bel_c2;
@@ -225,7 +224,6 @@ namespace dxle {
 			return result_t(l).count() / result_t(r).count();
 		}
 
-		// DR 934.
 		template<typename T1, typename _Period, typename T2>
 		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T1, enable_if_t<!is_bel_c<T2>::value, T2>>, _Period>
 			operator%(const bel_c<T1, _Period>& b, const T2& r)
