@@ -164,7 +164,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2 >>
+		DXLE_CONSTEXPR common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2 >>
 			operator+(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
@@ -174,7 +174,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2>>
+		DXLE_CONSTEXPR common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2>>
 			operator-(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
@@ -193,7 +193,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename _Period, typename T2>
-		constexpr bel_c<detail::common_rep_type_t<T1, T2>, _Period>
+		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T1, T2>, _Period>
 			operator*(const bel_c<T1, _Period>& b, const T2& r)
 		{
 			typedef bel_c<common_type_t<T1, T2>, _Period> result_t;
@@ -201,14 +201,14 @@ namespace dxle {
 		}
 
 		template<typename T1, typename T2, typename _Period>
-		constexpr bel_c<detail::common_rep_type_t<T2, T1>, _Period>
+		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T2, T1>, _Period>
 			operator*(const T1& r, const bel_c<T2, _Period>& b)
 		{
 			return b * r;
 		}
 
 		template<typename T1, typename _Period, typename T2>
-		constexpr bel_c<detail::common_rep_type_t<T1, enable_if_t<!is_bel_c<T2>::value, T2>>, _Period>
+		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T1, enable_if_t<!is_bel_c<T2>::value, T2>>, _Period>
 			operator/(const bel_c<T1, _Period>& b, const T2& r)
 		{
 			typedef bel_c<common_type_t<T1, T2>, _Period> result_t;
@@ -216,7 +216,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr common_type_t<T1, T2>
+		DXLE_CONSTEXPR common_type_t<T1, T2>
 			operator/(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
@@ -227,7 +227,7 @@ namespace dxle {
 
 		// DR 934.
 		template<typename T1, typename _Period, typename T2>
-		constexpr bel_c<detail::common_rep_type_t<T1, enable_if_t<!is_bel_c<T2>::value, T2>>, _Period>
+		DXLE_CONSTEXPR bel_c<detail::common_rep_type_t<T1, enable_if_t<!is_bel_c<T2>::value, T2>>, _Period>
 			operator%(const bel_c<T1, _Period>& b, const T2& r)
 		{
 			typedef bel_c<common_type_t<T1, T2>, _Period> result_t;
@@ -235,7 +235,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2>>
+		DXLE_CONSTEXPR common_type_t<bel_c<T1, Period1>, bel_c<T2, Period2>>
 			operator%(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
@@ -246,7 +246,7 @@ namespace dxle {
 
 		// comparisons
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr bool operator==(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR bool operator==(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
 			typedef bel_c<T2, Period2>			bel_c2;
@@ -255,7 +255,7 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr bool operator<(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR bool operator<(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			typedef bel_c<T1, Period1>			bel_c1;
 			typedef bel_c<T2, Period2>			bel_c2;
@@ -264,25 +264,25 @@ namespace dxle {
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr bool operator!=(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR bool operator!=(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			return !(l == r);
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr bool operator<=(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR bool operator<=(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			return !(r < l);
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr bool operator>(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR bool operator>(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			return r < l;
 		}
 
 		template<typename T1, typename Period1, typename T2, typename Period2>
-		constexpr bool operator>=(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
+		DXLE_CONSTEXPR bool operator>=(const bel_c<T1, Period1>& l, const bel_c<T2, Period2>& r)
 		{
 			return !(l < r);
 		}
