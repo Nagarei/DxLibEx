@@ -154,11 +154,14 @@ namespace dxle
 			//!\~japanese サウンドハンドルのパンを設定する
 			//!\~english  Set the pan of this sound.
 			template<typename T, typename Period>int set_pan(bel_c<T, Period> PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				const auto pan = bel_cast<myrio_bel>(PanPal).get();
+				assert(0 <= pan && pan <= 10000);
 				return DxLib::SetPanSoundMem(bel_cast<myrio_bel>(PanPal).get(), this->GetHandle());
 			}
 			//!\~japanese サウンドハンドルのパンを設定する
 			//!\~english  Set the pan of this sound.
 			template<typename T, typename Period>void set_pan(bel_c<T, Period> PanPal) {
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((PanPal < 0_myrioB || 10000_myrioB < PanPal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_pan(PanPal, std::nothrow)), "fail DxLib::SetPanSoundMem().");
 			}
 			//!\~japanese サウンドハンドルのパンを設定する( -255 ～ 255 )
@@ -185,9 +188,39 @@ namespace dxle
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetPanSoundMem().");
 				return re;
 			}
-			int set_volume(int VolumePal);						// サウンドハンドルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int change_volume(uint8_t VolumePal);						// サウンドハンドルのボリュームを設定する( 0 ～ 255 )
-			int get_volume();						// サウンドハンドルのボリュームを取得する
+			//!\~japanese サウンドハンドルのボリュームを設定する
+			//!\~english  Set sound volume.
+			template<typename T, typename Period>int set_volume(bel_c<T, Period> VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				const auto volume = bel_cast<myrio_bel>(PanPal).get();
+				assert(0 <= volume && volume <= 10000);
+				return DxLib::SetVolumeSoundMem(volume, this->GetHandle());
+			}
+			//!\~japanese サウンドハンドルのボリュームを設定する
+			//!\~english  Set sound volume.
+			template<typename T, typename Period>void set_volume(bel_c<T, Period> VolumePal) {
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < 0_myrioB || 10000_myrioB < VolumePal), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(VolumePal, std::nothrow)), "fail DxLib::SetVolumeSoundMem().");
+			}
+			//!\~japanese サウンドハンドルのボリュームを設定する( 0 ～ 255 )
+			//!\~english  Set sound volume( 0 to 255 ).
+			int change_volume(uint8_t VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				return DxLib::ChangeVolumeSoundMem(VolumePal, this->GetHandle());
+			}
+			void change_volume(uint8_t VolumePal) {
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_volume(VolumePal, std::nothrow)), "fail DxLib::ChangeVolumeSoundMem().");
+			}
+			//!\~japanese サウンドのボリュームを取得する
+			//!\~english  Get sound volume.
+			myrio_bel get_volume(std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				return myrio_bel(DxLib::GetVolumeSoundMem(this->GetHandle()));
+			}
+			//!\~japanese サウンドのボリュームを取得する
+			//!\~english  Get sound volume.
+			myrio_bel get_volume() {
+				const auto re = this->get_volume(std::nothrow);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetVolumeSoundMem().");
+				return re;
+			}
 			int set_volume(int Channel, int VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
 			int change_volume(int Channel, uint8_t VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )
 			int get_volume(int Channel);						// サウンドハンドルの指定のチャンネルのボリュームを取得する
