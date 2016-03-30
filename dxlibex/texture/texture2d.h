@@ -1,4 +1,4 @@
-/*=============================================================================
+ï»¿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -23,14 +23,14 @@
 #include "dxlibex/thread.h"
 
 
-//----------2DƒOƒ‰ƒtƒBƒbƒN----------//
+//----------2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯----------//
 
 namespace dxle
 {
-	//! 2DƒOƒ‰ƒtƒBƒbƒN
+	//! 2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 	namespace graph2d
 	{
-		//!\~japanese DxLib‚Ì•`‰ææƒXƒNƒŠ[ƒ““¯Šú‚Ì‚½‚ß‚Ìmutex
+		//!\~japanese DxLibã®æç”»å…ˆã‚¹ã‚¯ãƒªãƒ¼ãƒ³åŒæœŸã®ãŸã‚ã®mutex
 		//!\~english  mutex for DxLib's draw screen
 		class screen_mutex_c final
 		{
@@ -42,7 +42,7 @@ namespace dxle
 
 		/**
 		@relates texture2d
-		\~japanese	@brief	texture2d‚Æscreen_c‚Ìfilter_bright_clipƒƒ“ƒo[ŠÖ”Œü‚¯‚Ìenum
+		\~japanese	@brief	texture2dã¨screen_cã®filter_bright_clipãƒ¡ãƒ³ãƒãƒ¼é–¢æ•°å‘ã‘ã®enum
 		\~english	@brief	for filter_bright_clip(texture2d and screen_c )
 		*/
 		enum class bright_clip_mode : int {
@@ -50,246 +50,246 @@ namespace dxle
 			GREATER
 		};
 
-	//--------------------ƒNƒ‰ƒX--------------------//
+	//--------------------ã‚¯ãƒ©ã‚¹--------------------//
 		
 		class texture2d /*final*/
 		{
 		public:
 			DXLE_CONSTEXPR texture2d()DXLE_NOEXCEPT_OR_NOTHROW{}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			texture2d(const texture2d& other) = delete;
 			texture2d& operator=(const texture2d& other) = delete;
-			//!Š—LŒ ‚Ì÷“n
+			//!æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			texture2d(texture2d&& other) DXLE_NOEXCEPT_OR_NOTHROW : handle_manager(std::move(other.handle_manager)){}
 			texture2d& operator=(texture2d&& other) DXLE_NOEXCEPT_OR_NOTHROW { handle_manager = (std::move(other.handle_manager)); return *this; }
 
-			//!\~japanese ‰æ‘œ‚ğíœ‚·‚é
+			//!\~japanese ç”»åƒã‚’å‰Šé™¤ã™ã‚‹
 			//!\~english  Delete this image
 			inline void delete_this(bool LogOutFlag = false) { DxLib::DeleteGraph(GetHandle(), LogOutFlag); }
 
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline sizei size()const DXLE_NOEXCEPT_OR_NOTHROW{ return GetGraphSize(); }
 
-			//!‰æ‘œ‚ğ•¡»‚·‚é
+			//!ç”»åƒã‚’è¤‡è£½ã™ã‚‹
 			virtual std::unique_ptr<texture2d> clone()const;
 
 			virtual ~texture2d()DXLE_NOEXCEPT_OR_NOTHROW{}
 
 		public:
-			//¶¬—pƒRƒ“ƒXƒgƒ‰ƒNƒ^
+			//ç”Ÿæˆç”¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
-			//!\~japanese w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image with a specific size
 			//inline texture2d(int SizeX, int SizeY, bool NotUse3DFlag = false): texture2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag){}
 
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image form an image file
 			inline texture2d(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL) : texture2d(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false){}
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image form an image file
 			inline texture2d(const TCHAR *FileName, bool NotUse3DFlag = false) : texture2d(DxLib::LoadGraph(FileName, NotUse3DFlag), NotUse3DFlag){}
 
 
-			//¶¬—pstaticŠÖ”
+			//ç”Ÿæˆç”¨staticé–¢æ•°
 
-			// ƒOƒ‰ƒtƒBƒbƒNì¬ŠÖŒWŠÖ”
+			// ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ä½œæˆé–¢ä¿‚é–¢æ•°
 
-			//!\~japanese w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image with a specific size
 			static inline texture2d MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false){ return texture2d(DxLib::MakeGraph(SizeX, SizeY, NotUse3DFlag), NotUse3DFlag); }
-			//!\~japanese w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image with sizes
 			static inline texture2d MakeGraph(const sizei& size, bool NotUse3DFlag = false){ return texture2d(DxLib::MakeGraph(size.width, size.height, NotUse3DFlag), NotUse3DFlag); }
-			//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline texture2d DerivationGraph(int SrcX, int SrcY, int Width, int Height, const texture2d& SrcGraphHandle){ return texture2d(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle.GetHandle()), false); }
-			//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline texture2d DerivationGraph(const pointi& src, const sizei& size, const texture2d& SrcGraphHandle){ return texture2d(DxLib::DerivationGraph(src.x, src.y, size.width, size.height, SrcGraphHandle.GetHandle()), false); }
 
-			// ‰æ‘œ‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚éŠÖ”
+			// ç”»åƒã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹é–¢æ•°
 
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image from an image file
 			static inline texture2d LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL){ return texture2d(DxLib::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode), false); }
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image from an image file
 			static inline texture2d LoadBmpToGraph(const dxle::tstring& FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL){ return texture2d(DxLib::LoadBmpToGraph(FileName.c_str(), TextureFlag, ReverseFlag, SurfaceMode), false); }
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image from an image file
 			static inline texture2d LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false){ return texture2d(DxLib::LoadGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an image from an image file
 			static inline texture2d LoadGraph(const dxle::tstring& FileName, bool NotUse3DFlag = false){ return texture2d(DxLib::LoadGraph(FileName.c_str(), NotUse3DFlag), NotUse3DFlag); }
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a reversed image from an image file
 			static inline texture2d LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false){ return texture2d(DxLib::LoadReverseGraph(FileName, NotUse3DFlag), NotUse3DFlag); }
-			//!\~japanese ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a reversed image from an image file
 			static inline texture2d LoadReverseGraph(const dxle::tstring& FileName, bool NotUse3DFlag = false){ return texture2d(DxLib::LoadReverseGraph(FileName.c_str(), NotUse3DFlag), NotUse3DFlag); }
 
 
-			//!\~japanese ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create an graphic from an image stored in the computer memory
 			static inline texture2d CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false){ return texture2d(DxLib::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag), false); }
-			//!\~japanese ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+			//!\~japanese ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			//!\~english  Recreate an graphic from an existing image stored in the computer memory
 			static inline int ReCreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, texture2d& GrHandle, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false){ return DxLib::ReCreateGraphFromMem(RGBFileImage, RGBFileImageSize, GrHandle.GetHandle(), AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
 
-			//!\~japanese Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒTƒCƒY‚ğŠ„‚èo‚µA‚»‚ê‚É‡‚Á‚½ƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚µã‚¤ã‚ºã‚’å‰²ã‚Šå‡ºã—ã€ãã‚Œã«åˆã£ãŸã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Determine the size of the basic image data and create a compatible graphics
 			static inline texture2d CreateDXGraph(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag){ return texture2d(DxLib::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag), false); }
-			//!\~japanese Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a graphic from a basic image data
 			static inline texture2d CreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false){ return texture2d(DxLib::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag), false); }
-			//!\~japanese Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//!\~japanese åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a graphic from a basic image data
 			static inline texture2d CreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false){ return texture2d(DxLib::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag), false); }
-			//!\~japanese Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+			//!\~japanese åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			//!\~english  Recreate a graphic from an existing basic image data
 			static inline int ReCreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, texture2d& GrHandle, bool TextureFlag = true, bool ReverseFlag = false){ return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
-			//!\~japanese Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+			//!\~japanese åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			//!\~english  Recreate a graphic from an existing basic image data
 			static inline int ReCreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, texture2d& GrHandle, bool TextureFlag = true, bool ReverseFlag = false){ return DxLib::ReCreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, GrHandle.GetHandle(), TextureFlag, ReverseFlag); }
 
-			//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a graphic from a bitmap image stored in the computer memory
 			static inline texture2d CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture2d& GrHandle = texture2d()){ return texture2d(DxLib::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
-			//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a graphic from a bitmap image stored in the computer memory
 			static inline texture2d CreateGraph(const sizei& size, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture2d& GrHandle = texture2d()){ return texture2d(DxLib::CreateGraph(size.width, size.height, Pitch, RGBImage, AlphaImage, GrHandle.GetHandle()), false); }
-			//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğÄì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å†ä½œæˆã™ã‚‹
 			//!\~english  Recreate a graphic from a bitmap image stored in the computer memory
 			static inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, texture2d& GrHandle, const void *AlphaImage = nullptr){ return DxLib::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
-			//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğÄì¬‚·‚é
+			//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å†ä½œæˆã™ã‚‹
 			//!\~english  Recreate a graphic from a bitmap image stored in the computer memory
 			static inline int ReCreateGraph(const sizei& size, int Pitch, const void *RGBImage, texture2d& GrHandle, const void *AlphaImage = nullptr){ return DxLib::ReCreateGraph(size.width, size.height, Pitch, RGBImage, GrHandle.GetHandle(), AlphaImage); }
 #ifndef DX_NON_SOFTIMAGE
-			//extern	int			CreateBlendGraphFromSoftImage(int SIHandle);																										// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çƒuƒŒƒ“ƒh—p‰æ‘œƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( -1:ƒGƒ‰[  -1ˆÈŠO:ƒuƒŒƒ“ƒh—pƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹ )
-			//extern	int			CreateGraphFromSoftImage(int SIHandle);																												// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( -1:ƒGƒ‰[  -1ˆÈŠO:ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹ )
-			//extern	int			CreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY);																		// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é( -1:ƒGƒ‰[  -1ˆÈŠO:ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹ )
-			//extern	int			ReCreateGraphFromSoftImage(int SIHandle, int GrHandle);																								// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
-			//extern	int			ReCreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY, int GrHandle);														// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
-			//extern	int			CreateDivGraphFromSoftImage(int SIHandle, int AllNum, int XNum, int YNum, int SizeX, int SizeY, int *HandleBuf);									// ƒ\ƒtƒgƒEƒGƒA‚Åˆµ‚¤ƒCƒ[ƒW‚©‚ç•ªŠ„ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é
+			//extern	int			CreateBlendGraphFromSoftImage(int SIHandle);																										// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ãƒ–ãƒ¬ãƒ³ãƒ‰ç”¨ç”»åƒã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ãƒ–ãƒ¬ãƒ³ãƒ‰ç”¨ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ« )
+			//extern	int			CreateGraphFromSoftImage(int SIHandle);																												// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ« )
+			//extern	int			CreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY);																		// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹( -1:ã‚¨ãƒ©ãƒ¼  -1ä»¥å¤–:ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ« )
+			//extern	int			ReCreateGraphFromSoftImage(int SIHandle, int GrHandle);																								// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
+			//extern	int			ReCreateGraphFromRectSoftImage(int SIHandle, int x, int y, int SizeX, int SizeY, int GrHandle);														// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
+			//extern	int			CreateDivGraphFromSoftImage(int SIHandle, int AllNum, int XNum, int YNum, int SizeX, int SizeY, int *HandleBuf);									// ã‚½ãƒ•ãƒˆã‚¦ã‚¨ã‚¢ã§æ‰±ã†ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰åˆ†å‰²ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹
 #endif // DX_NON_SOFTIMAGE
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a graphic from a basic image data
 			static inline texture2d CreateGraphFromBaseImage(const DxLib::BASEIMAGE *BaseImage){ return texture2d(DxLib::CreateGraphFromBaseImage(BaseImage), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			//!\~english  Create a graphic from a degsinated area clipped from a basic image data 
 			static inline texture2d CreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY){ return texture2d(DxLib::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline texture2d CreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, const pointi& pos, const sizei& size){ return texture2d(DxLib::CreateGraphFromRectBaseImage(BaseImage, pos.x, pos.y, size.width, size.height), false); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromBaseImage(const DxLib::BASEIMAGE *BaseImage, texture2d& GrHandle){ return DxLib::ReCreateGraphFromBaseImage(BaseImage, GrHandle.GetHandle()); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, texture2d& GrHandle){ return DxLib::ReCreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY, GrHandle.GetHandle()); }
-			//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReCreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, const pointi& pos, const sizei& size, texture2d& GrHandle){ return DxLib::ReCreateGraphFromRectBaseImage(BaseImage, pos.x, pos.y, size.width, size.height, GrHandle.GetHandle()); }
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚Ö‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã¸ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReloadGraph(const TCHAR *FileName, texture2d& GrHandle, bool ReverseFlag = false){ return DxLib::ReloadGraph(FileName, GrHandle.GetHandle(), ReverseFlag); }
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚Ö‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã¸ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 			static inline int ReloadGraph(const dxle::tstring& FileName, texture2d& GrHandle, bool ReverseFlag = false){ return DxLib::ReloadGraph(FileName.c_str(), GrHandle.GetHandle(), ReverseFlag); }
-			//! ReloadGraph ‚Ì‰æ‘œ”½“]ˆ—’Ç‰Á”Å
+			//! ReloadGraph ã®ç”»åƒåè»¢å‡¦ç†è¿½åŠ ç‰ˆ
 			static inline int ReloadReverseGraph(const TCHAR *FileName, texture2d& GrHandle){ return DxLib::ReloadReverseGraph(FileName, GrHandle.GetHandle()); }
-			//! ReloadGraph ‚Ì‰æ‘œ”½“]ˆ—’Ç‰Á”Å
+			//! ReloadGraph ã®ç”»åƒåè»¢å‡¦ç†è¿½åŠ ç‰ˆ
 			static inline int ReloadReverseGraph(const dxle::tstring& FileName, texture2d& GrHandle){ return DxLib::ReloadReverseGraph(FileName.c_str(), GrHandle.GetHandle()); }
 
 
-				//ƒƒ“ƒoŠÖ”
+				//ãƒ¡ãƒ³ãƒé–¢æ•°
 
 			inline texture2d DerivationGraph(int SrcX, int SrcY, int Width, int Height)const  { return texture2d(DxLib::DerivationGraph(SrcX, SrcY, Width, Height, GetHandle()), false); }
-			//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			inline texture2d DerivationGraph(const pointi& src, const sizei& size)const  { return texture2d(DxLib::DerivationGraph(src.x, src.y, size.width, size.height, GetHandle()), false); }
 
 
-			////! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ì‚`‚q‚f‚a‚WƒCƒ[ƒW‚ğæ“¾‚·‚é( Œ»İ“®‰æƒtƒ@ƒCƒ‹‚ğƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚Å“Ç‚İ‚ñ‚¾ê‡‚Ì‚İg—p‰Â”\ )
+			////! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ï¼¡ï¼²ï¼§ï¼¢ï¼˜ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’å–å¾—ã™ã‚‹( ç¾åœ¨å‹•ç”»ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã§èª­ã¿è¾¼ã‚“ã å ´åˆã®ã¿ä½¿ç”¨å¯èƒ½ )
 			//inline const unsigned int* GetFullColorImage()const  { return DxLib::GetFullColorImage(GetHandle()); }
 
-			//! ƒOƒ‰ƒtƒBƒbƒNƒƒ‚ƒŠ—Ìˆæ‚ÌƒƒbƒN
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ãƒ­ãƒƒã‚¯
 			inline int GraphLock(int *PitchBuf, void **DataPointBuf, DxLib::COLORDATA **ColorDataPP = nullptr, bool WriteOnly = false){ return DxLib::GraphLock(GetHandle(), PitchBuf, DataPointBuf, ColorDataPP, WriteOnly); }
-			//! ƒOƒ‰ƒtƒBƒbƒNƒƒ‚ƒŠ—Ìˆæ‚ÌƒƒbƒN‰ğœ
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ãƒ­ãƒƒã‚¯è§£é™¤
 			inline int GraphUnLock(){ return DxLib::GraphUnLock(GetHandle()); }
-			//! ƒOƒ‰ƒtƒBƒbƒNƒXƒfƒoƒCƒX‚ÌƒfƒoƒCƒXƒƒXƒg”­¶‚Éw’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğíœ‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é( TRUE:ƒfƒoƒCƒXƒƒXƒg‚Éíœ‚·‚é  FALSE:ƒfƒoƒCƒXƒƒXƒg‚ª”­¶‚µ‚Ä‚àíœ‚µ‚È‚¢ )
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãƒ‡ãƒã‚¤ã‚¹ã®ãƒ‡ãƒã‚¤ã‚¹ãƒ­ã‚¹ãƒˆç™ºç”Ÿæ™‚ã«æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å‰Šé™¤ã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹( TRUE:ãƒ‡ãƒã‚¤ã‚¹ãƒ­ã‚¹ãƒˆæ™‚ã«å‰Šé™¤ã™ã‚‹  FALSE:ãƒ‡ãƒã‚¤ã‚¹ãƒ­ã‚¹ãƒˆãŒç™ºç”Ÿã—ã¦ã‚‚å‰Šé™¤ã—ãªã„ )
 			inline int SetDeviceLostDeleteGraphFlag(bool DeleteFlag){ return DxLib::SetDeviceLostDeleteGraphFlag(GetHandle(), DeleteFlag); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline int GetGraphSize(int *SizeXBuf, int *SizeYBuf)const { return DxLib::GetGraphSize(GetHandle(), SizeXBuf, SizeYBuf); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline sizei GetGraphSize()const { int x, y; GetGraphSize(&x, &y); return{ x, y }; }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‚Âˆê‚Â–Ú‚ÌƒeƒNƒXƒ`ƒƒ‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒæŒã¤ä¸€ã¤ç›®ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline int GetGraphTextureSize(int *SizeXBuf, int *SizeYBuf)const { return DxLib::GetGraphTextureSize(GetHandle(), SizeXBuf, SizeYBuf); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‚Âˆê‚Â–Ú‚ÌƒeƒNƒXƒ`ƒƒ‚ÌƒTƒCƒY‚ğ“¾‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒæŒã¤ä¸€ã¤ç›®ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚µã‚¤ã‚ºã‚’å¾—ã‚‹
 			inline sizei GetGraphTextureSize()const { int x, y; GetGraphTextureSize(&x, &y); return{ x, y }; }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‚ÂƒeƒNƒXƒ`ƒƒ‚Ìƒ~ƒbƒvƒ}ƒbƒvƒŒƒxƒ‹”‚ğæ“¾‚·‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒæŒã¤ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ãƒ¬ãƒ™ãƒ«æ•°ã‚’å–å¾—ã™ã‚‹
 			inline int GetGraphMipmapCount()const { return DxLib::GetGraphMipmapCount(GetHandle()); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‰æ‘œƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ü‚ê‚Ä‚¢‚½ê‡A‚»‚Ì‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾‚·‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãã®ç”»åƒã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—ã™ã‚‹
 			inline int GetGraphFilePath(TCHAR FilePathBuffer[])const { return DxLib::GetGraphFilePath(GetHandle(), FilePathBuffer); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚ª‰æ‘œƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ü‚ê‚Ä‚¢‚½ê‡A‚»‚Ì‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾‚·‚é
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãã®ç”»åƒã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—ã™ã‚‹
 			inline tstring GetGraphFilePath()const;
 
-			//! ‰æ‘œ‚Ì“™”{•`‰æ
+			//! ç”»åƒã®ç­‰å€æç”»
 			inline int DrawGraph(int x, int y, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì“™”{•`‰æ
+			//! ç”»åƒã®ç­‰å€æç”»
 			inline int DrawGraph(const pointi& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraph(p.x, p.y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å•`‰æ
+			//! ç”»åƒã®æ‹¡å¤§æç”»
 			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å•`‰æ
+			//! ç”»åƒã®æ‹¡å¤§æç”»
 			inline int DrawExtendGraph(const pointi& lu, const pointi& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ
+			//! ç”»åƒã®å›è»¢æç”»
 			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ
+			//! ç”»åƒã®å›è»¢æç”»
 			inline int DrawRotaGraph(const pointi& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚Q( ‰ñ“]’†Sw’è•t‚« )
+			//! ç”»åƒã®å›è»¢æç”»ï¼’( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ã )
 			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚Q( ‰ñ“]’†Sw’è•t‚« )
+			//! ç”»åƒã®å›è»¢æç”»ï¼’( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ã )
 			inline int DrawRotaGraph2(const pointi& p, const pointi& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚R( ‰ñ“]’†Sw’è•t‚«{c‰¡Šg‘å—¦•Êw’è”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼“( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ãï¼‹ç¸¦æ¨ªæ‹¡å¤§ç‡åˆ¥æŒ‡å®šç‰ˆ )
 			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚R( ‰ñ“]’†Sw’è•t‚«{c‰¡Šg‘å—¦•Êw’è”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼“( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ãï¼‹ç¸¦æ¨ªæ‹¡å¤§ç‡åˆ¥æŒ‡å®šç‰ˆ )
 			inline int DrawRotaGraph3(const pointi& p, const pointi& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ
+			//! ç”»åƒã®è‡ªç”±å¤‰å½¢æç”»
 			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraph(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ
+			//! ç”»åƒã®è‡ªç”±å¤‰å½¢æç”»
 			inline int DrawModiGraph(const std::array<pointi, 4>& ps, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraph(ps[0].x, ps[0].y, ps[1].x, ps[1].y, ps[2].x, ps[2].y, ps[3].x, ps[3].y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì¶‰E”½“]•`‰æ
+			//! ç”»åƒã®å·¦å³åè»¢æç”»
 			inline int DrawTurnGraph(int x, int y, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraph(x, y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì¶‰E”½“]•`‰æ
+			//! ç”»åƒã®å·¦å³åè»¢æç”»
 			inline int DrawTurnGraph(const pointi& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraph(p.x, p.y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å¶‰E”½“]•`‰æ
-			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }//x1‚Æx2‚Í‚±‚ê‚Å³‚µ‚¢
-			//! ‰æ‘œ‚ÌŠg‘å¶‰E”½“]•`‰æ
-			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//lu.x‚Ærb.x‚Í‚±‚ê‚Å³‚µ‚¢
+			//! ç”»åƒã®æ‹¡å¤§å·¦å³åè»¢æç”»
+			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }//x1ã¨x2ã¯ã“ã‚Œã§æ­£ã—ã„
+			//! ç”»åƒã®æ‹¡å¤§å·¦å³åè»¢æç”»
+			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//lu.xã¨rb.xã¯ã“ã‚Œã§æ­£ã—ã„
 
-			//! ‰æ‘œ‚Ì•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawGraphF(float xf, float yf, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawGraphF(const pointf& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraphF(p.x, p.y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æ‹¡å¤§æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x1f, y1f, x2f, y2, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®æ‹¡å¤§æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawExtendGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraphF(const pointf& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraphF(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚Q( ‰ñ“]’†Sw’è•t‚« )( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼’( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ã )( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚Q( ‰ñ“]’†Sw’è•t‚« )( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼’( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ã )( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraph2F(const pointf& p, const pointf& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚R( ‰ñ“]’†Sw’è•t‚«{c‰¡Šg‘å—¦•Êw’è”Å )( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼“( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ãï¼‹ç¸¦æ¨ªæ‹¡å¤§ç‡åˆ¥æŒ‡å®šç‰ˆ )( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì‰ñ“]•`‰æ‚R( ‰ñ“]’†Sw’è•t‚«{c‰¡Šg‘å—¦•Êw’è”Å )( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å›è»¢æç”»ï¼“( å›è»¢ä¸­å¿ƒæŒ‡å®šä»˜ãï¼‹ç¸¦æ¨ªæ‹¡å¤§ç‡åˆ¥æŒ‡å®šç‰ˆ )( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawRotaGraph3F(const pointf& p, const pointf& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3F(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
-			//! ‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®è‡ªç”±å¤‰å½¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraphF(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®è‡ªç”±å¤‰å½¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawModiGraphF(const std::array<pointf, 4>& ps, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraphF(ps[0].x, ps[0].y, ps[1].x, ps[1].y, ps[2].x, ps[2].y, ps[3].x, ps[3].y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì¶‰E”½“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å·¦å³åè»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚Ì¶‰E”½“]•`‰æ( À•Ww’è‚ª float ”Å )
+			//! ç”»åƒã®å·¦å³åè»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
 			inline int DrawTurnGraphF(const pointf& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraphF(p.x, p.y, GetHandle(), TransFlag); }
-			//! ‰æ‘œ‚ÌŠg‘å¶‰E”½“]•`‰æ( À•Ww’è‚ª float ”Å )
-			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1f‚Æx2f‚Í‚±‚ê‚Å³‚µ‚¢
-			//! ‰æ‘œ‚ÌŠg‘å¶‰E”½“]•`‰æ( À•Ww’è‚ª float ”Å )
-			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//x1f‚Æx2f‚Í‚±‚ê‚Å³‚µ‚¢
+			//! ç”»åƒã®æ‹¡å¤§å·¦å³åè»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
+			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fã¨x2fã¯ã“ã‚Œã§æ­£ã—ã„
+			//! ç”»åƒã®æ‹¡å¤§å·¦å³åè»¢æç”»( åº§æ¨™æŒ‡å®šãŒ float ç‰ˆ )
+			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//x1fã¨x2fã¯ã“ã‚Œã§æ­£ã—ã„
 
 			int filter_mono			(int16_t Cb, int16_t Cr);
 			int filter_gaussian		(uint16_t PixelWidth, int Param);
@@ -312,71 +312,71 @@ namespace dxle
 
 			int GetHandle()const{ if (!handle_manager){ return -1; } return handle_manager->get_handle(); }
 
-			//ƒ†[ƒU[‚ªŒp³‚·‚é‚Ì‚ğ–h~‚·‚é‚½‚ßprotected‚Å‚Í‚È‚­friend‚ğg‚¤
+			//ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒç¶™æ‰¿ã™ã‚‹ã®ã‚’é˜²æ­¢ã™ã‚‹ãŸã‚protectedã§ã¯ãªãfriendã‚’ä½¿ã†
 
 			friend screen;
 
-			//À‘•—p
+			//å®Ÿè£…ç”¨
 
 			 template<typename BuffT, typename OutFunc>
 			 friend void gr_impl::LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag);
 		};
 		
-		//! •`‰æ‰Â”\‰æ‘œƒNƒ‰ƒX
+		//! æç”»å¯èƒ½ç”»åƒã‚¯ãƒ©ã‚¹
 		class screen final : public texture2d
 		{
 		public:
-			//!‰æ‘œ‚ğ•¡»‚·‚é
+			//!ç”»åƒã‚’è¤‡è£½ã™ã‚‹
 			std::unique_ptr<texture2d> clone()const override{ return cloneSc(); }
-			//!‰æ‘œ‚ğ•¡»‚·‚é
+			//!ç”»åƒã‚’è¤‡è£½ã™ã‚‹
 			std::unique_ptr<screen> cloneSc()const;
 
-			//¶¬—pstaticŠÖ”
+			//ç”Ÿæˆç”¨staticé–¢æ•°
 
-			//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline screen MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW{ return screen(DxLib::MakeScreen(SizeX, SizeY, UseAlphaChannel), UseAlphaChannel); }
-			//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+			//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 			static inline screen MakeScreen(const sizei& size, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW{ return screen(DxLib::MakeScreen(size.width, size.height, UseAlphaChannel), UseAlphaChannel); }
 
-			//ƒƒ“ƒoŠÖ”
+			//ãƒ¡ãƒ³ãƒé–¢æ•°
 
 			template<typename Func_T>
 			screen& draw_on_this(Func_T&& draw_func);
 
-			//! ƒOƒ‰ƒtƒBƒbƒNê—p‚Ì‚yƒoƒbƒtƒ@‚ğ‚Â‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
-			//!@param UseFlag ê—p‚Ì‚yƒoƒbƒtƒ@‚ğ‚Â‚©‚Ç‚¤‚©( true:‚Â( ƒfƒtƒHƒ‹ƒg )  false:‚½‚È‚¢ )
-			//!@param BitDepth ƒrƒbƒg[“x( 16 or 24 or 32 ) )
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯å°‚ç”¨ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã¤ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
+			//!@param UseFlag å°‚ç”¨ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã¤ã‹ã©ã†ã‹( true:æŒã¤( ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ )  false:æŒãŸãªã„ )
+			//!@param BitDepth ãƒ“ãƒƒãƒˆæ·±åº¦( 16 or 24 or 32 ) )
 			inline int SetUseGraphZBuffer(bool UseFlag, int BitDepth = -1)DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::SetUseGraphZBuffer(GetHandle(), UseFlag, BitDepth); }
-			//! ƒOƒ‰ƒtƒBƒbƒN‚Ì‚yƒoƒbƒtƒ@‚Ìó‘Ô‚ğ•Ê‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ì‚yƒoƒbƒtƒ@‚ÉƒRƒs[‚·‚é
-			//! *this‚Í‚yƒoƒbƒtƒ@‚ğ‚Á‚Ä‚¢‚é•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN
-			//!@param ToGraph *this‚ÆƒTƒCƒY‚ª“¯‚¶‚Å‚ ‚èAŠ‚Âƒ}ƒ‹ƒ`ƒTƒ“ƒvƒŠƒ“ƒO( ƒAƒ“ƒ`ƒGƒCƒŠƒAƒX )İ’è‚ª–³‚¢A‚yƒoƒbƒtƒ@‚ğ‚Á‚Ä‚¢‚é•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN
+			//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã®çŠ¶æ…‹ã‚’åˆ¥ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ï¼ºãƒãƒƒãƒ•ã‚¡ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
+			//! *thisã¯ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã£ã¦ã„ã‚‹æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
+			//!@param ToGraph *thisã¨ã‚µã‚¤ã‚ºãŒåŒã˜ã§ã‚ã‚Šã€ä¸”ã¤ãƒãƒ«ãƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°( ã‚¢ãƒ³ãƒã‚¨ã‚¤ãƒªã‚¢ã‚¹ )è¨­å®šãŒç„¡ã„ã€ï¼ºãƒãƒƒãƒ•ã‚¡ã‚’æŒã£ã¦ã„ã‚‹æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 			inline int CopyGraphZBufferImage(screen& ToGraph)const DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::CopyGraphZBufferImage(GetHandle(), ToGraph.GetHandle()); }
-			//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚©‚çw’è—Ìˆæ‚Ì‰æ‘œî•ñ‚ğ•Ê‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É“]‘—‚·‚é
-			//!@param x1 “]‘—Œ³‚Ì‹éŒ`‚Ì¶À•W
-			//!@param y1 “]‘—Œ³‚Ì‹éŒ`‚ÌãÀ•W
-			//!@param x2 “]‘—Œ³‚Ì‹éŒ`‚Ì‰EÀ•W
-			//!@param y2 “]‘—Œ³‚Ì‹éŒ`‚Ì‰ºÀ•W
-			//!@param DestX, DestY “]‘—æ‚Ì‹éŒ`‚Ì¶ãÀ•W
-			//!@param DestGrHandle “]‘—æ‚Ì‰æ‘œ
+			//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‹ã‚‰æŒ‡å®šé ˜åŸŸã®ç”»åƒæƒ…å ±ã‚’åˆ¥ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«è»¢é€ã™ã‚‹
+			//!@param x1 è»¢é€å…ƒã®çŸ©å½¢ã®å·¦åº§æ¨™
+			//!@param y1 è»¢é€å…ƒã®çŸ©å½¢ã®ä¸Šåº§æ¨™
+			//!@param x2 è»¢é€å…ƒã®çŸ©å½¢ã®å³åº§æ¨™
+			//!@param y2 è»¢é€å…ƒã®çŸ©å½¢ã®ä¸‹åº§æ¨™
+			//!@param DestX, DestY è»¢é€å…ˆã®çŸ©å½¢ã®å·¦ä¸Šåº§æ¨™
+			//!@param DestGrHandle è»¢é€å…ˆã®ç”»åƒ
 			inline int BltDrawValidGraph(int x1, int y1, int x2, int y2, int DestX, int DestY, texture2d& DestGrHandle)const DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::BltDrawValidGraph(GetHandle(), x1, y1, x2, y2, DestX, DestY, DestGrHandle.GetHandle()); }
-			//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚©‚çw’è—Ìˆæ‚Ì‰æ‘œî•ñ‚ğ•Ê‚ÌƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚É“]‘—‚·‚é
-			//!@param lu “]‘—Œ³‚Ì‹éŒ`‚Ì¶ãÀ•W
-			//!@param rb “]‘—Œ³‚Ì‹éŒ`‚Ì‰E‰ºÀ•W
-			//!@param dest “]‘—æ‚Ì‹éŒ`‚Ì¶ãÀ•W
-			//!@param DestGrHandle “]‘—æ‚Ì‰æ‘œ
+			//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‹ã‚‰æŒ‡å®šé ˜åŸŸã®ç”»åƒæƒ…å ±ã‚’åˆ¥ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã«è»¢é€ã™ã‚‹
+			//!@param lu è»¢é€å…ƒã®çŸ©å½¢ã®å·¦ä¸Šåº§æ¨™
+			//!@param rb è»¢é€å…ƒã®çŸ©å½¢ã®å³ä¸‹åº§æ¨™
+			//!@param dest è»¢é€å…ˆã®çŸ©å½¢ã®å·¦ä¸Šåº§æ¨™
+			//!@param DestGrHandle è»¢é€å…ˆã®ç”»åƒ
 			inline int BltDrawValidGraph(const pointi& lu, const pointi& rb, const pointi& dest, texture2d& DestGrHandle)const DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::BltDrawValidGraph(GetHandle(), rb.x, lu.y, lu.x, rb.y, dest.x, dest.y, DestGrHandle.GetHandle()); }
-			//! •`‰ææ‰æ–Ê‚ğİ’è‚·‚é
+			//! æç”»å…ˆç”»é¢ã‚’è¨­å®šã™ã‚‹
 			inline int SetDrawScreen()const DXLE_NOEXCEPT_OR_NOTHROW_SINGLE{ DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::SetDrawScreen(GetHandle()); }
 
 		public:
 			screen()DXLE_NOEXCEPT_OR_NOTHROW {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			screen(const screen& other) = delete;
-			//!Š—LŒ ‚Ì÷“n
+			//!æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			screen(screen&& other) DXLE_NOEXCEPT_OR_NOTHROW : texture2d(std::move(other)){}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			screen& operator=(const screen& other) = delete;
-			//! Š—LŒ ‚Ì÷“n
+			//! æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			screen& operator=(screen&& other) DXLE_NOEXCEPT_OR_NOTHROW{ texture2d::operator=(std::move(other)); return *this; }
 
 		protected:
@@ -417,10 +417,10 @@ namespace dxle
 
 		//!N = AllNum
 		template<size_t N>
-		//!‰æ‘œƒtƒ@ƒCƒ‹‚ğ•ªŠ„‚µ‚½ƒOƒ‰ƒtƒBƒbƒN
-		//!DxLib::LoadDivGraph‚Ìdxle::textureƒo[ƒWƒ‡ƒ“
-		//!AllSize‚ª’è”‚Ìê‡
-		//!move‚ÉüŒ`ŠÔ‚ª‚©‚©‚é‚±‚Æ‚É’ˆÓ
+		//!ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆ†å‰²ã—ãŸã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
+		//!DxLib::LoadDivGraphã®dxle::textureãƒãƒ¼ã‚¸ãƒ§ãƒ³
+		//!AllSizeãŒå®šæ•°ã®å ´åˆ
+		//!moveã«ç·šå½¢æ™‚é–“ãŒã‹ã‹ã‚‹ã“ã¨ã«æ³¨æ„
 		class static_derivative_texture2d final
 		{
 		private:
@@ -434,7 +434,7 @@ namespace dxle
 			static_derivative_texture2d& operator=(const static_derivative_texture2d&) = delete;
 			static_derivative_texture2d& operator=(static_derivative_texture2d&&)DXLE_NOEXCEPT_OR_NOTHROW;
 
-		//----------¶¬ŠÖ”----------//
+		//----------ç”Ÿæˆé–¢æ•°----------//
 
 			static_derivative_texture2d(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
 			static_derivative_texture2d(const tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
@@ -446,7 +446,7 @@ namespace dxle
 
 			void delete_all();
 
-		//----------ƒRƒ“ƒeƒi•”----------//
+		//----------ã‚³ãƒ³ãƒ†ãƒŠéƒ¨----------//
 
 			using reference              = typename cont_type::reference;
 			using const_reference        = typename cont_type::const_reference;
@@ -490,9 +490,9 @@ namespace dxle
 
 			void swap(static_derivative_texture2d& other){ textures.swap(other.textures); }
 		};
-		//!‰æ‘œƒtƒ@ƒCƒ‹‚ğ•ªŠ„‚µ‚½ƒOƒ‰ƒtƒBƒbƒN
-		//!DxLib::LoadDivGraph‚Ìdxle::textureƒo[ƒWƒ‡ƒ“
-		//!move‚Í’è”ŠÔ
+		//!ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆ†å‰²ã—ãŸã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
+		//!DxLib::LoadDivGraphã®dxle::textureãƒãƒ¼ã‚¸ãƒ§ãƒ³
+		//!moveã¯å®šæ•°æ™‚é–“
 		class derivative_texture2d final
 		{
 		private:
@@ -506,7 +506,7 @@ namespace dxle
 			derivative_texture2d& operator=(const derivative_texture2d&) = delete;
 			derivative_texture2d& operator=(derivative_texture2d&&)DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<cont_type>::value));
 
-			//----------¶¬ŠÖ”----------//
+			//----------ç”Ÿæˆé–¢æ•°----------//
 
 			derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
 			derivative_texture2d(const tstring& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
@@ -521,7 +521,7 @@ namespace dxle
 
 			void delete_all();
 
-			//----------ƒRƒ“ƒeƒi•”----------//
+			//----------ã‚³ãƒ³ãƒ†ãƒŠéƒ¨----------//
 
 			using reference              = cont_type::reference;
 			using const_reference        = cont_type::const_reference;
@@ -567,88 +567,88 @@ namespace dxle
 		};
 
 		
-	//--------------------¶¬—pŠÖ”--------------------//
+	//--------------------ç”Ÿæˆç”¨é–¢æ•°--------------------//
 
-		// ƒOƒ‰ƒtƒBƒbƒNì¬ŠÖŒWŠÖ”
+		// ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ä½œæˆé–¢ä¿‚é–¢æ•°
 
-		//! w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d MakeGraph(int SizeX, int SizeY, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::MakeGraph(SizeX, SizeY, NotUse3DFlag); }
-		//! w’èƒTƒCƒY‚ÌƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! æŒ‡å®šã‚µã‚¤ã‚ºã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d MakeGraph(const sizei& size, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::MakeGraph(size.width, size.height, NotUse3DFlag); }
-		//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline screen MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW { return screen::MakeScreen(SizeX, SizeY, UseAlphaChannel); }
-		//! SetDrawScreen ‚Å•`‰æ‘ÎÛ‚É‚Å‚«‚éƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! SetDrawScreen ã§æç”»å¯¾è±¡ã«ã§ãã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline screen MakeScreen(const sizei& size, bool UseAlphaChannel = false)DXLE_NOEXCEPT_OR_NOTHROW { return screen::MakeScreen(size.width, size.height, UseAlphaChannel); }
-		//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d DerivationGraph(int SrcX, int SrcY, int Width, int Height, const texture2d& SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW{ return texture2d::DerivationGraph(SrcX, SrcY, Width, Height, SrcGraphHandle); }
-		//! w’è‚ÌƒOƒ‰ƒtƒBƒbƒN‚Ìw’è•”•ª‚¾‚¯‚ğ”²‚«o‚µ‚ÄV‚½‚ÈƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! æŒ‡å®šã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®æŒ‡å®šéƒ¨åˆ†ã ã‘ã‚’æŠœãå‡ºã—ã¦æ–°ãŸãªã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d DerivationGraph(const pointi& src, const sizei& size, const texture2d& SrcGraphHandle)DXLE_NOEXCEPT_OR_NOTHROW{ return texture2d::DerivationGraph(src.x, src.y, size.width, size.height, SrcGraphHandle); }
 
-		// ‰æ‘œ‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚éŠÖ”
+		// ç”»åƒã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹é–¢æ•°
 
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d LoadBmpToGraph(const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadBmpToGraph(FileName, TextureFlag, ReverseFlag, SurfaceMode); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d LoadBmpToGraph(const tstring& FileName, int TextureFlag, int ReverseFlag, int SurfaceMode = DX_MOVIESURFACE_NORMAL)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadBmpToGraph(FileName.c_str(), TextureFlag, ReverseFlag, SurfaceMode); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d LoadGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadGraph(FileName, NotUse3DFlag); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d LoadGraph(const tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadGraph(FileName.c_str(), NotUse3DFlag); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ”½“]‚µ‚½‚à‚Ì‚ÅƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åè»¢ã—ãŸã‚‚ã®ã§ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d LoadReverseGraph(const TCHAR *FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadReverseGraph(FileName, NotUse3DFlag); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ”½“]‚µ‚½‚à‚Ì‚ÅƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åè»¢ã—ãŸã‚‚ã®ã§ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d LoadReverseGraph(const tstring& FileName, bool NotUse3DFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::LoadReverseGraph(FileName.c_str(), NotUse3DFlag); }
 
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ•ªŠ„‚µ‚ÄƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆ†å‰²ã—ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹
 		inline derivative_texture2d LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ•ªŠ„‚µ‚ÄƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆ†å‰²ã—ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹
 		inline derivative_texture2d LoadDivGraph(const std::string& FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false);
 
-		//! ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromMem(RGBFileImage, RGBFileImageSize, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
-		//! ƒƒ‚ƒŠã‚Ì‰æ‘œƒCƒ[ƒW‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ç”»åƒã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromMem(const void *RGBFileImage, int RGBFileImageSize, texture2d& GrHandle, const void *AlphaFileImage = nullptr, int AlphaFileImageSize = 0, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraphFromMem(RGBFileImage, RGBFileImageSize, GrHandle, AlphaFileImage, AlphaFileImageSize, TextureFlag, ReverseFlag); }
 
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒTƒCƒY‚ğŠ„‚èo‚µA‚»‚ê‚É‡‚Á‚½ƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚µã‚¤ã‚ºã‚’å‰²ã‚Šå‡ºã—ã€ãã‚Œã«åˆã£ãŸã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateDXGraph(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateDXGraph(RgbBaseImage, AlphaBaseImage, TextureFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromGraphImage(RgbBaseImage, TextureFlag, ReverseFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, TextureFlag, ReverseFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, texture2d& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraphFromGraphImage(RgbBaseImage, GrHandle, TextureFlag, ReverseFlag); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚Éƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromGraphImage(const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, texture2d& GrHandle, bool TextureFlag = true, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraphFromGraphImage(RgbBaseImage, AlphaBaseImage, GrHandle, TextureFlag, ReverseFlag); }
 
-		//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraph(int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture2d& GrHandle = texture2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraph(Width, Height, Pitch, RGBImage, AlphaImage, GrHandle); }
-		//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraph(const sizei& size, int Pitch, const void *RGBImage, const void *AlphaImage = nullptr, const texture2d& GrHandle = texture2d())DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraph(size.width, size.height, Pitch, RGBImage, AlphaImage, GrHandle); }
-		//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğÄì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å†ä½œæˆã™ã‚‹
 		inline int ReCreateGraph(int Width, int Height, int Pitch, const void *RGBImage, texture2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraph(Width, Height, Pitch, RGBImage, GrHandle, AlphaImage); }
-		//! ƒƒ‚ƒŠã‚Ìƒrƒbƒgƒ}ƒbƒvƒCƒ[ƒW‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğÄì¬‚·‚é
+		//! ãƒ¡ãƒ¢ãƒªä¸Šã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚¤ãƒ¡ãƒ¼ã‚¸ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’å†ä½œæˆã™ã‚‹
 		inline int ReCreateGraph(const sizei& size, int Pitch, const void *RGBImage, texture2d& GrHandle, const void *AlphaImage = nullptr)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraph(size.width, size.height, Pitch, RGBImage, GrHandle, AlphaImage); }
 #ifndef DX_NON_SOFTIMAGE
 #endif // DX_NON_SOFTIMAGE
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraphFromBaseImage(const DxLib::BASEIMAGE *BaseImage)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromBaseImage(BaseImage); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄƒOƒ‰ƒtƒBƒbƒN‚ğì¬‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹
 		inline texture2d CreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, const pointi& p, const sizei& size)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::CreateGraphFromRectBaseImage(BaseImage, p.x, p.y, size.width, size.height); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚©‚çŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromBaseImage(const DxLib::BASEIMAGE *BaseImage, texture2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraphFromBaseImage(BaseImage, GrHandle); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, texture2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraphFromRectBaseImage(BaseImage, x, y, SizeX, SizeY, GrHandle); }
-		//! Šî–{ƒCƒ[ƒWƒf[ƒ^‚Ìw’è‚Ì—Ìˆæ‚ğg‚Á‚ÄŠù‘¶‚ÌƒOƒ‰ƒtƒBƒbƒN‚É‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! åŸºæœ¬ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã®æŒ‡å®šã®é ˜åŸŸã‚’ä½¿ã£ã¦æ—¢å­˜ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã«ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReCreateGraphFromRectBaseImage(const DxLib::BASEIMAGE *BaseImage, const pointi& p, const sizei& size, texture2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReCreateGraphFromRectBaseImage(BaseImage, p.x, p.y, size.width, size.height, GrHandle); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚Ö‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã¸ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReloadGraph(const TCHAR *FileName, texture2d& GrHandle, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReloadGraph(FileName, GrHandle, ReverseFlag); }
-		//! ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒOƒ‰ƒtƒBƒbƒN‚Ö‰æ‘œƒf[ƒ^‚ğ“]‘—‚·‚é
+		//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã¸ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’è»¢é€ã™ã‚‹
 		inline int ReloadGraph(const tstring& FileName, texture2d& GrHandle, bool ReverseFlag = false)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReloadGraph(FileName.c_str(), GrHandle, ReverseFlag); }
-		//! ReloadGraph ‚Ì‰æ‘œ”½“]ˆ—’Ç‰Á”Å
+		//! ReloadGraph ã®ç”»åƒåè»¢å‡¦ç†è¿½åŠ ç‰ˆ
 		inline int ReloadReverseGraph(const TCHAR *FileName, texture2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReloadReverseGraph(FileName, GrHandle); }
-		//! ReloadGraph ‚Ì‰æ‘œ”½“]ˆ—’Ç‰Á”Å
+		//! ReloadGraph ã®ç”»åƒåè»¢å‡¦ç†è¿½åŠ ç‰ˆ
 		inline int ReloadReverseGraph(const tstring& FileName, texture2d& GrHandle)DXLE_NOEXCEPT_OR_NOTHROW { return texture2d::ReloadReverseGraph(FileName.c_str(), GrHandle); }
 
 

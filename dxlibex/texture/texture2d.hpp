@@ -1,4 +1,4 @@
-/*=============================================================================
+ï»¿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -14,18 +14,18 @@
 #include "texture2d.h"
 #include "dxlibex/basic_types.hpp"
 
-//--------------------À‘•--------------------//
+//--------------------å®Ÿè£…--------------------//
 
 namespace dxle
 {
-	//! 2DƒOƒ‰ƒtƒBƒbƒN
+	//! 2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 	namespace graph2d
 	{
 
 		namespace gr_impl
 		{
 			template<typename BuffT, typename OutFunc>
-			//! ‰æ‘œƒtƒ@ƒCƒ‹‚ğ•ªŠ„‚µ‚ÄƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğì¬‚·‚é
+			//! ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆ†å‰²ã—ã¦ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’ä½œæˆã™ã‚‹
 			inline void LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 			{
 				DxLib::LoadDivGraph(FileName, AllNum, Num.width, Num.height, Size.width, Size.height, HandleBuf, NotUse3DFlag);
@@ -54,7 +54,7 @@ namespace dxle
 			return std::make_unique<texture2d>(this->DerivationGraph({ 0, 0 }, size()));
 		}
 
-		//! ƒOƒ‰ƒtƒBƒbƒN‚ª‰æ‘œƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ü‚ê‚Ä‚¢‚½ê‡A‚»‚Ì‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾‚·‚é
+		//! ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãŒç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãã®ç”»åƒã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—ã™ã‚‹
 		inline tstring texture2d::GetGraphFilePath()const {
 			tstring buf;
 			buf.resize(2048);
@@ -138,14 +138,14 @@ namespace dxle
 
 		template<size_t N>
 		inline static_derivative_texture2d<N>::static_derivative_texture2d(static_derivative_texture2d&& other)DXLE_NOEXCEPT_OR_NOTHROW
-			//: textures(std::move(other.textures))//VS2013‚ÍmoveƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÌˆÃ–Ù‚Ì’è‹`‚É‘Î‰‚µ‚Ä‚¢‚È‚¢
+			//: textures(std::move(other.textures))//VS2013ã¯moveã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®æš—é»™ã®å®šç¾©ã«å¯¾å¿œã—ã¦ã„ãªã„
 		{
 			std::move(std::begin(other.textures), std::end(other.textures), std::begin(textures));
 		}
 			template<size_t N>
 		inline static_derivative_texture2d<N>& static_derivative_texture2d<N>::operator=(static_derivative_texture2d&& other)DXLE_NOEXCEPT_OR_NOTHROW
 		{
-			//textures = std::move(other.textures);//VS2013‚Ímove‘ã“ü‰‰Zq‚ÌˆÃ–Ù‚Ì’è‹`‚É‘Î‰‚µ‚Ä‚¢‚È‚¢
+			//textures = std::move(other.textures);//VS2013ã¯moveä»£å…¥æ¼”ç®—å­ã®æš—é»™ã®å®šç¾©ã«å¯¾å¿œã—ã¦ã„ãªã„
 			std::move(std::begin(other.textures), std::end(other.textures), std::begin(textures));
 		}
 		template<size_t N>
@@ -222,7 +222,7 @@ namespace dxle
 		}
 
 
-	//--------------------¶¬—pŠÖ”--------------------//
+	//--------------------ç”Ÿæˆç”¨é–¢æ•°--------------------//
 
 		inline derivative_texture2d LoadDivGraph(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{

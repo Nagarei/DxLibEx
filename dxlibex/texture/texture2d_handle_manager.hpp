@@ -1,4 +1,4 @@
-/*=============================================================================
+ï»¿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -14,11 +14,11 @@
 #include "prototype2d.h"
 #include "dxlibex/Helper.h"
 
-//----------2DƒOƒ‰ƒtƒBƒbƒN----------//
+//----------2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯----------//
 
 namespace dxle
 {
-//! 2DƒOƒ‰ƒtƒBƒbƒN
+//! 2Dã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯
 namespace graph2d
 {
 	namespace gr_impl
@@ -39,16 +39,16 @@ namespace graph2d
 		{
 		public:
 			simple_graph_handle_manager() {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			simple_graph_handle_manager(const simple_graph_handle_manager& other) = delete;
 			simple_graph_handle_manager& operator=(const simple_graph_handle_manager& other) = delete;
-			//!Š—LŒ ‚Ì÷“n
+			//!æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			simple_graph_handle_manager(simple_graph_handle_manager&& other) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)), NotUse3DFlag(std::move(other.NotUse3DFlag)) {}
 			simple_graph_handle_manager& operator=(simple_graph_handle_manager&& other) DXLE_NOEXCEPT_OR_NOTHROW{ Unique_HandledObject_Bace::operator=(std::move(other)); NotUse3DFlag = (std::move(other.NotUse3DFlag)); return *this; }
 
 			int get_handle()const override{ return Unique_HandledObject_Bace::GetHandle(); }
 
-			//!\~japanese ‰æ‘œ‚ğíœ‚·‚é
+			//!\~japanese ç”»åƒã‚’å‰Šé™¤ã™ã‚‹
 			//!\~english  Delete this image
 			inline void delete_this(bool LogOutFlag = false) { DxLib::DeleteGraph(GetHandle(), LogOutFlag); }
 		private:
@@ -64,16 +64,16 @@ namespace graph2d
 		{
 		public:
 			screen_handle_manager() {}
-			//! ƒRƒs[‹Ö~
+			//! ã‚³ãƒ”ãƒ¼ç¦æ­¢
 			screen_handle_manager(const screen_handle_manager& other) = delete;
 			screen_handle_manager& operator=(const screen_handle_manager& other) = delete;
-			//!Š—LŒ ‚Ì÷“n
+			//!æ‰€æœ‰æ¨©ã®è­²æ¸¡
 			screen_handle_manager(screen_handle_manager&& other) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)), UseAlphaChannel(std::move(other.UseAlphaChannel)) {}
 			screen_handle_manager& operator=(screen_handle_manager&& other) DXLE_NOEXCEPT_OR_NOTHROW{ Unique_HandledObject_Bace::operator=(std::move(other)); UseAlphaChannel = (std::move(other.UseAlphaChannel)); return *this; }
 
 			int get_handle()const override{ return Unique_HandledObject_Bace::GetHandle(); }
 
-			//!\~japanese ‰æ‘œ‚ğíœ‚·‚é
+			//!\~japanese ç”»åƒã‚’å‰Šé™¤ã™ã‚‹
 			//!\~english  Delete this image
 			inline void delete_this(bool LogOutFlag = false) { DxLib::DeleteGraph(GetHandle(), LogOutFlag); }
 		private:
