@@ -52,6 +52,10 @@
     <ClInclude Include="dxlibex\math\isnan.hpp" />
     <ClInclude Include="dxlibex\Sound.h" />
     <ClInclude Include="dxlibex\structs.h" />
+    <ClInclude Include="dxlibex\texture\prototype2d.h" />
+    <ClInclude Include="dxlibex\texture\texture2d.h" />
+    <ClInclude Include="dxlibex\texture\texture2d.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d_handle_manager.hpp" />
     <ClInclude Include="dxlibex\thread.h" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
     <ClInclude Include="dxlibex\type_traits\common_type.hpp" />
