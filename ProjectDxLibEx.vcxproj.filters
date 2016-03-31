@@ -197,5 +197,11 @@
     <ClInclude Include="dxlibex\texture\texture2d_handle_manager.hpp">
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
+    <ClInclude Include="dxlibex\texture\animation_graph.h">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\dxle_time.h">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

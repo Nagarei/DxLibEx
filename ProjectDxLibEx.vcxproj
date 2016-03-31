@@ -39,6 +39,7 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
+    <ClInclude Include="dxlibex\dxle_time.h" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
     <ClInclude Include="dxlibex\DxLibWrap.h" />
     <ClInclude Include="dxlibex\Graph2D.h" />
@@ -52,6 +53,7 @@
     <ClInclude Include="dxlibex\math\isnan.hpp" />
     <ClInclude Include="dxlibex\Sound.h" />
     <ClInclude Include="dxlibex\structs.h" />
+    <ClInclude Include="dxlibex\texture\animation_graph.h" />
     <ClInclude Include="dxlibex\texture\prototype2d.h" />
     <ClInclude Include="dxlibex\texture\texture2d.h" />
     <ClInclude Include="dxlibex\texture\texture2d.hpp" />

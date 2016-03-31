@@ -315,11 +315,13 @@ namespace dxle
 			//ユーザーが継承するのを防止するためprotectedではなくfriendを使う
 
 			friend screen;
+			friend animation_graph;
 
 			//実装用
 
-			 template<typename BuffT, typename OutFunc>
-			 friend void gr_impl::LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag);
+			template<typename BuffT, typename OutFunc>
+			friend void gr_impl::LoadDivGraph_impl(OutFunc&& out_func, BuffT* HandleBuf, const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag);
+			friend gr_impl::texture2d_handle_manager;
 		};
 		
 		//! 描画可能画像クラス
