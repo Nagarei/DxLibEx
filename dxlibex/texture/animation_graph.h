@@ -12,6 +12,7 @@
 #include <iterator>
 #include <vector>
 #include <mutex>
+#include <functional>
 #include "DxLib.h"
 #include "texture2d.h"
 #include "dxlibex/dxle_time.h"
@@ -27,19 +28,27 @@ namespace dxle
 			class animation_handle_manager : public texture2d_handle_manager
 			{
 			public:
-				int get_handle()const override{ DXLE_GET_LOCK(counter_mtx); return texture2d_handle_manager::GetTextureRawHandle(graphs[counter.get() % graphs.size()]); }
+				//int get_handle()const override{ DXLE_GET_LOCK(counter_mtx); return texture2d_handle_manager::GetTextureRawHandle(graphs[counter.get() % graphs.size()]); }
+				int get_handle()const override{ DXLE_GET_LOCK(counter_mtx); return texture2d_handle_manager::GetTextureRawHandle(get_graph_func(counter.get())); }
 
 			private:
 				mutable time::counter counter;
-				std::vector<texture2d> graphs;
+				//std::vector<texture2d> graphs;
+				std::function<texture2d&(size_t)> get_graph_func;
 #ifdef DX_THREAD_SAFE
 				mutable std::mutex counter_mtx;
 #endif
 
-				animation_handle_manager(time::counter&& counter, std::vector<texture2d>&& graphs)
-					: counter(std::move(counter))
-					, graphs(std::move(graphs))
-				{}
+				//animation_handle_manager(time::counter&& counter, std::vector<texture2d>&& graphs)
+				//	: counter(std::move(counter))
+				//	, graphs(std::move(graphs))
+				//{}
+				animation_handle_manager(time::counter&& counter_, std::function<texture2d&(size_t)>&& get_graph_func_)
+					: counter(std::move(counter_))
+					, get_graph_func(std::move(get_graph_func_))
+				{
+					counter.start();
+				}
 				friend animation_graph;
 				template<typename... T> static inline std::unique_ptr<texture2d_handle_manager> get_unique(T&&... Args){
 					return std::unique_ptr<texture2d_handle_manager>(new animation_handle_manager(std::forward<T>(Args)...));
@@ -49,10 +58,14 @@ namespace dxle
 		class animation_graph final : public texture2d
 		{
 		public:
-			animation_graph(time::counter counter, derivative_texture2d&& graphs);
-			animation_graph(time::counter counter, std::vector<texture2d> graphs)
-				: texture2d(gr_impl::animation_handle_manager::get_unique(std::move(counter), std::move(graphs)))
+			//animation_graph(time::counter counter, derivative_texture2d&& graphs);
+			//animation_graph(time::counter counter, std::vector<texture2d> graphs)
+			//	: texture2d(gr_impl::animation_handle_manager::get_unique(std::move(counter), std::move(graphs)))
+			//{}
+			animation_graph(time::counter counter, std::function<texture2d&(size_t)> get_graph_func)
+				: texture2d(gr_impl::animation_handle_manager::get_unique(std::move(counter), std::move(get_graph_func)))
 			{}
+
 			//! コピー禁止
 			animation_graph(const screen& other) = delete;
 			//!所有権の譲渡
@@ -79,17 +92,18 @@ namespace dxle
 			static std::vector<texture2d> cast_to_vector(derivative_texture2d&&);
 		};
 
-		inline animation_graph::animation_graph(time::counter counter, derivative_texture2d&& graphs)
-			:animation_graph(std::move(counter), cast_to_vector(std::move(graphs)))
-		{}
+		//inline animation_graph::animation_graph(time::counter counter, derivative_texture2d&& graphs)
+		//	:animation_graph(std::move(counter), cast_to_vector(std::move(graphs)))
+		//{}
 		inline std::unique_ptr<animation_graph> animation_graph::cloneAni()const
 		{
 			auto hm_ptr = static_cast<gr_impl::animation_handle_manager*>(handle_manager.get());
-			std::vector<texture2d> temp_graphs;
-			for (auto& i : hm_ptr->graphs){
-				temp_graphs.emplace_back(std::move(*i.clone()));
-			}
-			return std::make_unique<animation_graph>(hm_ptr->counter, std::move(temp_graphs));
+			//std::vector<texture2d> temp_graphs;
+			//for (auto& i : hm_ptr->graphs){
+			//	temp_graphs.emplace_back(std::move(*i.clone()));
+			//}
+			//return std::make_unique<animation_graph>(hm_ptr->counter, std::move(temp_graphs));
+			return std::make_unique<animation_graph>(hm_ptr->counter, hm_ptr->get_graph_func);
 		}
 		inline std::vector<texture2d> animation_graph::cast_to_vector(derivative_texture2d&& div_texture)
 		{

@@ -86,8 +86,8 @@ namespace dxle
 		class counter
 		{
 		public:
-			template<typename timing_maker_T, enable_if_t<std::is_base_of<timing_maker::timing_maker_bace, typename std::remove_reference<timing_maker_T>::type>::value, nullptr_t> = nullptr>
-			explicit counter(timing_maker_T&& timing_maker);
+			template<typename timing_maker_T, typename std::enable_if<std::is_base_of<timing_maker::timing_maker_bace, typename std::remove_reference<timing_maker_T>::type>::value, nullptr_t>::type = nullptr>
+			counter(timing_maker_T&& timing_maker);
 
 			counter(const counter& other);
 			counter(counter&& other);
@@ -154,7 +154,7 @@ namespace dxle
 
 	//----------counter----------//
 
-		template<typename timing_maker_T, enable_if_t<std::is_base_of<timing_maker::timing_maker_bace, typename std::remove_reference<timing_maker_T>::type>::value, nullptr_t >>
+		template<typename timing_maker_T, typename std::enable_if<std::is_base_of<timing_maker::timing_maker_bace, typename std::remove_reference<timing_maker_T>::type>::value, nullptr_t >::type>
 		inline counter::counter(timing_maker_T&& timing_maker)
 			: count(0)
 			, timing(std::forward<timing_maker_T>(timing_maker).make_timing())
