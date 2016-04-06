@@ -71,30 +71,42 @@ namespace dxle
 					return std::unique_ptr<texture2d_handle_manager>(new this_T(std::forward<Args>(args)...));
 				}
 			};
-			template<typename Cont_value_T>
-			class animation_handle_manager<std::reference_wrapper<Cont_value_T>> : public animation_handle_manager_bace
-			{
-			public:
-				int get_handle()const override { DXLE_GET_LOCK(counter_mtx); return texture2d_handle_manager::GetTextureRawHandle(graphs.get()[counter.get() % graphs.get().size()]); }
-
-			private:
-				using Cont = std::reference_wrapper<Cont_value_T>;
-				using this_T = animation_handle_manager<std::reference_wrapper<Cont_value_T>>;
-				typename std::remove_reference<Cont>::type graphs;
-
-				animation_handle_manager(time::counter&& counter, Cont&& graphs)
-					: animation_handle_manager_bace(std::move(counter))
-					, graphs(std::move(graphs))
-				{}
-				std::unique_ptr<texture2d_handle_manager> clone() override
-				{
-					return get_unique(*this);
-				}
-				friend animation_graph;
-				template<typename... Args> static inline std::unique_ptr<texture2d_handle_manager> get_unique(Args&&... args) {
-					return std::unique_ptr<texture2d_handle_manager>(new this_T(std::forward<Args>(args)...));
-				}
-			};
+#ifdef DXLE_TEMP_IMPL_MAKE_ANI_HM
+			static_assert(false, "");
+#endif
+#define DXLE_TEMP_IMPL_MAKE_ANI_HM(template_param, specialization, size)\
+			template<template_param>\
+			class animation_handle_manager<std::reference_wrapper<specialization>> : public animation_handle_manager_bace\
+			{\
+			public:\
+				int get_handle()const override\
+				{\
+					DXLE_GET_LOCK(counter_mtx);\
+					return texture2d_handle_manager::GetTextureRawHandle(graphs.get()[counter.get() % size]);\
+				}\
+			private:\
+				using Cont = std::reference_wrapper<specialization>;\
+				using this_T = animation_handle_manager<Cont>;\
+				typename std::remove_reference<Cont>::type graphs;\
+				animation_handle_manager(time::counter&& counter, Cont&& graphs)\
+					: animation_handle_manager_bace(std::move(counter))\
+					, graphs(std::move(graphs))\
+				{}\
+				std::unique_ptr<texture2d_handle_manager> clone() override\
+				{\
+					return get_unique(*this);\
+				}\
+				friend animation_graph;\
+				template<typename... Args> static inline std::unique_ptr<texture2d_handle_manager> get_unique(Args&&... args) {\
+					return std::unique_ptr<texture2d_handle_manager>(new this_T(std::forward<Args>(args)...));\
+				}\
+			}
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(typename Cont_value_T, Cont_value_T, graphs.get().size());
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, dxle::texture2d[N], N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, const dxle::texture2d[N], N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, volatile dxle::texture2d[N], N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, const volatile dxle::texture2d[N], N);
+#undef DXLE_TEMP_IMPL_MAKE_ANI_HM
 		}
 		class animation_graph final : public texture2d
 		{
