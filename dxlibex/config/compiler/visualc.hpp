@@ -8,32 +8,39 @@
 #ifndef DXLE_INC_CONFIG_COMPILER_VISUALC_HPP_
 #define DXLE_INC_CONFIG_COMPILER_VISUALC_HPP_
 
+/*
+C++11
+*/
 #if _MSC_FULL_VER < 190023506//Visual Studio 2015 Update 1
-#define DXLE_NO_CXX11_CONSTEXPR_CLASS
+#	define DXLE_NO_CXX11_CONSTEXPR_CLASS
 #endif
+
 #if _MSC_FULL_VER < 190023026//Visual Studio 2015
 #	define DXLE_NO_CXX11_CONSTEXPR
 #	define DXLE_NO_CXX11_NOEXCEPT_EXPRESSION
 #	define DXLE_NO_CXX11_USER_DEFINED_LITERALS
 #	define DXLE_NO_CXX11_UNICODE_LITERALS
+#	define DXLE_NO_CXX11_ATTRIBUTES
 #endif
-#if (_MSC_VER < 1900) || (_MSC_FULL_VER == 180021114)//Visual Studio 2013 Nobemver CTP or Visual Studio2015 or later
+#if (_MSC_VER < 1900) && (_MSC_FULL_VER != 180021114)//Visual Studio 2013 Nobemver CTP or Visual Studio2015 or later
 #	define DXLE_NO_CXX11_NOEXCEPT
+#	define DXLE_NO_CXX11_REF_QUALIFIERS
 #endif
-#define DXLE_NO_CXX11_ATTRIBUTES
 
+/*
+C++14
+*/
 #if !defined(__cpp_constexpr) || (__cpp_constexpr < 201304)
 #  define DXLE_NO_CXX14_CONSTEXPR
 #endif
-#if !defined(__cpp_variable_templates) || (__cpp_variable_templates < 201304)
+
+#if _MSC_FULL_VER < 190023824//Visual Studio 2015 Update2 RC
 #  define DXLE_NO_CXX14_VARIABLE_TEMPLATES
 #endif
 
-#ifndef __cpp_user_defined_literals
-#define DXLE_NO_CXX11_USER_DEFINED_LITERALS
-#endif
-#if _MSC_VER == 1900
-#undef DXLE_NO_CXX11_USER_DEFINED_LITERALS
+#if _MSC_FULL_VER < 190023026//Visual Studio 2015
+#	define DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED
+#	define DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO
 #endif
 
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_VISUALC_HPP_
