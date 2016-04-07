@@ -107,13 +107,11 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <TargetName>$(ProjectName)_$(DefaultPlatformToolset)_$(CharacterSet)_$(PlatformTarget)_d</TargetName>
     <OutDir>$(SolutionDir)dxlibex\</OutDir>
-    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>$(ProjectName)_$(DefaultPlatformToolset)_$(CharacterSet)_$(PlatformTarget)_r</TargetName>
     <OutDir>$(SolutionDir)dxlibex\</OutDir>
-    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
