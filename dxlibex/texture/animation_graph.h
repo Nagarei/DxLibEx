@@ -42,7 +42,7 @@ namespace dxle
 				virtual std::unique_ptr<texture2d_handle_manager> clone() = 0;
 			};
 			template<typename Cont>
-			class animation_handle_manager : public animation_handle_manager_bace
+			class animation_handle_manager final : public animation_handle_manager_bace
 			{
 			public:
 				int get_handle()const override { DXLE_GET_LOCK(counter_mtx); return texture2d_handle_manager::GetTextureRawHandle(graphs[counter.get() % graphs.size()]); }
@@ -76,7 +76,7 @@ namespace dxle
 #endif
 #define DXLE_TEMP_IMPL_MAKE_ANI_HM(template_param, specialization, size)\
 			template<template_param>\
-			class animation_handle_manager<std::reference_wrapper<specialization>> : public animation_handle_manager_bace\
+			class animation_handle_manager<specialization> final : public animation_handle_manager_bace\
 			{\
 			public:\
 				int get_handle()const override\
@@ -85,7 +85,7 @@ namespace dxle
 					return texture2d_handle_manager::GetTextureRawHandle(graphs.get()[counter.get() % size]);\
 				}\
 			private:\
-				using Cont = std::reference_wrapper<specialization>;\
+				using Cont = specialization;\
 				using this_T = animation_handle_manager<Cont>;\
 				typename std::remove_reference<Cont>::type graphs;\
 				animation_handle_manager(time::counter&& counter, Cont&& graphs)\
@@ -101,19 +101,61 @@ namespace dxle
 					return std::unique_ptr<texture2d_handle_manager>(new this_T(std::forward<Args>(args)...));\
 				}\
 			}
-			DXLE_TEMP_IMPL_MAKE_ANI_HM(typename Cont_value_T, Cont_value_T, graphs.get().size());
-			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, dxle::texture2d[N], N);
-			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, const dxle::texture2d[N], N);
-			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, volatile dxle::texture2d[N], N);
-			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, const volatile dxle::texture2d[N], N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(typename Cont_value_T, std::reference_wrapper<Cont_value_T>, graphs.get().size());
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, std::reference_wrapper<dxle::texture2d[N]>, N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, std::reference_wrapper<const dxle::texture2d[N]>, N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, std::reference_wrapper<volatile dxle::texture2d[N]>, N);
+			DXLE_TEMP_IMPL_MAKE_ANI_HM(size_t N, std::reference_wrapper<const volatile dxle::texture2d[N]>, N);
 #undef DXLE_TEMP_IMPL_MAKE_ANI_HM
+
+			template<typename Cont>
+			class cont_wrapper_with_size final
+			{
+			public:
+				const texture2d& operator[](size_t i)const{ return graphs[i]; }
+				size_t size()const DXLE_NOEXCEPT_OR_NOTHROW{ return size_; }
+				cont_wrapper_with_size(Cont&& graphs, size_t size)
+					: graphs(std::forward<Cont>(graphs))
+					, size_(size)
+				{}
+			private:
+				typename std::remove_reference<Cont>::type graphs;
+				size_t size_;
+			};
+			template<typename Cont>
+			class cont_wrapper_with_size<std::reference_wrapper<Cont>>final
+			{
+			public:
+				const texture2d& operator[](size_t i)const{ return (graphs.get())[i]; }
+				size_t size()const DXLE_NOEXCEPT_OR_NOTHROW{ return size_; }
+				cont_wrapper_with_size(std::reference_wrapper<Cont>&& graphs, size_t size)
+					: graphs(std::move(graphs))
+					, size_(size)
+				{}
+			private:
+				std::reference_wrapper<Cont> graphs;
+				size_t size_;
+			};
 		}
 		class animation_graph final : public texture2d
 		{
 		public:
 			template<typename Cont>
+			//! @param graphs アニメーションする画像(dxle::texture2dのコンテナ)
+			//! @param graphs 要件：graphs[i]およびgraphs.size()が可能であるorそのようなgraphsへのstd::reference_wrapperであること
 			animation_graph(time::counter counter, Cont graphs)
 				: texture2d(gr_impl::animation_handle_manager<Cont>::get_unique(std::move(counter), std::move(graphs)))
+			{}
+			template<size_t N>
+			//! @param graphs アニメーションする画像(dxle::texture2dのコンテナ)
+			animation_graph(time::counter counter, const texture2d(&graphs)[N])
+				: animation_graph(counter, graphs, N)
+			{}
+			template<typename Cont>
+			//! @param graphs アニメーションする画像(dxle::texture2dのコンテナ)
+			//! @param graphs 要件：graphs[i]が可能であるorそのようなgraphsへのstd::reference_wrapperであること
+			animation_graph(time::counter counter, Cont graphs, size_t size)
+				: texture2d(gr_impl::animation_handle_manager<gr_impl::cont_wrapper_with_size<Cont>>::get_unique(std::move(counter), gr_impl::cont_wrapper_with_size<Cont>(std::move(graphs), size)))
 			{}
 
 			//! コピー禁止
@@ -132,6 +174,7 @@ namespace dxle
 
 			void start(void);
 			void stop(void);
+			bool is_stop(void);
 			void reset_pass_time(std::chrono::milliseconds = std::chrono::milliseconds{ 0 });
 			std::chrono::milliseconds get_pass_time();
 
@@ -166,6 +209,10 @@ namespace dxle
 		inline void animation_graph::stop(void)
 		{
 			static_cast<gr_impl::animation_handle_manager_bace*>(handle_manager.get())->counter.stop();
+		}
+		inline bool animation_graph::is_stop(void)
+		{
+			return static_cast<gr_impl::animation_handle_manager_bace*>(handle_manager.get())->counter.is_stop();
 		}
 		inline void animation_graph::reset_pass_time(std::chrono::milliseconds new_pass_time)
 		{

@@ -23,23 +23,25 @@ namespace dxle
 	namespace time
 	{
 
-		class timer{
+		class timer {
 		public:
 			timer();
 
 			void start(void);
 			void stop(void);
+			bool is_stop(void);
 			void reset(std::chrono::milliseconds = std::chrono::milliseconds{ 0 });
 
 			std::chrono::milliseconds get_pass_time();
 		private:
 			int old_time;
-			bool is_stop;
+			bool is_stop_;
 			std::chrono::milliseconds pass_time;
 
 			void update();
 		};
 
+		//! for constructor of timer::counter
 		namespace timing_maker
 		{
 			struct timing_maker_bace
@@ -49,8 +51,9 @@ namespace dxle
 			class count_per_second : public timing_maker_bace
 			{
 			public:
-				count_per_second(size_t count, std::chrono::milliseconds second = std::chrono::milliseconds(1000))
-					: timing(second / count)
+				//! \~japanese millisecond ミリ秒間に count 回counterをインクリメントする
+				count_per_second(size_t count, std::chrono::milliseconds millisecond = std::chrono::milliseconds(1000))
+					: timing(millisecond / count)
 				{}
 				std::vector<std::chrono::milliseconds> make_timing()const override
 				{
@@ -62,6 +65,7 @@ namespace dxle
 			class raw_timing : public timing_maker_bace
 			{
 			public:
+				//! \~japanese timing_[i] ミリ秒ごとにcounterをインクリメントする
 				raw_timing(std::vector<std::chrono::milliseconds> timing_)
 					: timing(std::move(timing_))
 				{}
@@ -70,11 +74,13 @@ namespace dxle
 					return timing;
 				}
 #if 0
+				std::vector<std::chrono::milliseconds> make_timing()const& override
+				{
+					return timing;
+				}
 				std::vector<std::chrono::milliseconds> make_timing() &&
 				{
-					//return std::move(timing);
-					std::vector temp(std::move(timing));
-					return temp;
+					return std::move(timing);
 				}
 #endif
 			private:
@@ -96,6 +102,7 @@ namespace dxle
 
 			void start(void);
 			void stop(void);
+			bool is_stop(void);
 			void reset_pass_time(std::chrono::milliseconds = std::chrono::milliseconds{ 0 });
 			std::chrono::milliseconds get_pass_time();
 
@@ -112,26 +119,57 @@ namespace dxle
 			void update();
 		};
 
+	}
+	using namespace time;
+}
+#ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
+namespace dxle
+{
+	namespace literals {
+		namespace time_literals {
 
+			time::timing_maker::count_per_second operator""_cps(unsigned long long int count_per_second)
+			{
+				return time::timing_maker::count_per_second{static_cast<size_t>(count_per_second)};
+			}
+
+		}
+		using namespace time_literals;
+	}
+	using namespace literals;
+
+	namespace time {
+		using namespace literals::time_literals;
+	}
+}
+#endif //#ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
+namespace dxle
+{
+	namespace time
+	{
 
 	//----------timer----------//
 
 		inline timer::timer()
 			: old_time(0)
-			, is_stop(true)
+			, is_stop_(true)
 			, pass_time(0)
 		{}
 		inline void timer::start(void)
 		{
-			if (is_stop == true){
-				is_stop = false;
+			if (is_stop_ == true){
+				is_stop_ = false;
 				old_time = DxLib::GetNowCount();
 			}
 		}
 		inline void timer::stop(void)
 		{
 			update();
-			is_stop = true;
+			is_stop_ = true;
+		}
+		inline bool timer::is_stop(void)
+		{
+			return is_stop_;
 		}
 		inline void timer::reset(std::chrono::milliseconds set_time)
 		{
@@ -145,7 +183,7 @@ namespace dxle
 		}
 		inline void timer::update()
 		{
-			if (is_stop == false){
+			if (is_stop_ == false){
 				int now_time = DxLib::GetNowCount();
 				pass_time += std::chrono::milliseconds((now_time - old_time) & INT_MAX);
 				old_time = now_time;
@@ -199,6 +237,10 @@ namespace dxle
 		inline void counter::stop(void)
 		{
 			timer_.stop();
+		}
+		inline bool counter::is_stop(void)
+		{
+			return timer_.is_stop();
 		}
 		inline void counter::reset_pass_time(std::chrono::milliseconds new_pass_time)
 		{
