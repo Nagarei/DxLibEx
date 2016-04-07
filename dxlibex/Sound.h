@@ -73,6 +73,12 @@ namespace dxle
 		class sound final : public impl::Unique_HandledObject_Bace < sound >
 		{
 		public:
+			//constant
+
+			DXLE_STATIC_CONSTEXPR uint8_t SOUNDBUFFER_MAX_CHANNEL_NUM = 8;//DxSound.hに定義あり
+
+			//ctor
+
 			sound()DXLE_NOEXCEPT_OR_NOTHROW = default;
 			sound(const sound& other) = delete;
 			sound(sound&& other)DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)){}
@@ -92,8 +98,9 @@ namespace dxle
 			static sound			LoadSoundMem2(const TCHAR *FileName1, const TCHAR *FileName2);											// 前奏部とループ部に分かれたサウンドファイルを読み込みサウンドハンドルを作成する
 			static sound			LoadBGM(const TCHAR *FileName);																	// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数
 
-			//extern	int			LoadSoundMemBase(const TCHAR *FileName, int BufferNum, int UnionHandle = -1);						// サウンドファイルからサウンドハンドルを作成する
-			static sound			LoadSoundMem(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1);						// LoadSoundMemBase の別名関数
+			static sound load_sound(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1) {
+
+			}
 
 			static sound			LoadSoundMemByMemImageBase(const void *FileImage, int FileImageSize, int BufferNum, int UnionHandle = -1);			// メモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する
 			static sound			LoadSoundMemByMemImage(const void *FileImage, int FileImageSize, int UnionHandle = -1);			// メモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する( バッファ数指定無し )
@@ -151,57 +158,57 @@ namespace dxle
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == re), "fail DxLib::CheckSoundMem().");
 				return 0 != re;
 			}
-			//!\~japanese サウンドハンドルのパンを設定する
+			//!\~japanese サウンドのパンを設定する
 			//!\~english  Set the pan of this sound.
 			template<typename T, typename Period>int set_pan(bel_c<T, Period> PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
 				const auto pan = bel_cast<myrio_bel>(PanPal).get();
 				assert(0 <= pan && pan <= 10000);
 				return DxLib::SetPanSoundMem(bel_cast<myrio_bel>(PanPal).get(), this->GetHandle());
 			}
-			//!\~japanese サウンドハンドルのパンを設定する
+			//!\~japanese サウンドのパンを設定する
 			//!\~english  Set the pan of this sound.
 			template<typename T, typename Period>void set_pan(bel_c<T, Period> PanPal) {
 				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((PanPal < 0_myrioB || 10000_myrioB < PanPal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_pan(PanPal, std::nothrow)), "fail DxLib::SetPanSoundMem().");
 			}
-			//!\~japanese サウンドハンドルのパンを設定する( -255 ～ 255 )
+			//!\~japanese サウンドのパンを設定する( -255 ～ 255 )
 			//!\~english  Set the pan of this sound.( -255 to 255 )
 			int change_pan(int16_t PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
 				assert(-255 <= PanPal && PanPal <= 255);
 				return DxLib::ChangePanSoundMem(PanPal, this->GetHandle());
 			}
-			//!\~japanese サウンドハンドルのパンを設定する( -255 ～ 255 )
+			//!\~japanese サウンドのパンを設定する( -255 ～ 255 )
 			//!\~english  Set the pan of this sound.( -255 to 255 )
 			void change_pan(int16_t PanPal) {
 				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((PanPal < -255 || 255 < PanPal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_pan(PanPal, std::nothrow)), "fail DxLib::ChangePanSoundMem().");
 			}
-			//!\~japanese サウンドハンドルのパンを取得する
+			//!\~japanese サウンドのパンを取得する
 			//!\~english  Get the pan of this sound.
 			myrio_bel get_pan(std::nothrow_t) {
 				return myrio_bel(DxLib::GetPanSoundMem(this->GetHandle()));
 			}
-			//!\~japanese サウンドハンドルのパンを取得する
+			//!\~japanese サウンドのパンを取得する
 			//!\~english  Get the pan of this sound.
 			myrio_bel get_pan() {
 				const auto re = this->get_pan(std::nothrow);
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetPanSoundMem().");
 				return re;
 			}
-			//!\~japanese サウンドハンドルのボリュームを設定する
+			//!\~japanese サウンドのボリュームを設定する
 			//!\~english  Set sound volume.
 			template<typename T, typename Period>int set_volume(bel_c<T, Period> VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
-				const auto volume = bel_cast<myrio_bel>(PanPal).get();
+				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
 				assert(0 <= volume && volume <= 10000);
 				return DxLib::SetVolumeSoundMem(volume, this->GetHandle());
 			}
-			//!\~japanese サウンドハンドルのボリュームを設定する
+			//!\~japanese サウンドのボリュームを設定する
 			//!\~english  Set sound volume.
 			template<typename T, typename Period>void set_volume(bel_c<T, Period> VolumePal) {
 				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < 0_myrioB || 10000_myrioB < VolumePal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(VolumePal, std::nothrow)), "fail DxLib::SetVolumeSoundMem().");
 			}
-			//!\~japanese サウンドハンドルのボリュームを設定する( 0 ～ 255 )
+			//!\~japanese サウンドのボリュームを設定する( 0 ～ 255 )
 			//!\~english  Set sound volume( 0 to 255 ).
 			int change_volume(uint8_t VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
 				return DxLib::ChangeVolumeSoundMem(VolumePal, this->GetHandle());
@@ -221,7 +228,20 @@ namespace dxle
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetVolumeSoundMem().");
 				return re;
 			}
-			int set_volume(int Channel, int VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
+			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
+			//!\~english  Set the volume of specified chanel of sound.
+			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
+				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
+				assert(0 <= volume && volume <= 10000);
+				return DxLib::SetChannelVolumeSoundMem(Channel, volume, this->GetHandle());
+			}
+			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
+			//!\~english  Set the volume of specified chanel of sound.
+			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal) {
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel || VolumePal < 0_myrioB || 10000_myrioB < VolumePal), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::SetChannelVolumeSoundMem().");
+			}
 			int change_volume(int Channel, uint8_t VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )
 			int get_volume(int Channel);						// サウンドハンドルの指定のチャンネルのボリュームを取得する
 			int SetFrequency(int FrequencyPal);						// サウンドハンドルの再生周波数を設定する
