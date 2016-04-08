@@ -128,7 +128,7 @@ namespace dxle
 	namespace literals {
 		namespace time_literals {
 
-			time::timing_maker::count_per_second operator""_cps(unsigned long long int count_per_second)
+			inline time::timing_maker::count_per_second operator""_cps(unsigned long long int count_per_second)
 			{
 				return time::timing_maker::count_per_second{static_cast<size_t>(count_per_second)};
 			}
