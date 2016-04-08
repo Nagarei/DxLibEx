@@ -92,7 +92,7 @@ namespace color{
 		DXLE_CONSTEXPR dx_color()DXLE_NOEXCEPT_OR_NOTHROW
 			: value(0)
 		{}
-		dx_color(const dx_color&) = default;
+		dx_color(const dx_color&) DXLE_NOEXCEPT = default;
 		DXLE_CONSTEXPR dx_color(dx_color&& other)DXLE_NOEXCEPT_OR_NOTHROW
 			: value(static_cast<value_type&&>(other.value))
 		{}
