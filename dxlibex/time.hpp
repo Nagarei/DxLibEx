@@ -46,7 +46,13 @@ namespace dxle
 		{
 			struct timing_maker_bace
 			{
-				virtual std::vector<std::chrono::milliseconds> make_timing()const = 0;
+				virtual std::vector<std::chrono::milliseconds> make_timing()const DXLE_REF_QUALIFIERS_LVALUE = 0;
+#ifndef DXLE_NO_CXX11_REF_QUALIFIERS
+				virtual std::vector<std::chrono::milliseconds> make_timing() &&
+				{
+					return this->make_timing();
+				}
+#endif
 			};
 			class count_per_second : public timing_maker_bace
 			{
@@ -55,7 +61,7 @@ namespace dxle
 				count_per_second(size_t count, std::chrono::milliseconds millisecond = std::chrono::milliseconds(1000))
 					: timing(millisecond / count)
 				{}
-				std::vector<std::chrono::milliseconds> make_timing()const override
+				std::vector<std::chrono::milliseconds> make_timing()const DXLE_REF_QUALIFIERS_LVALUE override
 				{
 					return std::vector<std::chrono::milliseconds>(1, timing);
 				}
@@ -69,16 +75,12 @@ namespace dxle
 				raw_timing(std::vector<std::chrono::milliseconds> timing_)
 					: timing(std::move(timing_))
 				{}
-				std::vector<std::chrono::milliseconds> make_timing()const override
+				std::vector<std::chrono::milliseconds> make_timing()const DXLE_REF_QUALIFIERS_LVALUE override
 				{
 					return timing;
 				}
-#if 0
-				std::vector<std::chrono::milliseconds> make_timing()const& override
-				{
-					return timing;
-				}
-				std::vector<std::chrono::milliseconds> make_timing() &&
+#ifndef DXLE_NO_CXX11_REF_QUALIFIERS
+				std::vector<std::chrono::milliseconds> make_timing() && override
 				{
 					return std::move(timing);
 				}
