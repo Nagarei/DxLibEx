@@ -10,7 +10,7 @@
 
 #include "dxlibex/config/no_min_max.h"
 #include "DxLib.h"
-#include "config/defines.h"
+#include "dxlibex/config/defines.h"
 #include "dxlibex/type_traits/enable_if.hpp"
 #include <cstdint>
 #include <cassert>
@@ -174,7 +174,7 @@ namespace color{
 		dx_color_param(const dx_color_param& other)DXLE_NOEXCEPT_OR_NOTHROW
 			: value(other.value)
 		{}
-		template<typename color_t, typename std::enable_if<std::is_constructible<dx_color, color_t&&>::value, std::nullptr_t>::type = nullptr>
+		template<typename color_t, typename enable_if<std::is_constructible<dx_color, color_t&&>::value, std::nullptr_t>::type = nullptr>
 		dx_color_param(color_t&& color) DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<dx_color, color_t&&>::value))
 			: value(std::forward<color_t>(color))
 		{}
@@ -183,7 +183,7 @@ namespace color{
 		dx_color value;
 	};
 
-	template<typename to, typename from, enable_if_t<is_colortype<from>::value && is_colortype<to>::value, nullptr_t> = nullptr>
+	template<typename to, typename from, typename enable_if<is_colortype<from>::value && is_colortype<to>::value, nullptr_t>::type = nullptr>
 	to color_cast(from&& bace)
 	{
 		return static_cast<to>(std::forward<from>(bace));
