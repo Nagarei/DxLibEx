@@ -15,7 +15,7 @@
 #include <functional>
 #include "DxLib.h"
 #include "texture2d.h"
-#include "dxlibex/dxle_time.h"
+#include "dxlibex/time.hpp"
 #include "dxlibex/thread.h"
 
 namespace dxle

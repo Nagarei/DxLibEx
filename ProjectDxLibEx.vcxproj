@@ -39,7 +39,7 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
-    <ClInclude Include="dxlibex\dxle_time.h" />
+    <ClInclude Include="dxlibex\time.hpp" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
     <ClInclude Include="dxlibex\DxLibWrap.h" />
     <ClInclude Include="dxlibex\Graph2D.h" />

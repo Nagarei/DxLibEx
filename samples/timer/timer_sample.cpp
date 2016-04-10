@@ -7,7 +7,7 @@
 =============================================================================*/
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/color.hpp"
-#include "dxlibex/dxle_time.h"
+#include "dxlibex/time.hpp"
 
 template<typename... Args>
 int DrawFormatString(dxle::pointi pos, dxle::dx_color_param color, const char* str, Args&&... args)

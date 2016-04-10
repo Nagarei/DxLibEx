@@ -200,7 +200,7 @@
     <ClInclude Include="dxlibex\texture\animation_graph.h">
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\dxle_time.h">
+    <ClInclude Include="dxlibex\time.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
   </ItemGroup>
