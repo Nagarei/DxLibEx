@@ -26,7 +26,7 @@
     <ClInclude Include="dxlibex\basic_types\size.hpp" />
     <ClInclude Include="dxlibex\basic_types\stdint.hpp" />
     <ClInclude Include="dxlibex\basic_types\tchar.hpp" />
-    <ClInclude Include="dxlibex\color_.hpp" />
+    <ClInclude Include="dxlibex\color.hpp" />
     <ClInclude Include="dxlibex\config\compiler.hpp" />
     <ClInclude Include="dxlibex\config\compiler\clang.hpp" />
     <ClInclude Include="dxlibex\config\compiler\common_edg.hpp" />

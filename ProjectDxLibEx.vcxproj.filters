@@ -176,10 +176,10 @@
     <ClInclude Include="dxlibex\thread.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\color_.hpp">
+    <ClInclude Include="dxlibex\sound.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\sound.hpp">
+    <ClInclude Include="dxlibex\color.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
   </ItemGroup>
