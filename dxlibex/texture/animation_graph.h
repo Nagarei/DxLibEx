@@ -140,6 +140,8 @@ namespace dxle
 		class animation_graph final : public texture2d
 		{
 		public:
+			animation_graph()DXLE_NOEXCEPT = default;
+
 			template<typename Cont>
 			//! @param graphs アニメーションする画像(dxle::texture2dのコンテナ)
 			//! @param graphs 要件：graphs[i]およびgraphs.size()が可能であるorそのようなgraphsへのstd::reference_wrapperであること
