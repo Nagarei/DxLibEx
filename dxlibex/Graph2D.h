@@ -9,5 +9,6 @@
 #define DXLE_INC_GRAPH_2D_H_
 
 #include "dxlibex/texture/texture2d.h"
+#include "dxlibex/texture/animation_graph.h"
 
 #endif

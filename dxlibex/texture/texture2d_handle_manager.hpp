@@ -33,6 +33,8 @@ namespace graph2d
 			texture2d_handle_manager()DXLE_NOEXCEPT_OR_NOTHROW{}
 			texture2d_handle_manager(const texture2d_handle_manager&)DXLE_NOEXCEPT_OR_NOTHROW{}
 			texture2d_handle_manager& operator=(const texture2d_handle_manager&)DXLE_NOEXCEPT_OR_NOTHROW{}
+
+			static int GetTextureRawHandle(const texture2d&);
 		};
 
 		class simple_graph_handle_manager : public texture2d_handle_manager, public dxle::impl::Unique_HandledObject_Bace<simple_graph_handle_manager>

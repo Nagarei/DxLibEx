@@ -44,6 +44,10 @@ namespace dxle
 					throw;
 				}
 			}
+			inline int texture2d_handle_manager::GetTextureRawHandle(const texture2d& texture)
+			{
+				return texture.GetHandle();
+			}
 		}
 
 

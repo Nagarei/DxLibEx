@@ -39,6 +39,7 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
+    <ClInclude Include="dxlibex\time.hpp" />
     <ClInclude Include="dxlibex\DxLibEx.h" />
     <ClInclude Include="dxlibex\DxLibWrap.h" />
     <ClInclude Include="dxlibex\Graph2D.h" />
@@ -52,6 +53,7 @@
     <ClInclude Include="dxlibex\math\isnan.hpp" />
     <ClInclude Include="dxlibex\Sound.h" />
     <ClInclude Include="dxlibex\structs.h" />
+    <ClInclude Include="dxlibex\texture\animation_graph.h" />
     <ClInclude Include="dxlibex\texture\prototype2d.h" />
     <ClInclude Include="dxlibex\texture\texture2d.h" />
     <ClInclude Include="dxlibex\texture\texture2d.hpp" />
@@ -78,13 +80,13 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -105,13 +107,11 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <TargetName>$(ProjectName)_$(DefaultPlatformToolset)_$(CharacterSet)_$(PlatformTarget)_d</TargetName>
     <OutDir>$(SolutionDir)dxlibex\</OutDir>
-    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>$(ProjectName)_$(DefaultPlatformToolset)_$(CharacterSet)_$(PlatformTarget)_r</TargetName>
     <OutDir>$(SolutionDir)dxlibex\</OutDir>
-    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

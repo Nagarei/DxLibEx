@@ -20,6 +20,8 @@ namespace dxle
 		class texture2d;
 		class screen;
 
+		class animation_graph;
+
 		class shared_texture2d;
 
 		template<size_t N>
