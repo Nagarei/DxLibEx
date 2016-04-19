@@ -185,23 +185,23 @@
     <ClInclude Include="dxlibex\color.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\texture\prototype2d.h">
-      <Filter>dxlibex\texture</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\texture\texture2d.h">
-      <Filter>dxlibex\texture</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\texture\texture2d.hpp">
-      <Filter>dxlibex\texture</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\texture\texture2d_handle_manager.hpp">
-      <Filter>dxlibex\texture</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\texture\animation_graph.h">
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\time.hpp">
       <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\animation_graph.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp">
+      <Filter>dxlibex\texture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@
 #include "dxlibex/config/no_min_max.h"
 #include <memory>
 #include "dxlibex/config/defines.h"
-#include "prototype2d.h"
+#include "prototype2d.hpp"
 #include "dxlibex/Helper.h"
 
 //----------2Dグラフィック----------//

@@ -39,6 +39,9 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp" />
     <ClInclude Include="dxlibex\time.hpp" />
     <ClInclude Include="dxlibex\dxlibex.hpp" />
     <ClInclude Include="dxlibex\dxlib_wrap.hpp" />
@@ -53,11 +56,8 @@
     <ClInclude Include="dxlibex\math\isnan.hpp" />
     <ClInclude Include="dxlibex\sound.hpp" />
     <ClInclude Include="dxlibex\structs.h" />
-    <ClInclude Include="dxlibex\texture\animation_graph.h" />
-    <ClInclude Include="dxlibex\texture\prototype2d.h" />
+    <ClInclude Include="dxlibex\texture\animation_graph.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d.h" />
-    <ClInclude Include="dxlibex\texture\texture2d.hpp" />
-    <ClInclude Include="dxlibex\texture\texture2d_handle_manager.hpp" />
     <ClInclude Include="dxlibex\thread.hpp" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
     <ClInclude Include="dxlibex\type_traits\common_type.hpp" />
