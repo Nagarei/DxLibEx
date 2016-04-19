@@ -185,9 +185,6 @@
     <ClInclude Include="dxlibex\color.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\texture\texture2d.h">
-      <Filter>dxlibex\texture</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\time.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
@@ -201,6 +198,9 @@
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d.hpp">
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
   </ItemGroup>

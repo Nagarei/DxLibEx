@@ -57,7 +57,7 @@
     <ClInclude Include="dxlibex\sound.hpp" />
     <ClInclude Include="dxlibex\structs.h" />
     <ClInclude Include="dxlibex\texture\animation_graph.hpp" />
-    <ClInclude Include="dxlibex\texture\texture2d.h" />
+    <ClInclude Include="dxlibex\texture\texture2d.hpp" />
     <ClInclude Include="dxlibex\thread.hpp" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
     <ClInclude Include="dxlibex\type_traits\common_type.hpp" />
