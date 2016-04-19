@@ -41,12 +41,6 @@
     <ClInclude Include="dxlibex\basic_types.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\Graph2D.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\Helper.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
@@ -56,14 +50,8 @@
     <ClInclude Include="dxlibex\structs.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\thread.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\config\LINK.h">
       <Filter>dxlibex\config</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibWrap.h">
-      <Filter>dxlibex</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\config\defines.h">
       <Filter>dxlibex\config</Filter>
@@ -91,9 +79,6 @@
     </ClInclude>
     <ClInclude Include="dxlibex\config\no_min_max.h">
       <Filter>dxlibex\config</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\Color.hpp">
-      <Filter>dxlibex</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\basic_types\use_big_type_when_one_byte_t.hpp">
       <Filter>dxlibex\basic_types</Filter>
@@ -182,7 +167,22 @@
     <ClInclude Include="dxlibex\basic_types\tchar.hpp">
       <Filter>dxlibex\basic_types</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\Sound.h">
+    <ClInclude Include="dxlibex\dxlibex.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\dxlib_wrap.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\graph2d.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\thread.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\sound.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\color.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\texture\prototype2d.h">

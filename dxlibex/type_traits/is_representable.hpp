@@ -14,7 +14,7 @@ namespace dxle {
 namespace type_traits {
 	template < typename from, typename to >
 	struct is_representable
-	    : std::integral_constant<bool, std::is_same<common_type_t<from, to>, to >::value >
+	    : std::is_same<typename common_type<from, to>::type, to >
 	{ } ;
 }//namespace
 using namespace type_traits;
