@@ -28,14 +28,16 @@ namespace dxle {
 
 			DXLE_CONSTEXPR counter_iterator() : i() { }
 			DXLE_CONSTEXPR counter_iterator(T n) : i(n) { }
-			counter_iterator& operator=(const counter_iterator& o) DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator& operator=(const counter_iterator& o) DXLE_NOEXCEPT_OR_NOTHROW {
 				i = o.i;
 				return *this;
 			}
 			DXLE_CONSTEXPR bool operator == (const counter_iterator & rhs) const DXLE_NOEXCEPT_OR_NOTHROW { return i == rhs.i; }
 			DXLE_CONSTEXPR bool operator != (const counter_iterator & rhs) const DXLE_NOEXCEPT_OR_NOTHROW { return i != rhs.i; }
 			DXLE_CONSTEXPR const T & operator * () const DXLE_NOEXCEPT_OR_NOTHROW { return i; }
-			T & operator * () DXLE_NOEXCEPT_OR_NOTHROW { return i; }
+#ifndef DXLE_SUPPORT_ONLY_CXX11_CONSTEXPR
+			DXLE_CXX14_CONSTEXPR T & operator * () DXLE_NOEXCEPT_OR_NOTHROW { return i; }
+#endif
 			DXLE_CONSTEXPR T operator[](difference_type n) const DXLE_NOEXCEPT_OR_NOTHROW { return i + n; }
 			DXLE_CONSTEXPR counter_iterator operator+(difference_type n) const DXLE_NOEXCEPT_OR_NOTHROW { return{ i + n }; }
 			DXLE_CONSTEXPR counter_iterator operator-(difference_type n) const DXLE_NOEXCEPT_OR_NOTHROW { return{ i - n }; }
@@ -43,28 +45,28 @@ namespace dxle {
 			DXLE_CONSTEXPR bool operator<=(const counter_iterator& n) const DXLE_NOEXCEPT_OR_NOTHROW { return i <= n.i; }
 			DXLE_CONSTEXPR bool operator>(const counter_iterator& n) const DXLE_NOEXCEPT_OR_NOTHROW { return i > n.i; }
 			DXLE_CONSTEXPR bool operator>=(const counter_iterator& n) const DXLE_NOEXCEPT_OR_NOTHROW { return i >= n.i; }
-			counter_iterator & operator += (counter_iterator it) DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator & operator += (counter_iterator it) DXLE_NOEXCEPT_OR_NOTHROW {
 				i += it.i;
 				return *this;
 			}
-			counter_iterator & operator -= (counter_iterator it) DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator & operator -= (counter_iterator it) DXLE_NOEXCEPT_OR_NOTHROW {
 				i -= it.i;
 				return *this;
 			}
-			counter_iterator & operator ++ () DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator & operator ++ () DXLE_NOEXCEPT_OR_NOTHROW {
 				++i;
 				return *this;
 			}
-			counter_iterator operator ++ (int) DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator operator ++ (int) DXLE_NOEXCEPT_OR_NOTHROW {
 				auto t = *this;
 				++i;
 				return t;
 			}
-			counter_iterator & operator -- () DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator & operator -- () DXLE_NOEXCEPT_OR_NOTHROW {
 				--i;
 				return *this;
 			}
-			counter_iterator operator -- (int) DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CXX14_CONSTEXPR counter_iterator operator -- (int) DXLE_NOEXCEPT_OR_NOTHROW {
 				auto t = *this;
 				--i;
 				return t;
@@ -76,12 +78,6 @@ namespace dxle {
 		DXLE_CONSTEXPR counter_iterator<T> operator-(typename counter_iterator<T>::difference_type n, const counter_iterator<T>& it) DXLE_NOEXCEPT_OR_NOTHROW { return it - n; }
 		template<typename T>
 		DXLE_CONSTEXPR counter_iterator<T> iterator_next(counter_iterator<T> it) DXLE_NOEXCEPT_OR_NOTHROW { return it + 1; }
-		namespace std {
-			template<typename T>
-			DXLE_CONSTEXPR counter_iterator<T> next(counter_iterator<T> it, typename counter_iterator<T>::difference_type n) DXLE_NOEXCEPT_OR_NOTHROW {
-				return it + n;
-			}
-		}
 
 		template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
 		class nth_loop {
@@ -111,5 +107,11 @@ namespace dxle {
 		}
 	}
 	using namespace utility;
+}
+namespace std {
+	template<typename T>
+	DXLE_CONSTEXPR dxle::utility::counter_iterator<T> next(dxle::utility::counter_iterator<T> it, typename dxle::utility::counter_iterator<T>::difference_type n) DXLE_NOEXCEPT_OR_NOTHROW {
+		return it + n;
+	}
 }
 #endif //DXLE_INC_UTILITY_CONSTANT_RANGE_LOOP_HPP_

@@ -9,6 +9,8 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		clang_Debug|x64 = clang_Debug|x64
 		clang_Debug|x86 = clang_Debug|x86
+		clang_Release|x64 = clang_Release|x64
+		clang_Release|x86 = clang_Release|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
@@ -19,6 +21,10 @@ Global
 		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Debug|x64.Build.0 = clang_Debug|x64
 		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Debug|x86.ActiveCfg = clang_Debug|Win32
 		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Debug|x86.Build.0 = clang_Debug|Win32
+		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Release|x64.ActiveCfg = clang_Release|x64
+		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Release|x64.Build.0 = clang_Release|x64
+		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Release|x86.ActiveCfg = clang_Release|Win32
+		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.clang_Release|x86.Build.0 = clang_Release|Win32
 		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.Debug|x64.ActiveCfg = Debug|x64
 		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.Debug|x64.Build.0 = Debug|x64
 		{C1A1B176-0039-43DE-BB6F-0847E59FFFD5}.Debug|x86.ActiveCfg = Debug|Win32
