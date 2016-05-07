@@ -9,9 +9,7 @@
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
-clang_[Dd]ebug/
-clang_[Rr]elease/
+[Rr]elease*/
 x64/
 build/
 bld/
@@ -61,6 +59,8 @@ dlldata.c
 *.svclog
 *.scc
 *.lastbuildstate
+*.exp
+*.lib
 
 # Chutzpah Test files
 _Chutzpah*
@@ -71,6 +71,8 @@ ipch/
 *.ncb
 *.opensdf
 *.sdf
+*.VC.opendb
+*.VC.db
 *.cachefile
 
 # Visual Studio profiler
@@ -195,5 +197,5 @@ ModelManifest.xml
 
 #other
 Log.txt
-*.VC.opendb
-*.VC.db
+*.zip
+*.diagsession

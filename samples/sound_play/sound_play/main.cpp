@@ -1,4 +1,4 @@
-﻿#include <dxlibex/Sound.h>
+﻿#include <dxlibex/sound.hpp>
 #include <dxlibex/basic_types/bel.hpp>
 #include <Windows.h>
 int WINAPI WinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int /*nCmdShow*/) {

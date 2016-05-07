@@ -5,8 +5,8 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#ifndef DXLE_INC_GRAPH_2D_H_
-#define DXLE_INC_GRAPH_2D_H_
+#ifndef DXLE_INC_GRAPH2D_HPP_
+#define DXLE_INC_GRAPH2D_HPP_
 
 #include "dxlibex/config/no_min_max.h"
 #include "DxLib.h"
@@ -20,7 +20,7 @@
 #include "dxlibex/Helper.h"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/basic_types.hpp"
-#include "dxlibex/thread.h"
+#include "dxlibex/thread.hpp"
 
 //----------2Dグラフィック----------//
 

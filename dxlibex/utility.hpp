@@ -1,18 +1,13 @@
 ﻿/*=============================================================================
-  Copyright (C) 2015 DxLibEx project
+  Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#include "dxlibex/graph2d.h"
+#ifndef DXLE_INC_UTILITY_HPP_
+#define DXLE_INC_UTILITY_HPP_
 
-namespace dxle{
-namespace Graph2D {
+#include "dxlibex/utility/constant_range_loop.hpp"
 
-#ifdef DX_THREAD_SAFE
-		std::mutex screen_mutex_c::mtx;
-#endif
-
-//namespaces
-}}
+#endif//#ifndef DXLE_INC_UTILITY_HPP_

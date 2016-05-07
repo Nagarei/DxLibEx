@@ -20,7 +20,7 @@
 #include <chrono>
 #include "dxlibex/Helper.h"
 #include "dxlibex/config/defines.h"
-#include "dxlibex/thread.h"
+#include "dxlibex/thread.hpp"
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/exception.hpp"
 
@@ -322,9 +322,9 @@ namespace dxle
 		// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数
 		sound	LoadBGM(const TCHAR *FileName)DXLE_NOEXCEPT_OR_NOTHROW{ return sound::LoadBGM(FileName); }
 		// サウンドファイルからサウンドハンドルを作成する
-		sound	LoadSoundMemBase(const TCHAR *FileName, int BufferNum, int UnionHandle = -1){ return sound::LoadSoundMem(FileName, BufferNum, UnionHandle); }
+		sound	LoadSoundMemBase(const TCHAR *FileName, int BufferNum, int UnionHandle = -1){ return sound::load_sound(FileName, BufferNum, UnionHandle); }
 		// サウンドファイルからサウンドハンドルを作成する(LoadSoundMemBase の別名関数)
-		sound	LoadSoundMem(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1){ return sound::LoadSoundMem(FileName, BufferNum, UnionHandle); }
+		sound	LoadSoundMem(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1){ return sound::load_sound(FileName, BufferNum, UnionHandle); }
 		// 同じサウンドデータを使用するサウンドハンドルを作成する( DX_SOUNDDATATYPE_MEMNOPRESS タイプのサウンドハンドルのみ可能 )
 		//sound	DuplicateSoundMem(sound SrcSoundHandle, int BufferNum = 3){ return sound::DuplicateSoundMem(SrcSoundHandle, BufferNum); }
 		// メモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する

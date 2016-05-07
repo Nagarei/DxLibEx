@@ -49,7 +49,7 @@ DXLE_CXX14_CONSTEXPR void func()
 }
 #endif
 #endif
-#include "dxlibex/DxLibEx.h"
+#include "dxlibex/dxlibex.hpp"
 namespace dxle {
 	int DrawBox(const dxle::pointi& pos1, const dxle::pointi& pos2, dxle::dx_color_param Color, bool FillFlag)
 	{

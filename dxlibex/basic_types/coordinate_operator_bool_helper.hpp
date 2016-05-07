@@ -22,30 +22,30 @@ namespace dxle {
 		template<typename T, bool has_operator_notequal_to_zero, bool is_compareable_with_default_ctor>
 		struct operator_bool_helper_impl<T, true, has_operator_notequal_to_zero, is_compareable_with_default_ctor> {
 			DXLE_CONSTEXPR_CLASS bool operator()(const T& first, const T& second) const DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(first)) {
-				return static_cast<bool>(first) && static_cast<bool>(second);
+				return static_cast<bool>(first) || static_cast<bool>(second);
 			}
 			DXLE_CONSTEXPR_CLASS bool operator()(const T& first, const T& second, const T& third) const DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(first)) {
-				return static_cast<bool>(first) && static_cast<bool>(second) && static_cast<bool>(third);
+				return static_cast<bool>(first) || static_cast<bool>(second) || static_cast<bool>(third);
 			}
 		};
 		//2. operator != (nullptr)
 		template<typename T, bool is_compareable_with_default_ctor>
 		struct operator_bool_helper_impl<T, false, true, is_compareable_with_default_ctor> {
 			DXLE_CONSTEXPR_CLASS bool operator()(const T& first, const T& second) const DXLE_NOEXCEPT_IF_EXPR(first != 0) {
-				return first != 0 && second != 0;
+				return first != 0 || second != 0;
 			}
 			DXLE_CONSTEXPR_CLASS bool operator()(const T& first, const T& second, const T& third) const DXLE_NOEXCEPT_IF_EXPR(first != 0) {
-				return first != 0 && second != 0 && third != 0;
+				return first != 0 || second != 0 || third != 0;
 			}
 		};
 		//3. default constector + operator !=
 		template<typename T>
 		struct operator_bool_helper_impl<T, false, false, true> {
 			DXLE_CONSTEXPR_CLASS bool operator()(const T& first, const T& second) const DXLE_NOEXCEPT_IF_EXPR(first != T{}) {
-				return first != T{} && second != T{};
+				return first != T{} || second != T{};
 			}
 			DXLE_CONSTEXPR_CLASS bool operator()(const T& first, const T& second, const T& third) const DXLE_NOEXCEPT_IF_EXPR(first != T{}) {
-				return first != T{} && second != T{} && third != T{};
+				return first != T{} || second != T{} || third != T{};
 			}
 		};
 
