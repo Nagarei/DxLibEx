@@ -25,7 +25,6 @@
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/exception.hpp"
 #include "dxlibex/utility/inferior_string_ref.hpp"
-#include <filesystem>//in gcc(branch 5 or later), -lstdc++fs is required.
 #ifdef small
 #undef small//from rpcndr.h
 #endif
@@ -83,9 +82,8 @@ namespace dxle
 		namespace detail {
 			sound_data_type detect_sound_data_type(sound_data_type datatype, const TCHAR *FileName) {
 				if (sound_data_type::auto_detect != datatype) return datatype;
-				namespace fs = std::experimental::filesystem;//まだ標準には入っていない。boost::filesystemでも良かったけどmingw-clang以外では利用できそうだったので。
 				try {
-					fs::path path(FileName);
+					tpath path(FileName);
 					const auto size = fs::file_size(path);
 					DXLE_CONSTEXPR_OR_CONST std::uintmax_t borderline = 900000;//byte
 					return (size < borderline) ? sound_data_type::small : sound_data_type::big;
@@ -246,7 +244,7 @@ namespace dxle
 			//!\~japanese サウンドのパンを設定する
 			//!\~english  Set the pan of this sound.
 			template<typename T, typename Period>void set_pan(bel_c<T, Period> PanPal) {
-				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((PanPal < 0_myrioB || 10000_myrioB < PanPal), "");
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((PanPal < myrio_bel() || myrio_bel(10000) < PanPal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_pan(PanPal, std::nothrow)), "fail DxLib::SetPanSoundMem().");
 			}
 			//!\~japanese サウンドのパンを設定する( -255 ～ 255 )
@@ -270,7 +268,7 @@ namespace dxle
 			//!\~english  Get the pan of this sound.
 			myrio_bel get_pan() {
 				const auto re = this->get_pan(std::nothrow);
-				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetPanSoundMem().");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((myrio_bel(-1) == re), "fail DxLib::GetPanSoundMem().");
 				return re;
 			}
 			//!\~japanese サウンドのボリュームを設定する
@@ -283,7 +281,7 @@ namespace dxle
 			//!\~japanese サウンドのボリュームを設定する
 			//!\~english  Set sound volume.
 			template<typename T, typename Period>void set_volume(bel_c<T, Period> VolumePal) {
-				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < 0_myrioB || 10000_myrioB < VolumePal), "");
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(VolumePal, std::nothrow)), "fail DxLib::SetVolumeSoundMem().");
 			}
 			//!\~japanese サウンドのボリュームを設定する( 0 ～ 255 )
@@ -303,7 +301,7 @@ namespace dxle
 			//!\~english  Get sound volume.
 			myrio_bel get_volume() {
 				const auto re = this->get_volume(std::nothrow);
-				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1_myrioB == re), "fail DxLib::GetVolumeSoundMem().");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((myrio_bel(-1) == re), "fail DxLib::GetVolumeSoundMem().");
 				return re;
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
@@ -317,7 +315,7 @@ namespace dxle
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
 			//!\~english  Set the volume of specified chanel of sound.
 			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal) {
-				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel || VolumePal < 0_myrioB || 10000_myrioB < VolumePal), "");
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel || VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::SetChannelVolumeSoundMem().");
 			}
 			int change_volume(int Channel, uint8_t VolumePal);						// サウンドハンドルの指定のチャンネルのボリュームを設定する( 0 ～ 255 )

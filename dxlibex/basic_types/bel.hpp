@@ -52,7 +52,7 @@ namespace dxle {
 			DXLE_CONSTEXPR explicit bel_c(const T2& o) : value_(static_cast<T>(o)) {}
 
 			template<typename T2, typename Period2, enable_if_t<
-				std::is_floating_point<value_type>::value || (std::ratio_divide<Period2, period>::den == 1 && !std::is_floating_point<T2>::value), 
+				(std::is_floating_point<value_type>::value || (std::ratio_divide<Period2, period>::den == 1 && !std::is_floating_point<T2>::value)), 
 			nullptr_t> = nullptr>
 			DXLE_CONSTEXPR bel_c(const bel_c<T2, Period2>& o) : value_(bel_cast<bel_c>(o).count()) {}
 			~bel_c() = default;

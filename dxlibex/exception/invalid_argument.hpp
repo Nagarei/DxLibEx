@@ -14,12 +14,11 @@
 #define DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF( EXPR, MESSAGE ) if( EXPR ) throw dxle::invalid_argument(__FILE__, __FUNCTION__, __LINE__, #EXPR, MESSAGE)
 namespace dxle {
 	namespace exception{
-		using namespace std::literals;
 		class invalid_argument : public std::invalid_argument {
 		protected:
 			invalid_argument(const char* except_name, const char* sorce_name, const char* func_name, std::uint64_t line, const char* expression, const std::string& msg)
 				: std::invalid_argument(
-					"exception : "s + except_name + '\n'
+					std::string("exception : ") + except_name + '\n'
 					+ "  in " + sorce_name + "\n"
 					+ "  " + func_name + "() (line." + std::to_string(line) + ")\n"
 					+ "  follow by below\n"
@@ -29,7 +28,7 @@ namespace dxle {
 			{}
 			invalid_argument(const char* except_name, const char* sorce_name, const char* func_name, std::uint64_t line, const std::string& msg)
 				: std::invalid_argument(
-					"exception : "s + except_name + '\n'
+					std::string("exception : ") + except_name + '\n'
 					+ " in " + sorce_name + "\n"
 					+ "  " + func_name + "() (line." + std::to_string(line) + ")\n"
 					+ ((msg.empty() || msg[0] == '\0') ? "\n" : " MESSAGE : " + msg + "\n")
