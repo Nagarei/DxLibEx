@@ -13,7 +13,7 @@
 #include "dxlibex/Color.hpp"
 #include "dxlibex/cstdlib.hpp"
 //#include "dxlibex/dxlib_wrap.hpp"
-#include "dxlibex/graph2d.h"
+#include "dxlibex/graph2d.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/thread.hpp"
 #include "dxlibex/type_traits.hpp"
