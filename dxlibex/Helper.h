@@ -12,6 +12,7 @@
 //開発者以外がここの機能を使うのはお勧めできません
 #include "dxlibex/config/no_min_max.h"
 #include <cassert>
+#include <algorithm>
 #include "dxlibex/config/defines.h"
 
 namespace dxle{
@@ -158,7 +159,7 @@ namespace impl{
 			other.handle = -1;
 			return *this;
 		}
-
+		void swap(Unique_HandledObject_Bace& o) { std::swap(this->handle, o.handle); }
 	protected:
 		//間違えて他の種類のハンドルを持たないようにprotectedにしておく
 		Unique_HandledObject_Bace(int param_handle)DXLE_NOEXCEPT_OR_NOTHROW
@@ -170,8 +171,12 @@ namespace impl{
 			//リソース解放
 			static_cast<Child*>(this)->delete_this();
 		}
-		DXLE_CONSTEXPR int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
-		void SetHandle_IMPL(int new_handle) { handle = (param_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
+		DXLE_CONSTEXPR int GetHandle() const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
+		void set_handle(int param_handle) { 
+			std::swap(handle, param_handle);
+			if(-1 != param_handle) DxLib::SetDeleteHandleFlag(handle, &handle);
+		}
+		DXLE_CONSTEXPR bool is_vaid() const DXLE_NOEXCEPT_OR_NOTHROW { return -1 != handle; }
 	private:
 		int handle;
 	};

@@ -190,6 +190,7 @@
       <AdditionalIncludeDirectories>$(DXLIB_ROOT);C:\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\lib\DxLib;..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ExceptionHandling>Enabled</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\lib\DxLib;$(DXLIB_ROOT)</AdditionalLibraryDirectories>
@@ -201,6 +202,7 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>Enabled</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\lib\DxLib;$(DXLIB_ROOT)</AdditionalLibraryDirectories>
@@ -211,6 +213,7 @@
       <AdditionalIncludeDirectories>$(DXLIB_ROOT);C:\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\lib\DxLib;..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ExceptionHandling>Enabled</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\lib\DxLib;$(DXLIB_ROOT)</AdditionalLibraryDirectories>
@@ -222,6 +225,7 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>Enabled</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\lib\DxLib;$(DXLIB_ROOT)</AdditionalLibraryDirectories>

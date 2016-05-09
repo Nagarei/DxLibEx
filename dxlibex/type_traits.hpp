@@ -18,5 +18,7 @@
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/type_traits/is_well_format.hpp"
 #include "dxlibex/type_traits/is_ratio.hpp"
+#include "dxlibex/type_traits/is_c_str.hpp"
+#include "dxlibex/type_traits/is_stl_string.hpp"
 
 #endif//#ifndef DXLE_INC_TYPE_TRAITS_HPP_

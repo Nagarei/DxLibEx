@@ -21,9 +21,14 @@
 #include "dxlibex/Helper.h"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/thread.hpp"
+#include "dxlibex/type_traits.hpp"
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/exception.hpp"
-
+#include "dxlibex/utility/inferior_string_ref.hpp"
+#include <filesystem>//in gcc(branch 5 or later), -lstdc++fs is required.
+#ifdef small
+#undef small//from rpcndr.h
+#endif
 //----------サウンド----------//
 
 namespace dxle
@@ -70,16 +75,71 @@ namespace dxle
 			back   = DX_PLAYTYPE_BACK,
 			loop   = DX_PLAYTYPE_LOOP
 		};
+		enum class sound_data_type : uint8_t {
+			small,     //DxLib::LoadSoundMem
+			big,       //DxLib::LoadBGM
+			auto_detect//call detail::detect_sound_data_type()
+		};
+		namespace detail {
+			sound_data_type detect_sound_data_type(sound_data_type datatype, const TCHAR *FileName) {
+				if (sound_data_type::auto_detect != datatype) return datatype;
+				namespace fs = std::experimental::filesystem;//まだ標準には入っていない。boost::filesystemでも良かったけどmingw-clang以外では利用できそうだったので。
+				try {
+					fs::path path(FileName);
+					const auto size = fs::file_size(path);
+					DXLE_CONSTEXPR_OR_CONST std::uintmax_t borderline = 900000;//byte
+					return (size < borderline) ? sound_data_type::small : sound_data_type::big;
+				}
+				catch(const std::exception&){
+					return sound_data_type::big;
+				}
+			}
+		}
 		class sound final : public impl::Unique_HandledObject_Bace < sound >
 		{
 		public:
 			//constant
 
 			DXLE_STATIC_CONSTEXPR uint8_t SOUNDBUFFER_MAX_CHANNEL_NUM = 8;//DxSound.hに定義あり
+			//ctor-like function
+			//sound_data_type指定なしはsound_data_type::small扱い。
 
+			void open(tinferior_string_ref FileName, int BufferNum, int UnionHandle, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { 
+				if (this->is_vaid()) this->delete_this();
+				this->set_handle(DxLib::LoadSoundMem(FileName.c_str(), BufferNum, UnionHandle)); 
+			}
+			void open(tinferior_string_ref FileName, int BufferNum, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { 
+				if (this->is_vaid()) this->delete_this();
+				this->set_handle(DxLib::LoadSoundMem(FileName.c_str(), BufferNum));
+			}
+			void open(tinferior_string_ref FileName, sound_data_type type, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				if (this->is_vaid()) this->delete_this();
+				this->set_handle(
+					(sound_data_type::small == detail::detect_sound_data_type(type, FileName.c_str()))
+					? DxLib::LoadSoundMem(FileName.c_str())
+					: DxLib::LoadBGM(FileName.c_str())
+				);
+			}
+			void open(tinferior_string_ref FileName, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				if (this->is_vaid()) this->delete_this();
+				this->set_handle(DxLib::LoadSoundMem(FileName.c_str()));
+			}
+			void open(tinferior_string_ref FileName, int BufferNum = 3, int UnionHandle = -1) {
+				if (this->is_vaid()) this->delete_this();
+				const auto re = DxLib::LoadSoundMem(FileName.c_str(), BufferNum, UnionHandle);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), "fail DxLib::LoadSoundMem().");
+				this->set_handle(re);
+			}
+			void open(tinferior_string_ref FileName, sound_data_type type) {
+				if (this->is_vaid()) this->delete_this();
+				const auto re = (sound_data_type::small == (type = detail::detect_sound_data_type(type, FileName.c_str())))
+					? DxLib::LoadSoundMem(FileName.c_str())
+					: DxLib::LoadBGM(FileName.c_str());
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), (sound_data_type::small == type) ? "fail DxLib::LoadSoundMem()." : "fail DxLib::LoadBGM().");
+				this->set_handle(re);
+			}
 			//ctor
-
-			sound()DXLE_NOEXCEPT_OR_NOTHROW = default;
+			sound()DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace() {}
 			sound(const sound& other) = delete;
 			sound(sound&& other)DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(std::move(other)){}
 
@@ -96,10 +156,27 @@ namespace dxle
 
 			//生成
 			static sound			LoadSoundMem2(const TCHAR *FileName1, const TCHAR *FileName2);											// 前奏部とループ部に分かれたサウンドファイルを読み込みサウンドハンドルを作成する
-			static sound			LoadBGM(const TCHAR *FileName);																	// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数
+			//static sound			LoadBGM(const TCHAR *FileName);// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数//不要。load_soundにsound_data_type::bigを渡すべし
 
-			static sound load_sound(const TCHAR *FileName, int BufferNum = 3, int UnionHandle = -1) {
-
+			static sound load_sound(tinferior_string_ref FileName, int BufferNum, int UnionHandle, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { return{ DxLib::LoadSoundMem(FileName.c_str(), BufferNum, UnionHandle) }; }
+			static sound load_sound(tinferior_string_ref FileName, int BufferNum, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { return{ DxLib::LoadSoundMem(FileName.c_str(), BufferNum) }; }
+			static sound load_sound(tinferior_string_ref FileName, sound_data_type type, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				return (sound_data_type::small == detail::detect_sound_data_type(type, FileName.c_str()))
+					? DxLib::LoadSoundMem(FileName.c_str())
+					: DxLib::LoadBGM(FileName.c_str());
+			}
+			static sound load_sound(tinferior_string_ref FileName, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { return{ DxLib::LoadSoundMem(FileName.c_str()) }; }
+			static sound load_sound(tinferior_string_ref FileName, int BufferNum = 3, int UnionHandle = -1) {
+				const auto re = DxLib::LoadSoundMem(FileName.c_str(), BufferNum, UnionHandle);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), "fail DxLib::LoadSoundMem().");
+				return re;
+			}
+			static sound load_sound(tinferior_string_ref FileName, sound_data_type type) {
+				const auto re = (sound_data_type::small == (type = detail::detect_sound_data_type(type, FileName.c_str())))
+					? DxLib::LoadSoundMem(FileName.c_str())
+					: DxLib::LoadBGM(FileName.c_str());
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), (sound_data_type::small == type) ? "fail DxLib::LoadSoundMem()." : "fail DxLib::LoadBGM().");
+				return re;
 			}
 
 			static sound			LoadSoundMemByMemImageBase(const void *FileImage, int FileImageSize, int BufferNum, int UnionHandle = -1);			// メモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する
@@ -112,8 +189,9 @@ namespace dxle
 
 			//!\~japanese サウンドを削除する
 			//!\~english  Delete this sound data
-			int	DeleteSoundMem(int LogOutFlag = FALSE) DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
+			int	DeleteSoundMem(int LogOutFlag = false) DXLE_NOEXCEPT_OR_NOTHROW { return DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
 
+			bool is_open() { return this->is_vaid(); }
 			//操作
 
 			//!\~japanese サウンドを再生する
@@ -320,7 +398,7 @@ namespace dxle
 		// 前奏部とループ部に分かれたサウンドファイルを読み込みサウンドハンドルを作成する
 		sound	LoadSoundMem2(const TCHAR *FileName1, const TCHAR *FileName2)DXLE_NOEXCEPT_OR_NOTHROW{ return sound::LoadSoundMem2(FileName1, FileName2); }
 		// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数
-		sound	LoadBGM(const TCHAR *FileName)DXLE_NOEXCEPT_OR_NOTHROW{ return sound::LoadBGM(FileName); }
+		sound	LoadBGM(const TCHAR *FileName)DXLE_NOEXCEPT_OR_NOTHROW{ return sound::load_sound(FileName, sound_data_type::big); }
 		// サウンドファイルからサウンドハンドルを作成する
 		sound	LoadSoundMemBase(const TCHAR *FileName, int BufferNum, int UnionHandle = -1){ return sound::load_sound(FileName, BufferNum, UnionHandle); }
 		// サウンドファイルからサウンドハンドルを作成する(LoadSoundMemBase の別名関数)

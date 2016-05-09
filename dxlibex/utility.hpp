@@ -9,5 +9,6 @@
 #define DXLE_INC_UTILITY_HPP_
 
 #include "dxlibex/utility/constant_range_loop.hpp"
+#include "dxlibex/utility/inferior_string_ref"
 
 #endif//#ifndef DXLE_INC_UTILITY_HPP_

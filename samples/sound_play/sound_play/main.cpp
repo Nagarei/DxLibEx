@@ -3,6 +3,10 @@
 #include <Windows.h>
 int WINAPI WinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int /*nCmdShow*/) {
 	//SetCreateSoundPitchRate(100);
+	constexpr auto str = _T("arikitari");
+	const dxle::tstring ss = _T("arikitari");
+	dxle::tinferior_string_ref s(str);
+	dxle::tinferior_string_ref s2(ss);
 #ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
 	using namespace dxle::sound_units_literals;
 	constexpr auto rate = 300_dB;
