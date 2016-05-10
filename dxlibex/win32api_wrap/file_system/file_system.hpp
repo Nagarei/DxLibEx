@@ -25,7 +25,12 @@ namespace win32api{
 		overlapped = FILE_FLAG_OVERLAPPED,
 		no_buffering = FILE_FLAG_NO_BUFFERING,
 		random_access = FILE_FLAG_RANDOM_ACCESS,
-		
+		sequential_scan = FILE_FLAG_SEQUENTIAL_SCAN,
+		delete_on_close = FILE_FLAG_DELETE_ON_CLOSE,
+		backup_semantics = FILE_FLAG_BACKUP_SEMANTICS,
+		posix_semantics = FILE_FLAG_POSIX_SEMANTICS,
+		open_reparse_point = FILE_FLAG_OPEN_REPARSE_POINT,
+		open_no_recall = FILE_FLAG_OPEN_NO_RECALL
 	};
     class file_handle : public impl::Unique_HandledObject_Bace <file_handle, false, HANDLE>
     {
