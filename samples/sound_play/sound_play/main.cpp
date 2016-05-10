@@ -5,7 +5,7 @@ int WINAPI WinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR /
 	//SetCreateSoundPitchRate(100);
 	DXLE_CONSTEXPR auto str = _T("arikitari");
 	const dxle::tstring ss = _T("arikitari");
-	dxle::tinferior_string_ref s(str);
+	DXLE_CONSTEXPR dxle::tinferior_string_ref s(str);
 	dxle::tinferior_string_ref s2(ss);
 #ifdef DXLE_SUPPORT_CXX11_USER_DEFINED_LITERALS
 	using namespace dxle::sound_units_literals;

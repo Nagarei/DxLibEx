@@ -82,6 +82,17 @@ namespace dxle
 		namespace detail {
 			sound_data_type detect_sound_data_type(sound_data_type datatype, const TCHAR *FileName) {
 				if (sound_data_type::auto_detect != datatype) return datatype;
+				DWORD dwFileSize;
+
+				HANDLE hFile = CreateFile(FileName,	GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING,	FILE_ATTRIBUTE_NORMAL, nullptr);
+				if (hFile == INVALID_HANDLE_VALUE) goto dxle_detail_detect_sound_data_type_error;
+
+				dwFileSize = GetFileSize(hFile, NULL);
+				if (dwFileSize != 0xFFFFFFFF) {
+					printf("FileSize = %u bytes\n", dwFileSize);
+				}
+
+				CloseHandle(hFile);
 				try {
 					tpath path(FileName);
 					const auto size = fs::file_size(path);
@@ -91,6 +102,8 @@ namespace dxle
 				catch(const std::exception&){
 					return sound_data_type::big;
 				}
+			dxle_detail_detect_sound_data_type_error:
+				return sound_data_type::big;
 			}
 		}
 		class sound final : public impl::Unique_HandledObject_Bace < sound >

@@ -129,7 +129,13 @@ namespace impl{
 	private:
 		int handle;
 	};
-	template<typename Child>
+	namespace detail {
+		template<typename HandleType, bool is_dxlib_handle> int SetDeleteHandleFlag(HandleType, HandleType*) {}
+		template<> int SetDeleteHandleFlag<int, false>(int handle, int* delete_flg) {
+			return DxLib::SetDeleteHandleFlag(handle, delete_flg);
+		}
+	}
+	template<typename Child, bool is_dxlib_handle = true, typename HandleType = int, HandleType invalid_handle_value = static_cast<HandleType>(-1)>
 	//!ハンドルの指すオブジェクト実装用
 	class Unique_HandledObject_Bace
 	{
@@ -155,30 +161,30 @@ namespace impl{
 		{
 			if (this == &other) { return *this; }
 			handle = other.handle;
-			DxLib::SetDeleteHandleFlag(handle, &handle);
+			detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
 			other.handle = -1;
 			return *this;
 		}
 		void swap(Unique_HandledObject_Bace& o) { std::swap(this->handle, o.handle); }
 	protected:
 		//間違えて他の種類のハンドルを持たないようにprotectedにしておく
-		Unique_HandledObject_Bace(int param_handle)DXLE_NOEXCEPT_OR_NOTHROW
+		Unique_HandledObject_Bace(HandleType param_handle)DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(param_handle)
 		{
-			DxLib::SetDeleteHandleFlag(handle, &handle);
+			detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
 		}
 		virtual ~Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW {
 			//リソース解放
 			static_cast<Child*>(this)->delete_this();
 		}
-		DXLE_CONSTEXPR int GetHandle() const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
-		void set_handle(int param_handle) { 
+		DXLE_CONSTEXPR HandleType GetHandle() const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
+		void set_handle(HandleType param_handle) {
 			std::swap(handle, param_handle);
-			if(-1 != param_handle) DxLib::SetDeleteHandleFlag(handle, &handle);
+			if(-1 != param_handle) detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
 		}
 		DXLE_CONSTEXPR bool is_vaid() const DXLE_NOEXCEPT_OR_NOTHROW { return -1 != handle; }
 	private:
-		int handle;
+		HandleType handle;
 	};
 
 }//namespace impl
