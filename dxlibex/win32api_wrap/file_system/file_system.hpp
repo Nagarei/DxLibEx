@@ -81,7 +81,7 @@ namespace win32api{
 			DXLE_CXX14_CONSTEXPR flags_and_attributes& operator=(flags_and_attributes&& o) { this->dwFlagsAndAttributes = o.dwFlagsAndAttributes; return *this; }
 			DXLE_CONSTEXPR flags_and_attributes(file_attribute attribute) : dwFlagsAndAttributes(static_cast<DWORD>(attribute)) {}
 			DXLE_CONSTEXPR flags_and_attributes(file_attributes attribute, file_flag flag) : dwFlagsAndAttributes(static_cast<DWORD>(attribute) | static_cast<DWORD>(flag)) {}
-			DXLE_CONSTEXPR explicit operator DWORD() { return dwFlagsAndAttributes; }
+			DXLE_CONSTEXPR explicit operator DWORD() const { return dwFlagsAndAttributes; }
 		};
 	}
 	DXLE_CONSTEXPR detail::flags_and_attributes operator|(file_attributes attribute, file_flag flag) { return{ attribute, flag }; }
