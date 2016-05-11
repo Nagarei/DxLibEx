@@ -37,7 +37,7 @@ namespace win32api {
 				FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
 				nullptr, err_code, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), &str[0], static_cast<DWORD>(str.size()), nullptr
 			);
-			if (!len) return (loop_cnt < 4) ? handle_error_helper(err_code, buffer_len * 2, loop_cnt + 1) : str_t();//エラー時はバッファーが足りなかったことを考え再帰
+			if (!len) return (loop_cnt < 4) ? handle_error_helper<CharType>(err_code, buffer_len * 2, loop_cnt + 1) : str_t();//エラー時はバッファーが足りなかったことを考え再帰
 			str.resize(len);
 			return str;
 		}

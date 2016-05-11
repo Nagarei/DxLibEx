@@ -130,7 +130,7 @@ namespace impl{
 		int handle;
 	};
 	namespace detail {
-		template<typename HandleType, bool is_dxlib_handle> int SetDeleteHandleFlag(HandleType, HandleType*) {}
+		template<typename HandleType, bool is_dxlib_handle> int SetDeleteHandleFlag(HandleType, HandleType*) { return 0; }
 		template<> int SetDeleteHandleFlag<int, false>(int handle, int* delete_flg) {
 			return DxLib::SetDeleteHandleFlag(handle, delete_flg);
 		}
@@ -150,14 +150,14 @@ namespace impl{
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
 	protected:
 		DXLE_CONSTEXPR Unique_HandledObject_Bace()DXLE_NOEXCEPT_OR_NOTHROW
-			: handle(-1)
+			: handle(invalid_handle_value)
 		{}
 
 		//所有権の譲渡
 		Unique_HandledObject_Bace(Bace_T&& other)DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(std::move(other.handle))
 		{
-			other.handle = -1;
+			other.handle = invalid_handle_value;
 		}
 		//所有権の譲渡
 		Unique_HandledObject_Bace& operator=(Bace_T&& other)DXLE_NOEXCEPT_OR_NOTHROW
@@ -165,7 +165,7 @@ namespace impl{
 			if (this == &other) { return *this; }
 			handle = other.handle;
 			detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
-			other.handle = -1;
+			other.handle = invalid_handle_value;
 			return *this;
 		}
 		void swap(Unique_HandledObject_Bace& o) { std::swap(this->handle, o.handle); }
@@ -183,9 +183,9 @@ namespace impl{
 		DXLE_CONSTEXPR HandleType GetHandle() const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
 		void set_handle(HandleType param_handle) {
 			std::swap(handle, param_handle);
-			if(-1 != param_handle) detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
+			if(invalid_handle_value != param_handle) detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
 		}
-		DXLE_CONSTEXPR bool is_vaid() const DXLE_NOEXCEPT_OR_NOTHROW { return -1 != handle; }
+		DXLE_CONSTEXPR bool is_vaid() const DXLE_NOEXCEPT_OR_NOTHROW { return invalid_handle_value != handle; }
 	private:
 		HandleType handle;
 	};
