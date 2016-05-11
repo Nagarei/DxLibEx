@@ -74,18 +74,18 @@ namespace win32api{
 		private:
 			DWORD dwFlagsAndAttributes;
 		public:
-			flags_and_attributes() = default;
-			flags_and_attributes(const flags_and_attributes&) = default;
-			flags_and_attributes(flags_and_attributes&&) = default;
-			flags_and_attributes& operator=(const flags_and_attributes&) = default;
-			flags_and_attributes& operator=(flags_and_attributes&&) = default;
-			flags_and_attributes(file_attribute attribute) : dwFlagsAndAttributes(static_cast<DWORD>(attribute)) {}
-			flags_and_attributes(file_attributes attribute, file_flag flag) : dwFlagsAndAttributes(static_cast<DWORD>(attribute) | static_cast<DWORD>(flag)) {}
-			explicit operator DWORD() { return dwFlagsAndAttributes; }
+			DXLE_CONSTEXPR flags_and_attributes() : dwFlagsAndAttributes() {}
+			DXLE_CONSTEXPR flags_and_attributes(const flags_and_attributes& o) : dwFlagsAndAttributes(o.dwFlagsAndAttributes) {}
+			DXLE_CONSTEXPR flags_and_attributes(flags_and_attributes&& o) : dwFlagsAndAttributes(o.dwFlagsAndAttributes) {}
+			DXLE_CXX14_CONSTEXPR flags_and_attributes& operator=(const flags_and_attributes& o) { this->dwFlagsAndAttributes = o.dwFlagsAndAttributes; return *this; }
+			DXLE_CXX14_CONSTEXPR flags_and_attributes& operator=(flags_and_attributes&& o) { this->dwFlagsAndAttributes = o.dwFlagsAndAttributes; return *this; }
+			DXLE_CONSTEXPR flags_and_attributes(file_attribute attribute) : dwFlagsAndAttributes(static_cast<DWORD>(attribute)) {}
+			DXLE_CONSTEXPR flags_and_attributes(file_attributes attribute, file_flag flag) : dwFlagsAndAttributes(static_cast<DWORD>(attribute) | static_cast<DWORD>(flag)) {}
+			DXLE_CONSTEXPR explicit operator DWORD() { return dwFlagsAndAttributes; }
 		};
 	}
-	detail::flags_and_attributes operator|(file_attributes attribute, file_flag flag) { return{ attribute, flag }; }
-	detail::flags_and_attributes operator|(file_flag flag, file_attributes attribute) { return{ attribute, flag }; }
+	DXLE_CONSTEXPR detail::flags_and_attributes operator|(file_attributes attribute, file_flag flag) { return{ attribute, flag }; }
+	DXLE_CONSTEXPR detail::flags_and_attributes operator|(file_flag flag, file_attributes attribute) { return{ attribute, flag }; }
 	enum class file_type : DWORD {
 		unknown = FILE_TYPE_UNKNOWN,
 		disk = FILE_TYPE_DISK,
