@@ -135,7 +135,10 @@ namespace impl{
 			return DxLib::SetDeleteHandleFlag(handle, delete_flg);
 		}
 	}
-	template<typename Child, bool is_dxlib_handle = true, typename HandleType = int, HandleType invalid_handle_value = reinterpret_cast<HandleType>(-1)>
+	//Visual Studio cannot convert integral type to own type by reinterpret_cast.
+	//https://connect.microsoft.com/VisualStudio/feedback/details/2692140
+	//So, we use C-Style cast.
+	template<typename Child, bool is_dxlib_handle = true, typename HandleType = int, HandleType invalid_handle_value = /*reinterpret_cast<HandleType>*/(HandleType)(-1)>
 	//!ハンドルの指すオブジェクト実装用
 	class Unique_HandledObject_Bace
 	{
