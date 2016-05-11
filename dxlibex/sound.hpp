@@ -25,6 +25,7 @@
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/exception.hpp"
 #include "dxlibex/utility/inferior_string_ref.hpp"
+#include "dxlibex/win32api_wrap/file_system.hpp"
 #ifdef small
 #undef small//from rpcndr.h
 #endif
@@ -80,30 +81,17 @@ namespace dxle
 			auto_detect//call detail::detect_sound_data_type()
 		};
 		namespace detail {
-			sound_data_type detect_sound_data_type(sound_data_type datatype, const TCHAR *FileName) {
+			sound_data_type detect_sound_data_type(sound_data_type datatype, tinferior_string_ref FileName) {
 				if (sound_data_type::auto_detect != datatype) return datatype;
-				DWORD dwFileSize;
-
-				HANDLE hFile = CreateFile(FileName,	GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING,	FILE_ATTRIBUTE_NORMAL, nullptr);
-				if (hFile == INVALID_HANDLE_VALUE) goto dxle_detail_detect_sound_data_type_error;
-
-				dwFileSize = GetFileSize(hFile, NULL);
-				if (dwFileSize != 0xFFFFFFFF) {
-					printf("FileSize = %u bytes\n", dwFileSize);
-				}
-
-				CloseHandle(hFile);
+				using namespace win32api;
 				try {
-					tpath path(FileName);
-					const auto size = fs::file_size(path);
+					file_handle h(FileName, accsess::read, share_mode::read, creation_disposition::open_exitsting, file_attribute::normal);
 					DXLE_CONSTEXPR_OR_CONST std::uintmax_t borderline = 900000;//byte
-					return (size < borderline) ? sound_data_type::small : sound_data_type::big;
+					return (h.get_file_size() < borderline) ? sound_data_type::small : sound_data_type::big;
 				}
-				catch(const std::exception&){
+				catch (const std::exception&) {
 					return sound_data_type::big;
 				}
-			dxle_detail_detect_sound_data_type_error:
-				return sound_data_type::big;
 			}
 		}
 		class sound final : public impl::Unique_HandledObject_Bace < sound >
@@ -126,7 +114,7 @@ namespace dxle
 			void open(tinferior_string_ref FileName, sound_data_type type, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				if (this->is_vaid()) this->delete_this();
 				this->set_handle(
-					(sound_data_type::small == detail::detect_sound_data_type(type, FileName.c_str()))
+					(sound_data_type::small == detail::detect_sound_data_type(type, FileName))
 					? DxLib::LoadSoundMem(FileName.c_str())
 					: DxLib::LoadBGM(FileName.c_str())
 				);
@@ -143,7 +131,7 @@ namespace dxle
 			}
 			void open(tinferior_string_ref FileName, sound_data_type type) {
 				if (this->is_vaid()) this->delete_this();
-				const auto re = (sound_data_type::small == (type = detail::detect_sound_data_type(type, FileName.c_str())))
+				const auto re = (sound_data_type::small == (type = detail::detect_sound_data_type(type, FileName)))
 					? DxLib::LoadSoundMem(FileName.c_str())
 					: DxLib::LoadBGM(FileName.c_str());
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), (sound_data_type::small == type) ? "fail DxLib::LoadSoundMem()." : "fail DxLib::LoadBGM().");

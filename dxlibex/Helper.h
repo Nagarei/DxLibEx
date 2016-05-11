@@ -135,7 +135,7 @@ namespace impl{
 			return DxLib::SetDeleteHandleFlag(handle, delete_flg);
 		}
 	}
-	template<typename Child, bool is_dxlib_handle = true, typename HandleType = int, HandleType invalid_handle_value = static_cast<HandleType>(-1)>
+	template<typename Child, bool is_dxlib_handle = true, typename HandleType = int, HandleType invalid_handle_value = reinterpret_cast<HandleType>(-1)>
 	//!ハンドルの指すオブジェクト実装用
 	class Unique_HandledObject_Bace
 	{
