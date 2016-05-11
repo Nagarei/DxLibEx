@@ -14,6 +14,7 @@
 #include <cassert>
 #include <algorithm>
 #include "dxlibex/config/defines.h"
+#include <type_traits>
 
 namespace dxle{
 //!実装用のものが集まる名前空間です。開発者以外がここの機能を使うのはお勧めできません。
@@ -178,6 +179,10 @@ namespace impl{
 		}
 		virtual ~Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW {
 			//リソース解放
+			static_assert(std::is_same<decltype(this), std::remove_cv_t<decltype(this)>>::value, "err");
+			static_assert(!std::is_const<decltype(this)>::value, "err");
+			static_assert(std::is_same<decltype(this), Unique_HandledObject_Bace<Child, is_dxlib_handle, HandleType, invalid_handle_value>*>::value, "err");
+			static_assert(!std::is_const<Child>::value, "err");
 			static_cast<Child*>(this)->delete_this();
 		}
 		DXLE_CONSTEXPR HandleType GetHandle() const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
