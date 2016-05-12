@@ -195,3 +195,5 @@ ModelManifest.xml
 Log.txt
 *.VC.opendb
 *.VC.db
+dxlibex/ProjectDxLibEx_v140_MultiByte_x86_d.idb
+dxlibex/ProjectDxLibEx_v140_MultiByte_x86_d.lib
