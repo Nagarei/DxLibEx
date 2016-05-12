@@ -8,7 +8,7 @@
 #ifndef DXLE_INC_GRAPH2D_HPP_
 #define DXLE_INC_GRAPH2D_HPP_
 
-#include "dxlibex/texture/texture2d.h"
-#include "dxlibex/texture/animation_graph.h"
+#include "dxlibex/texture/texture2d.hpp"
+#include "dxlibex/texture/animation_graph.hpp"
 
 #endif

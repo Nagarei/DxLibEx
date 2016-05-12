@@ -31,6 +31,9 @@
     <Filter Include="dxlibex\texture">
       <UniqueIdentifier>{2117949f-e6b2-474c-ba2f-6da8b8d5c592}</UniqueIdentifier>
     </Filter>
+    <Filter Include="dxlibex\texture\texture2d">
+      <UniqueIdentifier>{73ed7c15-5b9b-485e-9f80-879e5ad2e23e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectDxLibEx\Graph2D.cpp">
@@ -191,17 +194,17 @@
     <ClInclude Include="dxlibex\texture\animation_graph.hpp">
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp">
+    <ClInclude Include="dxlibex\texture\texture2d.hpp">
       <Filter>dxlibex\texture</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp">
-      <Filter>dxlibex\texture</Filter>
+      <Filter>dxlibex\texture\texture2d</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp">
+      <Filter>dxlibex\texture\texture2d</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp">
-      <Filter>dxlibex\texture</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\texture\texture2d.hpp">
-      <Filter>dxlibex\texture</Filter>
+      <Filter>dxlibex\texture\texture2d</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

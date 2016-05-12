@@ -226,70 +226,70 @@ namespace dxle
 			inline tstring GetGraphFilePath()const;
 
 			//! 画像の等倍描画
-			inline int DrawGraph(int x, int y, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraph(x, y, GetHandle(), TransFlag); }
+			inline int DrawGraph(int x, int y, bool TransFlag)const ;
 			//! 画像の等倍描画
-			inline int DrawGraph(const pointi& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraph(p.x, p.y, GetHandle(), TransFlag); }
+			inline int DrawGraph(const pointi& p, bool TransFlag)const ;
 			//! 画像の拡大描画
-			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(x1, y1, x2, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendGraph(int x1, int y1, int x2, int y2, bool TransFlag)const ;
 			//! 画像の拡大描画
-			inline int DrawExtendGraph(const pointi& lu, const pointi& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
+			inline int DrawExtendGraph(const pointi& lu, const pointi& rb, bool TransFlag)const ;
 			//! 画像の回転描画
-			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const ;
 			//! 画像の回転描画
-			inline int DrawRotaGraph(const pointi& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph(const pointi& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const ;
 			//! 画像の回転描画２( 回転中心指定付き )
-			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const ;
 			//! 画像の回転描画２( 回転中心指定付き )
-			inline int DrawRotaGraph2(const pointi& p, const pointi& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2(const pointi& p, const pointi& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const ;
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
-			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
-			inline int DrawRotaGraph3(const pointi& p, const pointi& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph3(const pointi& p, const pointi& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の自由変形描画
-			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraph(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
+			inline int DrawModiGraph(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, bool TransFlag)const ;
 			//! 画像の自由変形描画
-			inline int DrawModiGraph(const std::array<pointi, 4>& ps, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraph(ps[0].x, ps[0].y, ps[1].x, ps[1].y, ps[2].x, ps[2].y, ps[3].x, ps[3].y, GetHandle(), TransFlag); }
+			inline int DrawModiGraph(const std::array<pointi, 4>& ps, bool TransFlag)const ;
 			//! 画像の左右反転描画
-			inline int DrawTurnGraph(int x, int y, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraph(x, y, GetHandle(), TransFlag); }
+			inline int DrawTurnGraph(int x, int y, bool TransFlag)const ;
 			//! 画像の左右反転描画
-			inline int DrawTurnGraph(const pointi& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraph(p.x, p.y, GetHandle(), TransFlag); }
+			inline int DrawTurnGraph(const pointi& p, bool TransFlag)const ;
 			//! 画像の拡大左右反転描画
-			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(x2, y1, x1, y2, GetHandle(), TransFlag); }//x1とx2はこれで正しい
+			inline int DrawExtendTurnGraph(int x1, int y1, int x2, int y2, bool TransFlag)const ;//x1とx2はこれで正しい
 			//! 画像の拡大左右反転描画
-			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraph(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//lu.xとrb.xはこれで正しい
+			inline int DrawExtendTurnGraph(const pointi& lu, const pointi& rb, bool TransFlag)const ;//lu.xとrb.xはこれで正しい
 
 			//! 画像の描画( 座標指定が float 版 )
-			inline int DrawGraphF(float xf, float yf, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraphF(xf, yf, GetHandle(), TransFlag); }
+			inline int DrawGraphF(float xf, float yf, bool TransFlag)const ;
 			//! 画像の描画( 座標指定が float 版 )
-			inline int DrawGraphF(const pointf& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawGraphF(p.x, p.y, GetHandle(), TransFlag); }
+			inline int DrawGraphF(const pointf& p, bool TransFlag)const ;
 			//! 画像の拡大描画( 座標指定が float 版 )
-			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x1f, y1f, x2f, y2, GetHandle(), TransFlag); }
+			inline int DrawExtendGraphF(float x1f, float y1f, float x2f, float y2, bool TransFlag)const ;
 			//! 画像の拡大描画( 座標指定が float 版 )
-			inline int DrawExtendGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag); }
+			inline int DrawExtendGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const ;
 			//! 画像の回転描画( 座標指定が float 版 )
-			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の回転描画( 座標指定が float 版 )
-			inline int DrawRotaGraphF(const pointf& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraphF(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraphF(const pointf& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
-			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
-			inline int DrawRotaGraph2F(const pointf& p, const pointf& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph2F(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph2F(const pointf& p, const pointf& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
-			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
-			inline int DrawRotaGraph3F(const pointf& p, const pointf& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawRotaGraph3F(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag); }
+			inline int DrawRotaGraph3F(const pointf& p, const pointf& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const ;
 			//! 画像の自由変形描画( 座標指定が float 版 )
-			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraphF(x1, y1, x2, y2, x3, y3, x4, y4, GetHandle(), TransFlag); }
+			inline int DrawModiGraphF(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, bool TransFlag)const ;
 			//! 画像の自由変形描画( 座標指定が float 版 )
-			inline int DrawModiGraphF(const std::array<pointf, 4>& ps, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawModiGraphF(ps[0].x, ps[0].y, ps[1].x, ps[1].y, ps[2].x, ps[2].y, ps[3].x, ps[3].y, GetHandle(), TransFlag); }
+			inline int DrawModiGraphF(const std::array<pointf, 4>& ps, bool TransFlag)const ;
 			//! 画像の左右反転描画( 座標指定が float 版 )
-			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraphF(xf, yf, GetHandle(), TransFlag); }
+			inline int DrawTurnGraphF(float xf, float yf, bool TransFlag)const ;
 			//! 画像の左右反転描画( 座標指定が float 版 )
-			inline int DrawTurnGraphF(const pointf& p, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawTurnGraphF(p.x, p.y, GetHandle(), TransFlag); }
+			inline int DrawTurnGraphF(const pointf& p, bool TransFlag)const ;
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
-			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(x2f, y1f, x1f, y2f, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
+			inline int DrawExtendTurnGraphF(float x1f, float y1f, float x2f, float y2f, bool TransFlag)const ;//x1fとx2fはこれで正しい
 			//! 画像の拡大左右反転描画( 座標指定が float 版 )
-			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const { DXLE_GET_LOCK(screen_mutex_c::mtx); return DxLib::DrawExtendGraphF(rb.x, lu.y, lu.x, rb.y, GetHandle(), TransFlag); }//x1fとx2fはこれで正しい
+			inline int DrawExtendTurnGraphF(const pointf& lu, const pointf& rb, bool TransFlag)const ;//x1fとx2fはこれで正しい
 
 			int filter_mono			(int16_t Cb, int16_t Cr);
 			int filter_gaussian		(uint16_t PixelWidth, int Param);
