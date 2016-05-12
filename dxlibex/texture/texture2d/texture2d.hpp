@@ -11,7 +11,7 @@
 #include "dxlibex/config/no_min_max.h"
 #include "DxLib.h"
 #include <cstdint>
-#include "../texture2d.h"
+#include "../texture2d.hpp"
 #include "dxlibex/basic_types.hpp"
 
 //--------------------実装--------------------//
@@ -95,37 +95,37 @@ namespace dxle
 			return DxLib::DrawExtendGraph(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag);
 		}
 		//! 画像の回転描画
-		inline int texture2d::DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const
+		inline int texture2d::DrawRotaGraph(int x, int y, double ExRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph(x, y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画
-		inline int texture2d::DrawRotaGraph(const pointi& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = false)const
+		inline int texture2d::DrawRotaGraph(const pointi& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画２( 回転中心指定付き )
-		inline int texture2d::DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const
+		inline int texture2d::DrawRotaGraph2(int x, int y, int cx, int cy, double ExtRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph2(x, y, cx, cy, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画２( 回転中心指定付き )
-		inline int texture2d::DrawRotaGraph2(const pointi& p, const pointi& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = false)const
+		inline int texture2d::DrawRotaGraph2(const pointi& p, const pointi& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph2(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
-		inline int texture2d::DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraph3(int x, int y, int cx, int cy, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph3(x, y, cx, cy, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )
-		inline int texture2d::DrawRotaGraph3(const pointi& p, const pointi& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraph3(const pointi& p, const pointi& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph3(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag);
@@ -194,37 +194,37 @@ namespace dxle
 			return DxLib::DrawExtendGraphF(lu.x, lu.y, rb.x, rb.y, GetHandle(), TransFlag);
 		}
 		//! 画像の回転描画( 座標指定が float 版 )
-		inline int texture2d::DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraphF(float xf, float yf, double ExRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraphF(xf, yf, ExRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画( 座標指定が float 版 )
-		inline int texture2d::DrawRotaGraphF(const pointf& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraphF(const pointf& p, double ExRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraphF(p.x, p.y, ExRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
-		inline int texture2d::DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraph2F(float xf, float yf, float cxf, float cyf, double ExtRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph2F(xf, yf, cxf, cyf, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画２( 回転中心指定付き )( 座標指定が float 版 )
-		inline int texture2d::DrawRotaGraph2F(const pointf& p, const pointf& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraph2F(const pointf& p, const pointf& c, double ExtRate, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph2F(p.x, p.y, c.x, c.y, ExtRate, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
-		inline int texture2d::DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraph3F(float xf, float yf, float cxf, float cyf, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph3F(xf, yf, cxf, cyf, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag);
 		}
 		//! 画像の回転描画３( 回転中心指定付き＋縦横拡大率別指定版 )( 座標指定が float 版 )
-		inline int texture2d::DrawRotaGraph3F(const pointf& p, const pointf& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag = FALSE)const
+		inline int texture2d::DrawRotaGraph3F(const pointf& p, const pointf& c, double ExtRateX, double ExtRateY, double Angle, bool TransFlag, bool TurnFlag)const
 		{
 			DXLE_GET_LOCK(screen_mutex_c::mtx);
 			return DxLib::DrawRotaGraph3F(p.x, p.y, c.x, c.y, ExtRateX, ExtRateY, Angle, GetHandle(), TransFlag, TurnFlag);
@@ -363,7 +363,7 @@ namespace dxle
 			load(FileName, Num, Size, NotUse3DFlag);
 		}
 		template<size_t N>
-		inline void static_derivative_texture2d<N>::load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
+		inline void static_derivative_texture2d<N>::load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			int HandleBuf[N];
 			auto iter = textures.begin();
@@ -371,7 +371,7 @@ namespace dxle
 			return;
 		}
 		template<size_t N>
-		inline void static_derivative_texture2d<N>::load(const tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
+		inline void static_derivative_texture2d<N>::load(const tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			load(FileName.c_str(), Num, Size, NotUse3DFlag);
 		}

@@ -14,7 +14,7 @@
 #include <mutex>
 #include <functional>
 #include "DxLib.h"
-#include "texture2d.h"
+#include "texture2d.hpp"
 #include "dxlibex/time.hpp"
 #include "dxlibex/thread.hpp"
 

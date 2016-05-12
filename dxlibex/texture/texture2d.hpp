@@ -658,5 +658,5 @@ namespace dxle
 	using namespace graph2d;
 }
 
-#include "texture2d.hpp"
+#include "texture2d/texture2d.hpp"
 #endif
