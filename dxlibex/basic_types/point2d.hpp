@@ -13,7 +13,7 @@
 #include "dxlibex/type_traits/is_representable.hpp"
 #include "dxlibex/type_traits/is_nothrow.hpp"
 #include "dxlibex/type_traits/ignore.hpp"
-#include "dxlibex/basic_types/arithmetic_t.hpp"
+#include "dxlibex/basic_types/use_big_type_when_one_byte_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
 #include "dxlibex/basic_types/distance_result_type_t.hpp"
 #include "dxlibex/basic_types/coordinate_operator_bool_helper.hpp"
@@ -32,7 +32,7 @@
 #include "dxlibex/config/defines.h"
 
 namespace dxle {
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t>>
+	template<typename T, enable_if_t<std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t>>
 	class size_c;
 	/**
 	\~japanese	@brief	2次元座標(x, y)　テンプレートクラス。
@@ -107,15 +107,40 @@ namespace dxle {
 	public:
 		typedef typename std::remove_cv<T>::type value_type;
 		value_type x, y;
-		DXLE_CONSTEXPR_CLASS point_c() DXLE_NOEXCEPT_IF(std::is_nothrow_constructible<value_type>::value) : x(), y() {}
+		DXLE_CONSTEXPR_CLASS point_c() DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<value_type>::value)) : x(), y() {}
 		DXLE_CONSTEXPR_CLASS point_c(const value_type& x_, const value_type& y_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(x_), y(y_) {}
 		DXLE_CONSTEXPR_CLASS point_c(value_type&& x_, value_type&& y_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)) {}
+
+		//!\~english conversion from another data type
+		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(const point_c<Tp2_>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_, value_type>::value)) : x(static_cast<value_type>(other.x)), y(static_cast<value_type>(other.y)){}
+		//!\~english conversion from another data type
+		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(point_c<Tp2_>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value)) : x(static_cast<value_type>(std::move(other.x))), y(static_cast<value_type>(std::move(other.y))) {}
 
 		//copy constructor
 		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(o.x), y(o.y) {}
 		//move constructor
 		DXLE_CONSTEXPR_CLASS point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW
 			: x(std::move(o.x)), y(std::move(o.y)) {}
+
+		//!\~english conversion from size_c
+		//!\~japanese size_cクラスからの変換
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(const size_c<Tp2_, nullptr>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_, value_type>::value))
+			: x(static_cast<value_type>(other.width)), y(static_cast<value_type>(other.height)) {}
+		//!\~english conversion from size_c
+		//!\~japanese size_cクラスからの変換
+		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(size_c<Tp2_, nullptr>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value))
+			: x(static_cast<value_type>(std::move(other.width))), y(static_cast<value_type>(std::move(other.height))) {}
+		//!\~english conversion from size_c
+		//!\~japanese size_cクラスからの変換
+		DXLE_CONSTEXPR_CLASS point_c(const size_c<value_type, nullptr>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, value_type>::value))
+			: x(other.width), y(other.height) {}
+		//!\~english conversion from size_c
+		//!\~japanese size_cクラスからの変換
+		DXLE_CONSTEXPR_CLASS point_c(size_c<value_type, nullptr>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type&&, value_type>::value))
+			: x(std::move(other.width)), y(std::move(other.height)) {}
+
 		//copy assignment operator
 		point_c& operator=(const point_c<value_type>& r) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_assignable<value_type>::value))
 		{
@@ -137,18 +162,6 @@ namespace dxle {
 		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y))){
 			return dxle::detail::operator_bool_helper(this->x, this->y);
 		}
-		//!\~english conversion to another data type
-		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator point_c<Tp2_>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
-		{
-			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y) };
-		}
-		//!\~english conversion to size_c
-		//!\~japanese size_cクラスへの変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit operator size_c<Tp2_, nullptr>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
-		{
-			return{ static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y) };
-		}
 		//!\~english conversion to std::pair
 		//!\~japanese std::pairへの変換
 		template<typename Tp2_> explicit operator std::pair<Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, Tp2_>::value))
@@ -162,27 +175,27 @@ namespace dxle {
 	@relates point_c
 	\~japanese	@brief	std::pairからの変換
 	\~english	@brief	conversion from std::pair
-	\~japanese	@param p	std::pairオブジェクトへのconst-lvalue reference
-	\~english	@param p	const-lvalue reference to std::pair
+	\~japanese	@param pa	std::pairオブジェクトへのconst-lvalue reference
+	\~english	@param pa	const-lvalue reference to std::pair
 	\~japanese	@return	point_cクラスオブジェクト
 	\~english	@return	point_c value
 	*/
-	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& p) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value)
+	template<typename T> point_c<T> make_point_c(const std::pair<T, T>& pa) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value)
 	{
-		return point_c<T>(p.first, p.second);
+		return point_c<T>(pa.first, pa.second);
 	}
 	/**
 	@relates point_c
 	\~japanese	@brief	std::pairからの変換
 	\~english	@brief	conversion from std::pair
-	\~japanese	@param p	std::pairオブジェクトへのrvalue reference
-	\~english	@param p	rvalue reference to std::pair
+	\~japanese	@param pa	std::pairオブジェクトへのrvalue reference
+	\~english	@param pa	rvalue reference to std::pair
 	\~japanese	@return	point_cクラスオブジェクト
 	\~english	@return	point_c value
 	*/
-	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& p) DXLE_NOEXCEPT_OR_NOTHROW
+	template<typename T> point_c<T> make_point_c(std::pair<T, T>&& pa) DXLE_NOEXCEPT_OR_NOTHROW
 	{
-		return point_c<T>(std::move(p.first), std::move(p.second));
+		return point_c<T>(std::move(pa.first), std::move(pa.second));
 	}
 
 	//ostream operator
@@ -190,13 +203,13 @@ namespace dxle {
 		template<typename CharType, typename PointType>
 		void ostream_operator_helper(std::basic_ostream<CharType>& os, const CharType* str, const point_c<PointType>& p)
 		{
-			using arithmetic_p = arithmetic_t<PointType>;
-			os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y);
+			using use_big_type_when_one_byte_p = use_big_type_when_one_byte_t<PointType>;
+			os << static_cast<use_big_type_when_one_byte_p>(p.x) << str << static_cast<use_big_type_when_one_byte_p>(p.y);
 		}
 		template<typename CharType, typename PointType>
 		void istream_operator_helper(std::basic_istream<CharType>& is, point_c<PointType>& p)
 		{
-			arithmetic_t<PointType> x, y;
+			use_big_type_when_one_byte_t<PointType> x, y;
 			is >> x;
 			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
 			is >> y;
@@ -232,7 +245,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wostream& operator<<(std::wostream& os, const point_c<T>& p)
 	{
-		detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
+		dxle::detail::ostream_operator_helper<wchar_t, T>(os, L", ", p);
 		return os;
 	}
 	/**
@@ -264,7 +277,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
 	{
-		detail::istream_operator_helper<wchar_t, T>(is, p);
+		dxle::detail::istream_operator_helper<wchar_t, T>(is, s);
 		return is;
 	}
 
@@ -554,7 +567,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
 	}
@@ -572,7 +585,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	DXLE_CONSTEXPR_CLASS bool operator ==(nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
 	}

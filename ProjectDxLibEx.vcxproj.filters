@@ -28,6 +28,9 @@
     <Filter Include="dxlibex\math">
       <UniqueIdentifier>{29c3d5e2-1263-40c2-ae45-667a8df7510c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="dxlibex\texture">
+      <UniqueIdentifier>{2117949f-e6b2-474c-ba2f-6da8b8d5c592}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectDxLibEx\Graph2D.cpp">
@@ -36,12 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dxlibex\basic_types.hpp">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibEx.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\Graph2D.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\Helper.h">
@@ -53,14 +50,8 @@
     <ClInclude Include="dxlibex\structs.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\thread.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\config\LINK.h">
       <Filter>dxlibex\config</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\DxLibWrap.h">
-      <Filter>dxlibex</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\config\defines.h">
       <Filter>dxlibex\config</Filter>
@@ -89,10 +80,7 @@
     <ClInclude Include="dxlibex\config\no_min_max.h">
       <Filter>dxlibex\config</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\Color.hpp">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
-    <ClInclude Include="dxlibex\basic_types\arithmetic_t.hpp">
+    <ClInclude Include="dxlibex\basic_types\use_big_type_when_one_byte_t.hpp">
       <Filter>dxlibex\basic_types</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\basic_types\point2d.hpp">
@@ -179,8 +167,41 @@
     <ClInclude Include="dxlibex\basic_types\tchar.hpp">
       <Filter>dxlibex\basic_types</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\Sound.h">
+    <ClInclude Include="dxlibex\dxlibex.hpp">
       <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\dxlib_wrap.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\graph2d.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\thread.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\sound.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\color.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\time.hpp">
+      <Filter>dxlibex</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\animation_graph.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp">
+      <Filter>dxlibex\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\texture\texture2d.hpp">
+      <Filter>dxlibex\texture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

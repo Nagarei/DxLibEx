@@ -11,7 +11,7 @@
 #include "dxlibex/type_traits/first_enabled.hpp"
 #include "dxlibex/type_traits/enable_if.hpp"
 #include "dxlibex/type_traits/is_representable.hpp"
-#include "dxlibex/basic_types/arithmetic_t.hpp"
+#include "dxlibex/basic_types/use_big_type_when_one_byte_t.hpp"
 #include "dxlibex/basic_types/stdint.hpp"
 #include "dxlibex/basic_types/distance_result_type_t.hpp"
 #include "dxlibex/basic_types/coordinate_operator_bool_helper.hpp"
@@ -68,8 +68,32 @@ namespace dxle {
 	dxle::point3di pt = (a + b)*10.f;
 	std::cout << pt << std::endl;
 	@endcode
+	\~english @tparam T
+	\~english T is the type of the elements. T must meet the requirements of <a href="http://en.cppreference.com/w/cpp/types/is_move_assignable">NothrowMoveAssignable</a> and <a href="http://en.cppreference.com/w/cpp/types/is_move_constructible">NothrowConstructable</a>.
+	\~english T is expected the following conditions to use all features.
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/DefaultConstructible">DefaultConstructible</a>
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/CopyConstructible">CopyConstructible</a>
+	\~english - <a href="http://en.cppreference.com/w/cpp/concept/CopyAssignable">CopyAssignable</a>
+	\~english - has unary operator + -
+	\~english - has binary operator + - * / += -= *= /= == !=
+	\~english - has binary operator != to compare with 0
+	\~english - able to call functon abs and hypot.
+	\~english - <a href="http://en.cppreference.com/w/cpp/types/is_floating_point">std::is_floating_point</a><T> == true or able to convert to double via static_cast.
+	\~japanese @tparam T
+	\~japanese 型Tは少なくとも以下の条件を満たしている必要があります。
+	\~japanese - 型が例外を投げずにムーブ構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_nothrow_move_constructible.html">is_nothrow_move_constructible</a><T>::value == trueであること）
+	\~japanese - 型が例外を投げずにムーブ代入可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_nothrow_move_assignable.html">is_nothrow_move_assignable</a><T>::value == trueであること）
+	\~japanese .
+	\~japanese また、以下の条件を満たしている事が期待されています。
+	\~japanese - 型がデフォルト構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_default_constructible.html">is_default_constructible</a><T>::value == trueであること）
+	\~japanese - 型がコピー構築可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_copy_constructible.html">is_copy_constructible</a><T>::value == trueであること）
+	\~japanese - 型がコピー代入可能であること（<a href="http://cpprefjp.github.io/reference/type_traits/is_copy_assignable.html">is_copy_assignable</a><T>::value == trueであること）
+	\~japanese - 単項 + - 演算子を持つこと
+	\~japanese - 二項 + - * / += -= *= /= == != 演算子を持つこと
+	\~japanese - 0と!=で比較することが可能であること（  t != 0;  (tはconst T&型の変数)がコンパイル可能であること）
+	\~japanese - abs, hypot関数がADLなどで見つかること
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value && std::is_move_constructible<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<std::is_nothrow_move_constructible<T>::value && std::is_nothrow_move_assignable<T>::value, nullptr_t> = nullptr>
 	class point3d_c final
 	{
 	public:
@@ -80,11 +104,11 @@ namespace dxle {
 		DXLE_CONSTEXPR_CLASS point3d_c(value_type&& x_, value_type&& y_, value_type&& z_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)), z(std::move(z_)) {}
 
 		//copy constructor
-		DXLE_CONSTEXPR_CLASS point3d_c(const point3d_c<value_type>& o) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<value_type>::value) : x(o.x), y(o.y), z(o.z) {}
+		DXLE_CONSTEXPR_CLASS point3d_c(const point3d_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(o.x), y(o.y), z(o.z) {}
 		//move constructor
 		DXLE_CONSTEXPR_CLASS point3d_c(point3d_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(o.x)), y(std::move(o.y)), z(std::move(o.z)) {}
 		//copy assignment operator
-		point3d_c& operator=(const point3d_c<value_type>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_assignable<value_type>::value)
+		point3d_c& operator=(const point3d_c<value_type>& r) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_assignable<value_type>::value))
 		{
 			this->x = r.x;
 			this->y = r.y;
@@ -99,7 +123,6 @@ namespace dxle {
 			this->z = std::move(r.z);
 			return *this;
 		}
-
 		//!operator bool
 		//!1. operator bool
 		//!2. operator != (nullptr)
@@ -154,13 +177,13 @@ namespace dxle {
 		template<typename CharType, typename point3dType>
 		void ostream_operator_helper(std::basic_ostream<CharType>& os, const CharType* str, const point3d_c<point3dType>& p)
 		{
-			using arithmetic_p = arithmetic_t<point3dType>;
-			os << static_cast<arithmetic_p>(p.x) << str << static_cast<arithmetic_p>(p.y) << str << static_cast<arithmetic_p>(p.z);
+			using use_big_type_when_one_byte_p = use_big_type_when_one_byte_t<point3dType>;
+			os << static_cast<use_big_type_when_one_byte_p>(p.x) << str << static_cast<use_big_type_when_one_byte_p>(p.y) << str << static_cast<use_big_type_when_one_byte_p>(p.z);
 		}
 		template<typename CharType, typename point3dType>
 		void istream_operator_helper(std::basic_istream<CharType>& is, point3d_c<point3dType>& p)
 		{
-			arithmetic_t<point3dType> x, y, z;
+			use_big_type_when_one_byte_t<point3dType> x, y, z;
 			is >> x;
 			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
 			is >> y;
@@ -360,7 +383,7 @@ namespace dxle {
 	\~japanese	@return	point3d_cクラスオブジェクトの各メンバーに第二引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator *(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x * r)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -378,7 +401,7 @@ namespace dxle {
 	\~japanese	@return	point3d_cクラスオブジェクトの各メンバーに第一引数を乗じた結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l + r.x)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -396,7 +419,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	point3d_c<T1>& operator *=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x *= r)
 	{
 	    l.x *= r;
@@ -416,7 +439,7 @@ namespace dxle {
 	\~japanese	@return	point3d_cクラスオブジェクトの各メンバーを第一引数で割った結果
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto operator /(const point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x / r)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -434,7 +457,7 @@ namespace dxle {
 	\~japanese	@return	第一引数へのlvalue reference
 	\~english	@return	lvalue reference to 1st argument
 	*/
-	template <typename T1, typename T2, enable_if_t<std::is_arithmetic<T2>::value && is_representable<T2, T1>::value, nullptr_t> = nullptr>
+	template <typename T1, typename T2, enable_if_t<is_representable<T2, T1>::value, nullptr_t> = nullptr>
 	point3d_c<T1>& operator /=(point3d_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x /= r)
 	{
 	    l.x /= r;
@@ -454,7 +477,7 @@ namespace dxle {
 	\~japanese	@return	左辺と右辺が等しくなければtrueを返す
 	\~english	@return	true if left operand is not equal to right operand
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& l, const point3d_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x)
 	{
 		return (l.x != r.x) || (l.y != r.y) || (l.z != r.z);
@@ -473,7 +496,7 @@ namespace dxle {
 	bool re = p != 0;//false
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator !=(const point3d_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
@@ -492,7 +515,7 @@ namespace dxle {
 	bool re = 0 != p;//false
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator !=(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
@@ -525,10 +548,10 @@ namespace dxle {
 	bool re = 0 == p;//true
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator ==(const point3d_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
-		return static_cast<bool>(p);
+		return !static_cast<bool>(p);
 	}
 
 	/**
@@ -544,7 +567,7 @@ namespace dxle {
 	bool re = 0 == p;//true
 	@endcode
 	*/
-	template <typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template <typename T>
 	DXLE_CONSTEXPR_CLASS bool operator ==(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return static_cast<bool>(p);
@@ -563,7 +586,7 @@ namespace dxle {
 	const auto result = dxle::abs(p1);//(2, 4)
 	@endcode
 	*/
-	template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
+	template<typename T>
 	DXLE_CONSTEXPR_CLASS point3d_c<T> abs(const point3d_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(o.x)) { return{ abs(o.x), abs(o.y), abs(o.z) }; }
 
 	/**
@@ -577,7 +600,7 @@ namespace dxle {
 	\~japanese	@return	計算結果。戻り値の型は暗黙の型変換で得られるものです。
 	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
-	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template<typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto dot(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(p1.x * p2.x + p1.y * p2.y + p1.z * p2.z)
 		-> decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 	{
@@ -595,7 +618,7 @@ namespace dxle {
 	\~japanese	@return	計算結果。
 	\~english	@return	Computed result.
 	*/
-	template<typename T1, typename T2, enable_if_t<std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value, nullptr_t> = nullptr>
+	template<typename T1, typename T2>
 	DXLE_CONSTEXPR_CLASS auto cross(const point3d_c<T1>& p1, const point3d_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(std::declval<T1>() * std::declval<T2>() - std::declval<T1>() * std::declval<T2>())
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
@@ -616,9 +639,9 @@ namespace dxle {
 	*/
 	template<typename T1, typename T2> 
 	distance_result_type_t<T1, T2> distance(const point3d_c<T1>& p1, const point3d_c<T2>& p2)
-		DXLE_NOEXCEPT_IF_EXPR(std::hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
+		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
 	{
-		return std::hypot(safe_dist(p1.x, p2.x), std::hypot(safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
+		return hypot(safe_dist(p1.x, p2.x), (safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
 	}
 	typedef point3d_c<int> point3di;
 	typedef point3d_c<std::uint8_t> point3du8i;

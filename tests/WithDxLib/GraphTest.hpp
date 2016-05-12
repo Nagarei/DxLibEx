@@ -1,12 +1,12 @@
 ﻿//現状テストというよりサンプル
 //後で書き直す
 #define DX_NON_USING_NAMESPACE_DXLIB
-#include "dxlibex\Graph2D.h"
+#include "dxlibex\graph2d.hpp"
 #include "dxlibex\basic_types.hpp"
 
-int DrawGraph(const dxle::pointi& point, const dxle::texture_2d& Graph, bool TransFlag)
+int DrawGraph(const dxle::pointi& point, const dxle::texture2d& Graph, bool TransFlag)
 {
-	return Graph.DrawGraph(point, TransFlag);
+	return Graph.DrawGraph(point.x, point.y, TransFlag);
 }
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -30,9 +30,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		DxLib::ClearDrawScreen();
 
 		// 読みこんだグラフィックを画面中央に描画
-		//DrawGraph(dxle::pointd(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
-		GHandle.DrawGraph(dxle::pointd(sizei{ 640, 480 } -GHandle.size()) / 2, true);
-		GHandle.DrawGraph({ 0,0 }, true);
+		DrawGraph(dxle::pointi(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
+		//GHandle.DrawGraph({0.1,0.1}, true);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();

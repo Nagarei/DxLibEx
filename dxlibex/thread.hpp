@@ -5,8 +5,8 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#ifndef DXLE_INC_THREAD_H_
-#define DXLE_INC_THREAD_H_
+#ifndef DXLE_INC_THREAD_HPP_
+#define DXLE_INC_THREAD_HPP_
 
 #include "dxlibex/config/no_min_max.h"
 #include <mutex>
@@ -14,7 +14,7 @@
 #include "dxlibex/config/defines.h"
 
 #ifdef DX_THREAD_SAFE
-#define DXLE_GET_LOCK(mtx) (std::lock_guard<decltype(mtx)> lock(mtx);)
+#define DXLE_GET_LOCK(mtx) std::lock_guard<decltype(mtx)> lock(mtx);
 #define DXLE_NOEXCEPT_OR_NOTHROW_SINGLE
 #else
 #define DXLE_GET_LOCK(mtx)

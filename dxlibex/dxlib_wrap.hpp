@@ -13,11 +13,11 @@ Distributed under the Boost Software License, Version 1.0.
 * <a href="http://homepage2.nifty.com/natupaji/DxLib/dxfunc.html">ＤＸライブラリ　関数リファレンスページ</a>
 */
 
-#ifndef DXLE_INC_DXLIBWRAP_H_
-#define DXLE_INC_DXLIBWRAP_H_
+#ifndef DXLE_INC_DXLIB_WRAP_HPP_
+#define DXLE_INC_DXLIB_WRAP_HPP_
 #include "dxlibex/config/no_min_max.h"
-#include "Graph2D.h"
-#include "dxlibex/thread.h"
+#include "dxlibex/graph2d.hpp"
+#include "dxlibex/thread.hpp"
 namespace dxle {
 //置換用正規表現（Visual Studio用）
 //^(?<indent>\s*)extern\s+(?<ReturnType>\w+)\s+(?<FunctionName>\w+)\((?<Arguments>[^)]*)\)\s*;\s*//(?<Comment>.+)$

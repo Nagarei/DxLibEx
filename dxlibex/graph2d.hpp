@@ -1,18 +1,14 @@
 ﻿/*=============================================================================
-  Copyright (C) 2015 DxLibEx project
+  Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#include "dxlibex/graph2d.hpp"
+#ifndef DXLE_INC_GRAPH2D_HPP_
+#define DXLE_INC_GRAPH2D_HPP_
 
-namespace dxle{
-namespace graph2d {
+#include "dxlibex/texture/texture2d.h"
+#include "dxlibex/texture/animation_graph.h"
 
-#ifdef DX_THREAD_SAFE
-		std::mutex screen_mutex_c::mtx;
 #endif
-
-//namespaces
-}}
