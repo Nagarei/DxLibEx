@@ -8,7 +8,7 @@
 #ifndef DXLE_INC_CONFIG_NO_MIN_MAX_HPP_
 #define DXLE_INC_CONFIG_NO_MIN_MAX_HPP_
 
-//min max É}ÉNÉçñ≥å¯âª
+//remove max min
 
 #ifndef NOMINMAX
 #define NOMINMAX
