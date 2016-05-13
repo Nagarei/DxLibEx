@@ -7,10 +7,12 @@ Distributed under the Boost Software License, Version 1.0.
 =============================================================================*/
 #ifndef DXLE_INC_UTILITY_CONSTANT_RANGE_LOOP_HPP_
 #define DXLE_INC_UTILITY_CONSTANT_RANGE_LOOP_HPP_
-#include "dxlibex/config/defines.h"
+
 #include <cstddef>
-#include "dxlibex/type_traits.hpp"
 #include <iterator>
+#include "dxlibex/type_traits.hpp"
+#include "dxlibex/config/defines.h"
+
 namespace dxle {
 	namespace utility {
 		template<typename T, enable_if_t<std::is_arithmetic<T>::value, nullptr_t> = nullptr>
