@@ -22,7 +22,7 @@
 # License
 Boost Software License - Version 1.0
 
-# for AUTHORS
+# for Developers
 
 If you want to join us, please read the page below.  
 [日本語](https://github.com/Nagarei/DxLibEx/wiki/for-Developer)
