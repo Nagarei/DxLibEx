@@ -199,3 +199,5 @@ ModelManifest.xml
 Log.txt
 *.zip
 *.diagsession
+dxlibex/ProjectDxLibEx_v140_MultiByte_x86_d.idb
+dxlibex/ProjectDxLibEx_v140_MultiByte_x86_d.lib
