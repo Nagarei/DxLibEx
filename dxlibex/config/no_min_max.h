@@ -1,4 +1,4 @@
-/*=============================================================================
+Ôªø/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -8,7 +8,7 @@
 #ifndef DXLE_INC_CONFIG_NO_MIN_MAX_HPP_
 #define DXLE_INC_CONFIG_NO_MIN_MAX_HPP_
 
-//min max É}ÉNÉçñ≥å¯âª
+//Windows.h„Å™„Å©„Åã„Çâ„Åè„Çã min max „Éû„ÇØ„É≠„Åådefine„Åï„Çå„Çã„ÅÆ„ÇíÈò≤„Åê
 
 #ifndef NOMINMAX
 #define NOMINMAX
