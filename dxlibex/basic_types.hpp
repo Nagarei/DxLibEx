@@ -103,7 +103,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator +(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x + r.width)
+	DXLE_CONSTEXPR auto operator +(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x + r.width)
 		-> point_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x + r.width, l.y + r.height};
@@ -121,7 +121,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both size_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator +(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width + r.x)
+	DXLE_CONSTEXPR auto operator +(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width + r.x)
 		-> size_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width + r.x, l.height + r.y};
@@ -139,7 +139,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator -(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x - r.width)
+	DXLE_CONSTEXPR auto operator -(const point_c<T1>& l, const size_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x - r.width)
 		-> point_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x - r.width, l.y - r.height};
@@ -157,7 +157,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both size_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator -(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width - r.x)
+	DXLE_CONSTEXPR auto operator -(const size_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.width - r.x)
 		-> size_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.width - r.x, l.height - r.y};
