@@ -43,7 +43,6 @@
     <ClInclude Include="dxlibex\dxlib_wrap.hpp" />
     <ClInclude Include="dxlibex\graph2d.hpp" />
     <ClInclude Include="dxlibex\Helper.h" />
-    <ClInclude Include="dxlibex\impl.hpp" />
     <ClInclude Include="dxlibex\math.hpp" />
     <ClInclude Include="dxlibex\math\abs.hpp" />
     <ClInclude Include="dxlibex\math\copysign.hpp" />
