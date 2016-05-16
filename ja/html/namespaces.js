@@ -1,5 +1,5 @@
 var namespaces =
 [
-    [ "dxle", "a00099.html", "a00099" ],
-    [ "std", "a00111.html", null ]
+    [ "dxle", "a00105.html", "a00105" ],
+    [ "std", "a00118.html", null ]
 ];

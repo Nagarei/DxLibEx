@@ -1,9 +1,6 @@
 var a00065 =
 [
-    [ "DXLE_NO_CXX11_CONSTEXPR", "a00065.html#afd3d1453f552a6985f2a3d07912034da", null ],
-    [ "DXLE_NO_CXX11_CONSTEXPR_CLASS", "a00065.html#a518a3f85d8e88373147958b4c77c7c44", null ],
-    [ "DXLE_NO_CXX11_NOEXCEPT", "a00065.html#aa027cc930aeed7c02fe8d313cb11daf3", null ],
-    [ "DXLE_NO_CXX11_UNICODE_LITERALS", "a00065.html#ae1529feb4e8cc61b2ae31b84a4acca4d", null ],
-    [ "DXLE_NO_CXX14_CONSTEXPR", "a00065.html#a8cd6ebf4714c13611ef410dd0af35019", null ],
-    [ "DXLE_NO_CXX14_VARIABLE_TEMPLATES", "a00065.html#a101b47f5d246b06284ccdae033e3267e", null ]
+    [ "tstring", "a00065.html#a7588fa4cc62657f6abee6f704c4758ee", null ],
+    [ "tstrlen", "a00065.html#a0e8d705bd137c5c1512183745413ef1b", null ],
+    [ "tstrlen", "a00065.html#a0164e8667923daa8d1392c14bb7cb9b5", null ]
 ];

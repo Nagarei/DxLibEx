@@ -6,23 +6,24 @@ var dir_05eee0e7ec5d19010cfc503b0ab0cd29 =
     [ "cstdlib", "dir_ce5f00e02b7c848836f51c7f6f4f0979.html", "dir_ce5f00e02b7c848836f51c7f6f4f0979" ],
     [ "math", "dir_360a345e60ffa10572fecc96d4da156c.html", "dir_360a345e60ffa10572fecc96d4da156c" ],
     [ "type_traits", "dir_6d30c3c1851c1af87bf148d0bd77317c.html", "dir_6d30c3c1851c1af87bf148d0bd77317c" ],
-    [ "algorithm.hpp", "a00050.html", null ],
-    [ "basic_types.hpp", "a00053.html", "a00053" ],
-    [ "Color.hpp", "a00062.html", "a00062" ],
-    [ "cstdlib.hpp", "a00073.html", null ],
-    [ "DxLibEx.h", "a00076.html", null ],
-    [ "DxLibWrap.h", "a00077.html", "a00077" ],
-    [ "Graph2D.h", "a00078.html", "a00078" ],
-    [ "Helper.h", "a00079.html", [
-      [ "Counter_template", "a00003.html", "a00003" ],
+    [ "utility", "dir_447259f1150027104035bcdb7ceedf7b.html", "dir_447259f1150027104035bcdb7ceedf7b" ],
+    [ "algorithm.hpp", "a00055.html", null ],
+    [ "basic_types.hpp", "a00058.html", "a00058" ],
+    [ "color.hpp", "a00067.html", "a00067" ],
+    [ "cstdlib.hpp", "a00078.html", null ],
+    [ "dxlib_wrap.hpp", "a00081.html", "a00081" ],
+    [ "dxlibex.hpp", "a00082.html", null ],
+    [ "graph2d.hpp", "a00083.html", "a00083" ],
+    [ "Helper.h", "a00084.html", [
+      [ "Counter_template", "a00004.html", "a00004" ],
       [ "Cast", "a00001.html", "a00001" ],
-      [ "Unique_Handle_Bace", "a00048.html", "a00048" ],
-      [ "Unique_HandledObject_Bace", "a00049.html", "a00049" ]
+      [ "Unique_Handle_Bace", "a00050.html", "a00050" ],
+      [ "Unique_HandledObject_Bace", "a00051.html", "a00051" ]
     ] ],
-    [ "impl.hpp", "a00080.html", null ],
-    [ "math.hpp", "a00081.html", null ],
-    [ "Sound.h", "a00086.html", "a00086" ],
-    [ "structs.h", "a00087.html", null ],
-    [ "thread.h", "a00088.html", "a00088" ],
-    [ "type_traits.hpp", "a00089.html", null ]
+    [ "math.hpp", "a00085.html", null ],
+    [ "sound.hpp", "a00090.html", "a00090" ],
+    [ "structs.h", "a00091.html", null ],
+    [ "thread.hpp", "a00092.html", "a00092" ],
+    [ "type_traits.hpp", "a00093.html", null ],
+    [ "utility.hpp", "a00103.html", null ]
 ];

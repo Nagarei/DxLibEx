@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::type_traits::first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt; Struct Template Reference</title>
+<title>DxLibEx: dxle::type_traits::first_enabled&lt; Args &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,43 +106,31 @@ $(document).ready(function(){initNavTree('a00011.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">dxle::type_traits::first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt; Struct Template Reference</div>  </div>
+<div class="title">dxle::type_traits::first_enabled&lt; Args &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00092_source.html">first_enabled.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for dxle::type_traits::first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00229.png" border="0" usemap="#dxle_1_1type__traits_1_1first__enabled_3_01std_1_1enable__if_3_01false_00_01_t_01_4_00_01_args_8_8_8_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="dxle_1_1type__traits_1_1first__enabled_3_01std_1_1enable__if_3_01false_00_01_t_01_4_00_01_args_8_8_8_01_4_inherit__map" id="dxle_1_1type__traits_1_1first__enabled_3_01std_1_1enable__if_3_01false_00_01_t_01_4_00_01_args_8_8_8_01_4_inherit__map">
-<area shape="rect" id="node2" href="a00010.html" title="dxle::type_traits::\lfirst_enabled\&lt; Args... \&gt;" alt="" coords="5,5,164,47"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for dxle::type_traits::first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00230.png" border="0" usemap="#dxle_1_1type__traits_1_1first__enabled_3_01std_1_1enable__if_3_01false_00_01_t_01_4_00_01_args_8_8_8_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="dxle_1_1type__traits_1_1first__enabled_3_01std_1_1enable__if_3_01false_00_01_t_01_4_00_01_args_8_8_8_01_4_coll__map" id="dxle_1_1type__traits_1_1first__enabled_3_01std_1_1enable__if_3_01false_00_01_t_01_4_00_01_args_8_8_8_01_4_coll__map">
-<area shape="rect" id="node2" href="a00010.html" title="dxle::type_traits::\lfirst_enabled\&lt; Args... \&gt;" alt="" coords="5,5,164,47"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<p>multi-conditional if struct for TMP. This class is used in conjunction with std::enable_if.  
+ <a href="a00011.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00096_source.html">first_enabled.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T, typename... Args&gt;<br />
-struct dxle::type_traits::first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt;</h3>
+<div class="textblock"><h3>template&lt;typename... Args&gt;<br />
+struct dxle::type_traits::first_enabled&lt; Args &gt;</h3>
 
-
-<p>Definition at line <a class="el" href="a00092_source.html#l00037">37</a> of file <a class="el" href="a00092_source.html">first_enabled.hpp</a>.</p>
+<p>multi-conditional if struct for TMP. This class is used in conjunction with std::enable_if. </p>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">using</span> bar = <a class="code" href="a00115.html#a2f390cdb60fda0114b60cf6f34eb9093">first_enabled_t</a>&lt;</div><div class="line">    std::enbale_if&lt;cond1, type1&gt;,</div><div class="line">    std::enbale_if&lt;cond2, type2&gt;,</div><div class="line">    std::enbale_if&lt;cond3, type3&gt;,</div><div class="line">    default_type</div><div class="line">&gt;;</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="a00096_source.html#l00032">32</a> of file <a class="el" href="a00096_source.html">first_enabled.hpp</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dxlibex/type_traits/<a class="el" href="a00092_source.html">first_enabled.hpp</a></li>
+<li>D:/user/documents/git/DxLibEx/dxlibex/type_traits/<a class="el" href="a00096_source.html">first_enabled.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00109.html">type_traits</a></li><li class="navelem"><a class="el" href="a00011.html">first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt;</a></li>
-    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00115.html">type_traits</a></li><li class="navelem"><a class="el" href="a00011.html">first_enabled</a></li>
+    <li class="footer">Generated on Tue May 17 2016 01:52:45 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::type_traits::is_castable&lt; From, To &gt; Struct Template Reference</title>
+<title>DxLibEx: dxle::type_traits::ignore_type&lt; typename &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,37 +106,45 @@ $(document).ready(function(){initNavTree('a00028.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">dxle::type_traits::is_castable&lt; From, To &gt; Struct Template Reference</div>  </div>
+<div class="title">dxle::type_traits::ignore_type&lt; typename &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00095_source.html">is_castable.hpp</a>&gt;</code></p>
+<p>Trait class whose <code>value</code> is true regardless of what <code>T</code> is. we can use it, when we want to let SFINAE work for a decltype expressions.  
+ <a href="a00028.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00098_source.html">ignore.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for dxle::type_traits::is_castable&lt; From, To &gt;:</div>
+Inheritance diagram for dxle::type_traits::ignore_type&lt; typename &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00248.png" border="0" usemap="#dxle_1_1type__traits_1_1is__castable_3_01_from_00_01_to_01_4_inherit__map" alt="Inheritance graph"/></div>
+<div class="center"><img src="a00262.png" border="0" usemap="#dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_inherit__map" id="dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_inherit__map">
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for dxle::type_traits::is_castable&lt; From, To &gt;:</div>
+Collaboration diagram for dxle::type_traits::ignore_type&lt; typename &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00249.png" border="0" usemap="#dxle_1_1type__traits_1_1is__castable_3_01_from_00_01_to_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="a00263.png" border="0" usemap="#dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_coll__map" id="dxle_1_1type__traits_1_1ignore__type_3_01typename_01_4_coll__map">
+</map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename From, typename To&gt;<br />
-struct dxle::type_traits::is_castable&lt; From, To &gt;</h3>
+<div class="textblock"><h3>template&lt;typename&gt;<br />
+struct dxle::type_traits::ignore_type&lt; typename &gt;</h3>
 
-
-<p>Definition at line <a class="el" href="a00095_source.html#l00016">16</a> of file <a class="el" href="a00095_source.html">is_castable.hpp</a>.</p>
+<p>Trait class whose <code>value</code> is true regardless of what <code>T</code> is. we can use it, when we want to let SFINAE work for a decltype expressions. </p>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="comment">//return int</span></div><div class="line"><span class="keyword">auto</span> add(<span class="keywordtype">int</span> a, T b)-&gt;std::enable_if_t&lt;<a class="code" href="a00028.html">dxle::ignore_type&lt;decltype(a + b)&gt;::value</a>, <span class="keywordtype">int</span>&gt;</div><div class="line">{</div><div class="line">    <span class="keywordflow">return</span> a + b;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    add(0, 0);<span class="comment">//OK</span></div><div class="line">    <span class="comment">//add(0, nullptr);//compile error</span></div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="a00098_source.html#l00040">40</a> of file <a class="el" href="a00098_source.html">ignore.hpp</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dxlibex/type_traits/<a class="el" href="a00095_source.html">is_castable.hpp</a></li>
+<li>D:/user/documents/git/DxLibEx/dxlibex/type_traits/<a class="el" href="a00098_source.html">ignore.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00109.html">type_traits</a></li><li class="navelem"><a class="el" href="a00028.html">is_castable</a></li>
-    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00115.html">type_traits</a></li><li class="navelem"><a class="el" href="a00028.html">ignore_type</a></li>
+    <li class="footer">Generated on Tue May 17 2016 01:52:45 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

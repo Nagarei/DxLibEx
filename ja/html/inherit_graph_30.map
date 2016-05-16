@@ -1,3 +1,4 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$a00010.html" title="複数条件のあるTMP用if std::enable_ifと組み合わせて使います。 " alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node1" href="$a00020.html" title="dxle::type_traits::\ldetail::float_promote\l_impl\&lt; std::remove_cv\l\&lt; Types \&gt;::type... \&gt;" alt="" coords="5,5,156,76"/>
+<area shape="rect" id="node2" href="$a00016.html" title="dxle::type_traits::\lfloat_promote\&lt; Types \&gt;" alt="" coords="204,20,363,61"/>
 </map>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxlibex/math/hypot.hpp File Reference</title>
+<title>DxLibEx: D:/user/documents/git/DxLibEx/dxlibex/Helper.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,40 +104,59 @@ $(document).ready(function(){initNavTree('a00084.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">hypot.hpp File Reference</div>  </div>
+<div class="title">Helper.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00076_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00074_source.html">dxlibex/config/defines.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for hypot.hpp:</div>
+Include dependency graph for Helper.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00164.png" border="0" usemap="#dxlibex_2math_2hypot_8hpp" alt=""/></div>
+<div class="center"><img src="a00163.png" border="0" usemap="#_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2_helper_8h" alt=""/></div>
+<map name="_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2_helper_8h" id="_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2_helper_8h">
+<area shape="rect" id="node2" href="a00076.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="5,244,152,285"/>
+<area shape="rect" id="node4" href="a00074.html" title="dxlibex/config/defines.h" alt="" coords="172,95,329,121"/>
+<area shape="rect" id="node5" href="a00077.html" title="dxlibex/config/suffix.hpp" alt="" coords="171,169,331,196"/>
+<area shape="rect" id="node6" href="a00068.html" title="dxlibex/config/compiler.hpp" alt="" coords="176,251,355,278"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00165.png" border="0" usemap="#dxlibex_2math_2hypot_8hppdep" alt=""/></div>
-<map name="dxlibex_2math_2hypot_8hppdep" id="dxlibex_2math_2hypot_8hppdep">
-<area shape="rect" id="node2" href="a00081.html" title="dxlibex/math.hpp" alt="" coords="255,80,376,107"/>
-<area shape="rect" id="node3" href="a00057.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="5,155,143,196"/>
-<area shape="rect" id="node5" href="a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="367,393,493,420"/>
-<area shape="rect" id="node8" href="a00058.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="167,155,304,196"/>
-<area shape="rect" id="node9" href="a00059.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="328,155,465,196"/>
-<area shape="rect" id="node4" href="a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="203,244,366,271"/>
-<area shape="rect" id="node6" href="a00078.html" title="dxlibex/Graph2D.h" alt="" coords="220,319,349,345"/>
-<area shape="rect" id="node7" href="a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="200,393,343,420"/>
+<div class="center"><img src="a00164.png" border="0" usemap="#_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2_helper_8hdep" alt=""/></div>
+<map name="_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2_helper_8hdep" id="_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2_helper_8hdep">
+<area shape="rect" id="node2" href="a00083.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/graph2d.hpp" alt="" coords="81,95,275,136"/>
+<area shape="rect" id="node5" href="a00090.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/sound.hpp" alt="" coords="299,95,483,136"/>
+<area shape="rect" id="node3" href="a00081.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/dxlib\l_wrap.hpp" alt="" coords="5,184,156,240"/>
+<area shape="rect" id="node4" href="a00082.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/dxlibex.hpp" alt="" coords="180,191,371,233"/>
 </map>
 </div>
 </div>
 <p><a href="a00084_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html">dxle::impl::Counter_template&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html">dxle::impl::Counter_template&lt; T &gt;::Cast&lt; U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドル自動削除実装用  <a href="a00050.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace&lt; Child &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドルの指すオブジェクト実装用  <a href="a00051.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a00099"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html">dxle</a></td></tr>
+<tr class="memitem:a00105"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00105.html">dxle</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00106"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00106.html">dxle::math</a></td></tr>
+<tr class="memitem:a00111"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00111.html">dxle::impl</a></td></tr>
+<tr class="memdesc:a00111"><td class="mdescLeft">&#160;</td><td class="mdescRight">実装用のものが集まる名前空間です。開発者以外がここの機能を使うのはお勧めできません。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -145,8 +164,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_360a345e60ffa10572fecc96d4da156c.html">math</a></li><li class="navelem"><a class="el" href="a00084.html">hypot.hpp</a></li>
-    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="a00084.html">Helper.h</a></li>
+    <li class="footer">Generated on Tue May 17 2016 01:52:45 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

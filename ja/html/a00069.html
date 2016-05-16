@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxlibex/config/defines.h ファイル</title>
+<title>DxLibEx: D:/user/documents/git/DxLibEx/dxlibex/config/compiler/clang.hpp ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,62 +103,218 @@ $(document).ready(function(){initNavTree('a00069.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
   <div class="headertitle">
-<div class="title">defines.h ファイル</div>  </div>
+<div class="title">clang.hpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00071_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00072_source.html">dxlibex/config/suffix.hpp</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-defines.h の依存先関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00141.png" border="0" usemap="#dxlibex_2config_2defines_8h" alt=""/></div>
-<map name="dxlibex_2config_2defines_8h" id="dxlibex_2config_2defines_8h">
-<area shape="rect" id="node2" href="a00071.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="5,155,152,196"/>
-<area shape="rect" id="node3" href="a00072.html" title="dxlibex/config/suffix.hpp" alt="" coords="116,80,276,107"/>
-<area shape="rect" id="node4" href="a00063.html" title="dxlibex/config/compiler.hpp" alt="" coords="176,162,355,189"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-被依存関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00142.png" border="0" usemap="#dxlibex_2config_2defines_8hdep" alt=""/></div>
-<map name="dxlibex_2config_2defines_8hdep" id="dxlibex_2config_2defines_8hdep">
-<area shape="rect" id="node2" href="a00051.html" title="dxlibex/algorithm/cast\l_if.hpp" alt="" coords="864,80,1013,121"/>
-<area shape="rect" id="node4" href="a00057.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="710,647,847,688"/>
-<area shape="rect" id="node7" href="a00078.html" title="dxlibex/Graph2D.h" alt="" coords="1063,811,1193,837"/>
-<area shape="rect" id="node9" href="a00052.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="1038,80,1186,121"/>
-<area shape="rect" id="node10" href="a00058.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="871,647,1009,688"/>
-<area shape="rect" id="node11" href="a00055.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="817,543,957,599"/>
-<area shape="rect" id="node12" href="a00059.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="497,647,634,688"/>
-<area shape="rect" id="node13" href="a00082.html" title="dxlibex/math/copysign.hpp" alt="" coords="483,319,661,345"/>
-<area shape="rect" id="node15" href="a00083.html" title="dxlibex/math/fabs.hpp" alt="" coords="331,393,480,420"/>
-<area shape="rect" id="node16" href="a00075.html" title="dxlibex/math/abs.hpp" alt="" coords="449,468,596,495"/>
-<area shape="rect" id="node17" href="a00085.html" title="dxlibex/math/isnan.hpp" alt="" coords="585,244,741,271"/>
-<area shape="rect" id="node18" href="a00093.html" title="dxlibex/type_traits\l/float_promote.hpp" alt="" coords="495,80,625,121"/>
-<area shape="rect" id="node20" href="a00074.html" title="dxlibex/cstdlib/abs.hpp" alt="" coords="152,244,307,271"/>
-<area shape="rect" id="node22" href="a00062.html" title="dxlibex/Color.hpp" alt="" coords="5,319,128,345"/>
-<area shape="rect" id="node23" href="a00079.html" title="dxlibex/Helper.h" alt="" coords="1072,736,1187,763"/>
-<area shape="rect" id="node24" href="a00086.html" title="dxlibex/Sound.h" alt="" coords="1217,811,1332,837"/>
-<area shape="rect" id="node25" href="a00088.html" title="dxlibex/thread.h" alt="" coords="1312,736,1427,763"/>
-<area shape="rect" id="node3" href="a00050.html" title="dxlibex/algorithm.hpp" alt="" coords="922,169,1067,196"/>
-<area shape="rect" id="node5" href="a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="709,736,872,763"/>
-<area shape="rect" id="node6" href="a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="609,885,735,912"/>
-<area shape="rect" id="node8" href="a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="1202,885,1345,912"/>
-<area shape="rect" id="node14" href="a00081.html" title="dxlibex/math.hpp" alt="" coords="597,557,718,584"/>
-<area shape="rect" id="node19" href="a00089.html" title="dxlibex/type_traits.hpp" alt="" coords="483,169,637,196"/>
-<area shape="rect" id="node21" href="a00073.html" title="dxlibex/cstdlib.hpp" alt="" coords="441,557,572,584"/>
-</map>
-</div>
-</div>
+
 <p><a href="a00069_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:afd3d1453f552a6985f2a3d07912034da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#afd3d1453f552a6985f2a3d07912034da">DXLE_NO_CXX11_CONSTEXPR</a></td></tr>
+<tr class="separator:afd3d1453f552a6985f2a3d07912034da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518a3f85d8e88373147958b4c77c7c44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a518a3f85d8e88373147958b4c77c7c44">DXLE_NO_CXX11_CONSTEXPR_CLASS</a></td></tr>
+<tr class="separator:a518a3f85d8e88373147958b4c77c7c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa027cc930aeed7c02fe8d313cb11daf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#aa027cc930aeed7c02fe8d313cb11daf3">DXLE_NO_CXX11_NOEXCEPT</a></td></tr>
+<tr class="separator:aa027cc930aeed7c02fe8d313cb11daf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541576edfd7b428c5405f55bf67079aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a541576edfd7b428c5405f55bf67079aa">DXLE_NO_CXX11_NOEXCEPT_EXPRESSION</a></td></tr>
+<tr class="separator:a541576edfd7b428c5405f55bf67079aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1529feb4e8cc61b2ae31b84a4acca4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#ae1529feb4e8cc61b2ae31b84a4acca4d">DXLE_NO_CXX11_UNICODE_LITERALS</a></td></tr>
+<tr class="separator:ae1529feb4e8cc61b2ae31b84a4acca4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c9c4bf9c6866b0e3c91a4f663663eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a87c9c4bf9c6866b0e3c91a4f663663eb">DXLE_NO_CXX11_ATTRIBUTES</a></td></tr>
+<tr class="separator:a87c9c4bf9c6866b0e3c91a4f663663eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935a74078befe5d040a96c6e3d179e36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a935a74078befe5d040a96c6e3d179e36">DXLE_NO_CXX11_USER_DEFINED_LITERALS</a></td></tr>
+<tr class="separator:a935a74078befe5d040a96c6e3d179e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a5af6eea23fb4836f7eb7fe4426309"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a70a5af6eea23fb4836f7eb7fe4426309">DXLE_NO_CXX11_REF_QUALIFIERS</a></td></tr>
+<tr class="separator:a70a5af6eea23fb4836f7eb7fe4426309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd6ebf4714c13611ef410dd0af35019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a8cd6ebf4714c13611ef410dd0af35019">DXLE_NO_CXX14_CONSTEXPR</a></td></tr>
+<tr class="separator:a8cd6ebf4714c13611ef410dd0af35019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101b47f5d246b06284ccdae033e3267e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a101b47f5d246b06284ccdae033e3267e">DXLE_NO_CXX14_VARIABLE_TEMPLATES</a></td></tr>
+<tr class="separator:a101b47f5d246b06284ccdae033e3267e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76c90f9900ddbdddcef01daf538f11f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a76c90f9900ddbdddcef01daf538f11f3">DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED</a></td></tr>
+<tr class="separator:a76c90f9900ddbdddcef01daf538f11f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03dffd30ba4438b503ec1b1a256b611c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00069.html#a03dffd30ba4438b503ec1b1a256b611c">DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO</a></td></tr>
+<tr class="separator:a03dffd30ba4438b503ec1b1a256b611c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a class="anchor" id="a87c9c4bf9c6866b0e3c91a4f663663eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_ATTRIBUTES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="afd3d1453f552a6985f2a3d07912034da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_CONSTEXPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a518a3f85d8e88373147958b4c77c7c44"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_CONSTEXPR_CLASS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa027cc930aeed7c02fe8d313cb11daf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_NOEXCEPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a541576edfd7b428c5405f55bf67079aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_NOEXCEPT_EXPRESSION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a70a5af6eea23fb4836f7eb7fe4426309"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_REF_QUALIFIERS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1529feb4e8cc61b2ae31b84a4acca4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_UNICODE_LITERALS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a935a74078befe5d040a96c6e3d179e36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX11_USER_DEFINED_LITERALS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a76c90f9900ddbdddcef01daf538f11f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8cd6ebf4714c13611ef410dd0af35019"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX14_CONSTEXPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a03dffd30ba4438b503ec1b1a256b611c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a101b47f5d246b06284ccdae033e3267e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXLE_NO_CXX14_VARIABLE_TEMPLATES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00069_source.html">clang.hpp</a> の <a class="el" href="a00069_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_ae1f9eca1b79b5d8ebbc1f596755f9de.html">config</a></li><li class="navelem"><a class="el" href="a00069.html">defines.h</a></li>
-    <li class="footer">2016年02月26日(金) 00時06分00秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_ae1f9eca1b79b5d8ebbc1f596755f9de.html">config</a></li><li class="navelem"><a class="el" href="dir_2f5216171e4773ecdee17f9366f7de59.html">compiler</a></li><li class="navelem"><a class="el" href="a00069.html">clang.hpp</a></li>
+    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

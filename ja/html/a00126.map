@@ -1,31 +1,5 @@
-<map id="dxlibex/basic_types/point2d.hpp" name="dxlibex/basic_types/point2d.hpp">
-<area shape="rect" id="node2" href="$a00071.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="249,840,396,881"/>
-<area shape="rect" id="node3" href="$a00092.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="2128,676,2256,717"/>
-<area shape="rect" id="node5" href="$a00091.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="1360,676,1488,717"/>
-<area shape="rect" id="node6" href="$a00097.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="1944,587,2091,628"/>
-<area shape="rect" id="node8" href="$a00096.html" title="dxlibex/type_traits\l/is_nothrow.hpp" alt="" coords="259,676,387,717"/>
-<area shape="rect" id="node9" href="$a00094.html" title="dxlibex/type_traits\l/ignore.hpp" alt="" coords="1461,587,1589,628"/>
-<area shape="rect" id="node10" href="$a00054.html" title="dxlibex/basic_types\l/arithmetic_t.hpp" alt="" coords="2373,587,2510,628"/>
-<area shape="rect" id="node11" href="$a00060.html" title="dxlibex/basic_types\l/stdint.hpp" alt="" coords="2523,95,2661,136"/>
-<area shape="rect" id="node13" href="$a00056.html" title="dxlibex/basic_types\l/distance_result_type_t.hpp" alt="" coords="2166,587,2349,628"/>
-<area shape="rect" id="node14" href="$a00055.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="1146,483,1286,539"/>
-<area shape="rect" id="node17" href="$a00069.html" title="dxlibex/config/defines.h" alt="" coords="412,683,569,710"/>
-<area shape="rect" id="node20" href="$a00050.html" title="dxlibex/algorithm.hpp" alt="" coords="146,497,291,524"/>
-<area shape="rect" id="node23" href="$a00081.html" title="dxlibex/math.hpp" alt="" coords="747,102,869,129"/>
-<area shape="rect" id="node33" href="$a00073.html" title="dxlibex/cstdlib.hpp" alt="" coords="1772,333,1903,360"/>
-<area shape="rect" id="node7" href="$a00090.html" title="dxlibex/type_traits\l/common_type.hpp" alt="" coords="1847,676,1980,717"/>
-<area shape="rect" id="node15" href="$a00095.html" title="dxlibex/type_traits\l/is_castable.hpp" alt="" coords="1051,587,1179,628"/>
-<area shape="rect" id="node16" href="$a00098.html" title="dxlibex/type_traits\l/is_well_format.hpp" alt="" coords="1253,587,1387,628"/>
-<area shape="rect" id="node18" href="$a00072.html" title="dxlibex/config/suffix.hpp" alt="" coords="411,765,571,792"/>
-<area shape="rect" id="node19" href="$a00063.html" title="dxlibex/config/compiler.hpp" alt="" coords="420,847,599,874"/>
-<area shape="rect" id="node21" href="$a00051.html" title="dxlibex/algorithm/cast\l_if.hpp" alt="" coords="144,587,293,628"/>
-<area shape="rect" id="node22" href="$a00052.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="571,587,719,628"/>
-<area shape="rect" id="node24" href="$a00082.html" title="dxlibex/math/copysign.hpp" alt="" coords="897,333,1074,360"/>
-<area shape="rect" id="node30" href="$a00083.html" title="dxlibex/math/fabs.hpp" alt="" coords="733,259,883,285"/>
-<area shape="rect" id="node31" href="$a00075.html" title="dxlibex/math/abs.hpp" alt="" coords="507,184,653,211"/>
-<area shape="rect" id="node32" href="$a00084.html" title="dxlibex/math/hypot.hpp" alt="" coords="309,259,467,285"/>
-<area shape="rect" id="node26" href="$a00085.html" title="dxlibex/math/isnan.hpp" alt="" coords="614,408,770,435"/>
-<area shape="rect" id="node28" href="$a00093.html" title="dxlibex/type_traits\l/float_promote.hpp" alt="" coords="897,587,1026,628"/>
-<area shape="rect" id="node27" href="$a00089.html" title="dxlibex/type_traits.hpp" alt="" coords="1322,497,1475,524"/>
-<area shape="rect" id="node34" href="$a00074.html" title="dxlibex/cstdlib/abs.hpp" alt="" coords="1715,594,1869,621"/>
+<map id="D:/user/documents/git/DxLibEx/dxlibex/basic_types.hpp" name="D:/user/documents/git/DxLibEx/dxlibex/basic_types.hpp">
+<area shape="rect" id="node2" href="$a00082.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/dxlibex.hpp" alt="" coords="5,206,196,247"/>
+<area shape="rect" id="node3" href="$a00083.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/graph2d.hpp" alt="" coords="138,109,333,151"/>
+<area shape="rect" id="node4" href="$a00081.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/dxlib\l_wrap.hpp" alt="" coords="220,199,371,255"/>
 </map>

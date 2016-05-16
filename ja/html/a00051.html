@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxlibex/algorithm/cast_if.hpp ファイル</title>
+<title>DxLibEx: dxle::impl::Unique_HandledObject_Bace&lt; Child &gt; クラステンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,8 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
     <ul class="tablist">
       <li><a href="index.html"><span>総合概要</span></a></li>
       <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li><a href="annotated.html"><span>クラス</span></a></li>
-      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -69,8 +69,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>ファイル一覧</span></a></li>
-      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -104,73 +106,278 @@ $(document).ready(function(){initNavTree('a00051.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">クラス</a> &#124;
-<a href="#namespaces">名前空間</a> &#124;
-<a href="#func-members">関数</a>  </div>
+<a href="#pro-types">限定公開型</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="a00241.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
-<div class="title">cast_if.hpp ファイル</div>  </div>
+<div class="title">dxle::impl::Unique_HandledObject_Bace&lt; Child &gt; クラステンプレート</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00069_source.html">dxlibex/config/defines.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-cast_if.hpp の依存先関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00114.png" border="0" usemap="#dxlibex_2algorithm_2cast__if_8hpp" alt=""/></div>
-<map name="dxlibex_2algorithm_2cast__if_8hpp" id="dxlibex_2algorithm_2cast__if_8hpp">
-<area shape="rect" id="node2" href="a00069.html" title="dxlibex/config/defines.h" alt="" coords="59,95,216,121"/>
-<area shape="rect" id="node3" href="a00071.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="5,244,152,285"/>
-<area shape="rect" id="node4" href="a00072.html" title="dxlibex/config/suffix.hpp" alt="" coords="116,169,276,196"/>
-<area shape="rect" id="node5" href="a00063.html" title="dxlibex/config/compiler.hpp" alt="" coords="176,251,355,278"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-被依存関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00115.png" border="0" usemap="#dxlibex_2algorithm_2cast__if_8hppdep" alt=""/></div>
-<map name="dxlibex_2algorithm_2cast__if_8hppdep" id="dxlibex_2algorithm_2cast__if_8hppdep">
-<area shape="rect" id="node2" href="a00050.html" title="dxlibex/algorithm.hpp" alt="" coords="47,95,192,121"/>
-<area shape="rect" id="node3" href="a00057.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="51,169,188,211"/>
-<area shape="rect" id="node4" href="a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="38,259,201,285"/>
-<area shape="rect" id="node5" href="a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="5,408,132,435"/>
-<area shape="rect" id="node6" href="a00078.html" title="dxlibex/Graph2D.h" alt="" coords="107,333,236,360"/>
-<area shape="rect" id="node7" href="a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="156,408,299,435"/>
-</map>
-</div>
-</div>
-<p><a href="a00051_source.html">[ソースコード]</a></p>
+
+<p>ハンドルの指すオブジェクト実装用  
+ <a href="a00051.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00084_source.html">Helper.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html">dxle::detail::static_cast_if_helper&lt; from, to, do_cast, is_nothrow_move_constructible &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html">dxle::detail::static_cast_if_helper&lt; to, from, false, false &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html">dxle::detail::static_cast_if_helper&lt; to, from, false, true &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+限定公開型</h2></td></tr>
+<tr class="memitem:a441bd574f1d98a8eaa4fccbfdd003667"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00051.html">Unique_HandledObject_Bace</a>&lt; Child &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a></td></tr>
+<tr class="separator:a441bd574f1d98a8eaa4fccbfdd003667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-名前空間</h2></td></tr>
-<tr class="memitem:a00099"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html">dxle</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00102"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00102.html">dxle::detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-関数</h2></td></tr>
-<tr class="memitem:ad120a63ac31baecb32e3cc3ee7f70f47"><td class="memTemplParams" colspan="2">template&lt;typename from , typename to , bool do_cast&gt; </td></tr>
-<tr class="memitem:ad120a63ac31baecb32e3cc3ee7f70f47"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> to&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00099.html#ad120a63ac31baecb32e3cc3ee7f70f47">dxle::static_cast_if</a> (const from &amp;n) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>((dxle</td></tr>
-<tr class="separator:ad120a63ac31baecb32e3cc3ee7f70f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9751d6f009ce9d367d1a6849ba9c8ff6"><td class="memTemplParams" colspan="2">template&lt;typename from , typename to , bool do_cast&gt; </td></tr>
-<tr class="memitem:a9751d6f009ce9d367d1a6849ba9c8ff6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> to&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00099.html#a9751d6f009ce9d367d1a6849ba9c8ff6">dxle::static_cast_if</a> (from &amp;&amp;n) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>((dxle</td></tr>
-<tr class="separator:a9751d6f009ce9d367d1a6849ba9c8ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5c3289912322882dc31b33c429864d22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a5c3289912322882dc31b33c429864d22">Unique_HandledObject_Bace</a> () <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a5c3289912322882dc31b33c429864d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db3af92ad655aa767ba505839c08759"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a7db3af92ad655aa767ba505839c08759">Unique_HandledObject_Bace</a> (<a class="el" href="a00051.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a> &amp;&amp;other) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a7db3af92ad655aa767ba505839c08759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4628490ebce51819fc8ab569f2afa240"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00051.html">Unique_HandledObject_Bace</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a4628490ebce51819fc8ab569f2afa240">operator=</a> (<a class="el" href="a00051.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a> &amp;&amp;other) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a4628490ebce51819fc8ab569f2afa240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd36a7000fdd1385d999399f806390d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a4dd36a7000fdd1385d999399f806390d">Unique_HandledObject_Bace</a> (int param_handle) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a4dd36a7000fdd1385d999399f806390d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9727bd8659198c3d1ed73e180b33a776"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a9727bd8659198c3d1ed73e180b33a776">~Unique_HandledObject_Bace</a> () <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a9727bd8659198c3d1ed73e180b33a776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8db24c67b9d6494b3687c5c8988c738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#ab8db24c67b9d6494b3687c5c8988c738">GetHandle</a> () const <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:ab8db24c67b9d6494b3687c5c8988c738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be129708cc06fe672d6963e923abf2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a8be129708cc06fe672d6963e923abf2e">SetHandle_IMPL</a> (int new_handle)</td></tr>
+<tr class="separator:a8be129708cc06fe672d6963e923abf2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;typename Child&gt;<br />
+class dxle::impl::Unique_HandledObject_Bace&lt; Child &gt;</h3>
+
+<p>ハンドルの指すオブジェクト実装用 </p>
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00133">133</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a class="anchor" id="a441bd574f1d98a8eaa4fccbfdd003667"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="a00051.html">Unique_HandledObject_Bace</a>&lt;Child&gt; <a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::<a class="el" href="a00051.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00136">136</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a5c3289912322882dc31b33c429864d22"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> <a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::<a class="el" href="a00051.html">Unique_HandledObject_Bace</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00142">142</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7db3af92ad655aa767ba505839c08759"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::<a class="el" href="a00051.html">Unique_HandledObject_Bace</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00051.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00147">147</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4dd36a7000fdd1385d999399f806390d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::<a class="el" href="a00051.html">Unique_HandledObject_Bace</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>param_handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00164">164</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9727bd8659198c3d1ed73e180b33a776"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::~<a class="el" href="a00051.html">Unique_HandledObject_Bace</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00169">169</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ab8db24c67b9d6494b3687c5c8988c738"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> int <a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::GetHandle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00173">173</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4628490ebce51819fc8ab569f2afa240"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00051.html">Unique_HandledObject_Bace</a>&amp; <a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00051.html#a441bd574f1d98a8eaa4fccbfdd003667">Bace_T</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00153">153</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8be129708cc06fe672d6963e923abf2e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Child&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a00051.html">dxle::impl::Unique_HandledObject_Bace</a>&lt; Child &gt;::SetHandle_IMPL </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>new_handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00084_source.html">Helper.h</a> の <a class="el" href="a00084_source.html#l00174">174</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>D:/user/documents/git/DxLibEx/dxlibex/<a class="el" href="a00084_source.html">Helper.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_b87911d5077d3f679eceee988aac6482.html">algorithm</a></li><li class="navelem"><a class="el" href="a00051.html">cast_if.hpp</a></li>
-    <li class="footer">2016年02月26日(金) 00時06分00秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00111.html">impl</a></li><li class="navelem"><a class="el" href="a00051.html">Unique_HandledObject_Bace</a></li>
+    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

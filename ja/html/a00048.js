@@ -1,11 +1,5 @@
 var a00048 =
 [
-    [ "Bace_T", "a00048.html#ae2cacc4cd70891502d3724b905fd6726", null ],
-    [ "Unique_Handle_Bace", "a00048.html#a32e0322bbef6fdf9152c3f87d5787f13", null ],
-    [ "Unique_Handle_Bace", "a00048.html#a652416b45b21929b55ce585ad84d1c5f", null ],
-    [ "~Unique_Handle_Bace", "a00048.html#a405a1ad6b86239dd5315ee7d7c722f84", null ],
-    [ "Unique_Handle_Bace", "a00048.html#a5ebf09a7c8cb391b3543fd4e8c18ae28", null ],
-    [ "GetHandle", "a00048.html#a6cc3a3571e704f53a6645ad4083f2263", null ],
-    [ "operator=", "a00048.html#a8b9fe3765b99c1d8f58087a8adc7a966", null ],
-    [ "ReleaseRun", "a00048.html#af30a408e38aeadecf7d157b35244dcce", null ]
+    [ "operator()", "a00048.html#ac882d08bb2ee81c287477a2ae5c30e51", null ],
+    [ "operator()", "a00048.html#a00dd4bc99b4defa6d123714a6de8cfbe", null ]
 ];

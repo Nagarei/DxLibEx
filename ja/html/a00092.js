@@ -1,8 +1,5 @@
 var a00092 =
 [
-    [ "first_enabled", "a00010.html", null ],
-    [ "first_enabled< std::enable_if< true, T >, Args... >", "a00012.html", "a00012" ],
-    [ "first_enabled< std::enable_if< false, T >, Args... >", "a00011.html", null ],
-    [ "first_enabled< T, Args... >", "a00013.html", "a00013" ],
-    [ "first_enabled_t", "a00092.html#a2f390cdb60fda0114b60cf6f34eb9093", null ]
+    [ "DXLE_GET_LOCK", "a00092.html#a6d889363dff6fc88b73713bab71515bf", null ],
+    [ "DXLE_NOEXCEPT_OR_NOTHROW_SINGLE", "a00092.html#a104e6e443a5edb01c847fd2a9f8c7aba", null ]
 ];

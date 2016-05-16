@@ -1,25 +1,14 @@
 var a00062 =
 [
-    [ "color_base", "a00002.html", null ],
-    [ "is_colortype", "a00029.html", null ],
-    [ "rgb", "a00039.html", "a00039" ],
-    [ "dx_color", "a00008.html", "a00008" ],
-    [ "dx_color_param", "a00009.html", "a00009" ],
-    [ "color_tag", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34", [
-      [ "black", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34a1ffd9e753c8054cc61456ac7fac1ac89", null ],
-      [ "blue", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34a48d6215903dff56238e52e8891380c8f", null ],
-      [ "cyan", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34a6411532ba4971f378391776a9db629d3", null ],
-      [ "darkgray", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34adf3d32740b6229c55f6498f07bffafa1", null ],
-      [ "gray", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34acda7a650c5856cf2f6738072447d7825", null ],
-      [ "green", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34a9f27410725ab8cc8854a2769c7a516b8", null ],
-      [ "lightgray", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34aa33ab79f7fc578194d82415ddfee833a", null ],
-      [ "magenta", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34a4c2a4a7078da0ac6733464eacfd00f86", null ],
-      [ "orange", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34afe01d67a002dfa0f3ac084298142eccd", null ],
-      [ "pink", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34a4a0b0dcedd48f780778d1cd1bb8f9877", null ],
-      [ "red", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34abda9643ac6601722a28f238714274da4", null ],
-      [ "white", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34ad508fe45cecaf653904a0e774084bb5c", null ],
-      [ "yellow", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34ad487dd0b55dfcacdd920ccbdaeafa351", null ],
-      [ "numof_variation", "a00062.html#aacfedd2e718cf65ba03a123d54b16f34ae6d3b56322b77f3b6138a00c6464308c", null ]
-    ] ],
-    [ "color_cast", "a00062.html#a14497820be5e2c1617abc7c1c65006be", null ]
+    [ "point3d_c", "a00039.html", "a00039" ],
+    [ "point3d8i", "a00062.html#a2f70f11d4a3529023e9f87c30678d641", null ],
+    [ "point3dd", "a00062.html#a83cf9e21f9c086c4b4a7e5f5d1f4c429", null ],
+    [ "point3df", "a00062.html#a83f7ef5efdb6b43cceadbe6b09aab2be", null ],
+    [ "point3di", "a00062.html#ad1e837904ba0f3d9dd71c38ed35d86a1", null ],
+    [ "point3du8i", "a00062.html#a6565dcf79cc5c222cb550804ec2e9cb4", null ],
+    [ "dot", "a00062.html#a1c8215def9042b3b1ece83163c294d82", null ],
+    [ "istream_operator_helper", "a00062.html#a1220b6f8c5ab734e6c77bf41d0bdd04a", null ],
+    [ "operator+", "a00062.html#a6f65201f04a53a467faef95985d9889c", null ],
+    [ "operator/", "a00062.html#aa03a39c44f71b1df8c9d19edffcdf066", null ],
+    [ "ostream_operator_helper", "a00062.html#a66deb3296869f884d2d8fe847c6cd05b", null ]
 ];

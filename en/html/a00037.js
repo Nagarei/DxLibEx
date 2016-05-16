@@ -1,31 +1,5 @@
 var a00037 =
 [
-    [ "value_type", "a00037.html#a48f7491f19ad758a3405968a9112f548", null ],
-    [ "point3d_c", "a00037.html#adf927fb9cd0fe9541e06e62cc4d51bd9", null ],
-    [ "point3d_c", "a00037.html#a83107e82ffac8e3d6edce6d41f9f0cd7", null ],
-    [ "point3d_c", "a00037.html#a241a645ba5f32850a09fd6e36680d55c", null ],
-    [ "point3d_c", "a00037.html#a957d1026f781d3eb25954c7909c82dea", null ],
-    [ "point3d_c", "a00037.html#a6ab91cd0f9e14017dd4a579cd743aea2", null ],
-    [ "operator bool", "a00037.html#ae9ed45e59291f84f7850d78af9aea126", null ],
-    [ "operator point3d_c< Tp2_ >", "a00037.html#a55979046d0613684e0863270b8e7d4ed", null ],
-    [ "operator std::tuple< Tp2_, Tp2_, Tp2_ >", "a00037.html#a0569b4861ef0f85138bab8811e6a0187", null ],
-    [ "operator=", "a00037.html#abed1495675faf5455719548d718c6bf2", null ],
-    [ "operator=", "a00037.html#a7b600b3e48d3a168d05721a577f7cb52", null ],
-    [ "make_point3d_c", "a00037.html#a878080428df25a2dc955129f8ea6baee", null ],
-    [ "make_point3d_c", "a00037.html#a9b919fe708335336b4924502370df94f", null ],
-    [ "operator*", "a00037.html#ac8b0581293ab0d661042e7de235e7b8e", null ],
-    [ "operator*", "a00037.html#ae00c327e819cce73c589149a0c7af598", null ],
-    [ "operator*=", "a00037.html#a6d18887addc678cd3056d7ef483621fe", null ],
-    [ "operator+", "a00037.html#a981da85dd3863b3d6d0ce67e69fa1831", null ],
-    [ "operator+", "a00037.html#a43f57b7b6e47914dc45b0660bcb36fea", null ],
-    [ "operator+=", "a00037.html#a58cc3aad56c791d9b2677641e97dd3b9", null ],
-    [ "operator-", "a00037.html#a0e1449607899956b5d6c461e85c28b6e", null ],
-    [ "operator-", "a00037.html#ac3abd26c1da87d8ed23398cea05706fc", null ],
-    [ "operator<<", "a00037.html#a75d08bade78f8e81f8623748068add4d", null ],
-    [ "operator<<", "a00037.html#a36df0b53d4092389b2ea7345f5c36e39", null ],
-    [ "operator>>", "a00037.html#a833542987ba28fdbac2e417d4c74fb38", null ],
-    [ "operator>>", "a00037.html#a68c0fb537430639c53a565a1500ffa41", null ],
-    [ "x", "a00037.html#a43ca51dc0cec5b2216d21fc2c99f5953", null ],
-    [ "y", "a00037.html#aebbc1e2c2ec888c4031827a55b7309e9", null ],
-    [ "z", "a00037.html#a0ab6455c6b4bf648236d090b28337a77", null ]
+    [ "operator()", "a00037.html#a416ecbe2c0a798b33c193e08d72dbf83", null ],
+    [ "operator()", "a00037.html#a9fdf2f40888a7dd9bcfee6a66f6cfbe2", null ]
 ];

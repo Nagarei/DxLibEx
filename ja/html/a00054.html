@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxlibex/basic_types/arithmetic_t.hpp ファイル</title>
+<title>DxLibEx: dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt; 構造体テンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,8 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
     <ul class="tablist">
       <li><a href="index.html"><span>総合概要</span></a></li>
       <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li><a href="annotated.html"><span>クラス</span></a></li>
-      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -69,8 +69,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>ファイル一覧</span></a></li>
-      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -103,60 +105,44 @@ $(document).ready(function(){initNavTree('a00054.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">名前空間</a> &#124;
-<a href="#typedef-members">型定義</a>  </div>
   <div class="headertitle">
-<div class="title">arithmetic_t.hpp ファイル</div>  </div>
+<div class="title">dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt; 構造体テンプレート</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00092_source.html">dxlibex/type_traits/first_enabled.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00091_source.html">dxlibex/type_traits/enable_if.hpp</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-arithmetic_t.hpp の依存先関係図:</div>
+
+<p><code>#include &lt;<a class="el" href="a00066_source.html">use_big_type_when_one_byte_t.hpp</a>&gt;</code></p>
+<div class="dynheader">
+dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt; の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><img src="a00120.png" border="0" usemap="#dxlibex_2basic__types_2arithmetic__t_8hpp" alt=""/></div>
-<map name="dxlibex_2basic__types_2arithmetic__t_8hpp" id="dxlibex_2basic__types_2arithmetic__t_8hpp">
-<area shape="rect" id="node2" href="a00092.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="5,95,133,136"/>
-<area shape="rect" id="node4" href="a00091.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="157,95,285,136"/>
+<div class="center"><img src="a00228.png" border="0" usemap="#dxle_1_1detail_1_1use__big__type__when__one__byte__impl_3_01_t_00_01true_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="dxle_1_1detail_1_1use__big__type__when__one__byte__impl_3_01_t_00_01true_01_4_inherit__map" id="dxle_1_1detail_1_1use__big__type__when__one__byte__impl_3_01_t_00_01true_01_4_inherit__map">
+<area shape="rect" id="node2" href="a00011.html" title="dxle::type_traits::\lfirst_enabled\&lt; enable\l_if\&lt; 1!=sizeof(T), T \&gt;\l, enable_if\&lt; std::is_signed\l\&lt; T \&gt;::value, int \&gt;, unsigned int \&gt;" alt="" coords="5,5,220,91"/>
 </map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-被依存関係図:</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt; 連携図</div>
 <div class="dyncontent">
-<div class="center"><img src="a00121.png" border="0" usemap="#dxlibex_2basic__types_2arithmetic__t_8hppdep" alt=""/></div>
-<map name="dxlibex_2basic__types_2arithmetic__t_8hppdep" id="dxlibex_2basic__types_2arithmetic__t_8hppdep">
-<area shape="rect" id="node2" href="a00057.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="5,95,143,136"/>
-<area shape="rect" id="node7" href="a00058.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="167,95,304,136"/>
-<area shape="rect" id="node8" href="a00059.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="328,95,465,136"/>
-<area shape="rect" id="node3" href="a00053.html" title="dxlibex/basic_types.hpp" alt="" coords="154,184,317,211"/>
-<area shape="rect" id="node4" href="a00076.html" title="dxlibex/DxLibEx.h" alt="" coords="121,333,248,360"/>
-<area shape="rect" id="node5" href="a00078.html" title="dxlibex/Graph2D.h" alt="" coords="223,259,352,285"/>
-<area shape="rect" id="node6" href="a00077.html" title="dxlibex/DxLibWrap.h" alt="" coords="272,333,415,360"/>
+<div class="center"><img src="a00229.png" border="0" usemap="#dxle_1_1detail_1_1use__big__type__when__one__byte__impl_3_01_t_00_01true_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="dxle_1_1detail_1_1use__big__type__when__one__byte__impl_3_01_t_00_01true_01_4_coll__map" id="dxle_1_1detail_1_1use__big__type__when__one__byte__impl_3_01_t_00_01true_01_4_coll__map">
+<area shape="rect" id="node2" href="a00011.html" title="dxle::type_traits::\lfirst_enabled\&lt; enable\l_if\&lt; 1!=sizeof(T), T \&gt;\l, enable_if\&lt; std::is_signed\l\&lt; T \&gt;::value, int \&gt;, unsigned int \&gt;" alt="" coords="5,5,220,91"/>
 </map>
-</div>
-</div>
-<p><a href="a00054_source.html">[ソースコード]</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-名前空間</h2></td></tr>
-<tr class="memitem:a00099"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00099.html">dxle</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-型定義</h2></td></tr>
-<tr class="memitem:a0b81ab26d4e847da667a1d28fb8d52d7"><td class="memTemplParams" colspan="2">template&lt;typename T , enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value, std::nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:a0b81ab26d4e847da667a1d28fb8d52d7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00099.html#a0b81ab26d4e847da667a1d28fb8d52d7">dxle::arithmetic_t</a> = first_enabled_t&lt; enable_if&lt; 1!=sizeof(T), T &gt;, enable_if&lt; std::is_signed&lt; T &gt;::value, int &gt;, unsigned int &gt;</td></tr>
-<tr class="memdesc:a0b81ab26d4e847da667a1d28fb8d52d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">for int8_t/uint8_t  <a href="a00099.html#a0b81ab26d4e847da667a1d28fb8d52d7">[詳解]</a><br /></td></tr>
-<tr class="separator:a0b81ab26d4e847da667a1d28fb8d52d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+struct dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt;</h3>
+
+
+<p> <a class="el" href="a00066_source.html">use_big_type_when_one_byte_t.hpp</a> の <a class="el" href="a00066_source.html#l00019">19</a> 行目に定義があります。</p>
+</div><hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>D:/user/documents/git/DxLibEx/dxlibex/basic_types/<a class="el" href="a00066_source.html">use_big_type_when_one_byte_t.hpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_414ed2069a979a8d2b003ad6824e1b2d.html">basic_types</a></li><li class="navelem"><a class="el" href="a00054.html">arithmetic_t.hpp</a></li>
-    <li class="footer">2016年02月26日(金) 00時06分00秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00108.html">detail</a></li><li class="navelem"><a class="el" href="a00054.html">use_big_type_when_one_byte_impl&lt; T, true &gt;</a></li>
+    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

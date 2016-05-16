@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00038.html" title="Template class for 2D points specified by its coordinates x and y. " alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node1" href="$a00051.html" title="dxle::impl::Unique\l_HandledObject_Bace\l\&lt; texture_2d \&gt;" alt="" coords="5,5,156,61"/>
+<area shape="rect" id="node2" href="$a00049.html" title="dxle::graph2d::texture_2d" alt="" coords="204,20,373,47"/>
+<area shape="rect" id="node3" href="$a00042.html" title="描画可能画像クラス " alt="" coords="421,20,568,47"/>
 </map>

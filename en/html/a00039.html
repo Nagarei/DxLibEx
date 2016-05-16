@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::color::rgb Class Reference</title>
+<title>DxLibEx: dxle::point3d_c&lt; T, &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,68 +106,187 @@ $(document).ready(function(){initNavTree('a00039.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#related">Related Functions</a> &#124;
 <a href="a00204.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::color::rgb Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+<div class="title">dxle::point3d_c&lt; T, &gt; Class Template Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00062_source.html">Color.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for dxle::color::rgb:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00205.png" border="0" usemap="#dxle_1_1color_1_1rgb_inherit__map" alt="Inheritance graph"/></div>
-<map name="dxle_1_1color_1_1rgb_inherit__map" id="dxle_1_1color_1_1rgb_inherit__map">
-<area shape="rect" id="node2" href="a00002.html" title="dxle::color::color_base" alt="" coords="5,5,159,32"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for dxle::color::rgb:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00206.png" border="0" usemap="#dxle_1_1color_1_1rgb_coll__map" alt="Collaboration graph"/></div>
-<map name="dxle_1_1color_1_1rgb_coll__map" id="dxle_1_1color_1_1rgb_coll__map">
-<area shape="rect" id="node2" href="a00002.html" title="dxle::color::color_base" alt="" coords="5,13,159,39"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<p>Template class for 3D points specified by its coordinates <code>x</code> and <code>y</code>.  
+ <a href="a00039.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00062_source.html">point3d.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a48f7491f19ad758a3405968a9112f548"><td class="memItemLeft" align="right" valign="top">typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a></td></tr>
+<tr class="separator:a48f7491f19ad758a3405968a9112f548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a0fc41442449ad335db888c05e9f06e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a6a0fc41442449ad335db888c05e9f06e">rgb</a> () <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a6a0fc41442449ad335db888c05e9f06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb8ac3e1d89ce565e4ee609da0820031"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#abb8ac3e1d89ce565e4ee609da0820031">rgb</a> (int red_, int green_, int blue_)</td></tr>
-<tr class="separator:abb8ac3e1d89ce565e4ee609da0820031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5917fb5e332aa368287a497052d0173b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a5917fb5e332aa368287a497052d0173b">rgb</a> (<a class="el" href="a00101.html#aacfedd2e718cf65ba03a123d54b16f34">color_tag</a>)</td></tr>
-<tr class="separator:a5917fb5e332aa368287a497052d0173b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a931b1b81ade3528cc393ec94cf5510ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a931b1b81ade3528cc393ec94cf5510ba">rgb</a> (<a class="el" href="a00008.html">dx_color</a>) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a931b1b81ade3528cc393ec94cf5510ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45dc37b8e286e27df4f633c3749e3ddf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#adb6c50e923fc45c9492b6642a2cbfea4">DXLE_CXX14_CONSTEXPR</a> <a class="el" href="a00039.html">rgb</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a45dc37b8e286e27df4f633c3749e3ddf">reverse</a> () <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a45dc37b8e286e27df4f633c3749e3ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf927fb9cd0fe9541e06e62cc4d51bd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#adf927fb9cd0fe9541e06e62cc4d51bd9">point3d_c</a> () <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
+<tr class="separator:adf927fb9cd0fe9541e06e62cc4d51bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83107e82ffac8e3d6edce6d41f9f0cd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a83107e82ffac8e3d6edce6d41f9f0cd7">point3d_c</a> (const <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;x_, const <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;y_, const <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;z_) <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>((std</td></tr>
+<tr class="separator:a83107e82ffac8e3d6edce6d41f9f0cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241a645ba5f32850a09fd6e36680d55c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a241a645ba5f32850a09fd6e36680d55c">point3d_c</a> (<a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;x_, <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;y_, <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;z_) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a241a645ba5f32850a09fd6e36680d55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63076a747ed09b48a9f0d28247fcbbd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a63076a747ed09b48a9f0d28247fcbbd7">point3d_c</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;o) <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>((std</td></tr>
+<tr class="separator:a63076a747ed09b48a9f0d28247fcbbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ab91cd0f9e14017dd4a579cd743aea2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a6ab91cd0f9e14017dd4a579cd743aea2">point3d_c</a> (<a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;o) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a6ab91cd0f9e14017dd4a579cd743aea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06251bc02d73be03a253ae6dc255a5f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a06251bc02d73be03a253ae6dc255a5f4">operator=</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;r) <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>((std</td></tr>
+<tr class="separator:a06251bc02d73be03a253ae6dc255a5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b600b3e48d3a168d05721a577f7cb52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a7b600b3e48d3a168d05721a577f7cb52">operator=</a> (<a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;r) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a7b600b3e48d3a168d05721a577f7cb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9ed45e59291f84f7850d78af9aea126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#ae9ed45e59291f84f7850d78af9aea126">operator bool</a> () const <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>((dxle</td></tr>
+<tr class="separator:ae9ed45e59291f84f7850d78af9aea126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55979046d0613684e0863270b8e7d4ed"><td class="memTemplParams" colspan="2">template&lt;typename Tp2_ &gt; </td></tr>
+<tr class="memitem:a55979046d0613684e0863270b8e7d4ed"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a55979046d0613684e0863270b8e7d4ed">operator point3d_c&lt; Tp2_ &gt;</a> () const <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a55979046d0613684e0863270b8e7d4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0569b4861ef0f85138bab8811e6a0187"><td class="memTemplParams" colspan="2">template&lt;typename Tp2_ &gt; </td></tr>
+<tr class="memitem:a0569b4861ef0f85138bab8811e6a0187"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a0569b4861ef0f85138bab8811e6a0187">operator std::tuple&lt; Tp2_, Tp2_, Tp2_ &gt;</a> () const <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(static_cast&lt; Tp2_ &gt;(this-&gt; <a class="el" href="a00039.html#a43ca51dc0cec5b2216d21fc2c99f5953">x</a>))</td></tr>
+<tr class="separator:a0569b4861ef0f85138bab8811e6a0187"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a84de727b22db26036c9ce3a4871efc91"><td class="memItemLeft" align="right" valign="top">rgb_value_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a84de727b22db26036c9ce3a4871efc91">red</a></td></tr>
-<tr class="separator:a84de727b22db26036c9ce3a4871efc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6f48075681f0232461628c2db521dc6"><td class="memItemLeft" align="right" valign="top">rgb_value_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#ad6f48075681f0232461628c2db521dc6">green</a></td></tr>
-<tr class="separator:ad6f48075681f0232461628c2db521dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2342d4897fb946fd688e3ae31b06ba6"><td class="memItemLeft" align="right" valign="top">rgb_value_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#ac2342d4897fb946fd688e3ae31b06ba6">blue</a></td></tr>
-<tr class="separator:ac2342d4897fb946fd688e3ae31b06ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ca51dc0cec5b2216d21fc2c99f5953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a43ca51dc0cec5b2216d21fc2c99f5953">x</a></td></tr>
+<tr class="separator:a43ca51dc0cec5b2216d21fc2c99f5953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebbc1e2c2ec888c4031827a55b7309e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#aebbc1e2c2ec888c4031827a55b7309e9">y</a></td></tr>
+<tr class="separator:aebbc1e2c2ec888c4031827a55b7309e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab6455c6b4bf648236d090b28337a77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00039.html#a0ab6455c6b4bf648236d090b28337a77">z</a></td></tr>
+<tr class="separator:a0ab6455c6b4bf648236d090b28337a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
+Related Functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
+</td></tr>
+<tr class="memitem:a878080428df25a2dc955129f8ea6baee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a878080428df25a2dc955129f8ea6baee"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a878080428df25a2dc955129f8ea6baee">make_point3d_c</a> (const std::tuple&lt; T, T, T &gt; &amp;p) <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
+<tr class="memdesc:a878080428df25a2dc955129f8ea6baee"><td class="mdescLeft">&#160;</td><td class="mdescRight">conversion from std::tuple  <a href="#a878080428df25a2dc955129f8ea6baee">More...</a><br /></td></tr>
+<tr class="separator:a878080428df25a2dc955129f8ea6baee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b919fe708335336b4924502370df94f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9b919fe708335336b4924502370df94f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a9b919fe708335336b4924502370df94f">make_point3d_c</a> (std::tuple&lt; T, T, T &gt; &amp;&amp;p) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a9b919fe708335336b4924502370df94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">conversion from std::tuple  <a href="#a9b919fe708335336b4924502370df94f">More...</a><br /></td></tr>
+<tr class="separator:a9b919fe708335336b4924502370df94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d08bade78f8e81f8623748068add4d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a75d08bade78f8e81f8623748068add4d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a75d08bade78f8e81f8623748068add4d">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
+<tr class="memdesc:a75d08bade78f8e81f8623748068add4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ostream operator  <a href="#a75d08bade78f8e81f8623748068add4d">More...</a><br /></td></tr>
+<tr class="separator:a75d08bade78f8e81f8623748068add4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36df0b53d4092389b2ea7345f5c36e39"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a36df0b53d4092389b2ea7345f5c36e39"><td class="memTemplItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a36df0b53d4092389b2ea7345f5c36e39">operator&lt;&lt;</a> (std::wostream &amp;os, const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
+<tr class="memdesc:a36df0b53d4092389b2ea7345f5c36e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">ostream operator  <a href="#a36df0b53d4092389b2ea7345f5c36e39">More...</a><br /></td></tr>
+<tr class="separator:a36df0b53d4092389b2ea7345f5c36e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a833542987ba28fdbac2e417d4c74fb38"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a833542987ba28fdbac2e417d4c74fb38"><td class="memTemplItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a833542987ba28fdbac2e417d4c74fb38">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
+<tr class="memdesc:a833542987ba28fdbac2e417d4c74fb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">istream operator  <a href="#a833542987ba28fdbac2e417d4c74fb38">More...</a><br /></td></tr>
+<tr class="separator:a833542987ba28fdbac2e417d4c74fb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c0fb537430639c53a565a1500ffa41"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a68c0fb537430639c53a565a1500ffa41"><td class="memTemplItemLeft" align="right" valign="top">std::wistream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a68c0fb537430639c53a565a1500ffa41">operator&gt;&gt;</a> (std::wistream &amp;is, <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
+<tr class="memdesc:a68c0fb537430639c53a565a1500ffa41"><td class="mdescLeft">&#160;</td><td class="mdescRight">istream operator  <a href="#a68c0fb537430639c53a565a1500ffa41">More...</a><br /></td></tr>
+<tr class="separator:a68c0fb537430639c53a565a1500ffa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1449607899956b5d6c461e85c28b6e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0e1449607899956b5d6c461e85c28b6e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a0e1449607899956b5d6c461e85c28b6e">operator-</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(-std</td></tr>
+<tr class="memdesc:a0e1449607899956b5d6c461e85c28b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of unary operator -.  <a href="#a0e1449607899956b5d6c461e85c28b6e">More...</a><br /></td></tr>
+<tr class="separator:a0e1449607899956b5d6c461e85c28b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981da85dd3863b3d6d0ce67e69fa1831"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a981da85dd3863b3d6d0ce67e69fa1831"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a981da85dd3863b3d6d0ce67e69fa1831">operator+</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;r) <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
+<tr class="memdesc:a981da85dd3863b3d6d0ce67e69fa1831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of unary operator +.  <a href="#a981da85dd3863b3d6d0ce67e69fa1831">More...</a><br /></td></tr>
+<tr class="separator:a981da85dd3863b3d6d0ce67e69fa1831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f57b7b6e47914dc45b0660bcb36fea"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a43f57b7b6e47914dc45b0660bcb36fea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a43f57b7b6e47914dc45b0660bcb36fea">operator+</a> (<a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&amp;r) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a43f57b7b6e47914dc45b0660bcb36fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of unary operator +.  <a href="#a43f57b7b6e47914dc45b0660bcb36fea">More...</a><br /></td></tr>
+<tr class="separator:a43f57b7b6e47914dc45b0660bcb36fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58cc3aad56c791d9b2677641e97dd3b9"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a58cc3aad56c791d9b2677641e97dd3b9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a58cc3aad56c791d9b2677641e97dd3b9">operator+=</a> (<a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;l, const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x+</td></tr>
+<tr class="memdesc:a58cc3aad56c791d9b2677641e97dd3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of binary operator +=.  <a href="#a58cc3aad56c791d9b2677641e97dd3b9">More...</a><br /></td></tr>
+<tr class="separator:a58cc3aad56c791d9b2677641e97dd3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3abd26c1da87d8ed23398cea05706fc"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:ac3abd26c1da87d8ed23398cea05706fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#ac3abd26c1da87d8ed23398cea05706fc">operator-</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;l, const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x-r.x) -&gt; <a class="el" href="a00039.html">point3d_c</a>&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()-std::declval&lt; std::remove_cv_t&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&gt;())&gt;</td></tr>
+<tr class="memdesc:ac3abd26c1da87d8ed23398cea05706fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of binary operator -.  <a href="#ac3abd26c1da87d8ed23398cea05706fc">More...</a><br /></td></tr>
+<tr class="separator:ac3abd26c1da87d8ed23398cea05706fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127a773a4bf24e99eadac845a24486fb"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:a127a773a4bf24e99eadac845a24486fb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a127a773a4bf24e99eadac845a24486fb">operator*</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;l, <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x *r) -&gt; <a class="el" href="a00039.html">point3d_c</a>&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()*std::declval&lt; std::remove_cv_t&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&gt;())&gt;</td></tr>
+<tr class="memdesc:a127a773a4bf24e99eadac845a24486fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of binary operator *.  <a href="#a127a773a4bf24e99eadac845a24486fb">More...</a><br /></td></tr>
+<tr class="separator:a127a773a4bf24e99eadac845a24486fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fc4b4108afe5bed33dde27f8c79ec7"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:aa6fc4b4108afe5bed33dde27f8c79ec7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#aa6fc4b4108afe5bed33dde27f8c79ec7">operator*</a> (T1 l, const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l+r.x) -&gt; <a class="el" href="a00039.html">point3d_c</a>&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()*std::declval&lt; std::remove_cv_t&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&gt;())&gt;</td></tr>
+<tr class="memdesc:aa6fc4b4108afe5bed33dde27f8c79ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of binary operator *.  <a href="#aa6fc4b4108afe5bed33dde27f8c79ec7">More...</a><br /></td></tr>
+<tr class="separator:aa6fc4b4108afe5bed33dde27f8c79ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d18887addc678cd3056d7ef483621fe"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a6d18887addc678cd3056d7ef483621fe"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a6d18887addc678cd3056d7ef483621fe">operator*=</a> (<a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;l, <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x *</td></tr>
+<tr class="memdesc:a6d18887addc678cd3056d7ef483621fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of binary operator *=.  <a href="#a6d18887addc678cd3056d7ef483621fe">More...</a><br /></td></tr>
+<tr class="separator:a6d18887addc678cd3056d7ef483621fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8f1362d9e131c370cfac038f152fd1"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a9a8f1362d9e131c370cfac038f152fd1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#a9a8f1362d9e131c370cfac038f152fd1">operator/=</a> (<a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;l, <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> r) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x/</td></tr>
+<tr class="memdesc:a9a8f1362d9e131c370cfac038f152fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of binary operator /=.  <a href="#a9a8f1362d9e131c370cfac038f152fd1">More...</a><br /></td></tr>
+<tr class="separator:a9a8f1362d9e131c370cfac038f152fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23f4083b9fdc512c88a9f2e3d4cb300"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:ac23f4083b9fdc512c88a9f2e3d4cb300"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#ac23f4083b9fdc512c88a9f2e3d4cb300">cross</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;p1, const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;p2) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(std</td></tr>
+<tr class="memdesc:ac23f4083b9fdc512c88a9f2e3d4cb300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a cross-product of two <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value as vectors.  <a href="#ac23f4083b9fdc512c88a9f2e3d4cb300">More...</a><br /></td></tr>
+<tr class="separator:ac23f4083b9fdc512c88a9f2e3d4cb300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81544b0af3b06c4ab4dca332d1b81c8"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:af81544b0af3b06c4ab4dca332d1b81c8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00105.html#acb3d96a94b5987b9cc374033f5491ca2">distance_result_type_t</a>&lt; T1, <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00039.html#af81544b0af3b06c4ab4dca332d1b81c8">distance</a> (const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;p1, const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;p2) <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(hypot(<a class="el" href="a00105.html#a8aa87523c9d3f3959e13b51f4e38352b">safe_dist</a>(std</td></tr>
+<tr class="memdesc:af81544b0af3b06c4ab4dca332d1b81c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the distance of the two <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> class object based on the Pythagorean theorem(std::hypot)  <a href="#af81544b0af3b06c4ab4dca332d1b81c8">More...</a><br /></td></tr>
+<tr class="separator:af81544b0af3b06c4ab4dca332d1b81c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a00062_source.html#l00048">48</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6a0fc41442449ad335db888c05e9f06e"></a>
+<div class="textblock"><h3>template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt; = nullptr&gt;<br />
+class dxle::point3d_c&lt; T, &gt;</h3>
+
+<p>Template class for 3D points specified by its coordinates <code>x</code> and <code>y</code>. </p>
+<p>An instance of the claess is interchangeable with std::tuple. There is also a cast operator to convert point3d coordinates to the specified type (using static_cast). Commonly, the conversion uses this operation for each of the coordinates. Besides the class members listed in the declaration above, the following operations on points are implemented:</p>
+<div class="fragment"><div class="line">pt1 = pt2 + pt3;</div><div class="line">pt1 = pt2 - pt3;</div><div class="line">pt1 = pt2 * a;</div><div class="line">pt1 = a * pt2;</div><div class="line">pt1 = pt2 / a;</div><div class="line">pt1 += pt2;</div><div class="line">pt1 -= pt2;</div><div class="line">pt1 *= a;</div><div class="line">pt1 /= a;</div><div class="line">pt1 == pt2;</div><div class="line">pt1 != pt2;</div></div><!-- fragment --><p> For your convenience, the following type aliases are defined:</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> point3d_c&lt;int&gt; <a class="code" href="a00105.html#ad1e837904ba0f3d9dd71c38ed35d86a1">point3di</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;std::uint8_t&gt; <a class="code" href="a00105.html#a6565dcf79cc5c222cb550804ec2e9cb4">point3du8i</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;std::int8_t&gt; <a class="code" href="a00105.html#a2f70f11d4a3529023e9f87c30678d641">point3d8i</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;double&gt; <a class="code" href="a00105.html#a83cf9e21f9c086c4b4a7e5f5d1f4c429">point3dd</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;float&gt; <a class="code" href="a00105.html#a83f7ef5efdb6b43cceadbe6b09aab2be">point3df</a>;</div></div><!-- fragment --><p> Example: </p><div class="fragment"><div class="line"><a class="code" href="a00039.html">dxle::point3df</a> a(0.3f, 0.f), b(0.f, 0.4f);</div><div class="line"><a class="code" href="a00039.html">dxle::point3di</a> pt = (a + b)*10.f;</div><div class="line">std::cout &lt;&lt; pt &lt;&lt; std::endl;</div></div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>T is the type of the elements. T must meet the requirements of <a href="http://en.cppreference.com/w/cpp/types/is_move_assignable">NothrowMoveAssignable</a> and <a href="http://en.cppreference.com/w/cpp/types/is_move_constructible">NothrowConstructable</a>. T is expected the following conditions to use all features.<ul>
+<li><a href="http://en.cppreference.com/w/cpp/concept/DefaultConstructible">DefaultConstructible</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/concept/CopyConstructible">CopyConstructible</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/concept/CopyAssignable">CopyAssignable</a></li>
+<li>has unary operator + -</li>
+<li>has binary operator + - * / += -= *= /= == !=</li>
+<li>has binary operator != to compare with 0</li>
+<li>able to call functon abs and hypot.</li>
+<li><a href="http://en.cppreference.com/w/cpp/types/is_floating_point">std::is_floating_point</a>&lt;T&gt; == true or able to convert to double via static_cast. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00097">97</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a48f7491f19ad758a3405968a9112f548"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef T <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00100">100</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="adf927fb9cd0fe9541e06e62cc4d51bd9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> dxle::color::rgb::rgb </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00039.html">point3d_c</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -180,34 +299,36 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00072">72</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00102">102</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abb8ac3e1d89ce565e4ee609da0820031"></a>
+<a class="anchor" id="a83107e82ffac8e3d6edce6d41f9f0cd7"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00072.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> dxle::color::rgb::rgb </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00039.html">point3d_c</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>red_</em>, </td>
+          <td class="paramtype">const <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>x_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>green_</em>, </td>
+          <td class="paramtype">const <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>y_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>blue_</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>z_</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -222,22 +343,68 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00075">75</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00103">103</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5917fb5e332aa368287a497052d0173b"></a>
+<a class="anchor" id="a241a645ba5f32850a09fd6e36680d55c"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00072.html#adb6c50e923fc45c9492b6642a2cbfea4">DXLE_CXX14_CONSTEXPR</a> dxle::color::rgb::rgb </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00039.html">point3d_c</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00101.html#aacfedd2e718cf65ba03a123d54b16f34">color_tag</a>&#160;</td>
-          <td class="paramname"><em>color_tag_</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>x_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>y_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>z_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00104">104</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a63076a747ed09b48a9f0d28247fcbbd7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00039.html">point3d_c</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -248,22 +415,24 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00253">253</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00107">107</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a931b1b81ade3528cc393ec94cf5510ba"></a>
+<a class="anchor" id="a6ab91cd0f9e14017dd4a579cd743aea2"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">dxle::color::rgb::rgb </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00039.html">point3d_c</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00008.html">dx_color</a>&#160;</td>
-          <td class="paramname"><em>dx_color_</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -274,22 +443,118 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00278">278</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00109">109</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a45dc37b8e286e27df4f633c3749e3ddf"></a>
+<a class="anchor" id="ae9ed45e59291f84f7850d78af9aea126"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00072.html#adb6c50e923fc45c9492b6642a2cbfea4">DXLE_CXX14_CONSTEXPR</a> <a class="el" href="a00039.html">rgb</a>&amp; dxle::color::rgb::reverse </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::operator bool </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>operator bool</p><ol type="1">
+<li>operator bool</li>
+<li>operator != (nullptr)</li>
+<li>default constector + operator != </li>
+</ol>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00130">130</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a55979046d0613684e0863270b8e7d4ed"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<div class="memtemplate">
+template&lt;typename Tp2_ &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::operator <a class="el" href="a00039.html">point3d_c</a>&lt; Tp2_ &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>conversion to another data type </p>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00135">135</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0569b4861ef0f85138bab8811e6a0187"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<div class="memtemplate">
+template&lt;typename Tp2_ &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::operator std::tuple&lt; Tp2_, Tp2_, Tp2_ &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="a00039.html#a43ca51dc0cec5b2216d21fc2c99f5953">x</a>))
+		</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>conversion to std::tuple </p>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00141">141</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06251bc02d73be03a253ae6dc255a5f4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&amp; <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -300,63 +565,856 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00081">81</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00111">111</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b600b3e48d3a168d05721a577f7cb52"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&amp; <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00119">119</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac23f4083b9fdc512c88a9f2e3d4cb300"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto cross </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes a cross-product of two <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value as vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">p2</td><td><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Computed result. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00622">622</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af81544b0af3b06c4ab4dca332d1b81c8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00105.html#acb3d96a94b5987b9cc374033f5491ca2">distance_result_type_t</a>&lt; T1, <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; distance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the distance of the two <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> class object based on the Pythagorean theorem(std::hypot) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">p2</td><td><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Computed result. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00641">641</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a878080428df25a2dc955129f8ea6baee"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; make_point3d_c </td>
+          <td>(</td>
+          <td class="paramtype">const std::tuple&lt; T, T, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>conversion from std::tuple </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>const-lvalue reference to std::tuple </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00157">157</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b919fe708335336b4924502370df94f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; make_point3d_c </td>
+          <td>(</td>
+          <td class="paramtype">std::tuple&lt; T, T, T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>conversion from std::tuple </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>rvalue reference to std::tuple </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00170">170</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a127a773a4bf24e99eadac845a24486fb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a>&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="a00039.html">point3d_c</a>&lt;decltype(std::declval&lt;std::remove_cv_t&lt;T1&gt;&gt;() * std::declval&lt;std::remove_cv_t&lt;<a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a>&gt;&gt;())&gt;
+	</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of binary operator *. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">r</td><td>arithmetic value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Memberwise multiplication by 2nd argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00387">387</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6fc4b4108afe5bed33dde27f8c79ec7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto operator* </td>
+          <td>(</td>
+          <td class="paramtype">T1&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="a00039.html">point3d_c</a>&lt;decltype(std::declval&lt;std::remove_cv_t&lt;T1&gt;&gt;() * std::declval&lt;std::remove_cv_t&lt;<a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a>&gt;&gt;())&gt;
+	</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of binary operator *. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>arithmetic value </td></tr>
+    <tr><td class="paramname">r</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Memberwise multiplication by 1st argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00405">405</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d18887addc678cd3056d7ef483621fe"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp; operator*= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a>&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of binary operator *=. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">r</td><td>arithmetic value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to 1st argument </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a981da85dd3863b3d6d0ce67e69fa1831"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp; operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of unary operator +. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const-lvalue reference to first argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00285">285</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a43f57b7b6e47914dc45b0660bcb36fea"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&amp; operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of unary operator +. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>rvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>rvalue reference to first argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00297">297</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58cc3aad56c791d9b2677641e97dd3b9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp; operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of binary operator +=. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">r</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to first argument </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e1449607899956b5d6c461e85c28b6e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of unary operator -. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td><a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value to negate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Memberwise opposite of the <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00270">270</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3abd26c1da87d8ed23398cea05706fc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; <a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="a00039.html">point3d_c</a>&lt;decltype(std::declval&lt;std::remove_cv_t&lt;T1&gt;&gt;() - std::declval&lt;std::remove_cv_t&lt;<a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a>&gt;&gt;())&gt;
+	</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of binary operator -. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">r</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Memberwise subtraction of both <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00369">369</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a8f1362d9e131c370cfac038f152fd1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp; operator/= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00105.html#a8f698b193d5579f6879460be2d870a45">T2</a>&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of binary operator /=. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> value </td></tr>
+    <tr><td class="paramname">r</td><td>arithmetic value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to 1st argument </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a75d08bade78f8e81f8623748068add4d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ostream operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>lvalue reference to ostream </td></tr>
+    <tr><td class="paramname">p</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to ostream whitch is specified at first argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00206">206</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36df0b53d4092389b2ea7345f5c36e39"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ostream operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>lvalue reference to ostream </td></tr>
+    <tr><td class="paramname">p</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to ostream whitch is specified at first argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00222">222</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a833542987ba28fdbac2e417d4c74fb38"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream &amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>istream operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>lvalue reference to istream </td></tr>
+    <tr><td class="paramname">p</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to istream whitch is specified at first argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00238">238</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a68c0fb537430639c53a565a1500ffa41"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wistream &amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wistream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00039.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>istream operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>lvalue reference to istream </td></tr>
+    <tr><td class="paramname">p</td><td>const-lvalue reference to <a class="el" href="a00039.html" title="Template class for 3D points specified by its coordinates x and y. ">point3d_c</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lvalue reference to istream whitch is specified at first argument </dd></dl>
+
+<p>Definition at line <a class="el" href="a00062_source.html#l00254">254</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ac2342d4897fb946fd688e3ae31b06ba6"></a>
+<a class="anchor" id="a43ca51dc0cec5b2216d21fc2c99f5953"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rgb_value_t dxle::color::rgb::blue</td>
+          <td class="memname"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::x</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00070">70</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00101">101</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad6f48075681f0232461628c2db521dc6"></a>
+<a class="anchor" id="aebbc1e2c2ec888c4031827a55b7309e9"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rgb_value_t dxle::color::rgb::green</td>
+          <td class="memname"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::y</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00069">69</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00101">101</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a84de727b22db26036c9ce3a4871efc91"></a>
+<a class="anchor" id="a0ab6455c6b4bf648236d090b28337a77"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, enable_if_t&lt; std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rgb_value_t dxle::color::rgb::red</td>
+          <td class="memname"><a class="el" href="a00039.html#a48f7491f19ad758a3405968a9112f548">value_type</a> <a class="el" href="a00039.html">dxle::point3d_c</a>&lt; T, &gt;::z</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00062_source.html#l00068">68</a> of file <a class="el" href="a00062_source.html">Color.hpp</a>.</p>
+<p>Definition at line <a class="el" href="a00062_source.html#l00101">101</a> of file <a class="el" href="a00062_source.html">point3d.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>dxlibex/<a class="el" href="a00062_source.html">Color.hpp</a></li>
+<li>D:/user/documents/git/DxLibEx/dxlibex/basic_types/<a class="el" href="a00062_source.html">point3d.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00101.html">color</a></li><li class="navelem"><a class="el" href="a00039.html">rgb</a></li>
-    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00039.html">point3d_c</a></li>
+    <li class="footer">Generated on Tue May 17 2016 01:52:45 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

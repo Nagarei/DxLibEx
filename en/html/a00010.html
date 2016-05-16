@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::type_traits::first_enabled&lt; Args &gt; Struct Template Reference</title>
+<title>DxLibEx: dxle::color::dx_color_param Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,32 +105,120 @@ $(document).ready(function(){initNavTree('a00010.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00214.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::type_traits::first_enabled&lt; Args &gt; Struct Template Reference</div>  </div>
+<div class="title">dxle::color::dx_color_param Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>multi-conditional if struct for TMP. This class is used in conjunction with std::enable_if.  
- <a href="a00010.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00092_source.html">first_enabled.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00067_source.html">color.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a77616c0e91a1cb3104ea52db4246882d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a77616c0e91a1cb3104ea52db4246882d">dx_color_param</a> (const <a class="el" href="a00010.html">dx_color_param</a> &amp;other) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a77616c0e91a1cb3104ea52db4246882d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6653ba9aebb9f33569b326182021aba6"><td class="memTemplParams" colspan="2">template&lt;typename color_t , typename enable_if&lt; std::is_constructible&lt; dx_color, color_t &amp;&amp; &gt;::value, std::nullptr_t &gt;::type  = nullptr&gt; </td></tr>
+<tr class="memitem:a6653ba9aebb9f33569b326182021aba6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00010.html#a6653ba9aebb9f33569b326182021aba6">dx_color_param</a> (color_t &amp;&amp;color) <a class="el" href="a00077.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>((std</td></tr>
+<tr class="separator:a6653ba9aebb9f33569b326182021aba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9094b5d47155e5e4dbc5e51933b13e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00009.html#a412084582244ca7eb3119da5893cf930">dx_color::value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#acd9094b5d47155e5e4dbc5e51933b13e">get</a> () const <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:acd9094b5d47155e5e4dbc5e51933b13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename... Args&gt;<br />
-struct dxle::type_traits::first_enabled&lt; Args &gt;</h3>
+<div class="textblock"><p>Example: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> MyDrawLine(<span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2, <a class="code" href="a00010.html">dxle::dx_color_param</a> Color, <span class="keywordtype">int</span> Thickness = 1)</div><div class="line">{</div><div class="line"><span class="keywordflow">return</span> <a class="code" href="a00105.html#a833cf018ab4c9034ff2dd714b3f5241b">DxLib::DrawLine</a>(x1, y1, x2, y2, Color.<a class="code" href="a00010.html#acd9094b5d47155e5e4dbc5e51933b13e">get</a>(), Thickness);</div><div class="line">}</div></div><!-- fragment --> 
+<p>Definition at line <a class="el" href="a00067_source.html#l00171">171</a> of file <a class="el" href="a00067_source.html">color.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a77616c0e91a1cb3104ea52db4246882d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::color::dx_color_param::dx_color_param </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00010.html">dx_color_param</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
-<p>multi-conditional if struct for TMP. This class is used in conjunction with std::enable_if. </p>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">using</span> bar = <a class="code" href="a00109.html#a2f390cdb60fda0114b60cf6f34eb9093">first_enabled_t</a>&lt;</div><div class="line">    std::enbale_if&lt;cond1, type1&gt;,</div><div class="line">    std::enbale_if&lt;cond2, type2&gt;,</div><div class="line">    std::enbale_if&lt;cond3, type3&gt;,</div><div class="line">    default_type</div><div class="line">&gt;;</div></div><!-- fragment --> 
-<p>Definition at line <a class="el" href="a00092_source.html#l00032">32</a> of file <a class="el" href="a00092_source.html">first_enabled.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>dxlibex/type_traits/<a class="el" href="a00092_source.html">first_enabled.hpp</a></li>
+<p>Definition at line <a class="el" href="a00067_source.html#l00174">174</a> of file <a class="el" href="a00067_source.html">color.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6653ba9aebb9f33569b326182021aba6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename color_t , typename enable_if&lt; std::is_constructible&lt; dx_color, color_t &amp;&amp; &gt;::value, std::nullptr_t &gt;::type  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::color::dx_color_param::dx_color_param </td>
+          <td>(</td>
+          <td class="paramtype">color_t &amp;&amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00067_source.html#l00178">178</a> of file <a class="el" href="a00067_source.html">color.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="acd9094b5d47155e5e4dbc5e51933b13e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00009.html#a412084582244ca7eb3119da5893cf930">dx_color::value_type</a> dxle::color::dx_color_param::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00067_source.html#l00181">181</a> of file <a class="el" href="a00067_source.html">color.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>D:/user/documents/git/DxLibEx/dxlibex/<a class="el" href="a00067_source.html">color.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00109.html">type_traits</a></li><li class="navelem"><a class="el" href="a00010.html">first_enabled</a></li>
-    <li class="footer">Generated on Fri Feb 26 2016 00:06:02 for DxLibEx by
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00107.html">color</a></li><li class="navelem"><a class="el" href="a00010.html">dx_color_param</a></li>
+    <li class="footer">Generated on Tue May 17 2016 01:52:45 for DxLibEx by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::point3d_c&lt; T, &gt; クラステンプレート</title>
+<title>DxLibEx: dxle::detail::operator_bool_helper_impl&lt; T, false, true, is_compareable_with_default_ctor &gt; 構造体テンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,1144 +106,121 @@ $(document).ready(function(){initNavTree('a00037.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">公開型</a> &#124;
 <a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#pub-attribs">公開変数類</a> &#124;
-<a href="#related">関連関数</a> &#124;
-<a href="a00194.html">全メンバ一覧</a>  </div>
+<a href="a00222.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::point3d_c&lt; T, &gt; クラステンプレート<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+<div class="title">dxle::detail::operator_bool_helper_impl&lt; T, false, true, is_compareable_with_default_ctor &gt; 構造体テンプレート<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>2次元座標(x, y)　テンプレートクラス。 このクラスはstd::tupleと相互変換が可能です。また、内部型の異なるpoint3d_cクラス同士の変換はstatic_castを使用することで可能です(内部でも<code>static_cast</code>を使用します) 上記のメンバーのほかに、以下の演算をサポートします  
- <a href="a00037.html#details">[詳解]</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00058_source.html">point3d.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00059_source.html">coordinate_operator_bool_helper.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-公開型</h2></td></tr>
-<tr class="memitem:a48f7491f19ad758a3405968a9112f548"><td class="memItemLeft" align="right" valign="top">typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a></td></tr>
-<tr class="separator:a48f7491f19ad758a3405968a9112f548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:adf927fb9cd0fe9541e06e62cc4d51bd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#adf927fb9cd0fe9541e06e62cc4d51bd9">point3d_c</a> () <a class="el" href="a00072.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
-<tr class="separator:adf927fb9cd0fe9541e06e62cc4d51bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83107e82ffac8e3d6edce6d41f9f0cd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a83107e82ffac8e3d6edce6d41f9f0cd7">point3d_c</a> (const <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;x_, const <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;y_, const <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;z_) <a class="el" href="a00072.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>((std</td></tr>
-<tr class="separator:a83107e82ffac8e3d6edce6d41f9f0cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241a645ba5f32850a09fd6e36680d55c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a241a645ba5f32850a09fd6e36680d55c">point3d_c</a> (<a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;x_, <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;y_, <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;z_) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a241a645ba5f32850a09fd6e36680d55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a957d1026f781d3eb25954c7909c82dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a957d1026f781d3eb25954c7909c82dea">point3d_c</a> (const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;o) <a class="el" href="a00072.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
-<tr class="separator:a957d1026f781d3eb25954c7909c82dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ab91cd0f9e14017dd4a579cd743aea2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a6ab91cd0f9e14017dd4a579cd743aea2">point3d_c</a> (<a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;o) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a6ab91cd0f9e14017dd4a579cd743aea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed1495675faf5455719548d718c6bf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00037.html">point3d_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#abed1495675faf5455719548d718c6bf2">operator=</a> (const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;r) <a class="el" href="a00072.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
-<tr class="separator:abed1495675faf5455719548d718c6bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b600b3e48d3a168d05721a577f7cb52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00037.html">point3d_c</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a7b600b3e48d3a168d05721a577f7cb52">operator=</a> (<a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;r) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a7b600b3e48d3a168d05721a577f7cb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9ed45e59291f84f7850d78af9aea126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#ae9ed45e59291f84f7850d78af9aea126">operator bool</a> () const <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>((dxle</td></tr>
-<tr class="separator:ae9ed45e59291f84f7850d78af9aea126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55979046d0613684e0863270b8e7d4ed"><td class="memTemplParams" colspan="2">template&lt;typename Tp2_ &gt; </td></tr>
-<tr class="memitem:a55979046d0613684e0863270b8e7d4ed"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a55979046d0613684e0863270b8e7d4ed">operator point3d_c&lt; Tp2_ &gt;</a> () const <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a55979046d0613684e0863270b8e7d4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0569b4861ef0f85138bab8811e6a0187"><td class="memTemplParams" colspan="2">template&lt;typename Tp2_ &gt; </td></tr>
-<tr class="memitem:a0569b4861ef0f85138bab8811e6a0187"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a0569b4861ef0f85138bab8811e6a0187">operator std::tuple&lt; Tp2_, Tp2_, Tp2_ &gt;</a> () const <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(static_cast&lt; Tp2_ &gt;(this-&gt; <a class="el" href="a00037.html#a43ca51dc0cec5b2216d21fc2c99f5953">x</a>))</td></tr>
-<tr class="separator:a0569b4861ef0f85138bab8811e6a0187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-公開変数類</h2></td></tr>
-<tr class="memitem:a43ca51dc0cec5b2216d21fc2c99f5953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a43ca51dc0cec5b2216d21fc2c99f5953">x</a></td></tr>
-<tr class="separator:a43ca51dc0cec5b2216d21fc2c99f5953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebbc1e2c2ec888c4031827a55b7309e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#aebbc1e2c2ec888c4031827a55b7309e9">y</a></td></tr>
-<tr class="separator:aebbc1e2c2ec888c4031827a55b7309e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab6455c6b4bf648236d090b28337a77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a0ab6455c6b4bf648236d090b28337a77">z</a></td></tr>
-<tr class="separator:a0ab6455c6b4bf648236d090b28337a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
-関連関数</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>（これらはメソッドではありません） </p>
-</td></tr>
-<tr class="memitem:a878080428df25a2dc955129f8ea6baee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a878080428df25a2dc955129f8ea6baee"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a878080428df25a2dc955129f8ea6baee">make_point3d_c</a> (const std::tuple&lt; T, T, T &gt; &amp;p) <a class="el" href="a00072.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
-<tr class="memdesc:a878080428df25a2dc955129f8ea6baee"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::tupleからの変換  <a href="#a878080428df25a2dc955129f8ea6baee">[詳解]</a><br /></td></tr>
-<tr class="separator:a878080428df25a2dc955129f8ea6baee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b919fe708335336b4924502370df94f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a9b919fe708335336b4924502370df94f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a9b919fe708335336b4924502370df94f">make_point3d_c</a> (std::tuple&lt; T, T, T &gt; &amp;&amp;p) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="memdesc:a9b919fe708335336b4924502370df94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::tupleからの変換  <a href="#a9b919fe708335336b4924502370df94f">[詳解]</a><br /></td></tr>
-<tr class="separator:a9b919fe708335336b4924502370df94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75d08bade78f8e81f8623748068add4d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a75d08bade78f8e81f8623748068add4d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a75d08bade78f8e81f8623748068add4d">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
-<tr class="memdesc:a75d08bade78f8e81f8623748068add4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">出力ストリーム演算子  <a href="#a75d08bade78f8e81f8623748068add4d">[詳解]</a><br /></td></tr>
-<tr class="separator:a75d08bade78f8e81f8623748068add4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36df0b53d4092389b2ea7345f5c36e39"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a36df0b53d4092389b2ea7345f5c36e39"><td class="memTemplItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a36df0b53d4092389b2ea7345f5c36e39">operator&lt;&lt;</a> (std::wostream &amp;os, const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
-<tr class="memdesc:a36df0b53d4092389b2ea7345f5c36e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">出力ストリーム演算子  <a href="#a36df0b53d4092389b2ea7345f5c36e39">[詳解]</a><br /></td></tr>
-<tr class="separator:a36df0b53d4092389b2ea7345f5c36e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a833542987ba28fdbac2e417d4c74fb38"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a833542987ba28fdbac2e417d4c74fb38"><td class="memTemplItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a833542987ba28fdbac2e417d4c74fb38">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
-<tr class="memdesc:a833542987ba28fdbac2e417d4c74fb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力ストリーム演算子  <a href="#a833542987ba28fdbac2e417d4c74fb38">[詳解]</a><br /></td></tr>
-<tr class="separator:a833542987ba28fdbac2e417d4c74fb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68c0fb537430639c53a565a1500ffa41"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a68c0fb537430639c53a565a1500ffa41"><td class="memTemplItemLeft" align="right" valign="top">std::wistream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a68c0fb537430639c53a565a1500ffa41">operator&gt;&gt;</a> (std::wistream &amp;is, <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;p)</td></tr>
-<tr class="memdesc:a68c0fb537430639c53a565a1500ffa41"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力ストリーム演算子  <a href="#a68c0fb537430639c53a565a1500ffa41">[詳解]</a><br /></td></tr>
-<tr class="separator:a68c0fb537430639c53a565a1500ffa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e1449607899956b5d6c461e85c28b6e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a0e1449607899956b5d6c461e85c28b6e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a0e1449607899956b5d6c461e85c28b6e">operator-</a> (const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(-std</td></tr>
-<tr class="memdesc:a0e1449607899956b5d6c461e85c28b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">単項演算子-のオーバーロード  <a href="#a0e1449607899956b5d6c461e85c28b6e">[詳解]</a><br /></td></tr>
-<tr class="separator:a0e1449607899956b5d6c461e85c28b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a981da85dd3863b3d6d0ce67e69fa1831"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a981da85dd3863b3d6d0ce67e69fa1831"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a981da85dd3863b3d6d0ce67e69fa1831">operator+</a> (const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;r) <a class="el" href="a00072.html#a64ef3fd8f3872780ac4ceeda47a8ecad">DXLE_NOEXCEPT_IF</a>(std</td></tr>
-<tr class="memdesc:a981da85dd3863b3d6d0ce67e69fa1831"><td class="mdescLeft">&#160;</td><td class="mdescRight">単項演算子+のオーバーロード  <a href="#a981da85dd3863b3d6d0ce67e69fa1831">[詳解]</a><br /></td></tr>
-<tr class="separator:a981da85dd3863b3d6d0ce67e69fa1831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f57b7b6e47914dc45b0660bcb36fea"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a43f57b7b6e47914dc45b0660bcb36fea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a43f57b7b6e47914dc45b0660bcb36fea">operator+</a> (<a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&amp;r) <a class="el" href="a00072.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="memdesc:a43f57b7b6e47914dc45b0660bcb36fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">単項演算子+のオーバーロード  <a href="#a43f57b7b6e47914dc45b0660bcb36fea">[詳解]</a><br /></td></tr>
-<tr class="separator:a43f57b7b6e47914dc45b0660bcb36fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cc3aad56c791d9b2677641e97dd3b9"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:a58cc3aad56c791d9b2677641e97dd3b9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a58cc3aad56c791d9b2677641e97dd3b9">operator+=</a> (<a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;l, const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x+</td></tr>
-<tr class="memdesc:a58cc3aad56c791d9b2677641e97dd3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">二項演算子+=のオーバーロード  <a href="#a58cc3aad56c791d9b2677641e97dd3b9">[詳解]</a><br /></td></tr>
-<tr class="separator:a58cc3aad56c791d9b2677641e97dd3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3abd26c1da87d8ed23398cea05706fc"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
-<tr class="memitem:ac3abd26c1da87d8ed23398cea05706fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#ac3abd26c1da87d8ed23398cea05706fc">operator-</a> (const <a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;l, const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x-r.x) -&gt; <a class="el" href="a00037.html">point3d_c</a>&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()-std::declval&lt; std::remove_cv_t&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&gt;())&gt;</td></tr>
-<tr class="memdesc:ac3abd26c1da87d8ed23398cea05706fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">二項演算子-のオーバーロード  <a href="#ac3abd26c1da87d8ed23398cea05706fc">[詳解]</a><br /></td></tr>
-<tr class="separator:ac3abd26c1da87d8ed23398cea05706fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8b0581293ab0d661042e7de235e7b8e"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T2 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:ac8b0581293ab0d661042e7de235e7b8e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#ac8b0581293ab0d661042e7de235e7b8e">operator*</a> (const <a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;l, <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x *r) -&gt; <a class="el" href="a00037.html">point3d_c</a>&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()*std::declval&lt; std::remove_cv_t&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&gt;())&gt;</td></tr>
-<tr class="memdesc:ac8b0581293ab0d661042e7de235e7b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">二項演算子*のオーバーロード  <a href="#ac8b0581293ab0d661042e7de235e7b8e">[詳解]</a><br /></td></tr>
-<tr class="separator:ac8b0581293ab0d661042e7de235e7b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae00c327e819cce73c589149a0c7af598"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:ae00c327e819cce73c589149a0c7af598"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#ae00c327e819cce73c589149a0c7af598">operator*</a> (T1 l, const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l+r.x) -&gt; <a class="el" href="a00037.html">point3d_c</a>&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;()*std::declval&lt; std::remove_cv_t&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt;&gt;())&gt;</td></tr>
-<tr class="memdesc:ae00c327e819cce73c589149a0c7af598"><td class="mdescLeft">&#160;</td><td class="mdescRight">二項演算子*のオーバーロード  <a href="#ae00c327e819cce73c589149a0c7af598">[詳解]</a><br /></td></tr>
-<tr class="separator:ae00c327e819cce73c589149a0c7af598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d18887addc678cd3056d7ef483621fe"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T2 &gt;::value &amp;&amp;is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:a6d18887addc678cd3056d7ef483621fe"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00037.html#a6d18887addc678cd3056d7ef483621fe">operator*=</a> (<a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;l, <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> r) <a class="el" href="a00072.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(l.x *</td></tr>
-<tr class="memdesc:a6d18887addc678cd3056d7ef483621fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">二項演算子*=のオーバーロード  <a href="#a6d18887addc678cd3056d7ef483621fe">[詳解]</a><br /></td></tr>
-<tr class="separator:a6d18887addc678cd3056d7ef483621fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416ecbe2c0a798b33c193e08d72dbf83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a416ecbe2c0a798b33c193e08d72dbf83">operator()</a> (const T &amp;first, const T &amp;second) const <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(first!=0)</td></tr>
+<tr class="separator:a416ecbe2c0a798b33c193e08d72dbf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fdf2f40888a7dd9bcfee6a66f6cfbe2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00037.html#a9fdf2f40888a7dd9bcfee6a66f6cfbe2">operator()</a> (const T &amp;first, const T &amp;second, const T &amp;third) const <a class="el" href="a00077.html#aa0f2e1633b51b4f32c4b8778443eb6ec">DXLE_NOEXCEPT_IF_EXPR</a>(first!=0)</td></tr>
+<tr class="separator:a9fdf2f40888a7dd9bcfee6a66f6cfbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><h3>template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt; = nullptr&gt;<br />
-class dxle::point3d_c&lt; T, &gt;</h3>
+<div class="textblock"><h3>template&lt;typename T, bool is_compareable_with_default_ctor&gt;<br />
+struct dxle::detail::operator_bool_helper_impl&lt; T, false, true, is_compareable_with_default_ctor &gt;</h3>
 
-<p>2次元座標(x, y)　テンプレートクラス。 このクラスはstd::tupleと相互変換が可能です。また、内部型の異なるpoint3d_cクラス同士の変換はstatic_castを使用することで可能です(内部でも<code>static_cast</code>を使用します) 上記のメンバーのほかに、以下の演算をサポートします </p>
-<div class="fragment"><div class="line">pt1 = pt2 + pt3;</div><div class="line">pt1 = pt2 - pt3;</div><div class="line">pt1 = pt2 * a;</div><div class="line">pt1 = a * pt2;</div><div class="line">pt1 = pt2 / a;</div><div class="line">pt1 += pt2;</div><div class="line">pt1 -= pt2;</div><div class="line">pt1 *= a;</div><div class="line">pt1 /= a;</div><div class="line">pt1 == pt2;</div><div class="line">pt1 != pt2;</div></div><!-- fragment --><p> 利便性のために、以下の型が定義されています。</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> point3d_c&lt;int&gt; <a class="code" href="a00099.html#ad1e837904ba0f3d9dd71c38ed35d86a1">point3di</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;std::uint8_t&gt; <a class="code" href="a00099.html#a6565dcf79cc5c222cb550804ec2e9cb4">point3du8i</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;std::int8_t&gt; <a class="code" href="a00099.html#a2f70f11d4a3529023e9f87c30678d641">point3d8i</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;double&gt; <a class="code" href="a00099.html#a83cf9e21f9c086c4b4a7e5f5d1f4c429">point3dd</a>;</div><div class="line"><span class="keyword">typedef</span> point3d_c&lt;float&gt; <a class="code" href="a00099.html#a83f7ef5efdb6b43cceadbe6b09aab2be">point3df</a>;</div></div><!-- fragment --><p> Example: </p><div class="fragment"><div class="line"><a class="code" href="a00037.html">dxle::point3df</a> a(0.3f, 0.f), b(0.f, 0.4f);</div><div class="line"><a class="code" href="a00037.html">dxle::point3di</a> pt = (a + b)*10.f;</div><div class="line">std::cout &lt;&lt; pt &lt;&lt; std::endl;</div></div><!-- fragment --> 
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00073">73</a> 行目に定義があります。</p>
-</div><h2 class="groupheader">型定義メンバ詳解</h2>
-<a class="anchor" id="a48f7491f19ad758a3405968a9112f548"></a>
+
+<p> <a class="el" href="a00059_source.html">coordinate_operator_bool_helper.hpp</a> の <a class="el" href="a00059_source.html#l00033">33</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a416ecbe2c0a798b33c193e08d72dbf83"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef T <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00076">76</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<h2 class="groupheader">構築子と解体子</h2>
-<a class="anchor" id="adf927fb9cd0fe9541e06e62cc4d51bd9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+template&lt;typename T , bool is_compareable_with_default_ctor&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00037.html">point3d_c</a> </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> bool <a class="el" href="a00035.html">dxle::detail::operator_bool_helper_impl</a>&lt; T, false, true, is_compareable_with_default_ctor &gt;::operator() </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00078">78</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a83107e82ffac8e3d6edce6d41f9f0cd7"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00037.html">point3d_c</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>x_</em>, </td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>y_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>z_</em>&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00079">79</a> 行目に定義があります。</p>
+<p> <a class="el" href="a00059_source.html">coordinate_operator_bool_helper.hpp</a> の <a class="el" href="a00059_source.html#l00034">34</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a class="anchor" id="a241a645ba5f32850a09fd6e36680d55c"></a>
+<a class="anchor" id="a9fdf2f40888a7dd9bcfee6a66f6cfbe2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
+template&lt;typename T , bool is_compareable_with_default_ctor&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00037.html">point3d_c</a> </td>
+          <td class="memname"><a class="el" href="a00077.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> bool <a class="el" href="a00035.html">dxle::detail::operator_bool_helper_impl</a>&lt; T, false, true, is_compareable_with_default_ctor &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>x_</em>, </td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>y_</em>, </td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>z_</em>&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>third</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00080">80</a> 行目に定義があります。</p>
+<p> <a class="el" href="a00059_source.html">coordinate_operator_bool_helper.hpp</a> の <a class="el" href="a00059_source.html#l00037">37</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a class="anchor" id="a957d1026f781d3eb25954c7909c82dea"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00037.html">point3d_c</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>o</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00083">83</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a6ab91cd0f9e14017dd4a579cd743aea2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::<a class="el" href="a00037.html">point3d_c</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>o</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00085">85</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<h2 class="groupheader">関数詳解</h2>
-<a class="anchor" id="ae9ed45e59291f84f7850d78af9aea126"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::operator bool </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>operator bool</p><ol type="1">
-<li>operator bool</li>
-<li>operator != (nullptr)</li>
-<li>default constector + operator != </li>
-</ol>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00107">107</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a55979046d0613684e0863270b8e7d4ed"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<div class="memtemplate">
-template&lt;typename Tp2_ &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::operator <a class="el" href="a00037.html">point3d_c</a>&lt; Tp2_ &gt; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>内部型の異なるpoint3d_cクラス同士の変換 </p>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00112">112</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a0569b4861ef0f85138bab8811e6a0187"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<div class="memtemplate">
-template&lt;typename Tp2_ &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::operator std::tuple&lt; Tp2_, Tp2_, Tp2_ &gt; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const -&gt; <a class="el" href="a00037.html#a43ca51dc0cec5b2216d21fc2c99f5953">x</a>))
-		</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>std::tupleへの変換 </p>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00118">118</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="abed1495675faf5455719548d718c6bf2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">point3d_c</a>&amp; <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>r</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00087">87</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a7b600b3e48d3a168d05721a577f7cb52"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">point3d_c</a>&amp; <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>r</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00095">95</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<h2 class="groupheader">フレンドと関連関数の詳解</h2>
-<a class="anchor" id="a878080428df25a2dc955129f8ea6baee"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; make_point3d_c </td>
-          <td>(</td>
-          <td class="paramtype">const std::tuple&lt; T, T, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>std::tupleからの変換 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>std::tupleオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>point3d_cクラスオブジェクト </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00134">134</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a9b919fe708335336b4924502370df94f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; make_point3d_c </td>
-          <td>(</td>
-          <td class="paramtype">std::tuple&lt; T, T, T &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>std::tupleからの変換 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>std::tupleオブジェクトへのrvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>point3d_cクラスオブジェクト </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00147">147</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="ac8b0581293ab0d661042e7de235e7b8e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T2 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a>&#160;</td>
-          <td class="paramname"><em>r</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="a00037.html">point3d_c</a>&lt;decltype(std::declval&lt;std::remove_cv_t&lt;T1&gt;&gt;() * std::declval&lt;std::remove_cv_t&lt;<a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a>&gt;&gt;())&gt;
-	</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>二項演算子*のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-    <tr><td class="paramname">r</td><td>整数型の値 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>point3d_cクラスオブジェクトの各メンバーに第二引数を乗じた結果 </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00364">364</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="ae00c327e819cce73c589149a0c7af598"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto operator* </td>
-          <td>(</td>
-          <td class="paramtype">T1&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>r</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="a00037.html">point3d_c</a>&lt;decltype(std::declval&lt;std::remove_cv_t&lt;T1&gt;&gt;() * std::declval&lt;std::remove_cv_t&lt;<a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a>&gt;&gt;())&gt;
-	</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>二項演算子*のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>整数型の値 </td></tr>
-    <tr><td class="paramname">r</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>point3d_cクラスオブジェクトの各メンバーに第一引数を乗じた結果 </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00382">382</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a6d18887addc678cd3056d7ef483621fe"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T1 , typename T2 , enable_if_t&lt; std::is_arithmetic&lt; T2 &gt;::value &amp;&amp;is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp; operator*= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a>&#160;</td>
-          <td class="paramname"><em>r</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>二項演算子*=のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-    <tr><td class="paramname">r</td><td>整数型の値 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数へのlvalue reference </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a981da85dd3863b3d6d0ce67e69fa1831"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp; operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>r</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>単項演算子+のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">r</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数へのconst-lvalue reference </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00262">262</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a43f57b7b6e47914dc45b0660bcb36fea"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&amp; operator+ </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>r</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>単項演算子+のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">r</td><td>point3d_cクラスオブジェクトへのrvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数へのrvalue reference </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00274">274</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a58cc3aad56c791d9b2677641e97dd3b9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T1 , typename T2 , enable_if_t&lt; is_representable&lt; T2, T1 &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp; operator+= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>r</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>二項演算子+=のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>point3d_cクラスオブジェクトへのlvalue reference </td></tr>
-    <tr><td class="paramname">r</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数へのlvalue reference </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a0e1449607899956b5d6c461e85c28b6e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>r</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>単項演算子-のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">r</td><td>point3d_cクラスオブジェクト </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>符号を逆転させた結果 </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00247">247</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="ac3abd26c1da87d8ed23398cea05706fc"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T1 , typename T2 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00072.html#a243945a19a333e978f84407a8b91b283">DXLE_CONSTEXPR_CLASS</a> auto operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; T1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; <a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>r</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="a00037.html">point3d_c</a>&lt;decltype(std::declval&lt;std::remove_cv_t&lt;T1&gt;&gt;() - std::declval&lt;std::remove_cv_t&lt;<a class="el" href="a00099.html#a8f698b193d5579f6879460be2d870a45">T2</a>&gt;&gt;())&gt;
-	</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>二項演算子-のオーバーロード </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-    <tr><td class="paramname">r</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>2つのpoint3d_cクラスオブジェクトの各メンバー同士の減算結果 </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00346">346</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a75d08bade78f8e81f8623748068add4d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>出力ストリーム演算子 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>出力ストリームへのlvalue reference </td></tr>
-    <tr><td class="paramname">p</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数に指定した出力ストリームへのlvalue reference </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00183">183</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a36df0b53d4092389b2ea7345f5c36e39"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::wostream &amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::wostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>出力ストリーム演算子 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>出力ストリームへのlvalue reference </td></tr>
-    <tr><td class="paramname">p</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数に指定した出力ストリームへのlvalue reference </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00199">199</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a833542987ba28fdbac2e417d4c74fb38"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::istream &amp; operator&gt;&gt; </td>
-          <td>(</td>
-          <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>入力ストリーム演算子 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">is</td><td>入力ストリームへのlvalue reference </td></tr>
-    <tr><td class="paramname">p</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数に指定した入力ストリームへのlvalue reference </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00215">215</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a68c0fb537430639c53a565a1500ffa41"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::wistream &amp; operator&gt;&gt; </td>
-          <td>(</td>
-          <td class="paramtype">std::wistream &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00037.html">point3d_c</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>入力ストリーム演算子 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">is</td><td>入力ストリームへのlvalue reference </td></tr>
-    <tr><td class="paramname">p</td><td>point3d_cクラスオブジェクトへのconst-lvalue reference </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>第一引数に指定した入力ストリームへのlvalue reference </dd></dl>
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00231">231</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<h2 class="groupheader">メンバ詳解</h2>
-<a class="anchor" id="a43ca51dc0cec5b2216d21fc2c99f5953"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::x</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00077">77</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="aebbc1e2c2ec888c4031827a55b7309e9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00077">77</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a class="anchor" id="a0ab6455c6b4bf648236d090b28337a77"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &amp;&amp;std::is_move_constructible&lt; T &gt;::value, nullptr_t &gt;  = nullptr&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00037.html#a48f7491f19ad758a3405968a9112f548">value_type</a> <a class="el" href="a00037.html">dxle::point3d_c</a>&lt; T, &gt;::z</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00058_source.html">point3d.hpp</a> の <a class="el" href="a00058_source.html#l00077">77</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
-<li>dxlibex/basic_types/<a class="el" href="a00058_source.html">point3d.hpp</a></li>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>D:/user/documents/git/DxLibEx/dxlibex/basic_types/<a class="el" href="a00059_source.html">coordinate_operator_bool_helper.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00099.html">dxle</a></li><li class="navelem"><a class="el" href="a00037.html">point3d_c</a></li>
-    <li class="footer">2016年02月26日(金) 00時06分00秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00108.html">detail</a></li><li class="navelem"><a class="el" href="a00037.html">operator_bool_helper_impl&lt; T, false, true, is_compareable_with_default_ctor &gt;</a></li>
+    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

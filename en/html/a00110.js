@@ -1,9 +1,6 @@
 var a00110 =
 [
-    [ "float_promote1", "a00016.html", null ],
-    [ "float_promote2", "a00017.html", null ],
-    [ "float_promote2< T, U, true >", "a00018.html", "a00018" ],
-    [ "float_promote_impl", "a00019.html", null ],
-    [ "float_promote_impl< T >", "a00020.html", null ],
-    [ "float_promote_impl< T, U, Tail... >", "a00021.html", null ]
+    [ "screen", "a00042.html", "a00042" ],
+    [ "screen_mutex_c", "a00043.html", null ],
+    [ "texture_2d", "a00049.html", "a00049" ]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['size',['size',['../a00099.html#adf405de7f513a71717a788fc40acb969',1,'dxle']]],
-  ['sized',['sized',['../a00099.html#accf6b4e16bcdbe8c13f4fe2cec45bdab',1,'dxle']]],
-  ['sizef',['sizef',['../a00099.html#a6b27effe2d95a2f41eb832b023ba4eb3',1,'dxle']]],
-  ['sizeui',['sizeui',['../a00099.html#afe897e1533e2bcea7a244c8be28fbb0d',1,'dxle']]]
+  ['reference',['reference',['../a00003.html#aed9fd9bbe85cd84c6b92bd9c688b4ac7',1,'dxle::utility::counter_iterator']]]
 ];

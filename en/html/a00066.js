@@ -1,9 +1,7 @@
 var a00066 =
 [
-    [ "DXLE_NO_CXX11_CONSTEXPR", "a00066.html#afd3d1453f552a6985f2a3d07912034da", null ],
-    [ "DXLE_NO_CXX11_CONSTEXPR_CLASS", "a00066.html#a518a3f85d8e88373147958b4c77c7c44", null ],
-    [ "DXLE_NO_CXX11_NOEXCEPT", "a00066.html#aa027cc930aeed7c02fe8d313cb11daf3", null ],
-    [ "DXLE_NO_CXX11_NOEXCEPT_EXPRESSION", "a00066.html#a541576edfd7b428c5405f55bf67079aa", null ],
-    [ "DXLE_NO_CXX11_UNICODE_LITERALS", "a00066.html#ae1529feb4e8cc61b2ae31b84a4acca4d", null ],
-    [ "DXLE_NO_CXX14_CONSTEXPR", "a00066.html#a8cd6ebf4714c13611ef410dd0af35019", null ]
+    [ "use_big_type_when_one_byte_impl", "a00053.html", "a00053" ],
+    [ "use_big_type_when_one_byte_impl< T, true >", "a00054.html", null ],
+    [ "use_big_type_when_one_byte", "a00052.html", null ],
+    [ "use_big_type_when_one_byte_t", "a00066.html#a54457c9a7c5f6df52d229023fcfb4970", null ]
 ];

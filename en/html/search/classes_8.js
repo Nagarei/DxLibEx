@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgb',['rgb',['../a00039.html',1,'dxle::color']]]
+  ['rgb',['rgb',['../a00041.html',1,'dxle::color']]]
 ];

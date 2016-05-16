@@ -1,9 +1,8 @@
 var a00107 =
 [
-    [ "float_promote1", "a00016.html", null ],
-    [ "float_promote2", "a00017.html", null ],
-    [ "float_promote2< T, U, true >", "a00018.html", "a00018" ],
-    [ "float_promote_impl", "a00019.html", null ],
-    [ "float_promote_impl< T >", "a00020.html", null ],
-    [ "float_promote_impl< T, U, Tail... >", "a00021.html", null ]
+    [ "color_base", "a00002.html", null ],
+    [ "dx_color", "a00009.html", "a00009" ],
+    [ "dx_color_param", "a00010.html", "a00010" ],
+    [ "is_colortype", "a00030.html", null ],
+    [ "rgb", "a00041.html", "a00041" ]
 ];
