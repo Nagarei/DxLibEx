@@ -13,7 +13,6 @@ C++11
 */
 #if !__has_feature(cxx_constexpr)
 #	define DXLE_NO_CXX11_CONSTEXPR
-#	define DXLE_NO_CXX11_CONSTEXPR_CLASS
 #endif
 
 #if !__has_feature(cxx_noexcept)

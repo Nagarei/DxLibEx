@@ -15,14 +15,14 @@
 #include <type_traits>
 #include <limits>
 #include "dxlibex/type_traits/float_promote.hpp"
-#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
+#ifdef DXLE_NO_CXX11_CONSTEXPR
 namespace dxle{
 	namespace math{
 		using std::copysign;
 	}
 	using dxle::math::copysign;
 }
-#else //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#else //DXLE_NO_CXX11_CONSTEXPR
 namespace dxle {
 	namespace math {
 		namespace detail {
@@ -74,5 +74,5 @@ namespace dxle {
 	using dxle::math::copysign;
 }	// namespace dxle
 
-#endif //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#endif //DXLE_NO_CXX11_CONSTEXPR
 #endif //DXLE_INC_MATH_COPYSIGN_HPP_

@@ -41,9 +41,6 @@
     <ClInclude Include="dxlibex\Helper.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\impl.hpp">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\structs.h">
       <Filter>dxlibex</Filter>
     </ClInclude>

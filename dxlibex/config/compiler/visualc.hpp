@@ -12,11 +12,11 @@
 C++11
 */
 #if _MSC_FULL_VER < 190023506//Visual Studio 2015 Update 1
-#	define DXLE_NO_CXX11_CONSTEXPR_CLASS
+//Visual Studio 2013 November CTP and Visual Stduio 2015 has too many bugs for constexpr. We will never support these.
+#	define DXLE_NO_CXX11_CONSTEXPR
 #endif
 
 #if _MSC_FULL_VER < 190023026//Visual Studio 2015
-#	define DXLE_NO_CXX11_CONSTEXPR
 #	define DXLE_NO_CXX11_NOEXCEPT_EXPRESSION
 #	define DXLE_NO_CXX11_USER_DEFINED_LITERALS
 #	define DXLE_NO_CXX11_UNICODE_LITERALS
