@@ -17,7 +17,7 @@
 #include <array>
 #include <vector>
 #include <algorithm>
-#include "dxlibex/Helper.h"
+#include "dxlibex/helper.hpp"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/thread.hpp"
 
@@ -37,11 +37,11 @@ namespace dxle
 
 			sound& operator=(const sound& other) = delete;
 			sound& operator=(sound&& other) DXLE_NOEXCEPT_OR_NOTHROW{ Unique_HandledObject_Bace<sound>::operator=(std::move(other)); return *this; }
-				
+
 			//!\~japanese サウンドを削除する
 			//!\~english  Delete this sound data
 			inline void delete_this(bool LogOutFlag = false) { DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
-			
+
 			//! 同じサウンドデータを使用するサウンドハンドルを作成する( DX_SOUNDDATATYPE_MEMNOPRESS タイプのサウンドハンドルのみ可能 )
 			sound DuplicateSoundMem(int BufferNum = 3)const DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::DuplicateSoundMem(GetHandle(), BufferNum); }
 

@@ -38,7 +38,7 @@
     <ClInclude Include="dxlibex\basic_types.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\Helper.h">
+    <ClInclude Include="dxlibex\helper.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
     <ClInclude Include="dxlibex\structs.h">

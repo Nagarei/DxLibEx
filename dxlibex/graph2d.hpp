@@ -17,7 +17,7 @@
 #include <array>
 #include <vector>
 #include <algorithm>
-#include "dxlibex/Helper.h"
+#include "dxlibex/helper.hpp"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/thread.hpp"

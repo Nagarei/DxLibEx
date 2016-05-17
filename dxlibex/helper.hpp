@@ -7,7 +7,7 @@
 =============================================================================*/
 #ifndef DXLE_INC_HELPER_H_
 #define DXLE_INC_HELPER_H_
-
+error
 //実装用ファイルです。
 //開発者以外がここの機能を使うのはお勧めできません
 #include "dxlibex/config/no_min_max.h"
