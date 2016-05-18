@@ -197,3 +197,13 @@ Log.txt
 *.VC.db
 dxlibex/ProjectDxLibEx_v140_MultiByte_x86_d.idb
 dxlibex/ProjectDxLibEx_v140_MultiByte_x86_d.lib
+dxlibex/ProjectDxLibEx_v140_MultiByte_x86_r.lib
+dxlibex/ProjectDxLibEx_v140_MultiByte_x64_d.idb
+dxlibex/ProjectDxLibEx_v140_MultiByte_x64_d.lib
+dxlibex/ProjectDxLibEx_v140_MultiByte_x64_r.lib
+dxlibex/ProjectDxLibEx_v120_MultiByte_x86_d.idb
+dxlibex/ProjectDxLibEx_v120_MultiByte_x86_d.lib
+dxlibex/ProjectDxLibEx_v120_MultiByte_x86_r.lib
+dxlibex/ProjectDxLibEx_v120_MultiByte_x64_d.idb
+dxlibex/ProjectDxLibEx_v120_MultiByte_x64_d.lib
+dxlibex/ProjectDxLibEx_v120_MultiByte_x64_r.lib
