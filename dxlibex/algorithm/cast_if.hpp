@@ -15,28 +15,30 @@ namespace dxle {
 			bool is_nothrow_move_constructible =
 				std::is_nothrow_move_constructible<from>::value>
 		struct static_cast_if_helper{
-			DXLE_CONSTEXPR to operator()(const from& n) const
-			DXLE_NOEXCEPT_IF_EXPR(static_cast<double>(std::declval<from>())) {
+			DXLE_CONSTEXPR to operator()(const from& n)
+			const DXLE_NOEXCEPT_IF_EXPR(static_cast<double>(std::declval<from>()))
+			{
 				return static_cast<double>(n);
 			}
 		};
 
 		template<typename from, typename to>
 		struct static_cast_if_helper<to, from, false, false>{
-			DXLE_CONSTEXPR to operator()(const from& n) const
-			DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<from>::value){
+			DXLE_CONSTEXPR to operator()(const from& n)
+			const DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<from>::value)
+			{
 				return n;
 			}
 		};
 
 		template<typename from, typename to>
 		struct static_cast_if_helper<to, from, false, true>{
-			DXLE_CONSTEXPR to operator()(const from& n) const
-			DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<from>::value) {
+			DXLE_CONSTEXPR to operator()(const from& n)
+			const DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<from>::value)
+			{
 				return n;
 			}
-			DXLE_CONSTEXPR to operator()(from&& n) const
-			DXLE_NOEXCEPT_OR_NOTHROW {
+			DXLE_CONSTEXPR to operator()(from&& n) const DXLE_NOEXCEPT_OR_NOTHROW {
 				return std::move(n);
 			}
 		};
