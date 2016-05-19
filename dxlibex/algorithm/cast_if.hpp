@@ -49,20 +49,20 @@ namespace dxle {
 
 	template<typename from, typename to, bool do_cast>
 	DXLE_CONSTEXPR to static_cast_if(const from& n)
-		DXLE_NOEXCEPT_IF_EXPR((dxle::detail::static_cast_if_helper
-			<to, from, do_cast>()(std::move(std::declval<from>()))))
+		DXLE_NOEXCEPT_IF_EXPR((
+			dxle::detail::static_cast_if_helper<to, from, do_cast>()(
+				std::move(std::declval<from>()))))
 	{
-		return dxle::detail::static_cast_if_helper
-		<from, to, do_cast>()(std::move(n));
+		return dxle::detail::static_cast_if_helper<from, to, do_cast>()(std::move(n));
 	}
 
 	template<typename from, typename to, bool do_cast>
 	DXLE_CONSTEXPR to static_cast_if(from&& n)
-		DXLE_NOEXCEPT_IF_EXPR((dxle::detail::static_cast_if_helper
-			<to, from,do_cast>()(std::move(std::declval<from>()))))
+		DXLE_NOEXCEPT_IF_EXPR((
+			dxle::detail::static_cast_if_helper<to, from,do_cast>()(
+				std::move(std::declval<from>()))))
 	{
-		return dxle::detail::static_cast_if_helper
-		<from, to, do_cast>()(std::move(n));
+		return dxle::detail::static_cast_if_helper<from, to, do_cast>()(std::move(n));
 	}
 }//namespace dxle
 #endif //DXLE_INC_ALGORITHM_CAST_IF_HPP_
