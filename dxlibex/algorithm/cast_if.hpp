@@ -51,7 +51,9 @@ namespace dxle {
 	DXLE_CONSTEXPR to static_cast_if(const from& n)
 		DXLE_NOEXCEPT_IF_EXPR((
 			dxle::detail::static_cast_if_helper<to, from, do_cast>()(
-				std::move(std::declval<from>()))))
+				std::move(std::declval<from>())
+			)
+		))
 	{
 		return dxle::detail::static_cast_if_helper<from, to, do_cast>()(std::move(n));
 	}
@@ -60,7 +62,9 @@ namespace dxle {
 	DXLE_CONSTEXPR to static_cast_if(from&& n)
 		DXLE_NOEXCEPT_IF_EXPR((
 			dxle::detail::static_cast_if_helper<to, from, do_cast>()(
-				std::move(std::declval<from>()))))
+				std::move(std::declval<from>())
+			)
+		))
 	{
 		return dxle::detail::static_cast_if_helper<from, to, do_cast>()(std::move(n));
 	}
