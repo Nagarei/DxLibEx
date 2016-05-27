@@ -11,11 +11,11 @@
 #include <cstdlib>
 #include "dxlibex/type_traits/enable_if.hpp"
 #include <type_traits>
-#ifdef DXLE_NO_CXX11_CONSTEXPR_CLASS
+#ifdef DXLE_NO_CXX11_CONSTEXPR
 namespace dxle{
 	using std::abs;
 }
-#else //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#else //DXLE_NO_CXX11_CONSTEXPR
 namespace dxle {
 
 	// 7.20.6.1 abs，labs，及び llabs 関数
@@ -52,5 +52,5 @@ namespace dxle {
 		}
 	}	// unnamed namespace
 }	// namespace dxle
-#endif //DXLE_NO_CXX11_CONSTEXPR_CLASS
+#endif //DXLE_NO_CXX11_CONSTEXPR
 #endif //DXLE_INC_CSTDLIB_ABS_HPP_
