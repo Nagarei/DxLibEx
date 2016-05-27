@@ -47,6 +47,10 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp" />
+    <ClInclude Include="dxlibex\time.hpp" />
     <ClInclude Include="dxlibex\dxlibex.hpp" />
     <ClInclude Include="dxlibex\dxlib_wrap.hpp" />
     <ClInclude Include="dxlibex\graph2d.hpp" />
@@ -59,6 +63,8 @@
     <ClInclude Include="dxlibex\math\isnan.hpp" />
     <ClInclude Include="dxlibex\sound.hpp" />
     <ClInclude Include="dxlibex\structs.h" />
+    <ClInclude Include="dxlibex\texture\animation_graph.hpp" />
+    <ClInclude Include="dxlibex\texture\texture2d.hpp" />
     <ClInclude Include="dxlibex\thread.hpp" />
     <ClInclude Include="dxlibex\type_traits.hpp" />
     <ClInclude Include="dxlibex\type_traits\common_type.hpp" />
@@ -142,7 +148,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./;./$(ProjectName);$(DXLIB_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;./$(ProjectName);$(DXLIB_ROOT);DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -197,7 +203,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./;./$(ProjectName);$(DXLIB_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;./$(ProjectName);$(DXLIB_ROOT);DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
