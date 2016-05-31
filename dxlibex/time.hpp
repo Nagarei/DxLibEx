@@ -216,6 +216,7 @@ namespace dxle
 			next_timing_index = (other.next_timing_index);
 			last_pass_time = (other.last_pass_time);
 			timer_ = (other.timer_);
+			return *this;
 		}
 		inline counter::counter(counter&& other)
 			: count(std::move(other.count))
@@ -231,6 +232,7 @@ namespace dxle
 			next_timing_index = std::move(other.next_timing_index);
 			last_pass_time = std::move(other.last_pass_time);
 			timer_ = std::move(other.timer_);
+			return *this;
 		}
 		inline void counter::start(void)
 		{
