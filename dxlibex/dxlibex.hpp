@@ -10,7 +10,7 @@
 
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/basic_types.hpp"
-#include "dxlibex/Color.hpp"
+#include "dxlibex/color.hpp"
 #include "dxlibex/cstdlib.hpp"
 //#include "dxlibex/dxlib_wrap.hpp"
 #include "dxlibex/graph2d.hpp"
