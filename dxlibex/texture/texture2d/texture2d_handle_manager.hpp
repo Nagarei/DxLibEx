@@ -12,7 +12,7 @@
 #include <memory>
 #include "dxlibex/config/defines.h"
 #include "prototype2d.hpp"
-#include "dxlibex/Helper.h"
+#include "dxlibex/helper.hpp"
 
 //----------2Dグラフィック----------//
 
