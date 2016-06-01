@@ -11,7 +11,6 @@
 #include "dxlibex/config/no_min_max.h"
 #include "DxLib.h"
 #include <cstdint>
-#include "../texture2d.h"
 #include "dxlibex/basic_types.hpp"
 
 //--------------------実装--------------------//

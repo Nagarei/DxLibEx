@@ -18,6 +18,7 @@
 #include <cstdint>
 #include "dxlibex/config/defines.h"
 #include "texture2d/prototype2d.hpp"
+#include "texture2d/texture2d.hpp"
 #include "texture2d/texture2d_handle_manager.hpp"
 #include "dxlibex/basic_types.hpp"
 #include "dxlibex/thread.hpp"
