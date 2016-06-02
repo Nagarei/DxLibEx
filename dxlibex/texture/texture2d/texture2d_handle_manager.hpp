@@ -32,7 +32,7 @@ namespace graph2d
 		protected:
 			texture2d_handle_manager()DXLE_NOEXCEPT_OR_NOTHROW{}
 			texture2d_handle_manager(const texture2d_handle_manager&)DXLE_NOEXCEPT_OR_NOTHROW{}
-			texture2d_handle_manager& operator=(const texture2d_handle_manager&)DXLE_NOEXCEPT_OR_NOTHROW{}
+			texture2d_handle_manager& operator=(const texture2d_handle_manager&)DXLE_NOEXCEPT_OR_NOTHROW { return *this; }
 
 			static int GetTextureRawHandle(const texture2d&);
 		};
