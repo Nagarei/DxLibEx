@@ -163,7 +163,7 @@ namespace dxle
 			load(FileName, Num, Size, NotUse3DFlag);
 		}
 		template<size_t N>
-		inline void static_derivative_texture2d<N>::load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
+		inline void static_derivative_texture2d<N>::load(const TCHAR *FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			int HandleBuf[N];
 			auto iter = textures.begin();
@@ -171,7 +171,7 @@ namespace dxle
 			return;
 		}
 		template<size_t N>
-		inline void static_derivative_texture2d<N>::load(const tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag = false)
+		inline void static_derivative_texture2d<N>::load(const tstring& FileName, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
 			load(FileName.c_str(), Num, Size, NotUse3DFlag);
 		}
@@ -193,6 +193,7 @@ namespace dxle
 		inline derivative_texture2d& derivative_texture2d::operator=(derivative_texture2d&& other)DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<cont_type>::value))
 		{
 			textures = std::move(other.textures);
+			return *this;
 		}
 		inline derivative_texture2d::derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{
