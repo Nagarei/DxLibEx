@@ -16,12 +16,19 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	SetDrawScreen(DX_SCREEN_BACK);
 	// BMP画像のメモリへの読みこみ
 	//添付の絵素材は https://www.pakutaso.com/20150142021post-5083.html より
-	auto GHandle = dxle::graph2d::LoadGraph("bsHIRO92_tukinomieruoka.jpg");//Texture2D型
+	auto GHandle = dxle::graph2d::LoadGraph(_T("bsHIRO92_tukinomieruoka.jpg"));//Texture2D型
 	GHandle.DrawGraph(0, 0, false);// 画面左上に描画します(『DrawGraph』を使用)
 	const auto font_h = CreateFontToHandle(nullptr, 12, 2, DX_FONTTYPE_ANTIALIASING);//フォントハンドルの作成
 	DrawStringToHandle(20, 20, GHandle.GetGraphFilePath().c_str(), GetColor(250, 250, 0), font_h);//画像のフルパスを表示
 	ScreenFlip();//表画面と裏画面を入れ替え
-
+	WaitKey();//キーの入力待ち(『WaitKey』を使用)
+	auto sc = dxle::MakeScreen(1000, 667);
+	sc.draw_on_this([&GHandle, font_h]() {
+		GHandle.DrawGraph(0, 0, false);// 画面左上に描画します(『DrawGraph』を使用)
+		DrawStringToHandle(20, 20, (GHandle.GetGraphFilePath() + _T(" on screen.")).c_str(), GetColor(250, 250, 0), font_h);//画像のフルパスを表示
+	})
+	.DrawGraph({}, false);
+	ScreenFlip();//表画面と裏画面を入れ替え
 	WaitKey();//キーの入力待ち(『WaitKey』を使用)
 
 	{
@@ -31,7 +38,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		SetDrawScreen(DX_SCREEN_BACK);
 		// ＢＭＰ画像のメモリへの分割読み込み
-		dxle::derivative_texture2d div_graph("test2.bmp", 10, { 4, 3 }, { 48, 56 });
+		dxle::derivative_texture2d div_graph(_T("test2.bmp"), 10, { 4, 3 }, { 48, 56 });
 		int i = 0;
 
 		// ロードしたグラフィックのアニメーション
