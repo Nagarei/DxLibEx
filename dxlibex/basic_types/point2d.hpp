@@ -277,7 +277,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
 	{
-		dxle::detail::istream_operator_helper<wchar_t, T>(is, s);
+		dxle::detail::istream_operator_helper<wchar_t, T>(is, p);
 		return is;
 	}
 

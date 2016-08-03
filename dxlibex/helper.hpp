@@ -171,7 +171,7 @@ namespace impl{
 			static_cast<Child*>(this)->delete_this();
 		}
 		DXLE_CONSTEXPR int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
-		void SetHandle_IMPL(int new_handle) { handle = (param_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
+		void SetHandle_IMPL(int new_handle) { handle = (new_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
 	private:
 		int handle;
 	};
