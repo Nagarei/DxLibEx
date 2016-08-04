@@ -6,17 +6,22 @@
 - [Web Page](http://nagarei.github.io/DxLibEx/index.html)
 
 # Support Compiler
-- Visaul Studio 2015 update 1
+- Visaul Studio 2015 update 3
 - Visual Studio 2013 update 5
-- Visual Studio 2015 Clang with Microsoft CodeGen(clang3.7)
+- Visual Studio 2015 Clang with Microsoft CodeGen(clang 3.8)(July 2016)
 
 # Not Supported but may be work
-- mingw-gcc
-- mingw-clang
+- Visaul Studio 2015 update 1
+- Visaul Studio 2015 update 2
+- mingw-gcc 5.4.0
+- mingw-clang 3.8.0
 
 # We will never support
+- Visaul Studio 2015
 - Visual Studio 2013 November CTP
 - Visual Studio 2012 November CTP
+- or before...
+- Visual Studio 2015 Clang with Microsoft CodeGen(clang 3.8)(May 2016)
 - or before...
 
 # License
