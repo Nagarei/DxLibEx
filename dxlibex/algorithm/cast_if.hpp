@@ -8,6 +8,7 @@
 #ifndef DXLE_INC_ALGORITHM_CAST_IF_HPP_
 #define DXLE_INC_ALGORITHM_CAST_IF_HPP_
 #include "dxlibex/config/defines.h"
+#include <utility>
 namespace dxle {
 	namespace detail {
 

@@ -25,7 +25,6 @@
 #include <utility>//std::pair
 #include <type_traits>
 #include <algorithm>
-#include <functional>
 #include <cmath>
 #include <cstdint>
 #include <limits>
@@ -159,7 +158,7 @@ namespace dxle {
 		//!1. operator bool
 		//!2. operator != (nullptr)
 		//!3. default constector + operator !=
-		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y))){
+		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(std::declval<value_type>(), std::declval<value_type>()))){
 			return dxle::detail::operator_bool_helper(this->x, this->y);
 		}
 		//!\~english conversion to std::pair

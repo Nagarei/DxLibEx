@@ -127,7 +127,9 @@ namespace dxle {
 		//!1. operator bool
 		//!2. operator != (nullptr)
 		//!3. default constector + operator !=
-		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y, this->z))){
+		DXLE_CONSTEXPR explicit operator bool() 
+			const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(std::declval<value_type>(), std::declval<value_type>(), std::declval<value_type>())))
+		{
 			return dxle::detail::operator_bool_helper(this->x, this->y, this->z);
 		}
 		//!\~english conversion to another data type
@@ -138,7 +140,7 @@ namespace dxle {
 		}
 		//!\~english conversion to std::tuple
 		//!\~japanese std::tupleへの変換
-		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(this->x))
+		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(std::declval<value_type>()))
 		{
 			return std::forward_as_tuple(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z));
 		}
