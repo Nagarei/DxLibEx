@@ -15,9 +15,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Color", "samples\Color\Colo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{373EF964-F08D-40C8-8543-221ADCE91DE5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "tests\UnitTest\UnitTest.vcxproj", "{44682BAF-4F62-42D9-90EB-D7F46CD21B95}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "no_dxlib", "tests\no_dxlib\no_dxlib.vcxproj", "{44682BAF-4F62-42D9-90EB-D7F46CD21B95}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WithDxLib", "tests\WithDxLib\WithDxLib.vcxproj", "{280349E1-6523-4483-97DB-2D16B0716396}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "with_dxLib", "tests\with_dxLib\with_dxLib.vcxproj", "{280349E1-6523-4483-97DB-2D16B0716396}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "timer", "samples\timer\timer.vcxproj", "{110FD38D-D53F-4B0D-AF4C-C321A1CD4C7A}"
 EndProject
