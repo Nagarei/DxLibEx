@@ -5,4 +5,11 @@ https://github.com/Nagarei/DxLibEx/
 Distributed under the Boost Software License, Version 1.0.
 (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#include "basic_types_2d.hpp"
+#include "../../3rd_party/iutest/include/iutest.hpp"
+#include "test_point_c.hpp"
+std::mt19937 engine = dxle::create_engine();
+int main(int argc, char** argv)
+{
+	IUTEST_INIT(&argc, argv);
+	return IUTEST_RUN_ALL_TESTS();
+}

@@ -12,7 +12,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="basic_types_2d.hpp">
+    <ClInclude Include="random.hpp" />
+    <ClInclude Include="test_point_c.hpp">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
