@@ -13,6 +13,14 @@
 #include <cstdint>
 #include <cmath>
 #include <limits>
+template<typename T>
+DXLE_CONSTEXPR bool is_l_zero(T&& val) {
+	return static_cast<T>(0) == val;
+}
+template<typename T, typename... Rest>
+DXLE_CONSTEXPR bool is_l_zero(T&& val, Rest&&... rest) {
+	return static_cast<T>(0) == val && is_l_zero(std::forward<Rest>(rest)...);
+}
 IUTEST_TEST(point_c_construct_test, type_int32_t) {
 	using type = std::int32_t;
 	dxle::uniform_normal_distribution<type> dist;
@@ -30,14 +38,9 @@ IUTEST_TEST(point_c_construct_test, type_int32_t) {
 		IUTEST_ASSERT(value.y == value_y);
 	}
 	const dxle::point_c<type> value1 = {};
-	IUTEST_ASSERT(value1.x == 0);
-	IUTEST_ASSERT(value1.y == 0);
 	const auto value2 = value1;
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
 	const auto value3 = std::move(value1);
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
+	IUTEST_ASSERT(is_l_zero(value1.x, value1.y, value2.x, value2.y, value3.x, value3.y));
 	const dxle::point_c<type> value4 = { 2, -9 };
 	IUTEST_ASSERT(value4.x == 2);
 	IUTEST_ASSERT(value4.y == -9);
@@ -59,14 +62,9 @@ IUTEST_TEST(point_c_construct_test, type_int64_t) {
 		IUTEST_ASSERT(value.y == value_y);
 	}
 	const dxle::point_c<type> value1 = {};
-	IUTEST_ASSERT(value1.x == 0);
-	IUTEST_ASSERT(value1.y == 0);
 	const auto value2 = value1;
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
 	const auto value3 = std::move(value1);
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
+	IUTEST_ASSERT(is_l_zero(value1.x, value1.y, value2.x, value2.y, value3.x, value3.y));
 	const dxle::point_c<type> value4 = { 2, -9 };
 	IUTEST_ASSERT(value4.x == 2);
 	IUTEST_ASSERT(value4.y == -9);
@@ -88,17 +86,12 @@ IUTEST_TEST(point_c_construct_test, type_uint32_t) {
 		IUTEST_ASSERT(value.y == value_y);
 	}
 	const dxle::point_c<type> value1 = {};
-	IUTEST_ASSERT(value1.x == 0);
-	IUTEST_ASSERT(value1.y == 0);
 	const auto value2 = value1;
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
 	const auto value3 = std::move(value1);
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
+	IUTEST_ASSERT(is_l_zero(value1.x, value1.y, value2.x, value2.y, value3.x, value3.y));
 	const dxle::point_c<type> value4 = { 2, 13 };
-	IUTEST_ASSERT(value4.x == 2);
-	IUTEST_ASSERT(value4.y == 13);
+	IUTEST_ASSERT(value4.x == 2u);
+	IUTEST_ASSERT(value4.y == 13u);
 }
 IUTEST_TEST(point_c_construct_test, type_uint64_t) {
 	using type = std::uint64_t;
@@ -117,17 +110,12 @@ IUTEST_TEST(point_c_construct_test, type_uint64_t) {
 		IUTEST_ASSERT(value.y == value_y);
 	}
 	const dxle::point_c<type> value1 = {};
-	IUTEST_ASSERT(value1.x == 0);
-	IUTEST_ASSERT(value1.y == 0);
 	const auto value2 = value1;
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
 	const auto value3 = std::move(value1);
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
+	IUTEST_ASSERT(is_l_zero(value1.x, value1.y, value2.x, value2.y, value3.x, value3.y));
 	const dxle::point_c<type> value4 = { 2, 13 };
-	IUTEST_ASSERT(value4.x == 2);
-	IUTEST_ASSERT(value4.y == 13);
+	IUTEST_ASSERT(value4.x == 2u);
+	IUTEST_ASSERT(value4.y == 13u);
 }
 IUTEST_TEST(point_c_construct_test, type_float) {
 	using type = float;
@@ -146,14 +134,9 @@ IUTEST_TEST(point_c_construct_test, type_float) {
 		IUTEST_ASSERT(value.y == value_y);
 	}
 	const dxle::point_c<type> value1 = {};
-	IUTEST_ASSERT(value1.x == 0);
-	IUTEST_ASSERT(value1.y == 0);
 	const auto value2 = value1;
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
 	const auto value3 = std::move(value1);
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
+	IUTEST_ASSERT(is_l_zero(value1.x, value1.y, value2.x, value2.y, value3.x, value3.y));
 	const dxle::point_c<type> value4 = { 2, -9 };
 	IUTEST_ASSERT(value4.x == 2);
 	IUTEST_ASSERT(value4.y == -9);
@@ -175,14 +158,9 @@ IUTEST_TEST(point_c_construct_test, type_double) {
 		IUTEST_ASSERT(value.y == value_y);
 	}
 	const dxle::point_c<type> value1 = {};
-	IUTEST_ASSERT(value1.x == 0);
-	IUTEST_ASSERT(value1.y == 0);
 	const auto value2 = value1;
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
 	const auto value3 = std::move(value1);
-	IUTEST_ASSERT(value2.x == 0);
-	IUTEST_ASSERT(value2.y == 0);
+	IUTEST_ASSERT(is_l_zero(value1.x, value1.y, value2.x, value2.y, value3.x, value3.y));
 	const dxle::point_c<type> value4 = { 2, 13 };
 	IUTEST_ASSERT(value4.x == 2);
 	IUTEST_ASSERT(value4.y == 13);
@@ -361,17 +339,20 @@ IUTEST_TEST(point_c_operaotr_eq_test, type_double) {
 		IUTEST_ASSERT(value == dxle::point_c<type>(value_x, value_y));
 	}
 }
+template<typename T>
+T get_rand_for_add(T n1, T n2, int modifyer) {
+	using lim = std::numeric_limits<T>;
+	const auto minmax = std::minmax(n1, n2);
+	return dxle::uniform_normal_distribution<T>(
+		(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer,
+		(minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
+	)(engine);
+}
 IUTEST_TEST(point_c_operator_add_test, type_int32_t) {
 	using type = std::int32_t;
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	auto get_rand2 = [](type n1, type n2, int modifyer) {
-		const auto minmax = std::minmax(n1, n2);
-		return dxle::uniform_normal_distribution<type>(
-			(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer, (minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
-		)(engine);
-	};
 	for (
 #ifndef DXLE_NO_CXX11_ATTRIBUTES
 		[[gnu::unused]]
@@ -381,11 +362,11 @@ IUTEST_TEST(point_c_operator_add_test, type_int32_t) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand2(value1_x, value1_y, 1);
+		const auto first_add_dist = get_rand_for_add(value1_x, value1_y, 1);
 		auto value2 = value1 + dxle::point_c<type>{first_add_dist, first_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
-		const auto second_add_dist = get_rand2(value2.x, value2.y, 0);
+		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, 0);
 		value2 += dxle::point_c<type>{second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
@@ -396,12 +377,6 @@ IUTEST_TEST(point_c_operator_add_test, type_uint32_t) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	auto get_rand2 = [](type n1, type n2, int modifyer) {
-		const auto minmax = std::minmax(n1, n2);
-		return dxle::uniform_normal_distribution<type>(
-			(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer, (minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
-		)(engine);
-	};
 	for (
 #ifndef DXLE_NO_CXX11_ATTRIBUTES
 		[[gnu::unused]]
@@ -411,11 +386,11 @@ IUTEST_TEST(point_c_operator_add_test, type_uint32_t) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand2(value1_x, value1_y, 1);
+		const auto first_add_dist = get_rand_for_add(value1_x, value1_y, 1);
 		auto value2 = value1 + dxle::point_c<type>{first_add_dist, first_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
-		const auto second_add_dist = get_rand2(value2.x, value2.y, 0);
+		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, 0);
 		value2 += dxle::point_c<type>{second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
@@ -426,26 +401,20 @@ IUTEST_TEST(point_c_operator_add_test, type_int64_t) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	auto get_rand2 = [](type n1, type n2, int modifyer) {
-		const auto minmax = std::minmax(n1, n2);
-		return dxle::uniform_normal_distribution<type>(
-			(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer, (minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
-		)(engine);
-	};
 	for (
 #ifndef DXLE_NO_CXX11_ATTRIBUTES
 		[[gnu::unused]]
 #endif
-	auto i : dxle::rep(10)
-		) {
+		auto i : dxle::rep(10)
+	) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand2(value1_x, value1_y, 1);
+		const auto first_add_dist = get_rand_for_add(value1_x, value1_y, 1);
 		auto value2 = value1 + dxle::point_c<type>{first_add_dist, first_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
-		const auto second_add_dist = get_rand2(value2.x, value2.y, 0);
+		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, 0);
 		value2 += dxle::point_c<type>{second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
@@ -456,26 +425,20 @@ IUTEST_TEST(point_c_operator_add_test, type_uint64_t) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	auto get_rand2 = [](type n1, type n2, int modifyer) {
-		const auto minmax = std::minmax(n1, n2);
-		return dxle::uniform_normal_distribution<type>(
-			(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer, (minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
-		)(engine);
-	};
 	for (
 #ifndef DXLE_NO_CXX11_ATTRIBUTES
 		[[gnu::unused]]
 #endif
-	auto i : dxle::rep(10)
-		) {
+		auto i : dxle::rep(10)
+	) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand2(value1_x, value1_y, 1);
+		const auto first_add_dist = get_rand_for_add(value1_x, value1_y, 1);
 		auto value2 = value1 + dxle::point_c<type>{first_add_dist, first_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
-		const auto second_add_dist = get_rand2(value2.x, value2.y, 0);
+		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, 0);
 		value2 += dxle::point_c<type>{second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
@@ -486,26 +449,20 @@ IUTEST_TEST(point_c_operator_add_test, type_float) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	auto get_rand2 = [](type n1, type n2, int modifyer) {
-		const auto minmax = std::minmax(n1, n2);
-		return dxle::uniform_normal_distribution<type>(
-			(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer, (minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
-		)(engine);
-	};
 	for (
 #ifndef DXLE_NO_CXX11_ATTRIBUTES
 		[[gnu::unused]]
 #endif
-	auto i : dxle::rep(10)
-		) {
+		auto i : dxle::rep(10)
+	) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand2(value1_x, value1_y, 1);
+		const auto first_add_dist = get_rand_for_add(value1_x, value1_y, 1);
 		auto value2 = value1 + dxle::point_c<type>{first_add_dist, first_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
-		const auto second_add_dist = get_rand2(value2.x, value2.y, 0);
+		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, 0);
 		value2 += dxle::point_c<type>{second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
@@ -516,28 +473,175 @@ IUTEST_TEST(point_c_operator_add_test, type_double) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	auto get_rand2 = [](type n1, type n2, int modifyer) {
-		const auto minmax = std::minmax(n1, n2);
-		return dxle::uniform_normal_distribution<type>(
-			(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer, (minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
-		)(engine);
-	};
 	for (
 #ifndef DXLE_NO_CXX11_ATTRIBUTES
 		[[gnu::unused]]
 #endif
-	auto i : dxle::rep(10)
-		) {
+		auto i : dxle::rep(10)
+	) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand2(value1_x, value1_y, 1);
+		const auto first_add_dist = get_rand_for_add(value1_x, value1_y, 1);
 		auto value2 = value1 + dxle::point_c<type>{first_add_dist, first_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
-		const auto second_add_dist = get_rand2(value2.x, value2.y, 0);
+		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, 0);
 		value2 += dxle::point_c<type>{second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
+	}
+}
+template<typename T>
+T get_rand_for_sub(T n1, T n2, int modifyer) {
+	using lim = std::numeric_limits<T>;
+	const auto minmax = std::minmax(n1, n2);
+	return dxle::uniform_normal_distribution<T>(
+		(minmax.first < 0) ? lim::min() : lim::min() + minmax.first + modifyer,
+		(minmax.second > 0) ? lim::max() : lim::max() + minmax.second - modifyer
+	)(engine);
+}
+IUTEST_TEST(point_c_operator_sub_test, type_int32_t) {
+	using type = std::int32_t;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		const dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
+		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
+	}
+}
+IUTEST_TEST(point_c_operator_sub_test, type_uint32_t) {
+	using type = std::uint32_t;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		const dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
+		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
+	}
+}
+IUTEST_TEST(point_c_operator_sub_test, type_int64_t) {
+	using type = std::int64_t;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		const dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
+		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
+	}
+}
+IUTEST_TEST(point_c_operator_sub_test, type_uint64_t) {
+	using type = std::uint64_t;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		const dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
+		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
+	}
+}
+IUTEST_TEST(point_c_operator_sub_test, type_float) {
+	using type = float;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		const dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
+		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
+	}
+}
+IUTEST_TEST(point_c_operator_sub_test, type_double) {
+	using type = double;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		const dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
+		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
 	}
 }
