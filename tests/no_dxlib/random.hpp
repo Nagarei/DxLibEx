@@ -17,7 +17,7 @@ Distributed under the Boost Software License, Version 1.0.
 #	include <thread>
 #endif //defined(__MINGW32__) && !defined(__clang__)
 #if defined(_WIN32) || defined(_WIN64)
-#	define MY_ARC_FOR_WINDWOS 1
+#	define DXLE_ARC_FOR_WINDWOS 1
 #	if !defined(CINTERFACE) && defined(__c2__) &&  __clang_major__ == 3 && __clang_minor__ == 8
 //To avoid compile error
 //C:\Program Files (x86)\Windows Kits\8.1\Include\um\combaseapi.h(229,21): error : unknown type name 'IUnknown'
@@ -27,7 +27,7 @@ Distributed under the Boost Software License, Version 1.0.
 #	include <Windows.h>
 #	include <tchar.h>
 #elif defined(__linux__)
-#	define MY_ARC_FOR_LINUX 1
+#	define DXLE_ARC_FOR_LINUX 1
 #	include <sys/types.h> 
 #	include <unistd.h>
 #	include <fstream>
@@ -114,7 +114,7 @@ namespace dxle {
 	}
 }
 #else
-#	define MY_NO_ASM
+#	define DXLE_NO_ASM
 #endif//!defined(_MSC_VER) || !defined(__clang__)
 namespace dxle {
 	namespace detail {
@@ -176,7 +176,7 @@ namespace dxle {
 			return re;
 		});// ベクタの初期化
 #endif //_CRT_RAND_S
-#ifndef MY_NO_ASM
+#ifndef DXLE_NO_ASM
 		if (intrin::IsRDRANDsupport()) {//RDRAND命令の結果もベクターに追加
 			for (unsigned int i = 0; i < 4; i++) {
 				unsigned int rdrand_value = 0;
@@ -203,15 +203,15 @@ namespace dxle {
 				}
 			}
 		}
-#endif//!defined(MY_NO_ASM)
-#ifdef MY_ARC_FOR_WINDWOS
+#endif//!defined(DXLE_NO_ASM)
+#ifdef DXLE_ARC_FOR_WINDWOS
 		POINT point;
 		GetCursorPos(&point);
 		sed_v | push_back(point.x);
 		sed_v | push_back(point.y);
 		sed_v | push_back(GetCurrentProcessId());
-#endif //MY_ARC_FOR_WINDWOS
-#ifdef MY_ARC_FOR_LINUX
+#endif //DXLE_ARC_FOR_WINDWOS
+#ifdef DXLE_ARC_FOR_LINUX
 		sed_v | push_back(get_randome_from_dev_random());
 		sed_v | push_back(getppid());
 		sed_v | push_back(get_randome_from_dev_random());
