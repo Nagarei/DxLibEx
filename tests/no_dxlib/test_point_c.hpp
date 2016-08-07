@@ -79,12 +79,12 @@ IUTEST_TYPED_TEST(point_c_test, operaotr_eq) {
 	}
 }
 template<typename T>
-T get_rand_for_add(T n1, T n2, int modifyer) {
+T get_rand_for_add(T n1, T n2, int modifier) {
 	using lim = std::numeric_limits<T>;
 	const auto minmax = std::minmax(n1, n2);
 	return dxle::uniform_normal_distribution<T>(
-		(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifyer,
-		(minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifyer
+		(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifier,
+		(minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifier
 	)(engine);
 }
 IUTEST_TYPED_TEST(point_c_test, operator_add) {
@@ -112,12 +112,12 @@ IUTEST_TYPED_TEST(point_c_test, operator_add) {
 	}
 }
 template<typename T>
-T get_rand_for_sub(T n1, T n2, int modifyer) {
+T get_rand_for_sub(T n1, T n2, int modifier) {
 	using lim = std::numeric_limits<T>;
 	const auto minmax = std::minmax(n1, n2);
 	return dxle::uniform_normal_distribution<T>(
-		(minmax.first < 0) ? lim::min() : lim::min() + minmax.first + modifyer,
-		(minmax.second > 0) ? lim::max() : lim::max() + minmax.second - modifyer
+		(minmax.first < 0) ? lim::min() : lim::min() + minmax.first + modifier,
+		(minmax.second > 0) ? lim::max() : lim::max() + minmax.second - modifier
 	)(engine);
 }
 IUTEST_TYPED_TEST(point_c_test, operator_sub) {
