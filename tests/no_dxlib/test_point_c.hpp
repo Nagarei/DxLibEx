@@ -318,13 +318,49 @@ IUTEST_TYPED_TEST(point_c_test, operator_mul) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_mul_dist = get_rand();
-		auto value2 = value1 * first_mul_dist;
-		IUTEST_ASSERT(value2.x == value1_x * first_mul_dist);
-		IUTEST_ASSERT(value2.y == value1_y * first_mul_dist);
-		auto value3 = first_mul_dist * value1;
+		const auto first_mul_num = get_rand();
+		auto value2 = value1 * first_mul_num;
+		IUTEST_ASSERT(value2.x == value1_x * first_mul_num);
+		IUTEST_ASSERT(value2.y == value1_y * first_mul_num);
+		auto value3 = first_mul_num * value1;
 		IUTEST_ASSERT(value2 == value3);
-		value1 *= first_mul_dist;
+		value1 *= first_mul_num;
 		IUTEST_ASSERT(value3 == value1);
+	}
+}
+template<typename T>
+T get_rand_for_div1(T min, T max) {
+	const auto minmax = std::minmax(min, max);
+	const auto re = dxle::uniform_normal_distribution<T>(minmax.first, minmax.second)(engine);
+	return (0 != re) ? re : get_rand_for_div1(min, max);
+}
+template<typename T, dxle::enable_if_t<!std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+T get_rand_for_div2(T n1, T n2) {
+	const auto min = std::min(std::abs(n1), std::abs(n2));
+	return get_rand_for_div1<T>(1, min);
+}
+template<typename T, dxle::enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+T get_rand_for_div2(T n1, T n2) {
+	const auto min = std::min(n1, n2);
+	return get_rand_for_div1<T>(1u, min);
+}
+IUTEST_TYPED_TEST(point_c_test, operator_div) {
+	using type = TypeParam;
+	using lim = std::numeric_limits<type>;
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand_for_div1(lim::min(), lim::max());
+		const auto value1_y = get_rand_for_div1(lim::min(), lim::max());
+		dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_div_num = get_rand_for_div2(value1_x, value1_y);
+		auto value2 = value1 / first_div_num;
+		IUTEST_ASSERT(value2.x == value1_x / first_div_num);
+		IUTEST_ASSERT(value2.y == value1_y / first_div_num);
+		value1 /= first_div_num;
+		IUTEST_ASSERT(value2 == value1);
 	}
 }
