@@ -270,13 +270,61 @@ IUTEST_TYPED_TEST(point_c_test, operator_sub) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
-		const auto first_add_dist = get_rand_for_sub(value1_x, value1_y, 1);
-		auto value2 = value1 - dxle::point_c<type>{first_add_dist, first_add_dist};
-		IUTEST_ASSERT(value2.x == value1_x - first_add_dist);
-		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
-		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, 0);
-		value2 -= dxle::point_c<type>{second_add_dist, second_add_dist};
-		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
-		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
+		const auto first_sub_dist = get_rand_for_sub(value1_x, value1_y, 1);
+		auto value2 = value1 - dxle::point_c<type>{first_sub_dist, first_sub_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_sub_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_sub_dist);
+		const auto second_sub_dist = get_rand_for_sub(value2.x, value2.y, 0);
+		value2 -= dxle::point_c<type>{second_sub_dist, second_sub_dist};
+		IUTEST_ASSERT(value2.x == value1_x - first_sub_dist - second_sub_dist);
+		IUTEST_ASSERT(value2.y == value1_y - first_sub_dist - second_sub_dist);
+	}
+}
+template<typename T, dxle::enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+T inferior_sqrt(T x) { return static_cast<T>(::std::sqrt(x)); }
+template<typename T, dxle::enable_if_t<!std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+T inferior_sqrt(T x) { return (x < 0) ? 0 : static_cast<T>(::std::sqrt(x)); }
+std::int64_t inferior_sqrt(const std::int64_t x) {
+	return (x < 0) ? 0 : x < static_cast<std::int64_t>(std::numeric_limits<double>::max()) ? static_cast<std::int64_t>(::std::sqrt(x))
+		: static_cast<std::int64_t>(inferior_sqrt(static_cast<std::uint64_t>(x)));
+}
+std::uint64_t inferior_sqrt(const std::uint64_t x)
+{
+	if(x < static_cast<std::uint64_t>(std::numeric_limits<double>::max())) return static_cast<std::uint64_t>(::std::sqrt(x));
+	std::uint64_t s = 1U;
+	auto t = x;
+	while (s < t) { s <<= 1;  t >>= 1; }
+	do {
+		t = s;
+		s = (x / s + s) >> 1;
+	} while (s < t);
+	return t;
+}
+template<typename T, dxle::enable_if_t<!std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+T inferior_sqrt2(T x) { return (x < 0) ? -inferior_sqrt(-x) : inferior_sqrt(x); }
+template<typename T, dxle::enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
+T inferior_sqrt2(T x) { return inferior_sqrt(x); }
+IUTEST_TYPED_TEST(point_c_test, operator_mul) {
+	using type = TypeParam;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(inferior_sqrt2(lim::min()), inferior_sqrt(lim::max()));
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		dxle::point_c<type> value1 = { value1_x, value1_y };
+		const auto first_mul_dist = get_rand();
+		auto value2 = value1 * first_mul_dist;
+		IUTEST_ASSERT(value2.x == value1_x * first_mul_dist);
+		IUTEST_ASSERT(value2.y == value1_y * first_mul_dist);
+		auto value3 = first_mul_dist * value1;
+		IUTEST_ASSERT(value2 == value3);
+		value1 *= first_mul_dist;
+		IUTEST_ASSERT(value3 == value1);
 	}
 }
