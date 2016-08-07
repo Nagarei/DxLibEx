@@ -18,6 +18,7 @@
 #include "dxlibex/algorithm/safe_dist.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
+#include "dxlibex/char_constant.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <tuple>
@@ -187,9 +188,9 @@ namespace dxle {
 		{
 			use_big_type_when_one_byte_t<point3dType> x, y, z;
 			is >> x;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> y;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> z;
 			p.x = static_cast<point3dType>(x); p.y = static_cast<point3dType>(y); p.z = static_cast<point3dType>(z);
 		}

@@ -17,6 +17,7 @@
 #include "dxlibex/basic_types/coordinate_operator_bool_helper.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
+#include "dxlibex/char_constant.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
@@ -213,7 +214,7 @@ namespace dxle {
 		{
 			use_big_type_when_one_byte_t<Size_cType> width, height;
 			is >> width;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> height;
 			s.width = static_cast<Size_cType>(width); s.height = static_cast<Size_cType>(height);
 		}
