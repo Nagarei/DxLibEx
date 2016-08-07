@@ -13,6 +13,7 @@
 #include <cstdint>
 #include <cmath>
 #include <limits>
+#include <sstream>
 template<typename T>
 DXLE_CONSTEXPR bool is_l_zero(T&& val) {
 	return static_cast<T>(0) == val;
@@ -23,8 +24,7 @@ DXLE_CONSTEXPR bool is_l_zero(T&& val, Rest&&... rest) {
 }
 template<typename T>
 struct point_c_test : public ::iutest::Test{};
-using test_types = ::iutest::Types<std::int32_t, std::uint32_t, std::int64_t, std::uint64_t, float, double>;
-IUTEST_TYPED_TEST_CASE(point_c_test, test_types);
+IUTEST_TYPED_TEST_CASE(point_c_test, ::iutest::Types<std::int32_t, std::uint32_t, std::int64_t, std::uint64_t, float, double>);
 IUTEST_TYPED_TEST(point_c_test, construct) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
@@ -77,6 +77,142 @@ IUTEST_TYPED_TEST(point_c_test, operaotr_eq) {
 		const dxle::point_c<type> value = { value_x, value_y };
 		IUTEST_ASSERT(value == dxle::point_c<type>(value_x, value_y));
 	}
+}
+IUTEST_TYPED_TEST(point_c_test, ostream_operator) {
+	using type = TypeParam;
+	dxle::uniform_normal_distribution<type> dist;
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto x = get_rand();
+		const auto y = get_rand();
+		std::stringstream ss1;
+		ss1 << x << ", " << y;
+		const dxle::point_c<type> value = { x, y };
+		std::stringstream ss2;
+		ss2 << value;
+		IUTEST_ASSERT_EQ(ss1.str(), ss2.str());
+	}
+}
+IUTEST_TYPED_TEST(point_c_test, wostream_operator) {
+	using type = TypeParam;
+	dxle::uniform_normal_distribution<type> dist;
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto x = get_rand();
+		const auto y = get_rand();
+		std::wstringstream ss1;
+		ss1 << x << L", " << y;
+		const dxle::point_c<type> value = { x, y };
+		std::wstringstream ss2;
+		ss2 << value;
+		IUTEST_ASSERT_EQ(ss1.str(), ss2.str());
+	}
+}
+IUTEST_TYPED_TEST(point_c_test, istream_operator) {
+	using type = TypeParam;
+	dxle::uniform_normal_distribution<type> dist;
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		std::stringstream ss1;
+		ss1 << get_rand() << ", " << get_rand();
+		std::stringstream ss2; 
+		ss2 << ss1.str();
+		type v1, v2;
+		ss1 >> v1;
+		ss1.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+		ss1 >> v2;
+		dxle::point_c<type> v;
+		ss2 >> v;
+		IUTEST_ASSERT(v == dxle::point_c<type>(v1, v2));
+	}
+}
+IUTEST_TYPED_TEST(point_c_test, wistream_operator) {
+	using type = TypeParam;
+	dxle::uniform_normal_distribution<type> dist;
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		std::wstringstream ss1;
+		ss1 << get_rand() << L", " << get_rand();
+		std::wstringstream ss2; 
+		ss2 << ss1.str();
+		type v1, v2;
+		ss1 >> v1;
+		ss1.ignore((std::numeric_limits<std::streamsize>::max)(), L',');
+		ss1 >> v2;
+		dxle::point_c<type> v;
+		ss2 >> v;
+		IUTEST_ASSERT(v == dxle::point_c<type>(v1, v2));
+	}
+}
+IUTEST_TYPED_TEST(point_c_test, unary_operaotr_plus) {
+	using type = TypeParam;
+	const bool eq1 = 0 == dxle::point_c<type>{} && dxle::point_c<type>{} == 0;
+	IUTEST_ASSERT(eq1);
+	dxle::uniform_normal_distribution<type> dist;
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const dxle::point_c<type> value1 = { get_rand(), get_rand() };
+		const auto value2 = +value1;
+		IUTEST_ASSERT(value1 == value2);
+	}
+}
+namespace detail {
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct point_c_test_unary_operaotr_minus_helper {
+		using type = T;
+		void operator()() {}
+	};
+	template<typename T>
+	struct point_c_test_unary_operaotr_minus_helper<T, false> {
+		using type = T;
+		void operator()() {
+			const bool eq1 = 0 == dxle::point_c<type>{} && dxle::point_c<type>{} == 0;
+			IUTEST_ASSERT(eq1);
+			dxle::uniform_normal_distribution<type> dist;
+			auto get_rand = [&dist]() { return dist(engine); };
+			for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+				[[gnu::unused]]
+#endif
+				auto i : dxle::rep(10)
+			) {
+				const auto x = get_rand();
+				const auto y = get_rand();
+
+				const dxle::point_c<type> value1 = { x, y };
+				const auto value2 = -value1;
+				IUTEST_ASSERT(value2 == dxle::point_c<type>(-x, -y));
+			}
+		}
+	};
+}
+IUTEST_TYPED_TEST(point_c_test, unary_operaotr_minus) {
+	detail::point_c_test_unary_operaotr_minus_helper<TypeParam>{}();
 }
 template<typename T>
 T get_rand_for_add(T n1, T n2, int modifier) {
