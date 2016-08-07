@@ -20,6 +20,7 @@
 #include "dxlibex/algorithm.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
+#include "dxlibex/char_constant.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
@@ -210,7 +211,7 @@ namespace dxle {
 		{
 			use_big_type_when_one_byte_t<PointType> x, y;
 			is >> x;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> y;
 			p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
 		}
