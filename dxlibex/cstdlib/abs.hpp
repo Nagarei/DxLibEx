@@ -38,19 +38,17 @@ namespace dxle {
 
 	inline DXLE_CONSTEXPR long long abs(long long j) DXLE_NOEXCEPT_OR_NOTHROW { return dxle::llabs(j); }
 
-	namespace {
-		template<typename IntType, enable_if_t<std::is_integral<IntType>::value && std::is_signed<IntType>::value, std::nullptr_t> = nullptr>
-		inline DXLE_CONSTEXPR IntType abs(IntType j) DXLE_NOEXCEPT_OR_NOTHROW
-		{
-			return j < 0 ? -j : j;
-		}
+	template<typename IntType, enable_if_t<std::is_integral<IntType>::value && std::is_signed<IntType>::value, std::nullptr_t> = nullptr>
+	inline DXLE_CONSTEXPR IntType abs(IntType j) DXLE_NOEXCEPT_OR_NOTHROW
+	{
+		return j < 0 ? -j : j;
+	}
 
-		template<typename IntType, enable_if_t<std::is_integral<IntType>::value && std::is_unsigned<IntType>::value, std::nullptr_t> = nullptr>
-		inline DXLE_CONSTEXPR IntType abs(IntType j) DXLE_NOEXCEPT_OR_NOTHROW
-		{
-			return j;
-		}
-	}	// unnamed namespace
+	template<typename IntType, enable_if_t<std::is_integral<IntType>::value && std::is_unsigned<IntType>::value, std::nullptr_t> = nullptr>
+	inline DXLE_CONSTEXPR IntType abs(IntType j) DXLE_NOEXCEPT_OR_NOTHROW
+	{
+		return j;
+	}
 }	// namespace dxle
 #endif //DXLE_NO_CXX11_CONSTEXPR
 #endif //DXLE_INC_CSTDLIB_ABS_HPP_
