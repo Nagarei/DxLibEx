@@ -10,7 +10,9 @@
 #include "dxlibex/config/no_min_max.h"
 #include "dxlibex/config/defines.h"
 #include <cwchar>
-#include <cuchar>
+#if DXLE_USE_UNICODE_LITERALS
+#	include <cuchar>
+#endif
 namespace dxle{
 	namespace char_constant{
 		template<typename CharType>
