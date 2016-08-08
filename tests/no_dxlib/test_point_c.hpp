@@ -391,31 +391,33 @@ IUTEST_TYPED_TEST(point_c_test, operator_div) {
 namespace detail {
 	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
 	struct point_c_test_abs_helper {
-		void operator()(){}
+		using type = T;
+		using lim = std::numeric_limits<type>;
+		type operator()() { return lim::max(); }
 	};
 	template<typename T>
 	struct point_c_test_abs_helper<T, false> {
 		using type = T;
-		void operator()() {
-			using lim = std::numeric_limits<type>;
-			dxle::uniform_normal_distribution<type> dist(lim::lowest(), -1);
-			auto get_rand = [&dist]() { return dist(engine); };
-			for (
-		#ifndef DXLE_NO_CXX11_ATTRIBUTES
-				[[gnu::unused]]
-		#endif
-				auto i : dxle::rep(10)
-			) {
-				const auto value1_x = get_rand();
-				const auto value1_y = get_rand();
-				dxle::point_c<type> value1 = { value1_x, value1_y };
-				IUTEST_ASSERT(dxle::point_c<type>(dxle::abs(value1_x), dxle::abs(value1_y)) == dxle::abs(value1));
-			}
-		}
+		using lim = std::numeric_limits<type>;
+		type operator()() { return -1; }
 	};
 }
 IUTEST_TYPED_TEST(point_c_test, abs) {
-	detail::point_c_test_abs_helper<TypeParam>()();
+	using type = TypeParam;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(lim::lowest(), detail::point_c_test_abs_helper<type>()());
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+		auto i : dxle::rep(10)
+	) {
+		const auto value1_x = get_rand();
+		const auto value1_y = get_rand();
+		dxle::point_c<type> value1 = { value1_x, value1_y };
+		IUTEST_ASSERT(dxle::point_c<type>(dxle::abs(value1_x), dxle::abs(value1_y)) == dxle::abs(value1));
+	}
 }
 IUTEST_TYPED_TEST(point_c_test, dot_product) {
 	using type = TypeParam;
