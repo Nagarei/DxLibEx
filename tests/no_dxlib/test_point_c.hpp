@@ -393,3 +393,21 @@ namespace detail {
 IUTEST_TYPED_TEST(point_c_test, abs) {
 	detail::point_c_test_abs_helper<TypeParam>()();
 }
+IUTEST_TYPED_TEST(point_c_test, dot_product) {
+	using type = TypeParam;
+	using lim = std::numeric_limits<type>;
+	dxle::uniform_normal_distribution<type> dist(inferior_sqrt2(lim::min()) / 2, inferior_sqrt(lim::max()) / 2);
+	auto get_rand = [&dist]() { return dist(engine); };
+	for (
+#ifndef DXLE_NO_CXX11_ATTRIBUTES
+		[[gnu::unused]]
+#endif
+	auto i : dxle::rep(10)
+		) {
+		const dxle::point_c<type> value1 = { get_rand(), get_rand() };
+		const dxle::point_c<type> value2 = { get_rand(), get_rand() };
+		const auto re1 = dxle::dot(value1, value2);
+		const auto re2 = value1.x * value2.x + value1.y * value2.y;
+		IUTEST_ASSERT(re1 == re2);
+	}
+}
