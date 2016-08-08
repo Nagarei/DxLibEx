@@ -280,10 +280,18 @@ IUTEST_TYPED_TEST(point_c_test, operator_sub) {
 		IUTEST_ASSERT(value2.y == value1_y - first_sub_dist - second_sub_dist);
 	}
 }
-template<typename T, dxle::enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-T inferior_sqrt(T x) { return static_cast<T>(::std::sqrt(x)); }
-template<typename T, dxle::enable_if_t<!std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-T inferior_sqrt(T x) { return (x < 0) ? 0 : static_cast<T>(::std::sqrt(x)); }
+namespace deatil{
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct inferior_sqrt_helper{
+		T operator()(T x){ return static_cast<T>(::std::sqrt(x)); }
+	};
+	template<typename T>
+	struct inferior_sqrt_helper<T, false>{
+		T operator()(T x){ return (x < 0) ? 0 : static_cast<T>(::std::sqrt(x)); }
+	};
+}
+template<typename T>
+T inferior_sqrt(T x) { return deatil::inferior_sqrt_helper<T>()(x); }
 std::int64_t inferior_sqrt(const std::int64_t x) {
 	return (x < 0) ? 0 : x < static_cast<std::int64_t>(std::numeric_limits<double>::max()) ? static_cast<std::int64_t>(::std::sqrt(x))
 		: static_cast<std::int64_t>(inferior_sqrt(static_cast<std::uint64_t>(x)));
@@ -300,10 +308,18 @@ std::uint64_t inferior_sqrt(const std::uint64_t x)
 	} while (s < t);
 	return t;
 }
-template<typename T, dxle::enable_if_t<!std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-T inferior_sqrt2(T x) { return (x < 0) ? -inferior_sqrt(-x) : inferior_sqrt(x); }
-template<typename T, dxle::enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-T inferior_sqrt2(T x) { return inferior_sqrt(x); }
+namespace deatil{
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct inferior_sqrt2_helper{
+		T operator()(T x){ return inferior_sqrt(x); }
+	};
+	template<typename T>
+	struct inferior_sqrt2_helper<T, false>{
+		T operator()(T x){ return (x < 0) ? -inferior_sqrt(-x) : inferior_sqrt(x); }
+	};
+}
+template<typename T>
+T inferior_sqrt2(T x) { return deatil::inferior_sqrt2_helper<T>()(x); }
 IUTEST_TYPED_TEST(point_c_test, operator_mul) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
@@ -334,16 +350,24 @@ T get_rand_for_div1(T min, T max) {
 	const auto re = dxle::uniform_normal_distribution<T>(minmax.first, minmax.second)(engine);
 	return (0 != re) ? re : get_rand_for_div1(min, max);
 }
-template<typename T, dxle::enable_if_t<!std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-T get_rand_for_div2(T n1, T n2) {
-	const auto min = std::min(std::abs(n1), std::abs(n2));
-	return get_rand_for_div1<T>(1, min);
+namespace deatil{
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct get_rand_for_div2_helper{
+		T operator()(T n1, T n2) {
+			const auto min = std::min(n1, n2);
+			return get_rand_for_div1<T>(1u, min);
+		}
+	};
+	template<typename T>
+	struct get_rand_for_div2_helper<T, false>{
+		T operator()(T n1, T n2) {
+			const auto min = std::min(std::abs(n1), std::abs(n2));
+			return get_rand_for_div1<T>(1, min);
+		}
+	};
 }
-template<typename T, dxle::enable_if_t<std::is_unsigned<T>::value, std::nullptr_t> = nullptr>
-T get_rand_for_div2(T n1, T n2) {
-	const auto min = std::min(n1, n2);
-	return get_rand_for_div1<T>(1u, min);
-}
+template<typename T>
+T get_rand_for_div2(T n1, T n2) { return deatil::get_rand_for_div2_helper<T>()(n1, n2); }
 IUTEST_TYPED_TEST(point_c_test, operator_div) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
