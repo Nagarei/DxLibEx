@@ -624,7 +624,40 @@ namespace dxle {
 	{
 		return p1.x * p2.x + p1.y * p2.y;
 	}
+	namespace detail {
+		template<typename T, bool is_integral = std::is_integral<T>::value, bool is_signed = std::is_signed<T>::value, std::size_t sizeof_T = sizeof(T)>
+		struct point_c_mem_cross_helper_integral { using type = T; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, true, 1>  { using type = std::int16_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, false, 1> { using type = std::uint16_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, true, 2>  { using type = std::int32_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, false, 2> { using type = std::uint32_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, true, 4>  { using type = std::int64_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, false, 4> { using type = std::uint64_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, true, 8>  { using type = std::int64_t; };
+		template<typename T> struct point_c_mem_cross_helper_integral<T, true, false, 8> { using type = std::uint64_t; };
 
+		template<
+			typename T1, typename T2, 
+			bool both_arithmetic = std::is_arithmetic<T1>::value && std::is_arithmetic<T2>::value,
+			bool T1_is_integral = std::is_integral<T1>::value,
+			bool T2_is_integral = std::is_integral<T2>::value,
+			bool T1_or_T2_is_floating_point = std::is_floating_point<T1>::value || std::is_floating_point<T2>::value
+		>
+		struct point_c_mem_cross_helper { using type = T1; };
+		template<typename T1, typename T2, bool T1_is_integral, bool T2_is_integral> 
+		struct point_c_mem_cross_helper<T1, T2, true, T1_is_integral, T2_is_integral, true> { using type = double; };
+		template<typename T1, typename T2> struct point_c_mem_cross_helper<T1, T2, true, true, false, false> : point_c_mem_cross_helper_integral<T1, true> {};
+		template<typename T1, typename T2> struct point_c_mem_cross_helper<T1, T2, true, false, true, false> : point_c_mem_cross_helper_integral<T2, true> {};
+		template<typename T> struct point_c_mem_cross_helper<T, T, true, true, true, false> : point_c_mem_cross_helper_integral<T, true> {};
+		template<typename T1, typename T2> struct point_c_mem_cross_helper<T1, T2, true, true, true, false> : point_c_mem_cross_helper_integral<
+			typename std::conditional<(sizeof(T1) > sizeof(T2)), T1, T2>::type, true, std::is_signed<T1>::value || std::is_signed<T2>::value
+		> {};
+		template<typename T1, typename T2> struct point_c_mem_cross_helper<T1, T2, false, true, false, false> { using type = T2; };
+		template<typename T1, typename T2> struct point_c_mem_cross_helper<T1, T2, false, false, true, false> { using type = T1; };
+
+		template<typename T1, typename T2>
+		using point_c_mem_cross_helper_result_type = typename point_c_mem_cross_helper<T1, T2>::type;
+	}
 	/**
 	@relates point_c
 	\~japanese	@brief	２つのpoint_cクラスオブジェクトをベクトルとして外積を計算する
@@ -634,16 +667,28 @@ namespace dxle {
 	\~japanese	@param p2	point_cクラスオブジェクト
 	\~english	@param p2	point_c value
 	\~japanese	@return	計算結果。
+	(T1 : 第1引数の型, T2 : 第2引数の型)
+	戻り値の型
+	1. T1もしくはT2がarithmeticではない場合、arithmeticではない方(T1が優先)
+	2. T1もしくはT2が浮動小数点型の場合、double
+	3. T1もしくはT2が整数型の場合、大きい方の型の倍の大きさの整数型
+	4. いずれでもない時はT1
 	\~english	@return	Computed result.
+	(T1 : first argumrnt type, T2 : second argumet type)
+	result type :
+	1. when T1 or T2 is not arithemtic type,  result type is not-arithmetic one(T1 has high pritority).
+	2. when T1 or T2 is floating point type, result type is double.
+	3. when T1 or T2 is integral type, result type is integral type. sizeof(result type) is twice as many size as bigger one.
+	4. In other case, result type is T1.
 	*/
-	template<typename T1, typename T2>
-	DXLE_CONSTEXPR double cross(const point_c<T1>& p1, const point_c<T2>& p2) 
+	template<typename T1, typename T2, typename ResultType = dxle::detail::point_c_mem_cross_helper_result_type<T1, T2>>
+	DXLE_CONSTEXPR ResultType cross(const point_c<T1>& p1, const point_c<T2>& p2)
 		DXLE_NOEXCEPT_IF_EXPR((
-			static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
-			+ static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
+			static_cast<ResultType>(std::declval<T1>()) * static_cast<ResultType>(std::declval<T2>())
+			+ static_cast<ResultType>(std::declval<T1>()) * static_cast<ResultType>(std::declval<T2>())
 		))
 	{
-		return static_cast_if<T1, double, !std::is_floating_point<T1>::value>(p1.x) * p2.y + static_cast_if<T1, double, !std::is_floating_point<T1>::value>(p1.y) * p2.x;
+		return static_cast<ResultType>(p1.x) * static_cast<ResultType>(p2.y) + static_cast<ResultType>(p1.y) * static_cast<ResultType>(p2.x);
 	}
 	/**
 	@relates point_c
