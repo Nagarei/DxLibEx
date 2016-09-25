@@ -72,6 +72,9 @@ namespace dxle
 			//!\~japanese 画像を削除する
 			//!\~english  Delete this image
 			inline void delete_this(bool LogOutFlag = false) { DxLib::DeleteGraph(GetHandle(), LogOutFlag); }
+			//!\~japanese 有効な画像を持っているか調べる（trueで持っている）
+			//!\~english  Returns whether this object has valid texture (if it has, this functoin returns true)
+			inline bool valid()const { return (GetHandle() != -1); }
 
 			//! グラフィックのサイズを得る
 			inline sizei size()const DXLE_NOEXCEPT_OR_NOTHROW{ return GetGraphSize(); }
@@ -412,6 +415,9 @@ namespace dxle
 			const texture2d& get()const DXLE_NOEXCEPT_OR_NOTHROW{ return *impl; }
 			operator texture2d&()DXLE_NOEXCEPT_OR_NOTHROW{ return *impl; }
 			operator const texture2d&()const DXLE_NOEXCEPT_OR_NOTHROW{ return *impl; }
+			//!\~japanese 有効な画像を持っているか調べる（trueで持っている）
+			//!\~english  Returns whether this object has valid texture (if it has, this functoin returns true)
+			inline bool valid()const { return (impl != nullptr && impl->valid()); }
 #else
 			texture2d* operator->()DXLE_NOEXCEPT_OR_NOTHROW{ return impl.get(); }
 			const texture2d* operator->()const DXLE_NOEXCEPT_OR_NOTHROW{ return impl.get(); }
