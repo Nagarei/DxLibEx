@@ -9,6 +9,12 @@
 #define DXLE_INC_TIME_HPP_
 
 #include "dxlibex/config/no_min_max.h"
+#if !defined(CINTERFACE) && defined(__c2__) &&  __clang_major__ == 3 && __clang_minor__ == 8
+//To avoid compile error
+//C:\Program Files (x86)\Windows Kits\8.1\Include\um\combaseapi.h(229,21): error : unknown type name 'IUnknown'
+//          static_cast<IUnknown*>(*pp);    // make sure everyone derives from IUnknown
+#define CINTERFACE
+#endif
 #include <vector>
 #include <chrono>
 #include <type_traits>
@@ -216,6 +222,7 @@ namespace dxle
 			next_timing_index = (other.next_timing_index);
 			last_pass_time = (other.last_pass_time);
 			timer_ = (other.timer_);
+			return *this;
 		}
 		inline counter::counter(counter&& other)
 			: count(std::move(other.count))
@@ -231,6 +238,7 @@ namespace dxle
 			next_timing_index = std::move(other.next_timing_index);
 			last_pass_time = std::move(other.last_pass_time);
 			timer_ = std::move(other.timer_);
+			return *this;
 		}
 		inline void counter::start(void)
 		{

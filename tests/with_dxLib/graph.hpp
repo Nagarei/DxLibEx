@@ -4,15 +4,9 @@
 #include "dxlibex\graph2d.hpp"
 #include "dxlibex\basic_types.hpp"
 
-int DrawGraph(const dxle::pointi& point, const dxle::texture2d& Graph, bool TransFlag)
-{
-	return Graph.DrawGraph(point.x, point.y, TransFlag);
-}
-
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	using namespace dxle::graph2d;
-	using dxle::sizei;
 	DxLib::ChangeWindowMode(TRUE);
 	if (DxLib::DxLib_Init() == -1)        // ＤＸライブラリ初期化処理
 	{
@@ -30,8 +24,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		DxLib::ClearDrawScreen();
 
 		// 読みこんだグラフィックを画面中央に描画
-		DrawGraph(dxle::pointi(sizei{640, 480} - GHandle.size()) / 2, GHandle, true);
-		//GHandle.DrawGraph({0.1,0.1}, true);
+		dxle::pointi center = dxle::pointi(dxle::sizei{ 640, 480 } - GHandle.size()) / 2;
+		GHandle.DrawGraph(center, true);
 
 		DxLib::WaitKey();
 		DxLib::ClearDrawScreen();

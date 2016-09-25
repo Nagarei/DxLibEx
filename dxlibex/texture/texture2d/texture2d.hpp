@@ -9,6 +9,12 @@
 #define DXLE_INC_TEXTURE_TEXTURE2D_TEXTURE2D_HPP_
 
 #include "dxlibex/config/no_min_max.h"
+#if !defined(CINTERFACE) && defined(__c2__) &&  __clang_major__ == 3 && __clang_minor__ == 8
+//To avoid compile error
+//C:\Program Files (x86)\Windows Kits\8.1\Include\um\combaseapi.h(229,21): error : unknown type name 'IUnknown'
+//          static_cast<IUnknown*>(*pp);    // make sure everyone derives from IUnknown
+#define CINTERFACE
+#endif
 #include "DxLib.h"
 #include <cstdint>
 #include "../texture2d.hpp"
@@ -393,6 +399,7 @@ namespace dxle
 		inline derivative_texture2d& derivative_texture2d::operator=(derivative_texture2d&& other)DXLE_NOEXCEPT_IF((std::is_nothrow_move_assignable<cont_type>::value))
 		{
 			textures = std::move(other.textures);
+			return *this;
 		}
 		inline derivative_texture2d::derivative_texture2d(const TCHAR *FileName, int AllNum, const dxle::sizei& Num, const dxle::sizei& Size, bool NotUse3DFlag)
 		{

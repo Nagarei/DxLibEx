@@ -10,6 +10,8 @@
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
+clang_Debug/
+clang_Release/
 x64/
 build/
 bld/
@@ -195,3 +197,8 @@ ModelManifest.xml
 Log.txt
 *.VC.opendb
 *.VC.db
+*.exp
+dxlibex/ProjectDxLibEx_v1[24]0_MultiByte_x86_d.idb
+dxlibex/ProjectDxLibEx_v1[24]0_MultiByte_x86_[dr].lib
+dxlibex/ProjectDxLibEx_v1[24]0_MultiByte_x64_d.idb
+dxlibex/ProjectDxLibEx_v1[24]0_MultiByte_x64_[dr].lib

@@ -5,7 +5,7 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#include "dxlibex\Color.hpp"
+#include "dxlibex\color.hpp"
 #if 0
 int DrawLine(int x1, int y1, int x2, int y2, dxle::dx_color_param Color, int Thickness = 1)
 {

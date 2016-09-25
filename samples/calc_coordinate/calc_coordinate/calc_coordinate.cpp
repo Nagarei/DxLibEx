@@ -39,9 +39,13 @@ std::pair<dxle::pointu8i, dxle::pointi> point_c_sample()
 	cout << "p8:" << p8 << " p9:" << p9 << endl;
 
 	//abs
-	DXLE_CONSTEXPR_CLASS dxle::pointd p10(-2.3, -3.4);
-	DXLE_CONSTEXPR_CLASS auto p11 = dxle::abs(p10);
-	cout << "abs : p10(src):(" << p10 << ")  result=(" << p11 << ")" << endl;
+	DXLE_CONSTEXPR dxle::pointd p10(-2.3, -3.4);
+	DXLE_CONSTEXPR auto p11 = dxle::abs(p10);
+	DXLE_CONSTEXPR dxle::point_c<unsigned int> p11_2(5, 7);
+	DXLE_CONSTEXPR auto p11_3 = dxle::abs(p11_2);
+	cout
+		<< "abs :   p10(src):(" << p10   << ")  result=(" << p11   << ")" << endl
+		<< "abs : p11_2(src):(" << p11_2 << ")  result=(" << p11_3 << ")" << endl;
 
 	//distance
 	auto d = dxle::distance(p1, p10);
@@ -107,9 +111,13 @@ std::pair<dxle::sizeui, dxle::sizeui> size_c_sample()
 	cout << "s8:" << s8 << " s9:" << s9 << endl;
 
 	//abs
-	DXLE_CONSTEXPR_CLASS dxle::sized s10(-2.3, -3.4);
-	DXLE_CONSTEXPR_CLASS auto s11 = dxle::abs(s10);
-	cout << "abs : s10(src):(" << s10 << ")  result=(" << s11 << ")" << endl;
+	DXLE_CONSTEXPR dxle::sized s10(-2.3, -3.4);
+	DXLE_CONSTEXPR auto s11 = dxle::abs(s10);
+	DXLE_CONSTEXPR dxle::size_c<unsigned int> s11_2(5, 7);
+	DXLE_CONSTEXPR auto s11_3 = dxle::abs(s11_2);
+	cout
+		<< "abs :   s10(src):(" << s10 << ")  result=(" << s11 << ")" << endl
+		<< "abs : s11_2(src):(" << s11_2 << ")  result=(" << s11_3 << ")" << endl;
 
 	//cast
 	const dxle::sizef s12 = { 3.2f, 2.4f };
@@ -171,9 +179,13 @@ void point3d_c_sample()
 	cout << "p3_8:" << p3_8 << " p3_9:" << p3_9 << endl;
 
 	//abs
-	DXLE_CONSTEXPR_CLASS dxle::point3dd p3_10(-2.3, -3.4, -5.2);
-	DXLE_CONSTEXPR_CLASS auto p3_11 = dxle::abs(p3_10);
-	cout << "abs : p3_10(src):(" << p3_10 << ")  result=(" << p3_11 << ")" << endl;
+	DXLE_CONSTEXPR dxle::point3dd p3_10(-2.3, -3.4, -5.2);
+	DXLE_CONSTEXPR auto p3_11 = dxle::abs(p3_10);
+	DXLE_CONSTEXPR dxle::point_c<unsigned int> p3_11_2(5, 7);
+	DXLE_CONSTEXPR auto p3_11_3 = dxle::abs(p3_11_2);
+	cout
+		<< "abs :   p3_10(src):(" << p3_10   << ")  result=(" << p3_11   << ")" << endl
+		<< "abs : p3_11_2(src):(" << p3_11_2 << ")  result=(" << p3_11_3 << ")" << endl;
 
 	//distance
 	auto d2 = dxle::distance(p3_1, p3_10);

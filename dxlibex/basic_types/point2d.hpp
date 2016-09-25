@@ -20,12 +20,12 @@
 #include "dxlibex/algorithm.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
+#include "dxlibex/char_constant.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
 #include <type_traits>
 #include <algorithm>
-#include <functional>
 #include <cmath>
 #include <cstdint>
 #include <limits>
@@ -107,38 +107,38 @@ namespace dxle {
 	public:
 		typedef typename std::remove_cv<T>::type value_type;
 		value_type x, y;
-		DXLE_CONSTEXPR_CLASS point_c() DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<value_type>::value)) : x(), y() {}
-		DXLE_CONSTEXPR_CLASS point_c(const value_type& x_, const value_type& y_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(x_), y(y_) {}
-		DXLE_CONSTEXPR_CLASS point_c(value_type&& x_, value_type&& y_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)) {}
+		DXLE_CONSTEXPR point_c() DXLE_NOEXCEPT_IF((std::is_nothrow_constructible<value_type>::value)) : x(), y() {}
+		DXLE_CONSTEXPR point_c(const value_type& x_, const value_type& y_) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(x_), y(y_) {}
+		DXLE_CONSTEXPR point_c(value_type&& x_, value_type&& y_) DXLE_NOEXCEPT_OR_NOTHROW : x(std::move(x_)), y(std::move(y_)) {}
 
 		//!\~english conversion from another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(const point_c<Tp2_>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_, value_type>::value)) : x(static_cast<value_type>(other.x)), y(static_cast<value_type>(other.y)){}
+		template<typename Tp2_> DXLE_CONSTEXPR explicit point_c(const point_c<Tp2_>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_, value_type>::value)) : x(static_cast<value_type>(other.x)), y(static_cast<value_type>(other.y)){}
 		//!\~english conversion from another data type
 		//!\~japanese 内部型の異なるpoint_cクラス同士の変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(point_c<Tp2_>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value)) : x(static_cast<value_type>(std::move(other.x))), y(static_cast<value_type>(std::move(other.y))) {}
+		template<typename Tp2_> DXLE_CONSTEXPR explicit point_c(point_c<Tp2_>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value)) : x(static_cast<value_type>(std::move(other.x))), y(static_cast<value_type>(std::move(other.y))) {}
 
 		//copy constructor
-		DXLE_CONSTEXPR_CLASS point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(o.x), y(o.y) {}
+		DXLE_CONSTEXPR point_c(const point_c<value_type>& o) DXLE_NOEXCEPT_IF((std::is_nothrow_copy_constructible<value_type>::value)) : x(o.x), y(o.y) {}
 		//move constructor
-		DXLE_CONSTEXPR_CLASS point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW
+		DXLE_CONSTEXPR point_c(point_c<value_type>&& o) DXLE_NOEXCEPT_OR_NOTHROW
 			: x(std::move(o.x)), y(std::move(o.y)) {}
 
 		//!\~english conversion from size_c
 		//!\~japanese size_cクラスからの変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(const size_c<Tp2_, nullptr>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_, value_type>::value))
+		template<typename Tp2_> DXLE_CONSTEXPR explicit point_c(const size_c<Tp2_, nullptr>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_, value_type>::value))
 			: x(static_cast<value_type>(other.width)), y(static_cast<value_type>(other.height)) {}
 		//!\~english conversion from size_c
 		//!\~japanese size_cクラスからの変換
-		template<typename Tp2_> DXLE_CONSTEXPR_CLASS explicit point_c(size_c<Tp2_, nullptr>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value))
+		template<typename Tp2_> DXLE_CONSTEXPR explicit point_c(size_c<Tp2_, nullptr>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<Tp2_&&, value_type>::value))
 			: x(static_cast<value_type>(std::move(other.width))), y(static_cast<value_type>(std::move(other.height))) {}
 		//!\~english conversion from size_c
 		//!\~japanese size_cクラスからの変換
-		DXLE_CONSTEXPR_CLASS point_c(const size_c<value_type, nullptr>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, value_type>::value))
+		DXLE_CONSTEXPR point_c(const size_c<value_type, nullptr>& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type, value_type>::value))
 			: x(other.width), y(other.height) {}
 		//!\~english conversion from size_c
 		//!\~japanese size_cクラスからの変換
-		DXLE_CONSTEXPR_CLASS point_c(size_c<value_type, nullptr>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type&&, value_type>::value))
+		DXLE_CONSTEXPR point_c(size_c<value_type, nullptr>&& other) DXLE_NOEXCEPT_IF((dxle::is_nothrow_convertable<value_type&&, value_type>::value))
 			: x(std::move(other.width)), y(std::move(other.height)) {}
 
 		//copy assignment operator
@@ -159,7 +159,7 @@ namespace dxle {
 		//!1. operator bool
 		//!2. operator != (nullptr)
 		//!3. default constector + operator !=
-		DXLE_CONSTEXPR_CLASS explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y))){
+		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(std::declval<value_type>(), std::declval<value_type>()))){
 			return dxle::detail::operator_bool_helper(this->x, this->y);
 		}
 		//!\~english conversion to std::pair
@@ -211,7 +211,7 @@ namespace dxle {
 		{
 			use_big_type_when_one_byte_t<PointType> x, y;
 			is >> x;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> y;
 			p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
 		}
@@ -277,7 +277,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
 	{
-		dxle::detail::istream_operator_helper<wchar_t, T>(is, s);
+		dxle::detail::istream_operator_helper<wchar_t, T>(is, p);
 		return is;
 	}
 
@@ -291,7 +291,7 @@ namespace dxle {
 	\~english	@return	Memberwise opposite of the point_c value
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(-r.x)
+	DXLE_CONSTEXPR point_c<T> operator -(const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(-r.x)
 	{
 		return { -r.x, -r.y };
 	}
@@ -306,7 +306,7 @@ namespace dxle {
 	\~english	@return	const-lvalue reference to first argument
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS inline point_c<T> operator +(const point_c<T>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value) { return r; }
+	DXLE_CONSTEXPR inline point_c<T> operator +(const point_c<T>& r) DXLE_NOEXCEPT_IF(std::is_nothrow_copy_constructible<T>::value) { return r; }
 
 	/**
 	@relates point_c
@@ -318,7 +318,7 @@ namespace dxle {
 	\~english	@return	rvalue reference to first argument
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
+	DXLE_CONSTEXPR inline point_c<T>&& operator +(point_c<T>&& r) DXLE_NOEXCEPT_OR_NOTHROW { return std::move(r); }
 
 	/**
 	@relates point_c
@@ -370,7 +370,7 @@ namespace dxle {
 	\~english	@return	Memberwise addition of both point_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator +(const point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x + r.x)
+	DXLE_CONSTEXPR auto operator +(const point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x + r.x)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() + std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x + r.x, l.y + r.y};
@@ -388,7 +388,7 @@ namespace dxle {
 	\~english	@return	Memberwise subtraction of both point_c value
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator -(const point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x - r.x)
+	DXLE_CONSTEXPR auto operator -(const point_c<T1>& l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l.x - r.x)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() - std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x - r.x, l.y - r.y};
@@ -406,7 +406,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 2nd argument
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator *(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x * r)
+	DXLE_CONSTEXPR auto operator *(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x * r)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x * r, l.y * r};
@@ -424,7 +424,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator *(T1 l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l * r.x)
+	DXLE_CONSTEXPR auto operator *(T1 l, const point_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l * r.x)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l * r.x, l * r.y};
@@ -461,7 +461,7 @@ namespace dxle {
 	\~english	@return	Memberwise multiplication by 1st argument
 	*/
 	template <typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto operator /(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x / r)
+	DXLE_CONSTEXPR auto operator /(const point_c<T1>& l, T2 r) DXLE_NOEXCEPT_IF_EXPR(l.x / r)
 		->point_c<decltype(std::declval<std::remove_cv_t<T1>>() / std::declval<std::remove_cv_t<T2>>())>
 	{
 		return {l.x / r, l.y / r};
@@ -498,7 +498,7 @@ namespace dxle {
 	\~english	@return	true if left operand is not equal to right operand
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x)
+	DXLE_CONSTEXPR bool operator !=(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x)
 	{
 		return (l.x != r.x) || (l.y != r.y);
 	}
@@ -515,7 +515,7 @@ namespace dxle {
 	\~english	@return	true if left operand is equal to right operand
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x) { return !(l != r);	}
+	DXLE_CONSTEXPR bool operator ==(const point_c<T>& l, const point_c<T>& r) DXLE_NOEXCEPT_IF_EXPR(l.x != r.x) { return !(l != r);	}
 
 	/**
 	@relates point_c
@@ -531,7 +531,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	DXLE_CONSTEXPR bool operator !=(const point_c<T>& p, std::nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return static_cast<bool>(p);
 	}
@@ -549,7 +549,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	DXLE_CONSTEXPR bool operator !=(std::nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return static_cast<bool>(p);
 	}
@@ -567,7 +567,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(const point_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	DXLE_CONSTEXPR bool operator ==(const point_c<T>& p, nullptr_t) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
 	}
@@ -585,7 +585,7 @@ namespace dxle {
 	@endcode
 	*/
 	template <typename T>
-	DXLE_CONSTEXPR_CLASS bool operator ==(nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
+	DXLE_CONSTEXPR bool operator ==(nullptr_t, const point_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
 		return !static_cast<bool>(p);
 	}
@@ -604,7 +604,7 @@ namespace dxle {
 	@endcode
 	*/
 	template<typename T>
-	DXLE_CONSTEXPR_CLASS point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(o.x)) { return{ abs(o.x), abs(o.y) }; }
+	DXLE_CONSTEXPR point_c<T> abs(const point_c<T>& o) DXLE_NOEXCEPT_IF_EXPR(abs(o.x)) { return{ abs(o.x), abs(o.y) }; }
 
 
 	/**
@@ -619,7 +619,7 @@ namespace dxle {
 	\~english	@return	Computed result. return value's type is a result of Implicit conversions.
 	*/
 	template<typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS auto dot(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(p1.x * p2.x + p1.y * p2.y)
+	DXLE_CONSTEXPR auto dot(const point_c<T1>& p1, const point_c<T2>& p2) DXLE_NOEXCEPT_IF_EXPR(p1.x * p2.x + p1.y * p2.y)
 		->decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())
 	{
 		return p1.x * p2.x + p1.y * p2.y;
@@ -637,7 +637,7 @@ namespace dxle {
 	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2>
-	DXLE_CONSTEXPR_CLASS double cross(const point_c<T1>& p1, const point_c<T2>& p2) 
+	DXLE_CONSTEXPR double cross(const point_c<T1>& p1, const point_c<T2>& p2) 
 		DXLE_NOEXCEPT_IF_EXPR((
 			static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
 			+ static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
