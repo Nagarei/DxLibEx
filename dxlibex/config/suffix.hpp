@@ -1,4 +1,4 @@
-/*=============================================================================
+﻿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -63,13 +63,26 @@
 
 //
 // DXLE_DEPRECATED
+// DXLE_DEPRECATED_MESSAGE
 //
-#if defined(__GNUC__) || defined(__clang__)
-#	define DXLE_DEPRECATED __attribute__((deprecated))
-#elif defined(_MSC_VER)
-#	define DXLE_DEPRECATED __declspec(deprecated)
+#ifdef DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED
+#	if defined(__GNUC__) || defined(__clang__)
+#		define DXLE_DEPRECATED __attribute__((deprecated))
+#		ifdef DXLE_HAS_GNU_DEPRECATED_WITH_MESSAGE_SUPPORT
+#			define DXLE_DEPRECATED_MESSAGE(message) __attribute__((deprecated(message)))
+#		endif
+#	elif defined(_MSC_VER)
+#		define DXLE_DEPRECATED __declspec(deprecated)
+#		define DXLE_DEPRECATED_MESSAGE(message) __declspec(deprecated(message))
+#	else
+#		define DXLE_DEPRECATED
+#	endif
+#	ifndef DXLE_DEPRECATED_MESSAGE
+#		deifne DXLE_DEPRECATED_MESSAGE DXLE_DEPRECATED
+#	endif
 #else
-#	define DXLE_DEPRECATED
+#	define DXLE_DEPRECATED [[deprecated]]
+#	define DXLE_DEPRECATED_MESSAGE(message) [[deprecated(message)]]
 #endif
 
 //
