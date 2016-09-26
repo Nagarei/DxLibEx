@@ -8,6 +8,7 @@
 #ifndef DXLE_INC_ALGORITHM_HPP_
 #define DXLE_INC_ALGORITHM_HPP_
 #include "dxlibex/algorithm/cast_if.hpp"
-#include "dxlibex/algorithm/safe_dist.hpp"
+#include "dxlibex/algorithm/abs_diff.hpp"
+#include "dxlibex/algorithm/safe_dist.hpp"//deprecated
 
 #endif //DXLE_INC_ALGORITHM_HPP_
