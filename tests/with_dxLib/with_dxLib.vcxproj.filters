@@ -12,8 +12,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GraphTest.hpp">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
+    <ClInclude Include="graph.hpp" />
   </ItemGroup>
 </Project>
