@@ -222,6 +222,8 @@ namespace dxle {
 		auto heap = std::make_unique<char>();
 		sed_v | push_back(heap.get());
 		sed_v | push_back(&heap);
+		sed_v | push_back(time);
+		sed_v | push_back(create_engine);
 		const auto end_time = std::chrono::high_resolution_clock::now();
 		sed_v | push_back((end_time - begin_time).count());
 		return sed_v;
