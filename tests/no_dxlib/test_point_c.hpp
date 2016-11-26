@@ -130,7 +130,7 @@ IUTEST_TYPED_TEST(point_c_test, istream_operator) {
 	) {
 		std::stringstream ss1;
 		ss1 << get_rand() << ", " << get_rand();
-		std::stringstream ss2; 
+		std::stringstream ss2;
 		ss2 << ss1.str();
 		type v1, v2;
 		ss1 >> v1;
@@ -153,7 +153,7 @@ IUTEST_TYPED_TEST(point_c_test, wistream_operator) {
 	) {
 		std::wstringstream ss1;
 		ss1 << get_rand() << L", " << get_rand();
-		std::wstringstream ss2; 
+		std::wstringstream ss2;
 		ss2 << ss1.str();
 		type v1, v2;
 		ss1 >> v1;

@@ -28,7 +28,7 @@ Distributed under the Boost Software License, Version 1.0.
 #	include <tchar.h>
 #elif defined(__linux__)
 #	define DXLE_ARC_FOR_LINUX 1
-#	include <sys/types.h> 
+#	include <sys/types.h>
 #	include <unistd.h>
 #	include <fstream>
 namespace dxle {
