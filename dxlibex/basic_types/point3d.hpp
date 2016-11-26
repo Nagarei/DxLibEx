@@ -644,7 +644,7 @@ namespace dxle {
 	distance_result_type_t<T1, T2> distance(const point3d_c<T1>& p1, const point3d_c<T2>& p2)
 		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
 	{
-		return hypot(safe_dist(p1.x, p2.x), (safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
+		return hypot(safe_dist(p1.x, p2.x), hypot(safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
 	}
 	typedef point3d_c<int> point3di;
 	typedef point3d_c<std::uint8_t> point3du8i;
