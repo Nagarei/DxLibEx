@@ -1,4 +1,4 @@
-/*=============================================================================
+﻿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -44,11 +44,11 @@ C++14
 #	define DXLE_NO_CXX14_VARIABLE_TEMPLATES
 #endif
 
-#if (__GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 9) || !defined(__GXX_EXPERIMENTAL_CXX0X__))
+#if ((__GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 9) || !defined(__GXX_EXPERIMENTAL_CXX0X__))) || __cplusplus < 201300
 #	define DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED
 #endif
 
-#if __GNUC__ < 5
+#if __GNUC__ < 5 || __cplusplus < 201402
 #	define DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO
 #endif
 
@@ -59,6 +59,9 @@ Proprietary extension
 #	define DXLE_HAS_CONSTEXPR_CMATH_FUNCTION
 #	define DXLE_HAS_CONSTEXPR_COPYSIGN_FUNCTION
 #	define DXLE_HAS_CONSTEXPR_BIT_OPERATION
+#endif
+#if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5))
+#	define DXLE_HAS_GNU_DEPRECATED_WITH_MESSAGE_SUPPORT
 #endif
 
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_GCC_HPP_

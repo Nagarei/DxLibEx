@@ -1,4 +1,4 @@
-/*=============================================================================
+﻿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -18,8 +18,11 @@
 #define DXLE_NO_CXX11_DELEGATING_CONSTRUCTORS
 #define DXLE_NO_CXX11_UNICODE_LITERALS
 #define DXLE_NO_CXX11_ATTRIBUTES
+#define DXLE_NO_CXX11_REF_QUALIFIERS
 
 #define DXLE_NO_CXX14_CONSTEXPR
 #define DXLE_NO_CXX14_VARIABLE_TEMPLATES
+#define DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED
+#define DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO
 
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_COMMON_EDG_HPP_
