@@ -9,7 +9,7 @@
 #include <random>
 #include <dxlibex/basic_types.hpp>
 #include <dxlibex/utility/constant_range_loop.hpp>
-#include "random.hpp"
+#include <tests/include/random.hpp>
 #include <cstdint>
 #include <cmath>
 #include <limits>

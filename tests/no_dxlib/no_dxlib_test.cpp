@@ -6,7 +6,7 @@ Distributed under the Boost Software License, Version 1.0.
 (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
 #include "../../3rd_party/iutest/include/iutest.hpp"
-#include "test_point_c.hpp"
+#include "basic_types/point2d.hpp"
 std::mt19937 engine = dxle::create_engine();
 int main(int argc, char** argv)
 {

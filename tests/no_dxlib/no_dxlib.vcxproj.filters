@@ -12,8 +12,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="random.hpp" />
-    <ClInclude Include="test_point_c.hpp">
+    <ClInclude Include="basic_types\point2d.hpp">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

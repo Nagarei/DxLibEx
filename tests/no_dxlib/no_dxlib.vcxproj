@@ -220,8 +220,7 @@
     <ClCompile Include="no_dxlib_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="test_point_c.hpp" />
-    <ClInclude Include="random.hpp" />
+    <ClInclude Include="basic_types\point2d.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
