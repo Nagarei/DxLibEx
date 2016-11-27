@@ -296,6 +296,25 @@ IUTEST_TYPED_TEST(basic_types_point3d, abs) {
 		IUTEST_ASSERT(dxle::point3d_c<type>(dxle::abs(value1_x), dxle::abs(value1_y), dxle::abs(value1_z)) == dxle::abs(value1));
 	}
 }
+namespace detail {
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct basic_types_point3d_dot_helper {
+		using type = T;
+		void operator()() {}
+	};
+	template<typename T>
+	struct basic_types_point3d_dot_helper<T, false> {
+		using type = T;
+		void operator()()
+		{
+			const dxle::point3d_c<type> a = { -3, 1, 2 };
+			const dxle::point3d_c<type> b = { -2, 3, 1 };
+			const dxle::point3d_c<type> c = { -1, 2, 3 };
+			IUTEST_ASSERT(type(3) == (dxle::dot(b - a, c- a)));
+		}
+	};
+
+}
 IUTEST_TYPED_TEST(basic_types_point3d, dot_product) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
@@ -307,5 +326,15 @@ IUTEST_TYPED_TEST(basic_types_point3d, dot_product) {
 		const auto re1 = dxle::dot(value1, value2);
 		const auto re2 = value1.x * value2.x + value1.y * value2.y + value1.z * value2.z;
 		IUTEST_ASSERT(re1 == re2);
+		detail::basic_types_point3d_dot_helper<type>{}();
+		const dxle::point3d_c<type> ex = { 1, 0, 0 };
+		const dxle::point3d_c<type> ey = { 0, 1, 0 };
+		const dxle::point3d_c<type> ez = { 0, 0, 1 };
+		IUTEST_ASSERT_EQ(type(0), dxle::dot(ex, ey));
+		IUTEST_ASSERT_EQ(type(0), dxle::dot(ey, ez));
+		IUTEST_ASSERT_EQ(type(0), dxle::dot(ez, ex));
+		IUTEST_ASSERT_EQ(type(1), dxle::dot(ex, ex));
+		IUTEST_ASSERT_EQ(type(1), dxle::dot(ey, ey));
+		IUTEST_ASSERT_EQ(type(1), dxle::dot(ez, ez));
 	}
 }
