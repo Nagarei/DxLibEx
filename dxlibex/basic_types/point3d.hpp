@@ -408,7 +408,7 @@ namespace dxle {
 	DXLE_CONSTEXPR auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l + r.x)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
-		return { l + r.x, l + r.y, l + r.z };
+		return { l * r.x, l * r.y, l * r.z };
 	}
 
 	/**
