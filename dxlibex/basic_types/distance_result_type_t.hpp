@@ -16,7 +16,7 @@ namespace dxle {
 		template<typename T>
 		struct distance_result_type_impl<T, false, true> {
 			typedef T type;
-		};		
+		};
 		template<typename T>
 		struct distance_result_type_impl<T, true, false> {
 			typedef double type;//If any argument has integral type, it is cast to double.
