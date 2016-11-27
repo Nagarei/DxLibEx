@@ -60,7 +60,9 @@ IUTEST_TYPED_TEST(basic_types_point3d, factory) {
 }
 IUTEST_TYPED_TEST(basic_types_point3d, operaotr_eq) {
 	using type = TypeParam;
-	const bool eq1 = 0 == dxle::point3d_c<type>{} && dxle::point3d_c<type>{} == 0;
+	const bool eq1 = 0 == dxle::point3d_c<type>{};
+	const bool eq2 = dxle::point3d_c<type>{} == 0;
+	IUTEST_ASSERT(eq1);
 	IUTEST_ASSERT(eq1);
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
@@ -201,7 +203,7 @@ IUTEST_TYPED_TEST(basic_types_point3d, operator_add) {
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist);
 		IUTEST_ASSERT(value2.z == value1_z + first_add_dist);
 		const auto second_add_dist = get_rand_for_add(value2.x, value2.y, value2.z, 0);
-		value2 += dxle::point3d_c<type>{second_add_dist, second_add_dist, first_add_dist};
+		value2 += dxle::point3d_c<type>{second_add_dist, second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
 		IUTEST_ASSERT(value2.z == value1_z + first_add_dist + second_add_dist);
@@ -223,7 +225,7 @@ IUTEST_TYPED_TEST(basic_types_point3d, operator_sub) {
 		IUTEST_ASSERT(value2.y == value1_y - first_add_dist);
 		IUTEST_ASSERT(value2.z == value1_z - first_add_dist);
 		const auto second_add_dist = get_rand_for_sub(value2.x, value2.y, value2.z, 0);
-		value2 -= dxle::point3d_c<type>{second_add_dist, second_add_dist, first_add_dist};
+		value2 -= dxle::point3d_c<type>{second_add_dist, second_add_dist, second_add_dist};
 		IUTEST_ASSERT(value2.x == value1_x - first_add_dist - second_add_dist);
 		IUTEST_ASSERT(value2.y == value1_y - first_add_dist - second_add_dist);
 		IUTEST_ASSERT(value2.z == value1_z - first_add_dist - second_add_dist);
