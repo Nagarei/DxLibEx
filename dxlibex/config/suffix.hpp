@@ -141,4 +141,16 @@
 //
 #define DXLE_PREVENT_MACRO_SUBSTITUTION
 
+#ifndef DXLE_NO_CXX17_UNUSED
+#	define DXLE_UNUSED [[maybe_unused]]
+#elif defined(__GNUC__)
+#	ifndef DXLE_NO_CXX11_ATTRIBUTES
+#		define DXLE_UNUSED [[gnu::unused]]
+#	else
+#		define DXLE_UNUSED __attribute__((unused))
+#	endif
+#else
+#	define DXLE_UNUSED
+#endif
+
 #endif	// #ifndef DXLE_INC_CONFIG_SUFFIX_HPP_

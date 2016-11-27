@@ -47,4 +47,6 @@
 #	define DXLE_NO_CXX11_TEMPLATE_ALIASES
 #endif
 
+#define DXLE_NO_CXX17_UNUSED
+
 #endif	// #ifndef DXLE_CONFIG_COMPILER_INTEL_HPP_
