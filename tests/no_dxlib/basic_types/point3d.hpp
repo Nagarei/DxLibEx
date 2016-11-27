@@ -15,6 +15,7 @@
 #include <tests/include/utility.hpp>
 #include <cstdint>
 #include <cmath>
+#include <array>
 #include <limits>
 #include <sstream>
 #if defined(_MSC_VER) && !defined(__c2__)
@@ -63,7 +64,7 @@ IUTEST_TYPED_TEST(basic_types_point3d, operaotr_eq) {
 	const bool eq1 = 0 == dxle::point3d_c<type>{};
 	const bool eq2 = dxle::point3d_c<type>{} == 0;
 	IUTEST_ASSERT(eq1);
-	IUTEST_ASSERT(eq1);
+	IUTEST_ASSERT(eq2);
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
 	for (DXLE_UNUSED auto i : dxle::rep(10)) {
@@ -313,7 +314,6 @@ namespace detail {
 			IUTEST_ASSERT(type(3) == (dxle::dot(b - a, c- a)));
 		}
 	};
-
 }
 IUTEST_TYPED_TEST(basic_types_point3d, dot_product) {
 	using type = TypeParam;
@@ -326,15 +326,52 @@ IUTEST_TYPED_TEST(basic_types_point3d, dot_product) {
 		const auto re1 = dxle::dot(value1, value2);
 		const auto re2 = value1.x * value2.x + value1.y * value2.y + value1.z * value2.z;
 		IUTEST_ASSERT(re1 == re2);
-		detail::basic_types_point3d_dot_helper<type>{}();
-		const dxle::point3d_c<type> ex = { 1, 0, 0 };
-		const dxle::point3d_c<type> ey = { 0, 1, 0 };
-		const dxle::point3d_c<type> ez = { 0, 0, 1 };
-		IUTEST_ASSERT_EQ(type(0), dxle::dot(ex, ey));
-		IUTEST_ASSERT_EQ(type(0), dxle::dot(ey, ez));
-		IUTEST_ASSERT_EQ(type(0), dxle::dot(ez, ex));
-		IUTEST_ASSERT_EQ(type(1), dxle::dot(ex, ex));
-		IUTEST_ASSERT_EQ(type(1), dxle::dot(ey, ey));
-		IUTEST_ASSERT_EQ(type(1), dxle::dot(ez, ez));
 	}
+	detail::basic_types_point3d_dot_helper<type>{}();
+	const dxle::point3d_c<type> ex = { 1, 0, 0 };
+	const dxle::point3d_c<type> ey = { 0, 1, 0 };
+	const dxle::point3d_c<type> ez = { 0, 0, 1 };
+	IUTEST_ASSERT_EQ(type(0), dxle::dot(ex, ey));
+	IUTEST_ASSERT_EQ(type(0), dxle::dot(ey, ez));
+	IUTEST_ASSERT_EQ(type(0), dxle::dot(ez, ex));
+	IUTEST_ASSERT_EQ(type(1), dxle::dot(ex, ex));
+	IUTEST_ASSERT_EQ(type(1), dxle::dot(ey, ey));
+	IUTEST_ASSERT_EQ(type(1), dxle::dot(ez, ez));
+}
+namespace detail {
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct basic_types_point3d_cross_helper {
+		using type = T;
+		void operator()() {}
+	};
+	template<typename T>
+	struct basic_types_point3d_cross_helper<T, false> {
+		using type = T;
+		void operator()()
+		{
+			static const std::array<dxle::point3d_c<type>, 3> check_list[] = {
+				{{ { 1,  3, 2 }, { -1,  1,  2 }, {  4,  -4,   4 } }},
+				{{ { 1,  1, 2 }, {  3,  6,  9 }, { -3,  -3,   3 } }},
+				{{ { 6,  3, 3 }, { -7, -3, 10 }, { 39, -81,   3 } }},
+				{{ { 0, -1, 2 }, { -1,  0,  5 }, { -5,  -2,  -1 } }}
+			};
+			for (auto&& i : check_list) {
+				IUTEST_ASSERT(i[2] == (dxle::cross(i[0], i[1])));
+			}
+		}
+	};
+}
+IUTEST_TYPED_TEST(basic_types_point3d, cross_product){
+	using type = TypeParam;
+	using lim = std::numeric_limits<type>;
+	detail::basic_types_point3d_cross_helper<type>{}();
+	const dxle::point3d_c<type> ex = { 1, 0, 0 };
+	const dxle::point3d_c<type> ey = { 0, 1, 0 };
+	const dxle::point3d_c<type> ez = { 0, 0, 1 };
+	IUTEST_ASSERT_EQ(ez, dxle::cross(ex, ey));
+	IUTEST_ASSERT_EQ(ex, dxle::cross(ey, ez));
+	IUTEST_ASSERT_EQ(ey, dxle::cross(ez, ex));
+	IUTEST_ASSERT((0 == dxle::cross(ex, ex)));
+	IUTEST_ASSERT((0 == dxle::cross(ey, ey)));
+	IUTEST_ASSERT((0 == dxle::cross(ez, ez)));
 }
