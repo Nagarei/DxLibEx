@@ -10,6 +10,9 @@
 #include <dxlibex/basic_types.hpp>
 #include <dxlibex/utility/constant_range_loop.hpp>
 #include <tests/include/random.hpp>
+#include <tests/include/random_wrap.hpp>
+#include <tests/include/math.hpp>
+#include <tests/include/utility.hpp>
 #include <cstdint>
 #include <cmath>
 #include <limits>
@@ -18,17 +21,9 @@
 #	pragma warning(disable: 4189)
 #endif
 template<typename T>
-DXLE_CONSTEXPR bool is_l_zero(T&& val) {
-	return static_cast<T>(0) == val;
-}
-template<typename T, typename... Rest>
-DXLE_CONSTEXPR bool is_l_zero(T&& val, Rest&&... rest) {
-	return static_cast<T>(0) == val && is_l_zero(std::forward<Rest>(rest)...);
-}
-template<typename T>
-struct point_c_test : public ::iutest::Test{};
-IUTEST_TYPED_TEST_CASE(point_c_test, ::iutest::Types<std::int32_t, std::uint32_t, std::int64_t, std::uint64_t, float, double>);
-IUTEST_TYPED_TEST(point_c_test, construct) {
+struct basic_types_point2d : public ::iutest::Test{};
+IUTEST_TYPED_TEST_CASE(basic_types_point2d, ::iutest::Types<std::int32_t, std::uint32_t, std::int64_t, std::uint64_t, float, double>);
+IUTEST_TYPED_TEST(basic_types_point2d, construct) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
@@ -47,7 +42,7 @@ IUTEST_TYPED_TEST(point_c_test, construct) {
 	IUTEST_ASSERT(value4.x == static_cast<type>(2));
 	IUTEST_ASSERT(value4.y == static_cast<type>(12));
 }
-IUTEST_TYPED_TEST(point_c_test, factory) {
+IUTEST_TYPED_TEST(basic_types_point2d, factory) {
 	using type = TypeParam;
 	const std::pair<type, type> pa = { static_cast<type>(12), static_cast<type>(23) };
 	const auto po = dxle::make_point_c(pa);
@@ -58,7 +53,7 @@ IUTEST_TYPED_TEST(point_c_test, factory) {
 	IUTEST_ASSERT(po2.x == pa.first);
 	IUTEST_ASSERT(po2.y == pa.second);
 }
-IUTEST_TYPED_TEST(point_c_test, operaotr_eq) {
+IUTEST_TYPED_TEST(basic_types_point2d, operaotr_eq) {
 	using type = TypeParam;
 	const bool eq1 = 0 == dxle::point_c<type>{} && dxle::point_c<type>{} == 0;
 	IUTEST_ASSERT(eq1);
@@ -71,7 +66,7 @@ IUTEST_TYPED_TEST(point_c_test, operaotr_eq) {
 		IUTEST_ASSERT(value == dxle::point_c<type>(value_x, value_y));
 	}
 }
-IUTEST_TYPED_TEST(point_c_test, ostream_operator) {
+IUTEST_TYPED_TEST(basic_types_point2d, ostream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
@@ -86,7 +81,7 @@ IUTEST_TYPED_TEST(point_c_test, ostream_operator) {
 		IUTEST_ASSERT_EQ(ss1.str(), ss2.str());
 	}
 }
-IUTEST_TYPED_TEST(point_c_test, wostream_operator) {
+IUTEST_TYPED_TEST(basic_types_point2d, wostream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
@@ -101,7 +96,7 @@ IUTEST_TYPED_TEST(point_c_test, wostream_operator) {
 		IUTEST_ASSERT_EQ(ss1.str(), ss2.str());
 	}
 }
-IUTEST_TYPED_TEST(point_c_test, istream_operator) {
+IUTEST_TYPED_TEST(basic_types_point2d, istream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
@@ -119,7 +114,7 @@ IUTEST_TYPED_TEST(point_c_test, istream_operator) {
 		IUTEST_ASSERT(v == dxle::point_c<type>(v1, v2));
 	}
 }
-IUTEST_TYPED_TEST(point_c_test, wistream_operator) {
+IUTEST_TYPED_TEST(basic_types_point2d, wistream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
@@ -137,7 +132,7 @@ IUTEST_TYPED_TEST(point_c_test, wistream_operator) {
 		IUTEST_ASSERT(v == dxle::point_c<type>(v1, v2));
 	}
 }
-IUTEST_TYPED_TEST(point_c_test, unary_operaotr_plus) {
+IUTEST_TYPED_TEST(basic_types_point2d, unary_operaotr_plus) {
 	using type = TypeParam;
 	const bool eq1 = 0 == dxle::point_c<type>{} && dxle::point_c<type>{} == 0;
 	IUTEST_ASSERT(eq1);
@@ -151,12 +146,12 @@ IUTEST_TYPED_TEST(point_c_test, unary_operaotr_plus) {
 }
 namespace detail {
 	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
-	struct point_c_test_unary_operaotr_minus_helper {
+	struct basic_types_point2d_unary_operaotr_minus_helper {
 		using type = T;
 		void operator()() {}
 	};
 	template<typename T>
-	struct point_c_test_unary_operaotr_minus_helper<T, false> {
+	struct basic_types_point2d_unary_operaotr_minus_helper<T, false> {
 		using type = T;
 		void operator()() {
 			const bool eq1 = 0 == dxle::point_c<type>{} && dxle::point_c<type>{} == 0;
@@ -174,19 +169,10 @@ namespace detail {
 		}
 	};
 }
-IUTEST_TYPED_TEST(point_c_test, unary_operaotr_minus) {
-	detail::point_c_test_unary_operaotr_minus_helper<TypeParam>{}();
+IUTEST_TYPED_TEST(basic_types_point2d, unary_operaotr_minus) {
+	detail::basic_types_point2d_unary_operaotr_minus_helper<TypeParam>{}();
 }
-template<typename T>
-T get_rand_for_add(T n1, T n2, int modifier) {
-	using lim = std::numeric_limits<T>;
-	const auto minmax = std::minmax(n1, n2);
-	return dxle::uniform_normal_distribution<T>(
-		(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifier,
-		(minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifier
-	)(engine);
-}
-IUTEST_TYPED_TEST(point_c_test, operator_add) {
+IUTEST_TYPED_TEST(basic_types_point2d, operator_add) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
@@ -205,16 +191,7 @@ IUTEST_TYPED_TEST(point_c_test, operator_add) {
 		IUTEST_ASSERT(value2.y == value1_y + first_add_dist + second_add_dist);
 	}
 }
-template<typename T>
-T get_rand_for_sub(T n1, T n2, int modifier) {
-	using lim = std::numeric_limits<T>;
-	const auto minmax = std::minmax(n1, n2);
-	return dxle::uniform_normal_distribution<T>(
-		(minmax.first < 0) ? lim::min() : lim::min() + minmax.first + modifier,
-		(minmax.second > 0) ? lim::max() : lim::max() + minmax.second - modifier
-	)(engine);
-}
-IUTEST_TYPED_TEST(point_c_test, operator_sub) {
+IUTEST_TYPED_TEST(basic_types_point2d, operator_sub) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
@@ -233,47 +210,7 @@ IUTEST_TYPED_TEST(point_c_test, operator_sub) {
 		IUTEST_ASSERT(value2.y == value1_y - first_sub_dist - second_sub_dist);
 	}
 }
-namespace deatil{
-	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
-	struct inferior_sqrt_helper{
-		T operator()(T x){ return static_cast<T>(::std::sqrt(x)); }
-	};
-	template<typename T>
-	struct inferior_sqrt_helper<T, false>{
-		T operator()(T x){ return (x < 0) ? 0 : static_cast<T>(::std::sqrt(x)); }
-	};
-}
-template<typename T>
-T inferior_sqrt(T x) { return deatil::inferior_sqrt_helper<T>()(x); }
-std::int64_t inferior_sqrt(const std::int64_t x) {
-	return (x < 0) ? 0 : x < static_cast<std::int64_t>(std::numeric_limits<double>::max()) ? static_cast<std::int64_t>(::std::sqrt(x))
-		: static_cast<std::int64_t>(inferior_sqrt(static_cast<std::uint64_t>(x)));
-}
-std::uint64_t inferior_sqrt(const std::uint64_t x)
-{
-	if(x < static_cast<std::uint64_t>(std::numeric_limits<double>::max())) return static_cast<std::uint64_t>(::std::sqrt(x));
-	std::uint64_t s = 1U;
-	auto t = x;
-	while (s < t) { s <<= 1;  t >>= 1; }
-	do {
-		t = s;
-		s = (x / s + s) >> 1;
-	} while (s < t);
-	return t;
-}
-namespace deatil{
-	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
-	struct inferior_sqrt2_helper{
-		T operator()(T x){ return inferior_sqrt(x); }
-	};
-	template<typename T>
-	struct inferior_sqrt2_helper<T, false>{
-		T operator()(T x){ return (x < 0) ? -inferior_sqrt(-x) : inferior_sqrt(x); }
-	};
-}
-template<typename T>
-T inferior_sqrt2(T x) { return deatil::inferior_sqrt2_helper<T>()(x); }
-IUTEST_TYPED_TEST(point_c_test, operator_mul) {
+IUTEST_TYPED_TEST(basic_types_point2d, operator_mul) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(inferior_sqrt2(lim::min()), inferior_sqrt(lim::max()));
@@ -292,31 +229,7 @@ IUTEST_TYPED_TEST(point_c_test, operator_mul) {
 		IUTEST_ASSERT(value3 == value1);
 	}
 }
-template<typename T>
-T get_rand_for_div1(T min, T max) {
-	const auto minmax = std::minmax(min, max);
-	const auto re = dxle::uniform_normal_distribution<T>(minmax.first, minmax.second)(engine);
-	return (0 != re) ? re : get_rand_for_div1(min, max);
-}
-namespace deatil{
-	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
-	struct get_rand_for_div2_helper{
-		T operator()(T n1, T n2) {
-			const auto min = std::min(n1, n2);
-			return get_rand_for_div1<T>(1u, min);
-		}
-	};
-	template<typename T>
-	struct get_rand_for_div2_helper<T, false>{
-		T operator()(T n1, T n2) {
-			const auto min = std::min(std::abs(n1), std::abs(n2));
-			return get_rand_for_div1<T>(1, min);
-		}
-	};
-}
-template<typename T>
-T get_rand_for_div2(T n1, T n2) { return deatil::get_rand_for_div2_helper<T>()(n1, n2); }
-IUTEST_TYPED_TEST(point_c_test, operator_div) {
+IUTEST_TYPED_TEST(basic_types_point2d, operator_div) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
 	for (DXLE_UNUSED auto i : dxle::rep(10)) {
@@ -333,22 +246,22 @@ IUTEST_TYPED_TEST(point_c_test, operator_div) {
 }
 namespace detail {
 	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
-	struct point_c_test_abs_helper {
+	struct basic_types_point2d_abs_helper {
 		using type = T;
 		using lim = std::numeric_limits<type>;
 		type operator()() { return lim::max(); }
 	};
 	template<typename T>
-	struct point_c_test_abs_helper<T, false> {
+	struct basic_types_point2d_abs_helper<T, false> {
 		using type = T;
 		using lim = std::numeric_limits<type>;
 		type operator()() { return -1; }
 	};
 }
-IUTEST_TYPED_TEST(point_c_test, abs) {
+IUTEST_TYPED_TEST(basic_types_point2d, abs) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
-	dxle::uniform_normal_distribution<type> dist(lim::lowest(), detail::point_c_test_abs_helper<type>()());
+	dxle::uniform_normal_distribution<type> dist(lim::lowest(), detail::basic_types_point2d_abs_helper<type>()());
 	auto get_rand = [&dist]() { return dist(engine); };
 	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value1_x = get_rand();
@@ -357,7 +270,7 @@ IUTEST_TYPED_TEST(point_c_test, abs) {
 		IUTEST_ASSERT(dxle::point_c<type>(dxle::abs(value1_x), dxle::abs(value1_y)) == dxle::abs(value1));
 	}
 }
-IUTEST_TYPED_TEST(point_c_test, dot_product) {
+IUTEST_TYPED_TEST(basic_types_point2d, dot_product) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(inferior_sqrt2(lim::min()) / 2, inferior_sqrt(lim::max()) / 2);

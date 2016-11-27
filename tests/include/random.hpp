@@ -5,9 +5,8 @@ https://github.com/Nagarei/DxLibEx/
 Distributed under the Boost Software License, Version 1.0.
 (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#ifndef DXLE_TEST_NO_DXLIB_RANDOM_HPP_
-#define DXLE_TEST_NO_DXLIB_RANDOM_HPP_
-#pragma once
+#ifndef DXLE_TESTS_INCLUDE_RANDOM_HPP_
+#define DXLE_TESTS_INCLUDE_RANDOM_HPP_
 #if defined(__MINGW32__) && !defined(__clang__)
 	//mingw-gcc's std::randome_device is broken.
 	//gccをwindowsで使うならstd::random_deviceを使ってはいけない - Qiita
@@ -239,4 +238,4 @@ namespace dxle {
 	>;
 }
 extern std::mt19937 engine;
-#endif //DXLE_TEST_NO_DXLIB_RANDOM_HPP_
+#endif //DXLE_TESTS_INCLUDE_RANDOM_HPP_
