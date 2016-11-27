@@ -5,7 +5,7 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#include "../../3rd_party/iutest/include/iutest.hpp"
+#include <3rd_party/iutest/include/iutest.hpp>
 #include <random>
 #include <dxlibex/basic_types.hpp>
 #include <dxlibex/utility/constant_range_loop.hpp>
@@ -270,6 +270,24 @@ IUTEST_TYPED_TEST(basic_types_point2d, abs) {
 		IUTEST_ASSERT(dxle::point_c<type>(dxle::abs(value1_x), dxle::abs(value1_y)) == dxle::abs(value1));
 	}
 }
+namespace detail {
+	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
+	struct basic_types_point2d_dot_helper {
+		using type = T;
+		void operator()() {}
+	};
+	template<typename T>
+	struct basic_types_point2d_dot_helper<T, false> {
+		using type = T;
+		void operator()()
+		{
+			const dxle::point_c<type> a = { 2, 1 };
+			const dxle::point_c<type> b = { 1, 1 };
+			IUTEST_ASSERT(type(-4) == (dxle::dot((-2 * a + 3 * b), (4 * a - 7 * b))));
+		}
+	};
+
+}
 IUTEST_TYPED_TEST(basic_types_point2d, dot_product) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
@@ -282,4 +300,10 @@ IUTEST_TYPED_TEST(basic_types_point2d, dot_product) {
 		const auto re2 = value1.x * value2.x + value1.y * value2.y;
 		IUTEST_ASSERT(re1 == re2);
 	}
+	detail::basic_types_point2d_dot_helper<type>{}();
+	const dxle::point_c<type> ex = { 1, 0 };
+	const dxle::point_c<type> ey = { 0, 1 };
+	IUTEST_ASSERT_EQ(type(0), dxle::dot(ex, ey));
+	IUTEST_ASSERT_EQ(type(1), dxle::dot(ex, ex));
+	IUTEST_ASSERT_EQ(type(1), dxle::dot(ey, ey));
 }

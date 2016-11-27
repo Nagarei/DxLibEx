@@ -76,7 +76,9 @@ Proprietary extension
 /*
 C++17
 */
-#if __clang_major < 3 || (__clang_major__ == 3 && __clang_minor__ < 9) || __has_cpp_attribute(maybe_unused) < 201603
+#if __clang_major < 3 || (__clang_major__ == 3 && __clang_minor__ < 9) || !defined(__has_cpp_attribute)
+#	define DXLE_NO_CXX17_UNUSED
+#elif __has_cpp_attribute(maybe_unused) < 201603
 #	define DXLE_NO_CXX17_UNUSED
 #endif
 

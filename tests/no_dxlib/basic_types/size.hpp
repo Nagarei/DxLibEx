@@ -5,7 +5,7 @@
   Distributed under the Boost Software License, Version 1.0.
   (See http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#include "../../3rd_party/iutest/include/iutest.hpp"
+#include <3rd_party/iutest/include/iutest.hpp>
 #include <random>
 #include <dxlibex/basic_types.hpp>
 #include <dxlibex/utility/constant_range_loop.hpp>
