@@ -64,24 +64,6 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Debug|Win32'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Debug|x64'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Release|Win32'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Release|x64'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -137,7 +119,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(DXLIB_ROOT);../../../;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../;$(DXLIB_ROOT);</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -190,10 +172,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='clang_Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(DXLIB_ROOT);../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../;$(DXLIB_ROOT);</AdditionalIncludeDirectories>
       <ExceptionHandling>Enabled</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>-Wextra %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>../../../;$(DXLIB_ROOT);</AdditionalLibraryDirectories>
@@ -206,6 +190,9 @@
       <ExceptionHandling>Enabled</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>-Wextra %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>.../../../;$(DXLIB_ROOT);</AdditionalLibraryDirectories>
@@ -217,6 +204,8 @@
       <ExceptionHandling>Enabled</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>-Wextra %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>../../../;$(DXLIB_ROOT);</AdditionalLibraryDirectories>
@@ -229,6 +218,9 @@
       <ExceptionHandling>Enabled</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>-Wextra %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>../../../;$(DXLIB_ROOT);</AdditionalLibraryDirectories>
