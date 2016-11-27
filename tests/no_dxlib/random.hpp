@@ -223,12 +223,11 @@ namespace dxle {
 		sed_v | push_back(heap.get());
 		sed_v | push_back(&heap);
 		sed_v | push_back(time);
-		sed_v | push_back(create_engine);
 		const auto end_time = std::chrono::high_resolution_clock::now();
 		sed_v | push_back((end_time - begin_time).count());
 		return sed_v;
 	}
-	std::mt19937 create_engine() {
+	inline std::mt19937 create_engine() {
 		auto sed_v = create_seed_v();
 		std::seed_seq seq(sed_v.begin(), sed_v.end());
 		return std::mt19937(seq);
