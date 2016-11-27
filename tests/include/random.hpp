@@ -32,7 +32,7 @@ Distributed under the Boost Software License, Version 1.0.
 #	include <unistd.h>
 #	include <fstream>
 namespace dxle {
-	unsigned int get_randome_from_dev_random() {
+	inline unsigned int get_randome_from_dev_random() {
 		std::ifstream file("/dev/random", std::ios::binary);
 		if (file.is_open())
 		{
@@ -76,7 +76,7 @@ namespace dxle {
 			uint32_t u32[3];
 			char str[12];
 		};
-		regs_t get_cpuid(unsigned int level) {
+		inline regs_t get_cpuid(unsigned int level) {
 			regs_t re = { 0 };
 			static_assert(sizeof(re) == (sizeof(uint32_t) * 4), "illegal size of struct regs_t ");
 #	if defined(__INTEL_COMPILER) || defined(_MSC_VER) && !defined(__clang__)
@@ -86,26 +86,26 @@ namespace dxle {
 #	endif
 			return re;
 		}
-		bool check_vender(const char* s) {
+		inline bool check_vender(const char* s) {
 			const auto id = get_cpuid(0);
 			register_str_cvt vender = { { id.EBX, id.EDX, id.ECX } };
 			return (0 == std::memcmp(vender.str, s, sizeof(vender.str)));
 		}
-		bool IsIntelCPU() {
+		inline bool IsIntelCPU() {
 			static const auto is_intel_cpu = check_vender("GenuineIntel");//実行中にCPUは変わらないとする
 			return is_intel_cpu;
 		}
-		bool IsAMDCPU() {
+		inline bool IsAMDCPU() {
 			static const auto is_amd_cpu = check_vender("AuthenticAMD");
 			return is_amd_cpu;
 		}
-		bool IsRDRANDsupport() {
+		inline bool IsRDRANDsupport() {
 			DXLE_STATIC_CONSTEXPR uint32_t RDRAND_MASK = 1U << 30U;
 			if (!IsIntelCPU() && !IsAMDCPU()) return false;
 			const auto reg = get_cpuid(1);//If RDRAND is supported, the bit 30 of the ECX register is set after calling CPUID standard function 01H.
 			return (RDRAND_MASK == (reg.ECX & RDRAND_MASK));
 		}
-		bool IsRDSEEDsupport() {
+		inline bool IsRDSEEDsupport() {
 			DXLE_STATIC_CONSTEXPR uint32_t RDSEED_MASK = 1U << 18U;
 			if (!IsIntelCPU()) return false;
 			const auto reg = get_cpuid(7);//If RDSEED is supported, the bit 18 of the EBX register is set after calling CPUID standard function 07H.
@@ -146,7 +146,7 @@ namespace dxle {
 			}
 		};
 		template<typename value_type, typename T, std::enable_if_t<std::is_pointer<T>::value || std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
-		void operator| (std::vector<value_type>& v, vector_push_back_helper<T> info) {
+		inline void operator| (std::vector<value_type>& v, vector_push_back_helper<T> info) {
 			vector_push_back_operator_impl<value_type, T, (sizeof(value_type) < sizeof(T))> ()(v, info);
 		}
 	}
@@ -155,7 +155,7 @@ namespace dxle {
 	template<typename T>
 	dxle::detail::vector_push_back_helper<T> push_back(T pointer) { return{ pointer }; }
 	using seed_v_t = std::vector<unsigned int>;
-	seed_v_t create_seed_v() {
+	inline seed_v_t create_seed_v() {
 		const auto begin_time = std::chrono::high_resolution_clock::now();
 #if defined(__c2__) && __clang_minor__ < 9
 		constexpr std::size_t randome_device_generate_num = 12;//Clnag with Microsoft CodeGen does not support RDRND/RDSEED so that use std::random_device agressively.
