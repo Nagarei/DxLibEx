@@ -64,18 +64,6 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Debug|Win32'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Debug|x64'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Release|Win32'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='clang_Release|x64'">
-    <PlatformToolset>v140_clang_c2</PlatformToolset>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -207,6 +195,7 @@
       <AdditionalIncludeDirectories>..\..\;</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <AdditionalOptions>-Wextra %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='clang_Release|Win32'">
@@ -214,6 +203,7 @@
       <AdditionalIncludeDirectories>..\..\;</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <AdditionalOptions>-Wextra %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
