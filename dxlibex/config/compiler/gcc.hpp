@@ -64,4 +64,6 @@ Proprietary extension
 #	define DXLE_HAS_GNU_DEPRECATED_WITH_MESSAGE_SUPPORT
 #endif
 
+#define DXLE_NO_CXX17_UNUSED
+
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_GCC_HPP_

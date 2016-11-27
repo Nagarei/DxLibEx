@@ -72,4 +72,12 @@ Proprietary extension
 #define DXLE_HAS_GNU_DEPRECATED_WITH_MESSAGE_SUPPORT
 #endif
 
+
+/*
+C++17
+*/
+#if __clang_major < 3 || (__clang_major__ == 3 && __clang_minor__ < 9) || __has_cpp_attribute(maybe_unused) < 201603
+#	define DXLE_NO_CXX17_UNUSED
+#endif
+
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_CLANG_HPP_
