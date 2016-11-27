@@ -573,7 +573,7 @@ namespace dxle {
 	template <typename T>
 	DXLE_CONSTEXPR bool operator ==(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
-		return static_cast<bool>(p);
+		return !static_cast<bool>(p);
 	}
 
 	/**
