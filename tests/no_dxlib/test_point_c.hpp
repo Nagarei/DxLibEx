@@ -14,6 +14,9 @@
 #include <cmath>
 #include <limits>
 #include <sstream>
+#if defined(_MSC_VER) && !defined(__c2__)
+#	pragma warning(disable: 4189)
+#endif
 template<typename T>
 DXLE_CONSTEXPR bool is_l_zero(T&& val) {
 	return static_cast<T>(0) == val;
@@ -29,12 +32,7 @@ IUTEST_TYPED_TEST(point_c_test, construct) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value_x = get_rand();
 		const auto value_y = get_rand();
 		const dxle::point_c<type> value = { value_x, value_y };
@@ -66,12 +64,7 @@ IUTEST_TYPED_TEST(point_c_test, operaotr_eq) {
 	IUTEST_ASSERT(eq1);
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value_x = get_rand();
 		const auto value_y = get_rand();
 		const dxle::point_c<type> value = { value_x, value_y };
@@ -82,12 +75,7 @@ IUTEST_TYPED_TEST(point_c_test, ostream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto x = get_rand();
 		const auto y = get_rand();
 		std::stringstream ss1;
@@ -102,12 +90,7 @@ IUTEST_TYPED_TEST(point_c_test, wostream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto x = get_rand();
 		const auto y = get_rand();
 		std::wstringstream ss1;
@@ -122,12 +105,7 @@ IUTEST_TYPED_TEST(point_c_test, istream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		std::stringstream ss1;
 		ss1 << get_rand() << ", " << get_rand();
 		std::stringstream ss2;
@@ -145,12 +123,7 @@ IUTEST_TYPED_TEST(point_c_test, wistream_operator) {
 	using type = TypeParam;
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		std::wstringstream ss1;
 		ss1 << get_rand() << L", " << get_rand();
 		std::wstringstream ss2;
@@ -170,12 +143,7 @@ IUTEST_TYPED_TEST(point_c_test, unary_operaotr_plus) {
 	IUTEST_ASSERT(eq1);
 	dxle::uniform_normal_distribution<type> dist;
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const dxle::point_c<type> value1 = { get_rand(), get_rand() };
 		const auto value2 = +value1;
 		IUTEST_ASSERT(value1 == value2);
@@ -195,12 +163,7 @@ namespace detail {
 			IUTEST_ASSERT(eq1);
 			dxle::uniform_normal_distribution<type> dist;
 			auto get_rand = [&dist]() { return dist(engine); };
-			for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-				[[gnu::unused]]
-#endif
-				auto i : dxle::rep(10)
-			) {
+			for (DXLE_UNUSED auto i : dxle::rep(10)) {
 				const auto x = get_rand();
 				const auto y = get_rand();
 
@@ -228,12 +191,7 @@ IUTEST_TYPED_TEST(point_c_test, operator_add) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
@@ -261,12 +219,7 @@ IUTEST_TYPED_TEST(point_c_test, operator_sub) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::min() + 2, lim::max() - 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		const dxle::point_c<type> value1 = { value1_x, value1_y };
@@ -325,12 +278,7 @@ IUTEST_TYPED_TEST(point_c_test, operator_mul) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(inferior_sqrt2(lim::min()), inferior_sqrt(lim::max()));
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		dxle::point_c<type> value1 = { value1_x, value1_y };
@@ -371,12 +319,7 @@ T get_rand_for_div2(T n1, T n2) { return deatil::get_rand_for_div2_helper<T>()(n
 IUTEST_TYPED_TEST(point_c_test, operator_div) {
 	using type = TypeParam;
 	using lim = std::numeric_limits<type>;
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value1_x = get_rand_for_div1(lim::min(), lim::max());
 		const auto value1_y = get_rand_for_div1(lim::min(), lim::max());
 		dxle::point_c<type> value1 = { value1_x, value1_y };
@@ -407,12 +350,7 @@ IUTEST_TYPED_TEST(point_c_test, abs) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(lim::lowest(), detail::point_c_test_abs_helper<type>()());
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-		auto i : dxle::rep(10)
-	) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const auto value1_x = get_rand();
 		const auto value1_y = get_rand();
 		dxle::point_c<type> value1 = { value1_x, value1_y };
@@ -424,12 +362,7 @@ IUTEST_TYPED_TEST(point_c_test, dot_product) {
 	using lim = std::numeric_limits<type>;
 	dxle::uniform_normal_distribution<type> dist(inferior_sqrt2(lim::min()) / 2, inferior_sqrt(lim::max()) / 2);
 	auto get_rand = [&dist]() { return dist(engine); };
-	for (
-#ifndef DXLE_NO_CXX11_ATTRIBUTES
-		[[gnu::unused]]
-#endif
-	auto i : dxle::rep(10)
-		) {
+	for (DXLE_UNUSED auto i : dxle::rep(10)) {
 		const dxle::point_c<type> value1 = { get_rand(), get_rand() };
 		const dxle::point_c<type> value2 = { get_rand(), get_rand() };
 		const auto re1 = dxle::dot(value1, value2);
