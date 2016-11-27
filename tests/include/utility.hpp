@@ -18,5 +18,4 @@ DXLE_CONSTEXPR bool is_l_zero(T&& val, Rest&&... rest)
 {
 	return static_cast<T>(0) == val && is_l_zero(std::forward<Rest>(rest)...);
 }
-
 #endif //DXLE_TESTS_INCLUDE_UTILITY_HPP_

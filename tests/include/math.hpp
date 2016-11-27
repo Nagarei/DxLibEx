@@ -19,11 +19,6 @@ namespace detail {
 }
 template<typename T>
 T inferior_sqrt(T x) { return detail::inferior_sqrt_helper<T>()(x); }
-inline std::int64_t inferior_sqrt(const std::int64_t x)
-{
-	return (x < 0) ? 0 : x < static_cast<std::int64_t>(std::numeric_limits<double>::max()) ? static_cast<std::int64_t>(::std::sqrt(x))
-		: static_cast<std::int64_t>(inferior_sqrt(static_cast<std::uint64_t>(x)));
-}
 inline std::uint64_t inferior_sqrt(const std::uint64_t x)
 {
 	if (x < static_cast<std::uint64_t>(std::numeric_limits<double>::max())) return static_cast<std::uint64_t>(::std::sqrt(x));
@@ -35,6 +30,11 @@ inline std::uint64_t inferior_sqrt(const std::uint64_t x)
 		s = (x / s + s) >> 1;
 	} while (s < t);
 	return t;
+}
+inline std::int64_t inferior_sqrt(const std::int64_t x)
+{
+	return (x < 0) ? 0 : x < static_cast<std::int64_t>(std::numeric_limits<double>::max()) ? static_cast<std::int64_t>(::std::sqrt(x))
+		: static_cast<std::int64_t>(inferior_sqrt(static_cast<std::uint64_t>(x)));
 }
 namespace detail {
 	template<typename T, bool is_unsigned = std::is_unsigned<T>::value>
@@ -48,5 +48,4 @@ namespace detail {
 }
 template<typename T>
 T inferior_sqrt2(T x) { return detail::inferior_sqrt2_helper<T>()(x); }
-
 #endif //DXLE_TESTS_INCLUDE_MATH_HPP_

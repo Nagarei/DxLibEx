@@ -16,7 +16,7 @@ inline T get_rand_for_add(T n1, T n2, int modifier)
 	return dxle::uniform_normal_distribution<T>(
 		(minmax.first > 0) ? lim::min() : lim::min() - minmax.first + modifier,
 		(minmax.second < 0) ? lim::max() : lim::max() - minmax.second - modifier
-		)(engine);
+	)(engine);
 }
 template<typename T>
 T get_rand_for_sub(T n1, T n2, int modifier)
@@ -26,7 +26,7 @@ T get_rand_for_sub(T n1, T n2, int modifier)
 	return dxle::uniform_normal_distribution<T>(
 		(minmax.first < 0) ? lim::min() : lim::min() + minmax.first + modifier,
 		(minmax.second > 0) ? lim::max() : lim::max() + minmax.second - modifier
-		)(engine);
+	)(engine);
 }
 template<typename T>
 T get_rand_for_div1(T min, T max)
@@ -55,5 +55,4 @@ namespace detail {
 }
 template<typename T>
 T get_rand_for_div2(T n1, T n2) { return detail::get_rand_for_div2_helper<T>()(n1, n2); }
-
 #endif //DXLE_TESTS_INCLUDE_RANDOM_WRAP_HPP_
