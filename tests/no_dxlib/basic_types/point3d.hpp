@@ -361,9 +361,8 @@ namespace detail {
 		}
 	};
 }
-IUTEST_TYPED_TEST(basic_types_point3d, cross_product){
+IUTEST_TYPED_TEST(basic_types_point3d, cross_product) {
 	using type = TypeParam;
-	using lim = std::numeric_limits<type>;
 	detail::basic_types_point3d_cross_helper<type>{}();
 	const dxle::point3d_c<type> ex = { 1, 0, 0 };
 	const dxle::point3d_c<type> ey = { 0, 1, 0 };
@@ -374,4 +373,20 @@ IUTEST_TYPED_TEST(basic_types_point3d, cross_product){
 	IUTEST_ASSERT((0 == dxle::cross(ex, ex)));
 	IUTEST_ASSERT((0 == dxle::cross(ey, ey)));
 	IUTEST_ASSERT((0 == dxle::cross(ez, ez)));
+}
+IUTEST_TYPED_TEST(basic_types_point3d, distance) {
+	using type = TypeParam;
+	const dxle::point3d_c<type> zero = {};
+	const dxle::point3d_c<type> a = { 12, 15, 16 };
+	IUTEST_ASSERT(type(25) == dxle::distance(zero, a));
+	static const dxle::point3d_c<type> b[] = { { 3, 4, 0 }, { 0, 3, 4 }, { 4, 0, 3 } };
+	for (auto&& i : b) {
+		IUTEST_ASSERT(type(5) == dxle::distance(zero, i));
+	}
+	const dxle::point3d_c<type> ex = { 1, 0, 0 };
+	IUTEST_ASSERT(type(1) == dxle::distance(zero, ex));
+	const dxle::point3d_c<type> ey = { 0, 1, 0 };
+	IUTEST_ASSERT(type(1) == dxle::distance(zero, ey));
+	const dxle::point3d_c<type> ez = { 0, 0, 1 };
+	IUTEST_ASSERT(type(1) == dxle::distance(zero, ez));
 }

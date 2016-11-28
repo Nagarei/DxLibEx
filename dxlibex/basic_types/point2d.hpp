@@ -637,7 +637,7 @@ namespace dxle {
 	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2>
-	DXLE_CONSTEXPR double cross(const point_c<T1>& p1, const point_c<T2>& p2) 
+	DXLE_CONSTEXPR double cross(const point_c<T1>& p1, const point_c<T2>& p2)
 		DXLE_NOEXCEPT_IF_EXPR((
 			static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
 			+ static_cast_if<T1, double, !std::is_floating_point<T1>::value>(std::declval<T1>()) * std::declval<T2>()
@@ -657,7 +657,7 @@ namespace dxle {
 	\~english	@return	Computed result.
 	*/
 	template<typename T1, typename T2>
-	distance_result_type_t<T1, T2> distance(const point_c<T1>& p1, const point_c<T2>& p2) 
+	distance_result_type_t<T1, T2> distance(const point_c<T1>& p1, const point_c<T2>& p2)
 		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
 	{
 		return hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));

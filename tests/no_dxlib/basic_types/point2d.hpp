@@ -307,3 +307,13 @@ IUTEST_TYPED_TEST(basic_types_point2d, dot_product) {
 	IUTEST_ASSERT_EQ(type(1), dxle::dot(ex, ex));
 	IUTEST_ASSERT_EQ(type(1), dxle::dot(ey, ey));
 }
+IUTEST_TYPED_TEST(basic_types_point2d, distance) {
+	using type = TypeParam;
+	const dxle::point_c<type> zero = {};
+	const dxle::point_c<type> a = { 3, 4 };
+	IUTEST_ASSERT(type(5) == dxle::distance(zero, a));
+	const dxle::point_c<type> ex = { 1, 0 };
+	IUTEST_ASSERT(type(1) == dxle::distance(zero, ex));
+	const dxle::point_c<type> ey = { 0, 1 };
+	IUTEST_ASSERT(type(1) == dxle::distance(zero, ey));
+}
