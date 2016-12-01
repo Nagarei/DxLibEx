@@ -1,8 +1,14 @@
 var a00056 =
 [
-    [ "static_cast_if_helper", "a00046.html", "a00046" ],
-    [ "static_cast_if_helper< to, from, false, false >", "a00047.html", "a00047" ],
-    [ "static_cast_if_helper< to, from, false, true >", "a00048.html", "a00048" ],
-    [ "static_cast_if", "a00056.html#ad120a63ac31baecb32e3cc3ee7f70f47", null ],
-    [ "static_cast_if", "a00056.html#a9751d6f009ce9d367d1a6849ba9c8ff6", null ]
+    [ "DXLE_NO_CXX11_ATTRIBUTES", "a00056.html#a87c9c4bf9c6866b0e3c91a4f663663eb", null ],
+    [ "DXLE_NO_CXX11_CONSTEXPR", "a00056.html#afd3d1453f552a6985f2a3d07912034da", null ],
+    [ "DXLE_NO_CXX11_NOEXCEPT", "a00056.html#aa027cc930aeed7c02fe8d313cb11daf3", null ],
+    [ "DXLE_NO_CXX11_NOEXCEPT_EXPRESSION", "a00056.html#a541576edfd7b428c5405f55bf67079aa", null ],
+    [ "DXLE_NO_CXX11_REF_QUALIFIERS", "a00056.html#a70a5af6eea23fb4836f7eb7fe4426309", null ],
+    [ "DXLE_NO_CXX11_UNICODE_LITERALS", "a00056.html#ae1529feb4e8cc61b2ae31b84a4acca4d", null ],
+    [ "DXLE_NO_CXX11_USER_DEFINED_LITERALS", "a00056.html#a935a74078befe5d040a96c6e3d179e36", null ],
+    [ "DXLE_NO_CXX14_ATTRIBUTE_DEPRECATED", "a00056.html#a76c90f9900ddbdddcef01daf538f11f3", null ],
+    [ "DXLE_NO_CXX14_CONSTEXPR", "a00056.html#a8cd6ebf4714c13611ef410dd0af35019", null ],
+    [ "DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO", "a00056.html#a03dffd30ba4438b503ec1b1a256b611c", null ],
+    [ "DXLE_NO_CXX14_VARIABLE_TEMPLATES", "a00056.html#a101b47f5d246b06284ccdae033e3267e", null ]
 ];

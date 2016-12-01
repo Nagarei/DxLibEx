@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['cast',['Cast',['../a00001.html',1,'dxle::impl::Counter_template']]],
-  ['color_5fbase',['color_base',['../a00002.html',1,'dxle::color']]],
-  ['counter_5fiterator',['counter_iterator',['../a00003.html',1,'dxle::utility']]],
-  ['counter_5ftemplate',['Counter_template',['../a00004.html',1,'dxle::impl']]],
-  ['counter_5ftemplate_3c_20u_20_3e',['Counter_template&lt; U &gt;',['../a00004.html',1,'dxle::impl']]]
+  ['animation_5fgraph',['animation_graph',['../a00304.html',1,'dxle::graph2d']]],
+  ['animation_5fhandle_5fmanager',['animation_handle_manager',['../a00292.html',1,'dxle::graph2d::gr_impl']]],
+  ['animation_5fhandle_5fmanager_5fbace',['animation_handle_manager_bace',['../a00288.html',1,'dxle::graph2d::gr_impl']]]
 ];

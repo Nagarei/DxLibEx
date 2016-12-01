@@ -3,8 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: dxle::math::detail 名前空間</title>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DxLibEx: C:/Users/yumetodo/Documents/git/DxLibEx/dxlibex/texture/texture2d.hpp ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -14,14 +15,10 @@
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -39,40 +36,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.11 -->
+<!-- 構築: Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>総合概要</span></a></li>
-      <li class="current"><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li><a href="annotated.html"><span>クラス</span></a></li>
-      <li><a href="files.html"><span>ファイル</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="検索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="namespaces.html"><span>名前空間一覧</span></a></li>
-      <li><a href="namespacemembers.html"><span>名前空間メンバ</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -104,56 +80,222 @@ $(document).ready(function(){initNavTree('a00113.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
 <a href="#func-members">関数</a>  </div>
   <div class="headertitle">
-<div class="title">dxle::math::detail 名前空間</div>  </div>
+<div class="title">texture2d.hpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00068_source.html">dxlibex/config/no_min_max.h</a>&quot;</code><br />
+<code>#include &quot;DxLib.h&quot;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00062_source.html">dxlibex/config/defines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00110_source.html">texture2d/prototype2d.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">texture2d/texture2d_handle_manager.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00035_source.html">dxlibex/basic_types.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00119_source.html">dxlibex/thread.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01026_source.html">texture2d/texture2d.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+texture2d.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00114.png" border="0" usemap="#_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2texture_2texture2d_8hpp" alt=""/></div>
+<map name="_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2texture_2texture2d_8hpp" id="_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2texture_2texture2d_8hpp">
+<area shape="rect" id="node2" href="a00068.html" title="dxlibex/config/no_min\l_max.h" alt="" coords="1273,795,1420,836"/>
+<area shape="rect" id="node10" href="a00062.html" title="dxlibex/config/defines.h" alt="" coords="1301,638,1459,665"/>
+<area shape="rect" id="node13" href="a00110.html" title="texture2d/prototype2d.hpp" alt="" coords="1141,199,1315,225"/>
+<area shape="rect" id="node14" href="a00035.html" title="dxlibex/basic_types.hpp" alt="" coords="2105,273,2268,300"/>
+<area shape="rect" id="node45" href="a00116.html" title="texture2d/texture2d\l_handle_manager.hpp" alt="" coords="64,109,213,151"/>
+<area shape="rect" id="node49" href="a00119.html" title="dxlibex/thread.hpp" alt="" coords="3892,199,4020,225"/>
+<area shape="rect" id="node50" href="a01026.html" title="texture2d/texture2d.hpp" alt="" coords="3557,199,3715,225"/>
+<area shape="rect" id="node11" href="a00071.html" title="dxlibex/config/suffix.hpp" alt="" coords="1384,720,1544,747"/>
+<area shape="rect" id="node12" href="a00059.html" title="dxlibex/config/compiler.hpp" alt="" coords="1444,802,1623,829"/>
+<area shape="rect" id="node15" href="a00017.html" title="dxlibex/basic_types\l/point2d.hpp" alt="" coords="2809,348,2946,389"/>
+<area shape="rect" id="node38" href="a00020.html" title="dxlibex/basic_types\l/point3d.hpp" alt="" coords="1390,348,1527,389"/>
+<area shape="rect" id="node40" href="a00023.html" title="dxlibex/basic_types\l/size.hpp" alt="" coords="2118,348,2255,389"/>
+<area shape="rect" id="node41" href="a00029.html" title="dxlibex/basic_types\l/tchar.hpp" alt="" coords="426,348,563,389"/>
+<area shape="rect" id="node16" href="a00131.html" title="dxlibex/type_traits\l/first_enabled.hpp" alt="" coords="2127,541,2255,583"/>
+<area shape="rect" id="node18" href="a00128.html" title="dxlibex/type_traits\l/enable_if.hpp" alt="" coords="1781,631,1909,672"/>
+<area shape="rect" id="node19" href="a00146.html" title="dxlibex/type_traits\l/is_representable.hpp" alt="" coords="2336,445,2483,486"/>
+<area shape="rect" id="node21" href="a00143.html" title="dxlibex/type_traits\l/is_nothrow.hpp" alt="" coords="2557,631,2685,672"/>
+<area shape="rect" id="node22" href="a00137.html" title="dxlibex/type_traits\l/ignore.hpp" alt="" coords="3517,541,3645,583"/>
+<area shape="rect" id="node23" href="a00032.html" title="dxlibex/basic_types\l/use_big_type_when_one\l_byte_t.hpp" alt="" coords="2043,437,2211,493"/>
+<area shape="rect" id="node24" href="a00026.html" title="dxlibex/basic_types\l/stdint.hpp" alt="" coords="2609,445,2746,486"/>
+<area shape="rect" id="node25" href="a00014.html" title="dxlibex/basic_types\l/distance_result_type_t.hpp" alt="" coords="1835,445,2018,486"/>
+<area shape="rect" id="node26" href="a00011.html" title="dxlibex/basic_types\l/coordinate_operator\l_bool_helper.hpp" alt="" coords="1671,437,1811,493"/>
+<area shape="rect" id="node29" href="a00008.html" title="dxlibex/algorithm.hpp" alt="" coords="3179,452,3325,479"/>
+<area shape="rect" id="node32" href="a00101.html" title="dxlibex/math.hpp" alt="" coords="2931,452,3053,479"/>
+<area shape="rect" id="node33" href="a00077.html" title="dxlibex/cstdlib.hpp" alt="" coords="1068,452,1199,479"/>
+<area shape="rect" id="node34" href="a00038.html" title="dxlibex/char_constant.hpp" alt="" coords="1223,452,1398,479"/>
+<area shape="rect" id="node20" href="a00125.html" title="dxlibex/type_traits\l/common_type.hpp" alt="" coords="2295,631,2428,672"/>
+<area shape="rect" id="node27" href="a00140.html" title="dxlibex/type_traits\l/is_castable.hpp" alt="" coords="2052,631,2180,672"/>
+<area shape="rect" id="node28" href="a00149.html" title="dxlibex/type_traits\l/is_well_format.hpp" alt="" coords="1779,541,1912,583"/>
+<area shape="rect" id="node30" href="a00002.html" title="dxlibex/algorithm/cast\l_if.hpp" alt="" coords="3091,541,3240,583"/>
+<area shape="rect" id="node31" href="a00005.html" title="dxlibex/algorithm/safe\l_dist.hpp" alt="" coords="1454,541,1602,583"/>
+<area shape="rect" id="node47" href="a00086.html" title="dxlibex/helper.hpp" alt="" coords="65,549,191,575"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00115.png" border="0" usemap="#_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2texture_2texture2d_8hppdep" alt=""/></div>
+<map name="_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2texture_2texture2d_8hppdep" id="_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2texture_2texture2d_8hppdep">
+<area shape="rect" id="node2" href="a00083.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/graph2d.hpp" alt="" coords="5,213,219,255"/>
+<area shape="rect" id="node4" href="a00107.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/animation_graph.hpp" alt="" coords="81,109,285,165"/>
+<area shape="rect" id="node5" href="a01026.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/texture2d/texture2d.hpp" alt="" coords="309,109,513,165"/>
+<area shape="rect" id="node3" href="a00080.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/dxlibex.hpp" alt="" coords="8,303,216,344"/>
+</map>
+</div>
+</div>
+<p><a href="a00113_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00324.html">dxle::graph2d::screen_mutex_c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00328.html">dxle::graph2d::texture2d</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html">dxle::graph2d::screen</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画可能画像クラス  <a href="a00332.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00336.html">dxle::graph2d::shared_texture2d</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00308.html">dxle::graph2d::static_derivative_texture2d&lt; N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">N = AllNum  <a href="a00308.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html">dxle::graph2d::derivative_texture2d</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:a00161"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161.html">dxle</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00170"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html">dxle::graph2d</a></td></tr>
+<tr class="memdesc:a00170"><td class="mdescLeft">&#160;</td><td class="mdescRight">2Dグラフィック <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a787e180ef8112015c7a8cdd42d825c35"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
-<tr class="memitem:a787e180ef8112015c7a8cdd42d825c35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00077.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00113.html#a787e180ef8112015c7a8cdd42d825c35">broken_signbit</a> (FloatType x) <a class="el" href="a00077.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
-<tr class="separator:a787e180ef8112015c7a8cdd42d825c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d7d09c76aa1975568038d70f0dbf5c1"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a8d7d09c76aa1975568038d70f0dbf5c1">dxle::graph2d::MakeGraph</a> (int SizeX, int SizeY, bool NotUse3DFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a8d7d09c76aa1975568038d70f0dbf5c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定サイズのグラフィックを作成する  <a href="a00170.html#a8d7d09c76aa1975568038d70f0dbf5c1">[詳解]</a><br /></td></tr>
+<tr class="separator:a8d7d09c76aa1975568038d70f0dbf5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6a33e223b87eb2b96e4a1b34f12491"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a7a6a33e223b87eb2b96e4a1b34f12491">dxle::graph2d::MakeGraph</a> (const sizei &amp;size, bool NotUse3DFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a7a6a33e223b87eb2b96e4a1b34f12491"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定サイズのグラフィックを作成する  <a href="a00170.html#a7a6a33e223b87eb2b96e4a1b34f12491">[詳解]</a><br /></td></tr>
+<tr class="separator:a7a6a33e223b87eb2b96e4a1b34f12491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95715cf5e79bdc504eb411e8b4f47e3e"><td class="memItemLeft" align="right" valign="top">screen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a95715cf5e79bdc504eb411e8b4f47e3e">dxle::graph2d::MakeScreen</a> (int SizeX, int SizeY, bool UseAlphaChannel=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a95715cf5e79bdc504eb411e8b4f47e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen で描画対象にできるグラフィックを作成する  <a href="a00170.html#a95715cf5e79bdc504eb411e8b4f47e3e">[詳解]</a><br /></td></tr>
+<tr class="separator:a95715cf5e79bdc504eb411e8b4f47e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af806c1b63d4094e5f6894a1351888398"><td class="memItemLeft" align="right" valign="top">screen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#af806c1b63d4094e5f6894a1351888398">dxle::graph2d::MakeScreen</a> (const sizei &amp;size, bool UseAlphaChannel=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:af806c1b63d4094e5f6894a1351888398"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetDrawScreen で描画対象にできるグラフィックを作成する  <a href="a00170.html#af806c1b63d4094e5f6894a1351888398">[詳解]</a><br /></td></tr>
+<tr class="separator:af806c1b63d4094e5f6894a1351888398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8259d3e713cbdcf878bfdf2f8e87454a"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a8259d3e713cbdcf878bfdf2f8e87454a">dxle::graph2d::DerivationGraph</a> (int SrcX, int SrcY, int Width, int Height, const texture2d &amp;SrcGraphHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a8259d3e713cbdcf878bfdf2f8e87454a"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する  <a href="a00170.html#a8259d3e713cbdcf878bfdf2f8e87454a">[詳解]</a><br /></td></tr>
+<tr class="separator:a8259d3e713cbdcf878bfdf2f8e87454a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b17be898a5385a2dc1ecc44706cb86"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a45b17be898a5385a2dc1ecc44706cb86">dxle::graph2d::DerivationGraph</a> (const pointi &amp;src, const sizei &amp;size, const texture2d &amp;SrcGraphHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a45b17be898a5385a2dc1ecc44706cb86"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のグラフィックの指定部分だけを抜き出して新たなグラフィックを作成する  <a href="a00170.html#a45b17be898a5385a2dc1ecc44706cb86">[詳解]</a><br /></td></tr>
+<tr class="separator:a45b17be898a5385a2dc1ecc44706cb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39bbbd60f5524db96cc9cac521047eb9"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a39bbbd60f5524db96cc9cac521047eb9">dxle::graph2d::LoadBmpToGraph</a> (const TCHAR *FileName, int TextureFlag, int ReverseFlag, int SurfaceMode=DX_MOVIESURFACE_NORMAL) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a39bbbd60f5524db96cc9cac521047eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックを作成する  <a href="a00170.html#a39bbbd60f5524db96cc9cac521047eb9">[詳解]</a><br /></td></tr>
+<tr class="separator:a39bbbd60f5524db96cc9cac521047eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfc8ce70bb528ba3fba47d1ef6bd1d98"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#acfc8ce70bb528ba3fba47d1ef6bd1d98">dxle::graph2d::LoadBmpToGraph</a> (const tstring &amp;FileName, int TextureFlag, int ReverseFlag, int SurfaceMode=DX_MOVIESURFACE_NORMAL) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:acfc8ce70bb528ba3fba47d1ef6bd1d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックを作成する  <a href="a00170.html#acfc8ce70bb528ba3fba47d1ef6bd1d98">[詳解]</a><br /></td></tr>
+<tr class="separator:acfc8ce70bb528ba3fba47d1ef6bd1d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17392c0065c1ae87cd615bcbcfaf08c"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#ab17392c0065c1ae87cd615bcbcfaf08c">dxle::graph2d::LoadGraph</a> (const TCHAR *FileName, bool NotUse3DFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:ab17392c0065c1ae87cd615bcbcfaf08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックを作成する  <a href="a00170.html#ab17392c0065c1ae87cd615bcbcfaf08c">[詳解]</a><br /></td></tr>
+<tr class="separator:ab17392c0065c1ae87cd615bcbcfaf08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a4cd12d5d8226685dba28c1679c42be"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a1a4cd12d5d8226685dba28c1679c42be">dxle::graph2d::LoadGraph</a> (const tstring &amp;FileName, bool NotUse3DFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a1a4cd12d5d8226685dba28c1679c42be"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックを作成する  <a href="a00170.html#a1a4cd12d5d8226685dba28c1679c42be">[詳解]</a><br /></td></tr>
+<tr class="separator:a1a4cd12d5d8226685dba28c1679c42be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2babae994a4747ac4f60f1ea523049bc"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a2babae994a4747ac4f60f1ea523049bc">dxle::graph2d::LoadReverseGraph</a> (const TCHAR *FileName, bool NotUse3DFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a2babae994a4747ac4f60f1ea523049bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを反転したものでグラフィックを作成する  <a href="a00170.html#a2babae994a4747ac4f60f1ea523049bc">[詳解]</a><br /></td></tr>
+<tr class="separator:a2babae994a4747ac4f60f1ea523049bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e47b546f95f9cb473eb67f4abca75b2"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a0e47b546f95f9cb473eb67f4abca75b2">dxle::graph2d::LoadReverseGraph</a> (const tstring &amp;FileName, bool NotUse3DFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a0e47b546f95f9cb473eb67f4abca75b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを反転したものでグラフィックを作成する  <a href="a00170.html#a0e47b546f95f9cb473eb67f4abca75b2">[詳解]</a><br /></td></tr>
+<tr class="separator:a0e47b546f95f9cb473eb67f4abca75b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800ebb26b6a447cc053729696f496952"><td class="memItemLeft" align="right" valign="top">derivative_texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a800ebb26b6a447cc053729696f496952">dxle::graph2d::LoadDivGraph</a> (const TCHAR *FileName, int AllNum, const dxle::sizei &amp;Num, const dxle::sizei &amp;Size, bool NotUse3DFlag=false)</td></tr>
+<tr class="memdesc:a800ebb26b6a447cc053729696f496952"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを分割してグラフィックハンドルを作成する  <a href="a00170.html#a800ebb26b6a447cc053729696f496952">[詳解]</a><br /></td></tr>
+<tr class="separator:a800ebb26b6a447cc053729696f496952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa8cb45cb6d2cd0209fef2863684da2"><td class="memItemLeft" align="right" valign="top">derivative_texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a2fa8cb45cb6d2cd0209fef2863684da2">dxle::graph2d::LoadDivGraph</a> (const tstring &amp;FileName, int AllNum, const dxle::sizei &amp;Num, const dxle::sizei &amp;Size, bool NotUse3DFlag=false)</td></tr>
+<tr class="memdesc:a2fa8cb45cb6d2cd0209fef2863684da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルを分割してグラフィックハンドルを作成する  <a href="a00170.html#a2fa8cb45cb6d2cd0209fef2863684da2">[詳解]</a><br /></td></tr>
+<tr class="separator:a2fa8cb45cb6d2cd0209fef2863684da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7736981f1463be2688427d952cc119e"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#ad7736981f1463be2688427d952cc119e">dxle::graph2d::CreateGraphFromMem</a> (const void *RGBFileImage, int RGBFileImageSize, const void *AlphaFileImage=nullptr, int AlphaFileImageSize=0, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:ad7736981f1463be2688427d952cc119e"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上の画像イメージからグラフィックを作成する  <a href="a00170.html#ad7736981f1463be2688427d952cc119e">[詳解]</a><br /></td></tr>
+<tr class="separator:ad7736981f1463be2688427d952cc119e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf89201f073329e8fff99a5998d07f1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#aaf89201f073329e8fff99a5998d07f1a">dxle::graph2d::ReCreateGraphFromMem</a> (const void *RGBFileImage, int RGBFileImageSize, texture2d &amp;GrHandle, const void *AlphaFileImage=nullptr, int AlphaFileImageSize=0, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:aaf89201f073329e8fff99a5998d07f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上の画像イメージから既存のグラフィックにデータを転送する  <a href="a00170.html#aaf89201f073329e8fff99a5998d07f1a">[詳解]</a><br /></td></tr>
+<tr class="separator:aaf89201f073329e8fff99a5998d07f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edfa14031ebc346355f7cb95f96c9a3"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a7edfa14031ebc346355f7cb95f96c9a3">dxle::graph2d::CreateDXGraph</a> (const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a7edfa14031ebc346355f7cb95f96c9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからサイズを割り出し、それに合ったグラフィックを作成する  <a href="a00170.html#a7edfa14031ebc346355f7cb95f96c9a3">[詳解]</a><br /></td></tr>
+<tr class="separator:a7edfa14031ebc346355f7cb95f96c9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bdd6656abf56738c69d32ebb78c5b00"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a3bdd6656abf56738c69d32ebb78c5b00">dxle::graph2d::CreateGraphFromGraphImage</a> (const DxLib::BASEIMAGE *RgbBaseImage, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a3bdd6656abf56738c69d32ebb78c5b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックを作成する  <a href="a00170.html#a3bdd6656abf56738c69d32ebb78c5b00">[詳解]</a><br /></td></tr>
+<tr class="separator:a3bdd6656abf56738c69d32ebb78c5b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a12932ad04c1ac0b17637d0bf8594b"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a25a12932ad04c1ac0b17637d0bf8594b">dxle::graph2d::CreateGraphFromGraphImage</a> (const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a25a12932ad04c1ac0b17637d0bf8594b"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックを作成する  <a href="a00170.html#a25a12932ad04c1ac0b17637d0bf8594b">[詳解]</a><br /></td></tr>
+<tr class="separator:a25a12932ad04c1ac0b17637d0bf8594b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e1929fc900553b3db6fb273b69ba81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a61e1929fc900553b3db6fb273b69ba81">dxle::graph2d::ReCreateGraphFromGraphImage</a> (const DxLib::BASEIMAGE *RgbBaseImage, texture2d &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a61e1929fc900553b3db6fb273b69ba81"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックにデータを転送する  <a href="a00170.html#a61e1929fc900553b3db6fb273b69ba81">[詳解]</a><br /></td></tr>
+<tr class="separator:a61e1929fc900553b3db6fb273b69ba81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceb5755c33ec31e65823a1c4d8544da5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#aceb5755c33ec31e65823a1c4d8544da5">dxle::graph2d::ReCreateGraphFromGraphImage</a> (const DxLib::BASEIMAGE *RgbBaseImage, const DxLib::BASEIMAGE *AlphaBaseImage, texture2d &amp;GrHandle, bool TextureFlag=true, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:aceb5755c33ec31e65823a1c4d8544da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックにデータを転送する  <a href="a00170.html#aceb5755c33ec31e65823a1c4d8544da5">[詳解]</a><br /></td></tr>
+<tr class="separator:aceb5755c33ec31e65823a1c4d8544da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368ba19de13ecbce69b7512b9564b859"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a368ba19de13ecbce69b7512b9564b859">dxle::graph2d::CreateGraph</a> (int Width, int Height, int Pitch, const void *RGBImage, const void *AlphaImage=nullptr, const texture2d &amp;GrHandle=texture2d()) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a368ba19de13ecbce69b7512b9564b859"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックを作成する  <a href="a00170.html#a368ba19de13ecbce69b7512b9564b859">[詳解]</a><br /></td></tr>
+<tr class="separator:a368ba19de13ecbce69b7512b9564b859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8725b51547750e48f35147e7758c432"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#af8725b51547750e48f35147e7758c432">dxle::graph2d::CreateGraph</a> (const sizei &amp;size, int Pitch, const void *RGBImage, const void *AlphaImage=nullptr, const texture2d &amp;GrHandle=texture2d()) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:af8725b51547750e48f35147e7758c432"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックを作成する  <a href="a00170.html#af8725b51547750e48f35147e7758c432">[詳解]</a><br /></td></tr>
+<tr class="separator:af8725b51547750e48f35147e7758c432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4ebf6a7dc54aa7496fe5146120c9182"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#ac4ebf6a7dc54aa7496fe5146120c9182">dxle::graph2d::ReCreateGraph</a> (int Width, int Height, int Pitch, const void *RGBImage, texture2d &amp;GrHandle, const void *AlphaImage=nullptr) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:ac4ebf6a7dc54aa7496fe5146120c9182"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックを再作成する  <a href="a00170.html#ac4ebf6a7dc54aa7496fe5146120c9182">[詳解]</a><br /></td></tr>
+<tr class="separator:ac4ebf6a7dc54aa7496fe5146120c9182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a238b3197ffc1f90fd3ae863e28c832"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a5a238b3197ffc1f90fd3ae863e28c832">dxle::graph2d::ReCreateGraph</a> (const sizei &amp;size, int Pitch, const void *RGBImage, texture2d &amp;GrHandle, const void *AlphaImage=nullptr) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a5a238b3197ffc1f90fd3ae863e28c832"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ上のビットマップイメージからグラフィックを再作成する  <a href="a00170.html#a5a238b3197ffc1f90fd3ae863e28c832">[詳解]</a><br /></td></tr>
+<tr class="separator:a5a238b3197ffc1f90fd3ae863e28c832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795a906fe5dd5db4fd05cfeb980ee59d"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a795a906fe5dd5db4fd05cfeb980ee59d">dxle::graph2d::CreateGraphFromBaseImage</a> (const DxLib::BASEIMAGE *BaseImage) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a795a906fe5dd5db4fd05cfeb980ee59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータからグラフィックを作成する  <a href="a00170.html#a795a906fe5dd5db4fd05cfeb980ee59d">[詳解]</a><br /></td></tr>
+<tr class="separator:a795a906fe5dd5db4fd05cfeb980ee59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa10bd4a6c684aed7eb74e698dbe3442"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#afa10bd4a6c684aed7eb74e698dbe3442">dxle::graph2d::CreateGraphFromRectBaseImage</a> (const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:afa10bd4a6c684aed7eb74e698dbe3442"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使ってグラフィックを作成する  <a href="a00170.html#afa10bd4a6c684aed7eb74e698dbe3442">[詳解]</a><br /></td></tr>
+<tr class="separator:afa10bd4a6c684aed7eb74e698dbe3442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bd0341bdfd0fc08081f4390ae242ff"><td class="memItemLeft" align="right" valign="top">texture2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#af3bd0341bdfd0fc08081f4390ae242ff">dxle::graph2d::CreateGraphFromRectBaseImage</a> (const DxLib::BASEIMAGE *BaseImage, const pointi &amp;p, const sizei &amp;size) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:af3bd0341bdfd0fc08081f4390ae242ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使ってグラフィックを作成する  <a href="a00170.html#af3bd0341bdfd0fc08081f4390ae242ff">[詳解]</a><br /></td></tr>
+<tr class="separator:af3bd0341bdfd0fc08081f4390ae242ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a13762a8669b47488af673673d0224f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a5a13762a8669b47488af673673d0224f">dxle::graph2d::ReCreateGraphFromBaseImage</a> (const DxLib::BASEIMAGE *BaseImage, texture2d &amp;GrHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a5a13762a8669b47488af673673d0224f"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータから既存のグラフィックに画像データを転送する  <a href="a00170.html#a5a13762a8669b47488af673673d0224f">[詳解]</a><br /></td></tr>
+<tr class="separator:a5a13762a8669b47488af673673d0224f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8429526bf9b94376245eafb85e606cdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a8429526bf9b94376245eafb85e606cdc">dxle::graph2d::ReCreateGraphFromRectBaseImage</a> (const DxLib::BASEIMAGE *BaseImage, int x, int y, int SizeX, int SizeY, texture2d &amp;GrHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a8429526bf9b94376245eafb85e606cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する  <a href="a00170.html#a8429526bf9b94376245eafb85e606cdc">[詳解]</a><br /></td></tr>
+<tr class="separator:a8429526bf9b94376245eafb85e606cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6351e2f1246b9bb3bd48a8f7989a7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a5b6351e2f1246b9bb3bd48a8f7989a7d">dxle::graph2d::ReCreateGraphFromRectBaseImage</a> (const DxLib::BASEIMAGE *BaseImage, const pointi &amp;p, const sizei &amp;size, texture2d &amp;GrHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a5b6351e2f1246b9bb3bd48a8f7989a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">基本イメージデータの指定の領域を使って既存のグラフィックに画像データを転送する  <a href="a00170.html#a5b6351e2f1246b9bb3bd48a8f7989a7d">[詳解]</a><br /></td></tr>
+<tr class="separator:a5b6351e2f1246b9bb3bd48a8f7989a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd2d15b0d12423a9da91ad39bb407e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a4cd2d15b0d12423a9da91ad39bb407e9">dxle::graph2d::ReloadGraph</a> (const TCHAR *FileName, texture2d &amp;GrHandle, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a4cd2d15b0d12423a9da91ad39bb407e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックへ画像データを転送する  <a href="a00170.html#a4cd2d15b0d12423a9da91ad39bb407e9">[詳解]</a><br /></td></tr>
+<tr class="separator:a4cd2d15b0d12423a9da91ad39bb407e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d63e42588d1ab2467460b346da68f87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a8d63e42588d1ab2467460b346da68f87">dxle::graph2d::ReloadGraph</a> (const tstring &amp;FileName, texture2d &amp;GrHandle, bool ReverseFlag=false) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a8d63e42588d1ab2467460b346da68f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像ファイルからグラフィックへ画像データを転送する  <a href="a00170.html#a8d63e42588d1ab2467460b346da68f87">[詳解]</a><br /></td></tr>
+<tr class="separator:a8d63e42588d1ab2467460b346da68f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6526e3f5d1a3bed11a21f9245e1726f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a6526e3f5d1a3bed11a21f9245e1726f8">dxle::graph2d::ReloadReverseGraph</a> (const TCHAR *FileName, texture2d &amp;GrHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a6526e3f5d1a3bed11a21f9245e1726f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReloadGraph の画像反転処理追加版  <a href="a00170.html#a6526e3f5d1a3bed11a21f9245e1726f8">[詳解]</a><br /></td></tr>
+<tr class="separator:a6526e3f5d1a3bed11a21f9245e1726f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5a5fe97875fad467fda895f4ec3698"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00170.html#a1c5a5fe97875fad467fda895f4ec3698">dxle::graph2d::ReloadReverseGraph</a> (const tstring &amp;FileName, texture2d &amp;GrHandle) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="memdesc:a1c5a5fe97875fad467fda895f4ec3698"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReloadGraph の画像反転処理追加版  <a href="a00170.html#a1c5a5fe97875fad467fda895f4ec3698">[詳解]</a><br /></td></tr>
+<tr class="separator:a1c5a5fe97875fad467fda895f4ec3698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
-<a class="anchor" id="a787e180ef8112015c7a8cdd42d825c35"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00077.html#afd7a2c28235dd4267baa4ca4c14e9adc">DXLE_CONSTEXPR</a> bool dxle::math::detail::broken_signbit </td>
-          <td>(</td>
-          <td class="paramtype">FloatType&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p> <a class="el" href="a00086_source.html">copysign.hpp</a> の <a class="el" href="a00086_source.html#l00029">29</a> 行目に定義があります。</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00105.html">dxle</a></li><li class="navelem"><a class="el" href="a00112.html">math</a></li><li class="navelem"><a class="el" href="a00113.html">detail</a></li>
-    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_ec171c71688a065db614e693e3e81a4a.html">texture</a></li><li class="navelem"><a class="el" href="a00113.html">texture2d.hpp</a></li>
+    <li class="footer">2016年12月01日(木) 21時24分45秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
   </ul>
 </div>
 </body>

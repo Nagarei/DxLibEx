@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['first_5fenabled',['first_enabled',['../a00011.html',1,'dxle::type_traits']]],
-  ['first_5fenabled_3c_20args_2e_2e_2e_20_3e',['first_enabled&lt; Args... &gt;',['../a00011.html',1,'dxle::type_traits']]],
-  ['first_5fenabled_3c_20enable_5fif_3c_201_21_3dsizeof_28t_29_2c_20t_20_3e_2c_20enable_5fif_3c_20std_3a_3ais_5fsigned_3c_20t_20_3e_3a_3avalue_2c_20int_20_3e_2c_20unsigned_20int_20_3e',['first_enabled&lt; enable_if&lt; 1!=sizeof(T), T &gt;, enable_if&lt; std::is_signed&lt; T &gt;::value, int &gt;, unsigned int &gt;',['../a00011.html',1,'dxle::type_traits']]],
-  ['first_5fenabled_3c_20std_3a_3aenable_5fif_3c_20false_2c_20t_20_3e_2c_20args_2e_2e_2e_20_3e',['first_enabled&lt; std::enable_if&lt; false, T &gt;, Args... &gt;',['../a00012.html',1,'dxle::type_traits']]],
-  ['first_5fenabled_3c_20std_3a_3aenable_5fif_3c_20true_2c_20t_20_3e_2c_20args_2e_2e_2e_20_3e',['first_enabled&lt; std::enable_if&lt; true, T &gt;, Args... &gt;',['../a00013.html',1,'dxle::type_traits']]],
-  ['first_5fenabled_3c_20t_2c_20args_2e_2e_2e_20_3e',['first_enabled&lt; T, Args... &gt;',['../a00014.html',1,'dxle::type_traits']]],
-  ['first_5ftype',['first_type',['../a00015.html',1,'dxle::type_traits']]],
-  ['float_5fpromote',['float_promote',['../a00016.html',1,'dxle::type_traits']]],
-  ['float_5fpromote1',['float_promote1',['../a00017.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote2',['float_promote2',['../a00018.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote2_3c_20t_2c_20u_2c_20true_20_3e',['float_promote2&lt; T, U, true &gt;',['../a00019.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote_5fimpl',['float_promote_impl',['../a00020.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote_5fimpl_3c_20dxle_3a_3atype_5ftraits_3a_3adetail_3a_3afloat_5fpromote2_3c_20t_2c_20u_20_3e_3a_3atype_2c_20tail_2e_2e_2e_20_3e',['float_promote_impl&lt; dxle::type_traits::detail::float_promote2&lt; T, U &gt;::type, Tail... &gt;',['../a00020.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote_5fimpl_3c_20std_3a_3aremove_5fcv_3c_20types_20_3e_3a_3atype_2e_2e_2e_20_3e',['float_promote_impl&lt; std::remove_cv&lt; Types &gt;::type... &gt;',['../a00020.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote_5fimpl_3c_20t_20_3e',['float_promote_impl&lt; T &gt;',['../a00021.html',1,'dxle::type_traits::detail']]],
-  ['float_5fpromote_5fimpl_3c_20t_2c_20u_2c_20tail_2e_2e_2e_20_3e',['float_promote_impl&lt; T, U, Tail... &gt;',['../a00022.html',1,'dxle::type_traits::detail']]]
+  ['derivative_5ftexture2d',['derivative_texture2d',['../a00340.html',1,'dxle::graph2d']]],
+  ['distance_5fresult_5ftype',['distance_result_type',['../a00220.html',1,'dxle']]],
+  ['distance_5fresult_5ftype_5fimpl',['distance_result_type_impl',['../a00208.html',1,'dxle::detail']]],
+  ['distance_5fresult_5ftype_5fimpl_3c_20decltype_28std_3a_3adeclval_3c_20std_3a_3aremove_5fcv_5ft_3c_20t1_20_3e_3e_28_29_20_2d_20std_3a_3adeclval_3c_20std_3a_3aremove_5fcv_5ft_3c_20t2_20_3e_3e_28_29_29_3e',['distance_result_type_impl&lt; decltype(std::declval&lt; std::remove_cv_t&lt; T1 &gt;&gt;() - std::declval&lt; std::remove_cv_t&lt; T2 &gt;&gt;())&gt;',['../a00208.html',1,'dxle::detail']]],
+  ['distance_5fresult_5ftype_5fimpl_3c_20t_2c_20false_2c_20true_20_3e',['distance_result_type_impl&lt; T, false, true &gt;',['../a00212.html',1,'dxle::detail']]],
+  ['distance_5fresult_5ftype_5fimpl_3c_20t_2c_20true_2c_20false_20_3e',['distance_result_type_impl&lt; T, true, false &gt;',['../a00216.html',1,'dxle::detail']]],
+  ['dx_5fcolor',['dx_color',['../a00264.html',1,'dxle::color']]],
+  ['dx_5fcolor_5fparam',['dx_color_param',['../a00268.html',1,'dxle::color']]]
 ];

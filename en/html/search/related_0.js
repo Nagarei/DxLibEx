@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['operator_2b',['operator+',['../a00004.html#a25d771348467e442db64ce14c7c1e4b4',1,'dxle::impl::Counter_template']]],
-  ['operator_2d',['operator-',['../a00004.html#aa7619e78cc35703ca893b5fcb5187428',1,'dxle::impl::Counter_template']]]
+  ['animation_5fhandle_5fmanager',['animation_handle_manager',['../a00292.html#a9fbade16557e9c8a516140476bdce177',1,'dxle::graph2d::gr_impl::animation_handle_manager']]]
 ];

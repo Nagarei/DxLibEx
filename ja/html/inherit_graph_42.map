@@ -1,3 +1,4 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node2" href="$a00003.html" title="dxle::utility::counter\l_iterator\&lt; T, \&gt;" alt="" coords="116,5,252,47"/>
+<area shape="rect" id="node1" href="$a00364.html" title="dxle::type_traits::\lfirst_enabled\&lt; enable\l_if\&lt; 1 !=sizeof(T), T\l \&gt;, enable_if\&lt; std::is\l_signed\&lt; T \&gt;::value, int\l \&gt;, unsigned int \&gt;" alt="" coords="5,5,163,105"/>
+<area shape="rect" id="node2" href="$a00240.html" title="dxle::detail::use_big\l_type_when_one_byte_impl\l\&lt; T, true \&gt;" alt="" coords="211,27,393,83"/>
 </map>

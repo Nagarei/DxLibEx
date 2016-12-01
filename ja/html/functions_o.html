@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>DxLibEx: クラスメンバ</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -14,14 +15,10 @@
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -39,79 +36,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.11 -->
+<!-- 構築: Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>総合概要</span></a></li>
-      <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
-      <li><a href="files.html"><span>ファイル</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="検索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
-      <li><a href="classes.html"><span>クラス索引</span></a></li>
-      <li><a href="inherits.html"><span>クラス階層</span></a></li>
-      <li class="current"><a href="functions.html"><span>クラスメンバ</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li class="current"><a href="functions.html"><span>全て</span></a></li>
-      <li><a href="functions_func.html"><span>関数</span></a></li>
-      <li><a href="functions_vars.html"><span>変数</span></a></li>
-      <li><a href="functions_type.html"><span>型定義</span></a></li>
-      <li><a href="functions_enum.html"><span>列挙型</span></a></li>
-      <li><a href="functions_rela.html"><span>関連関数</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow4" class="tabs3">
-    <ul class="tablist">
-      <li><a href="functions.html#index_b"><span>b</span></a></li>
-      <li><a href="functions_c.html#index_c"><span>c</span></a></li>
-      <li><a href="functions_d.html#index_d"><span>d</span></a></li>
-      <li><a href="functions_e.html#index_e"><span>e</span></a></li>
-      <li><a href="functions_f.html#index_f"><span>f</span></a></li>
-      <li><a href="functions_g.html#index_g"><span>g</span></a></li>
-      <li><a href="functions_h.html#index_h"><span>h</span></a></li>
-      <li><a href="functions_i.html#index_i"><span>i</span></a></li>
-      <li><a href="functions_l.html#index_l"><span>l</span></a></li>
-      <li><a href="functions_m.html#index_m"><span>m</span></a></li>
-      <li><a href="functions_n.html#index_n"><span>n</span></a></li>
-      <li class="current"><a href="functions_o.html#index_o"><span>o</span></a></li>
-      <li><a href="functions_p.html#index_p"><span>p</span></a></li>
-      <li><a href="functions_r.html#index_r"><span>r</span></a></li>
-      <li><a href="functions_s.html#index_s"><span>s</span></a></li>
-      <li><a href="functions_t.html#index_t"><span>t</span></a></li>
-      <li><a href="functions_u.html#index_u"><span>u</span></a></li>
-      <li><a href="functions_v.html#index_v"><span>v</span></a></li>
-      <li><a href="functions_w.html#index_w"><span>w</span></a></li>
-      <li><a href="functions_x.html#index_x"><span>x</span></a></li>
-      <li><a href="functions_y.html#index_y"><span>y</span></a></li>
-      <li><a href="functions_z.html#index_z"><span>z</span></a></li>
-      <li><a href="functions_0x7e.html#index_0x7e"><span>~</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -144,127 +81,144 @@ $(document).ready(function(){initNavTree('functions_o.html','');});
 <div class="contents">
 <div class="textblock">全クラスメンバ一覧です。各メンバが属するクラスへのリンクがあります。</div>
 
-<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<h3><a id="index_o"></a>- o -</h3><ul>
 <li>operator bool()
-: <a class="el" href="a00039.html#ae9ed45e59291f84f7850d78af9aea126">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#afc037265978d8d50a3e8b18a1b60ae1d">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#a6e0cac91fcf1c416f42570ac5ca6bcc4">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#a09cc6a0e7371f8448e45cb045b9c7551">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#af1a1780e0871c9e536e85adad3a9a01b">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#a2e55386b9faba45eab1d07910a39e059">dxle::size_c&lt; T, &gt;</a>
+</li>
+<li>operator const texture2d &amp;()
+: <a class="el" href="a00336.html#af40021b54f1f8550f8d2f214732367ef">dxle::graph2d::shared_texture2d</a>
 </li>
 <li>operator point3d_c&lt; Tp2_ &gt;()
-: <a class="el" href="a00039.html#a55979046d0613684e0863270b8e7d4ed">dxle::point3d_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#a3afb38048780997f0b59be79165afe34">dxle::point3d_c&lt; T, &gt;</a>
 </li>
 <li>operator size_c&lt; Tp2_ &gt;()
-: <a class="el" href="a00044.html#a2c2061fd5beb26ee44d2e23480081002">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00224.html#a98a13dc94bc17fce93e29732bc56de7a">dxle::size_c&lt; T, &gt;</a>
 </li>
 <li>operator std::pair&lt; Tp2_, Tp2_ &gt;()
-: <a class="el" href="a00040.html#af79d634bb759d99fa1b0d94b49ac7cf5">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#ac3b1c9faca13747f49ed54d4958bee93">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00228.html#af79d634bb759d99fa1b0d94b49ac7cf5">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#ac3b1c9faca13747f49ed54d4958bee93">dxle::size_c&lt; T, &gt;</a>
 </li>
 <li>operator std::tuple&lt; Tp2_, Tp2_, Tp2_ &gt;()
-: <a class="el" href="a00039.html#a0569b4861ef0f85138bab8811e6a0187">dxle::point3d_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#aa17d5e5e9cdb4943142392e4505326c3">dxle::point3d_c&lt; T, &gt;</a>
 </li>
 <li>operator T()
-: <a class="el" href="a00004.html#a23bbb02ab09731686a9033c781a66233">dxle::impl::Counter_template&lt; T &gt;</a>
+: <a class="el" href="a00272.html#a23bbb02ab09731686a9033c781a66233">dxle::impl::Counter_template&lt; T &gt;</a>
+</li>
+<li>operator texture2d &amp;()
+: <a class="el" href="a00336.html#a0ca83645db796824590b40d03fc5c83c">dxle::graph2d::shared_texture2d</a>
 </li>
 <li>operator!=()
-: <a class="el" href="a00003.html#a7cda681229200238c945a1b996766b1b">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00452.html#a7cda681229200238c945a1b996766b1b">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator()()
-: <a class="el" href="a00037.html#a416ecbe2c0a798b33c193e08d72dbf83">dxle::detail::operator_bool_helper_impl&lt; T, false, true, is_compareable_with_default_ctor &gt;</a>
-, <a class="el" href="a00038.html#aca34f91f1d6e952647bac78b78f46794">dxle::detail::operator_bool_helper_impl&lt; T, true, has_operator_notequal_to_zero, is_compareable_with_default_ctor &gt;</a>
-, <a class="el" href="a00046.html#a1bc57e45511b3b31b5c33f9f8ec4788d">dxle::detail::static_cast_if_helper&lt; from, to, do_cast, is_nothrow_move_constructible &gt;</a>
-, <a class="el" href="a00047.html#aa042ee651290e89e3aa4a7f8ab12e3cc">dxle::detail::static_cast_if_helper&lt; to, from, false, false &gt;</a>
-, <a class="el" href="a00048.html#ac882d08bb2ee81c287477a2ae5c30e51">dxle::detail::static_cast_if_helper&lt; to, from, false, true &gt;</a>
+: <a class="el" href="a00200.html#a98691204c4b012d564fc31b36a5e6455">dxle::detail::operator_bool_helper_impl&lt; T, false, true, is_compareable_with_default_ctor &gt;</a>
+, <a class="el" href="a00196.html#a18a92e0f1fcd393fa9b3751f48fe5fc0">dxle::detail::operator_bool_helper_impl&lt; T, true, has_operator_notequal_to_zero, is_compareable_with_default_ctor &gt;</a>
+, <a class="el" href="a00180.html#a1bc57e45511b3b31b5c33f9f8ec4788d">dxle::detail::static_cast_if_helper&lt; from, to, do_cast, is_nothrow_move_constructible &gt;</a>
+, <a class="el" href="a00184.html#aa042ee651290e89e3aa4a7f8ab12e3cc">dxle::detail::static_cast_if_helper&lt; to, from, false, false &gt;</a>
+, <a class="el" href="a00188.html#a00dd4bc99b4defa6d123714a6de8cfbe">dxle::detail::static_cast_if_helper&lt; to, from, false, true &gt;</a>
 </li>
 <li>operator*()
-: <a class="el" href="a00039.html#a127a773a4bf24e99eadac845a24486fb">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#acc8ad62c1d15016ae75ac8900a7413ea">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#a60cfb22ef43a11ecc2060ff06f721463">dxle::size_c&lt; T, &gt;</a>
-, <a class="el" href="a00003.html#ad7b69e8761d1972dcf9efe35a9329748">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#ad7b07e77e8802c7e9bc50e4234004514">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#afc979132bd6751724ef4734cdcd4e5f8">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#a7a585c638344bf4ba702a64199001ed9">dxle::size_c&lt; T, &gt;</a>
+, <a class="el" href="a00452.html#ad7b69e8761d1972dcf9efe35a9329748">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator*=()
-: <a class="el" href="a00039.html#a6d18887addc678cd3056d7ef483621fe">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#acec9279c6c77a0715f9185b7068249b5">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#aa5c09b5a672b1ec2a7c9067e4a6af65a">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#a6d18887addc678cd3056d7ef483621fe">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#acec9279c6c77a0715f9185b7068249b5">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#aa5c09b5a672b1ec2a7c9067e4a6af65a">dxle::size_c&lt; T, &gt;</a>
 </li>
-<li>operator+
-: <a class="el" href="a00004.html#a25d771348467e442db64ce14c7c1e4b4">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00039.html#a981da85dd3863b3d6d0ce67e69fa1831">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#af2c437cbdb1b3459d8f61241c23cdd34">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#a2b88b01c23c4958ffd1d0bef1bf6caeb">dxle::size_c&lt; T, &gt;</a>
-, <a class="el" href="a00003.html#a7a3b8c0d8bf593db508f48a79d1931b6">dxle::utility::counter_iterator&lt; T, &gt;</a>
+<li>operator+()
+: <a class="el" href="a00272.html#abd193b28707b1354ff1c264200f670c3">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00232.html#a8379790401460813f9ff847bd4ca581f">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#a17eaee4f55b3a3bcaa4bf6d6053e8a44">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#a44aff5b631aed110c84aea20bb6bb2b0">dxle::size_c&lt; T, &gt;</a>
+, <a class="el" href="a00452.html#a7a3b8c0d8bf593db508f48a79d1931b6">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator++()
-: <a class="el" href="a00003.html#ae9fa41c17372d233cd3b6753e1a55993">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00452.html#ae9fa41c17372d233cd3b6753e1a55993">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator+=()
-: <a class="el" href="a00004.html#ae9be8403c6ff5328a58939cf60d0ffbb">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00039.html#a58cc3aad56c791d9b2677641e97dd3b9">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#adfa4834071bc569b91f515be51cb4718">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#a20bbdb1fdbf960f5dc9bc72f743985a0">dxle::size_c&lt; T, &gt;</a>
-, <a class="el" href="a00003.html#a7c1497d035bf0ac9ae250ecec649924e">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#ae9be8403c6ff5328a58939cf60d0ffbb">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00232.html#a58cc3aad56c791d9b2677641e97dd3b9">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#adfa4834071bc569b91f515be51cb4718">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#a20bbdb1fdbf960f5dc9bc72f743985a0">dxle::size_c&lt; T, &gt;</a>
+, <a class="el" href="a00452.html#a7c1497d035bf0ac9ae250ecec649924e">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator-()
-: <a class="el" href="a00004.html#a22a6a0942d160d4cd9a87ee6762e2a41">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00039.html#a0e1449607899956b5d6c461e85c28b6e">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#a56b6e4f564f8a514a392a4ee8b74d59e">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#ae456501a583cc72989419317d9ea30f2">dxle::size_c&lt; T, &gt;</a>
-, <a class="el" href="a00003.html#a489a334e836f5cc5dee91af1e72de9ca">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#a22a6a0942d160d4cd9a87ee6762e2a41">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00232.html#a655969d69df898a7cc24b1042087fdc3">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#af012234e623a853581734ab13979858c">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#af40389f37ae7528036e04fc9fcb255a4">dxle::size_c&lt; T, &gt;</a>
+, <a class="el" href="a00452.html#a489a334e836f5cc5dee91af1e72de9ca">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator--()
-: <a class="el" href="a00003.html#aa0dd87775aa017ad0587dcf5bf320bb6">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00452.html#aa3a333b27a96a9f62971f3a0fd7acd60">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator-=()
-: <a class="el" href="a00004.html#a79c73cd71b3a4a2ffc1392ba35a06e7f">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00003.html#a5ddcfe419419a48ee7dea3ecf5cc9e4b">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#a79c73cd71b3a4a2ffc1392ba35a06e7f">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00452.html#a5ddcfe419419a48ee7dea3ecf5cc9e4b">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator/=()
-: <a class="el" href="a00039.html#a9a8f1362d9e131c370cfac038f152fd1">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#a3f2810c9983119ae0fedaa212cc30af2">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#aa3410c691dd2a067ad58105d306d46db">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#a9a8f1362d9e131c370cfac038f152fd1">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#a3f2810c9983119ae0fedaa212cc30af2">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#aa3410c691dd2a067ad58105d306d46db">dxle::size_c&lt; T, &gt;</a>
 </li>
 <li>operator&lt;()
-: <a class="el" href="a00004.html#a6370cbc5509ad2486b95efb6d076f2b2">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00003.html#a10b37528b5f04d114d22dc06ea774713">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#a6370cbc5509ad2486b95efb6d076f2b2">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00452.html#a10b37528b5f04d114d22dc06ea774713">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator&lt;&lt;()
-: <a class="el" href="a00039.html#a75d08bade78f8e81f8623748068add4d">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#af8781aed0e0f1749549a626eb7217266">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#a39cb7ecbc9b1c5447339369d458a27cc">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#a75d08bade78f8e81f8623748068add4d">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#af8781aed0e0f1749549a626eb7217266">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#a840b21ac02edc16ffdf91272c7edbb91">dxle::size_c&lt; T, &gt;</a>
 </li>
 <li>operator&lt;=()
-: <a class="el" href="a00004.html#af2ac57149b67845d0582ac1e646c9475">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00003.html#a0a429baf12a60d2fa197b6edf4312a9d">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#af2ac57149b67845d0582ac1e646c9475">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00452.html#a0a429baf12a60d2fa197b6edf4312a9d">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator=()
-: <a class="el" href="a00042.html#a4d601d6767072ad48fbf0c3b05e54db9">dxle::graph2d::screen</a>
-, <a class="el" href="a00049.html#af91668c9a63f873c328fd640a8bb9427">dxle::graph2d::texture_2d</a>
-, <a class="el" href="a00050.html#a8b9fe3765b99c1d8f58087a8adc7a966">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a>
-, <a class="el" href="a00051.html#a4628490ebce51819fc8ab569f2afa240">dxle::impl::Unique_HandledObject_Bace&lt; Child &gt;</a>
-, <a class="el" href="a00039.html#a7b600b3e48d3a168d05721a577f7cb52">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#aee3933ea1ae261410e9ab2dcbc89079c">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#a7c91d2324da83db8044d129a39b40410">dxle::size_c&lt; T, &gt;</a>
-, <a class="el" href="a00045.html#a33bb3f11ba985907e4cbcd31411aa564">dxle::sound::sound</a>
-, <a class="el" href="a00003.html#add09f1d167233e82c0286fb60212974b">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00304.html#ad885c1e5f6a87f890dca15ebc7250c0b">dxle::graph2d::animation_graph</a>
+, <a class="el" href="a00340.html#a52a157c74495fb21bfffa1201e4b26d0">dxle::graph2d::derivative_texture2d</a>
+, <a class="el" href="a00320.html#af435d3b2b4cc88362a42954a6168d229">dxle::graph2d::gr_impl::screen_handle_manager</a>
+, <a class="el" href="a00316.html#a91f37e49e2b1f02dc60a41471445df0e">dxle::graph2d::gr_impl::simple_graph_handle_manager</a>
+, <a class="el" href="a00312.html#a15801f63b53539835f7658feed5d14b1">dxle::graph2d::gr_impl::texture2d_handle_manager</a>
+, <a class="el" href="a00332.html#ac06639be27c7376e14d4a1cc71ea5830">dxle::graph2d::screen</a>
+, <a class="el" href="a00336.html#a4d15bfa89d7b40a192ab01e06e0c1286">dxle::graph2d::shared_texture2d</a>
+, <a class="el" href="a00308.html#a13bed1443fea5b986f56b17393eb36f8">dxle::graph2d::static_derivative_texture2d&lt; N &gt;</a>
+, <a class="el" href="a00328.html#a392efaed3d66896e67414fd300d4545b">dxle::graph2d::texture2d</a>
+, <a class="el" href="a00280.html#a8b9fe3765b99c1d8f58087a8adc7a966">dxle::impl::Unique_Handle_Bace&lt; Child &gt;</a>
+, <a class="el" href="a00284.html#a4628490ebce51819fc8ab569f2afa240">dxle::impl::Unique_HandledObject_Bace&lt; Child &gt;</a>
+, <a class="el" href="a00232.html#a06251bc02d73be03a253ae6dc255a5f4">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#aee3933ea1ae261410e9ab2dcbc89079c">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#abdc552f8bfdd25cf3f652011c0d2558d">dxle::size_c&lt; T, &gt;</a>
+, <a class="el" href="a00360.html#ac435b527739892365bb977b6a7bbecd6">dxle::time::counter</a>
+, <a class="el" href="a00452.html#add09f1d167233e82c0286fb60212974b">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator==()
-: <a class="el" href="a00003.html#a2989989a85815196abca8402ef4ca4fd">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00452.html#a2989989a85815196abca8402ef4ca4fd">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator&gt;()
-: <a class="el" href="a00004.html#a4f5c4dad5e7d603d41a5b4bf2d6fb4f7">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00003.html#a7fa74e48d16f8961f02e8e0b03df7fda">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#a4f5c4dad5e7d603d41a5b4bf2d6fb4f7">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00452.html#a7fa74e48d16f8961f02e8e0b03df7fda">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator&gt;=()
-: <a class="el" href="a00004.html#a39377393d3343f6a881a2cbcd55553b1">dxle::impl::Counter_template&lt; T &gt;</a>
-, <a class="el" href="a00003.html#afe521013f4449f9689ca5be10c8c5889">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00272.html#a39377393d3343f6a881a2cbcd55553b1">dxle::impl::Counter_template&lt; T &gt;</a>
+, <a class="el" href="a00452.html#afe521013f4449f9689ca5be10c8c5889">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 <li>operator&gt;&gt;()
-: <a class="el" href="a00039.html#a68c0fb537430639c53a565a1500ffa41">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#afedab7eac5d1e294441751f9ed1940fc">dxle::point_c&lt; T, &gt;</a>
-, <a class="el" href="a00044.html#aa1b10fb6eaeebdc7cc61d9f2a8d0be82">dxle::size_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#a68c0fb537430639c53a565a1500ffa41">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#afedab7eac5d1e294441751f9ed1940fc">dxle::point_c&lt; T, &gt;</a>
+, <a class="el" href="a00224.html#aa1b10fb6eaeebdc7cc61d9f2a8d0be82">dxle::size_c&lt; T, &gt;</a>
 </li>
 <li>operator[]()
-: <a class="el" href="a00003.html#a18b2b921c2a984416648bb10c867b6f1">dxle::utility::counter_iterator&lt; T, &gt;</a>
+: <a class="el" href="a00340.html#a7c641f54496d861cfc32ae8c4160db8f">dxle::graph2d::derivative_texture2d</a>
+, <a class="el" href="a00296.html#a5716439160d3aa3b7ede6c0d321f108e">dxle::graph2d::gr_impl::cont_wrapper_with_size&lt; Cont &gt;</a>
+, <a class="el" href="a00300.html#a667f6add7c2460e48f51674030726a85">dxle::graph2d::gr_impl::cont_wrapper_with_size&lt; std::reference_wrapper&lt; Cont &gt; &gt;</a>
+, <a class="el" href="a00308.html#a88ced99b6d7cd416f8f5090ad7b81fec">dxle::graph2d::static_derivative_texture2d&lt; N &gt;</a>
+, <a class="el" href="a00452.html#a18b2b921c2a984416648bb10c867b6f1">dxle::utility::counter_iterator&lt; T, &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -272,9 +226,9 @@ $(document).ready(function(){initNavTree('functions_o.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
+    <li class="footer">2016年12月01日(木) 21時24分46秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
   </ul>
 </div>
 </body>

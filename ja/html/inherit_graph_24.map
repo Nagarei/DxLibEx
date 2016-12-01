@@ -1,3 +1,4 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$a00040.html" title="2次元座標(x, y)　テンプレートクラス。 このクラスはstd::pairと相互変換が可能です。また、内部型の異なる..." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node1" href="$a00272.html" title="dxle::impl::Counter\l_template\&lt; U \&gt;" alt="" coords="5,5,136,47"/>
+<area shape="rect" id="node2" href="$a00276.html" title="dxle::impl::Counter\l_template\&lt; T \&gt;::Cast\&lt; U \&gt;" alt="" coords="184,5,363,47"/>
 </map>

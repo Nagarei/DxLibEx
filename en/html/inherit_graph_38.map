@@ -1,8 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$a00024.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_this_impl\&lt; T, typename \&gt;" alt="" coords="137,5,331,61"/>
-<area shape="rect" id="node3" href="$a00026.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_zero_impl\&lt; T, typename \&gt;" alt="" coords="135,85,333,141"/>
-<area shape="rect" id="node4" href="$a00024.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_this_impl\&lt; T \&gt;" alt="" coords="157,165,311,221"/>
-<area shape="rect" id="node6" href="$a00026.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_zero_impl\&lt; T \&gt;" alt="" coords="157,245,311,301"/>
-<area shape="rect" id="node5" href="$a00023.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_this\&lt; T \&gt;" alt="" coords="381,165,535,221"/>
-<area shape="rect" id="node7" href="$a00025.html" title="dxle::type_traits::\lhas_operator_notequal\l_to_zero\&lt; T \&gt;" alt="" coords="381,245,535,301"/>
+<area shape="rect" id="node1" href="$a00392.html" title="dxle::type_traits::\ldetail::float_promote\l_impl\&lt; std::remove_cv\l\&lt; Types \&gt;::type... \&gt;" alt="" coords="5,5,156,76"/>
+<area shape="rect" id="node2" href="$a00404.html" title="dxle::type_traits::\lfloat_promote\&lt; Types \&gt;" alt="" coords="204,20,363,61"/>
 </map>

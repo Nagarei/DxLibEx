@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green',['green',['../a00041.html#ad6f48075681f0232461628c2db521dc6',1,'dxle::color::rgb']]]
+  ['counter',['counter',['../a00288.html#a3ebf149e3a014542e46a4d67cbcd8862',1,'dxle::graph2d::gr_impl::animation_handle_manager_bace']]]
 ];

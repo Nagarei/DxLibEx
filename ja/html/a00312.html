@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DxLibEx: dxle::graph2d::gr_impl::texture2d_handle_manager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('a00312.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-static-methods">静的限定公開メンバ関数</a> &#124;
+<a href="a00309.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">dxle::graph2d::gr_impl::texture2d_handle_manager クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>interface  
+ <a href="a00312.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a>&gt;</code></p>
+<div class="dynheader">
+dxle::graph2d::gr_impl::texture2d_handle_manager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="a00311.png" border="0" usemap="#dxle_1_1graph2d_1_1gr__impl_1_1texture2d__handle__manager_inherit__map" alt="Inheritance graph"/></div>
+<map name="dxle_1_1graph2d_1_1gr__impl_1_1texture2d__handle__manager_inherit__map" id="dxle_1_1graph2d_1_1gr__impl_1_1texture2d__handle__manager_inherit__map">
+<area shape="rect" id="node2" href="a00288.html" title="dxle::graph2d::gr_impl\l::animation_handle_manager_bace" alt="" coords="240,13,463,54"/>
+<area shape="rect" id="node4" href="a00320.html" title="dxle::graph2d::gr_impl\l::screen_handle_manager" alt="" coords="266,78,437,119"/>
+<area shape="rect" id="node5" href="a00316.html" title="dxle::graph2d::gr_impl\l::simple_graph_handle\l_manager" alt="" coords="275,144,427,200"/>
+<area shape="rect" id="node3" href="a00292.html" title="dxle::graph2d::gr_impl\l::animation_handle_manager\l\&lt; Cont \&gt;" alt="" coords="511,5,699,61"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0b718362e33ae78a25aacb61e7e924f0"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00312.html#a0b718362e33ae78a25aacb61e7e924f0">get_handle</a> () const =0</td></tr>
+<tr class="separator:a0b718362e33ae78a25aacb61e7e924f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae175411700046099b28ab53c06926d66"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00312.html#ae175411700046099b28ab53c06926d66">~texture2d_handle_manager</a> () <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:ae175411700046099b28ab53c06926d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0d01dc4d63d8af7e73534f54b96ea610"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00312.html#a0d01dc4d63d8af7e73534f54b96ea610">texture2d_handle_manager</a> () <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a0d01dc4d63d8af7e73534f54b96ea610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89d5506f1500ec1b670dfa99be333cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00312.html#ae89d5506f1500ec1b670dfa99be333cb">texture2d_handle_manager</a> (const <a class="el" href="a00312.html">texture2d_handle_manager</a> &amp;) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:ae89d5506f1500ec1b670dfa99be333cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15801f63b53539835f7658feed5d14b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00312.html">texture2d_handle_manager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00312.html#a15801f63b53539835f7658feed5d14b1">operator=</a> (const <a class="el" href="a00312.html">texture2d_handle_manager</a> &amp;) <a class="el" href="a00071.html#a1984d447e7c10a1628cb33b3c3dfe17e">DXLE_NOEXCEPT_OR_NOTHROW</a></td></tr>
+<tr class="separator:a15801f63b53539835f7658feed5d14b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+静的限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5ab69b44132cbacd2fc91a0d05674c71"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00312.html#a5ab69b44132cbacd2fc91a0d05674c71">GetTextureRawHandle</a> (const <a class="el" href="a00328.html">texture2d</a> &amp;)</td></tr>
+<tr class="separator:a5ab69b44132cbacd2fc91a0d05674c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>interface </p>
+
+<p> <a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a> の <a class="el" href="a00116_source.html#l00027">27</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ae175411700046099b28ab53c06926d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae175411700046099b28ab53c06926d66">&sect;&nbsp;</a></span>~texture2d_handle_manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual dxle::graph2d::gr_impl::texture2d_handle_manager::~texture2d_handle_manager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a> の <a class="el" href="a00116_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d01dc4d63d8af7e73534f54b96ea610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d01dc4d63d8af7e73534f54b96ea610">&sect;&nbsp;</a></span>texture2d_handle_manager() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::graph2d::gr_impl::texture2d_handle_manager::texture2d_handle_manager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a> の <a class="el" href="a00116_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae89d5506f1500ec1b670dfa99be333cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89d5506f1500ec1b670dfa99be333cb">&sect;&nbsp;</a></span>texture2d_handle_manager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dxle::graph2d::gr_impl::texture2d_handle_manager::texture2d_handle_manager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00312.html">texture2d_handle_manager</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a> の <a class="el" href="a00116_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a0b718362e33ae78a25aacb61e7e924f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b718362e33ae78a25aacb61e7e924f0">&sect;&nbsp;</a></span>get_handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int dxle::graph2d::gr_impl::texture2d_handle_manager::get_handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00320.html#ae462b6bc0d15785c5293db446e06d6c6">dxle::graph2d::gr_impl::screen_handle_manager</a>, <a class="el" href="a00316.html#a37120e620ae7b7449a3ad7524a99faf0">dxle::graph2d::gr_impl::simple_graph_handle_manager</a>, <a class="el" href="a00292.html#a3bce3e8788b969c7b56793ae202b7028">dxle::graph2d::gr_impl::animation_handle_manager&lt; Cont &gt;</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a5ab69b44132cbacd2fc91a0d05674c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab69b44132cbacd2fc91a0d05674c71">&sect;&nbsp;</a></span>GetTextureRawHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dxle::graph2d::gr_impl::texture2d_handle_manager::GetTextureRawHandle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00328.html">texture2d</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a01026_source.html">texture2d.hpp</a> の <a class="el" href="a01026_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a15801f63b53539835f7658feed5d14b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15801f63b53539835f7658feed5d14b1">&sect;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00312.html">texture2d_handle_manager</a>&amp; dxle::graph2d::gr_impl::texture2d_handle_manager::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00312.html">texture2d_handle_manager</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a> の <a class="el" href="a00116_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/yumetodo/Documents/git/DxLibEx/dxlibex/texture/texture2d/<a class="el" href="a00116_source.html">texture2d_handle_manager.hpp</a></li>
+<li>C:/Users/yumetodo/Documents/git/DxLibEx/dxlibex/texture/texture2d/<a class="el" href="a01026_source.html">texture2d.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="a00161.html">dxle</a></li><li class="navelem"><a class="el" href="a00170.html">graph2d</a></li><li class="navelem"><a class="el" href="a00171.html">gr_impl</a></li><li class="navelem"><a class="el" href="a00312.html">texture2d_handle_manager</a></li>
+    <li class="footer">2016年12月01日(木) 21時24分46秒作成 - DxLibEx / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
+</body>
+</html>

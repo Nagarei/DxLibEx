@@ -3,8 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
-<title>DxLibEx: D:/user/documents/git/DxLibEx/dxlibex/config/compiler.hpp ファイル</title>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DxLibEx: C:/Users/yumetodo/Documents/git/DxLibEx/dxlibex/config/no_min_max.h ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -14,14 +15,10 @@
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -39,40 +36,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.11 -->
+<!-- 構築: Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>総合概要</span></a></li>
-      <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li><a href="annotated.html"><span>クラス</span></a></li>
-      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="検索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>ファイル一覧</span></a></li>
-      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -103,56 +79,89 @@ $(document).ready(function(){initNavTree('a00068.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
   <div class="headertitle">
-<div class="title">compiler.hpp ファイル</div>  </div>
+<div class="title">no_min_max.h ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00145.png" border="0" usemap="#_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2config_2compiler_8hppdep" alt=""/></div>
-<map name="_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2config_2compiler_8hppdep" id="_d_1_2user_2documents_2git_2_dx_lib_ex_2dxlibex_2config_2compiler_8hppdep">
-<area shape="rect" id="node2" href="a00077.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/config\l/suffix.hpp" alt="" coords="960,109,1119,165"/>
-<area shape="rect" id="node3" href="a00074.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/config\l/defines.h" alt="" coords="960,213,1119,269"/>
-<area shape="rect" id="node4" href="a00056.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/algorithm\l/cast_if.hpp" alt="" coords="597,317,775,373"/>
-<area shape="rect" id="node6" href="a00061.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/basic\l_types/point2d.hpp" alt="" coords="567,1060,722,1116"/>
-<area shape="rect" id="node9" href="a00083.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/graph2d.hpp" alt="" coords="1423,1268,1618,1309"/>
-<area shape="rect" id="node11" href="a00057.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/algorithm\l/safe_dist.hpp" alt="" coords="799,317,976,373"/>
-<area shape="rect" id="node12" href="a00062.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/basic\l_types/point3d.hpp" alt="" coords="746,1060,901,1116"/>
-<area shape="rect" id="node13" href="a00059.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/basic\l_types/coordinate_operator\l_bool_helper.hpp" alt="" coords="519,941,698,1012"/>
-<area shape="rect" id="node14" href="a00063.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/basic\l_types/size.hpp" alt="" coords="389,1060,543,1116"/>
-<area shape="rect" id="node15" href="a00067.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/color.hpp" alt="" coords="5,741,183,782"/>
-<area shape="rect" id="node16" href="a00079.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/cstdlib\l/abs.hpp" alt="" coords="258,421,421,477"/>
-<area shape="rect" id="node18" href="a00084.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/Helper.h" alt="" coords="1367,1171,1539,1213"/>
-<area shape="rect" id="node19" href="a00090.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/sound.hpp" alt="" coords="1215,1268,1399,1309"/>
-<area shape="rect" id="node20" href="a00080.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/math\l/abs.hpp" alt="" coords="836,837,989,893"/>
-<area shape="rect" id="node22" href="a00086.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/math\l/copysign.hpp" alt="" coords="937,629,1091,685"/>
-<area shape="rect" id="node23" href="a00087.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/math\l/fabs.hpp" alt="" coords="887,733,1040,789"/>
-<area shape="rect" id="node24" href="a00089.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/math\l/isnan.hpp" alt="" coords="887,525,1040,581"/>
-<area shape="rect" id="node25" href="a00092.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/thread.hpp" alt="" coords="1563,1171,1748,1213"/>
-<area shape="rect" id="node26" href="a00097.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/type\l_traits/float_promote.hpp" alt="" coords="1102,317,1267,373"/>
-<area shape="rect" id="node28" href="a00104.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/utility\l/constant_range_loop.hpp" alt="" coords="1217,525,1387,581"/>
-<area shape="rect" id="node5" href="a00055.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/algorithm.hpp" alt="" coords="597,429,799,470"/>
-<area shape="rect" id="node7" href="a00058.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/basic\l_types.hpp" alt="" coords="746,1164,901,1220"/>
-<area shape="rect" id="node8" href="a00082.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/dxlibex.hpp" alt="" coords="843,1365,1033,1406"/>
-<area shape="rect" id="node10" href="a00081.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/dxlib\l_wrap.hpp" alt="" coords="1537,1357,1688,1413"/>
-<area shape="rect" id="node17" href="a00078.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/cstdlib.hpp" alt="" coords="258,956,445,997"/>
-<area shape="rect" id="node21" href="a00085.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/math.hpp" alt="" coords="835,956,1014,997"/>
-<area shape="rect" id="node27" href="a00093.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/type\l_traits.hpp" alt="" coords="1116,421,1267,477"/>
-<area shape="rect" id="node29" href="a00103.html" title="D:/user/documents/git\l/DxLibEx/dxlibex/utility.hpp" alt="" coords="1207,637,1387,678"/>
+<div class="center"><img src="a00070.png" border="0" usemap="#_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2config_2no__min__max_8hdep" alt=""/></div>
+<map name="_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2config_2no__min__max_8hdep" id="_c_1_2_users_2yumetodo_2_documents_2git_2_dx_lib_ex_2dxlibex_2config_2no__min__max_8hdep">
+<area shape="rect" id="node2" href="a00017.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/basic\l_types/point2d.hpp" alt="" coords="1071,1060,1275,1116"/>
+<area shape="rect" id="node4" href="a00080.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/dxlibex.hpp" alt="" coords="1559,1788,1767,1829"/>
+<area shape="rect" id="node5" href="a00110.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/texture2d/prototype2d.hpp" alt="" coords="1950,1268,2154,1324"/>
+<area shape="rect" id="node6" href="a00113.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/texture2d.hpp" alt="" coords="1950,1491,2154,1547"/>
+<area shape="rect" id="node8" href="a00107.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/animation_graph.hpp" alt="" coords="2342,1595,2546,1651"/>
+<area shape="rect" id="node9" href="a01026.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/texture2d/texture2d.hpp" alt="" coords="1798,1595,2002,1651"/>
+<area shape="rect" id="node10" href="a00116.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/texture\l/texture2d/texture2d_handle\l_manager.hpp" alt="" coords="2090,1372,2294,1443"/>
+<area shape="rect" id="node11" href="a00020.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/basic\l_types/point3d.hpp" alt="" coords="1491,1060,1695,1116"/>
+<area shape="rect" id="node12" href="a00023.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/basic\l_types/size.hpp" alt="" coords="597,1060,801,1116"/>
+<area shape="rect" id="node13" href="a01017.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/char\l_constant/char_constant.hpp" alt="" coords="425,317,629,373"/>
+<area shape="rect" id="node15" href="a00041.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/color.hpp" alt="" coords="2609,325,2813,366"/>
+<area shape="rect" id="node16" href="a00062.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/config\l/defines.h" alt="" coords="1403,213,1607,269"/>
+<area shape="rect" id="node23" href="a00086.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/helper.hpp" alt="" coords="2101,325,2305,366"/>
+<area shape="rect" id="node29" href="a00119.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/thread.hpp" alt="" coords="2482,1387,2686,1428"/>
+<area shape="rect" id="node30" href="a00122.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/time.hpp" alt="" coords="2381,325,2585,366"/>
+<area shape="rect" id="node35" href="a00071.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/config\l/suffix.hpp" alt="" coords="1657,109,1861,165"/>
+<area shape="rect" id="node36" href="a00104.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/structs.h" alt="" coords="2990,117,3194,158"/>
+<area shape="rect" id="node37" href="a00143.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/type\l_traits/is_nothrow.hpp" alt="" coords="145,317,349,373"/>
+<area shape="rect" id="node3" href="a00035.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/basic\l_types.hpp" alt="" coords="1491,1164,1695,1220"/>
+<area shape="rect" id="node7" href="a00083.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/graph2d.hpp" alt="" coords="1945,1699,2159,1740"/>
+<area shape="rect" id="node14" href="a00038.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/char\l_constant.hpp" alt="" coords="597,949,801,1005"/>
+<area shape="rect" id="node17" href="a00002.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/algorithm\l/cast_if.hpp" alt="" coords="1289,317,1493,373"/>
+<area shape="rect" id="node19" href="a00005.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/algorithm\l/safe_dist.hpp" alt="" coords="1517,317,1721,373"/>
+<area shape="rect" id="node20" href="a00011.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/basic\l_types/coordinate_operator\l_bool_helper.hpp" alt="" coords="1262,941,1466,1012"/>
+<area shape="rect" id="node21" href="a01020.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/cstdlib\l/abs.hpp" alt="" coords="1462,733,1666,789"/>
+<area shape="rect" id="node24" href="a01023.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/math\l/abs.hpp" alt="" coords="894,837,1098,893"/>
+<area shape="rect" id="node26" href="a00089.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/math\l/copysign.hpp" alt="" coords="647,629,851,685"/>
+<area shape="rect" id="node27" href="a00092.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/math\l/fabs.hpp" alt="" coords="614,733,818,789"/>
+<area shape="rect" id="node28" href="a00098.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/math\l/isnan.hpp" alt="" coords="769,525,973,581"/>
+<area shape="rect" id="node31" href="a00134.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/type\l_traits/float_promote.hpp" alt="" coords="806,317,1010,373"/>
+<area shape="rect" id="node33" href="a00155.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/utility\l/constant_range_loop.hpp" alt="" coords="997,525,1201,581"/>
+<area shape="rect" id="node18" href="a00008.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/algorithm.hpp" alt="" coords="1289,429,1509,470"/>
+<area shape="rect" id="node22" href="a00077.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/cstdlib.hpp" alt="" coords="1491,956,1696,997"/>
+<area shape="rect" id="node25" href="a00101.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/math.hpp" alt="" coords="825,956,1029,997"/>
+<area shape="rect" id="node32" href="a00152.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/type\l_traits.hpp" alt="" coords="769,421,973,477"/>
+<area shape="rect" id="node34" href="a00158.html" title="C:/Users/yumetodo/Documents\l/git/DxLibEx/dxlibex/utility.hpp" alt="" coords="997,637,1201,678"/>
 </map>
 </div>
 </div>
 <p><a href="a00068_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a9f918755b601cf4bffca775992e6fb90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00068.html#a9f918755b601cf4bffca775992e6fb90">NOMINMAX</a></td></tr>
+<tr class="separator:a9f918755b601cf4bffca775992e6fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a9f918755b601cf4bffca775992e6fb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f918755b601cf4bffca775992e6fb90">&sect;&nbsp;</a></span>NOMINMAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMINMAX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="a00068_source.html">no_min_max.h</a> の <a class="el" href="a00068_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_ae1f9eca1b79b5d8ebbc1f596755f9de.html">config</a></li><li class="navelem"><a class="el" href="a00068.html">compiler.hpp</a></li>
-    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_ae1f9eca1b79b5d8ebbc1f596755f9de.html">config</a></li><li class="navelem"><a class="el" href="a00068.html">no_min_max.h</a></li>
+    <li class="footer">2016年12月01日(木) 21時24分45秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
   </ul>
 </div>
 </body>

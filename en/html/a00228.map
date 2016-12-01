@@ -1,3 +1,0 @@
-<map id="dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt;" name="dxle::detail::use_big_type_when_one_byte_impl&lt; T, true &gt;">
-<area shape="rect" id="node2" href="$a00011.html" title="dxle::type_traits::\lfirst_enabled\&lt; enable\l_if\&lt; 1!=sizeof(T), T \&gt;\l, enable_if\&lt; std::is_signed\l\&lt; T \&gt;::value, int \&gt;, unsigned int \&gt;" alt="" coords="5,5,220,91"/>
-</map>

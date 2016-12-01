@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['blue',['blue',['../a00041.html#ac2342d4897fb946fd688e3ae31b06ba6',1,'dxle::color::rgb']]]
+  ['animation_5fgraph',['animation_graph',['../a00288.html#a7af85b26eadd19cdfaff4baab55dd279',1,'dxle::graph2d::gr_impl::animation_handle_manager_bace']]]
 ];

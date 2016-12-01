@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../a00040.html#acded1fdfda0e4d69a5a53e3041592f86',1,'dxle::point_c::x()'],['../a00039.html#a43ca51dc0cec5b2216d21fc2c99f5953',1,'dxle::point3d_c::x()']]]
+  ['value_5ftype',['value_type',['../a00264.html#a412084582244ca7eb3119da5893cf930',1,'dxle::color::dx_color']]]
 ];

@@ -1,6 +1,6 @@
 var a00065 =
 [
-    [ "tstring", "a00065.html#a7588fa4cc62657f6abee6f704c4758ee", null ],
-    [ "tstrlen", "a00065.html#a0e8d705bd137c5c1512183745413ef1b", null ],
-    [ "tstrlen", "a00065.html#a0164e8667923daa8d1392c14bb7cb9b5", null ]
+    [ "DXLE_CHARACTERSET", "a00065.html#a96ffcaf790343dc6eac84f47a972e84f", null ],
+    [ "DXLE_CONFIGURATION", "a00065.html#a8526c1f1f67f11f6495edcfbe6b54f93", null ],
+    [ "DXLE_PLATFORM_TARGET", "a00065.html#ab6660018fb341b5d529920c25bfb04cc", null ]
 ];

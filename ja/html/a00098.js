@@ -1,6 +1,5 @@
 var a00098 =
 [
-    [ "ignore_type", "a00028.html", null ],
-    [ "first_type", "a00015.html", "a00015" ],
-    [ "first_type_t", "a00098.html#a573f48bafbd419bf962694d19a6dc77d", null ]
+    [ "isnan", "a00098.html#a44a13613c440b7d0339633ed4914c76d", null ],
+    [ "isnan", "a00098.html#abea4b45468d76f9c6df4bfdbed3e573e", null ]
 ];

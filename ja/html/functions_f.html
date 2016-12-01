@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>DxLibEx: クラスメンバ</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -14,14 +15,10 @@
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -39,79 +36,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.11 -->
+<!-- 構築: Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>総合概要</span></a></li>
-      <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
-      <li><a href="files.html"><span>ファイル</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="検索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
-      <li><a href="classes.html"><span>クラス索引</span></a></li>
-      <li><a href="inherits.html"><span>クラス階層</span></a></li>
-      <li class="current"><a href="functions.html"><span>クラスメンバ</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li class="current"><a href="functions.html"><span>全て</span></a></li>
-      <li><a href="functions_func.html"><span>関数</span></a></li>
-      <li><a href="functions_vars.html"><span>変数</span></a></li>
-      <li><a href="functions_type.html"><span>型定義</span></a></li>
-      <li><a href="functions_enum.html"><span>列挙型</span></a></li>
-      <li><a href="functions_rela.html"><span>関連関数</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow4" class="tabs3">
-    <ul class="tablist">
-      <li><a href="functions.html#index_b"><span>b</span></a></li>
-      <li><a href="functions_c.html#index_c"><span>c</span></a></li>
-      <li><a href="functions_d.html#index_d"><span>d</span></a></li>
-      <li><a href="functions_e.html#index_e"><span>e</span></a></li>
-      <li class="current"><a href="functions_f.html#index_f"><span>f</span></a></li>
-      <li><a href="functions_g.html#index_g"><span>g</span></a></li>
-      <li><a href="functions_h.html#index_h"><span>h</span></a></li>
-      <li><a href="functions_i.html#index_i"><span>i</span></a></li>
-      <li><a href="functions_l.html#index_l"><span>l</span></a></li>
-      <li><a href="functions_m.html#index_m"><span>m</span></a></li>
-      <li><a href="functions_n.html#index_n"><span>n</span></a></li>
-      <li><a href="functions_o.html#index_o"><span>o</span></a></li>
-      <li><a href="functions_p.html#index_p"><span>p</span></a></li>
-      <li><a href="functions_r.html#index_r"><span>r</span></a></li>
-      <li><a href="functions_s.html#index_s"><span>s</span></a></li>
-      <li><a href="functions_t.html#index_t"><span>t</span></a></li>
-      <li><a href="functions_u.html#index_u"><span>u</span></a></li>
-      <li><a href="functions_v.html#index_v"><span>v</span></a></li>
-      <li><a href="functions_w.html#index_w"><span>w</span></a></li>
-      <li><a href="functions_x.html#index_x"><span>x</span></a></li>
-      <li><a href="functions_y.html#index_y"><span>y</span></a></li>
-      <li><a href="functions_z.html#index_z"><span>z</span></a></li>
-      <li><a href="functions_0x7e.html#index_0x7e"><span>~</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -144,30 +81,34 @@ $(document).ready(function(){initNavTree('functions_f.html','');});
 <div class="contents">
 <div class="textblock">全クラスメンバ一覧です。各メンバが属するクラスへのリンクがあります。</div>
 
-<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<h3><a id="index_f"></a>- f -</h3><ul>
 <li>filter_bright_clip()
-: <a class="el" href="a00049.html#ab571c1ee5afa7a56803959955377794c">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a2a01737b47443a91e522bec41418b2b2">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_down_scale()
-: <a class="el" href="a00049.html#a15be09da6f2ae12a9f288e8e038f0c0f">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a3c546f2ae60882b3f7744def7a1e730c">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_gaussian()
-: <a class="el" href="a00049.html#affce35efdca8edb1bba0dcc7c691940b">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a936a6079112f9a6a8b4b7b0633820d46">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_HSB()
-: <a class="el" href="a00049.html#a52b5536a78cdbc4f87efad3e0bd272d5">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#ae8f9b2a243f96264948fd861cfb889ee">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_invert()
-: <a class="el" href="a00049.html#a6af2b57f5656e0bf19b476503980cc1b">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a051c4538622cea2a0ee6cacb867629fd">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_level()
-: <a class="el" href="a00049.html#a0c2989db4dbb73a51c27cb1b9ec113b2">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a7eab22e5832faada9ba8a223422afce1">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_mono()
-: <a class="el" href="a00049.html#a2282a4b3c31d32b4ed0b36f11474b7bd">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a93a49d476147be48fb2cce3d2612687a">dxle::graph2d::texture2d</a>
 </li>
 <li>filter_two_color()
-: <a class="el" href="a00049.html#acc6ef09bd2eb05268de2200f30266524">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#aba808152e3914ab69e7046cdc37b133d">dxle::graph2d::texture2d</a>
+</li>
+<li>front()
+: <a class="el" href="a00340.html#a2c189158f80f03eedd532cd393c9ce5a">dxle::graph2d::derivative_texture2d</a>
+, <a class="el" href="a00308.html#ab8c9a114b156f9b46b9087b17b7b3715">dxle::graph2d::static_derivative_texture2d&lt; N &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -175,9 +116,9 @@ $(document).ready(function(){initNavTree('functions_f.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
+    <li class="footer">2016年12月01日(木) 21時24分46秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
   </ul>
 </div>
 </body>

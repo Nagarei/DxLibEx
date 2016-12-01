@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DxLibEx: C:/Users/yumetodo/Documents/git/DxLibEx/dxlibex/basic_types/use_big_type_when_one_byte_t.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DxLibEx
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('a00032_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">use_big_type_when_one_byte_t.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="a00032.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=============================================================================</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright (C) 2015-2016 DxLibEx project</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">  https://github.com/Nagarei/DxLibEx/</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  Distributed under the Boost Software License, Version 1.0.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  (See http://www.boost.org/LICENSE_1_0.txt)</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">=============================================================================*/</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef DXLE_INC_BASIC_TYPES_ARTHMETIC_T_HPP_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define DXLE_INC_BASIC_TYPES_ARTHMETIC_T_HPP_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00131.html">dxlibex/type_traits/first_enabled.hpp</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00128.html">dxlibex/type_traits/enable_if.hpp</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00161.html">dxle</a> {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span>detail {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">bool</span> is_arithmetic&gt;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00236.html">   15</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="a00236.html">use_big_type_when_one_byte_impl</a> {</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00236.html#a3d765c8f6e1694853101d76da9e95c27">   16</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="a00236.html#a3d765c8f6e1694853101d76da9e95c27">type</a> = T;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        };</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00240.html">   19</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="a00236.html">use_big_type_when_one_byte_impl</a>&lt;T, true&gt; : <a class="code" href="a00364.html">first_enabled</a>&lt;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            enable_if&lt;1 != sizeof(T), T&gt;,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            enable_if&lt;std::is_signed&lt;T&gt;::value, int&gt;,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            unsigned int</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        &gt;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {};</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00244.html">   27</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="a00244.html">use_big_type_when_one_byte</a> : <a class="code" href="a00236.html">dxle::detail::use_big_type_when_one_byte_impl</a>&lt;T, std::is_arithmetic&lt;T&gt;::value&gt; {};</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00161.html#a54457c9a7c5f6df52d229023fcfb4970">   30</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="a00161.html#a54457c9a7c5f6df52d229023fcfb4970">use_big_type_when_one_byte_t</a> = <span class="keyword">typename</span> <a class="code" href="a00236.html#a3d765c8f6e1694853101d76da9e95c27">use_big_type_when_one_byte&lt;T&gt;::type</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif //DXLE_INC_BASIC_TYPES_ARTHMETIC_T_HPP_</span></div><div class="ttc" id="a00244_html"><div class="ttname"><a href="a00244.html">dxle::use_big_type_when_one_byte</a></div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00027">use_big_type_when_one_byte_t.hpp:27</a></div></div>
+<div class="ttc" id="a00364_html"><div class="ttname"><a href="a00364.html">dxle::type_traits::first_enabled</a></div><div class="ttdoc">複数条件のあるTMP用if std::enable_ifと組み合わせて使います。 </div><div class="ttdef"><b>Definition:</b> <a href="a00131_source.html#l00032">first_enabled.hpp:32</a></div></div>
+<div class="ttc" id="a00161_html_a54457c9a7c5f6df52d229023fcfb4970"><div class="ttname"><a href="a00161.html#a54457c9a7c5f6df52d229023fcfb4970">dxle::use_big_type_when_one_byte_t</a></div><div class="ttdeci">typename use_big_type_when_one_byte&lt; T &gt;::type use_big_type_when_one_byte_t</div><div class="ttdoc">for int8_t/uint8_t </div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00030">use_big_type_when_one_byte_t.hpp:30</a></div></div>
+<div class="ttc" id="a00161_html"><div class="ttname"><a href="a00161.html">dxle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00012">cast_if.hpp:12</a></div></div>
+<div class="ttc" id="a00131_html"><div class="ttname"><a href="a00131.html">first_enabled.hpp</a></div></div>
+<div class="ttc" id="a00128_html"><div class="ttname"><a href="a00128.html">enable_if.hpp</a></div></div>
+<div class="ttc" id="a00236_html_a3d765c8f6e1694853101d76da9e95c27"><div class="ttname"><a href="a00236.html#a3d765c8f6e1694853101d76da9e95c27">dxle::detail::use_big_type_when_one_byte_impl&lt; T, std::is_arithmetic&lt; T &gt;::value &gt;::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00016">use_big_type_when_one_byte_t.hpp:16</a></div></div>
+<div class="ttc" id="a00236_html"><div class="ttname"><a href="a00236.html">dxle::detail::use_big_type_when_one_byte_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00015">use_big_type_when_one_byte_t.hpp:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_05eee0e7ec5d19010cfc503b0ab0cd29.html">dxlibex</a></li><li class="navelem"><a class="el" href="dir_414ed2069a979a8d2b003ad6824e1b2d.html">basic_types</a></li><li class="navelem"><a class="el" href="a00032.html">use_big_type_when_one_byte_t.hpp</a></li>
+    <li class="footer">2016年12月01日(木) 21時24分45秒作成 - DxLibEx / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
+</body>
+</html>

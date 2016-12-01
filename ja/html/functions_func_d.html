@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>DxLibEx: クラスメンバ - 関数</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -14,14 +15,10 @@
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -39,72 +36,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 構築: Doxygen 1.8.11 -->
+<!-- 構築: Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'検索');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>総合概要</span></a></li>
-      <li><a href="namespaces.html"><span>名前空間</span></a></li>
-      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
-      <li><a href="files.html"><span>ファイル</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="検索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
-      <li><a href="classes.html"><span>クラス索引</span></a></li>
-      <li><a href="inherits.html"><span>クラス階層</span></a></li>
-      <li class="current"><a href="functions.html"><span>クラスメンバ</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="functions.html"><span>全て</span></a></li>
-      <li class="current"><a href="functions_func.html"><span>関数</span></a></li>
-      <li><a href="functions_vars.html"><span>変数</span></a></li>
-      <li><a href="functions_type.html"><span>型定義</span></a></li>
-      <li><a href="functions_enum.html"><span>列挙型</span></a></li>
-      <li><a href="functions_rela.html"><span>関連関数</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow4" class="tabs3">
-    <ul class="tablist">
-      <li><a href="functions_func.html#index_b"><span>b</span></a></li>
-      <li><a href="functions_func_c.html#index_c"><span>c</span></a></li>
-      <li class="current"><a href="functions_func_d.html#index_d"><span>d</span></a></li>
-      <li><a href="functions_func_e.html#index_e"><span>e</span></a></li>
-      <li><a href="functions_func_f.html#index_f"><span>f</span></a></li>
-      <li><a href="functions_func_g.html#index_g"><span>g</span></a></li>
-      <li><a href="functions_func_l.html#index_l"><span>l</span></a></li>
-      <li><a href="functions_func_m.html#index_m"><span>m</span></a></li>
-      <li><a href="functions_func_n.html#index_n"><span>n</span></a></li>
-      <li><a href="functions_func_o.html#index_o"><span>o</span></a></li>
-      <li><a href="functions_func_p.html#index_p"><span>p</span></a></li>
-      <li><a href="functions_func_r.html#index_r"><span>r</span></a></li>
-      <li><a href="functions_func_s.html#index_s"><span>s</span></a></li>
-      <li><a href="functions_func_t.html#index_t"><span>t</span></a></li>
-      <li><a href="functions_func_u.html#index_u"><span>u</span></a></li>
-      <li><a href="functions_func_0x7e.html#index_0x7e"><span>~</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -137,83 +81,89 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <div class="contents">
 &#160;
 
-<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
-<li>delete_this()
-: <a class="el" href="a00049.html#a74a9b298f6eb0a208c26d9793fe8a56c">dxle::graph2d::texture_2d</a>
-, <a class="el" href="a00045.html#a8884f6e01dde8a3ed19c572096794708">dxle::sound::sound</a>
+<h3><a id="index_d"></a>- d -</h3><ul>
+<li>data()
+: <a class="el" href="a00340.html#a522323997c03caf22a6592205e1f3059">dxle::graph2d::derivative_texture2d</a>
+, <a class="el" href="a00308.html#a6286a1fe3cbbf907f82329ed2be4953b">dxle::graph2d::static_derivative_texture2d&lt; N &gt;</a>
 </li>
-<li>DeleteSoundMem()
-: <a class="el" href="a00045.html#a281e8ea07df6db69b65f65dc529d6ddb">dxle::sound::sound</a>
+<li>delete_all()
+: <a class="el" href="a00340.html#a1159fa131e61a3e61556ca6ac3f1a172">dxle::graph2d::derivative_texture2d</a>
+, <a class="el" href="a00308.html#aa52ad5c33bf1b7bbe21ab7e16c6d48a0">dxle::graph2d::static_derivative_texture2d&lt; N &gt;</a>
+</li>
+<li>delete_this()
+: <a class="el" href="a00320.html#a831c0091ce767a1302842abcfc1a6887">dxle::graph2d::gr_impl::screen_handle_manager</a>
+, <a class="el" href="a00316.html#a3498f5bc29c18b2a7bbb69e5f23ba6c9">dxle::graph2d::gr_impl::simple_graph_handle_manager</a>
+, <a class="el" href="a00328.html#a5164d5fea3079868cc32be90038cf2b4">dxle::graph2d::texture2d</a>
 </li>
 <li>DerivationGraph()
-: <a class="el" href="a00049.html#af256e577795a081e30fcf475babf133c">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a9fd2499c66a67b2ad7135baa0227f144">dxle::graph2d::texture2d</a>
+</li>
+<li>derivative_texture2d()
+: <a class="el" href="a00340.html#a55b511f544a9e06fe4ec54535cae281b">dxle::graph2d::derivative_texture2d</a>
 </li>
 <li>distance()
-: <a class="el" href="a00039.html#af81544b0af3b06c4ab4dca332d1b81c8">dxle::point3d_c&lt; T, &gt;</a>
-, <a class="el" href="a00040.html#a43306cfd5de362221191f9dc0dc02c4e">dxle::point_c&lt; T, &gt;</a>
+: <a class="el" href="a00232.html#af81544b0af3b06c4ab4dca332d1b81c8">dxle::point3d_c&lt; T, &gt;</a>
+, <a class="el" href="a00228.html#a43306cfd5de362221191f9dc0dc02c4e">dxle::point_c&lt; T, &gt;</a>
 </li>
 <li>Do()
-: <a class="el" href="a00001.html#a34e333c10fd72e39f2cd68f2d25f9427">dxle::impl::Counter_template&lt; T &gt;::Cast&lt; U &gt;</a>
+: <a class="el" href="a00276.html#a34e333c10fd72e39f2cd68f2d25f9427">dxle::impl::Counter_template&lt; T &gt;::Cast&lt; U &gt;</a>
+</li>
+<li>draw_on_this()
+: <a class="el" href="a00332.html#a9e7fba88d2a9893b5f14d90b57a21730">dxle::graph2d::screen</a>
 </li>
 <li>DrawExtendGraph()
-: <a class="el" href="a00049.html#a7373e500220007b556a54beaaa34ae19">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#affdc8d8196961356117fb37bf538b9d8">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawExtendGraphF()
-: <a class="el" href="a00049.html#a92d180410f69762594f4c00ef5e47907">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a0cf58b04ce203abc1151ee49ea09bfb1">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawExtendTurnGraph()
-: <a class="el" href="a00049.html#a66c08123f996f8f5da5e34feffbbc5e8">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a17084b54582cc69a4788b87027b17ae2">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawExtendTurnGraphF()
-: <a class="el" href="a00049.html#a76297cfb476e6ba22cb09da98f837716">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#afdb1fe0d3d5c51eabb25825ccbafe26e">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawGraph()
-: <a class="el" href="a00049.html#a785c7285664b00752682f797f73d4baa">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a4f3a8b0a1b3a5af8357c0ded355c0eac">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawGraphF()
-: <a class="el" href="a00049.html#a38bc2581e8571cbe3acfb2c4e206bda5">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a82c5848935c403f8cd49b0f4a89f4206">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawModiGraph()
-: <a class="el" href="a00049.html#a0970597ae328027b54de002339155757">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a23207a8d4fb9f1185c18065d97a3caf5">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawModiGraphF()
-: <a class="el" href="a00049.html#a3b4b98371835ec5ee2d3a0e9c39d7f91">dxle::graph2d::texture_2d</a>
-</li>
-<li>drawn_on()
-: <a class="el" href="a00042.html#a8e0d5215324b5460bdff301fe1a9bf79">dxle::graph2d::screen</a>
+: <a class="el" href="a00328.html#adb91b38b6a965df2a08abf6113aa9363">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawRotaGraph()
-: <a class="el" href="a00049.html#ae71117d04f4f1e05191fefb885377067">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a33150dc482cce6d76b4d757009114ca8">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawRotaGraph2()
-: <a class="el" href="a00049.html#aefafa40b864ba0aea37133706bcfe275">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#ae85cbaebc873689679534b559bb382c7">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawRotaGraph2F()
-: <a class="el" href="a00049.html#a309324958ac74f62992d3e973cc7fe8a">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a7e6fb29ac8b564cd25449c8eafde97cc">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawRotaGraph3()
-: <a class="el" href="a00049.html#a4a79700bde1505a62086505adf942bbc">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#aa0ec04ff4ed7f91cafa97cabf732d34b">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawRotaGraph3F()
-: <a class="el" href="a00049.html#aa7e8b551175fb057eb712426083a971e">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#a0fdb13699ba2dc6e48b91dff35209fd0">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawRotaGraphF()
-: <a class="el" href="a00049.html#a22a3808cd667bf53a298fab969871d5f">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#aef63efa75f55dbc9185a97e233f45c7f">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawTurnGraph()
-: <a class="el" href="a00049.html#aafe8d4f19a1bf110ff9be1c3fa1edf09">dxle::graph2d::texture_2d</a>
+: <a class="el" href="a00328.html#ab8885d013773cf93d9e824bb18f03e4c">dxle::graph2d::texture2d</a>
 </li>
 <li>DrawTurnGraphF()
-: <a class="el" href="a00049.html#aa818e9380df32dc3cd7077d15c2fffa3">dxle::graph2d::texture_2d</a>
-</li>
-<li>DuplicateSoundMem()
-: <a class="el" href="a00045.html#a008a3086562f4898738fb51a521e70d8">dxle::sound::sound</a>
+: <a class="el" href="a00328.html#a507acf288128dd4fe93d34e8f690cacd">dxle::graph2d::texture2d</a>
 </li>
 <li>dx_color()
-: <a class="el" href="a00009.html#ad84f893053d06831ccc153bc93ba88bf">dxle::color::dx_color</a>
+: <a class="el" href="a00264.html#ad84f893053d06831ccc153bc93ba88bf">dxle::color::dx_color</a>
 </li>
 <li>dx_color_param()
-: <a class="el" href="a00010.html#a77616c0e91a1cb3104ea52db4246882d">dxle::color::dx_color_param</a>
+: <a class="el" href="a00268.html#a77616c0e91a1cb3104ea52db4246882d">dxle::color::dx_color_param</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -221,9 +171,9 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">2016年05月17日(火) 01時52分12秒作成 - DxLibEx / 構成: 
+    <li class="footer">2016年12月01日(木) 21時24分46秒作成 - DxLibEx / 構成: 
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
   </ul>
 </div>
 </body>

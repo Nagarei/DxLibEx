@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['double',['double',['../a00105.html#aacd9976edf701f05928e902ff67cf8a2',1,'dxle']]]
+  ['blue',['blue',['../a00256.html#ac2342d4897fb946fd688e3ae31b06ba6',1,'dxle::color::rgb']]]
 ];
