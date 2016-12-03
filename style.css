@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html{
-	font-family: "IPAex明朝","IPA明朝", "Times New Roman", "游明朝" , YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W6","HiraMinProN-W6", "HG明朝E", "メイリオ", Meiryo, serif;
+	font-family: "游明朝" , YuMincho, "IPAex明朝","IPA明朝", "Times New Roman", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W6","HiraMinProN-W6", "HG明朝E", "メイリオ", Meiryo, serif;
 }
 body{
 	background-color: #9790a4;
@@ -19,7 +19,7 @@ h1{
 }
 h1, h2, h3, h4, h5{
 	font-weight: bold;
-	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+	font-family: '游ゴシック',YuGothic, "IPAexゴシック", "IPAゴシック", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
 	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 	color: #0d0015;
 }
@@ -27,10 +27,10 @@ code{
 	font-family: Inconsolata, Ricty, Consolas, "Source Code Pro", "Anonymous Pro", "Ubuntu Mono", "Dejavu Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
 }
 div.syntaxhighlighter table caption{
-	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif !important;
+	font-family: '游ゴシック',YuGothic, "IPAexゴシック", "IPAゴシック", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif !important;
 }
 div.syntaxhighlighter code.comments{
-	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif !important;
+	font-family: '游ゴシック',YuGothic, "IPAexゴシック", "IPAゴシック", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif !important;
 	font-size: 0.9em !important;
 }
 p, li, q, b, a, dd blockquote{
@@ -49,7 +49,7 @@ q{
 	background-color: #e5e4e6;
 }
 dt{
-	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+	font-family: '游ゴシック',YuGothic, "IPAexゴシック", "IPAゴシック", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
 	font-weight: bold;
 }
 table{
@@ -72,7 +72,7 @@ ul, ol{
 .strong{
 	font-size:larger;
 	font-weight:bold;
-	font-family: "IPAexゴシック", "IPAゴシック", "Lucida Grande", YuGothic, '游ゴシック', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+	font-family: '游ゴシック',YuGothic, "IPAexゴシック", "IPAゴシック", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
 }
 tr.strong td{
 	font-size: medium;
