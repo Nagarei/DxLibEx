@@ -18,7 +18,7 @@
 #include <vector>
 #include <algorithm>
 #include <chrono>
-#include "dxlibex/Helper.h"
+#include "dxlibex/helper.hpp"
 #include "dxlibex/config/defines.h"
 #include "dxlibex/thread.hpp"
 #include "dxlibex/type_traits.hpp"
