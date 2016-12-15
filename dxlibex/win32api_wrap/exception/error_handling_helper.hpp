@@ -24,8 +24,6 @@ namespace win32api {
 			}
 		}
 		template<typename CharType, enable_if_t<is_char_type<CharType>::value, nullptr_t> = nullptr>
-		std::basic_string<CharType> handle_error_helper() { return handle_error_helper<CharType>(::GetLastError()); }
-		template<typename CharType, enable_if_t<is_char_type<CharType>::value, nullptr_t> = nullptr>
 		std::basic_string<CharType> handle_error_helper(const DWORD err_code, const std::size_t buffer_len = 2000, const std::size_t loop_cnt = 0) {
 			using str_t = std::basic_string<CharType>;
 			str_t str;
@@ -41,6 +39,8 @@ namespace win32api {
 			str.resize(len);
 			return str;
 		}
+		template<typename CharType, enable_if_t<is_char_type<CharType>::value, nullptr_t> = nullptr>
+		std::basic_string<CharType> handle_error_helper() { return handle_error_helper<CharType>(::GetLastError()); }
 	}
 }
 //using namespace win32api;//dxle名前空間には読み込まない
