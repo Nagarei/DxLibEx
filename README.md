@@ -1,4 +1,7 @@
 ﻿# DxLibEx
+
+master: [![Build status](https://ci.appveyor.com/api/projects/status/23dnx6tjije58a14/branch/master?svg=true)](https://ci.appveyor.com/project/yumetodo/dxlibex/branch/master)
+
 ＤＸライブラリC++化プロジェクト
 まだ仮upの段階です。
 
@@ -6,6 +9,7 @@
 - [Web Page](http://nagarei.github.io/DxLibEx/index.html)
 
 # Support Compiler
+- Visual Stduio 2017 RC(partial)
 - Visaul Studio 2015 update 3
 - Visual Studio 2013 update 5
 - Visual Studio 2015 Clang with Microsoft CodeGen(clang 3.8)(July 2016)
