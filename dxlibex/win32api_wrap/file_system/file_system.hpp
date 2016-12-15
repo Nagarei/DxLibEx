@@ -10,7 +10,7 @@ Distributed under the Boost Software License, Version 1.0.
 #include "dxlibex/basic_types/tchar.hpp"
 #include "dxlibex/utility/inferior_string_ref.hpp"
 #include "dxlibex/win32api_wrap/exception.hpp"
-#include "dxlibex/Helper.h"
+#include "dxlibex/helper.hpp"
 #include <cstdint>
 namespace dxle{
 namespace win32api{

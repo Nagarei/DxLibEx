@@ -64,6 +64,7 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
+    <ClInclude Include="dxlibex\helper.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp" />
@@ -71,7 +72,6 @@
     <ClInclude Include="dxlibex\dxlibex.hpp" />
     <ClInclude Include="dxlibex\dxlib_wrap.hpp" />
     <ClInclude Include="dxlibex\graph2d.hpp" />
-    <ClInclude Include="dxlibex\Helper.h" />
     <ClInclude Include="dxlibex\math.hpp" />
     <ClInclude Include="dxlibex\math\abs.hpp" />
     <ClInclude Include="dxlibex\math\copysign.hpp" />

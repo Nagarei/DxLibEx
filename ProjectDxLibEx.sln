@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProjectDxLibEx", "ProjectDxLibEx.vcxproj", "{A7FFFCCD-08A6-4826-84D4-B46438389B66}"
 EndProject
@@ -97,8 +97,8 @@ Global
 		{D0B701B2-9FFB-45DC-A26E-4C9012E0D237}.Release|Win32.Build.0 = Release|Win32
 		{D0B701B2-9FFB-45DC-A26E-4C9012E0D237}.Release|x64.ActiveCfg = Release|x64
 		{D0B701B2-9FFB-45DC-A26E-4C9012E0D237}.Release|x64.Build.0 = Release|x64
-		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Debug|Win32.ActiveCfg = clang_Debug|Win32
-		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Debug|Win32.Build.0 = clang_Debug|Win32
+		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Debug|Win32.ActiveCfg = Debug|Win32
+		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Debug|Win32.Build.0 = Debug|Win32
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Debug|x64.ActiveCfg = Debug|Win32
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Release|Win32.ActiveCfg = Release|Win32
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.clang_Release|Win32.Build.0 = Release|Win32
@@ -109,8 +109,8 @@ Global
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.Release|Win32.ActiveCfg = Release|Win32
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.Release|Win32.Build.0 = Release|Win32
 		{44682BAF-4F62-42D9-90EB-D7F46CD21B95}.Release|x64.ActiveCfg = Release|Win32
-		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Debug|Win32.ActiveCfg = clang_Debug|Win32
-		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Debug|Win32.Build.0 = clang_Debug|Win32
+		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Debug|Win32.ActiveCfg = Debug|Win32
+		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Debug|Win32.Build.0 = Debug|Win32
 		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Debug|x64.ActiveCfg = Release|Win32
 		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Debug|x64.Build.0 = Release|Win32
 		{280349E1-6523-4483-97DB-2D16B0716396}.clang_Release|Win32.ActiveCfg = Release|Win32

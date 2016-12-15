@@ -41,9 +41,6 @@
     <ClInclude Include="dxlibex\basic_types.hpp">
       <Filter>dxlibex</Filter>
     </ClInclude>
-    <ClInclude Include="dxlibex\Helper.h">
-      <Filter>dxlibex</Filter>
-    </ClInclude>
     <ClInclude Include="dxlibex\structs.h">
       <Filter>dxlibex</Filter>
     </ClInclude>
@@ -205,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="dxlibex\type_traits\is_ratio.hpp">
       <Filter>dxlibex\type_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="dxlibex\helper.hpp">
+      <Filter>dxlibex</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
