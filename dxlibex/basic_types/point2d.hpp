@@ -20,12 +20,12 @@
 #include "dxlibex/algorithm.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
+#include "dxlibex/char_constant.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <utility>//std::pair
 #include <type_traits>
 #include <algorithm>
-#include <functional>
 #include <cmath>
 #include <cstdint>
 #include <limits>
@@ -159,7 +159,7 @@ namespace dxle {
 		//!1. operator bool
 		//!2. operator != (nullptr)
 		//!3. default constector + operator !=
-		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y))){
+		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(std::declval<value_type>(), std::declval<value_type>()))){
 			return dxle::detail::operator_bool_helper(this->x, this->y);
 		}
 		//!\~english conversion to std::pair
@@ -211,7 +211,7 @@ namespace dxle {
 		{
 			use_big_type_when_one_byte_t<PointType> x, y;
 			is >> x;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> y;
 			p.x = static_cast<PointType>(x); p.y = static_cast<PointType>(y);
 		}
@@ -277,7 +277,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point_c<T>& p)
 	{
-		dxle::detail::istream_operator_helper<wchar_t, T>(is, s);
+		dxle::detail::istream_operator_helper<wchar_t, T>(is, p);
 		return is;
 	}
 

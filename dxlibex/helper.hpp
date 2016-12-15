@@ -15,6 +15,7 @@
 #include <algorithm>
 #include "dxlibex/config/defines.h"
 #include <type_traits>
+#include "dxlibex/config/defines.h"
 
 namespace dxle{
 //!実装用のものが集まる名前空間です。開発者以外がここの機能を使うのはお勧めできません。

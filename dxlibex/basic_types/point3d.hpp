@@ -18,6 +18,7 @@
 #include "dxlibex/algorithm/safe_dist.hpp"
 #include "dxlibex/math.hpp"
 #include "dxlibex/cstdlib.hpp"
+#include "dxlibex/char_constant.hpp"
 //#include "dxlibex/basic_types.hpp"//DO NOT REMOVE COMMENT-OUT to avoid redefine
 #include <iostream>
 #include <tuple>
@@ -127,7 +128,9 @@ namespace dxle {
 		//!1. operator bool
 		//!2. operator != (nullptr)
 		//!3. default constector + operator !=
-		DXLE_CONSTEXPR explicit operator bool() const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(this->x, this->y, this->z))){
+		DXLE_CONSTEXPR explicit operator bool() 
+			const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(std::declval<value_type>(), std::declval<value_type>(), std::declval<value_type>())))
+		{
 			return dxle::detail::operator_bool_helper(this->x, this->y, this->z);
 		}
 		//!\~english conversion to another data type
@@ -138,7 +141,7 @@ namespace dxle {
 		}
 		//!\~english conversion to std::tuple
 		//!\~japanese std::tupleへの変換
-		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(this->x))
+		template<typename Tp2_> explicit operator std::tuple<Tp2_, Tp2_, Tp2_>() const DXLE_NOEXCEPT_IF_EXPR(static_cast<Tp2_>(std::declval<value_type>()))
 		{
 			return std::forward_as_tuple(static_cast<Tp2_>(this->x), static_cast<Tp2_>(this->y), static_cast<Tp2_>(this->z));
 		}
@@ -185,9 +188,9 @@ namespace dxle {
 		{
 			use_big_type_when_one_byte_t<point3dType> x, y, z;
 			is >> x;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> y;
-			is.ignore((std::numeric_limits<std::streamsize>::max)(), ',');
+			is.ignore((std::numeric_limits<std::streamsize>::max)(), dxle::char_constant::comma<CharType>());
 			is >> z;
 			p.x = static_cast<point3dType>(x); p.y = static_cast<point3dType>(y); p.z = static_cast<point3dType>(z);
 		}
@@ -253,7 +256,7 @@ namespace dxle {
 	*/
 	template<typename T> std::wistream& operator>>(std::wistream& is, point3d_c<T>& p)
 	{
-		detail::istream_operator_helper<wchar_t, T>(is, p);
+		dxle::detail::istream_operator_helper<wchar_t, T>(is, p);
 		return is;
 	}
 
@@ -405,7 +408,7 @@ namespace dxle {
 	DXLE_CONSTEXPR auto operator *(T1 l, const point3d_c<T2>& r) DXLE_NOEXCEPT_IF_EXPR(l + r.x)
 		->point3d_c<decltype(std::declval<std::remove_cv_t<T1>>() * std::declval<std::remove_cv_t<T2>>())>
 	{
-		return { l + r.x, l + r.y, l + r.z };
+		return { l * r.x, l * r.y, l * r.z };
 	}
 
 	/**
@@ -570,7 +573,7 @@ namespace dxle {
 	template <typename T>
 	DXLE_CONSTEXPR bool operator ==(nullptr_t, const point3d_c<T>& p) DXLE_NOEXCEPT_IF_EXPR(static_cast<bool>(p))
 	{
-		return static_cast<bool>(p);
+		return !static_cast<bool>(p);
 	}
 
 	/**
@@ -641,7 +644,7 @@ namespace dxle {
 	distance_result_type_t<T1, T2> distance(const point3d_c<T1>& p1, const point3d_c<T2>& p2)
 		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
 	{
-		return hypot(safe_dist(p1.x, p2.x), (safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
+		return hypot(safe_dist(p1.x, p2.x), hypot(safe_dist(p1.y, p2.y), safe_dist(p1.z, p2.z)));
 	}
 	typedef point3d_c<int> point3di;
 	typedef point3d_c<std::uint8_t> point3du8i;

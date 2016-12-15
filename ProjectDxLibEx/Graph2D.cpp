@@ -8,7 +8,7 @@
 #include "dxlibex/graph2d.hpp"
 
 namespace dxle{
-namespace Graph2D {
+namespace graph2d {
 
 #ifdef DX_THREAD_SAFE
 		std::mutex screen_mutex_c::mtx;

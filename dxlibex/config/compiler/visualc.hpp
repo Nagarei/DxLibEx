@@ -43,4 +43,11 @@ C++14
 #	define DXLE_NO_CXX14_UDLS_FOR_STRING_AND_CHRONO
 #endif
 
+/*
+C++17
+*/
+#if _MSC_FULL_VER <= 191024629 || 201402 == _MSVC_LANG
+#define DXLE_NO_CXX17_UNUSED
+#endif
+
 #endif	// #ifndef DXLE_INC_CONFIG_COMPILER_VISUALC_HPP_

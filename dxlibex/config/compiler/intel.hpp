@@ -1,4 +1,4 @@
-/*=============================================================================
+﻿/*=============================================================================
   Copyright (C) 2015-2016 DxLibEx project
   https://github.com/Nagarei/DxLibEx/
 
@@ -51,5 +51,6 @@
 #define DXLE_NO_CXX11_USER_DEFINED_LITERALS
 #endif
 
+#define DXLE_NO_CXX17_UNUSED
 
 #endif	// #ifndef DXLE_CONFIG_COMPILER_INTEL_HPP_
