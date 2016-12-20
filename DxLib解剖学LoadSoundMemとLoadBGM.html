@@ -325,5 +325,89 @@ extern int NS_SetCreateSoundDataType( int SoundDataType )
 		<p>基本的には先程見た<code>SoundSysData.CreateSoundDataType</code>にフラグをセットする関数です。</p>
 		<p><code>DX_SOUNDDATATYPE_MEMNOPRESS_PLUS</code>は、コメントによれば、メモリーに読み込んだ後再生中に展開して、一度展開し終わるとメモリーに読み込んだ圧縮データを破棄するモードのようですが、ご覧のように無効化されています。</p>
 	</section>
+	<section>
+		<h2>サウンドハンドル作成:<code>AddStreamSoundMem_UseGParam()</code></h2>
+		<p>では音楽データの読み込み部分を見てみましょう。すべての読み込み関数は内部で<code>AddStreamSoundMem_UseGParam()</code>関数を呼び出します。</p>
+		<pre class="brush: cpp_dxlib; first-line: 762; highlight: [768];" title="DxSound.cpp">// AddStreamSoundMem のグローバル変数にアクセスしないバージョン
+extern int AddStreamSoundMem_UseGParam(
+	LOADSOUND_GPARAM *GParam,
+	STREAMDATA *Stream,
+	int LoopNum,
+	int SoundHandle,
+	int StreamDataType,
+	int *CanStreamCloseFlag,
+	int UnionHandle,
+	int ASyncThread
+)
+{</pre>
+		<p>第5引数に先程まで見てきたフラグが渡されます。フラグの意味については先に述べましたが、そのとおりになっていることを確認しましょう。</p>
+		<pre class="brush: cpp_dxlib; first-line: 837; highlight: [838];" title="DxSound.cpp">	// 新しいＷＡＶＥファイルのロード、データのタイプによって処理を分岐
+	switch( StreamDataType )
+	{
+</pre>
+		<p>まずはswitch文に渡されます。</p>
+		<section>
+			<h3><code>DX_SOUNDDATATYPE_MEMNOPRESS</code>の場合</h3>
+			<pre class="brush: cpp_dxlib; first-line: 854; highlight: [855];" title="DxSound.cpp">				// 丸々メモリに読み込む
+				if( StreamFullRead( Stream, &SrcBuffer, &SrcSize ) < 0 )</pre>
+			<p>まずはファイルからメモリー上に読み込みます</p>
+			<pre class="brush: cpp_dxlib; first-line: 869;">				res = SoundConvertFast( &ConvData, &Format, &PlayData->FileImage, &PlayData->FileImageSize ) ;</pre>
+			<p>次にこれをWAVE形式に変換・展開していきます。ただし無圧縮ＰＣＭの場合は<code>SoundConvertFast</code>関数内部で純粋なコピーが行われます。</p>
+			<pre class="brush: cpp_dxlib; first-line: 882; highlight: [883,884,885,899];" title="DxSound.cpp">			// ＷＡＶＥファイルをでっち上げる
+			if( CreateWaveFileImage( &WaveImage, &WaveSize,
+								 &Format, sizeof( WAVEFORMATEX ),
+								 PlayData->FileImage, PlayData->FileImageSize ) < 0 )
+				goto ERR ;
+
+			// 展開されたデータをストリームとして再度開く				
+			PlayData->MemStream.DataPoint = MemStreamOpen( WaveImage, ( size_t )WaveSize ) ;
+			PlayData->MemStream.ReadShred = *GetMemStreamDataShredStruct() ;
+			SetupSoundConvert( &PlayData->ConvData, &PlayData->MemStream, GParam->DisableReadSoundFunctionMask
+#ifndef DX_NON_OGGVORBIS
+				,GParam->OggVorbisBitDepth, GParam->OggVorbisFromTheoraFile
+#endif
+			) ;
+
+			// メモリアドレスの入れ替え
+			DXFREE( PlayData->FileImage ) ;
+			PlayData->FileImage = WaveImage ;
+			PlayData->FileImageSize = WaveSize ;
+</pre>
+			<p>最後に変換したデータをサウンドハンドルに紐付けられた領域に登録します。</p>
+			<p>つまり、</p>
+			<blockquote>圧縮された全データは再生が始まる前にサウンドメモリにすべて展開され、格納される。</blockquote>
+			<p>のとおり実装されていることが確認できました。</p>
+		</section>
+		<section>
+			<h3><code>DX_SOUNDDATATYPE_MEMPRESS</code>の場合</h3>
+			<pre class="brush: cpp_dxlib; first-line: 910; highlight: [911];" title="DxSound.cpp">			// 丸々メモリに読み込む
+			if( StreamFullRead( Stream, &PlayData->FileImage, &PlayData->FileImageSize ) < 0 )</pre>
+			<p>まずはファイルからメモリー上に読み込みます</p>
+			<pre class="brush: cpp_dxlib; first-line: 917; highlight: [918,919,920,921,922,923];" title="DxSound.cpp">			// 展開されたデータをストリームとして再度開く				
+			PlayData->MemStream.DataPoint = MemStreamOpen( PlayData->FileImage, ( size_t )PlayData->FileImageSize ) ;
+			PlayData->MemStream.ReadShred = *GetMemStreamDataShredStruct() ;
+			if( SetupSoundConvert( &PlayData->ConvData, &PlayData->MemStream, GParam->DisableReadSoundFunctionMask
+#ifndef DX_NON_OGGVORBIS
+									,GParam->OggVorbisBitDepth, GParam->OggVorbisFromTheoraFile
+#endif
+									) < 0 )</pre>
+			<p>読み込んだデータをサウンドハンドルに紐付けられた領域に登録します。</p>
+			<p>この段階では</p>
+			<blockquote>圧縮された全データはシステムメモリに格納され、再生する部分だけ逐次展開しながらサウンドメモリに格納する(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</blockquote>
+			<p>は確かめられていません。</p>
+		</section>
+		<section>
+			<h3><code>DX_SOUNDDATATYPE_FILE</code>の場合</h3>
+			<pre class="brush: cpp_dxlib; first-line: 963; highlight: [963,964,965,966]" title="DxSound.cpp">			if( SetupSoundConvert( &PlayData->ConvData, Stream, GParam->DisableReadSoundFunctionMask
+#ifndef DX_NON_OGGVORBIS
+									,GParam->OggVorbisBitDepth, GParam->OggVorbisFromTheoraFile
+#endif
+								) < 0 )</pre>
+			<p>ファイルストリームをサウンドハンドルに紐付けられた領域に登録します。</p>
+			<p>この段階では</p>
+			<blockquote>圧縮されたデータの再生する部分だけファイルから逐次読み込み展開され、サウンドメモリに格納される(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</blockquote>
+			<p>は確かめられていません。</p>
+		</section>
+	</section>
 </body>
 </html>
