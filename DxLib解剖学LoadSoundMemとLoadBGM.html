@@ -34,7 +34,7 @@
 	<section>
 		<h2>2つの関数の呼び出しをたどる前におさえておきたいこと</h2>
 		<section>
-			<h3>LOADSOUND_GPARAM</h3>
+			<h3><code>LOADSOUND_GPARAM</code></h3>
 			<p>まず引数経由でフラグを渡すための構造体定義が存在します。</p>
 			<pre class="brush: cpp_dxlib; first-line: 74; highlight: [79];" title="DxSound.h">// ファイルからサウンドハンドルを作成する処理に必要なグローバルデータを纏めたもの
 struct LOADSOUND_GPARAM
@@ -59,7 +59,7 @@ struct LOADSOUND_GPARAM
 </pre>
 		</section>
 		<section>
-			<h3>SOUNDSYSTEMDATA</h3>
+			<h3><code>SOUNDSYSTEMDATA</code></h3>
 			<p>DxLib内部でのフラフの保管につかうグローバル変数として</p>
 			<pre class="brush: cpp_dxlib; first-line: 89;" title="DxSound.cpp">// サウンドシステムデータ
 SOUNDSYSTEMDATA SoundSysData ;</pre>
@@ -157,7 +157,7 @@ struct SOUNDSYSTEMDATA
 			</section>
 		</section>
 	<section>
-		<h2>初期化処理:DxLib_Init()InitializeSoundSystem()</h2>
+		<h2>初期化処理:<code>DxLib_Init()InitializeSoundSystem()</code></h2>
 		<p>皆さんDxLibを使うときはこの<code>DxLib_Init</code>関数を呼んでいることと思いますが、まずはここから行きましょう。</p>
 		<p>DxLib_Initの定義は<code>./Windows/DxSystemWin.cpp</code>にあります</p>
 		<pre class="brush: cpp; first-line: 65;" title="./Windows/DxSystemWin.cpp">// ライブラリ初期化関数
