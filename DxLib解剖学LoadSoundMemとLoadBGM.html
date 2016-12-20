@@ -294,6 +294,36 @@ extern int InitializeSoundSystem( void )
 	return 0 ;
 }</pre>
 		<p>つまりデフォルトでは<code>SoundSysData.CreateSoundDataType</code>は<code>DX_SOUNDDATATYPE_MEMNOPRESS</code>だということがわかりました。</p>
-</section>
+	</section>
+	<section>
+		<h2>初期化処理:<code>NS_SetCreateSoundDataType()</code></h2>
+		<p>このあとの解説に必要なので見ておきます。</p>
+		<pre class="brush: cpp_dxlib; first-line: 7451; highlight: [7458,7460,7464];">// 作成するサウンドのデータ形式を設定する
+extern int NS_SetCreateSoundDataType( int SoundDataType )
+{
+	// 値が範囲外のデータ形式かどうか調べる
+	if( SoundDataType >= DX_SOUNDDATATYPE_MEMNOPRESS && SoundDataType <= DX_SOUNDDATATYPE_FILE )
+	{
+		// 現在 DX_SOUNDDATATYPE_MEMNOPRESS_PLUS は非対応
+		if( SoundDataType == DX_SOUNDDATATYPE_MEMNOPRESS_PLUS )
+		{
+			SoundSysData.CreateSoundDataType = DX_SOUNDDATATYPE_MEMNOPRESS ;
+		}
+		else
+		{
+			SoundSysData.CreateSoundDataType = SoundDataType ;
+		}
+	}
+	else
+	{
+		return -1 ; 
+	}
+
+	// 終了
+	return 0 ;
+}</pre>
+		<p>基本的には先程見た<code>SoundSysData.CreateSoundDataType</code>にフラグをセットする関数です。</p>
+		<p><code>DX_SOUNDDATATYPE_MEMNOPRESS_PLUS</code>は、コメントによれば、メモリーに読み込んだ後再生中に展開して、一度展開し終わるとメモリーに読み込んだ圧縮データを破棄するモードのようですが、ご覧のように無効化されています。</p>
+	</section>
 </body>
 </html>
