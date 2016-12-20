@@ -316,7 +316,7 @@ extern int NS_SetCreateSoundDataType( int SoundDataType )
 	}
 	else
 	{
-		return -1 ; 
+		return -1 ;
 	}
 
 	// 終了
@@ -382,7 +382,7 @@ extern int AddStreamSoundMem_UseGParam(
 								 PlayData->FileImage, PlayData->FileImageSize ) < 0 )
 				goto ERR ;
 
-			// 展開されたデータをストリームとして再度開く				
+			// 展開されたデータをストリームとして再度開く
 			PlayData->MemStream.DataPoint = MemStreamOpen( WaveImage, ( size_t )WaveSize ) ;
 			PlayData->MemStream.ReadShred = *GetMemStreamDataShredStruct() ;
 			SetupSoundConvert( &PlayData->ConvData, &PlayData->MemStream, GParam->DisableReadSoundFunctionMask
@@ -406,7 +406,7 @@ extern int AddStreamSoundMem_UseGParam(
 			<pre class="brush: cpp_dxlib; first-line: 910; highlight: [911];" title="DxSound.cpp">			// 丸々メモリに読み込む
 			if( StreamFullRead( Stream, &PlayData->FileImage, &PlayData->FileImageSize ) < 0 )</pre>
 			<p>まずはファイルからメモリー上に読み込みます</p>
-			<pre class="brush: cpp_dxlib; first-line: 917; highlight: [918,919,920,921,922,923];" title="DxSound.cpp">			// 展開されたデータをストリームとして再度開く				
+			<pre class="brush: cpp_dxlib; first-line: 917; highlight: [918,919,920,921,922,923];" title="DxSound.cpp">			// 展開されたデータをストリームとして再度開く
 			PlayData->MemStream.DataPoint = MemStreamOpen( PlayData->FileImage, ( size_t )PlayData->FileImageSize ) ;
 			PlayData->MemStream.ReadShred = *GetMemStreamDataShredStruct() ;
 			if( SetupSoundConvert( &PlayData->ConvData, &PlayData->MemStream, GParam->DisableReadSoundFunctionMask
