@@ -155,8 +155,78 @@ struct SOUNDSYSTEMDATA
 				後述する<code>NS_SetCreateSoundDataType</code>関数内に<code>DX_SOUNDDATATYPE_MEMNOPRESS</code>に強制置換するコードと現在使えないというコメントがありまして・・・
 			</p>
 			<p><code>DX_SOUNDDATATYPE_MEMPRESS</code>はストリーム形式と呼んでいるようです。</p>
-			</section>
 		</section>
+		<section>
+			<h3><code>SOUND</code></h3>
+			<p>これとは別に、サウンドハンドルと紐付けられた情報を格納するための構造体が存在します。</p>
+			<pre class="brush: cpp_dxlib; first-line: 227; highlight: [251]" title="Sound.h">// サウンドデータ
+struct SOUND
+{
+	HANDLEINFO					HandleInfo ;											// ハンドル共通情報
+
+	HANDLELIST					_3DSoundList ;											// ３Ｄサウンドリスト処理用構造体
+	int							Is3DSound ;												// ３Ｄサウンドかどうか( TRUE:３Ｄサウンド  FALSE:非３Ｄサウンド )
+	int							AddPlay3DSoundList ;									// Play3DSoundList がリストに追加されているかどうか( TRUE:追加されている  FALSE:追加されていない )
+	HANDLELIST					Play3DSoundList ;										// 再生中の３Ｄサウンドのリスト処理用構造体
+
+	int							PlayFinishDeleteFlag ;									// サウンドの再生が終了したら削除するかどうか( TRUE:削除する  FALSE:削除しない )
+	HANDLELIST					PlayFinishDeleteSoundList ;								// サウンドの再生が終了したら削除するサウンドのリスト処理用構造体
+
+	int							NotInitSoundMemDelete ;									// InitSoundMem で削除しないかどうかのフラグ( TRUE:InitSoundMemでは削除しない  FALSE:InitSoundMemで削除する )
+
+//	char						FilePath[ 256 ] ;										// ディレクトリ
+//	char						SoundName[ 256 ] ;										// サウンドファイルネーム
+
+	int							ValidBufferNum ;										// 有効なバッファの数
+	int							BufferPlayStateBackupFlagValid[ MAX_SOUNDBUFFER_NUM ] ;	// BufferPlayStateBackupFlag が有効かどうかのフラグ( TRUE:有効  FALSE:無効 )
+	int							BufferPlayStateBackupFlag[ MAX_SOUNDBUFFER_NUM ] ;		// サウンドバッファを一時停止するときの再生状態フラグ
+	SOUNDBUFFER					Buffer[ MAX_SOUNDBUFFER_NUM ] ;							// サウンドバッファ
+	WAVEFORMATEX				BufferFormat ;											// サウンドバッファのフォーマット
+
+	int							Type ;													// サウンドのタイプ
+	int							PlayType ;												// 再生タイプ
+
+	STREAMPLAYDATA				Stream ;												// ストリーム風サウンドプレイ用データ
+	NORMALPLAYDATA				Normal ;												// ノーマルサウンドプレイ用データ
+
+	int							PresetReverbParam ;										// ３Ｄサウンド時に設定するプリセットリバーブパラメータ番号( DX_REVERB_PRESET_DEFAULT 等 )
+	SOUND3D_REVERB_PARAM		ReverbParam ;											// ３Ｄサウンド時に設定するリバーブパラメータ( PresetReverbParam が -1 の際に使用 )
+
+	int							BaseVolume[ SOUNDBUFFER_MAX_CHANNEL_NUM ] ;				// 基本ボリューム( -1:デフォルト )
+	int							BasePan ;												// 基本パン( -1:デフォルト )
+	int							BaseFrequency ;											// 基本再生周波数( -1:デフォルト )
+	VECTOR						Base3DPosition ;										// 基本再生位置
+	float						Base3DRadius ;											// 基本聞こえる距離
+	VECTOR						Base3DVelocity ;										// 基本音の速度
+	int							PitchRateEnable ;										// ピッチレートが有効化どうか( TRUE:有効  FALSE:無効 )
+	float						PitchRate ;												// ピッチレート
+
+	BYTE						ValidNextPlayVolume[ SOUNDBUFFER_MAX_CHANNEL_NUM ] ;	// NextPlayVolume が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlayPan ;										// NextPlayPan が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlayFrequency ;								// NextPlayFrequency が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlay3DPosition ;								// NextPlay3DPosition が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlay3DRadius ;									// NextPlay3DRadius が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlay3DVelocity ;								// NextPlay3DVelocity が有効かどうか( 1:有効 0:無効 )
+	int							NextPlayVolume[ SOUNDBUFFER_MAX_CHANNEL_NUM ] ;			// 次に鳴らす音のボリューム
+	int							NextPlayPan ;											// 次に鳴らす音のパン
+	int							NextPlayFrequency ;										// 次に鳴らす音の周波数
+	VECTOR						NextPlay3DPosition ;									// 次に鳴らす音の位置
+	float						NextPlay3DRadius ;										// 次に鳴らす音の聞こえる距離
+	VECTOR						NextPlay3DVelocity ;									// 次に鳴らす音の移動速度
+} ;</pre>
+		</section>
+		<section>
+			<h3><code>SOUNDTYPE</code></h3>
+			<p>で、大事なのが<code>Type</code>です。これに入る値は、</p>
+			<dl>
+				<dt><code>DX_SOUNDTYPE_NORMAL</code></dt>
+				<dd>ノーマルサウンド形式</dd>
+				<dt><code>DX_SOUNDTYPE_STREAMSTYLE</code></dt>
+				<dd>ストリーム風サウンド形式</dd>
+			</dl>
+			<p>となります。</p>
+		</section>
+	</section>
 	<section>
 		<h2>初期化処理:<code>DxLib_Init()InitializeSoundSystem()</code></h2>
 		<p>皆さんDxLibを使うときはこの<code>DxLib_Init</code>関数を呼んでいることと思いますが、まずはここから行きましょう。</p>
@@ -417,7 +487,7 @@ extern int AddStreamSoundMem_UseGParam(
 			<p>読み込んだデータをサウンドハンドルに紐付けられた領域に登録します。</p>
 			<p>この段階では</p>
 			<blockquote>圧縮された全データはシステムメモリに格納され、再生する部分だけ逐次展開しながらサウンドメモリに格納する(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</blockquote>
-			<p>は確かめられていません。</p>
+			<p>は<b>確かめられていません</b>。</p>
 		</section>
 		<section>
 			<h3><code>DX_SOUNDDATATYPE_FILE</code>の場合</h3>
@@ -429,7 +499,31 @@ extern int AddStreamSoundMem_UseGParam(
 			<p>ファイルストリームをサウンドハンドルに紐付けられた領域に登録します。</p>
 			<p>この段階では</p>
 			<blockquote>圧縮されたデータの再生する部分だけファイルから逐次読み込み展開され、サウンドメモリに格納される(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</blockquote>
-			<p>は確かめられていません。</p>
+			<p>は<b>確かめられていません</b>。</p>
+		</section>
+		<section>
+			<h3>サウンドバッファの作成</h3>
+			<p>このswitch文のあと、サウンドバッファの作成処理があります。</p>
+			<pre class="brush: cpp_dxlib; first-line: 1021; highlight: [1028,1031]" title="Sound.cpp">		// サウンドバッファを共有するかどうかで処理を分岐
+		if( UniSound == NULL )
+		{
+			DWORD BufferSec ;
+
+			// サウンドバッファを作成
+			BufferSec = StreamDataType == DX_SOUNDDATATYPE_FILE ? STS_BUFSEC_FILE : STS_BUFSEC ;
+			CreateSoundBuffer(
+				&Sound->BufferFormat,
+				SOUNDSIZE( BufferSec * Sound->BufferFormat.nAvgBytesPerSec / STS_DIVNUM, Sound->BufferFormat.nBlockAlign ),
+				DX_SOUNDTYPE_STREAMSTYLE, 1, SoundHandle, -1, ASyncThread
+			) ;
+			Sound->Stream.SoundBufferSize = SOUNDSIZE( BufferSec * Sound->BufferFormat.nAvgBytesPerSec / STS_DIVNUM, Sound->BufferFormat.nBlockAlign ) ;
+			Sound->BaseFrequency          = ( int )Sound->BufferFormat.nSamplesPerSec ;
+//			Sound->PitchRateEnable        = GParam->CreateSoundPitchRateEnable ;
+//			Sound->PitchRate              = GParam->CreateSoundPitchRate ;
+
+			// 共有情報をセット
+			Sound->Stream.BufferBorrowSoundHandle = -1 ;
+		}</pre>
 		</section>
 	</section>
 </body>
