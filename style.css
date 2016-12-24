@@ -128,3 +128,6 @@ nav ul li.disable{
     height: 200px;
     overflow-y: scroll;
 }
+.syntaxhighlighter ::selection{
+	background-color: #E4EFFF;
+}

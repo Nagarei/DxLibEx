@@ -1,0 +1,693 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>DxLib解剖学LoadSoundMemとLoadBGM - DxLibEx Research Notes</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/4.1.0/sanitize.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.3/styles/shCore.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.3/styles/shThemeMidnight_likeVS.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/themes/default/style.min.css">
+	<script src="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.3/scripts/shCore.js"></script>
+	<script src="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.3/scripts/shBrushPlain.js"></script>
+	<script src="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.3/scripts/shBrushCpp_kai.js"></script>
+	<script src="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.3/scripts/shBrushCppDxLib.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/jstree.min.js"></script>
+	<script>
+		SyntaxHighlighter.all();
+	</script>
+</head>
+<body>
+	<h1>DxLib解剖学LoadSoundMemとLoadBGM</h1>
+	<section>
+		<h2>ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</h2>
+		<p>
+			この記事は<a href="http://qiita.com/advent-calendar/2016/gameengine">ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</a> 13日目の記事です<br>
+			<a href="http://qiita.com/hoge1e3/items/727caca153914e702cb8">&lt;&lt;16日目 | Tonyu System 2: キャラクターの「動き」に注目した、ブラウザゲーム開発環境</a> || <a href="http://qiita.com/ueshita/items/12f536a7cfa1564da8be">18日目 | エフェクト制作ツール「Effekseer」について + 他色々 &gt;&gt;</a>
+		</p>
+		<p>
+			記事の投稿が大幅に遅れ申し訳ありません。特に、@Reputeless 氏には数回に渡るTwitterでの催促を頂き、申し訳ありません。<br>
+			一応言い訳しておくと、DxLibの実装が想像をはるかに上回る汚さで調査がはかどらなかったのと、<br>
+			説明に関数呼び出しツリーがほしかったのですが、Visual Studioのそれは子Nodeまでコピーできない代物で<br>
+			LLVM IRを<code>opt</code>コマンドでdotファイルに変換してそれを更にパースしてjstreeで読めるjsonにするプログラムを書いていたのですが、<br>
+			これまたC++の構文の難しさに時間を取られました。
+		</p>
+	</section>
+	<section>
+		<h2>はじめに</h2>
+		<p>
+			私は現在DxLibExという、DxLibを現代C++的に操作できるようにラップするライブラリを制作しています。<br>
+			<a href="https://github.com/Nagarei/DxLibEx">Nagarei/DxLibEx: ＤＸライブラリC++化プロジェクト</a>
+		</p>
+		<p>
+			DxLibは日本では有名なゲームライブラリで、C/C++の入門教材としてもよく用いられます。<br>
+			<a href="http://dxlib.o.oo7.jp/">ＤＸライブラリ置き場　ＨＯＭＥ</a><br>
+			これ自体はDirectX 9/11や<a href="http://www.vorbis.com/">ogg</a>、<a href="http://opus-codec.org/">opus</a>、<a href="http://zlib.net/">zlib</a>、Win32APIをラップしたものになっています。<br>
+			一応C++だけどほとんどCという感じのライブラリです。<br>
+			いろいろ小回りは効くのですが、実装がちょっと人間を卒業していることで知られています(要出典)
+		</p>
+		<p>
+			さて、DxLibにはLoadSoundMem　と LoadBGMという似た関数があります。これはどう違うのか。<br>
+			DxLibExでラップする作業中に気になったので、調べてみました。
+		</p>
+	</section>
+	<section>
+		<h2>調査対象version</h2>
+		<p><a href="http://dxlib.o.oo7.jp/dxdload.html">公式サイトから落とした</a><code>3.16f</code></p>
+	</section>
+	<section>
+		<h2>2つの関数の呼び出しをたどる前におさえておきたいこと</h2>
+		<section>
+			<h3><code>LOADSOUND_GPARAM</code></h3>
+			<p>まず引数経由でフラグを渡すための構造体定義が存在します。</p>
+			<pre class="brush: cpp_dxlib; first-line: 74; highlight: [79];" title="DxSound.h">// ファイルからサウンドハンドルを作成する処理に必要なグローバルデータを纏めたもの
+struct LOADSOUND_GPARAM
+{
+	int							NotInitSoundMemDelete ;					// InitSoundMem で削除しないかどうかのフラグ( TRUE:InitSoundMemでは削除しない  FALSE:InitSoundMemで削除する )
+	int							Create3DSoundFlag ;						// 3Dサウンドを作成するかどうかのフラグ( TRUE:３Ｄサウンドを作成する  FALSE:３Ｄサウンドを作成しない )
+	int							CreateSoundDataType ;					// 作成するサウンドデータのデータタイプ
+	int							CreateSoundPitchRateEnable ;			// 作成するサウンドデータのピッチレートが有効かどうか
+	float						CreateSoundPitchRate ;					// 作成するサウンドデータのピッチレート
+	int							CreateSoundTimeStretchRateEnable ;		// 作成するサウンドデータのタイムストレッチレートが有効かどうか
+	float						CreateSoundTimeStretchRate ;			// 作成するサウンドデータのタイムストレッチレート
+	int							CreateSoundLoopStartTimePosition ;		// 作成するサウンドデータのループ範囲の先端( ミリ秒 )
+	int							CreateSoundLoopStartSamplePosition ;	// 作成するサウンドデータのループ範囲の先端( サンプル )
+	int							CreateSoundLoopEndTimePosition ;		// 作成するサウンドデータのループ範囲の終端( ミリ秒 )
+	int							CreateSoundLoopEndSamplePosition ;		// 作成するサウンドデータのループ範囲の終端( サンプル )
+	int							DisableReadSoundFunctionMask ;			// 使用しない読み込み処理のマスク
+#ifndef DX_NON_OGGVORBIS
+	int							OggVorbisBitDepth ;						// ＯｇｇＶｏｒｂｉｓ使用時のビット深度(1:8bit 2:16bit)
+	int							OggVorbisFromTheoraFile ;				// Ogg Theora ファイル中の Vorbis データを参照するかどうかのフラグ( TRUE:Theora ファイル中の Vorbis データを参照する )
+#endif
+} ;
+</pre>
+		</section>
+		<section>
+			<h3><code>SOUNDSYSTEMDATA</code></h3>
+			<p>DxLib内部でのフラフの保管につかうグローバル変数として</p>
+			<pre class="brush: cpp_dxlib; first-line: 89;" title="DxSound.cpp">// サウンドシステムデータ
+SOUNDSYSTEMDATA SoundSysData ;</pre>
+			<p>があります。<code>SOUNDSYSTEMDATA</code>は</p>
+			<pre class="brush: cpp_dxlib; first-line: 350; highlight: [396];" title="DxSound.h">// サウンドシステム用データ構造体
+struct SOUNDSYSTEMDATA
+{
+	int							InitializeFlag ;				// 初期化フラグ
+
+	DWORD						OutputChannels ;				// 出力チャンネル数
+	DWORD						OutputSmaplesPerSec ;			// 出力サンプリングレート
+
+	int							_3DSoundOneMetreEnable ;		// _3DSoundOneMetre が有効かどうか( TRUE:有効  FALSE:無効 )
+	float						_3DSoundOneMetre ;				// ３Ｄサウンド処理用の１メートル
+	_3DSOUNDINFO				ListenerInfo ;					// ３Ｄサウンドのリスナーの情報
+	VECTOR						ListenerSideDirection ;			// ３Ｄサウンドのリスナーの横方向
+
+	HANDLELIST					_3DSoundListFirst ;				// ３Ｄサウンドハンドルリストの先頭
+	HANDLELIST					_3DSoundListLast ;				// ３Ｄサウンドハンドルリストの終端
+	DX_CRITICAL_SECTION			_3DSoundListCriticalSection ;	// ３Ｄサウンドリストアクセス時用クリティカルセクション
+
+	HANDLELIST					StreamSoundListFirst ;			// ストリームサウンドハンドルリストの先頭
+	HANDLELIST					StreamSoundListLast ;			// ストリームサウンドハンドルリストの終端
+	DX_CRITICAL_SECTION			StreamSoundListCriticalSection ;// ストリームサウンドハンドルリストアクセス時用クリティカルセクション
+
+	HANDLELIST					SoftSoundPlayerListFirst ;		// ソフトウエアで扱う波形データのプレイヤーのハンドルリストの先頭
+	HANDLELIST					SoftSoundPlayerListLast ;		// ソフトウエアで扱う波形データのプレイヤーのハンドルリストの終端
+
+	HANDLELIST					PlayFinishDeleteSoundListFirst ; // 再生終了時に削除するサウンドハンドルリストの先頭
+	HANDLELIST					PlayFinishDeleteSoundListLast ;	 // 再生終了時に削除するサウンドハンドルリストの終端
+
+	HANDLELIST					Play3DSoundListFirst ;			// 再生している３Ｄサウンドリストの先頭
+	HANDLELIST					Play3DSoundListLast ;			// 再生している３Ｄサウンドリストの終端
+	DX_CRITICAL_SECTION			Play3DSoundListCriticalSection ;// 再生している３Ｄサウンドリストアクセス時用クリティカルセクション
+
+	int							PlayWavSoundHandle ;			// PlayWav関数で鳴らされているWAVEデータのハンドル
+
+	int							Create3DSoundFlag ;				// 3Dサウンドを作成するかどうかのフラグ( TRUE:３Ｄサウンドを作成する  FALSE:３Ｄサウンドを作成しない )
+	int							OldVolumeTypeFlag ;				// Ver3.10c以前の音量計算式を使用するかどうかのフラグ( TRUE:古い計算式を使用する  FALSE:新しい計算式を使用する )
+	int							SoundMode ;						// 再生形式
+
+	int							MaxVolume ;						// 最大音量
+
+	int							EnableSoundCaptureFlag ;		// サウンドキャプチャを前提とした動作をする
+#ifndef DX_NON_SAVEFUNCTION
+	int							SoundCaptureFlag ;				// サウンドキャプチャを実行している最中かどうかのフラグ(TRUE:最中 FASLE:違う)
+	int							SoundCaptureSample ;			// キャプチャしたサンプルの数(44.1KHz換算)
+	DWORD_PTR					SoundCaptureFileHandle ;		// キャプチャしたサウンドを保存しているファイル
+#endif // DX_NON_SAVEFUNCTION
+
+	int							CreateSoundDataType ;					// 作成するサウンドデータのデータタイプ
+	int							CreateSoundPitchRateEnable ;			// 作成するサウンドデータのピッチレートが有効かどうか
+	float						CreateSoundPitchRate ;					// 作成するサウンドデータのピッチレート
+	float						CreateSoundPitchRate_Cents ;			// 作成するサウンドデータのピッチレート( セント単位 )
+	int							CreateSoundTimeStretchRateEnable ;		// 作成するサウンドデータのタイムストレッチレートが有効かどうか
+	float						CreateSoundTimeStretchRate ;			// 作成するサウンドデータのタイムストレッチレート
+	int							CreateSoundLoopStartTimePosition ;		// 作成するサウンドデータのループ範囲の先端( ミリ秒 )
+	int							CreateSoundLoopStartSamplePosition ;	// 作成するサウンドデータのループ範囲の先端( サンプル )
+	int							CreateSoundLoopEndTimePosition ;		// 作成するサウンドデータのループ範囲の終端( ミリ秒 )
+	int							CreateSoundLoopEndSamplePosition ;		// 作成するサウンドデータのループ範囲の終端( サンプル )
+	int							DisableReadSoundFunctionMask ;			// 使用しない読み込み処理のマスク
+#ifndef DX_NON_OGGVORBIS
+	int							OggVorbisBitDepth ;				// ＯｇｇＶｏｒｂｉｓ使用時のビット深度(1:8bit 2:16bit)
+	int							OggVorbisFromTheoraFile ;		// Ogg Theora ファイル中の Vorbis データを参照するかどうかのフラグ( TRUE:Theora ファイル中の Vorbis データを参照する )
+#endif
+
+#ifndef DX_NON_BEEP
+	int							BeepFrequency ;									// 再生するBEEP音の周波数
+	int							BeepPlay ;										// BEEPを再生中かどうか
+	int							BeepSoundBufferUseIndex ;						// 使用するBEEP音再生用のサウンドバッファ
+	SOUND_BEEP_BUFFERDATA		BeepSoundBuffer[ SOUND_BEEPSOUNDBUFFER_NUM ] ;	// BEEP音用のサウンドバッファ関連情報
+#endif
+
+	short						SinTable[ SOUND_SINTABLE_DIV ] ;	// サインテーブル
+
+	SOUNDSYSTEMDATA_PF			PF ;							// 環境依存情報
+} ;</pre>
+			<p>のように定義されています。</p>
+		</section>
+		<section>
+			<h3>CreateSoundDataType</h3>
+			<p>で大事なのは<code>CreateSoundDataType</code>です。これが取りうる値は</p>
+			<dl>
+				<dt>DX_SOUNDDATATYPE_MEMNOPRESS</dt>
+				<dd>圧縮された全データは再生が始まる前にサウンドメモリにすべて展開され、格納される。</dd>
+				<dt>DX_SOUNDDATATYPE_MEMPRESS</dt>
+				<dd>圧縮された全データはシステムメモリに格納され、再生する部分だけ逐次展開しながらサウンドメモリに格納する(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</dd>
+				<dt>DX_SOUNDDATATYPE_FILE</dt>
+				<dd>圧縮されたデータの再生する部分だけファイルから逐次読み込み展開され、サウンドメモリに格納される(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</dd>
+			</dl>
+			<p>
+				の3つです。まあ<code>DX_SOUNDDATATYPE_MEMNOPRESS_PLUS</code>というのもあるんですが、<br>
+				後述する<code>NS_SetCreateSoundDataType</code>関数内に<code>DX_SOUNDDATATYPE_MEMNOPRESS</code>に強制置換するコードと現在使えないというコメントがありまして・・・
+			</p>
+			<p><code>DX_SOUNDDATATYPE_MEMPRESS</code>はストリーム形式と呼んでいるようです。</p>
+		</section>
+		<section>
+			<h3><code>SOUND</code></h3>
+			<p>これとは別に、サウンドハンドルと紐付けられた情報を格納するための構造体が存在します。</p>
+			<pre class="brush: cpp_dxlib; first-line: 227; highlight: [251]" title="Sound.h">// サウンドデータ
+struct SOUND
+{
+	HANDLEINFO					HandleInfo ;											// ハンドル共通情報
+
+	HANDLELIST					_3DSoundList ;											// ３Ｄサウンドリスト処理用構造体
+	int							Is3DSound ;												// ３Ｄサウンドかどうか( TRUE:３Ｄサウンド  FALSE:非３Ｄサウンド )
+	int							AddPlay3DSoundList ;									// Play3DSoundList がリストに追加されているかどうか( TRUE:追加されている  FALSE:追加されていない )
+	HANDLELIST					Play3DSoundList ;										// 再生中の３Ｄサウンドのリスト処理用構造体
+
+	int							PlayFinishDeleteFlag ;									// サウンドの再生が終了したら削除するかどうか( TRUE:削除する  FALSE:削除しない )
+	HANDLELIST					PlayFinishDeleteSoundList ;								// サウンドの再生が終了したら削除するサウンドのリスト処理用構造体
+
+	int							NotInitSoundMemDelete ;									// InitSoundMem で削除しないかどうかのフラグ( TRUE:InitSoundMemでは削除しない  FALSE:InitSoundMemで削除する )
+
+//	char						FilePath[ 256 ] ;										// ディレクトリ
+//	char						SoundName[ 256 ] ;										// サウンドファイルネーム
+
+	int							ValidBufferNum ;										// 有効なバッファの数
+	int							BufferPlayStateBackupFlagValid[ MAX_SOUNDBUFFER_NUM ] ;	// BufferPlayStateBackupFlag が有効かどうかのフラグ( TRUE:有効  FALSE:無効 )
+	int							BufferPlayStateBackupFlag[ MAX_SOUNDBUFFER_NUM ] ;		// サウンドバッファを一時停止するときの再生状態フラグ
+	SOUNDBUFFER					Buffer[ MAX_SOUNDBUFFER_NUM ] ;							// サウンドバッファ
+	WAVEFORMATEX				BufferFormat ;											// サウンドバッファのフォーマット
+
+	int							Type ;													// サウンドのタイプ
+	int							PlayType ;												// 再生タイプ
+
+	STREAMPLAYDATA				Stream ;												// ストリーム風サウンドプレイ用データ
+	NORMALPLAYDATA				Normal ;												// ノーマルサウンドプレイ用データ
+
+	int							PresetReverbParam ;										// ３Ｄサウンド時に設定するプリセットリバーブパラメータ番号( DX_REVERB_PRESET_DEFAULT 等 )
+	SOUND3D_REVERB_PARAM		ReverbParam ;											// ３Ｄサウンド時に設定するリバーブパラメータ( PresetReverbParam が -1 の際に使用 )
+
+	int							BaseVolume[ SOUNDBUFFER_MAX_CHANNEL_NUM ] ;				// 基本ボリューム( -1:デフォルト )
+	int							BasePan ;												// 基本パン( -1:デフォルト )
+	int							BaseFrequency ;											// 基本再生周波数( -1:デフォルト )
+	VECTOR						Base3DPosition ;										// 基本再生位置
+	float						Base3DRadius ;											// 基本聞こえる距離
+	VECTOR						Base3DVelocity ;										// 基本音の速度
+	int							PitchRateEnable ;										// ピッチレートが有効化どうか( TRUE:有効  FALSE:無効 )
+	float						PitchRate ;												// ピッチレート
+
+	BYTE						ValidNextPlayVolume[ SOUNDBUFFER_MAX_CHANNEL_NUM ] ;	// NextPlayVolume が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlayPan ;										// NextPlayPan が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlayFrequency ;								// NextPlayFrequency が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlay3DPosition ;								// NextPlay3DPosition が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlay3DRadius ;									// NextPlay3DRadius が有効かどうか( 1:有効 0:無効 )
+	BYTE						ValidNextPlay3DVelocity ;								// NextPlay3DVelocity が有効かどうか( 1:有効 0:無効 )
+	int							NextPlayVolume[ SOUNDBUFFER_MAX_CHANNEL_NUM ] ;			// 次に鳴らす音のボリューム
+	int							NextPlayPan ;											// 次に鳴らす音のパン
+	int							NextPlayFrequency ;										// 次に鳴らす音の周波数
+	VECTOR						NextPlay3DPosition ;									// 次に鳴らす音の位置
+	float						NextPlay3DRadius ;										// 次に鳴らす音の聞こえる距離
+	VECTOR						NextPlay3DVelocity ;									// 次に鳴らす音の移動速度
+} ;</pre>
+		</section>
+		<section>
+			<h3><code>SOUNDTYPE</code></h3>
+			<p>で、大事なのが<code>Type</code>です。これに入る値は、</p>
+			<dl>
+				<dt><code>DX_SOUNDTYPE_NORMAL</code></dt>
+				<dd>ノーマルサウンド形式</dd>
+				<dt><code>DX_SOUNDTYPE_STREAMSTYLE</code></dt>
+				<dd>ストリーム風サウンド形式</dd>
+			</dl>
+			<p>となります。</p>
+		</section>
+	</section>
+	<section>
+		<h2>初期化処理:<code>DxLib_Init()InitializeSoundSystem()</code></h2>
+		<p>皆さんDxLibを使うときはこの<code>DxLib_Init</code>関数を呼んでいることと思いますが、まずはここから行きましょう。</p>
+		<p>DxLib_Initの定義は<code>./Windows/DxSystemWin.cpp</code>にあります</p>
+		<pre class="brush: cpp; first-line: 65;" title="./Windows/DxSystemWin.cpp">// ライブラリ初期化関数
+extern int NS_DxLib_Init( void )
+{
+	// 既に初期化済みの場合は何もせず終了
+	if( DxSysData.DxLib_InitializeFlag == TRUE ) return 0 ;
+
+	DXST_ERRORLOGFMT_ADDUTF16LE(( "\x24\xff\x38\xff\xe9\x30\xa4\x30\xd6\x30\xe9\x30\xea\x30\x6e\x30\x1d\x52\x1f\x67\x16\x53\xe6\x51\x06\x74\x8b\x95\xcb\x59\x00"/*@ L"ＤＸライブラリの初期化処理開始" @*/ )) ;
+	DXST_ERRORLOG_TABADD ;
+
+	// 初期化中フラグを立てる
+	DxSysData.DxLib_RunInitializeFlag = TRUE ;
+</pre>
+		<p>でこの230行もある関数の途中に</p>
+		<pre class="brush: cpp; first-line: 213; highlight: [217];" title="./Windows/DxSystemWin.cpp">	if( DxSysData.NotSoundFlag == FALSE )
+	{
+#ifndef DX_NON_SOUND
+		InitializeSoundConvert() ;									// サウンド変換処理の初期化
+		InitializeSoundSystem() ;									// サウンドシステムのの初期化
+#endif // DX_NON_SOUND
+	}
+</pre>
+		<p><code>InitializeSoundSystem</code>という関数があると思います。この関数の定義は<code>DxSound.cpp</code>にあります。</p>
+		<pre class="brush: cpp; first-line: 157; highlight: [218];" title="DxSound.cpp">// サウンドシステムを初期化する
+extern int InitializeSoundSystem( void )
+{
+	if( SoundSysData.InitializeFlag )
+	{
+		return -1 ;
+	}
+
+	// 出力レートをセット
+	if( SoundSysData.OutputSmaplesPerSec == 0 )
+	{
+		SoundSysData.OutputSmaplesPerSec = 44100 ;
+	}
+
+	// ３Ｄサウンドの１メートルを設定
+	if( SoundSysData._3DSoundOneMetreEnable == FALSE )
+	{
+		SoundSysData._3DSoundOneMetre = 1.0f ;
+	}
+
+	// サウンドハンドル管理情報初期化
+	InitializeHandleManage( DX_HANDLETYPE_SOUND, sizeof( SOUND ), MAX_SOUND_NUM, InitializeSoundHandle, TerminateSoundHandle, L"Sound" ) ;
+
+	// ソフトウエアで扱う波形データハンドル管理情報初期化
+	InitializeHandleManage( DX_HANDLETYPE_SOFTSOUND, sizeof( SOFTSOUND ), MAX_SOFTSOUND_NUM, InitializeSoftSoundHandle, TerminateSoftSoundHandle, L"SoftSound" ) ;
+
+	// ＭＩＤＩハンドル管理情報初期化
+	InitializeHandleManage( DX_HANDLETYPE_MUSIC, sizeof( MIDIHANDLEDATA ), MAX_MUSIC_NUM, InitializeMidiHandle, TerminateMidiHandle, L"Music" ) ;
+
+	// クリティカルセクションの初期化
+	CriticalSection_Initialize( &SoundSysData._3DSoundListCriticalSection ) ;
+	CriticalSection_Initialize( &SoundSysData.Play3DSoundListCriticalSection ) ;
+	CriticalSection_Initialize( &SoundSysData.StreamSoundListCriticalSection ) ;
+
+	// ハンドルリストを初期化
+	InitializeHandleList( &SoundSysData._3DSoundListFirst,				&SoundSysData._3DSoundListLast ) ;
+	InitializeHandleList( &SoundSysData.StreamSoundListFirst,			&SoundSysData.StreamSoundListLast ) ;
+	InitializeHandleList( &SoundSysData.SoftSoundPlayerListFirst,		&SoundSysData.SoftSoundPlayerListLast ) ;
+	InitializeHandleList( &SoundSysData.PlayFinishDeleteSoundListFirst, &SoundSysData.PlayFinishDeleteSoundListLast ) ;
+	InitializeHandleList( &SoundSysData.Play3DSoundListFirst,			&SoundSysData.Play3DSoundListLast ) ;
+
+	// サインテーブルの初期化
+	{
+		int i ;
+		float Sin ;
+		float Cos ;
+
+		for( i = 0 ; i < SOUND_SINTABLE_DIV ; i ++ )
+		{
+			_SINCOS( i * DX_PI_F * 2 / SOUND_SINTABLE_DIV, &Sin, &Cos ) ;
+			SoundSysData.SinTable[ i ] = ( short )_FTOL( Sin * 16384.0f ) ;
+		}
+	}
+
+	// 環境依存処理
+	if( InitializeSoundSystem_PF_Timing0() < 0 )
+	{
+		return -1 ;
+	}
+
+	// 作成する音のデータタイプをセット
+	SoundSysData.CreateSoundDataType = DX_SOUNDDATATYPE_MEMNOPRESS ;
+
+	// 作成する音のピッチレートをセット
+	SoundSysData.CreateSoundPitchRateEnable = FALSE ;
+	SoundSysData.CreateSoundPitchRate = 1.0f ;
+
+	// 作成する音のタイムストレッチレートをセット
+	SoundSysData.CreateSoundTimeStretchRateEnable = FALSE ;
+	SoundSysData.CreateSoundTimeStretchRate = 1.0f ;
+
+#ifndef DX_NON_OGGVORBIS
+	// ＯｇｇＶｏｒｂｉｓのＰＣＭデコード時の、ビット深度を１６bitにセット
+	SoundSysData.OggVorbisBitDepth = 2 ;
+#endif // DX_NON_OGGVORBIS
+
+	// ３Ｄサウンド処理用のリスナー情報を初期化
+	SoundSysData.ListenerInfo.Position			= VGet( 0.0f, 0.0f, 0.0f ) ;
+	SoundSysData.ListenerInfo.FrontDirection	= VGet( 0.0f, 0.0f, 1.0f ) ;
+	SoundSysData.ListenerInfo.Velocity			= VGet( 0.0f, 0.0f, 0.0f ) ;
+	SoundSysData.ListenerInfo.InnerAngle		= DX_PI_F * 5.0f / 6.0f ;
+	SoundSysData.ListenerInfo.OuterAngle		= DX_PI_F * 11.0f / 6.0f ;
+	SoundSysData.ListenerInfo.InnerVolume		= 1.0f ;
+	SoundSysData.ListenerInfo.OuterVolume		= 0.75f ;
+	SoundSysData.ListenerSideDirection			= VGet( 1.0f, 0.0f, 0.0f ) ;
+
+	// 初期化フラグを立てる
+	SoundSysData.InitializeFlag = TRUE ;
+
+	NS_InitSoundMem() ;
+	NS_InitSoftSound() ;
+	NS_InitSoftSoundPlayer() ;
+
+	// 環境依存処理
+	if( InitializeSoundSystem_PF_Timing1() < 0 )
+	{
+		return -1 ;
+	}
+
+#ifndef DX_NON_BEEP
+	// BEEP音の初期化
+	if( BeepSound_Initialize() < 0 )
+	{
+		return -1 ;
+	}
+#endif //DX_NON_BEEP
+
+	// 終了
+	return 0 ;
+}</pre>
+		<p>つまりデフォルトでは<code>SoundSysData.CreateSoundDataType</code>は<code>DX_SOUNDDATATYPE_MEMNOPRESS</code>だということがわかりました。</p>
+	</section>
+	<section>
+		<h2>初期化処理:<code>NS_SetCreateSoundDataType()</code></h2>
+		<p>このあとの解説に必要なので見ておきます。</p>
+		<pre class="brush: cpp_dxlib; first-line: 7451; highlight: [7458,7460,7464];">// 作成するサウンドのデータ形式を設定する
+extern int NS_SetCreateSoundDataType( int SoundDataType )
+{
+	// 値が範囲外のデータ形式かどうか調べる
+	if( SoundDataType >= DX_SOUNDDATATYPE_MEMNOPRESS && SoundDataType <= DX_SOUNDDATATYPE_FILE )
+	{
+		// 現在 DX_SOUNDDATATYPE_MEMNOPRESS_PLUS は非対応
+		if( SoundDataType == DX_SOUNDDATATYPE_MEMNOPRESS_PLUS )
+		{
+			SoundSysData.CreateSoundDataType = DX_SOUNDDATATYPE_MEMNOPRESS ;
+		}
+		else
+		{
+			SoundSysData.CreateSoundDataType = SoundDataType ;
+		}
+	}
+	else
+	{
+		return -1 ;
+	}
+
+	// 終了
+	return 0 ;
+}</pre>
+		<p>基本的には先程見た<code>SoundSysData.CreateSoundDataType</code>にフラグをセットする関数です。</p>
+		<p><code>DX_SOUNDDATATYPE_MEMNOPRESS_PLUS</code>は、コメントによれば、メモリーに読み込んだ後再生中に展開して、一度展開し終わるとメモリーに読み込んだ圧縮データを破棄するモードのようですが、ご覧のように無効化されています。</p>
+	</section>
+	<section>
+		<h2>サウンドハンドル作成:<code>LoadBGM()LoadBGM_WCHAR_T()</code></h2>
+		<pre class="brush: cpp_dxlib; first-line: 3084; highlight: [3089,3091,3095];">// 主にＢＧＭを読み込むのに適した関数
+extern int LoadBGM_WCHAR_T( const wchar_t *WaveName )
+{
+	int Type = SoundSysData.CreateSoundDataType, SoundHandle ;
+
+	if( _WCSICMP( WaveName + _WCSLEN( WaveName ) - 3, L"wav" ) == 0 )
+	{
+		NS_SetCreateSoundDataType( DX_SOUNDDATATYPE_FILE ) ;
+	}
+	else
+	{
+		NS_SetCreateSoundDataType( DX_SOUNDDATATYPE_MEMPRESS ) ;
+	}
+
+	SoundHandle = LoadSoundMem_WCHAR_T( WaveName, 1 ) ;
+	NS_SetCreateSoundDataType( Type ) ;
+
+	return SoundHandle ;
+}</pre>
+		<p>WAVファイルの場合は<code>DX_SOUNDDATATYPE_FILE</code>に、そうではない場合は<code>DX_SOUNDDATATYPE_MEMPRESS</code>をセットしています。</p>
+	</section>
+	<section>
+		<h2>サウンドハンドル作成:<code>AddStreamSoundMem_UseGParam()</code></h2>
+		<p>では音楽データの読み込み部分を見てみましょう。すべての読み込み関数は内部で<code>AddStreamSoundMem_UseGParam()</code>関数を呼び出します。</p>
+		<pre class="brush: cpp_dxlib; first-line: 762; highlight: [768];" title="DxSound.cpp">// AddStreamSoundMem のグローバル変数にアクセスしないバージョン
+extern int AddStreamSoundMem_UseGParam(
+	LOADSOUND_GPARAM *GParam,
+	STREAMDATA *Stream,
+	int LoopNum,
+	int SoundHandle,
+	int StreamDataType,
+	int *CanStreamCloseFlag,
+	int UnionHandle,
+	int ASyncThread
+)
+{</pre>
+		<p>第5引数に先程まで見てきたフラグが渡されます。フラグの意味については先に述べましたが、そのとおりになっていることを確認しましょう。</p>
+		<pre class="brush: cpp_dxlib; first-line: 837; highlight: [838];" title="DxSound.cpp">	// 新しいＷＡＶＥファイルのロード、データのタイプによって処理を分岐
+	switch( StreamDataType )
+	{
+</pre>
+		<p>まずはswitch文に渡されます。</p>
+		<section>
+			<h3><code>DX_SOUNDDATATYPE_MEMNOPRESS</code>の場合</h3>
+			<pre class="brush: cpp_dxlib; first-line: 854; highlight: [855];" title="DxSound.cpp">				// 丸々メモリに読み込む
+				if( StreamFullRead( Stream, &SrcBuffer, &SrcSize ) < 0 )</pre>
+			<p>まずはファイルからメモリー上に読み込みます</p>
+			<pre class="brush: cpp_dxlib; first-line: 869;">				res = SoundConvertFast( &ConvData, &Format, &PlayData->FileImage, &PlayData->FileImageSize ) ;</pre>
+			<p>次にこれをWAVE形式に変換・展開していきます。ただし無圧縮ＰＣＭの場合は<code>SoundConvertFast</code>関数内部で純粋なコピーが行われます。</p>
+			<pre class="brush: cpp_dxlib; first-line: 882; highlight: [883,884,885,899];" title="DxSound.cpp">			// ＷＡＶＥファイルをでっち上げる
+			if( CreateWaveFileImage( &WaveImage, &WaveSize,
+								 &Format, sizeof( WAVEFORMATEX ),
+								 PlayData->FileImage, PlayData->FileImageSize ) < 0 )
+				goto ERR ;
+
+			// 展開されたデータをストリームとして再度開く
+			PlayData->MemStream.DataPoint = MemStreamOpen( WaveImage, ( size_t )WaveSize ) ;
+			PlayData->MemStream.ReadShred = *GetMemStreamDataShredStruct() ;
+			SetupSoundConvert( &PlayData->ConvData, &PlayData->MemStream, GParam->DisableReadSoundFunctionMask
+#ifndef DX_NON_OGGVORBIS
+				,GParam->OggVorbisBitDepth, GParam->OggVorbisFromTheoraFile
+#endif
+			) ;
+
+			// メモリアドレスの入れ替え
+			DXFREE( PlayData->FileImage ) ;
+			PlayData->FileImage = WaveImage ;
+			PlayData->FileImageSize = WaveSize ;
+</pre>
+			<p>最後に変換したデータをサウンドハンドルに紐付けられた領域に登録します。</p>
+			<p>つまり、</p>
+			<blockquote>圧縮された全データは再生が始まる前にサウンドメモリにすべて展開され、格納される。</blockquote>
+			<p>のとおり実装されていることが確認できました。</p>
+		</section>
+		<section>
+			<h3><code>DX_SOUNDDATATYPE_MEMPRESS</code>の場合</h3>
+			<pre class="brush: cpp_dxlib; first-line: 910; highlight: [911];" title="DxSound.cpp">			// 丸々メモリに読み込む
+			if( StreamFullRead( Stream, &PlayData->FileImage, &PlayData->FileImageSize ) < 0 )</pre>
+			<p>まずはファイルからメモリー上に読み込みます</p>
+			<pre class="brush: cpp_dxlib; first-line: 917; highlight: [918,919,920,921,922,923];" title="DxSound.cpp">			// 展開されたデータをストリームとして再度開く
+			PlayData->MemStream.DataPoint = MemStreamOpen( PlayData->FileImage, ( size_t )PlayData->FileImageSize ) ;
+			PlayData->MemStream.ReadShred = *GetMemStreamDataShredStruct() ;
+			if( SetupSoundConvert( &PlayData->ConvData, &PlayData->MemStream, GParam->DisableReadSoundFunctionMask
+#ifndef DX_NON_OGGVORBIS
+									,GParam->OggVorbisBitDepth, GParam->OggVorbisFromTheoraFile
+#endif
+									) < 0 )</pre>
+			<p>読み込んだデータをサウンドハンドルに紐付けられた領域に登録します。</p>
+			<p>この段階では</p>
+			<blockquote>圧縮された全データはシステムメモリに格納され、再生する部分だけ逐次展開しながらサウンドメモリに格納する(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</blockquote>
+			<p>は<b>確かめられていません</b>。</p>
+		</section>
+		<section>
+			<h3><code>DX_SOUNDDATATYPE_FILE</code>の場合</h3>
+			<pre class="brush: cpp_dxlib; first-line: 963; highlight: [963,964,965,966]" title="DxSound.cpp">			if( SetupSoundConvert( &PlayData->ConvData, Stream, GParam->DisableReadSoundFunctionMask
+#ifndef DX_NON_OGGVORBIS
+									,GParam->OggVorbisBitDepth, GParam->OggVorbisFromTheoraFile
+#endif
+								) < 0 )</pre>
+			<p>ファイルストリームをサウンドハンドルに紐付けられた領域に登録します。</p>
+			<p>この段階では</p>
+			<blockquote>圧縮されたデータの再生する部分だけファイルから逐次読み込み展開され、サウンドメモリに格納される(鳴らし終わると展開したデータは破棄されるので何度も展開処理が行われる)</blockquote>
+			<p>は<b>確かめられていません</b>。</p>
+		</section>
+		<section>
+			<h3>サウンドバッファの作成</h3>
+			<p>このswitch文のあと、サウンドバッファの作成処理があります。</p>
+			<pre class="brush: cpp_dxlib; first-line: 1021; highlight: [1028,1031]" title="Sound.cpp">		// サウンドバッファを共有するかどうかで処理を分岐
+		if( UniSound == NULL )
+		{
+			DWORD BufferSec ;
+
+			// サウンドバッファを作成
+			BufferSec = StreamDataType == DX_SOUNDDATATYPE_FILE ? STS_BUFSEC_FILE : STS_BUFSEC ;
+			CreateSoundBuffer(
+				&Sound->BufferFormat,
+				SOUNDSIZE( BufferSec * Sound->BufferFormat.nAvgBytesPerSec / STS_DIVNUM, Sound->BufferFormat.nBlockAlign ),
+				DX_SOUNDTYPE_STREAMSTYLE, 1, SoundHandle, -1, ASyncThread
+			) ;
+			Sound->Stream.SoundBufferSize = SOUNDSIZE( BufferSec * Sound->BufferFormat.nAvgBytesPerSec / STS_DIVNUM, Sound->BufferFormat.nBlockAlign ) ;
+			Sound->BaseFrequency          = ( int )Sound->BufferFormat.nSamplesPerSec ;
+//			Sound->PitchRateEnable        = GParam->CreateSoundPitchRateEnable ;
+//			Sound->PitchRate              = GParam->CreateSoundPitchRate ;
+
+			// 共有情報をセット
+			Sound->Stream.BufferBorrowSoundHandle = -1 ;
+		}</pre>
+		</section>
+	</section>
+	<section>
+		<h2><code>PlaySoundMem()SoundBuffer_Play_PF()</code></h2>
+		<p>サウンド再生に使う<code>PlaySoundMem()</code>は環境によって定義場所が違う<code>SoundBuffer_Play_PF()</code>に処理が飛びます。</p>
+		<pre class="brush: cpp_dxlib; first-line: 2505; highlight: [2509,2512,2520,2531];" title=".\Windows\DxSoundWin.cpp">extern int SoundBuffer_Play_PF( SOUNDBUFFER *Buffer, int Loop )
+{
+	if( SoundSysData.PF.EnableXAudioFlag )
+	{
+		Buffer->State = TRUE ;
+		if( SoundSysData.PF.XAudio2_8DLL != NULL )
+		{
+			Buffer->PF.XA2_8SourceVoice->Start( 0 ) ;
+			if( Buffer->PF.XA2_8SubmixVoice )
+			{
+				Buffer->PF.XA2_8SubmixVoice->EnableEffect( 0 ) ;
+			}
+		}
+		else
+		{
+			Buffer->PF.XA2SourceVoice->Start( 0 ) ;
+			if( Buffer->PF.XA2SubmixVoice )
+			{
+				Buffer->PF.XA2SubmixVoice->EnableEffect( 0 ) ;
+			}
+		}
+		Buffer->StopTimeState = 1 ;
+		Buffer->StopTime = 0 ;
+	}
+	else
+	{
+		if( Buffer->PF.DSBuffer->Play( 0, 0, ( DWORD )( Loop ? D_DSBPLAY_LOOPING : 0 ) ) != D_DS_OK )
+		{
+			return -1 ;
+		}
+	}
+	
+	return 0 ;
+}</pre>
+		<p>2512,2520行目でXAudio、2531でDirectSoundの関数をラップしているクラスのメンバ関数を呼び出しているのがわかると思います。</p>
+		<p>ここで2509行目を見ると、</p>
+		<pre class="brush: cpp_dxlib; first-line: 2509;" title=".\Windows\DxSoundWin.cpp">		Buffer->State = TRUE ;</pre>
+		<p>という文が見つかります。この<code>Buffer->State</code>は一体何に使われるのでしょうか。</p>
+	</section>
+	<section>
+		<h2>ProcessMessage()ProcessPlay3DSoundMemAll()SoundBuffer_CycleProcess_PF()</h2>
+		<section>
+			<h3><code>SoundBuffer_CycleProcess_PF()</code></h3>
+			<pre class="brush: cpp_dxlib; first-line: 2930; highlight: [2947,2949];">extern int SoundBuffer_CycleProcess_PF( SOUNDBUFFER *Buffer )
+{
+	if( SoundSysData.PF.EnableXAudioFlag )
+	{
+		int NowCount ;
+		int Time ;
+
+		if( Buffer->PF.XA2SubmixVoice == NULL )
+		{
+			return -1 ;
+		}
+
+		if( Buffer->StopTimeState == 0 )
+		{
+			return -1 ;
+		}
+
+		if( Buffer->State == TRUE )
+		{
+			return 0 ;
+		}</pre>
+			<p><code>SoundBuffer_CycleProcess_PF</code>という関数内で見られています。<code>true</code>のとき、つまり再生中のとき<code>0</code>を返すんですね。</p>
+		</section>
+		<section>
+			<h3><code>ProcessPlay3DSoundMemAll()</code></h3>
+			<p><code>SoundBuffer_CycleProcess_PF</code>関数は<code>SoundBuffer_CycleProcess</code>関数を介して呼ばれていますが、<code>ProcessPlay3DSoundMemAll</code>関数から呼ばれます。</p>
+			<pre class="brush: cpp_dxlib; first-line: 2839; highlight: [2855,2856,2868,2870,2877,2888];">// ３Ｄサウンドを再生しているサウンドハンドルに対する処理を行う
+extern int ProcessPlay3DSoundMemAll( void )
+{
+	HANDLELIST *List ;
+	SOUND *Sound ;
+	int i ;
+	int Valid ;
+
+	if( CheckSoundSystem_Initialize_PF() == FALSE )
+	{
+		return -1 ;
+	}
+
+	// クリティカルセクションの取得
+	CRITICALSECTION_LOCK( &SoundSysData.Play3DSoundListCriticalSection ) ;
+
+LOOPSTART:
+	for( List = SoundSysData.Play3DSoundListFirst.Next ; List->Next != NULL ; List = List->Next )
+	{
+		Sound = ( SOUND * )List->Data ;
+
+		Valid = FALSE ;
+		for( i = 0 ; i < Sound->ValidBufferNum ; i ++ )
+		{
+			if( Sound->Buffer[ i ].Valid == 0 )
+			{
+				continue ;
+			}
+
+			if( SoundBuffer_CycleProcess( &Sound->Buffer[ i ] ) == 0 )
+			{
+				Valid = TRUE ;
+			}
+		}
+
+		if( Valid == FALSE )
+		{
+			Sound->AddPlay3DSoundList = FALSE ;
+			SubHandleList( &Sound->Play3DSoundList ) ;
+			goto LOOPSTART ;
+		}
+	}
+
+	// クリティカルセクションの解放
+	CriticalSection_Unlock( &SoundSysData.Play3DSoundListCriticalSection ) ;
+
+	// 終了
+	return 0 ;
+}</pre>
+			<p><code>SoundBuffer_CycleProcess</code>が<code>0</code>を返すとき、つまり再生中のとき、<code>Valid</code>は<code>true</code>になり、650行目のif文の処理が実行されます。</p>
+			<p><code>SubHandleList</code>関数が呼ばれ、Listの要素が削除され、その後、<b>なんとまさかの<code>goto</code>文で</b>ループをやり直します。</p>
+			<p>ところで<code>SoundSysData.Play3DSoundListFirst.Next</code>というリストの要素のメンバーである<code>Data</code>の中にある<code>Play3DSoundList</code>を操作しているわけですが、これは一体何でしょうか？</p>
+		</section>
+	</section>
+	<section>
+		<h2>第一回はここまで</h2>
+		<p>このあと実装を追っていたらさらなる闇に突っ込んでしまったので、そのうちまた記事を書きます。</p>
+		<p>とりあえず、<b>ワケガワカラナイヨ！</b>な実装でした。</p>
+	</section>
+	<section>
+		<h2>ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</h2>
+		<p>
+			この記事は<a href="http://qiita.com/advent-calendar/2016/gameengine">ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</a> 13日目の記事です<br>
+			<a href="http://qiita.com/hoge1e3/items/727caca153914e702cb8">&lt;&lt;16日目 | Tonyu System 2: キャラクターの「動き」に注目した、ブラウザゲーム開発環境</a> || <a href="http://qiita.com/ueshita/items/12f536a7cfa1564da8be">18日目 | エフェクト制作ツール「Effekseer」について + 他色々 &gt;&gt;</a>
+		</p>
+	</section>
+</body>
+</html>
