@@ -568,5 +568,89 @@ extern int AddStreamSoundMem_UseGParam(
 		<pre class="brush: cpp_dxlib; first-line: 2509;" title=".\Windows\DxSoundWin.cpp">		Buffer->State = TRUE ;</pre>
 		<p>という文が見つかります。この<code>Buffer->State</code>は一体何に使われるのでしょうか。</p>
 	</section>
+	<section>
+		<h2>ProcessMessage()ProcessPlay3DSoundMemAll()SoundBuffer_CycleProcess_PF()</h2>
+		<section>
+			<h3><code>SoundBuffer_CycleProcess_PF()</code></h3>
+			<pre class="brush: cpp_dxlib; first-line: 2930; highlight: [2947,2949];">extern int SoundBuffer_CycleProcess_PF( SOUNDBUFFER *Buffer )
+{
+	if( SoundSysData.PF.EnableXAudioFlag )
+	{
+		int NowCount ;
+		int Time ;
+
+		if( Buffer->PF.XA2SubmixVoice == NULL )
+		{
+			return -1 ;
+		}
+
+		if( Buffer->StopTimeState == 0 )
+		{
+			return -1 ;
+		}
+
+		if( Buffer->State == TRUE )
+		{
+			return 0 ;
+		}</pre>
+			<p><code>SoundBuffer_CycleProcess_PF</code>という関数内で見られています。<code>true</code>のとき、つまり再生中のとき<code>0</code>を返すんですね。</p>
+		</section>
+		<section>
+			<h3><code>ProcessPlay3DSoundMemAll()</code></h3>
+			<p><code>SoundBuffer_CycleProcess_PF</code>関数は<code>SoundBuffer_CycleProcess</code>関数を介して呼ばれていますが、<code>ProcessPlay3DSoundMemAll</code>関数から呼ばれます。</p>
+			<pre class="brush: cpp_dxlib; first-line: 2839; highlight: [2855,2856,2868,2870,2877,2888];">// ３Ｄサウンドを再生しているサウンドハンドルに対する処理を行う
+extern int ProcessPlay3DSoundMemAll( void )
+{
+	HANDLELIST *List ;
+	SOUND *Sound ;
+	int i ;
+	int Valid ;
+
+	if( CheckSoundSystem_Initialize_PF() == FALSE )
+	{
+		return -1 ;
+	}
+
+	// クリティカルセクションの取得
+	CRITICALSECTION_LOCK( &SoundSysData.Play3DSoundListCriticalSection ) ;
+
+LOOPSTART:
+	for( List = SoundSysData.Play3DSoundListFirst.Next ; List->Next != NULL ; List = List->Next )
+	{
+		Sound = ( SOUND * )List->Data ;
+
+		Valid = FALSE ;
+		for( i = 0 ; i < Sound->ValidBufferNum ; i ++ )
+		{
+			if( Sound->Buffer[ i ].Valid == 0 )
+			{
+				continue ;
+			}
+
+			if( SoundBuffer_CycleProcess( &Sound->Buffer[ i ] ) == 0 )
+			{
+				Valid = TRUE ;
+			}
+		}
+
+		if( Valid == FALSE )
+		{
+			Sound->AddPlay3DSoundList = FALSE ;
+			SubHandleList( &Sound->Play3DSoundList ) ;
+			goto LOOPSTART ;
+		}
+	}
+
+	// クリティカルセクションの解放
+	CriticalSection_Unlock( &SoundSysData.Play3DSoundListCriticalSection ) ;
+
+	// 終了
+	return 0 ;
+}</pre>
+			<p><code>SoundBuffer_CycleProcess</code>が<code>0</code>を返すとき、つまり再生中のとき、<code>Valid</code>は<code>true</code>になり、650行目のif文の処理が実行されます。</p>
+			<p><code>SubHandleList</code>関数が呼ばれ、Listの要素が削除され、その後、<b>なんとまさかの<code>goto</code>文で</b>ループをやり直します。</p>
+			<p>ところで<code>SoundSysData.Play3DSoundListFirst.Next</code>というリストの要素のメンバーである<code>Data</code>の中にある<code>Play3DSoundList</code>を操作しているわけですが、これは一体何でしょうか？</p>
+		</section>
+	</section>
 </body>
 </html>
