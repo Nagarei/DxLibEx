@@ -21,9 +21,34 @@
 <body>
 	<h1>DxLib解剖学LoadSoundMemとLoadBGM</h1>
 	<section>
+		<h2>ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</h2>
+		<p>
+			この記事は<a href="http://qiita.com/advent-calendar/2016/gameengine">ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</a> 13日目の記事です<br>
+			<a href="http://qiita.com/hoge1e3/items/727caca153914e702cb8">&lt;&lt;16日目 | Tonyu System 2: キャラクターの「動き」に注目した、ブラウザゲーム開発環境</a> || <a href="http://qiita.com/ueshita/items/12f536a7cfa1564da8be">18日目 | エフェクト制作ツール「Effekseer」について + 他色々 &gt;&gt;</a>
+		</p>
+		<p>
+			記事の投稿が大幅に遅れ申し訳ありません。特に、@Reputeless 氏には数回に渡るTwitterでの催促を頂き、申し訳ありません。<br>
+			一応言い訳しておくと、DxLibの実装が想像をはるかに上回る汚さで調査がはかどらなかったのと、<br>
+			説明に関数呼び出しツリーがほしかったのですが、Visual Studioのそれは子Nodeまでコピーできない代物で<br>
+			LLVM IRを<code>opt</code>コマンドでdotファイルに変換してそれを更にパースしてjstreeで読めるjsonにするプログラムを書いていたのですが、<br>
+			これまたC++の構文の難しさに時間を取られました。
+		</p>
+	</section>
+	<section>
 		<h2>はじめに</h2>
 		<p>
-			DxLibにはLoadSoundMem　と LoadBGMという似た関数があります。これはどう違うのか。<br>
+			私は現在DxLibExという、DxLibを現代C++的に操作できるようにラップするライブラリを制作しています。<br>
+			<a href="https://github.com/Nagarei/DxLibEx">Nagarei/DxLibEx: ＤＸライブラリC++化プロジェクト</a>
+		</p>
+		<p>
+			DxLibは日本では有名なゲームライブラリで、C/C++の入門教材としてもよく用いられます。<br>
+			<a href="http://dxlib.o.oo7.jp/">ＤＸライブラリ置き場　ＨＯＭＥ</a><br>
+			これ自体はDirectX 9/11や<a href="http://www.vorbis.com/">ogg</a>、<a href="http://opus-codec.org/">opus</a>、<a href="http://zlib.net/">zlib</a>、Win32APIをラップしたものになっています。<br>
+			一応C++だけどほとんどCという感じのライブラリです。<br>
+			いろいろ小回りは効くのですが、実装がちょっと人間を卒業していることで知られています(要出典)
+		</p>
+		<p>
+			さて、DxLibにはLoadSoundMem　と LoadBGMという似た関数があります。これはどう違うのか。<br>
 			DxLibExでラップする作業中に気になったので、調べてみました。
 		</p>
 	</section>
@@ -656,6 +681,13 @@ LOOPSTART:
 		<h2>第一回はここまで</h2>
 		<p>このあと実装を追っていたらさらなる闇に突っ込んでしまったので、そのうちまた記事を書きます。</p>
 		<p>とりあえず、<b>ワケガワカラナイヨ！</b>な実装でした。</p>
+	</section>
+	<section>
+		<h2>ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</h2>
+		<p>
+			この記事は<a href="http://qiita.com/advent-calendar/2016/gameengine">ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</a> 13日目の記事です<br>
+			<a href="http://qiita.com/hoge1e3/items/727caca153914e702cb8">&lt;&lt;16日目 | Tonyu System 2: キャラクターの「動き」に注目した、ブラウザゲーム開発環境</a> || <a href="http://qiita.com/ueshita/items/12f536a7cfa1564da8be">18日目 | エフェクト制作ツール「Effekseer」について + 他色々 &gt;&gt;</a>
+		</p>
 	</section>
 </body>
 </html>
