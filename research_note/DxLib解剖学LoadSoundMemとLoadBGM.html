@@ -14,6 +14,7 @@
 	<script src="https://cdn.rawgit.com/yumetodo/syntaxhighlighterCustom/3.0.83.4/scripts/shBrushCppDxLib.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/jstree.min.js"></script>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script>
 		SyntaxHighlighter.all();
 	</script>
@@ -27,12 +28,13 @@
 			<a href="http://qiita.com/hoge1e3/items/727caca153914e702cb8">&lt;&lt;16日目 | Tonyu System 2: キャラクターの「動き」に注目した、ブラウザゲーム開発環境</a> || <a href="http://qiita.com/ueshita/items/12f536a7cfa1564da8be">18日目 | エフェクト制作ツール「Effekseer」について + 他色々 &gt;&gt;</a>
 		</p>
 		<p>
-			記事の投稿が大幅に遅れ申し訳ありません。特に、@Reputeless 氏には数回に渡るTwitterでの催促を頂き、申し訳ありません。<br>
+			記事の投稿が大幅に遅れ申し訳ありません。特に、<a href="https://twitter.com/Reputeless">@Reputeless</a> 氏には<a href="https://twitter.com/Reputeless/status/809014816471851008">数回</a><a href="https://twitter.com/Reputeless/status/810763213448978432">に渡る</a>Twitterでの催促を頂き、申し訳ありません。<br>
 			一応言い訳しておくと、DxLibの実装が想像をはるかに上回る汚さで調査がはかどらなかったのと、<br>
 			説明に関数呼び出しツリーがほしかったのですが、Visual Studioのそれは子Nodeまでコピーできない代物で<br>
 			LLVM IRを<code>opt</code>コマンドでdotファイルに変換してそれを更にパースしてjstreeで読めるjsonにするプログラムを書いていたのですが、<br>
 			これまたC++の構文の難しさに時間を取られました。
 		</p>
+		<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">うわああ、24日目と私の13日目が並んどる！遅れてごめんなさい(n回目)！<a href="https://twitter.com/Reputeless">@Reputeless</a> <br>そしてこの記事を読んだ方、最後のループ+gotoのあわせ技は何をやっているのか教えてください！ <a href="https://t.co/VgwNMAWoTq">pic.twitter.com/VgwNMAWoTq</a></p>&mdash; yumetodo-C++erだけど化学科 (@yumetodo) <a href="https://twitter.com/yumetodo/status/812658409094844416">2016年12月24日</a></blockquote>
 	</section>
 	<section>
 		<h2>はじめに</h2>
@@ -674,7 +676,7 @@ LOOPSTART:
 }</pre>
 			<p><code>SoundBuffer_CycleProcess</code>が<code>0</code>を返すとき、つまり再生中のとき、<code>Valid</code>は<code>true</code>になり、650行目のif文の処理が実行されます。</p>
 			<p><code>SubHandleList</code>関数が呼ばれ、Listの要素が削除され、その後、<b>なんとまさかの<code>goto</code>文で</b>ループをやり直します。</p>
-			<p>ところで<code>SoundSysData.Play3DSoundListFirst.Next</code>というリストの要素のメンバーである<code>Data</code>の中にある<code>Play3DSoundList</code>を操作しているわけですが、これは一体何でしょうか？</p>
+			<p>ところで<code>SoundSysData.Play3DSoundListFirst.Next</code>というリストの要素のメンバーである<code>Data</code>の中にある<code>Play3DSoundList</code>を操作しているわけですが、これは一体何でしょうか？その2つのリストは同じものなのでしょうか？</p>
 			<p>また、なんでループをやり直すのでしょうか？</p>
 		</section>
 	</section>
@@ -682,6 +684,11 @@ LOOPSTART:
 		<h2>第一回はここまで</h2>
 		<p>このあと実装を追っていたらさらなる闇に突っ込んでしまったので、そのうちまた記事を書きます。</p>
 		<p>とりあえず、<b>ワケガワカラナイヨ！</b>な実装でした。</p>
+		<p>
+			最後のループ+goto+謎の2つのリスト問題、なにをやっているのかわかる方、<a href="https://twitter.com/yumetodo">@yumetodo</a>までお願いします！<br>
+			友人の<a href="https://twitter.com/173210">@173210</a>とコードを追ったのですが追いきれませんでしたorz <br>
+			<code>AddhandleList()</code>関数や<code>SubHandleList()</code>関数、その他関係するフラグの初期化が関係するとは思うのですが・・・
+		</p>
 	</section>
 	<section>
 		<h2>ゲームエンジン・ライブラリ・ツールの開発 Advent Calendar 2016</h2>
