@@ -215,7 +215,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドの再生を停止する
 			//!\~english  Stop playing sound.
-			int stop(std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			int stop(std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				return DxLib::StopSoundMem(this->GetHandle());
 			}
 			//!\~japanese サウンドの再生を停止する
@@ -225,7 +225,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドが再生中かどうかを取得する
 			//!\~english  check whether this sound is playing.
-			int is_playing(std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			int is_playing(std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				return DxLib::CheckSoundMem(this->GetHandle());
 			}
 			//!\~japanese サウンドが再生中かどうかを取得する
@@ -237,7 +237,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドのパンを設定する
 			//!\~english  Set the pan of this sound.
-			template<typename T, typename Period>int set_pan(bel_c<T, Period> PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			template<typename T, typename Period>int set_pan(bel_c<T, Period> PanPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				const auto pan = bel_cast<myrio_bel>(PanPal).get();
 				assert(0 <= pan && pan <= 10000);
 				return DxLib::SetPanSoundMem(bel_cast<myrio_bel>(PanPal).get(), this->GetHandle());
@@ -250,7 +250,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドのパンを設定する( -255 ～ 255 )
 			//!\~english  Set the pan of this sound.( -255 to 255 )
-			int change_pan(int16_t PanPal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			int change_pan(int16_t PanPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				assert(-255 <= PanPal && PanPal <= 255);
 				return DxLib::ChangePanSoundMem(PanPal, this->GetHandle());
 			}
@@ -274,7 +274,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドのボリュームを設定する
 			//!\~english  Set sound volume.
-			template<typename T, typename Period>int set_volume(bel_c<T, Period> VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			template<typename T, typename Period>int set_volume(bel_c<T, Period> VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
 				assert(0 <= volume && volume <= 10000);
 				return DxLib::SetVolumeSoundMem(volume, this->GetHandle());
@@ -287,7 +287,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドのボリュームを設定する( 0 ～ 255 )
 			//!\~english  Set sound volume( 0 to 255 ).
-			int change_volume(uint8_t VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			int change_volume(uint8_t VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				return DxLib::ChangeVolumeSoundMem(VolumePal, this->GetHandle());
 			}
 			void change_volume(uint8_t VolumePal) {
@@ -295,7 +295,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドのボリュームを取得する
 			//!\~english  Get sound volume.
-			myrio_bel get_volume(std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			myrio_bel get_volume(std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				return myrio_bel(DxLib::GetVolumeSoundMem(this->GetHandle()));
 			}
 			//!\~japanese サウンドのボリュームを取得する
@@ -307,7 +307,7 @@ namespace dxle
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
 			//!\~english  Set the volume of specified chanel of sound.
-			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal, std::nothrow_t)DXLE_NOEXCEPT_OR_NOTHROW {
+			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
 				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
 				assert(0 <= volume && volume <= 10000);
