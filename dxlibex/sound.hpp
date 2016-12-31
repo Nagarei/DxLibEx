@@ -306,7 +306,7 @@ namespace dxle
 				return re;
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
-			//!\~english  Set the volume of specified chanel of sound.
+			//!\~english  Set the volume of specified channel of sound.
 			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
 				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
@@ -314,7 +314,7 @@ namespace dxle
 				return DxLib::SetChannelVolumeSoundMem(Channel, volume, this->GetHandle());
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
-			//!\~english  Set the volume of specified chanel of sound.
+			//!\~english  Set the volume of specified channel of sound.
 			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal) {
 				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel || VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::SetChannelVolumeSoundMem().");
