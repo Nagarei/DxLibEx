@@ -25,10 +25,10 @@ namespace dxle {
 		inline DXLE_CONSTEXPR To bel_cast(const bel_c<T, Period>& o);
 
 		/// bel_c_values
-		template<typename _Rep> struct bel_c_values{
-			static DXLE_CONSTEXPR _Rep zero(){ return _Rep(0); }
-			static DXLE_CONSTEXPR _Rep max(){ return std::numeric_limits<_Rep>::max();}
-			static DXLE_CONSTEXPR _Rep min(){ return std::numeric_limits<_Rep>::lowest();	}
+		template<typename Rep> struct bel_c_values{
+			static DXLE_CONSTEXPR Rep zero(){ return Rep(0); }
+			static DXLE_CONSTEXPR Rep max(){ return std::numeric_limits<Rep>::max();}
+			static DXLE_CONSTEXPR Rep min(){ return std::numeric_limits<Rep>::lowest();	}
 		};
 
 		template<typename T, typename Period, enable_if_t<is_ratio<Period>::value, nullptr_t>/* = nullptr*/>
