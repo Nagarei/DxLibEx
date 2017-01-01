@@ -240,7 +240,7 @@ namespace dxle
 			template<typename T, typename Period>int set_pan(bel_c<T, Period> PanPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				const auto pan = bel_cast<myrio_bel>(PanPal).get();
 				assert(0 <= pan && pan <= 10000);
-				return DxLib::SetPanSoundMem(bel_cast<myrio_bel>(PanPal).get(), this->GetHandle());
+				return DxLib::SetPanSoundMem(pan, this->GetHandle());
 			}
 			//!\~japanese サウンドのパンを設定する
 			//!\~english  Set the pan of this sound.
