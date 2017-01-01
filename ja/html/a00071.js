@@ -20,5 +20,6 @@ var a00071 =
     [ "DXLE_STATIC_CONSTEXPR", "a00071.html#a63ad49a4221a8ad8a05fa78d35baa926", null ],
     [ "DXLE_STATIC_CONSTEXPR_DATA_MEMBER_INNER", "a00071.html#af7663a43aa5b08586fa2edd9960eaa9e", null ],
     [ "DXLE_STATIC_CONSTEXPR_DATA_MEMBER_OUTER", "a00071.html#af67e9d42dfe3d9f5dd01856e8f4aac77", null ],
+    [ "DXLE_UNUSED", "a00071.html#aa0b1f93496984ebbe47c3793c092e439", null ],
     [ "DXLE_USE_UNICODE_LITERALS", "a00071.html#ab8631289d2726eabea02a2b2802048d9", null ]
 ];
