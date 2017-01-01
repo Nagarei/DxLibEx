@@ -149,8 +149,26 @@ namespace dxle
 			//!\~english  Delete this sound data
 			inline void delete_this(bool LogOutFlag = false) { DxLib::DeleteSoundMem(GetHandle(), LogOutFlag); }
 
-			//! 同じサウンドデータを使用するサウンドハンドルを作成する( DX_SOUNDDATATYPE_MEMNOPRESS タイプのサウンドハンドルのみ可能 )
-			sound DuplicateSoundMem(int BufferNum = 3)const DXLE_NOEXCEPT_OR_NOTHROW{ return DxLib::DuplicateSoundMem(GetHandle(), BufferNum); }
+			//!\~japanese 同じサウンドデータを使用するサウンドハンドルを作成する(sound_data_type::big(DX_SOUNDDATATYPE_MEMNOPRESS)を渡さずにload_sound関数で作成したサウンドのみ可能 )
+			//!\~english  create sound that shares sound data(only for the sound that created by load_sound without sound_data_type::big paramater(DX_SOUNDDATATYPE_MEMNOPRESS))
+			sound duplicate(int BufferNum, std::nothrow_t) const DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				return DxLib::DuplicateSoundMem(this->GetHandle(), BufferNum);
+			}
+			//!\~japanese 同じサウンドデータを使用するサウンドハンドルを作成する(sound_data_type::big(DX_SOUNDDATATYPE_MEMNOPRESS)を渡さずにload_sound関数で作成したサウンドのみ可能 )
+			//!\~english  create sound that shares sound data(only for the sound that created by load_sound without sound_data_type::big paramater(DX_SOUNDDATATYPE_MEMNOPRESS))
+			sound duplicate(std::nothrow_t) const DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				return DxLib::DuplicateSoundMem(this->GetHandle());
+			}
+			//!\~japanese 同じサウンドデータを使用するサウンドハンドルを作成する(sound_data_type::big(DX_SOUNDDATATYPE_MEMNOPRESS)を渡さずにload_sound関数で作成したサウンドのみ可能 )
+			//!\~english  create sound that shares sound data(only for the sound that created by load_sound without sound_data_type::big paramater(DX_SOUNDDATATYPE_MEMNOPRESS))
+			sound duplicate(int BufferNum = 3) const
+			{
+				const auto re = DxLib::DuplicateSoundMem(this->GetHandle(), BufferNum);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == re), "");
+				return re;
+			}
 
 
 			//生成
