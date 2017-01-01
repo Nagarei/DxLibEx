@@ -320,25 +320,25 @@ namespace dxle
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::SetChannelVolumeSoundMem().");
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
-			//!\~english  Set the volume of specified channel of sound
+			//!\~english  Set the volume of specified channel of sound.
 			int change_volume(uint8_t Channel, uint8_t VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
 			{
 				return DxLib::ChangeChannelVolumeSoundMem(Channel, VolumePal, this->GetHandle());
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
-			//!\~english  Set the volume of specified channel of sound
+			//!\~english  Set the volume of specified channel of sound.
 			void change_volume(uint8_t Channel, uint8_t VolumePal)
 			{
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::ChangeChannelVolumeSoundMem().");
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを取得する
-			//!\~english  Get the volume of specified channel of sound
+			//!\~english  Get the volume of specified channel of sound.
 			myrio_bel get_volume(uint8_t Channel, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
 			{
 				return myrio_bel(DxLib::GetChannelVolumeSoundMem(Channel, this->GetHandle()));
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを取得する
-			//!\~english  Get the volume of specified channel of sound
+			//!\~english  Get the volume of specified channel of sound.
 			myrio_bel get_volume(uint8_t Channel)
 			{
 				const auto re = this->get_volume(Channel, std::nothrow);
