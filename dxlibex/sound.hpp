@@ -182,7 +182,7 @@ namespace dxle
 			static sound			LoadSoundMemByMemImage(const void *FileImage, int FileImageSize, int UnionHandle = -1);			// メモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する( バッファ数指定無し )
 			static sound			LoadSoundMemByMemImage2(const void *WaveImage, int WaveImageSize, const WAVEFORMATEX *WaveFormat, int WaveHeaderSize);	// メモリ上に展開されたＰＣＭデータからサウンドハンドルを作成する
 			//extern	int			LoadSoundMem2ByMemImage(const void *FileImage1, int FileImageSize1, const void *FileImage2, int FileImageSize2);	// 前奏部とループ部に分かれた二つのメモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する
-			static sound			LoadSoundMemFromSoftSound(int SoftSoundHandle, int BufferNum = 3);													// ソフトウエアサウンドハンドルが持つサウンドデータからサウンドハンドルを作成する
+			//static sound			LoadSoundMemFromSoftSound(int SoftSoundHandle, int BufferNum = 3);													// ソフトウエアサウンドハンドルが持つサウンドデータからサウンドハンドルを作成する
 
 			//削除
 
@@ -523,6 +523,7 @@ namespace dxle
 			sound(int param_handle) DXLE_NOEXCEPT_OR_NOTHROW : Unique_HandledObject_Bace(param_handle){}
 		};
 
+#if 0
 		// 設定関係関数
 		extern	int			SetCreateSoundDataType(int SoundDataType);																		// 作成するサウンドハンドルの再生タイプを設定する( DX_SOUNDDATATYPE_MEMNOPRESS 等 )
 		extern	int			GetCreateSoundDataType(void);																					// 作成するサウンドハンドルの再生タイプを取得する( DX_SOUNDDATATYPE_MEMNOPRESS 等 )
@@ -542,8 +543,8 @@ namespace dxle
 		extern	int			Set3DSoundListenerVelocity(VECTOR Velocity);																	// ３Ｄサウンドのリスナーの移動速度を設定する
 		extern	int			Set3DSoundListenerConeAngle(float InnerAngle, float OuterAngle);												// ３Ｄサウンドのリスナーの可聴角度範囲を設定する
 		extern	int			Set3DSoundListenerConeVolume(float InnerAngleVolume, float OuterAngleVolume);									// ３Ｄサウンドのリスナーの可聴角度範囲の音量倍率を設定する
-																																			//extern	int			SetUseOldVolumeCalcFlag(int Flag);																				// ChangeVolumeSoundMem, ChangeNextPlayVolumeSoundMem, ChangeMovieVolumeToGraph の音量計算式を Ver3.10c以前のものを使用するかどうかを設定する( TRUE:Ver3.10c以前の計算式を使用  FALSE:3.10d以降の計算式を使用( デフォルト ) )
-
+		//extern	int			SetUseOldVolumeCalcFlag(int Flag);																				// ChangeVolumeSoundMem, ChangeNextPlayVolumeSoundMem, ChangeMovieVolumeToGraph の音量計算式を Ver3.10c以前のものを使用するかどうかを設定する( TRUE:Ver3.10c以前の計算式を使用  FALSE:3.10d以降の計算式を使用( デフォルト ) )
+#endif
 
 		//生成
 
@@ -564,6 +565,7 @@ namespace dxle
 		sound	LoadSoundMem2ByMemImage(const void *FileImage1, int FileImageSize1, const void *FileImage2, int FileImageSize2);	// 前奏部とループ部に分かれた二つのメモリ上に展開されたサウンドファイルイメージからサウンドハンドルを作成する
 		sound	LoadSoundMemFromSoftSound(int SoftSoundHandle, int BufferNum = 3);													// ソフトウエアサウンドハンドルが持つサウンドデータからサウンドハンドルを作成する
 
+#		if 0
 		//削除
 		extern	int			DeleteSoundMem(int SoundHandle, int LogOutFlag = FALSE);												// サウンドハンドルを削除する
 
@@ -613,7 +615,6 @@ namespace dxle
 
 
 		//3D
-#		if 0
 		extern	int			Set3DReverbParamSoundMem(            const SOUND3D_REVERB_PARAM *Param,              int SoundHandle ) ;						// サウンドハンドルの３Ｄサウンド用のリバーブパラメータを設定する
 		extern	int			Set3DPresetReverbParamSoundMem(      int PresetNo /* DX_REVERB_PRESET_DEFAULT 等 */, int SoundHandle );						// サウンドハンドルの３Ｄサウンド用のリバーブパラメータをプリセットを使用して設定する
 		extern	int			Set3DReverbParamSoundMemAll(const SOUND3D_REVERB_PARAM *Param, int PlaySoundOnly = FALSE);							// 全ての３Ｄサウンドのサウンドハンドルにリバーブパラメータを設定する( PlaySoundOnly TRUE:再生中のサウンドにのみ設定する  FALSE:再生していないサウンドにも設定する )
