@@ -429,7 +429,7 @@ namespace dxle
 			template<typename T, typename Period>void set_next_play_volume(bel_c<T, Period> VolumePal)
 			{
 				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
-				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_next_play_volume(PanPal, std::nothrow)), "fail DxLib::SetNextPlayVolumeSoundMem().");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_next_play_volume(VolumePal, std::nothrow)), "fail DxLib::SetNextPlayVolumeSoundMem().");
 			}
 			//!\~japanese サウンドの次の再生にのみ使用するボリュームを設定する
 			//!\~english  Set the volume of this sound when play next time.
