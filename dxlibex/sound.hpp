@@ -76,8 +76,8 @@ namespace dxle
 			loop   = DX_PLAYTYPE_LOOP
 		};
 		enum class sound_data_type : uint8_t {
-			small,     //DxLib::LoadSoundMem
-			big,       //DxLib::LoadBGM
+			small,     //! Call DxLib::LoadSoundMem : DX_SOUNDDATATYPE_MEMNOPRESS
+			big,       //! Call DxLib::LoadBGM : DX_SOUNDDATATYPE_MEMPRESS/DX_SOUNDDATATYPE_FILE
 			auto_detect//call detail::detect_sound_data_type()
 		};
 		namespace detail {
@@ -154,11 +154,15 @@ namespace dxle
 
 
 			//生成
-			static sound			LoadSoundMem2(const TCHAR *FileName1, const TCHAR *FileName2);											// 前奏部とループ部に分かれたサウンドファイルを読み込みサウンドハンドルを作成する
-			//static sound			LoadBGM(const TCHAR *FileName);// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数//不要。load_soundにsound_data_type::bigを渡すべし
+			static sound LoadSoundMem2(const TCHAR *FileName1, const TCHAR *FileName2);// 前奏部とループ部に分かれたサウンドファイルを読み込みサウンドハンドルを作成する
+			//static sound LoadBGM(const TCHAR *FileName);// 主にＢＧＭを読み込みサウンドハンドルを作成するのに適した関数//不要。load_soundにsound_data_type::bigを渡すべし
 
-			static sound load_sound(tinferior_string_ref FileName, int BufferNum, int UnionHandle, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { return{ DxLib::LoadSoundMem(FileName.c_str(), BufferNum, UnionHandle) }; }
-			static sound load_sound(tinferior_string_ref FileName, int BufferNum, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW { return{ DxLib::LoadSoundMem(FileName.c_str(), BufferNum) }; }
+			static sound load_sound(tinferior_string_ref FileName, int BufferNum, int UnionHandle, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				return{ DxLib::LoadSoundMem(FileName.c_str(), BufferNum, UnionHandle) };
+			}
+			static sound load_sound(tinferior_string_ref FileName, int BufferNum, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
+				return{ DxLib::LoadSoundMem(FileName.c_str(), BufferNum) };
+			}
 			static sound load_sound(tinferior_string_ref FileName, sound_data_type type, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW {
 				return (sound_data_type::small == detail::detect_sound_data_type(type, FileName.c_str()))
 					? DxLib::LoadSoundMem(FileName.c_str())
@@ -174,7 +178,7 @@ namespace dxle
 				const auto re = (sound_data_type::small == (type = detail::detect_sound_data_type(type, FileName.c_str())))
 					? DxLib::LoadSoundMem(FileName.c_str())
 					: DxLib::LoadBGM(FileName.c_str());
-				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), (sound_data_type::small == type) ? "fail DxLib::LoadSoundMem()." : "fail DxLib::LoadBGM().");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 != re), ((sound_data_type::small == type) ? "fail DxLib::LoadSoundMem()." : "fail DxLib::LoadBGM()."));
 				return re;
 			}
 
