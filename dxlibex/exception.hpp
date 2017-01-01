@@ -10,4 +10,5 @@
 #include "dxlibex/exception/runtime_error.hpp"
 #include "dxlibex/exception/invalid_argument.hpp"
 #include "dxlibex/exception/sound_exception.hpp"
+#include "dxlibex/exception/out_of_range.hpp"
 #endif //DXLE_INC_EXCEPTION_HPP_
