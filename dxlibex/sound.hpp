@@ -345,10 +345,45 @@ namespace dxle
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((myrio_bel(-1) == re), "fail DxLib::GetChannelVolumeSoundMem().");
 				return re;
 			}
-			int SetFrequency(int FrequencyPal);						// サウンドハンドルの再生周波数を設定する
-			int GetFrequency();						// サウンドハンドルの再生周波数を取得する
-			int ResetFrequency();						// サウンドハンドルの再生周波数を読み込み直後の状態に戻す
-
+			//!\~japanese サウンドの再生周波数を設定する
+			//!\~english  Set sound frequency.
+			int set_frequency(int FrequencyPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				assert(FrequencyPal <= static_cast<int>(std::numeric_limits<float>::max()));
+				return DxLib::SetFrequencySoundMem(FrequencyPal, this->GetHandle());
+			}
+			//!\~japanese サウンドの再生周波数を設定する
+			//!\~english  Set sound frequency.
+			void set_frequency(int FrequencyPal)
+			{
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((FrequencyPal <= static_cast<int>(std::numeric_limits<float>::max())), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_frequency(FrequencyPal, std::nothrow)), "fail DxLib::SetFrequencySoundMem().");
+			}
+			//!\~japanese サウンドの再生周波数を取得する
+			//!\~english  Get sound frequency.
+			int get_frequency(std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				return DxLib::GetFrequencySoundMem(this->GetHandle());
+			}
+			//!\~japanese サウンドの再生周波数を取得する
+			//!\~english  Get sound frequency.
+			int get_frequency() {
+				const int re = this->get_frequency(std::nothrow);
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == re), "fail DxLib::GetChannelVolumeSoundMem().");
+				return re;
+			}
+			//!\~japanese サウンドの再生周波数を読み込み直後の状態に戻す
+			//!\~english  Reset sound frequency.
+			int reset_frequency(std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				return DxLib::ResetFrequencySoundMem(this->GetHandle());
+			}
+			//!\~japanese サウンドの再生周波数を読み込み直後の状態に戻す
+			//!\~english  Reset sound frequency.
+			void reset_frequency()
+			{
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->reset_frequency(std::nothrow)), "fail DxLib::ResetFrequencySoundMem().");
+			}
 			int set_next_play_pan(int PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
 			int change_next_play_pan(int16_t PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
 			int set_next_play_volume(int VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
