@@ -316,31 +316,36 @@ namespace dxle
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
 			//!\~english  Set the volume of specified channel of sound.
 			template<typename T, typename Period>int set_volume(uint8_t Channel, bel_c<T, Period> VolumePal) {
-				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel || VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
+				DXLE_OUT_OF_RANGE_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel), "");
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::SetChannelVolumeSoundMem().");
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
 			//!\~english  Set the volume of specified channel of sound.
 			int change_volume(uint8_t Channel, uint8_t VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
 			{
+				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
 				return DxLib::ChangeChannelVolumeSoundMem(Channel, VolumePal, this->GetHandle());
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを設定する
 			//!\~english  Set the volume of specified channel of sound.
 			void change_volume(uint8_t Channel, uint8_t VolumePal)
 			{
+				DXLE_OUT_OF_RANGE_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_volume(Channel, VolumePal, std::nothrow)), "fail DxLib::ChangeChannelVolumeSoundMem().");
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを取得する
 			//!\~english  Get the volume of specified channel of sound.
 			myrio_bel get_volume(uint8_t Channel, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
 			{
+				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
 				return myrio_bel(DxLib::GetChannelVolumeSoundMem(Channel, this->GetHandle()));
 			}
 			//!\~japanese サウンドの指定のチャンネルのボリュームを取得する
 			//!\~english  Get the volume of specified channel of sound.
 			myrio_bel get_volume(uint8_t Channel)
 			{
+				DXLE_OUT_OF_RANGE_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel), "");
 				const auto re = this->get_volume(Channel, std::nothrow);
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((myrio_bel(-1) == re), "fail DxLib::GetChannelVolumeSoundMem().");
 				return re;
@@ -356,7 +361,7 @@ namespace dxle
 			//!\~english  Set sound frequency.
 			void set_frequency(int FrequencyPal)
 			{
-				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((FrequencyPal <= static_cast<int>(std::numeric_limits<float>::max())), "");
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((static_cast<int>(std::numeric_limits<float>::max() < FrequencyPal)), "");
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_frequency(FrequencyPal, std::nothrow)), "fail DxLib::SetFrequencySoundMem().");
 			}
 			//!\~japanese サウンドの再生周波数を取得する
