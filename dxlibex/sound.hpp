@@ -389,15 +389,104 @@ namespace dxle
 			{
 				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->reset_frequency(std::nothrow)), "fail DxLib::ResetFrequencySoundMem().");
 			}
-			int set_next_play_pan(int PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int change_next_play_pan(int16_t PanPal);						// サウンドハンドルの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
-			int set_next_play_volume(int VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int cange_next_play_volume(uint8_t VolumePal);						// サウンドハンドルの次の再生にのみ使用するボリュームを設定する( 0 ～ 255 )
-			int set_next_play_volume(int Channel, int VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 100分の1デシベル単位 0 ～ 10000 )
-			int cange_next_play_volume(int Channel, uint8_t VolumePal);						// サウンドハンドルの次の再生にのみ使用するチャンネルのボリュームを設定する( 0 ～ 255 )
-			int set_next_play_frequency(int FrequencyPal);						// サウンドハンドルの次の再生にのみ使用する再生周波数を設定する
+			//!\~japanese サウンドの次の再生にのみ使用するパンを設定する
+			//!\~english  Set the pan of this sound when play next time.
+			template<typename T, typename Period>int set_next_play_pan(bel_c<T, Period> PanPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				const auto pan = bel_cast<myrio_bel>(PanPal).get();
+				assert(0 <= pan && pan <= 10000);
+				return DxLib::SetNextPlayPanSoundMem(pan, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するパンを設定する
+			//!\~english  Set the pan of this sound when play next time.
+			template<typename T, typename Period>void set_next_play_pan(bel_c<T, Period> PanPal)
+			{
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_next_play_pan(PanPal, std::nothrow)), "fail DxLib::SetNextPlayPanSoundMem().");
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
+			//!\~english  Set the pan of this sound when play next time.
+			int change_next_play_pan(int16_t PanPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				assert(-255 <= PanPal || PanPal <= 255);
+				return DxLib::ChangeNextPlayPanSoundMem(PanPal, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するパンを設定する( -255 ～ 255 )
+			//!\~english  Set the pan of this sound when play next time.
+			void change_next_play_pan(int16_t PanPal)
+			{
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_next_play_pan(PanPal, std::nothrow)), "fail DxLib::ChangeNextPlayPanSoundMem().");
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するボリュームを設定する
+			//!\~english  Set the volume of this sound when play next time.
+			template<typename T, typename Period>int set_next_play_volume(bel_c<T, Period> VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
+				assert(0 <= volume && volume <= 10000);
+				return DxLib::SetNextPlayVolumeSoundMem(volume, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するボリュームを設定する
+			//!\~english  Set the volume of this sound when play next time.
+			template<typename T, typename Period>void set_next_play_volume(bel_c<T, Period> VolumePal)
+			{
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_next_play_volume(PanPal, std::nothrow)), "fail DxLib::SetNextPlayVolumeSoundMem().");
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するボリュームを設定する
+			//!\~english  Set the volume of this sound when play next time.
+			int change_next_play_volume(uint8_t VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				return DxLib::ChangeNextPlayVolumeSoundMem(VolumePal, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するボリュームを設定する
+			//!\~english  Set the volume of this sound when play next time.
+			void change_next_play_volume(uint8_t VolumePal)
+			{
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->change_next_play_volume(VolumePal, std::nothrow)), "fail DxLib::ChangeNextPlayVolumeSoundMem().");
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するチャンネルのボリュームを設定する
+			//!\~english  Set the volume of specified channel of this sound when play next time..
+			template<typename T, typename Period>int set_next_play_volume(uint8_t Channel, bel_c<T, Period> VolumePal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
+				const auto volume = bel_cast<myrio_bel>(VolumePal).get();
+				assert(0 <= volume && volume <= 10000);
+				return DxLib::SetNextPlayChannelVolumeSoundMem(Channel, volume, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するチャンネルのボリュームを設定する
+			//!\~english  Set the volume of specified channel of this sound when play next time.
+			template<typename T, typename Period>void set_next_play_volume(uint8_t Channel, bel_c<T, Period> VolumePal)
+			{
+				DXLE_OUT_OF_RANGE_THROW_WITH_MESSAGE_IF((SOUNDBUFFER_MAX_CHANNEL_NUM <= Channel), "");
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((VolumePal < myrio_bel() || myrio_bel(10000) < VolumePal), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF(
+					(-1 == this->set_next_play_volume(Channel, VolumePal, std::nothrow)), 
+					"fail DxLib::SetNextPlayChannelVolumeSoundMem()."
+				);
+			}
+			//!\~japanese サウンドの次の再生にのみ使用するチャンネルのボリュームを設定する
+			//!\~english  Set the volume of specified channel of this sound when play next time.
+			int change_next_play_volume(uint8_t Channel, uint8_t VolumePal, std::nothrow_t)
+			{
+				assert(Channel < SOUNDBUFFER_MAX_CHANNEL_NUM);
+				return DxLib::ChangeNextPlayChannelVolumeSoundMem(Channel, VolumePal, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用する再生周波数を設定する
+			//!\~english  Set sound frequency when play next time.
+			int set_next_play_frequency(int FrequencyPal, std::nothrow_t) DXLE_NOEXCEPT_OR_NOTHROW
+			{
+				assert(FrequencyPal <= static_cast<int>(std::numeric_limits<float>::max()));
+				return DxLib::SetNextPlayFrequencySoundMem(FrequencyPal, this->GetHandle());
+			}
+			//!\~japanese サウンドの次の再生にのみ使用する再生周波数を設定する
+			//!\~english  Set sound frequency when play next time.
+			void set_next_play_frequency(int FrequencyPal)
+			{
+				DXLE_INVAID_ARGUMENT_THROW_WITH_MESSAGE_IF((static_cast<int>(std::numeric_limits<float>::max() < FrequencyPal)), "");
+				DXLE_SOUND_ERROR_THROW_WITH_MESSAGE_IF((-1 == this->set_next_play_frequency(FrequencyPal, std::nothrow)), "fail DxLib::SetNextPlayFrequencySoundMem().");
+			}
 
 			typedef int sample_n_t;//! for sample num
+
 			int set_current_position(sample_n_t SamplePosition);						// サウンドハンドルの再生位置をサンプル単位で設定する(再生が止まっている時のみ有効)
 			sample_n_t get_current_position();						// サウンドハンドルの再生位置をサンプル単位で取得する
 			int set_sound_current_position(int Byte);						// サウンドハンドルの再生位置をバイト単位で設定する(再生が止まっている時のみ有効)
