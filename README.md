@@ -9,7 +9,7 @@ master: [![Build status](https://ci.appveyor.com/api/projects/status/23dnx6tjije
 - [Web Page](http://nagarei.github.io/DxLibEx/index.html)
 
 # Support Compiler
-- Visual Stduio 2017 RC(partial)
+- Visual Stduio 2017
 - Visaul Studio 2015 update 3
 - Visual Studio 2013 update 5
 - Visual Studio 2015 Clang with Microsoft CodeGen(clang 3.8)(July 2016)
