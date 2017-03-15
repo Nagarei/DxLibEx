@@ -1,4 +1,4 @@
-﻿# DxLibEx
+# DxLibEx
 
 master: [![Build status](https://ci.appveyor.com/api/projects/status/23dnx6tjije58a14/branch/master?svg=true)](https://ci.appveyor.com/project/yumetodo/dxlibex/branch/master)
 
