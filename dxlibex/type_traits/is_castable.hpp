@@ -14,7 +14,7 @@ namespace type_traits {
 
 	template<typename From, typename To>
 	struct is_castable : std::conditional<
-		std::is_constructible<To, From>::value && std::is_convertible<From, To>::value,
+		std::is_constructible<To, From>::value || std::is_convertible<From, To>::value,
 		std::true_type, std::false_type
 	>::type {};
 	
