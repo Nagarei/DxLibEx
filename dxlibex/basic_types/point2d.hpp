@@ -658,9 +658,9 @@ namespace dxle {
 	*/
 	template<typename T1, typename T2>
 	distance_result_type_t<T1, T2> distance(const point_c<T1>& p1, const point_c<T2>& p2) 
-		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
+		DXLE_NOEXCEPT_IF_EXPR(hypot(abs_diff(std::declval<T1>(), std::declval<T2>()), abs_diff(std::declval<T1>(), std::declval<T2>())))
 	{
-		return hypot(safe_dist(p1.x, p2.x), safe_dist(p1.y, p2.y));
+		return hypot(abs_diff(p1.x, p2.x), abs_diff(p1.y, p2.y));
 	}
 	typedef point_c<int> pointi;
 	typedef point_c<std::uint8_t> pointu8i;
