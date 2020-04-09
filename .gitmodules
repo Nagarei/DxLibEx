@@ -1,0 +1,3 @@
+[submodule "3rd_party/iutest"]
+	path = 3rd_party/iutest
+	url = https://github.com/srz-zumix/iutest.git

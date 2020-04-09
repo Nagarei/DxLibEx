@@ -128,7 +128,7 @@ namespace dxle {
 		//!1. operator bool
 		//!2. operator != (nullptr)
 		//!3. default constector + operator !=
-		DXLE_CONSTEXPR explicit operator bool() 
+		DXLE_CONSTEXPR explicit operator bool()
 			const DXLE_NOEXCEPT_IF_EXPR((dxle::detail::operator_bool_helper(std::declval<value_type>(), std::declval<value_type>(), std::declval<value_type>())))
 		{
 			return dxle::detail::operator_bool_helper(this->x, this->y, this->z);
@@ -640,7 +640,7 @@ namespace dxle {
 	\~japanese	@return	計算結果。
 	\~english	@return	Computed result.
 	*/
-	template<typename T1, typename T2> 
+	template<typename T1, typename T2>
 	distance_result_type_t<T1, T2> distance(const point3d_c<T1>& p1, const point3d_c<T2>& p2)
 		DXLE_NOEXCEPT_IF_EXPR(hypot(safe_dist(std::declval<T1>(), std::declval<T2>()), safe_dist(std::declval<T1>(), std::declval<T2>())))
 	{
