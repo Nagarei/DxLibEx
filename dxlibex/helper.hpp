@@ -12,6 +12,9 @@
 //開発者以外がここの機能を使うのはお勧めできません
 #include "dxlibex/config/no_min_max.h"
 #include <cassert>
+#include <algorithm>
+#include "dxlibex/config/defines.h"
+#include <type_traits>
 #include "dxlibex/config/defines.h"
 
 namespace dxle{
@@ -128,7 +131,16 @@ namespace impl{
 	private:
 		int handle;
 	};
-	template<typename Child>
+	namespace detail {
+		template<typename HandleType, bool is_dxlib_handle> int SetDeleteHandleFlag(HandleType, HandleType*) { return 0; }
+		template<> int SetDeleteHandleFlag<int, false>(int handle, int* delete_flg) {
+			return DxLib::SetDeleteHandleFlag(handle, delete_flg);
+		}
+	}
+	//Visual Studio cannot convert integral type to own type by reinterpret_cast.
+	//https://connect.microsoft.com/VisualStudio/feedback/details/2692140
+	//So, we use C-Style cast.
+	template<typename Child, bool is_dxlib_handle = true, typename HandleType = int, HandleType invalid_handle_value = /*reinterpret_cast<HandleType>*/(HandleType)(-1)>
 	//!ハンドルの指すオブジェクト実装用
 	class Unique_HandledObject_Bace
 	{
@@ -140,40 +152,48 @@ namespace impl{
 		Unique_HandledObject_Bace& operator=(const Bace_T&) = delete;
 	protected:
 		DXLE_CONSTEXPR Unique_HandledObject_Bace()DXLE_NOEXCEPT_OR_NOTHROW
-			: handle(-1)
+			: handle(invalid_handle_value)
 		{}
 
 		//所有権の譲渡
 		Unique_HandledObject_Bace(Bace_T&& other)DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(std::move(other.handle))
 		{
-			other.handle = -1;
+			other.handle = invalid_handle_value;
 		}
 		//所有権の譲渡
 		Unique_HandledObject_Bace& operator=(Bace_T&& other)DXLE_NOEXCEPT_OR_NOTHROW
 		{
 			if (this == &other) { return *this; }
 			handle = other.handle;
-			DxLib::SetDeleteHandleFlag(handle, &handle);
-			other.handle = -1;
+			detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
+			other.handle = invalid_handle_value;
 			return *this;
 		}
-
+		void swap(Unique_HandledObject_Bace& o) { std::swap(this->handle, o.handle); }
 	protected:
 		//間違えて他の種類のハンドルを持たないようにprotectedにしておく
-		Unique_HandledObject_Bace(int param_handle)DXLE_NOEXCEPT_OR_NOTHROW
+		Unique_HandledObject_Bace(HandleType param_handle)DXLE_NOEXCEPT_OR_NOTHROW
 			: handle(param_handle)
 		{
-			DxLib::SetDeleteHandleFlag(handle, &handle);
+			detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
 		}
 		virtual ~Unique_HandledObject_Bace() DXLE_NOEXCEPT_OR_NOTHROW {
 			//リソース解放
+			static_assert(std::is_same<decltype(this), std::remove_cv_t<decltype(this)>>::value, "err");
+			static_assert(!std::is_const<decltype(this)>::value, "err");
+			static_assert(std::is_same<decltype(this), Unique_HandledObject_Bace<Child, is_dxlib_handle, HandleType, invalid_handle_value>*>::value, "err");
+			static_assert(!std::is_const<Child>::value, "err");
 			static_cast<Child*>(this)->delete_this();
 		}
-		DXLE_CONSTEXPR int GetHandle()const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
-		void SetHandle_IMPL(int new_handle) { handle = (new_handle); DxLib::SetDeleteHandleFlag(handle, &handle); }
+		DXLE_CONSTEXPR HandleType GetHandle() const DXLE_NOEXCEPT_OR_NOTHROW{ return handle; }
+		void set_handle(HandleType param_handle) {
+			std::swap(handle, param_handle);
+			if(invalid_handle_value != param_handle) detail::SetDeleteHandleFlag<HandleType, is_dxlib_handle>(handle, &handle);
+		}
+		DXLE_CONSTEXPR bool is_vaid() const DXLE_NOEXCEPT_OR_NOTHROW { return invalid_handle_value != handle; }
 	private:
-		int handle;
+		HandleType handle;
 	};
 
 }//namespace impl

@@ -22,7 +22,7 @@ struct IUnknown;
 #include <tchar.h>
 #include <string>
 #include <cstring>
-
+#include "dxlibex/type_traits.hpp"
 namespace dxle {
 	using tstring = std::basic_string<TCHAR>;
 	using std::size_t;

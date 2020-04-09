@@ -42,6 +42,7 @@
     <ClInclude Include="dxlibex\algorithm\cast_if.hpp" />
     <ClInclude Include="dxlibex\algorithm\safe_dist.hpp" />
     <ClInclude Include="dxlibex\basic_types.hpp" />
+    <ClInclude Include="dxlibex\basic_types\bel.hpp" />
     <ClInclude Include="dxlibex\basic_types\use_big_type_when_one_byte_t.hpp" />
     <ClInclude Include="dxlibex\basic_types\coordinate_operator_bool_helper.hpp" />
     <ClInclude Include="dxlibex\basic_types\distance_result_type_t.hpp" />
@@ -63,6 +64,7 @@
     <ClInclude Include="dxlibex\config\suffix.hpp" />
     <ClInclude Include="dxlibex\cstdlib.hpp" />
     <ClInclude Include="dxlibex\cstdlib\abs.hpp" />
+    <ClInclude Include="dxlibex\helper.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d\prototype2d.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d\texture2d.hpp" />
     <ClInclude Include="dxlibex\texture\texture2d\texture2d_handle_manager.hpp" />
@@ -70,7 +72,6 @@
     <ClInclude Include="dxlibex\dxlibex.hpp" />
     <ClInclude Include="dxlibex\dxlib_wrap.hpp" />
     <ClInclude Include="dxlibex\graph2d.hpp" />
-    <ClInclude Include="dxlibex\Helper.h" />
     <ClInclude Include="dxlibex\math.hpp" />
     <ClInclude Include="dxlibex\math\abs.hpp" />
     <ClInclude Include="dxlibex\math\copysign.hpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="dxlibex\type_traits\ignore.hpp" />
     <ClInclude Include="dxlibex\type_traits\is_castable.hpp" />
     <ClInclude Include="dxlibex\type_traits\is_nothrow.hpp" />
+    <ClInclude Include="dxlibex\type_traits\is_ratio.hpp" />
     <ClInclude Include="dxlibex\type_traits\is_representable.hpp" />
     <ClInclude Include="dxlibex\type_traits\is_well_format.hpp" />
   </ItemGroup>

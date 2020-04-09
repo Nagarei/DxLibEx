@@ -68,6 +68,8 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.lastbuildstate
+*.lib
 
 # Chutzpah Test files
 _Chutzpah*
@@ -79,6 +81,8 @@ ipch/
 *.opendb
 *.opensdf
 *.sdf
+*.VC.opendb
+*.VC.db
 *.cachefile
 *.VC.db
 
@@ -254,6 +258,8 @@ coverage.info
 *.out
 *.exe
 Log.txt
+*.diagsession
+*.zip
 *.exp
 dxlibex/ProjectDxLibEx_v*_MultiByte_x*_[dr].idb
 dxlibex/ProjectDxLibEx_v*_MultiByte_x*_[dr].lib
